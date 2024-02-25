@@ -15,26 +15,28 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="msapplication-config" content="./images/fav-icons/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-	<header class="header"></header>
-	<main class="main">
-		<div class="main__inner">
-			<div class="main__data">
-				<time class="main__data-time"></time>
-				<date class="main__data-date"></date>
-			</div>
-			<div class="main__greeting">
-				<span class="main__greeting-text"></span>
-				<input class="main__greeting-name" type="text" name="name" placeholder="Enter your name">
-			</div>
-
+	<div class="wrapper">
+		<div class="container">
+			<header class="header"></header>
+			<main class="main">
+				<div class="main__data">
+					<time class="main__data-time">17:32:55</time>
+					<date class="main__data-date">Sunday, February 25</date>
+				</div>
+				<div class="main__greeting">
+					<span class="main__greeting-text">Good evening, </span>
+					<input class="main__greeting-name" type="text" name="name" placeholder="[Enter your name]" autocomplete="off"
+						size="1">
+				</div>
+			</main>
+			<footer class="footer"></footer>
 		</div>
+	</div>
 
-
-	</main>
-	<footer class="footer"></footer>
 </body>
 
 </html>
