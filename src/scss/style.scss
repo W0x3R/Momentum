@@ -1,9 +1,10 @@
 @import 'variables';
 @import 'normalize';
 
-.wrapper {
+.body {
 	background: #000;
 }
+
 .container {
 	max-width: 1920px;
 	margin: 0 auto;
@@ -15,6 +16,7 @@
 }
 
 .main {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -66,6 +68,25 @@
 
 		&::placeholder {
 			color: rgb(200, 200, 200);
+		}
+	}
+	&__button {
+		position: absolute;
+		top: calc(50% - 16px);
+		width: 32px;
+		height: 32px;
+		background-color: transparent;
+		padding: 0;
+		outline: 0;
+		border: 0;
+		cursor: pointer;
+
+		&_prev {
+			left: 4%;
+		}
+
+		&_next {
+			right: 4%;
 		}
 	}
 }
