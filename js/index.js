@@ -27,10 +27,24 @@ showDate()
 const greetingText = document.querySelector('.main__greeting-text')
 const greetingArr = ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, ',]
 
-const showGreeting = () => {
+const showGreetingText = () => {
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingArr[Math.floor(currentTime / 6)]
 	greetingText.textContent = getGreeting
 }
 
-showGreeting()
+showGreetingText()
+
+const greetingName = document.querySelector('.main__greeting-name')
+
+const setGreetingName = () => {
+	localStorage.setItem('name', greetingName.value)
+}
+
+const getGreetingName = () => {
+	const getName = localStorage.getItem('name')
+	getName === null ? '' : greetingName.value = getName
+}
+
+window.addEventListener('beforeunload', setGreetingName)
+window.addEventListener('load', getGreetingName)
