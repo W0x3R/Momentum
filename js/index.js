@@ -9,7 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showGreetingText: function() { return /* binding */ showGreetingText; }
 /* harmony export */ });
-const time = document.querySelector('.main__data-time')
+const time = document.querySelector('.data__time')
 
 const showTime = () => {
 	const currentTime = new Date().toLocaleTimeString()
@@ -22,7 +22,7 @@ const showTime = () => {
 
 showTime()
 
-const date = document.querySelector('.main__data-date')
+const date = document.querySelector('.data__date')
 const dateOptions = {
 	weekday: "long",
 	month: "long",
@@ -35,7 +35,7 @@ const showDate = () => {
 
 showDate()
 
-const greetingText = document.querySelector('.main__greeting-text')
+const greetingText = document.querySelector('.greeting__text')
 const greetingArr = ['night', 'morning', 'afternoon', 'evening']
 
 const showGreetingText = () => {
@@ -47,7 +47,7 @@ const showGreetingText = () => {
 
 showGreetingText()
 
-const greetingName = document.querySelector('.main__greeting-name')
+const greetingName = document.querySelector('.greeting__name')
 
 const setGreetingName = () => {
 	localStorage.setItem('name', greetingName.value)
