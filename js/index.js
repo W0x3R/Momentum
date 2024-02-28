@@ -25,12 +25,12 @@ const showDate = () => {
 showDate()
 
 const greetingText = document.querySelector('.main__greeting-text')
-const greetingArr = ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, ',]
+const greetingArr = ['night, ', 'morning, ', 'afternoon, ', 'evening, ',]
 
 const showGreetingText = () => {
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingArr[Math.floor(currentTime / 6)]
-	greetingText.textContent = getGreeting
+	greetingText.textContent = `Good ${getGreeting}`
 }
 
 showGreetingText()
