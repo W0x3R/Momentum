@@ -1,5 +1,4 @@
 import { showGreetingText } from "./date"
-console.log(showGreetingText);
 const body = document.body
 const sliderButtonPrev = document.querySelector('.main__button_prev')
 const sliderButtonNext = document.querySelector('.main__button_next')
