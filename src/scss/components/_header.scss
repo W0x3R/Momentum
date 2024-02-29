@@ -1,3 +1,5 @@
+@import '../keyframes';
+
 .header {
 }
 .weather {
@@ -6,20 +8,20 @@
 	justify-content: flex-start;
 	align-items: center;
 	row-gap: 5px;
-	width: 180px;
+	padding: 5px;
 	min-height: 180px;
 	text-align: left;
-	background: linear-gradient(302deg, black, transparent);
+	background: linear-gradient(16deg, #000000, rgba(0, 0, 0, 0.5490196078));
 	border-radius: 21px;
-	width: 206px;
-	height: 201px;
+	width: 240px;
+	height: 200px;
 	color: var(--white);
 
 	&_error {
 	}
 
 	&__input {
-		width: 170px;
+		width: 230px;
 		height: 34px;
 		padding: 5px;
 		font-size: 20px;
@@ -29,11 +31,17 @@
 		outline: 0;
 		border-bottom: 1px solid var(--white);
 		background-color: transparent;
+		font-size: 22px;
+		text-align: center;
 	}
 
 	&__icon {
 		font-size: 44px;
 		color: var(--white);
+
+		@include hover {
+			animation: shake 2s infinite;
+		}
 	}
 
 	&__values {
