@@ -18,6 +18,7 @@ async function getWeather() {
 		weatherTemperatureDescription.textContent = data.weather[0].description
 		weatherWind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`
 		weatherHumidity.textContent = `Humidity: ${Math.round(data.main.humidity)}%`
+		weatherError.style.display = 'none'
 		weatherError.textContent = ''
 	}
 	catch (error) {
@@ -25,6 +26,7 @@ async function getWeather() {
 		weatherTemperatureDescription.textContent = ''
 		weatherWind.textContent = ''
 		weatherHumidity.textContent = ''
+		weatherError.style.display = 'block'
 		weatherError.textContent = `ERROR: City wasn't found!`
 	}
 }

@@ -14,17 +14,19 @@
 	background: linear-gradient(16deg, #000000, rgba(0, 0, 0, 0.5490196078));
 	border-radius: 21px;
 	width: 240px;
-	height: 200px;
+	height: 204px;
 	color: var(--white);
+	font-size: 17px;
 
 	&_error {
+		margin: auto;
+		display: none;
 	}
 
 	&__input {
 		width: 230px;
 		height: 34px;
 		padding: 5px;
-		font-size: 20px;
 		line-height: 24px;
 		color: var(--white);
 		border: 0;
