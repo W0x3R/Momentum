@@ -44,6 +44,10 @@
 		@include hover {
 			animation: shake 2s infinite;
 		}
+
+		@include hover-none {
+			animation: shake 2s infinite;
+		}
 	}
 
 	&__values {
