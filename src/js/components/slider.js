@@ -33,3 +33,4 @@ const showBgOnClick = (direction) => {
 sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
 sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
+export { getRandomNumber }

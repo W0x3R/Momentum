@@ -69,6 +69,9 @@ window.addEventListener('load', getGreetingName)
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
+/* harmony export */ });
 /* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 const body = document.body
@@ -164,6 +167,41 @@ window.addEventListener('load', getCity)
 
 
 
+/***/ }),
+/* 4 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
+const changeQuoteButton = document.querySelector('.quotes__change-btn')
+const quote = document.querySelector('.quotes__text')
+const author = document.querySelector('.quotes__author')
+
+function showQuote(data) {
+	const randomNumber = (0,_slider__WEBPACK_IMPORTED_MODULE_0__.getRandomNumber)(0, data.length - 1)
+	quote.textContent = data[randomNumber].quote
+	author.textContent = data[randomNumber].author
+}
+
+async function getQuotes() {
+	try {
+		const fetchRequest = await fetch('quotes.json')
+		const data = await fetchRequest.json()
+		showQuote(data)
+		changeQuoteButton.addEventListener('click', () => showQuote(data))
+	}
+	catch {
+		console.error('Error fetching quotes:', error);
+	}
+
+}
+getQuotes()
+
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -242,6 +280,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_weather__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+
 
 
 
