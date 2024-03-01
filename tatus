@@ -1,0 +1,64 @@
+[1mdiff --git a/src/scss/components/_header.scss b/src/scss/components/_header.scss[m
+[1mindex 5041fed..936c05f 100644[m
+[1m--- a/src/scss/components/_header.scss[m
+[1m+++ b/src/scss/components/_header.scss[m
+[36m@@ -1,6 +1,8 @@[m
+ @import '../keyframes';[m
+ [m
+ .header {[m
+[32m+[m	[32mdisplay: flex;[m
+[32m+[m	[32mjustify-content: space-between;[m
+ }[m
+ .weather {[m
+ 	display: flex;[m
+[36m@@ -65,3 +67,50 @@[m
+ 	&__humidity {[m
+ 	}[m
+ }[m
+[32m+[m
+[32m+[m[32m.player {[m
+[32m+[m	[32mdisplay: flex;[m
+[32m+[m	[32mflex-direction: column;[m
+[32m+[m	[32mjustify-content: center;[m
+[32m+[m	[32malign-items: center;[m
+[32m+[m	[32mwidth: 300px;[m
+[32m+[m	[32mheight: 300px;[m
+[32m+[m	[32mborder-radius: 16px;[m
+[32m+[m	[32mbackground: linear-gradient(16deg, #000000, rgba(0, 0, 0, 0.5490196078));[m
+[32m+[m
+[32m+[m	[32m&__track-name {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__current-time {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__duration {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__audio {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__progress {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls-mute {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls-prev {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls-pause {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls-next {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__controls-volume {[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m	[32m&__list {[m
+[32m+[m	[32m}[m
+[32m+[m[32m}[m

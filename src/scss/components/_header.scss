@@ -1,6 +1,8 @@
 @import '../keyframes';
 
 .header {
+	display: flex;
+	justify-content: space-between;
 }
 .weather {
 	display: flex;
@@ -63,5 +65,52 @@
 	}
 
 	&__humidity {
+	}
+}
+
+.player {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+	height: 300px;
+	border-radius: 16px;
+	background: linear-gradient(16deg, #000000, rgba(0, 0, 0, 0.5490196078));
+
+	&__track-name {
+	}
+
+	&__current-time {
+	}
+
+	&__duration {
+	}
+
+	&__audio {
+	}
+
+	&__progress {
+	}
+
+	&__controls {
+	}
+
+	&__controls-mute {
+	}
+
+	&__controls-prev {
+	}
+
+	&__controls-pause {
+	}
+
+	&__controls-next {
+	}
+
+	&__controls-volume {
+	}
+
+	&__list {
 	}
 }
