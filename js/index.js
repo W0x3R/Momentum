@@ -214,6 +214,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 
+
 const trackName = document.querySelector('.player__track-name')
 const playList = document.querySelector('.player__list')
 const audio = document.querySelector('.player__audio')
@@ -230,10 +231,11 @@ let isPlay = false;
 let count = 0;
 
 const createPlayList = () => {
-	_playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(e => {
+	_playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].forEach((e, i) => {
 		const li = document.createElement('li')
 		li.classList.add('player__list-item')
 		li.textContent = e.title
+		li.setAttribute('datanumber', i)
 		playList.append(li)
 	})
 }
@@ -241,8 +243,9 @@ const createPlayList = () => {
 createPlayList()
 
 const loadSong = () => {
-	audio.src = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].src
-	trackName.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].title
+	const currentSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count]
+	audio.src = currentSong.src
+	trackName.textContent = currentSong.title
 }
 
 loadSong()
@@ -285,8 +288,23 @@ const updateTime = () => {
 	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].duration
 }
 
-audio.addEventListener('timeupdate', function () {
+const updateProgressBar = (e) => {
+	const { duration, currentTime } = e.srcElement
+	if (duration) {
+		progressBar.max = duration;
+		progressBar.value = currentTime
+	}
+}
+
+progressBar.addEventListener('click', function (e) {
+	let x = e.pageX - progressBar.getBoundingClientRect().left
+	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
+	audio.currentTime = (audio.duration * clickedValue) / progressBar.max;
+});
+
+audio.addEventListener('timeupdate', function (e) {
 	updateTime()
+	updateProgressBar(e)
 })
 
 const nextSong = () => {
@@ -298,6 +316,10 @@ const nextSong = () => {
 	loadSong()
 	playSong()
 }
+
+audio.addEventListener('ended', function () {
+	nextSong()
+})
 
 playButtonNext.addEventListener('click', nextSong)
 
@@ -312,6 +334,18 @@ const prevSong = () => {
 }
 
 playButtonPrev.addEventListener('click', prevSong)
+
+document.addEventListener('DOMContentLoaded', function (e) {
+	playList.addEventListener('click', function (e) {
+		const dataNumber = e.target.getAttribute('datanumber')
+		if (dataNumber) {
+			let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
+			count = dataNumber
+			loadSong()
+			playSong()
+		}
+	})
+})
 
 
 
