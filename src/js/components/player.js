@@ -1,17 +1,18 @@
 import playListSongs from "../../../playListSongs"
+const trackName = document.querySelector('.player__track-name')
 const playList = document.querySelector('.player__list')
 const audio = document.querySelector('.player__audio')
-let songCurrentTime = document.querySelector('.player__time-current')
-let songDurationTime = document.querySelector('.player__time-duration')
-let progressBar = document.querySelector('.player__time-progress')
+let songCurrentTime = document.querySelector('.player__current-time')
+let songDurationTime = document.querySelector('.player__duration')
+let progressBar = document.querySelector('.player__progress')
 const playButton = document.querySelector('.player__controls-play')
+const playButtonPrev = document.querySelector('.player__controls-prev')
+const playButtonNext = document.querySelector('.player__controls-next')
 const playButtonIcon = document.querySelector('.player__controls-play-icon use')
 let seconds;
 let minutes;
 let isPlay = false;
 let count = 0;
-
-audio.src = playListSongs[count].src
 
 const createPlayList = () => {
 	playListSongs.forEach(e => {
@@ -24,20 +25,38 @@ const createPlayList = () => {
 
 createPlayList()
 
+const loadSong = () => {
+	audio.src = playListSongs[count].src
+	trackName.textContent = playListSongs[count].title
+}
+
+loadSong()
+
 const playSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.add('player__list_active')
+	audio.play()
+	playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
+	playButton.classList.add('player__controls-play_active')
+	isPlay = true
+}
+
+const pauseSong = () => {
+	audio.pause()
+	playButtonIcon.setAttribute('href', './images/svg/play.svg#play')
+	playButton.classList.remove('player__controls-play_active')
+	isPlay = false
+}
+
+const checkFlagSong = () => {
 	if (isPlay) {
-		playButtonIcon.setAttribute('href', './images/svg/play.svg#play')
-		audio.pause()
-		isPlay = false
+		pauseSong()
 	}
 	else {
-		playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
-		audio.play()
-		isPlay = true
+		playSong()
 	}
 }
 
-playButton.addEventListener('click', playSong)
+playButton.addEventListener('click', checkFlagSong)
 
 function getTimeCodeFromNum(num) {
 	seconds = parseInt(num);
@@ -54,5 +73,29 @@ const updateTime = () => {
 audio.addEventListener('timeupdate', function () {
 	updateTime()
 })
+
+const nextSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
+	count++
+	if (count > playListSongs.length - 1) {
+		count = 0;
+	}
+	loadSong()
+	playSong()
+}
+
+playButtonNext.addEventListener('click', nextSong)
+
+const prevSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
+	count--
+	if (count < 0) {
+		count = playListSongs.length - 1
+	}
+	loadSong()
+	playSong()
+}
+
+playButtonPrev.addEventListener('click', prevSong)
 
 export { updateTime }
