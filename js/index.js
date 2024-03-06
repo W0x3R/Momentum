@@ -14,11 +14,12 @@ const time = document.querySelector('.data__time')
 const showTime = () => {
 	const currentTime = new Date().toLocaleTimeString()
 	time.textContent = currentTime
-	setInterval(() => {
-		showTime()
-		showDate()
-	}, 1000)
 }
+
+setInterval(() => {
+	showTime()
+	showDate()
+}, 1000)
 
 showTime()
 
@@ -202,6 +203,107 @@ getQuotes()
 
 
 
+/***/ }),
+/* 5 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   updateTime: function() { return /* binding */ updateTime; }
+/* harmony export */ });
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+
+const playList = document.querySelector('.player__list')
+const audio = document.querySelector('.player__audio')
+let songCurrentTime = document.querySelector('.player__time-current')
+let songDurationTime = document.querySelector('.player__time-duration')
+let progressBar = document.querySelector('.player__time-progress')
+const playButton = document.querySelector('.player__controls-play')
+const playButtonIcon = document.querySelector('.player__controls-play-icon use')
+let seconds;
+let minutes;
+let isPlay = false;
+let count = 0;
+
+audio.src = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].src
+
+const createPlayList = () => {
+	_playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].forEach(e => {
+		const li = document.createElement('li')
+		li.classList.add('player__list-item')
+		li.textContent = e.title
+		playList.append(li)
+	})
+}
+
+createPlayList()
+
+const playSong = () => {
+	if (isPlay) {
+		playButtonIcon.setAttribute('href', './images/svg/play.svg#play')
+		audio.pause()
+		isPlay = false
+	}
+	else {
+		playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
+		audio.play()
+		isPlay = true
+	}
+}
+
+playButton.addEventListener('click', playSong)
+
+function getTimeCodeFromNum(num) {
+	seconds = parseInt(num);
+	minutes = parseInt(seconds / 60);
+	seconds -= minutes * 60;
+	return `${minutes}:${String(seconds).padStart(2, 0)}`;
+}
+
+const updateTime = () => {
+	songCurrentTime.textContent = getTimeCodeFromNum(audio.currentTime)
+	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].duration
+}
+
+audio.addEventListener('timeupdate', function () {
+	updateTime()
+})
+
+
+
+
+/***/ }),
+/* 6 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const playList = [
+	{
+		title: "Княzz - Адель",
+		src: "sounds/Княzz - Адель.mp3",
+		duration: "04:29",
+	},
+	{
+		title: "ДДТ - Дождь",
+		src: "sounds/ДДТ - Дождь.mp3",
+		duration: "05:04",
+	},
+	{
+		title: "Scorpions - Still loving you",
+		src: "sounds/Scorpions - Still loving you.mp3",
+		duration: "06:28",
+	},
+	{
+		title: "Imagine Dragons - Warriors",
+		src: "sounds/Imagine Dragons - Warriors.mp3",
+		duration: "02:50",
+	},
+];
+/* harmony default export */ __webpack_exports__["default"] = (playList);
+
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -281,6 +383,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_weather__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+
 
 
 
