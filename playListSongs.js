@@ -19,5 +19,10 @@ const playList = [
 		src: "sounds/Imagine Dragons - Warriors.mp3",
 		duration: "02:50",
 	},
+	{
+		title: "КиШ - Утренний рассвет",
+		src: "sounds/КиШ - Утренний рассвет.mp3",
+		duration: "02:29",
+	},
 ];
 export default playList;
