@@ -127,6 +127,10 @@
 	&__controls-play {
 		width: 46px;
 		height: 46px;
+
+		&_active {
+			animation: turnAround 2s linear 0s infinite;
+		}
 	}
 
 	&__controls-next {

@@ -19,3 +19,12 @@
 		transform: translate(1px, 2px) rotate(0deg);
 	}
 }
+
+@keyframes turnAround {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
