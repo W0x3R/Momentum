@@ -3,11 +3,12 @@ const time = document.querySelector('.data__time')
 const showTime = () => {
 	const currentTime = new Date().toLocaleTimeString()
 	time.textContent = currentTime
-	setInterval(() => {
-		showTime()
-		showDate()
-	}, 1000)
 }
+
+setInterval(() => {
+	showTime()
+	showDate()
+}, 1000)
 
 showTime()
 
