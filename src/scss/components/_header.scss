@@ -75,7 +75,7 @@
 	align-items: center;
 	padding-inline: 10px;
 	padding-block: 15px;
-	width: 300px;
+	min-width: 300px;
 	border-radius: 16px;
 	background: linear-gradient(16deg, #000000, rgba(0, 0, 0, 0.5490196078));
 	color: var(--white);
