@@ -154,7 +154,11 @@ textarea {
 button,
 input {
 	/* 1 */
+	padding: 0;
 	overflow: visible;
+	background: transparent;
+	border: 0;
+	outline: 0;
 }
 
 /**

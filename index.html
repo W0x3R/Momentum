@@ -23,17 +23,13 @@
 		<div class="container">
 			<header class="header">
 				<div class="player">
-					<p class="player__track-name"></p>
+					<p class="player__track-name">КНЯЗЬ - АДЕЛЬ</p>
 					<p class="player__current-time"></p>
 					<div class="player__duration"></div>
 					<audio class="player__audio"></audio>
 					<progress class="player__progress" value="0"></progress>
 					<div class="player__controls">
-						<button class="player__controls-mute">
-							<svg viewBox="0 0 56 57">
-								<use href='./images/svg/noVolume.svg#mute'></use>
-							</svg>
-						</button>
+
 						<button class="player__controls-prev">
 							<svg viewBox="0 0 64 64">
 								<use href='./images/svg/play-prev.svg#prev'></use>
@@ -49,7 +45,14 @@
 								<use href='./images/svg/play-next.svg#next'></use>
 							</svg>
 						</button>
-						<input class="player__controls-volume" type="range" name="volume" min="0" max="1" step="0.1">
+					</div>
+					<div class="player__sounds">
+						<button class="player__sounds-mute">
+							<svg viewBox="0 0 56 57">
+								<use href='./images/svg/noVolume.svg#mute'></use>
+							</svg>
+						</button>
+						<input class="player__sounds-volume" type="range" name="volume" min="0" max="1" step="0.1" value=".7">
 					</div>
 					<ul class="player__list"></ul>
 				</div>
