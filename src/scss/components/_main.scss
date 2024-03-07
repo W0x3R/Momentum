@@ -1,19 +1,12 @@
 .main {
 	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include flex($direction: column, $justify: center, $alignItems: center);
 
 	&__button {
 		position: absolute;
 		top: calc(50% - 16px);
-		width: 32px;
-		height: 32px;
+		@include sizes(32px, 32px);
 		background-color: transparent;
-		padding: 0;
-		outline: 0;
-		border: 0;
 		cursor: pointer;
 
 		&_prev {
@@ -26,16 +19,14 @@
 	}
 }
 .data {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	@include flex($direction: column, $alignItems: center);
 
 	&__time {
 		margin-bottom: 15px;
+		border-radius: 15px;
 		font-size: 88px;
 		color: var(--white);
-		background: linear-gradient(16deg, #000000, #0000008c);
-		border-radius: 15px;
+		background: var(--black-background);
 	}
 
 	&__date {
@@ -58,15 +49,12 @@
 	}
 
 	&__name {
-		padding: 0;
+		flex: 1;
+		max-width: 50%;
 		font-size: 40px;
 		background: transparent;
-		border: 0;
-		outline: 0;
 		color: var(--white);
-		max-width: 50%;
 		text-align: left;
-		flex: 1;
 
 		&::placeholder {
 			color: rgb(200, 200, 200);

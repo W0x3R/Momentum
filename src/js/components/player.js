@@ -46,7 +46,7 @@ const loadSong = () => {
 loadSong()
 
 const playSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.add('player__list_active')
+	let li = document.querySelectorAll('li')[count].classList.add('player__list-item_active')
 	trackName.classList.add('player__track-name_active')
 
 	audio.play()
@@ -102,7 +102,7 @@ audio.addEventListener('timeupdate', function (e) {
 })
 
 const nextSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
 	count++
 	if (count > playListSongs.length - 1) {
 		count = 0;
@@ -118,7 +118,7 @@ audio.addEventListener('ended', function () {
 playButtonNext.addEventListener('click', nextSong)
 
 const prevSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
 	count--
 	if (count < 0) {
 		count = playListSongs.length - 1
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 		const dataNumber = parseInt(e.target.getAttribute('datanumber'));
 		if (!isNaN(dataNumber)) {
 			if (count !== dataNumber) {
-				let li = document.querySelectorAll('li')[count].classList.remove('player__list_active');
+				let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
 				count = dataNumber;
 				loadSong();
 				playSong();
