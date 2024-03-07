@@ -10,9 +10,13 @@ const playButton = document.querySelector('.player__controls-play')
 const playButtonPrev = document.querySelector('.player__controls-prev')
 const playButtonNext = document.querySelector('.player__controls-next')
 const playButtonIcon = document.querySelector('.player__controls-play-icon use')
+const volumeButton = document.querySelector('.player__sounds-volume')
+const volumeMuteButton = document.querySelector('.player__sounds-mute')
+const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
 let seconds;
 let minutes;
 let isPlay = false;
+let isMute = false;
 let count = 0;
 
 const createPlayList = () => {
@@ -132,4 +136,25 @@ document.addEventListener('DOMContentLoaded', function (e) {
 	})
 })
 
-export { updateTime }
+sessionStorage.setItem('volumeValue', volumeButton.value)
+
+volumeButton.addEventListener('input', function (e) {
+	audio.volume = this.value
+	sessionStorage.setItem('volumeValue', volumeButton.value)
+})
+
+volumeMuteButton.addEventListener('click', function (e) {
+	if (isMute) {
+		audio.volume = sessionStorage.getItem('volumeValue')
+		volumeButton.value = sessionStorage.getItem('volumeValue')
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+
+		isMute = false
+	}
+	else {
+		audio.volume = 0;
+		volumeButton.value = 0;
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		isMute = true;
+	}
+})
