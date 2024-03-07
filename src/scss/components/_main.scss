@@ -24,7 +24,7 @@
 	&__time {
 		margin-bottom: 15px;
 		border-radius: 15px;
-		font-size: 88px;
+		font-size: 100px;
 		color: var(--white);
 		background: var(--black-background);
 	}
@@ -40,10 +40,10 @@
 	gap: 0 10px;
 	width: 100vw;
 	margin-bottom: 30px;
+	font-size: 40px;
 
 	&__text {
 		color: var(--white);
-		font-size: 40px;
 		text-align: right;
 		flex: 1;
 	}
@@ -51,7 +51,6 @@
 	&__name {
 		flex: 1;
 		max-width: 50%;
-		font-size: 40px;
 		background: transparent;
 		color: var(--white);
 		text-align: left;
