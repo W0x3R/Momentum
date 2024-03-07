@@ -1,15 +1,13 @@
-@mixin hover {
-	@media (hover: hover) {
-		&:hover {
-			@content;
-		}
-	}
+@mixin flex($direction: row, $wrap: nowrap, $justify: normal, $alignItems: normal, $gap: normal) {
+	display: flex;
+	flex-direction: $direction;
+	flex-wrap: $wrap;
+	justify-content: $justify;
+	align-items: $alignItems;
+	gap: $gap;
 }
 
-@mixin hover-none {
-	@media (hover: none) {
-		&:active {
-			@content;
-		}
-	}
+@mixin sizes($width, $height) {
+	width: $width;
+	height: $height;
 }
