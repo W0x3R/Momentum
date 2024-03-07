@@ -243,10 +243,16 @@ const createPlayList = () => {
 
 createPlayList()
 
+const updateTime = () => {
+	songCurrentTime.textContent = getTimeCodeFromNum(audio.currentTime)
+	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].duration
+}
+
 const loadSong = () => {
 	const currentSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count]
 	audio.src = currentSong.src
 	trackName.textContent = currentSong.title
+	updateTime()
 }
 
 loadSong()
@@ -284,10 +290,7 @@ function getTimeCodeFromNum(num) {
 	return `${minutes}:${String(seconds).padStart(2, 0)}`;
 }
 
-const updateTime = () => {
-	songCurrentTime.textContent = getTimeCodeFromNum(audio.currentTime)
-	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].duration
-}
+
 
 const updateProgressBar = (e) => {
 	const { duration, currentTime } = e.srcElement
@@ -338,15 +341,23 @@ playButtonPrev.addEventListener('click', prevSong)
 
 document.addEventListener('DOMContentLoaded', function (e) {
 	playList.addEventListener('click', function (e) {
-		const dataNumber = e.target.getAttribute('datanumber')
-		if (dataNumber) {
-			let li = document.querySelectorAll('li')[count].classList.remove('player__list_active')
-			count = dataNumber
-			loadSong()
-			playSong()
+		const dataNumber = parseInt(e.target.getAttribute('datanumber'));
+		if (!isNaN(dataNumber)) {
+			if (count !== dataNumber) {
+				let li = document.querySelectorAll('li')[count].classList.remove('player__list_active');
+				count = dataNumber;
+				loadSong();
+				playSong();
+			} else {
+				if (isPlay) {
+					pauseSong();
+				} else {
+					playSong();
+				}
+			}
 		}
-	})
-})
+	});
+});
 
 sessionStorage.setItem('volumeValue', volumeButton.value)
 
