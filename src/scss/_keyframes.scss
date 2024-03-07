@@ -28,3 +28,15 @@
 		transform: rotate(360deg);
 	}
 }
+
+@keyframes changeColor {
+	0% {
+		color: var(--white);
+	}
+	50% {
+		color: rgb(13 0 255);
+	}
+	100% {
+		color: var(--white);
+	}
+}
