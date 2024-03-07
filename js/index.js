@@ -42,7 +42,7 @@ const greetingArr = ['night', 'morning', 'afternoon', 'evening']
 const showGreetingText = () => {
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingArr[Math.floor(currentTime / 6)]
-	greetingText.textContent = `Good ${getGreeting} ,`
+	greetingText.textContent = `Good ${getGreeting}, `
 	return getGreeting
 }
 
