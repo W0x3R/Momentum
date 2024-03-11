@@ -1,10 +1,10 @@
 /******/ (function() { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showGreetingText: function() { return /* binding */ showGreetingText; }
@@ -68,7 +68,6 @@ window.addEventListener('load', getGreetingName)
 /* 2 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
@@ -113,9 +112,15 @@ sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
 /***/ }),
 /* 3 */
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-const weather = document.querySelector('.weather')
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getWeather: function() { return /* binding */ getWeather; }
+/* harmony export */ });
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
 const weatherCity = document.querySelector('.weather__input')
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherError = document.querySelector('.weather_error')
@@ -124,31 +129,61 @@ const weatherTemperatureDescription = document.querySelector('.weather__values-d
 const weatherWind = document.querySelector('.weather__wind')
 const weatherHumidity = document.querySelector('.weather__humidity')
 
-async function getWeather() {
-	try {
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=en&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
-		const fetchURL = await fetch(url)
-		const data = await fetchURL.json()
-		weatherIcon.className = "weather__icon owf";
-		weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-		weatherTemperature.textContent = Math.round(data.main.temp) + "°C"
-		weatherTemperatureDescription.textContent = data.weather[0].description
-		weatherWind.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`
-		weatherHumidity.textContent = `Humidity: ${Math.round(data.main.humidity)}%`
-		weatherError.style.display = 'none'
-		weatherError.textContent = ''
-	}
-	catch (error) {
-		weatherTemperature.textContent = ''
-		weatherTemperatureDescription.textContent = ''
-		weatherWind.textContent = ''
-		weatherHumidity.textContent = ''
-		weatherError.style.display = 'block'
-		weatherError.textContent = `ERROR: City wasn't found!`
+const weatherTranslations = {
+	en: {
+		wind: 'Wind speed:',
+		units: 'm/s',
+		humidity: 'Humidity:',
+		error: "ERROR: City wasn't found!"
+	},
+	ru: {
+		wind: 'Скорость ветра',
+		units: 'м/c',
+		humidity: 'Влажность:',
+		error: "Ошибка: Город не найден!"
 	}
 }
 
-weatherCity.addEventListener('change', getWeather)
+const updateUI = (data, currentLang) => {
+	weatherIcon.className = "weather__icon owf";
+	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+	weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
+	weatherTemperatureDescription.textContent = data.weather[0].description.slice(0, 1).toUpperCase() + data.weather[0].description.slice(1);
+	weatherWind.textContent = `${weatherTranslations[currentLang].wind}: ${Math.round(data.wind.speed)} ${weatherTranslations[currentLang].units}`;
+	weatherHumidity.textContent = `${weatherTranslations[currentLang].humidity} ${Math.round(data.main.humidity)}%`;
+	weatherError.style.display = 'none';
+	weatherError.textContent = '';
+};
+
+const handleErrors = (error) => {
+	weatherTemperature.textContent = '';
+	weatherTemperatureDescription.textContent = '';
+	weatherWind.textContent = '';
+	weatherHumidity.textContent = '';
+	weatherError.style.display = 'block';
+	weatherError.textContent = `${weatherTranslations[(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()].error}`;
+};
+
+async function getWeather() {
+	try {
+		const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+		if (!currentLang) {
+			localStorage.setItem('language', 'en')
+		}
+		(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.setSelectedValue)()
+		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
+		const fetchURL = await fetch(url)
+		const data = await fetchURL.json()
+		updateUI(data, currentLang);
+	}
+	catch (error) {
+		handleErrors(error)
+	}
+}
+
+weatherCity.addEventListener('change', () => {
+	getWeather()
+})
 
 const setCity = () => {
 	if (weatherCity.value) {
@@ -172,7 +207,66 @@ window.addEventListener('load', getCity)
 /* 4 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
+/* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
+/* harmony export */ });
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+
+
+const selectWrapper = document.querySelector('.language')
+const select = document.querySelector('.language__select')
+const selectChildrenArray = Array.from(select.children)
+
+selectWrapper.addEventListener('click', function (e) {
+	this.classList.toggle('language__select_open')
+})
+
+const setCurrentLang = () => {
+	localStorage.setItem('language', select.value)
+}
+
+const findItem = (lang, value) => {
+	const item = selectChildrenArray.find(e => e.value === lang);
+	if (item) {
+		item.selected = value;
+	} else {
+		console.error(`Item with value ${lang} not found`);
+	}
+}
+
+const setSelectedValue = () => {
+	const lang = getCurrentLang()
+	if (lang === 'en') {
+		findItem('ru', false)
+		findItem('en', true)
+	} else if (lang === 'ru') {
+		findItem('en', false)
+		findItem('ru', true)
+	}
+}
+
+const getCurrentLang = () => localStorage.getItem('language')
+
+select.addEventListener('change', () => {
+	setCurrentLang()
+	;(0,_weather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
+	setSelectedValue()
+})
+
+window.addEventListener('click', function (e) {
+	!e.target.classList.contains('language__select') ? selectWrapper.classList.remove('language__select_open') : ''
+})
+
+
+
+
+
+/***/ }),
+/* 5 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
@@ -204,12 +298,11 @@ getQuotes()
 
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(7);
 
 
 const trackName = document.querySelector('.player__track-name')
@@ -385,10 +478,9 @@ volumeMuteButton.addEventListener('click', function (e) {
 })
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 const playList = [
 	{
@@ -448,18 +540,6 @@ const playList = [
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	!function() {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = function(module) {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				function() { return module['default']; } :
-/******/ 				function() { return module; };
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	!function() {
 /******/ 		// define getter functions for harmony exports
@@ -490,16 +570,16 @@ const playList = [
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
-/* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_weather__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
-/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
+/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4);
+
 
 
 
