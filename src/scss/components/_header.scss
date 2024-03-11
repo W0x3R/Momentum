@@ -51,6 +51,30 @@
 	}
 }
 
+.language {
+	position: relative;
+	height: min-content;
+	font-size: 14px;
+
+	&::after {
+		content: '▼';
+		position: absolute;
+		right: 1px;
+		pointer-events: none;
+		font-size: 12px;
+		top: calc(50% - 7px);
+	}
+	&__select {
+		width: 46px;
+		appearance: none;
+		padding: 3px 10px;
+		border-radius: 8px;
+		cursor: pointer;
+		border: none;
+		outline: unset;
+	}
+}
+
 .player {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center);
 	padding: 10px 15px;
