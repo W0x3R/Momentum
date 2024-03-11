@@ -64,6 +64,7 @@
 		font-size: 12px;
 		top: calc(50% - 7px);
 	}
+
 	&__select {
 		width: 46px;
 		appearance: none;
@@ -72,6 +73,10 @@
 		cursor: pointer;
 		border: none;
 		outline: unset;
+
+		&_open::after {
+			transform: rotate(180deg);
+		}
 	}
 }
 
