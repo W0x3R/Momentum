@@ -1,6 +1,8 @@
 .main {
 	position: relative;
 	@include flex($direction: column, $justify: center, $alignItems: center);
+	bottom: 45px;
+	flex: 1;
 
 	&__button {
 		position: absolute;
@@ -20,6 +22,7 @@
 }
 .data {
 	@include flex($direction: column, $alignItems: center);
+	user-select: none;
 
 	&__time {
 		margin-bottom: 15px;
@@ -31,7 +34,7 @@
 
 	&__date {
 		margin-bottom: 15px;
-		font-size: 30px;
+		font-size: 28px;
 		color: var(--white);
 	}
 }
@@ -39,8 +42,7 @@
 	display: flex;
 	gap: 0 10px;
 	width: 100vw;
-	margin-bottom: 30px;
-	font-size: 40px;
+	font-size: 38px;
 
 	&__text {
 		color: var(--white);

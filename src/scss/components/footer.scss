@@ -1,9 +1,13 @@
+.footer {
+	flex: 0;
+}
+
 .quotes {
 	@include flex($direction: column, $alignItems: center, $justify: center);
 	color: var(--white);
 
 	&__change-btn {
-		margin-bottom: 20px;
+		margin-bottom: 15px;
 		background: transparent;
 		transition: transform 2s linear;
 
@@ -17,7 +21,14 @@
 	}
 
 	&__text {
-		margin-bottom: 13px;
-		font-size: 17px;
+		margin-bottom: 10px;
+		font-size: 16px;
+		text-align: center;
+		user-select: none;
+	}
+
+	&__author {
+		font-size: 15px;
+		user-select: none;
 	}
 }

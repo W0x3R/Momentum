@@ -16,6 +16,7 @@
 	&_error {
 		margin: auto;
 		display: none;
+		user-select: none;
 	}
 
 	&__input {
@@ -41,6 +42,13 @@
 			animation: shake 2s infinite;
 		}
 	}
+
+	&__values-temperature,
+	&__values-description,
+	&__wind,
+	&__humidity {
+		user-select: none;
+	}
 }
 
 .player {
@@ -50,11 +58,13 @@
 	border-radius: 16px;
 	background: var(--black-background);
 	color: var(--white);
+	z-index: 1;
 
 	&__track-name {
 		margin-bottom: 18px;
 		font-size: 18px;
 		opacity: 0.8;
+		user-select: none;
 
 		&_active {
 			animation: changeColor 2s infinite;
@@ -73,12 +83,14 @@
 		position: absolute;
 		bottom: 13px;
 		left: 0;
+		user-select: none;
 	}
 
 	&__duration {
 		position: absolute;
 		bottom: 13px;
 		right: 0;
+		user-select: none;
 	}
 
 	&__progress {
@@ -147,7 +159,7 @@
 	}
 
 	&__list {
-		@include flex($direction: column, $gap: 14px 0);
+		@include flex($direction: column, $gap: 13px 0);
 		transition: all 0.5s ease;
 
 		&-item {
