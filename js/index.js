@@ -258,6 +258,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
 /* harmony export */ });
 /* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+
+
 
 const body = document.body
 const sliderButtonPrev = document.querySelector('.main__button_prev')
@@ -271,9 +274,24 @@ const getRandomNumber = (min, max) => {
 
 let randomNumber = getRandomNumber(1, 20)
 
+const greetingTranslations = {
+	ночи: 'night',
+	утро: 'morning',
+	дня: 'afternoon',
+	вечера: 'evening'
+};
+
+const translateGreeting = (greetingText) => {
+	return greetingTranslations[greetingText];
+};
+
 const changeBg = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)();
+	const greetingText = (0,_date__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)().split(' ')[1].slice(0, -1);
+	let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
+
 	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
-	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${(0,_date__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)()}/${randomNumberForImages}.webp`
+	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
 	const image = new Image();
 	image.src = url;
 	image.onload = () => body.style.backgroundImage = `url(${url})`

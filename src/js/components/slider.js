@@ -1,4 +1,6 @@
 import { showGreetingText } from "./date"
+import { getCurrentLang } from "./changeLanguage"
+
 const body = document.body
 const sliderButtonPrev = document.querySelector('.main__button_prev')
 const sliderButtonNext = document.querySelector('.main__button_next')
@@ -11,9 +13,24 @@ const getRandomNumber = (min, max) => {
 
 let randomNumber = getRandomNumber(1, 20)
 
+const greetingTranslations = {
+	ночи: 'night',
+	утро: 'morning',
+	дня: 'afternoon',
+	вечера: 'evening'
+};
+
+const translateGreeting = (greetingText) => {
+	return greetingTranslations[greetingText];
+};
+
 const changeBg = () => {
+	const currentLang = getCurrentLang();
+	const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
+	let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
+
 	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
-	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${showGreetingText()}/${randomNumberForImages}.webp`
+	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
 	const image = new Image();
 	image.src = url;
 	image.onload = () => body.style.backgroundImage = `url(${url})`
