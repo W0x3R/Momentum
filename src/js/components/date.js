@@ -26,7 +26,7 @@ const greetingText = document.querySelector('.greeting__text')
 
 const greetingObj = {
 	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
-	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Доброго дня, ', 'Доброго вечера, ']
+	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый дня, ', 'Добрый вечер, ']
 }
 
 const greetingPlaceHolder = {
