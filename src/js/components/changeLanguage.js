@@ -1,4 +1,6 @@
 import { getWeather } from "./weather"
+import { showDate, showGreetingText, setPlaceHolder } from "./date"
+
 
 const selectWrapper = document.querySelector('.language')
 const select = document.querySelector('.language__select')
@@ -38,6 +40,9 @@ select.addEventListener('change', () => {
 	setCurrentLang()
 	getWeather()
 	setSelectedValue()
+	showDate()
+	showGreetingText()
+	setPlaceHolder()
 })
 
 window.addEventListener('click', function (e) {

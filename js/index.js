@@ -7,8 +7,13 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setPlaceHolder: function() { return /* binding */ setPlaceHolder; },
+/* harmony export */   showDate: function() { return /* binding */ showDate; },
 /* harmony export */   showGreetingText: function() { return /* binding */ showGreetingText; }
 /* harmony export */ });
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+
+
 const time = document.querySelector('.data__time')
 
 const showTime = () => {
@@ -16,39 +21,51 @@ const showTime = () => {
 	time.textContent = currentTime
 }
 
-setInterval(() => {
-	showTime()
-	showDate()
-}, 1000)
-
-showTime()
-
 const date = document.querySelector('.data__date')
 const dateOptions = {
 	weekday: "long",
 	month: "long",
 	day: "numeric",
 }
+
 const showDate = () => {
-	const currentDate = new Date().toLocaleDateString('en-US', dateOptions)
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	const currentDate = new Date().toLocaleDateString(currentLang, dateOptions)
 	date.textContent = currentDate
 }
 
 showDate()
 
 const greetingText = document.querySelector('.greeting__text')
-const greetingArr = ['night', 'morning', 'afternoon', 'evening']
+
+const greetingObj = {
+	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
+	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Доброго дня, ', 'Доброго вечера, ']
+}
+
+const greetingPlaceHolder = {
+	en: '[Enter your name]',
+	ru: '[Введите ваше имя]'
+}
 
 const showGreetingText = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
 	const currentTime = new Date().getHours();
-	const getGreeting = greetingArr[Math.floor(currentTime / 6)]
-	greetingText.textContent = `Good ${getGreeting}, `
+	const getGreeting = greetingObj[currentLang][Math.floor(currentTime / 6)]
+	greetingText.textContent = getGreeting
 	return getGreeting
 }
 
 showGreetingText()
 
 const greetingName = document.querySelector('.greeting__name')
+
+const setPlaceHolder = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	currentLang === 'en' ? greetingName.placeholder = greetingPlaceHolder.en : greetingName.placeholder = greetingPlaceHolder.ru
+}
+
+setPlaceHolder()
 
 const setGreetingName = () => {
 	localStorage.setItem('name', greetingName.value)
@@ -59,8 +76,17 @@ const getGreetingName = () => {
 	getName === null ? '' : greetingName.value = getName
 }
 
+setInterval(() => {
+	showTime()
+	showDate()
+}, 1000)
+
+showTime()
+
 window.addEventListener('beforeunload', setGreetingName)
 window.addEventListener('load', getGreetingName)
+
+
 
 
 
@@ -70,43 +96,63 @@ window.addEventListener('load', getGreetingName)
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
+/* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
+/* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
 /* harmony export */ });
-/* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
 
-const body = document.body
-const sliderButtonPrev = document.querySelector('.main__button_prev')
-const sliderButtonNext = document.querySelector('.main__button_next')
 
-const getRandomNumber = (min, max) => {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1) + min);
+
+
+const selectWrapper = document.querySelector('.language')
+const select = document.querySelector('.language__select')
+const selectChildrenArray = Array.from(select.children)
+
+selectWrapper.addEventListener('click', function (e) {
+	this.classList.toggle('language__select_open')
+})
+
+const setCurrentLang = () => {
+	localStorage.setItem('language', select.value)
 }
 
-let randomNumber = getRandomNumber(1, 20)
-
-const changeBg = () => {
-	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
-	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${(0,_date__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)()}/${randomNumberForImages}.webp`
-	const image = new Image();
-	image.src = url;
-	image.onload = () => body.style.backgroundImage = `url(${url})`
+const findItem = (lang, value) => {
+	const item = selectChildrenArray.find(e => e.value === lang);
+	if (item) {
+		item.selected = value;
+	} else {
+		console.error(`Item with value ${lang} not found`);
+	}
 }
 
-const showBgOnLoad = () => changeBg()
-
-showBgOnLoad()
-
-const showBgOnClick = (direction) => {
-	randomNumber = (direction === 'prev') ?
-		((randomNumber === 1) ? 20 : randomNumber - 1) :
-		((randomNumber === 20) ? 1 : randomNumber + 1);
-	changeBg()
+const setSelectedValue = () => {
+	const lang = getCurrentLang()
+	if (lang === 'en') {
+		findItem('ru', false)
+		findItem('en', true)
+	} else if (lang === 'ru') {
+		findItem('en', false)
+		findItem('ru', true)
+	}
 }
 
-sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
-sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
+const getCurrentLang = () => localStorage.getItem('language')
+
+select.addEventListener('change', () => {
+	setCurrentLang()
+	;(0,_weather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
+	setSelectedValue()
+	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.showDate)()
+	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)()
+	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.setPlaceHolder)()
+})
+
+window.addEventListener('click', function (e) {
+	!e.target.classList.contains('language__select') ? selectWrapper.classList.remove('language__select_open') : ''
+})
+
+
 
 
 
@@ -118,7 +164,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getWeather: function() { return /* binding */ getWeather; }
 /* harmony export */ });
-/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
 const weatherCity = document.querySelector('.weather__input')
@@ -209,57 +255,43 @@ window.addEventListener('load', getCity)
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
-/* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
+/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
 /* harmony export */ });
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
+const body = document.body
+const sliderButtonPrev = document.querySelector('.main__button_prev')
+const sliderButtonNext = document.querySelector('.main__button_next')
 
-const selectWrapper = document.querySelector('.language')
-const select = document.querySelector('.language__select')
-const selectChildrenArray = Array.from(select.children)
-
-selectWrapper.addEventListener('click', function (e) {
-	this.classList.toggle('language__select_open')
-})
-
-const setCurrentLang = () => {
-	localStorage.setItem('language', select.value)
+const getRandomNumber = (min, max) => {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const findItem = (lang, value) => {
-	const item = selectChildrenArray.find(e => e.value === lang);
-	if (item) {
-		item.selected = value;
-	} else {
-		console.error(`Item with value ${lang} not found`);
-	}
+let randomNumber = getRandomNumber(1, 20)
+
+const changeBg = () => {
+	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
+	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${(0,_date__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)()}/${randomNumberForImages}.webp`
+	const image = new Image();
+	image.src = url;
+	image.onload = () => body.style.backgroundImage = `url(${url})`
 }
 
-const setSelectedValue = () => {
-	const lang = getCurrentLang()
-	if (lang === 'en') {
-		findItem('ru', false)
-		findItem('en', true)
-	} else if (lang === 'ru') {
-		findItem('en', false)
-		findItem('ru', true)
-	}
+const showBgOnLoad = () => changeBg()
+
+showBgOnLoad()
+
+const showBgOnClick = (direction) => {
+	randomNumber = (direction === 'prev') ?
+		((randomNumber === 1) ? 20 : randomNumber - 1) :
+		((randomNumber === 20) ? 1 : randomNumber + 1);
+	changeBg()
 }
 
-const getCurrentLang = () => localStorage.getItem('language')
-
-select.addEventListener('change', () => {
-	setCurrentLang()
-	;(0,_weather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
-	setSelectedValue()
-})
-
-window.addEventListener('click', function (e) {
-	!e.target.classList.contains('language__select') ? selectWrapper.classList.remove('language__select_open') : ''
-})
-
-
+sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
+sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
 
 
@@ -268,7 +300,7 @@ window.addEventListener('click', function (e) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')
@@ -574,11 +606,11 @@ var __webpack_exports__ = {};
 !function() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 /* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
-/* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4);
+/* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2);
 
 
 

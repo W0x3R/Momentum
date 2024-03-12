@@ -1,3 +1,5 @@
+import { getCurrentLang } from "./changeLanguage"
+
 const time = document.querySelector('.data__time')
 
 const showTime = () => {
@@ -5,39 +7,51 @@ const showTime = () => {
 	time.textContent = currentTime
 }
 
-setInterval(() => {
-	showTime()
-	showDate()
-}, 1000)
-
-showTime()
-
 const date = document.querySelector('.data__date')
 const dateOptions = {
 	weekday: "long",
 	month: "long",
 	day: "numeric",
 }
+
 const showDate = () => {
-	const currentDate = new Date().toLocaleDateString('en-US', dateOptions)
+	const currentLang = getCurrentLang()
+	const currentDate = new Date().toLocaleDateString(currentLang, dateOptions)
 	date.textContent = currentDate
 }
 
 showDate()
 
 const greetingText = document.querySelector('.greeting__text')
-const greetingArr = ['night', 'morning', 'afternoon', 'evening']
+
+const greetingObj = {
+	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
+	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Доброго дня, ', 'Доброго вечера, ']
+}
+
+const greetingPlaceHolder = {
+	en: '[Enter your name]',
+	ru: '[Введите ваше имя]'
+}
 
 const showGreetingText = () => {
+	const currentLang = getCurrentLang()
 	const currentTime = new Date().getHours();
-	const getGreeting = greetingArr[Math.floor(currentTime / 6)]
-	greetingText.textContent = `Good ${getGreeting}, `
+	const getGreeting = greetingObj[currentLang][Math.floor(currentTime / 6)]
+	greetingText.textContent = getGreeting
 	return getGreeting
 }
 
 showGreetingText()
 
 const greetingName = document.querySelector('.greeting__name')
+
+const setPlaceHolder = () => {
+	const currentLang = getCurrentLang()
+	currentLang === 'en' ? greetingName.placeholder = greetingPlaceHolder.en : greetingName.placeholder = greetingPlaceHolder.ru
+}
+
+setPlaceHolder()
 
 const setGreetingName = () => {
 	localStorage.setItem('name', greetingName.value)
@@ -48,7 +62,16 @@ const getGreetingName = () => {
 	getName === null ? '' : greetingName.value = getName
 }
 
+setInterval(() => {
+	showTime()
+	showDate()
+}, 1000)
+
+showTime()
+
 window.addEventListener('beforeunload', setGreetingName)
 window.addEventListener('load', getGreetingName)
 
-export { showGreetingText }
+
+
+export { showDate, showGreetingText, setPlaceHolder }
