@@ -83,7 +83,10 @@ setInterval(() => {
 
 showTime()
 
-window.addEventListener('beforeunload', setGreetingName)
+window.addEventListener('beforeunload', () => {
+	setGreetingName()
+	;(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.setCurrentLang)()
+})
 window.addEventListener('load', getGreetingName)
 
 
@@ -97,6 +100,7 @@ window.addEventListener('load', getGreetingName)
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
+/* harmony export */   setCurrentLang: function() { return /* binding */ setCurrentLang; },
 /* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
 /* harmony export */ });
 /* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);

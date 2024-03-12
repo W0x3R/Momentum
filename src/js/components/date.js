@@ -1,4 +1,4 @@
-import { getCurrentLang } from "./changeLanguage"
+import { setCurrentLang, getCurrentLang } from "./changeLanguage"
 
 const time = document.querySelector('.data__time')
 
@@ -69,7 +69,10 @@ setInterval(() => {
 
 showTime()
 
-window.addEventListener('beforeunload', setGreetingName)
+window.addEventListener('beforeunload', () => {
+	setGreetingName()
+	setCurrentLang()
+})
 window.addEventListener('load', getGreetingName)
 
 

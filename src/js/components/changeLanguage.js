@@ -49,5 +49,5 @@ window.addEventListener('click', function (e) {
 	!e.target.classList.contains('language__select') ? selectWrapper.classList.remove('language__select_open') : ''
 })
 
-export { getCurrentLang, setSelectedValue }
+export { getCurrentLang, setCurrentLang, setSelectedValue }
 
