@@ -54,9 +54,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCurrentLang: function() { return /* binding */ setCurrentLang; },
 /* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
 /* harmony export */ });
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _date_date__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
 
 
@@ -65,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let getQuotes;
-Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 9)).then(module => {
+Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 11)).then(module => {
 	getQuotes = module.getQuotes;
 });
 
@@ -105,7 +105,7 @@ const getCurrentLang = () => localStorage.getItem('language')
 
 select.addEventListener('change', () => {
 	setCurrentLang()
-	;(0,_weather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
+	;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
 	setSelectedValue()
 	;(0,_date_date__WEBPACK_IMPORTED_MODULE_3__.showDate)()
 	;(0,_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)()
@@ -127,19 +127,52 @@ window.addEventListener('click', function (e) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getWeather: function() { return /* binding */ getWeather; }
+/* harmony export */   getWeather: function() { return /* binding */ getWeather; },
+/* harmony export */   weatherCity: function() { return /* binding */ weatherCity; }
+/* harmony export */ });
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _updateWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+
+
+
+
+const weatherCity = document.querySelector('.weather__input')
+
+async function getWeather() {
+	try {
+		const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+		if (!currentLang) {
+			localStorage.setItem('language', 'en')
+		}
+		(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.setSelectedValue)()
+		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
+		const fetchURL = await fetch(url)
+		const data = await fetchURL.json()
+		;(0,_updateWeather__WEBPACK_IMPORTED_MODULE_1__.updateUI)(data, currentLang);
+	}
+	catch (error) {
+		(0,_updateWeather__WEBPACK_IMPORTED_MODULE_1__.handleErrors)()
+	}
+}
+
+/***/ }),
+/* 5 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   handleErrors: function() { return /* binding */ handleErrors; },
+/* harmony export */   updateUI: function() { return /* binding */ updateUI; }
 /* harmony export */ });
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
 
 
-const weatherCity = document.querySelector('.weather__input')
 const weatherIcon = document.querySelector('.weather__icon')
+const weatherWind = document.querySelector('.weather__wind')
 const weatherError = document.querySelector('.weather_error')
 const weatherTemperature = document.querySelector('.weather__values-temperature')
 const weatherTemperatureDescription = document.querySelector('.weather__values-description')
-const weatherWind = document.querySelector('.weather__wind')
 const weatherHumidity = document.querySelector('.weather__humidity')
-
 const weatherTranslations = {
 	en: {
 		wind: 'Wind speed:',
@@ -166,7 +199,8 @@ const updateUI = (data, currentLang) => {
 	weatherError.textContent = '';
 };
 
-const handleErrors = (error) => {
+
+const handleErrors = () => {
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
@@ -175,47 +209,8 @@ const handleErrors = (error) => {
 	weatherError.textContent = `${weatherTranslations[(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()].error}`;
 };
 
-async function getWeather() {
-	try {
-		const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
-		if (!currentLang) {
-			localStorage.setItem('language', 'en')
-		}
-		(0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.setSelectedValue)()
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
-		const fetchURL = await fetch(url)
-		const data = await fetchURL.json()
-		updateUI(data, currentLang);
-	}
-	catch (error) {
-		handleErrors(error)
-	}
-}
-
-weatherCity.addEventListener('change', () => {
-	getWeather()
-})
-
-const setCity = () => {
-	if (weatherCity.value) {
-		localStorage.setItem('city', weatherCity.value)
-	}
-}
-
-window.addEventListener('beforeunload', setCity)
-
-const getCity = () => {
-	const getCity = localStorage.getItem('city')
-	weatherCity.value = getCity ? getCity : 'Гомель'
-	getWeather()
-}
-
-window.addEventListener('load', getCity)
-
-
-
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -241,7 +236,7 @@ const showGreetingText = () => {
 }
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -249,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setPlaceHolder: function() { return /* binding */ setPlaceHolder; }
 /* harmony export */ });
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
-/* harmony import */ var _greetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _greetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 
 
 
@@ -264,7 +259,7 @@ const setPlaceHolder = () => {
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -285,14 +280,39 @@ const getGreetingName = () => {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getCity: function() { return /* binding */ getCity; },
+/* harmony export */   setCity: function() { return /* binding */ setCity; }
+/* harmony export */ });
+/* harmony import */ var _getWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
+
+const setCity = () => {
+	if (_getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherCity.value) {
+		localStorage.setItem('city', _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherCity.value)
+	}
+}
+
+const getCity = () => {
+	const getCity = localStorage.getItem('city')
+	_getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherCity.value = getCity ? getCity : 'Гомель'
+	;(0,_getWeather__WEBPACK_IMPORTED_MODULE_0__.getWeather)()
+}
+
+/***/ }),
+/* 10 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
 /* harmony export */ });
-/* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
@@ -349,14 +369,14 @@ sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
 /* harmony export */ });
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
+/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
@@ -396,11 +416,11 @@ getQuotes()
 
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 
 
 const trackName = document.querySelector('.player__track-name')
@@ -576,7 +596,7 @@ volumeMuteButton.addEventListener('click', function (e) {
 })
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -673,14 +693,15 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date_time__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_date_date__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
-/* harmony import */ var _components_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(5);
-/* harmony import */ var _components_greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6);
-/* harmony import */ var _components_greeting_greetingName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
+/* harmony import */ var _components_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6);
+/* harmony import */ var _components_greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
+/* harmony import */ var _components_greeting_greetingName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 /* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
-/* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
-/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8);
-/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9);
-/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10);
+/* harmony import */ var _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
+/* harmony import */ var _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
+/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
+/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
 
 
 
@@ -706,9 +727,21 @@ window.addEventListener('beforeunload', () => {
 
 window.addEventListener('load', _components_greeting_greetingName__WEBPACK_IMPORTED_MODULE_4__.getGreetingName)
 
-
 ;
 
+
+
+_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCity.addEventListener('change', () => {
+	(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
+})
+
+window.addEventListener('beforeunload', _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__.setCity)
+
+window.addEventListener('load', _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__.getCity)
+
+
+
+;
 
 
 

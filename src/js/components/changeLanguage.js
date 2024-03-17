@@ -1,5 +1,5 @@
 
-import { getWeather } from "./weather"
+import { getWeather } from "./weather/getWeather";
 import { showGreetingText } from "./greeting/greetingMessage";
 import { setPlaceHolder } from "./greeting/greetingPlaceholder";
 import { showDate } from "./date/date";

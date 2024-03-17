@@ -23,8 +23,20 @@ window.addEventListener('beforeunload', () => {
 
 window.addEventListener('load', getGreetingName)
 
+import { weatherCity } from './components/weather/getWeather'
+import { getWeather } from './components/weather/getWeather'
+import { setCity, getCity } from './components/weather/weatherCity'
 
-import * as weather from './components/weather'
+weatherCity.addEventListener('change', () => {
+	getWeather()
+})
+
+window.addEventListener('beforeunload', setCity)
+
+window.addEventListener('load', getCity)
+
+
+
 import * as slider from './components/slider'
 import * as quotes from './components/quotes'
 import * as player from './components/player'

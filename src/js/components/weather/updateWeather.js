@@ -1,13 +1,11 @@
-import { getCurrentLang, setSelectedValue } from "./changeLanguage"
+import { getCurrentLang } from "../changeLanguage"
 
-const weatherCity = document.querySelector('.weather__input')
 const weatherIcon = document.querySelector('.weather__icon')
+const weatherWind = document.querySelector('.weather__wind')
 const weatherError = document.querySelector('.weather_error')
 const weatherTemperature = document.querySelector('.weather__values-temperature')
 const weatherTemperatureDescription = document.querySelector('.weather__values-description')
-const weatherWind = document.querySelector('.weather__wind')
 const weatherHumidity = document.querySelector('.weather__humidity')
-
 const weatherTranslations = {
 	en: {
 		wind: 'Wind speed:',
@@ -23,7 +21,7 @@ const weatherTranslations = {
 	}
 }
 
-const updateUI = (data, currentLang) => {
+export const updateUI = (data, currentLang) => {
 	weatherIcon.className = "weather__icon owf";
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
 	weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
@@ -34,7 +32,8 @@ const updateUI = (data, currentLang) => {
 	weatherError.textContent = '';
 };
 
-const handleErrors = (error) => {
+
+export const handleErrors = () => {
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
@@ -42,42 +41,3 @@ const handleErrors = (error) => {
 	weatherError.style.display = 'block';
 	weatherError.textContent = `${weatherTranslations[getCurrentLang()].error}`;
 };
-
-async function getWeather() {
-	try {
-		const currentLang = getCurrentLang()
-		if (!currentLang) {
-			localStorage.setItem('language', 'en')
-		}
-		setSelectedValue()
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
-		const fetchURL = await fetch(url)
-		const data = await fetchURL.json()
-		updateUI(data, currentLang);
-	}
-	catch (error) {
-		handleErrors(error)
-	}
-}
-
-weatherCity.addEventListener('change', () => {
-	getWeather()
-})
-
-const setCity = () => {
-	if (weatherCity.value) {
-		localStorage.setItem('city', weatherCity.value)
-	}
-}
-
-window.addEventListener('beforeunload', setCity)
-
-const getCity = () => {
-	const getCity = localStorage.getItem('city')
-	weatherCity.value = getCity ? getCity : 'Гомель'
-	getWeather()
-}
-
-window.addEventListener('load', getCity)
-
-export { getWeather }
