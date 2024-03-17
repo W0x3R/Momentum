@@ -9,7 +9,9 @@ setInterval(() => {
 showDate()
 showTime()
 
-import { showGreetingText, setPlaceHolder, getGreetingName, setGreetingName } from './components/greeting'
+import { showGreetingText } from './components/greeting/greetingMessage'
+import { setPlaceHolder } from './components/greeting/greetingPlaceholder'
+import { getGreetingName, setGreetingName } from './components/greeting/greetingName'
 import { setCurrentLang } from './components/changeLanguage'
 showGreetingText()
 setPlaceHolder()

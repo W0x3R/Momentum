@@ -1,6 +1,7 @@
 
 import { getWeather } from "./weather"
-import { showGreetingText, setPlaceHolder } from "./greeting";
+import { showGreetingText } from "./greeting/greetingMessage";
+import { setPlaceHolder } from "./greeting/greetingPlaceholder";
 import { showDate } from "./date/date";
 
 let getQuotes;
