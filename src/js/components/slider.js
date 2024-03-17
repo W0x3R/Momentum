@@ -16,7 +16,7 @@ let randomNumber = getRandomNumber(1, 20)
 const greetingTranslations = {
 	ночи: 'night',
 	утро: 'morning',
-	день: 'afternoon',
+	дня: 'afternoon',
 	вечер: 'evening'
 };
 

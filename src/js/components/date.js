@@ -75,6 +75,4 @@ window.addEventListener('beforeunload', () => {
 })
 window.addEventListener('load', getGreetingName)
 
-
-
 export { showDate, showGreetingText, setPlaceHolder }

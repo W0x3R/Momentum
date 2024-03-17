@@ -91,8 +91,6 @@ window.addEventListener('load', getGreetingName)
 
 
 
-
-
 /***/ }),
 /* 2 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -108,6 +106,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+let getQuotes;
+Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 5)).then(module => {
+	getQuotes = module.getQuotes;
+});
 
 const selectWrapper = document.querySelector('.language')
 const select = document.querySelector('.language__select')
@@ -150,6 +152,7 @@ select.addEventListener('change', () => {
 	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.showDate)()
 	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)()
 	;(0,_date__WEBPACK_IMPORTED_MODULE_1__.setPlaceHolder)()
+	getQuotes()
 })
 
 window.addEventListener('click', function (e) {
@@ -281,7 +284,7 @@ let randomNumber = getRandomNumber(1, 20)
 const greetingTranslations = {
 	ночи: 'night',
 	утро: 'morning',
-	день: 'afternoon',
+	дня: 'afternoon',
 	вечер: 'evening'
 };
 
@@ -322,7 +325,12 @@ sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
+/* harmony export */ });
 /* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+
 
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')
@@ -335,9 +343,14 @@ function showQuote(data) {
 	author.textContent = data[randomNumber].author
 }
 
+const getQuoteName = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)()
+	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
+}
+
 async function getQuotes() {
 	try {
-		const fetchRequest = await fetch('quotes.json')
+		const fetchRequest = await fetch(getQuoteName())
 		const data = await fetchRequest.json()
 		showQuote(data)
 		changeQuoteButton.addEventListener('click', () => showQuote(data))
@@ -348,6 +361,9 @@ async function getQuotes() {
 
 }
 getQuotes()
+
+
+
 
 
 
@@ -628,11 +644,12 @@ var __webpack_exports__ = {};
 !function() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _components_weather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
 /* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2);
+
 
 
 

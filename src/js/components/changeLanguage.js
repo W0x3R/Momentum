@@ -1,6 +1,10 @@
+
 import { getWeather } from "./weather"
 import { showDate, showGreetingText, setPlaceHolder } from "./date"
-
+let getQuotes;
+import("./quotes").then(module => {
+	getQuotes = module.getQuotes;
+});
 
 const selectWrapper = document.querySelector('.language')
 const select = document.querySelector('.language__select')
@@ -43,6 +47,7 @@ select.addEventListener('change', () => {
 	showDate()
 	showGreetingText()
 	setPlaceHolder()
+	getQuotes()
 })
 
 window.addEventListener('click', function (e) {

@@ -1,4 +1,5 @@
 import { getRandomNumber } from "./slider"
+import { getCurrentLang } from "./changeLanguage"
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')
 const quote = document.querySelector('.quotes__text')
@@ -10,9 +11,14 @@ function showQuote(data) {
 	author.textContent = data[randomNumber].author
 }
 
+const getQuoteName = () => {
+	const currentLang = getCurrentLang()
+	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
+}
+
 async function getQuotes() {
 	try {
-		const fetchRequest = await fetch('quotes.json')
+		const fetchRequest = await fetch(getQuoteName())
 		const data = await fetchRequest.json()
 		showQuote(data)
 		changeQuoteButton.addEventListener('click', () => showQuote(data))
@@ -23,4 +29,7 @@ async function getQuotes() {
 
 }
 getQuotes()
+
+
+export { getQuotes }
 
