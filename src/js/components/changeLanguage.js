@@ -1,6 +1,8 @@
 
 import { getWeather } from "./weather"
-import { showDate, showGreetingText, setPlaceHolder } from "./date"
+import { showGreetingText, setPlaceHolder } from "./greeting";
+import { showDate } from "./date/date";
+
 let getQuotes;
 import("./quotes").then(module => {
 	getQuotes = module.getQuotes;

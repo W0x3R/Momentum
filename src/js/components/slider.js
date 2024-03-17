@@ -1,4 +1,4 @@
-import { showGreetingText } from "./date"
+import { showGreetingText } from "./greeting"
 import { getCurrentLang } from "./changeLanguage"
 
 const body = document.body
