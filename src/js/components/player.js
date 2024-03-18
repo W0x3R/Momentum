@@ -130,6 +130,19 @@ const prevSong = () => {
 playButtonPrev.addEventListener('click', prevSong)
 
 document.addEventListener('DOMContentLoaded', function (e) {
+	if (!sessionStorage.getItem('volumeValue')) {
+		sessionStorage.setItem('volumeValue', volumeButton.value)
+	}
+	audio.volume = sessionStorage.getItem('volumeValue')
+	volumeButton.value = sessionStorage.getItem('volumeValue')
+	if (audio.volume === 0) {
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		isMute = true;
+	}
+	else {
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		isMute = false;
+	}
 	playList.addEventListener('click', function (e) {
 		const dataNumber = parseInt(e.target.getAttribute('datanumber'));
 		if (!isNaN(dataNumber)) {
@@ -149,11 +162,17 @@ document.addEventListener('DOMContentLoaded', function (e) {
 	});
 });
 
-sessionStorage.setItem('volumeValue', volumeButton.value)
-
 volumeButton.addEventListener('input', function (e) {
 	audio.volume = this.value
 	sessionStorage.setItem('volumeValue', volumeButton.value)
+	if (audio.volume === 0) {
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		isMute = true;
+	}
+	else {
+		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		isMute = false;
+	}
 })
 
 volumeMuteButton.addEventListener('click', function (e) {
@@ -161,7 +180,6 @@ volumeMuteButton.addEventListener('click', function (e) {
 		audio.volume = sessionStorage.getItem('volumeValue')
 		volumeButton.value = sessionStorage.getItem('volumeValue')
 		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
-
 		isMute = false
 	}
 	else {
