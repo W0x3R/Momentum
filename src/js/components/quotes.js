@@ -1,4 +1,4 @@
-import { getRandomNumber } from "./slider"
+import { getRandomNumber } from "./slider/getRandomNumber"
 import { getCurrentLang } from "./changeLanguage"
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')

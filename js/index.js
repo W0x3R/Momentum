@@ -65,7 +65,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let getQuotes;
-Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 11)).then(module => {
+Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 13)).then(module => {
 	getQuotes = module.getQuotes;
 });
 
@@ -310,10 +310,17 @@ const getCity = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
+/* harmony export */   changeBg: function() { return /* binding */ changeBg; },
+/* harmony export */   showBgOnClick: function() { return /* binding */ showBgOnClick; },
+/* harmony export */   sliderButtonNext: function() { return /* binding */ sliderButtonNext; },
+/* harmony export */   sliderButtonPrev: function() { return /* binding */ sliderButtonPrev; }
 /* harmony export */ });
 /* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _getRandomNumber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _getTimeOfDay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+
+
 
 
 
@@ -321,14 +328,50 @@ const body = document.body
 const sliderButtonPrev = document.querySelector('.main__button_prev')
 const sliderButtonNext = document.querySelector('.main__button_next')
 
+let randomNumber = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_2__.getRandomNumber)(1, 20)
+
+const changeBg = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)();
+	const greetingText = (0,_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)().split(' ')[1].slice(0, -1);
+	let value = currentLang === 'en' ? greetingText : (0,_getTimeOfDay__WEBPACK_IMPORTED_MODULE_3__.translateGreeting)(greetingText)
+
+	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
+	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
+	const image = new Image();
+	image.src = url;
+	image.onload = () => body.style.backgroundImage = `url(${url})`
+}
+
+const showBgOnClick = (direction) => {
+	randomNumber = (direction === 'prev') ?
+		((randomNumber === 1) ? 20 : randomNumber - 1) :
+		((randomNumber === 20) ? 1 : randomNumber + 1);
+	changeBg()
+}
+
+
+/***/ }),
+/* 11 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
+/* harmony export */ });
 const getRandomNumber = (min, max) => {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-let randomNumber = getRandomNumber(1, 20)
+/***/ }),
+/* 12 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   translateGreeting: function() { return /* binding */ translateGreeting; }
+/* harmony export */ });
 const greetingTranslations = {
 	ночи: 'night',
 	утро: 'morning',
@@ -340,43 +383,15 @@ const translateGreeting = (greetingText) => {
 	return greetingTranslations[greetingText];
 };
 
-const changeBg = () => {
-	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)();
-	const greetingText = (0,_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)().split(' ')[1].slice(0, -1);
-	let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
-
-	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
-	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-	const image = new Image();
-	image.src = url;
-	image.onload = () => body.style.backgroundImage = `url(${url})`
-}
-
-const showBgOnLoad = () => changeBg()
-
-showBgOnLoad()
-
-const showBgOnClick = (direction) => {
-	randomNumber = (direction === 'prev') ?
-		((randomNumber === 1) ? 20 : randomNumber - 1) :
-		((randomNumber === 20) ? 1 : randomNumber + 1);
-	changeBg()
-}
-
-sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
-sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
-
-
-
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
 /* harmony export */ });
-/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
@@ -386,7 +401,7 @@ const quote = document.querySelector('.quotes__text')
 const author = document.querySelector('.quotes__author')
 
 function showQuote(data) {
-	const randomNumber = (0,_slider__WEBPACK_IMPORTED_MODULE_0__.getRandomNumber)(0, data.length - 1)
+	const randomNumber = (0,_slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__.getRandomNumber)(0, data.length - 1)
 	quote.textContent = data[randomNumber].quote
 	author.textContent = data[randomNumber].author
 }
@@ -416,11 +431,11 @@ getQuotes()
 
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
 
 
 const trackName = document.querySelector('.player__track-name')
@@ -596,7 +611,7 @@ volumeMuteButton.addEventListener('click', function (e) {
 })
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -699,9 +714,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 /* harmony import */ var _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
 /* harmony import */ var _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
-/* harmony import */ var _components_slider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
-/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(11);
-/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(12);
+/* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
+/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
+/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
 
 
 
@@ -738,11 +753,16 @@ _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCity.addEvent
 window.addEventListener('beforeunload', _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__.setCity)
 
 window.addEventListener('load', _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__.getCity)
+;
+
+(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBg)()
+
+_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonPrev.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'))
+_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNext.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'))
 
 
 
 ;
-
 
 
 

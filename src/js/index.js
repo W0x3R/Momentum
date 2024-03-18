@@ -34,10 +34,15 @@ weatherCity.addEventListener('change', () => {
 window.addEventListener('beforeunload', setCity)
 
 window.addEventListener('load', getCity)
+import { changeBg } from './components/slider/changeBackground'
+import { sliderButtonPrev, sliderButtonNext, showBgOnClick } from './components/slider/changeBackground'
+changeBg()
+
+sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
+sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
 
 
-import * as slider from './components/slider'
 import * as quotes from './components/quotes'
 import * as player from './components/player'
 import * as language from './components/changeLanguage'
