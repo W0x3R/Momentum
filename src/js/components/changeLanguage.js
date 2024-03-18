@@ -3,11 +3,7 @@ import { getWeather } from "./weather/getWeather";
 import { showGreetingText } from "./greeting/greetingMessage";
 import { setPlaceHolder } from "./greeting/greetingPlaceholder";
 import { showDate } from "./date/date";
-
-let getQuotes;
-import("./quotes").then(module => {
-	getQuotes = module.getQuotes;
-});
+import { getQuotes } from "./quotes/getQuote";
 
 const selectWrapper = document.querySelector('.language')
 const select = document.querySelector('.language__select')

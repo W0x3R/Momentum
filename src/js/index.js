@@ -42,7 +42,9 @@ sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
 sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 
 
+import { getQuotes } from './components/quotes/getQuote'
+getQuotes()
 
-import * as quotes from './components/quotes'
+
 import * as player from './components/player'
 import * as language from './components/changeLanguage'

@@ -58,16 +58,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var _greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 /* harmony import */ var _date_date__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
+/* harmony import */ var _quotes_getQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9);
 
 
 
 
 
 
-let getQuotes;
-Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 13)).then(module => {
-	getQuotes = module.getQuotes;
-});
 
 const selectWrapper = document.querySelector('.language')
 const select = document.querySelector('.language__select')
@@ -110,7 +107,7 @@ select.addEventListener('change', () => {
 	;(0,_date_date__WEBPACK_IMPORTED_MODULE_3__.showDate)()
 	;(0,_greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)()
 	;(0,_greeting_greetingPlaceholder__WEBPACK_IMPORTED_MODULE_2__.setPlaceHolder)()
-	getQuotes()
+	;(0,_quotes_getQuote__WEBPACK_IMPORTED_MODULE_4__.getQuotes)()
 })
 
 window.addEventListener('click', function (e) {
@@ -285,6 +282,87 @@ const getGreetingName = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
+/* harmony export */ });
+/* harmony import */ var _getQuouteLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(10);
+/* harmony import */ var _showQuote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+
+
+
+const changeQuoteButton = document.querySelector('.quotes__change-btn')
+
+async function getQuotes() {
+	try {
+		const fetchRequest = await fetch((0,_getQuouteLanguage__WEBPACK_IMPORTED_MODULE_0__.getQuoteLanguage)())
+		const data = await fetchRequest.json()
+		;(0,_showQuote__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data)
+		changeQuoteButton.addEventListener('click', () => (0,_showQuote__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data))
+	}
+	catch {
+		console.error('Error fetching quotes:', error);
+	}
+
+}
+
+
+
+
+/***/ }),
+/* 10 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getQuoteLanguage: function() { return /* binding */ getQuoteLanguage; }
+/* harmony export */ });
+/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+
+
+const getQuoteLanguage = () => {
+	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
+}
+
+/***/ }),
+/* 11 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   showQuote: function() { return /* binding */ showQuote; }
+/* harmony export */ });
+/* harmony import */ var _slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+
+
+const quote = document.querySelector('.quotes__text')
+const author = document.querySelector('.quotes__author')
+
+function showQuote(data) {
+	const randomNumber = (0,_slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__.getRandomNumber)(0, data.length - 1)
+	quote.textContent = data[randomNumber].quote
+	author.textContent = data[randomNumber].author
+}
+
+/***/ }),
+/* 12 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
+/* harmony export */ });
+const getRandomNumber = (min, max) => {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getCity: function() { return /* binding */ getCity; },
 /* harmony export */   setCity: function() { return /* binding */ setCity; }
 /* harmony export */ });
@@ -305,7 +383,7 @@ const getCity = () => {
 }
 
 /***/ }),
-/* 10 */
+/* 14 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -317,8 +395,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _greeting_greetingMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 /* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _getRandomNumber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var _getTimeOfDay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
+/* harmony import */ var _getRandomNumber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _getTimeOfDay__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(15);
 
 
 
@@ -351,21 +429,7 @@ const showBgOnClick = (direction) => {
 
 
 /***/ }),
-/* 11 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
-/* harmony export */ });
-const getRandomNumber = (min, max) => {
-	min = Math.ceil(min);
-	max = Math.floor(max);
-	return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-/***/ }),
-/* 12 */
+/* 15 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -384,58 +448,11 @@ const translateGreeting = (greetingText) => {
 };
 
 /***/ }),
-/* 13 */
+/* 16 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
-/* harmony export */ });
-/* harmony import */ var _slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
-/* harmony import */ var _changeLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-
-
-
-const changeQuoteButton = document.querySelector('.quotes__change-btn')
-const quote = document.querySelector('.quotes__text')
-const author = document.querySelector('.quotes__author')
-
-function showQuote(data) {
-	const randomNumber = (0,_slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__.getRandomNumber)(0, data.length - 1)
-	quote.textContent = data[randomNumber].quote
-	author.textContent = data[randomNumber].author
-}
-
-const getQuoteName = () => {
-	const currentLang = (0,_changeLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)()
-	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
-}
-
-async function getQuotes() {
-	try {
-		const fetchRequest = await fetch(getQuoteName())
-		const data = await fetchRequest.json()
-		showQuote(data)
-		changeQuoteButton.addEventListener('click', () => showQuote(data))
-	}
-	catch {
-		console.error('Error fetching quotes:', error);
-	}
-
-}
-getQuotes()
-
-
-
-
-
-
-/***/ }),
-/* 14 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
 
 
 const trackName = document.querySelector('.player__track-name')
@@ -611,7 +628,7 @@ volumeMuteButton.addEventListener('click', function (e) {
 })
 
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -713,10 +730,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_greetingName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(8);
 /* harmony import */ var _components_changeLanguage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3);
 /* harmony import */ var _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
-/* harmony import */ var _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9);
-/* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(10);
-/* harmony import */ var _components_quotes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(13);
-/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(14);
+/* harmony import */ var _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
+/* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(14);
+/* harmony import */ var _components_quotes_getQuote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9);
+/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16);
 
 
 
@@ -761,9 +778,11 @@ _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonPre
 _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNext.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'))
 
 
+;
+(0,_components_quotes_getQuote__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
+
 
 ;
-
 
 
 }();
