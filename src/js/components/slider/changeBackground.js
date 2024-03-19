@@ -1,5 +1,5 @@
 import { showGreetingText } from "../greeting/greetingMessage"
-import { getCurrentLang } from "../changeLanguage"
+import { getCurrentLang } from "../language.js/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./getTimeOfDay"
 

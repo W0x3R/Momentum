@@ -1,6 +1,6 @@
-import { getCurrentLang } from "../changeLanguage"
+import { getCurrentLang } from "../language.js/localStorageLanguage"
 import { updateUI, handleErrors } from "./updateWeather"
-import { setSelectedValue } from "../changeLanguage"
+import { setSelectedValue } from "../language.js/setSelectedValue"
 
 export const weatherCity = document.querySelector('.weather__input')
 

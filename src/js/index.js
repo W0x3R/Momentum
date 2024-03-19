@@ -12,7 +12,7 @@ showTime()
 import { showGreetingText } from './components/greeting/greetingMessage'
 import { setPlaceHolder } from './components/greeting/greetingPlaceholder'
 import { getGreetingName, setGreetingName } from './components/greeting/greetingName'
-import { setCurrentLang } from './components/changeLanguage'
+import { setCurrentLang } from './components/language.js/localStorageLanguage.js'
 showGreetingText()
 setPlaceHolder()
 
@@ -65,6 +65,19 @@ progressBar.addEventListener('click', function (e) {
 audio.addEventListener('timeupdate', function (e) {
 	updateTime()
 	updateProgressBar(e)
+})
+
+import { select } from './components/language.js/transformIcon.js'
+import { setSelectedValue } from './components/language.js/setSelectedValue.js'
+
+select.addEventListener('change', () => {
+	setCurrentLang()
+	getWeather()
+	setSelectedValue()
+	showDate()
+	showGreetingText()
+	setPlaceHolder()
+	getQuotes()
 })
 
 
