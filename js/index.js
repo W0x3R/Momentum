@@ -937,7 +937,7 @@ _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.playList.addEven
 });
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addEventListener('input', function () {
-	checkInputChangeVolume()
+	(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkInputChangeVolume)()
 })
 
 _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.volumeMuteButton.addEventListener('click', function (e) {

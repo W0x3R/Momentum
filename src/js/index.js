@@ -15,7 +15,7 @@ import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './comp
 import { progressBar, updateProgressBar } from './components/player/updateProgressBar.js'
 import { select, selectWrapper, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { setSelectedValue } from './components/language/setSelectedValue.js'
-import { volumeMuteButton, checkIsMute, setButtonValueContentLoaded } from './components/player/volume.js'
+import { volumeMuteButton, checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 
 const playButtonPrev = document.querySelector('.player__controls-prev')
 const playButtonNext = document.querySelector('.player__controls-next')
