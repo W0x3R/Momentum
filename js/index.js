@@ -452,27 +452,13 @@ const translateGreeting = (greetingText) => {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createPlayList: function() { return /* binding */ createPlayList; }
+/* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18);
 
 
-const trackName = document.querySelector('.player__track-name')
-const playList = document.querySelector('.player__list')
-const audio = document.querySelector('.player__audio')
-let songCurrentTime = document.querySelector('.player__current-time')
-let songDurationTime = document.querySelector('.player__duration')
-let progressBar = document.querySelector('.player__progress')
-const playButton = document.querySelector('.player__controls-play')
-const playButtonPrev = document.querySelector('.player__controls-prev')
-const playButtonNext = document.querySelector('.player__controls-next')
-const playButtonIcon = document.querySelector('.player__controls-play-icon use')
-const volumeButton = document.querySelector('.player__sounds-volume')
-const volumeMuteButton = document.querySelector('.player__sounds-mute')
-const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
-let seconds;
-let minutes;
-let isPlay = false;
-let isMute = false;
-let count = 0;
 
 const createPlayList = () => {
 	_playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].forEach((e, i) => {
@@ -480,174 +466,11 @@ const createPlayList = () => {
 		li.classList.add('player__list-item')
 		li.textContent = e.title
 		li.setAttribute('datanumber', i)
-		playList.append(li)
+		_switchSong__WEBPACK_IMPORTED_MODULE_1__.playList.append(li)
 	})
 }
 
-createPlayList()
 
-const updateTime = () => {
-	songCurrentTime.textContent = getTimeCodeFromNum(audio.currentTime)
-	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count].duration
-}
-
-const loadSong = () => {
-	const currentSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][count]
-	audio.src = currentSong.src
-	trackName.textContent = currentSong.title
-	updateTime()
-}
-
-loadSong()
-
-const playSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.add('player__list-item_active')
-	trackName.classList.add('player__track-name_active')
-
-	audio.play()
-	playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
-	playButton.classList.add('player__controls-play_active')
-	isPlay = true
-}
-
-const pauseSong = () => {
-	audio.pause()
-	playButtonIcon.setAttribute('href', './images/svg/play.svg#play')
-	playButton.classList.remove('player__controls-play_active')
-	isPlay = false
-}
-
-const checkFlagSong = () => {
-	if (isPlay) {
-		pauseSong()
-	}
-	else {
-		playSong()
-	}
-}
-
-playButton.addEventListener('click', checkFlagSong)
-
-function getTimeCodeFromNum(num) {
-	seconds = parseInt(num);
-	minutes = parseInt(seconds / 60);
-	seconds -= minutes * 60;
-	return `${minutes}:${String(seconds).padStart(2, 0)}`;
-}
-
-
-
-const updateProgressBar = (e) => {
-	const { duration, currentTime } = e.srcElement
-	if (duration) {
-		progressBar.max = duration;
-		progressBar.value = currentTime
-	}
-}
-
-progressBar.addEventListener('click', function (e) {
-	let x = e.pageX - progressBar.getBoundingClientRect().left
-	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
-	audio.currentTime = (audio.duration * clickedValue) / progressBar.max;
-});
-
-audio.addEventListener('timeupdate', function (e) {
-	updateTime()
-	updateProgressBar(e)
-})
-
-const nextSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
-	count++
-	if (count > _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
-		count = 0;
-	}
-	loadSong()
-	playSong()
-}
-
-audio.addEventListener('ended', function () {
-	nextSong()
-})
-
-playButtonNext.addEventListener('click', nextSong)
-
-const prevSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
-	count--
-	if (count < 0) {
-		count = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1
-	}
-	loadSong()
-	playSong()
-}
-
-playButtonPrev.addEventListener('click', prevSong)
-
-document.addEventListener('DOMContentLoaded', function (e) {
-	if (!sessionStorage.getItem('volumeValue')) {
-		sessionStorage.setItem('volumeValue', volumeButton.value)
-	}
-	audio.volume = sessionStorage.getItem('volumeValue')
-	volumeButton.value = sessionStorage.getItem('volumeValue')
-	if (audio.volume === 0) {
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
-		isMute = true;
-	}
-	else {
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
-		isMute = false;
-	}
-	playList.addEventListener('click', function (e) {
-		const dataNumber = parseInt(e.target.getAttribute('datanumber'));
-		if (!isNaN(dataNumber)) {
-			if (count !== dataNumber) {
-				let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
-				count = dataNumber;
-				loadSong();
-				playSong();
-			} else {
-				if (isPlay) {
-					pauseSong();
-				} else {
-					playSong();
-				}
-			}
-		}
-	});
-});
-
-volumeButton.addEventListener('input', function (e) {
-	audio.volume = this.value
-	sessionStorage.setItem('volumeValue', volumeButton.value)
-	if (audio.volume === 0) {
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
-		volumeMuteButton.setAttribute('disabled', true)
-		isMute = true;
-	}
-	else {
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
-
-		volumeMuteButton.removeAttribute('disabled')
-		isMute = false;
-	}
-})
-
-volumeMuteButton.addEventListener('click', function (e) {
-	if (isMute) {
-		audio.volume = sessionStorage.getItem('volumeValue')
-		volumeButton.value = sessionStorage.getItem('volumeValue')
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
-		isMute = false
-	}
-	else {
-		audio.volume = 0;
-		volumeButton.value = 0;
-		volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
-
-		isMute = true;
-	}
-})
 
 /***/ }),
 /* 17 */
@@ -683,6 +506,253 @@ const playList = [
 ];
 /* harmony default export */ __webpack_exports__["default"] = (playList);
 
+
+/***/ }),
+/* 18 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   audio: function() { return /* binding */ audio; },
+/* harmony export */   count: function() { return /* binding */ count; },
+/* harmony export */   playList: function() { return /* binding */ playList; },
+/* harmony export */   trackName: function() { return /* binding */ trackName; },
+/* harmony export */   volumeButton: function() { return /* binding */ volumeButton; },
+/* harmony export */   volumeMuteButtonIcon: function() { return /* binding */ volumeMuteButtonIcon; }
+/* harmony export */ });
+/* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
+/* harmony import */ var _updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
+/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(20);
+
+
+
+
+const trackName = document.querySelector('.player__track-name')
+const playList = document.querySelector('.player__list')
+const audio = document.querySelector('.player__audio')
+const playButtonPrev = document.querySelector('.player__controls-prev')
+const playButtonNext = document.querySelector('.player__controls-next')
+const volumeButton = document.querySelector('.player__sounds-volume')
+
+const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
+
+
+let count = 0;
+
+const nextSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	count++
+	if (count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
+		count = 0;
+	}
+	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
+	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
+}
+
+audio.addEventListener('ended', function () {
+	nextSong()
+})
+
+playButtonNext.addEventListener('click', nextSong)
+
+const prevSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	count--
+	if (count < 0) {
+		count = _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1
+	}
+	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
+	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
+}
+
+playButtonPrev.addEventListener('click', prevSong)
+
+
+playList.addEventListener('click', function (e) {
+	const dataNumber = parseInt(e.target.getAttribute('datanumber'));
+	if (!isNaN(dataNumber)) {
+		if (count !== dataNumber) {
+			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
+			count = dataNumber;
+			(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)();
+			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
+		} else {
+			if (_playSong_js__WEBPACK_IMPORTED_MODULE_2__.isPlay) {
+				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.pauseSong)();
+			} else {
+				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
+			}
+		}
+	}
+});
+
+/***/ }),
+/* 19 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   loadSong: function() { return /* binding */ loadSong; },
+/* harmony export */   updateTime: function() { return /* binding */ updateTime; }
+/* harmony export */ });
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(18);
+
+
+
+let seconds;
+let minutes;
+let songCurrentTime = document.querySelector('.player__current-time')
+let songDurationTime = document.querySelector('.player__duration')
+
+function getTimeCodeFromNum(num) {
+	seconds = parseInt(num);
+	minutes = parseInt(seconds / 60);
+	seconds -= minutes * 60;
+	return `${minutes}:${String(seconds).padStart(2, 0)}`;
+}
+
+const updateTime = () => {
+	songCurrentTime.textContent = getTimeCodeFromNum(_switchSong__WEBPACK_IMPORTED_MODULE_1__.audio.currentTime)
+	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_switchSong__WEBPACK_IMPORTED_MODULE_1__.count].duration
+}
+
+const loadSong = () => {
+	const currentSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_switchSong__WEBPACK_IMPORTED_MODULE_1__.count]
+	_switchSong__WEBPACK_IMPORTED_MODULE_1__.audio.src = currentSong.src
+	_switchSong__WEBPACK_IMPORTED_MODULE_1__.trackName.textContent = currentSong.title
+	updateTime()
+}
+
+
+
+/***/ }),
+/* 20 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkFlagSong: function() { return /* binding */ checkFlagSong; },
+/* harmony export */   isPlay: function() { return /* binding */ isPlay; },
+/* harmony export */   pauseSong: function() { return /* binding */ pauseSong; },
+/* harmony export */   playButton: function() { return /* binding */ playButton; },
+/* harmony export */   playSong: function() { return /* binding */ playSong; }
+/* harmony export */ });
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+
+
+let isPlay = false;
+const playButton = document.querySelector('.player__controls-play')
+const playButtonIcon = document.querySelector('.player__controls-play-icon use')
+
+const playSong = () => {
+	let li = document.querySelectorAll('li')[_switchSong__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.trackName.classList.add('player__track-name_active')
+
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.play()
+	playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
+	playButton.classList.add('player__controls-play_active')
+	isPlay = true
+}
+
+const pauseSong = () => {
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.pause()
+	playButtonIcon.setAttribute('href', './images/svg/play.svg#play')
+	playButton.classList.remove('player__controls-play_active')
+	isPlay = false
+}
+
+const checkFlagSong = () => {
+	if (isPlay) {
+		pauseSong()
+	}
+	else {
+		playSong()
+	}
+}
+
+
+
+/***/ }),
+/* 21 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   progressBar: function() { return /* binding */ progressBar; },
+/* harmony export */   updateProgressBar: function() { return /* binding */ updateProgressBar; }
+/* harmony export */ });
+const progressBar = document.querySelector('.player__progress')
+
+const updateProgressBar = (e) => {
+	const { duration, currentTime } = e.srcElement
+	if (duration) {
+		progressBar.max = duration;
+		progressBar.value = currentTime
+	}
+}
+
+
+
+/***/ }),
+/* 22 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+
+
+const volumeMuteButton = document.querySelector('.player__sounds-mute')
+let isMute = false;
+
+_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.addEventListener('input', function (e) {
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = this.value
+	sessionStorage.setItem('volumeValue', _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value)
+	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		volumeMuteButton.setAttribute('disabled', true)
+		isMute = true;
+	}
+	else {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+
+		volumeMuteButton.removeAttribute('disabled')
+		isMute = false;
+	}
+})
+
+volumeMuteButton.addEventListener('click', function (e) {
+	if (isMute) {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = sessionStorage.getItem('volumeValue')
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = sessionStorage.getItem('volumeValue')
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		isMute = false
+	}
+	else {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = 0;
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = 0;
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+
+		isMute = true;
+	}
+})
+
+document.addEventListener('DOMContentLoaded', function (e) {
+	if (!sessionStorage.getItem('volumeValue')) {
+		sessionStorage.setItem('volumeValue', _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value)
+	}
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = sessionStorage.getItem('volumeValue')
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = sessionStorage.getItem('volumeValue')
+	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		isMute = true;
+	}
+	else {
+		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		isMute = false;
+	}
+
+});
 
 /***/ })
 /******/ 	]);
@@ -755,7 +825,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_weather_weatherCity__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
 /* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(14);
 /* harmony import */ var _components_quotes_getQuote__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9);
-/* harmony import */ var _components_player__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16);
+/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16);
+/* harmony import */ var _components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(19);
+/* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(20);
+/* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(18);
+/* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(21);
+/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(22);
 
 
 
@@ -803,8 +878,31 @@ _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNex
 ;
 (0,_components_quotes_getQuote__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 
+;
+(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.createPlayList)()
 
 ;
+(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
+;
+_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.playButton.addEventListener('click', _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong)
+;
+
+
+
+_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.addEventListener('click', function (e) {
+	let x = e.pageX - _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.getBoundingClientRect().left
+	let clickedValue = (x * _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.max) / _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.clientWidth;
+	_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.currentTime = (_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.duration * clickedValue) / _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.max;
+});
+
+_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('timeupdate', function (e) {
+	(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.updateTime)()
+	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.updateProgressBar)(e)
+})
+
+
+;
+
 
 
 }();

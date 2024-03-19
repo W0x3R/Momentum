@@ -45,6 +45,29 @@ sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
 import { getQuotes } from './components/quotes/getQuote'
 getQuotes()
 
+import { createPlayList } from './components/player/createPlayList'
+createPlayList()
 
-import * as player from './components/player'
-import * as language from './components/changeLanguage'
+import { loadSong } from './components/player/updateLoadSong.js'
+loadSong()
+import { playButton, checkFlagSong } from './components/player/playSong.js'
+playButton.addEventListener('click', checkFlagSong)
+import { audio } from './components/player/switchSong.js'
+import { progressBar } from './components/player/updateProgressBar.js'
+import { updateProgressBar } from './components/player/updateProgressBar.js'
+import { updateTime } from './components/player/updateLoadSong.js'
+progressBar.addEventListener('click', function (e) {
+	let x = e.pageX - progressBar.getBoundingClientRect().left
+	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
+	audio.currentTime = (audio.duration * clickedValue) / progressBar.max;
+});
+
+audio.addEventListener('timeupdate', function (e) {
+	updateTime()
+	updateProgressBar(e)
+})
+
+
+import './components/player/volume.js'
+import './components/player/switchSong.js'
+
