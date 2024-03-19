@@ -1,8 +1,8 @@
 import { getCurrentLang } from "../language.js/localStorageLanguage"
-import { updateUI, handleErrors } from "./updateWeather"
 import { setSelectedValue } from "../language.js/setSelectedValue"
+import { updateUI, handleErrors } from "./updateWeather"
 
-export const weatherCity = document.querySelector('.weather__input')
+export const weatherCityInput = document.querySelector('.weather__input')
 
 export async function getWeather() {
 	try {
@@ -11,7 +11,7 @@ export async function getWeather() {
 			localStorage.setItem('language', 'en')
 		}
 		setSelectedValue()
-		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCity.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
+		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityInput.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
 		updateUI(data, currentLang);

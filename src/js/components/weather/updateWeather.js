@@ -32,7 +32,6 @@ export const updateUI = (data, currentLang) => {
 	weatherError.textContent = '';
 };
 
-
 export const handleErrors = () => {
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';

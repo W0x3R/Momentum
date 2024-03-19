@@ -22,11 +22,6 @@ export const pauseSong = () => {
 }
 
 export const checkFlagSong = () => {
-	if (isPlay) {
-		pauseSong()
-	}
-	else {
-		playSong()
-	}
+	isPlay ? pauseSong() : playSong()
 }
 

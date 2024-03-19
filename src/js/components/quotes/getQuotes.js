@@ -1,5 +1,5 @@
-import { getQuoteLanguage } from "./getQuouteLanguage"
-import { showQuote } from "./showQuote"
+import { getQuoteLanguage } from "./getQuoutesLanguage"
+import { showQuote } from "./showQuotes"
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')
 

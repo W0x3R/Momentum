@@ -1,5 +1,6 @@
-const selectWrapper = document.querySelector('.language')
+export const selectWrapper = document.querySelector('.language')
 export const select = document.querySelector('.language__select')
+
 
 selectWrapper.addEventListener('click', function (e) {
 	this.classList.toggle('language__select_open')
