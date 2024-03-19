@@ -1,4 +1,4 @@
-import { getCurrentLang } from "../language.js/localStorageLanguage"
+import { getCurrentLang } from "../language/localStorageLanguage"
 
 export const getQuoteLanguage = () => {
 	const currentLang = getCurrentLang()

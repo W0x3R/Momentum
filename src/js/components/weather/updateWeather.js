@@ -1,4 +1,4 @@
-import { getCurrentLang } from "../language.js/localStorageLanguage"
+import { getCurrentLang } from "../language/localStorageLanguage"
 
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherWind = document.querySelector('.weather__wind')

@@ -1,4 +1,4 @@
-import { setCurrentLang } from './components/language.js/localStorageLanguage.js'
+import { setCurrentLang } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
@@ -14,8 +14,9 @@ import { playButton, checkFlagSong } from './components/player/playSong.js'
 import { audio } from './components/player/switchSong.js'
 import { progressBar, updateProgressBar } from './components/player/updateProgressBar.js'
 import { updateTime } from './components/player/updateLoadSong.js'
-import { select, selectWrapper } from './components/language.js/transformIcon.js'
-import { setSelectedValue } from './components/language.js/setSelectedValue.js'
+import { select, selectWrapper } from './components/language/transformIcon.js'
+import { setSelectedValue } from './components/language/setSelectedValue.js'
+import { rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 
 
 setInterval(() => {
@@ -71,6 +72,15 @@ select.addEventListener('change', () => {
 	setPlaceHolderLanguage()
 	getQuotes()
 })
+
+selectWrapper.addEventListener('click', function () {
+	rotateLanguageIcon()
+})
+
+window.addEventListener('click', function (e) {
+	closeLanguageIcon(e)
+})
+
 
 import './components/player/volume.js'
 import './components/player/switchSong.js'

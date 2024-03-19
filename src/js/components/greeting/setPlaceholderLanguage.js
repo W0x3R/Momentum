@@ -1,4 +1,4 @@
-import { getCurrentLang } from "../language.js/localStorageLanguage"
+import { getCurrentLang } from "../language/localStorageLanguage"
 import { greetingName } from "./localStorageGreeting"
 
 const greetingPlaceHolder = {
