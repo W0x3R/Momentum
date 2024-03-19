@@ -1,5 +1,6 @@
 import playListSongs from "../../../../playListSongs"
-import { playList } from "./switchSong"
+
+export const playList = document.querySelector('.player__list')
 
 export const createPlayList = () => {
 	playListSongs.forEach((e, i) => {
@@ -10,4 +11,3 @@ export const createPlayList = () => {
 		playList.append(li)
 	})
 }
-

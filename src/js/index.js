@@ -8,7 +8,7 @@ import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
 import { changeBg, sliderButtonPrev, sliderButtonNext, showBgOnClick } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
-import { createPlayList } from './components/player/createPlayList'
+import { createPlayList, playList } from './components/player/createPlayList'
 import { loadSong } from './components/player/updateLoadSong.js'
 import { playButton, checkFlagSong } from './components/player/playSong.js'
 import { audio } from './components/player/switchSong.js'
@@ -17,7 +17,15 @@ import { updateTime } from './components/player/updateLoadSong.js'
 import { select, selectWrapper } from './components/language/transformIcon.js'
 import { setSelectedValue } from './components/language/setSelectedValue.js'
 import { rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
+import { nextSong, prevSong, playClickedSong } from './components/player/switchSong.js'
+import { checkInputChangeVolume } from './components/player/volume.js'
+import { volumeButton } from './components/player/switchSong.js'
+import { volumeMuteButton } from './components/player/volume.js'
+import { checkIsMute } from './components/player/volume.js'
+import { setButtonValueContentLoaded } from './components/player/volume.js'
 
+const playButtonPrev = document.querySelector('.player__controls-prev')
+const playButtonNext = document.querySelector('.player__controls-next')
 
 setInterval(() => {
 	showTime()
@@ -81,7 +89,24 @@ window.addEventListener('click', function (e) {
 	closeLanguageIcon(e)
 })
 
+audio.addEventListener('ended', function () {
+	nextSong()
+})
+playButtonNext.addEventListener('click', nextSong)
+playButtonPrev.addEventListener('click', prevSong)
 
-import './components/player/volume.js'
-import './components/player/switchSong.js'
+playList.addEventListener('click', function (e) {
+	playClickedSong(e)
+});
 
+volumeButton.addEventListener('input', function () {
+	checkInputChangeVolume()
+})
+
+volumeMuteButton.addEventListener('click', function (e) {
+	checkIsMute()
+})
+
+document.addEventListener('DOMContentLoaded', function (e) {
+	setButtonValueContentLoaded()
+});

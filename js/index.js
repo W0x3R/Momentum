@@ -454,12 +454,13 @@ function showQuote(data) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   createPlayList: function() { return /* binding */ createPlayList; }
+/* harmony export */   createPlayList: function() { return /* binding */ createPlayList; },
+/* harmony export */   playList: function() { return /* binding */ playList; }
 /* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
 
 
+const playList = document.querySelector('.player__list')
 
 const createPlayList = () => {
 	_playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"].forEach((e, i) => {
@@ -467,11 +468,9 @@ const createPlayList = () => {
 		li.classList.add('player__list-item')
 		li.textContent = e.title
 		li.setAttribute('datanumber', i)
-		_switchSong__WEBPACK_IMPORTED_MODULE_1__.playList.append(li)
+		playList.append(li)
 	})
 }
-
-
 
 /***/ }),
 /* 19 */
@@ -514,90 +513,11 @@ const playList = [
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   audio: function() { return /* binding */ audio; },
-/* harmony export */   count: function() { return /* binding */ count; },
-/* harmony export */   playList: function() { return /* binding */ playList; },
-/* harmony export */   trackName: function() { return /* binding */ trackName; },
-/* harmony export */   volumeButton: function() { return /* binding */ volumeButton; },
-/* harmony export */   volumeMuteButtonIcon: function() { return /* binding */ volumeMuteButtonIcon; }
-/* harmony export */ });
-/* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
-/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
-
-
-
-
-const trackName = document.querySelector('.player__track-name')
-const playList = document.querySelector('.player__list')
-const audio = document.querySelector('.player__audio')
-const playButtonPrev = document.querySelector('.player__controls-prev')
-const playButtonNext = document.querySelector('.player__controls-next')
-const volumeButton = document.querySelector('.player__sounds-volume')
-
-const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
-
-
-let count = 0;
-
-const nextSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
-	count++
-	if (count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
-		count = 0;
-	}
-	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
-	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
-}
-
-audio.addEventListener('ended', function () {
-	nextSong()
-})
-
-playButtonNext.addEventListener('click', nextSong)
-
-const prevSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
-	count--
-	if (count < 0) {
-		count = _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1
-	}
-	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
-	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
-}
-
-playButtonPrev.addEventListener('click', prevSong)
-
-
-playList.addEventListener('click', function (e) {
-	const dataNumber = parseInt(e.target.getAttribute('datanumber'));
-	if (!isNaN(dataNumber)) {
-		if (count !== dataNumber) {
-			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
-			count = dataNumber;
-			(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)();
-			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
-		} else {
-			if (_playSong_js__WEBPACK_IMPORTED_MODULE_2__.isPlay) {
-				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.pauseSong)();
-			} else {
-				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
-			}
-		}
-	}
-});
-
-/***/ }),
-/* 21 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   loadSong: function() { return /* binding */ loadSong; },
 /* harmony export */   updateTime: function() { return /* binding */ updateTime; }
 /* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
 
 
 
@@ -628,6 +548,75 @@ const loadSong = () => {
 
 
 /***/ }),
+/* 21 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   audio: function() { return /* binding */ audio; },
+/* harmony export */   count: function() { return /* binding */ count; },
+/* harmony export */   nextSong: function() { return /* binding */ nextSong; },
+/* harmony export */   playClickedSong: function() { return /* binding */ playClickedSong; },
+/* harmony export */   prevSong: function() { return /* binding */ prevSong; },
+/* harmony export */   trackName: function() { return /* binding */ trackName; },
+/* harmony export */   volumeButton: function() { return /* binding */ volumeButton; },
+/* harmony export */   volumeMuteButtonIcon: function() { return /* binding */ volumeMuteButtonIcon; }
+/* harmony export */ });
+/* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
+/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
+
+
+
+
+const trackName = document.querySelector('.player__track-name')
+const audio = document.querySelector('.player__audio')
+const volumeButton = document.querySelector('.player__sounds-volume')
+const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
+
+let count = 0;
+
+const nextSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	count++
+	if (count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
+		count = 0;
+	}
+	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
+	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
+}
+
+const prevSong = () => {
+	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	count--
+	if (count < 0) {
+		count = _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1
+	}
+	(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)()
+	;(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)()
+}
+
+const playClickedSong = (e) => {
+	const dataNumber = parseInt(e.target.getAttribute('datanumber'));
+	if (!isNaN(dataNumber)) {
+		if (count !== dataNumber) {
+			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
+			count = dataNumber;
+			(0,_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)();
+			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
+		} else {
+			if (_playSong_js__WEBPACK_IMPORTED_MODULE_2__.isPlay) {
+				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.pauseSong)();
+			} else {
+				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
+			}
+		}
+	}
+}
+
+
+
+/***/ }),
 /* 22 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -639,7 +628,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   playButton: function() { return /* binding */ playButton; },
 /* harmony export */   playSong: function() { return /* binding */ playSong; }
 /* harmony export */ });
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
 
 
 let isPlay = false;
@@ -695,60 +684,85 @@ const updateProgressBar = (e) => {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkInputChangeVolume: function() { return /* binding */ checkInputChangeVolume; },
+/* harmony export */   checkIsMute: function() { return /* binding */ checkIsMute; },
+/* harmony export */   setButtonValueContentLoaded: function() { return /* binding */ setButtonValueContentLoaded; },
+/* harmony export */   volumeMuteButton: function() { return /* binding */ volumeMuteButton; }
+/* harmony export */ });
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var _sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25);
+
 
 
 const volumeMuteButton = document.querySelector('.player__sounds-mute')
 let isMute = false;
 
-_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.addEventListener('input', function (e) {
-	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = this.value
-	sessionStorage.setItem('volumeValue', _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value)
+const setMuteButtonHref = (iconName) => {
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', `./images/svg/${iconName}`)
+}
+
+const checkInputChangeVolume = () => {
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value
+	;(0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setVolumeButtonValue)()
 	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		setMuteButtonHref('noVolume.svg#mute')
 		volumeMuteButton.setAttribute('disabled', true)
 		isMute = true;
 	}
 	else {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
-
+		setMuteButtonHref('volume.svg#volume-on')
 		volumeMuteButton.removeAttribute('disabled')
 		isMute = false;
 	}
-})
+}
 
-volumeMuteButton.addEventListener('click', function (e) {
-	if (isMute) {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = sessionStorage.getItem('volumeValue')
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = sessionStorage.getItem('volumeValue')
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
-		isMute = false
-	}
-	else {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = 0;
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = 0;
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+const setVolumeButtonIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = volumeButtonValue
+	;(0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)(iconName)
+	isMute = isMuteValue
+}
 
-		isMute = true;
-	}
-})
+const checkIsMute = () => {
+	isMute ? setVolumeButtonIcon((0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)(), (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)(), setMuteButtonHref('volume.svg#volume-on'), false) : setVolumeButtonIcon(0, 0, setMuteButtonHref('noVolume.svg#mute'), true)
+}
 
-document.addEventListener('DOMContentLoaded', function (e) {
-	if (!sessionStorage.getItem('volumeValue')) {
-		sessionStorage.setItem('volumeValue', _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value)
+const setButtonValueContentLoaded = () => {
+	if (!(0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)()) {
+		(0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setVolumeButtonValue)()
 	}
-	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = sessionStorage.getItem('volumeValue')
-	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = sessionStorage.getItem('volumeValue')
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)()
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value = (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getVolumeButtonValue)()
 	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/noVolume.svg#mute')
+		setMuteButtonHref('noVolume.svg#mute')
 		isMute = true;
 	}
 	else {
-		_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeMuteButtonIcon.setAttribute('href', './images/svg/volume.svg#volume-on')
+		setMuteButtonHref('volume.svg#volume-on')
 		isMute = false;
 	}
+}
 
-});
+/***/ }),
+/* 25 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getVolumeButtonValue: function() { return /* binding */ getVolumeButtonValue; },
+/* harmony export */   setVolumeButtonValue: function() { return /* binding */ setVolumeButtonValue; }
+/* harmony export */ });
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+
+
+const setVolumeButtonValue = () => {
+	sessionStorage.setItem('volumeValue', _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeButton.value)
+}
+
+const getVolumeButtonValue = () => {
+	return sessionStorage.getItem('volumeValue')
+}
 
 /***/ })
 /******/ 	]);
@@ -822,9 +836,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 /* harmony import */ var _components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(15);
 /* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(18);
-/* harmony import */ var _components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(21);
+/* harmony import */ var _components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(20);
 /* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(22);
-/* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(20);
+/* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
 /* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23);
 /* harmony import */ var _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
 /* harmony import */ var _components_language_setSelectedValue_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(9);
@@ -850,8 +864,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+const playButtonPrev = document.querySelector('.player__controls-prev')
+const playButtonNext = document.querySelector('.player__controls-next')
+
 setInterval(() => {
-	(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
+	;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 }, 1000)
 
@@ -912,11 +934,27 @@ window.addEventListener('click', function (e) {
 	;(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e)
 })
 
+_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', function () {
+	;(0,_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)()
+})
+playButtonNext.addEventListener('click', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)
+playButtonPrev.addEventListener('click', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.prevSong)
 
-;
+_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.playList.addEventListener('click', function (e) {
+	;(0,_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.playClickedSong)(e)
+});
 
+_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addEventListener('input', function () {
+	(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkInputChangeVolume)()
+})
 
+_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.volumeMuteButton.addEventListener('click', function (e) {
+	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkIsMute)()
+})
 
+document.addEventListener('DOMContentLoaded', function (e) {
+	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.setButtonValueContentLoaded)()
+});
 }();
 /******/ })()
 ;
