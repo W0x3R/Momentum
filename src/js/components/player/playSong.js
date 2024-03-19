@@ -7,7 +7,6 @@ const playButtonIcon = document.querySelector('.player__controls-play-icon use')
 export const playSong = () => {
 	let li = document.querySelectorAll('li')[count].classList.add('player__list-item_active')
 	trackName.classList.add('player__track-name_active')
-
 	audio.play()
 	playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
 	playButton.classList.add('player__controls-play_active')

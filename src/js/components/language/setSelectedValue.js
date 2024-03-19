@@ -3,7 +3,7 @@ import { select } from "./transformIcon";
 
 const selectChildrenArray = Array.from(select.children)
 
-const findItem = (lang, value) => {
+const findSelectedItem = (lang, value) => {
 	const item = selectChildrenArray.find(e => e.value === lang);
 	if (item) {
 		item.selected = value;
@@ -15,10 +15,10 @@ const findItem = (lang, value) => {
 export const setSelectedValue = () => {
 	const lang = getCurrentLang()
 	if (lang === 'en') {
-		findItem('ru', false)
-		findItem('en', true)
+		findSelectedItem('ru', false)
+		findSelectedItem('en', true)
 	} else if (lang === 'ru') {
-		findItem('en', false)
-		findItem('ru', true)
+		findSelectedItem('en', false)
+		findSelectedItem('ru', true)
 	}
 }

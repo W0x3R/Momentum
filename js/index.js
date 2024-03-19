@@ -204,7 +204,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const selectChildrenArray = Array.from(_transformIcon__WEBPACK_IMPORTED_MODULE_1__.select.children)
 
-const findItem = (lang, value) => {
+const findSelectedItem = (lang, value) => {
 	const item = selectChildrenArray.find(e => e.value === lang);
 	if (item) {
 		item.selected = value;
@@ -216,11 +216,11 @@ const findItem = (lang, value) => {
 const setSelectedValue = () => {
 	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
 	if (lang === 'en') {
-		findItem('ru', false)
-		findItem('en', true)
+		findSelectedItem('ru', false)
+		findSelectedItem('en', true)
 	} else if (lang === 'ru') {
-		findItem('en', false)
-		findItem('ru', true)
+		findSelectedItem('en', false)
+		findSelectedItem('ru', true)
 	}
 }
 
@@ -638,7 +638,6 @@ const playButtonIcon = document.querySelector('.player__controls-play-icon use')
 const playSong = () => {
 	let li = document.querySelectorAll('li')[_switchSong__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.trackName.classList.add('player__track-name_active')
-
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.play()
 	playButtonIcon.setAttribute('href', './images/svg/pause.svg#pause')
 	playButton.classList.add('player__controls-play_active')
@@ -862,13 +861,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
-
-
-
-
-
 const playButtonPrev = document.querySelector('.player__controls-prev')
 const playButtonNext = document.querySelector('.player__controls-next')
 
@@ -945,7 +937,7 @@ _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.playList.addEven
 });
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addEventListener('input', function () {
-	(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkInputChangeVolume)()
+	checkInputChangeVolume()
 })
 
 _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.volumeMuteButton.addEventListener('click', function (e) {
