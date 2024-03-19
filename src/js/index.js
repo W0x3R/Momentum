@@ -12,7 +12,7 @@ import { createPlayList, playList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
 import { playButton, checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
-import { progressBar, updateProgressBar } from './components/player/updateProgressBar.js'
+import { progressBar, updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
 import { select, selectWrapper, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { setSelectedValue } from './components/language/setSelectedValue.js'
 import { volumeMuteButton, checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
@@ -47,17 +47,6 @@ window.addEventListener('load', () => {
 
 weatherCityInput.addEventListener('change', getWeather)
 
-sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
-sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
-
-
-playButton.addEventListener('click', checkFlagSong)
-
-progressBar.addEventListener('click', function (e) {
-	let x = e.pageX - progressBar.getBoundingClientRect().left
-	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
-	audio.currentTime = (audio.duration * clickedValue) / progressBar.max;
-});
 
 audio.addEventListener('timeupdate', function (e) {
 	updateTime()
@@ -77,6 +66,16 @@ select.addEventListener('change', () => {
 selectWrapper.addEventListener('click', function () {
 	rotateLanguageIcon()
 })
+
+sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
+sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
+
+
+playButton.addEventListener('click', checkFlagSong)
+
+progressBar.addEventListener('click', function (e) {
+	checkClickOnProgressBar(e)
+});
 
 window.addEventListener('click', function (e) {
 	closeLanguageIcon(e)

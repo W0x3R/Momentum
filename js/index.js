@@ -663,9 +663,13 @@ const checkFlagSong = () => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkClickOnProgressBar: function() { return /* binding */ checkClickOnProgressBar; },
 /* harmony export */   progressBar: function() { return /* binding */ progressBar; },
 /* harmony export */   updateProgressBar: function() { return /* binding */ updateProgressBar; }
 /* harmony export */ });
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+
+
 const progressBar = document.querySelector('.player__progress')
 
 const updateProgressBar = (e) => {
@@ -676,7 +680,11 @@ const updateProgressBar = (e) => {
 	}
 }
 
-
+const checkClickOnProgressBar = (e) => {
+	let x = e.pageX - progressBar.getBoundingClientRect().left
+	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
+	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.currentTime = (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.duration * clickedValue) / progressBar.max;
+}
 
 /***/ }),
 /* 24 */
@@ -891,20 +899,9 @@ window.addEventListener('load', () => {
 
 _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCityInput.addEventListener('change', _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)
 
-_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonPrev.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'))
-_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNext.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'))
-
-
-_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.playButton.addEventListener('click', _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong)
-
-_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.addEventListener('click', function (e) {
-	let x = e.pageX - _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.getBoundingClientRect().left
-	let clickedValue = (x * _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.max) / _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.clientWidth;
-	_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.currentTime = (_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.duration * clickedValue) / _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.max;
-});
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('timeupdate', function (e) {
-	(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.updateTime)()
+	;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.updateTime)()
 	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.updateProgressBar)(e)
 })
 
@@ -922,8 +919,18 @@ _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.selectWrappe
 	;(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon)()
 })
 
+_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonPrev.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'))
+_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNext.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'))
+
+
+_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.playButton.addEventListener('click', _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong)
+
+_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.addEventListener('click', function (e) {
+	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.checkClickOnProgressBar)(e)
+});
+
 window.addEventListener('click', function (e) {
-	;(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e)
+	(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e)
 })
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', function () {
