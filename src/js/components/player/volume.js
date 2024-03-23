@@ -1,7 +1,7 @@
 import { volumeButton, volumeMuteButtonIcon, audio } from "./switchSong";
 import { setVolumeButtonValue, getVolumeButtonValue } from "./sessionStoragePlayer";
 
-export const volumeMuteButton = document.querySelector('.player__sounds-mute')
+const volumeMuteButton = document.querySelector('.player__sounds-mute')
 let isMute = false;
 
 const setMuteButtonHref = (iconName) => {

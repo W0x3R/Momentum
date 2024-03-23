@@ -4,9 +4,6 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./getTimeOfDay"
 
 const body = document.body
-export const sliderButtonPrev = document.querySelector('.main__button_prev')
-export const sliderButtonNext = document.querySelector('.main__button_next')
-
 let randomNumber = getRandomNumber(1, 20)
 
 export const changeBg = () => {

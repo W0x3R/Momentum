@@ -6,16 +6,16 @@ import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLang
 import { getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
 import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBg, sliderButtonPrev, sliderButtonNext, showBgOnClick } from './components/slider/changeBackground'
+import { changeBg, showBgOnClick } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
-import { createPlayList, playList } from './components/player/createPlayList'
+import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
-import { playButton, checkFlagSong } from './components/player/playSong.js'
+import { checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
-import { progressBar, updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
-import { select, selectWrapper, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
+import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
+import { select, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { setSelectedValue } from './components/language/setSelectedValue.js'
-import { volumeMuteButton, checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
+import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 
 setInterval(() => {
 	showTime()

@@ -1,7 +1,7 @@
 import { count, trackName, audio } from "./switchSong";
 
 export let isPlay = false;
-export const playButton = document.querySelector('.player__controls-play')
+const playButton = document.querySelector('.player__controls-play')
 const playButtonIcon = document.querySelector('.player__controls-play-icon use')
 
 export const playSong = () => {

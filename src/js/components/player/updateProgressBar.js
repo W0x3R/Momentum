@@ -1,6 +1,6 @@
 import { audio } from "./switchSong";
 
-export const progressBar = document.querySelector('.player__progress')
+const progressBar = document.querySelector('.player__progress')
 
 export const updateProgressBar = (e) => {
 	const { duration, currentTime } = e.srcElement

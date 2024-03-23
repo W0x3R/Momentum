@@ -1,4 +1,4 @@
-export const selectWrapper = document.querySelector('.language')
+const selectWrapper = document.querySelector('.language')
 export const select = document.querySelector('.language__select')
 
 export const rotateLanguageIcon = () => {
