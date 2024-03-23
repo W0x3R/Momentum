@@ -5,13 +5,17 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 6px 0);
 	padding: 5px;
+	min-width: 270px;
 	min-height: 180px;
 	border-radius: 21px;
-	min-width: 240px;
 	height: 204px;
 	background: var(--black-background);
 	color: var(--white);
 	font-size: 17px;
+
+	&:focus-within .weather__icon {
+		animation: shake 2s infinite;
+	}
 
 	&_error {
 		margin: auto;
@@ -28,19 +32,15 @@
 		background-color: transparent;
 		font-size: 22px;
 		text-align: center;
+
+		&:focus {
+			border-bottom-color: var(--blue);
+		}
 	}
 
 	&__icon {
-		font-size: 44px;
+		font-size: 42px;
 		color: var(--white);
-
-		@include hover {
-			animation: shake 2s infinite;
-		}
-
-		@include hover-none {
-			animation: shake 2s infinite;
-		}
 	}
 
 	&__values-temperature,
