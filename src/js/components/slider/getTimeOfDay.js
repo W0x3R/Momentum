@@ -1,7 +1,7 @@
 const greetingTranslations = {
 	ночи: 'night',
 	утро: 'morning',
-	дня: 'afternoon',
+	день: 'afternoon',
 	вечер: 'evening'
 };
 
