@@ -1,7 +1,7 @@
 import { showGreetingText } from "../greeting/showGreetingMessage"
 import { getCurrentLang } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
-import { translateGreeting } from "./getTimeOfDay"
+import { translateGreeting } from "./translateGreeting"
 
 const body = document.body
 let randomNumber = getRandomNumber(1, 20)
