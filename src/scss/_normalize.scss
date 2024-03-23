@@ -170,6 +170,10 @@ button,
 select {
 	/* 1 */
 	text-transform: none;
+	appearance: none;
+	outline: 0;
+	box-shadow: none;
+	border: 0;
 }
 
 /**

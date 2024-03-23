@@ -53,26 +53,38 @@
 
 .language {
 	position: relative;
-	height: min-content;
-	font-size: 14px;
+	display: flex;
+	width: 70px;
+	height: 26px;
+	line-height: 1.6;
+	background: #5c6664;
+	overflow: hidden;
+	border-radius: 4px;
+
+	&:hover::after {
+		color: var(--blue);
+	}
 
 	&::after {
-		content: '▼';
+		content: '\25BC';
 		position: absolute;
-		right: 1px;
+		top: 0;
+		right: 0;
+		padding: 0 6px;
+		background: var(--black-background);
+		cursor: pointer;
 		pointer-events: none;
-		font-size: 12px;
-		top: calc(50% - 7px);
+		transition: 0.25s color ease;
+		color: var(--white);
 	}
 
 	&__select {
-		width: 46px;
-		appearance: none;
-		padding: 3px 10px;
-		border-radius: 8px;
+		background: #5c6664;
+		flex: 1;
+		padding: 0 8px;
+		color: var(--white);
 		cursor: pointer;
-		border: none;
-		outline: unset;
+		font-size: 16px;
 
 		&_open::after {
 			transform: rotate(180deg);
