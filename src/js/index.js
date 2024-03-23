@@ -17,9 +17,6 @@ import { select, selectWrapper, rotateLanguageIcon, closeLanguageIcon } from './
 import { setSelectedValue } from './components/language/setSelectedValue.js'
 import { volumeMuteButton, checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 
-const playButtonPrev = document.querySelector('.player__controls-prev')
-const playButtonNext = document.querySelector('.player__controls-next')
-
 setInterval(() => {
 	showTime()
 	showDate()
@@ -63,40 +60,35 @@ select.addEventListener('change', () => {
 	getQuotes()
 })
 
-selectWrapper.addEventListener('click', function () {
-	rotateLanguageIcon()
-})
-
-sliderButtonPrev.addEventListener('click', () => showBgOnClick('prev'))
-sliderButtonNext.addEventListener('click', () => showBgOnClick('next'))
-
-
-playButton.addEventListener('click', checkFlagSong)
-
-progressBar.addEventListener('click', function (e) {
-	checkClickOnProgressBar(e)
-});
+const eventHandlers = {
+	'.main__button_prev': () => showBgOnClick('prev'),
+	'.main__button_next': () => showBgOnClick('next'),
+	'.language': rotateLanguageIcon,
+	'.player__controls-play': checkFlagSong,
+	'.player__progress': (e) => checkClickOnProgressBar(e),
+	'.player__controls-prev': prevSong,
+	'.player__controls-next': nextSong,
+	'.player__list': (e) => playClickedSong(e),
+	'.player__sounds-mute': checkIsMute
+}
 
 window.addEventListener('click', function (e) {
+	const target = e.target
+	for (const selector in eventHandlers) {
+		if (target.closest(selector)) {
+			eventHandlers[selector](e)
+			break
+		}
+	}
 	closeLanguageIcon(e)
 })
 
 audio.addEventListener('ended', function () {
 	nextSong()
 })
-playButtonNext.addEventListener('click', nextSong)
-playButtonPrev.addEventListener('click', prevSong)
-
-playList.addEventListener('click', function (e) {
-	playClickedSong(e)
-});
 
 volumeButton.addEventListener('input', function () {
 	checkInputChangeVolume()
-})
-
-volumeMuteButton.addEventListener('click', function (e) {
-	checkIsMute()
 })
 
 document.addEventListener('DOMContentLoaded', function (e) {

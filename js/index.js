@@ -869,11 +869,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const playButtonPrev = document.querySelector('.player__controls-prev')
-const playButtonNext = document.querySelector('.player__controls-next')
-
 setInterval(() => {
-	;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
+	(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 }, 1000)
 
@@ -915,40 +912,35 @@ _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.select.addEv
 	;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 })
 
-_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.selectWrapper.addEventListener('click', function () {
-	;(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon)()
-})
-
-_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonPrev.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'))
-_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.sliderButtonNext.addEventListener('click', () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'))
-
-
-_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.playButton.addEventListener('click', _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong)
-
-_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.progressBar.addEventListener('click', function (e) {
-	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.checkClickOnProgressBar)(e)
-});
+const eventHandlers = {
+	'.main__button_prev': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'),
+	'.main__button_next': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'),
+	'.language': _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon,
+	'.player__controls-play': _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong,
+	'.player__progress': (e) => (0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.checkClickOnProgressBar)(e),
+	'.player__controls-prev': _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.prevSong,
+	'.player__controls-next': _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong,
+	'.player__list': (e) => (0,_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.playClickedSong)(e),
+	'.player__sounds-mute': _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkIsMute
+}
 
 window.addEventListener('click', function (e) {
+	const target = e.target
+	for (const selector in eventHandlers) {
+		if (target.closest(selector)) {
+			eventHandlers[selector](e)
+			break
+		}
+	}
 	(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e)
 })
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', function () {
 	;(0,_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)()
 })
-playButtonNext.addEventListener('click', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)
-playButtonPrev.addEventListener('click', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.prevSong)
-
-_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.playList.addEventListener('click', function (e) {
-	;(0,_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.playClickedSong)(e)
-});
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addEventListener('input', function () {
-	(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkInputChangeVolume)()
-})
-
-_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.volumeMuteButton.addEventListener('click', function (e) {
-	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkIsMute)()
+	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.checkInputChangeVolume)()
 })
 
 document.addEventListener('DOMContentLoaded', function (e) {
