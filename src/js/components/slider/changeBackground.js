@@ -10,11 +10,10 @@ const query = 'BMW';
 let randomNumber = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 74)
 
-localStorage.setItem('sourse', 'pexels')
 
 export const changeBg = () => {
 	const image = new Image();
-	if (localStorage.getItem('sourse') === 'github') {
+	if (localStorage.getItem('source') === 'github') {
 		const currentLang = getCurrentLang();
 		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
@@ -24,9 +23,8 @@ export const changeBg = () => {
 		image.src = url;
 		image.onload = () => body.style.backgroundImage = `url(${url})`
 	}
-	else if (localStorage.getItem('sourse') === 'pexels') {
+	else if (localStorage.getItem('source') === 'pexels') {
 		client.photos.search({ query, per_page: 74 }).then(photos => {
-			console.log(photos);
 			image.src = photos.photos[randomNumberPixels - 1].src.landscape
 			image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 		});
@@ -34,13 +32,13 @@ export const changeBg = () => {
 }
 
 export const showBgOnClick = (direction) => {
-	if (localStorage.getItem('sourse') === 'github') {
+	if (localStorage.getItem('source') === 'github') {
 		randomNumber = (direction === 'prev') ?
 			((randomNumber === 1) ? 20 : randomNumber - 1) :
 			((randomNumber === 20) ? 1 : randomNumber + 1);
 		changeBg()
 	}
-	else if (localStorage.getItem('sourse') === 'pexels') {
+	else if (localStorage.getItem('source') === 'pexels') {
 		randomNumberPixels = (direction === 'prev') ?
 			((randomNumberPixels === 1) ? 74 : randomNumberPixels - 1) :
 			((randomNumberPixels === 74) ? 1 : randomNumberPixels + 1);

@@ -14,8 +14,8 @@ import { checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
 import { languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
-import { setSelectedValue } from './components/language/setSelectedValue.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
+import { setSelectedSourceValue } from './components/imageSource/setSelectedImageSourceValue'
 
 setInterval(() => {
 	showTime()
@@ -40,10 +40,11 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
 	getGreetingName()
 	getCity()
+	setSelectedSourceValue()
 })
 
-weatherCityInput.addEventListener('change', getWeather)
 
+weatherCityInput.addEventListener('change', getWeather)
 
 audio.addEventListener('timeupdate', function (e) {
 	updateTime()
@@ -53,7 +54,6 @@ audio.addEventListener('timeupdate', function (e) {
 languageSelect.addEventListener('change', () => {
 	setCurrentLang()
 	getWeather()
-	setSelectedValue()
 	showDate()
 	showGreetingText()
 	setPlaceHolderLanguage()
@@ -94,3 +94,5 @@ volumeButton.addEventListener('input', function () {
 document.addEventListener('DOMContentLoaded', function (e) {
 	setButtonValueContentLoaded()
 });
+
+import './components/imageSource/setSelectedImageSourceValue'
