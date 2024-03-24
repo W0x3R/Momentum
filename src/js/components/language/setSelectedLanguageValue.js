@@ -1,4 +1,4 @@
-import { getCurrentLang } from "./localStorageLanguage";
+import { getCurrentLanguage } from "./localStorageLanguage";
 import { languageSelect } from "./transformIcon";
 
 const selectLanguageChildrenArray = Array.from(languageSelect.children)
@@ -13,7 +13,7 @@ const findLanguageSelectedItem = (lang, value) => {
 }
 
 export const setSelectedLanguageValue = () => {
-	const lang = getCurrentLang()
+	const lang = getCurrentLanguage()
 	if (lang === 'en') {
 		findLanguageSelectedItem('ru', false)
 		findLanguageSelectedItem('en', true)

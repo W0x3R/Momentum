@@ -1,6 +1,6 @@
 import { languageSelect } from "./transformIcon"
 
-export const getCurrentLang = () => {
+export const getCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {
 		localStorage.setItem('language', 'en')
 	}
@@ -9,6 +9,6 @@ export const getCurrentLang = () => {
 	}
 }
 
-export const setCurrentLang = () => {
+export const setCurrentLanguage = () => {
 	localStorage.setItem('language', languageSelect.value)
 }

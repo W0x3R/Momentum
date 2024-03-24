@@ -1,12 +1,12 @@
-export const getImageSource = () => {
+export const getImagesSource = () => {
 	if (!localStorage.getItem('source')) {
-		setImageSource('github')
+		setImagesSource('github')
 	}
 	else {
 		return localStorage.getItem('source')
 	}
 }
 
-export const setImageSource = (value) => {
+export const setImagesSource = (value) => {
 	localStorage.setItem('source', value)
 }

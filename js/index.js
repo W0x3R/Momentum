@@ -7,13 +7,13 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
-/* harmony export */   setCurrentLang: function() { return /* binding */ setCurrentLang; }
+/* harmony export */   getCurrentLanguage: function() { return /* binding */ getCurrentLanguage; },
+/* harmony export */   setCurrentLanguage: function() { return /* binding */ setCurrentLanguage; }
 /* harmony export */ });
 /* harmony import */ var _transformIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-const getCurrentLang = () => {
+const getCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {
 		localStorage.setItem('language', 'en')
 	}
@@ -22,7 +22,7 @@ const getCurrentLang = () => {
 	}
 }
 
-const setCurrentLang = () => {
+const setCurrentLanguage = () => {
 	localStorage.setItem('language', _transformIcon__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
 }
 
@@ -86,8 +86,8 @@ const dateOptions = {
 }
 
 const showDate = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
-	const currentDate = new Date().toLocaleDateString(currentLang, dateOptions)
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentDate = new Date().toLocaleDateString(currentLanguage, dateOptions)
 	date.textContent = currentDate
 }
 
@@ -113,7 +113,7 @@ const greetingObj = {
 }
 
 const showGreetingText = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingObj[currentLang][Math.floor(currentTime / 6)]
 	greetingText.textContent = getGreeting
@@ -140,7 +140,7 @@ const greetingPlaceHolder = {
 }
 
 const setPlaceHolderLanguage = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	currentLang === 'en' ? _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.en : _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.ru
 }
 
@@ -185,7 +185,7 @@ const weatherCityInput = document.querySelector('.weather__input')
 
 async function getWeather() {
 	try {
-		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityInput.value}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
@@ -242,12 +242,13 @@ const updateUI = (data, currentLang) => {
 };
 
 const handleErrors = () => {
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
 	weatherHumidity.textContent = '';
 	weatherError.style.display = 'block';
-	weatherError.textContent = `${weatherTranslations[(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()].error}`;
+	weatherError.textContent = `${weatherTranslations[currentLang].error}`;
 };
 
 /***/ }),
@@ -283,8 +284,8 @@ const getCity = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeBg: function() { return /* binding */ changeBg; },
-/* harmony export */   showBgOnClick: function() { return /* binding */ showBgOnClick; }
+/* harmony export */   changeBackground: function() { return /* binding */ changeBackground; },
+/* harmony export */   changeBackgroundOnClick: function() { return /* binding */ changeBackgroundOnClick; }
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
@@ -303,39 +304,46 @@ const query = 'BMW';
 let randomNumber = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
 let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 74)
 
-
-const changeBg = () => {
-	const image = new Image();
+const changeGithub = (img) => {
 	if (localStorage.getItem('source') === 'github') {
-		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLang)();
+		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)();
 		const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
 		let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
 
 		let randomNumberForImages = randomNumber.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-		image.src = url;
-		image.onload = () => body.style.backgroundImage = `url(${url})`
+		img.src = url;
+		img.onload = () => body.style.backgroundImage = `url(${url})`
 	}
-	else if (localStorage.getItem('source') === 'pexels') {
+}
+
+const changePexels = (img) => {
+	if (localStorage.getItem('source') === 'pexels') {
 		client.photos.search({ query, per_page: 74 }).then(photos => {
-			image.src = photos.photos[randomNumberPixels - 1].src.landscape
-			image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+			img.src = photos.photos[randomNumberPixels - 1].src.landscape
+			img.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 		});
 	}
 }
 
-const showBgOnClick = (direction) => {
+const changeBackground = () => {
+	const image = new Image();
+	changeGithub(image)
+	changePexels(image)
+}
+
+const changeBackgroundOnClick = (direction) => {
 	if (localStorage.getItem('source') === 'github') {
 		randomNumber = (direction === 'prev') ?
 			((randomNumber === 1) ? 20 : randomNumber - 1) :
 			((randomNumber === 20) ? 1 : randomNumber + 1);
-		changeBg()
+		changeBackground()
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
 		randomNumberPixels = (direction === 'prev') ?
 			((randomNumberPixels === 1) ? 74 : randomNumberPixels - 1) :
 			((randomNumberPixels === 74) ? 1 : randomNumberPixels + 1);
-		changeBg()
+		changeBackground()
 	}
 }
 
@@ -1066,7 +1074,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
 /* harmony export */ });
-/* harmony import */ var _getQuoutesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
+/* harmony import */ var _getQuotesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(18);
 /* harmony import */ var _showQuotes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
 
 
@@ -1075,7 +1083,7 @@ const changeQuoteButton = document.querySelector('.quotes__change-btn')
 
 async function getQuotes() {
 	try {
-		const fetchRequest = await fetch((0,_getQuoutesLanguage__WEBPACK_IMPORTED_MODULE_0__.getQuoteLanguage)())
+		const fetchRequest = await fetch((0,_getQuotesLanguage__WEBPACK_IMPORTED_MODULE_0__.getQuotesLanguage)())
 		const data = await fetchRequest.json()
 		;(0,_showQuotes__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data)
 		changeQuoteButton.addEventListener('click', () => (0,_showQuotes__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data))
@@ -1083,7 +1091,6 @@ async function getQuotes() {
 	catch {
 		console.error('Error fetching quotes:', error);
 	}
-
 }
 
 
@@ -1096,13 +1103,13 @@ async function getQuotes() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getQuoteLanguage: function() { return /* binding */ getQuoteLanguage; }
+/* harmony export */   getQuotesLanguage: function() { return /* binding */ getQuotesLanguage; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
-const getQuoteLanguage = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+const getQuotesLanguage = () => {
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
 }
 
@@ -1461,6 +1468,8 @@ const getVolumeButtonValue = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   checkImageSourceSelectValue: function() { return /* binding */ checkImageSourceSelectValue; },
+/* harmony export */   imageSourceSelect: function() { return /* binding */ imageSourceSelect; },
 /* harmony export */   setSelectedSourceValue: function() { return /* binding */ setSelectedSourceValue; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(29);
@@ -1469,36 +1478,35 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const imageSourceSelect = document.querySelector('.source__select')
-
 const selectLanguageChildrenArray = Array.from(imageSourceSelect.children)
 
-const setSelectedImageSourceValue = (number, value) => {
+const setSelectedValue = (number, value) => {
 	selectLanguageChildrenArray[number].selected = value
 }
 
 const setSelectedSourceValue = () => {
-	const getSource = (0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.getImageSource)()
+	const getSource = (0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.getImagesSource)()
 	if (getSource === 'github') {
-		setSelectedImageSourceValue(1, false)
-		setSelectedImageSourceValue(0, true)
+		setSelectedValue(1, false)
+		setSelectedValue(0, true)
 	}
 	else {
-		setSelectedImageSourceValue(0, false)
-		setSelectedImageSourceValue(1, true)
+		setSelectedValue(0, false)
+		setSelectedValue(1, true)
 	}
 }
 
-imageSourceSelect.addEventListener('change', function (e) {
+const checkImageSourceSelectValue = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
-		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImageSource)('github')
-		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBg)()
+		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImagesSource)('github')
+		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
 	}
 	else {
-		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImageSource)('pexels')
-		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBg)()
+		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImagesSource)('pexels')
+		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
 	}
-})
+}
 
 /***/ }),
 /* 29 */
@@ -1507,19 +1515,19 @@ imageSourceSelect.addEventListener('change', function (e) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getImageSource: function() { return /* binding */ getImageSource; },
-/* harmony export */   setImageSource: function() { return /* binding */ setImageSource; }
+/* harmony export */   getImagesSource: function() { return /* binding */ getImagesSource; },
+/* harmony export */   setImagesSource: function() { return /* binding */ setImagesSource; }
 /* harmony export */ });
-const getImageSource = () => {
+const getImagesSource = () => {
 	if (!localStorage.getItem('source')) {
-		setImageSource('github')
+		setImagesSource('github')
 	}
 	else {
 		return localStorage.getItem('source')
 	}
 }
 
-const setImageSource = (value) => {
+const setImagesSource = (value) => {
 	localStorage.setItem('source', value)
 }
 
@@ -1549,7 +1557,7 @@ const findLanguageSelectedItem = (lang, value) => {
 }
 
 const setSelectedLanguageValue = () => {
-	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLang)()
+	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	if (lang === 'en') {
 		findLanguageSelectedItem('ru', false)
 		findLanguageSelectedItem('en', true)
@@ -1650,8 +1658,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(25);
 /* harmony import */ var _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(26);
-/* harmony import */ var _components_imageSource_setSelectedImageSourceValue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(28);
+/* harmony import */ var _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(28);
 /* harmony import */ var _components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(30);
+
 
 
 
@@ -1681,21 +1690,21 @@ setInterval(() => {
 ;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 ;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
 ;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceHolderLanguage)()
-;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBg)()
+;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackground)()
 ;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.createPlayList)()
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName)()
-	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLang)()
+	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
 })
 
 window.addEventListener('load', () => {
 	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.getCity)()
-	;(0,_components_imageSource_setSelectedImageSourceValue__WEBPACK_IMPORTED_MODULE_17__.setSelectedSourceValue)()
+	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__.setSelectedSourceValue)()
 	;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_18__.setSelectedLanguageValue)()
 })
 
@@ -1708,7 +1717,7 @@ _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventLis
 })
 
 _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.languageSelect.addEventListener('change', () => {
-	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLang)()
+	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
 	;(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
 	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 	;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
@@ -1717,8 +1726,8 @@ _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.languageSele
 })
 
 const eventHandlers = {
-	'.main__button_prev': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('prev'),
-	'.main__button_next': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.showBgOnClick)('next'),
+	'.main__button_prev': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('prev'),
+	'.main__button_next': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('next'),
 	'.language': _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon,
 	'.player__controls-play': _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong,
 	'.player__progress': (e) => (0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.checkClickOnProgressBar)(e),
@@ -1750,6 +1759,10 @@ _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addE
 document.addEventListener('DOMContentLoaded', function (e) {
 	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.setButtonValueContentLoaded)()
 });
+
+_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__.imageSourceSelect.addEventListener('change', function (e) {
+	(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__.checkImageSourceSelectValue)(e)
+})
 
 
 }();

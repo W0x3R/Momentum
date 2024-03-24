@@ -1,6 +1,6 @@
 import { createClient } from 'pexels';
 import { showGreetingText } from "../greeting/showGreetingMessage"
-import { getCurrentLang } from "../language/localStorageLanguage"
+import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 
@@ -10,39 +10,46 @@ const query = 'BMW';
 let randomNumber = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 74)
 
-
-export const changeBg = () => {
-	const image = new Image();
+const changeGithub = (img) => {
 	if (localStorage.getItem('source') === 'github') {
-		const currentLang = getCurrentLang();
+		const currentLang = getCurrentLanguage();
 		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
 
 		let randomNumberForImages = randomNumber.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-		image.src = url;
-		image.onload = () => body.style.backgroundImage = `url(${url})`
+		img.src = url;
+		img.onload = () => body.style.backgroundImage = `url(${url})`
 	}
-	else if (localStorage.getItem('source') === 'pexels') {
+}
+
+const changePexels = (img) => {
+	if (localStorage.getItem('source') === 'pexels') {
 		client.photos.search({ query, per_page: 74 }).then(photos => {
-			image.src = photos.photos[randomNumberPixels - 1].src.landscape
-			image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+			img.src = photos.photos[randomNumberPixels - 1].src.landscape
+			img.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 		});
 	}
 }
 
-export const showBgOnClick = (direction) => {
+export const changeBackground = () => {
+	const image = new Image();
+	changeGithub(image)
+	changePexels(image)
+}
+
+export const changeBackgroundOnClick = (direction) => {
 	if (localStorage.getItem('source') === 'github') {
 		randomNumber = (direction === 'prev') ?
 			((randomNumber === 1) ? 20 : randomNumber - 1) :
 			((randomNumber === 20) ? 1 : randomNumber + 1);
-		changeBg()
+		changeBackground()
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
 		randomNumberPixels = (direction === 'prev') ?
 			((randomNumberPixels === 1) ? 74 : randomNumberPixels - 1) :
 			((randomNumberPixels === 74) ? 1 : randomNumberPixels + 1);
-		changeBg()
+		changeBackground()
 	}
 }
 

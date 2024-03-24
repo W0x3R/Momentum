@@ -1,4 +1,4 @@
-import { getCurrentLang } from "../language/localStorageLanguage"
+import { getCurrentLanguage } from "../language/localStorageLanguage"
 
 const greetingText = document.querySelector('.greeting__text')
 
@@ -8,7 +8,7 @@ const greetingObj = {
 }
 
 export const showGreetingText = () => {
-	const currentLang = getCurrentLang()
+	const currentLang = getCurrentLanguage()
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingObj[currentLang][Math.floor(currentTime / 6)]
 	greetingText.textContent = getGreeting

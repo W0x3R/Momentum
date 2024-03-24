@@ -1,4 +1,4 @@
-import { setCurrentLang } from './components/language/localStorageLanguage.js'
+import { setCurrentLanguage } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
@@ -6,7 +6,7 @@ import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLang
 import { getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
 import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBg, showBgOnClick } from './components/slider/changeBackground'
+import { changeBackground, changeBackgroundOnClick } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
@@ -15,8 +15,9 @@ import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './comp
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
 import { languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
-import { setSelectedSourceValue } from './components/imageSource/setSelectedImageSourceValue'
+import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
+import { imageSourceSelect, checkImageSourceSelectValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 
 setInterval(() => {
 	showTime()
@@ -27,14 +28,14 @@ showDate()
 showTime()
 showGreetingText()
 setPlaceHolderLanguage()
-changeBg()
+changeBackground()
 getQuotes()
 createPlayList()
 loadSong()
 
 window.addEventListener('beforeunload', () => {
 	setGreetingName()
-	setCurrentLang()
+	setCurrentLanguage()
 	setCity()
 })
 
@@ -54,7 +55,7 @@ audio.addEventListener('timeupdate', function (e) {
 })
 
 languageSelect.addEventListener('change', () => {
-	setCurrentLang()
+	setCurrentLanguage()
 	getWeather()
 	showDate()
 	showGreetingText()
@@ -63,8 +64,8 @@ languageSelect.addEventListener('change', () => {
 })
 
 const eventHandlers = {
-	'.main__button_prev': () => showBgOnClick('prev'),
-	'.main__button_next': () => showBgOnClick('next'),
+	'.main__button_prev': () => changeBackgroundOnClick('prev'),
+	'.main__button_next': () => changeBackgroundOnClick('next'),
 	'.language': rotateLanguageIcon,
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => checkClickOnProgressBar(e),
@@ -97,4 +98,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 	setButtonValueContentLoaded()
 });
 
-import './components/imageSource/setSelectedImageSourceValue'
+imageSourceSelect.addEventListener('change', function (e) {
+	checkImageSourceSelectValue(e)
+})
+

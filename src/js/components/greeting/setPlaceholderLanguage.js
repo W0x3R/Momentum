@@ -1,4 +1,4 @@
-import { getCurrentLang } from "../language/localStorageLanguage"
+import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { greetingName } from "./localStorageGreeting"
 
 const greetingPlaceHolder = {
@@ -7,6 +7,6 @@ const greetingPlaceHolder = {
 }
 
 export const setPlaceHolderLanguage = () => {
-	const currentLang = getCurrentLang()
+	const currentLang = getCurrentLanguage()
 	currentLang === 'en' ? greetingName.placeholder = greetingPlaceHolder.en : greetingName.placeholder = greetingPlaceHolder.ru
 }

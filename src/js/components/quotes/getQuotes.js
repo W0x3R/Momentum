@@ -1,11 +1,11 @@
-import { getQuoteLanguage } from "./getQuoutesLanguage"
+import { getQuotesLanguage } from "./getQuotesLanguage"
 import { showQuote } from "./showQuotes"
 
 const changeQuoteButton = document.querySelector('.quotes__change-btn')
 
 export async function getQuotes() {
 	try {
-		const fetchRequest = await fetch(getQuoteLanguage())
+		const fetchRequest = await fetch(getQuotesLanguage())
 		const data = await fetchRequest.json()
 		showQuote(data)
 		changeQuoteButton.addEventListener('click', () => showQuote(data))
@@ -13,7 +13,6 @@ export async function getQuotes() {
 	catch {
 		console.error('Error fetching quotes:', error);
 	}
-
 }
 
 
