@@ -1,10 +1,10 @@
 /******/ (function() { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
 /* 0 */,
 /* 1 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getCurrentLang: function() { return /* binding */ getCurrentLang; },
@@ -16,21 +16,22 @@ __webpack_require__.r(__webpack_exports__);
 const getCurrentLang = () => localStorage.getItem('language')
 
 const setCurrentLang = () => {
-	localStorage.setItem('language', _transformIcon__WEBPACK_IMPORTED_MODULE_0__.select.value)
+	localStorage.setItem('language', _transformIcon__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
 }
 
 /***/ }),
 /* 2 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   closeLanguageIcon: function() { return /* binding */ closeLanguageIcon; },
-/* harmony export */   rotateLanguageIcon: function() { return /* binding */ rotateLanguageIcon; },
-/* harmony export */   select: function() { return /* binding */ select; }
+/* harmony export */   languageSelect: function() { return /* binding */ languageSelect; },
+/* harmony export */   rotateLanguageIcon: function() { return /* binding */ rotateLanguageIcon; }
 /* harmony export */ });
 const selectWrapper = document.querySelector('.language')
-const select = document.querySelector('.language__select')
+const languageSelect = document.querySelector('.language__select')
 
 const rotateLanguageIcon = () => {
 	selectWrapper.classList.toggle('language__select_open')
@@ -44,6 +45,7 @@ const closeLanguageIcon = (e) => {
 /* 3 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showTime: function() { return /* binding */ showTime; }
@@ -61,6 +63,7 @@ const showTime = () => {
 /* 4 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showDate: function() { return /* binding */ showDate; }
@@ -87,6 +90,7 @@ const showDate = () => {
 /* 5 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showGreetingText: function() { return /* binding */ showGreetingText; }
@@ -113,6 +117,7 @@ const showGreetingText = () => {
 /* 6 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setPlaceHolderLanguage: function() { return /* binding */ setPlaceHolderLanguage; }
@@ -136,6 +141,7 @@ const setPlaceHolderLanguage = () => {
 /* 7 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getGreetingName: function() { return /* binding */ getGreetingName; },
@@ -157,6 +163,7 @@ const getGreetingName = () => {
 /* 8 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getWeather: function() { return /* binding */ getWeather; },
@@ -192,6 +199,7 @@ async function getWeather() {
 /* 9 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setSelectedValue: function() { return /* binding */ setSelectedValue; }
@@ -201,7 +209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const selectChildrenArray = Array.from(_transformIcon__WEBPACK_IMPORTED_MODULE_1__.select.children)
+const selectChildrenArray = Array.from(_transformIcon__WEBPACK_IMPORTED_MODULE_1__.languageSelect.children)
 
 const findSelectedItem = (lang, value) => {
 	const item = selectChildrenArray.find(e => e.value === lang);
@@ -227,6 +235,7 @@ const setSelectedValue = () => {
 /* 10 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   handleErrors: function() { return /* binding */ handleErrors; },
@@ -280,6 +289,7 @@ const handleErrors = () => {
 /* 11 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getCity: function() { return /* binding */ getCity; },
@@ -305,47 +315,755 @@ const getCity = () => {
 /* 12 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeBg: function() { return /* binding */ changeBg; },
 /* harmony export */   showBgOnClick: function() { return /* binding */ showBgOnClick; }
 /* harmony export */ });
-/* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1);
-/* harmony import */ var _getRandomNumber__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
+/* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1);
+/* harmony import */ var _getRandomNumber__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(16);
+/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17);
+
 
 
 
 
 
 const body = document.body
-let randomNumber = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_2__.getRandomNumber)(1, 20)
+const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
+const query = 'BMW';
+let randomNumber = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
+let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 74)
+
+localStorage.setItem('sourse', 'pexels')
 
 const changeBg = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLang)();
-	const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)().split(' ')[1].slice(0, -1);
-	let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_3__.translateGreeting)(greetingText)
-
-	let randomNumberForImages = randomNumber.toString().padStart(2, '0')
-	let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
 	const image = new Image();
-	image.src = url;
-	image.onload = () => body.style.backgroundImage = `url(${url})`
+	if (localStorage.getItem('sourse') === 'github') {
+		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLang)();
+		const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
+		let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
+
+		let randomNumberForImages = randomNumber.toString().padStart(2, '0')
+		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
+		image.src = url;
+		image.onload = () => body.style.backgroundImage = `url(${url})`
+	}
+	else if (localStorage.getItem('sourse') === 'pexels') {
+		client.photos.search({ query, per_page: 74 }).then(photos => {
+			console.log(photos);
+			image.src = photos.photos[randomNumberPixels - 1].src.landscape
+			image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+		});
+	}
 }
 
 const showBgOnClick = (direction) => {
-	randomNumber = (direction === 'prev') ?
-		((randomNumber === 1) ? 20 : randomNumber - 1) :
-		((randomNumber === 20) ? 1 : randomNumber + 1);
-	changeBg()
+	if (localStorage.getItem('sourse') === 'github') {
+		randomNumber = (direction === 'prev') ?
+			((randomNumber === 1) ? 20 : randomNumber - 1) :
+			((randomNumber === 20) ? 1 : randomNumber + 1);
+		changeBg()
+	}
+	else if (localStorage.getItem('sourse') === 'pexels') {
+		randomNumberPixels = (direction === 'prev') ?
+			((randomNumberPixels === 1) ? 74 : randomNumberPixels - 1) :
+			((randomNumberPixels === 74) ? 1 : randomNumberPixels + 1);
+		changeBg()
+	}
 }
+
 
 
 /***/ }),
 /* 13 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createClient: function() { return /* binding */ c; }
+/* harmony export */ });
+var t={photo:"https://api.pexels.com/v1/",video:"https://api.pexels.com/videos/",collections:"https://api.pexels.com/v1/collections/"};function r(r,e){var n={method:"GET",headers:{Accept:"application/json","Content-Type":"application/json","User-Agent":"Pexels/JavaScript",Authorization:r}},o=t[e];return function(t,r){return fetch(""+o+t+"?"+function(t){return Object.keys(t).map(function(r){return r+"="+t[r]}).join("&")}(r||{}),n).then(function(t){if(!t.ok)throw new Error(t.statusText);return t.json()})}}function e(t){var e=r(t,"collections");return{all:function(t){return void 0===t&&(t={}),e("",t)},media:function(t){var r=t.id,n=function(t,r){if(null==t)return{};var e,n,o={},i=Object.keys(t);for(n=0;n<i.length;n++)r.indexOf(e=i[n])>=0||(o[e]=t[e]);return o}(t,["id"]);return e(""+r,n)},featured:function(t){return void 0===t&&(t={}),e("featured",t)}}}function n(t){return!(!t||!t.photos)}var o={__proto__:null,isPhotos:n,isVideos:function(t){return!(!t||!t.videos)},isError:function(t){return!!t.error}};function i(t){var e=r(t,"photo");return{search:function(t){return e("/search",t)},curated:function(t){return void 0===t&&(t={}),e("/curated",t)},show:function(t){return e("/photos/"+t.id)},random:function(){try{var t=Math.floor(1e3*Math.random());return Promise.resolve(this.curated({page:t,per_page:1})).then(function(t){return n(t)?t.photos[0]:t})}catch(t){return Promise.reject(t)}}}}function u(t){var e=r(t,"video");return{search:function(t){return e("/search",t)},popular:function(t){return void 0===t&&(t={}),e("/popular",t)},show:function(t){return e("/videos/"+t.id)}}}function c(t){if(!t||"string"!=typeof t)throw new TypeError("An ApiKey must be provided when initiating the Pexel's client.");return{typeCheckers:o,photos:i(t),videos:u(t),collections:e(t)}}__webpack_require__(14);
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
+
+// the whatwg-fetch polyfill installs the fetch() function
+// on the global object (window or self)
+//
+// Return that as the export for use in Webpack, Browserify etc.
+__webpack_require__(15);
+module.exports = self.fetch.bind(self);
+
+
+/***/ }),
+/* 15 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DOMException: function() { return /* binding */ DOMException; },
+/* harmony export */   Headers: function() { return /* binding */ Headers; },
+/* harmony export */   Request: function() { return /* binding */ Request; },
+/* harmony export */   Response: function() { return /* binding */ Response; },
+/* harmony export */   fetch: function() { return /* binding */ fetch; }
+/* harmony export */ });
+/* eslint-disable no-prototype-builtins */
+var g =
+  (typeof globalThis !== 'undefined' && globalThis) ||
+  (typeof self !== 'undefined' && self) ||
+  // eslint-disable-next-line no-undef
+  (typeof __webpack_require__.g !== 'undefined' && __webpack_require__.g) ||
+  {}
+
+var support = {
+  searchParams: 'URLSearchParams' in g,
+  iterable: 'Symbol' in g && 'iterator' in Symbol,
+  blob:
+    'FileReader' in g &&
+    'Blob' in g &&
+    (function() {
+      try {
+        new Blob()
+        return true
+      } catch (e) {
+        return false
+      }
+    })(),
+  formData: 'FormData' in g,
+  arrayBuffer: 'ArrayBuffer' in g
+}
+
+function isDataView(obj) {
+  return obj && DataView.prototype.isPrototypeOf(obj)
+}
+
+if (support.arrayBuffer) {
+  var viewClasses = [
+    '[object Int8Array]',
+    '[object Uint8Array]',
+    '[object Uint8ClampedArray]',
+    '[object Int16Array]',
+    '[object Uint16Array]',
+    '[object Int32Array]',
+    '[object Uint32Array]',
+    '[object Float32Array]',
+    '[object Float64Array]'
+  ]
+
+  var isArrayBufferView =
+    ArrayBuffer.isView ||
+    function(obj) {
+      return obj && viewClasses.indexOf(Object.prototype.toString.call(obj)) > -1
+    }
+}
+
+function normalizeName(name) {
+  if (typeof name !== 'string') {
+    name = String(name)
+  }
+  if (/[^a-z0-9\-#$%&'*+.^_`|~!]/i.test(name) || name === '') {
+    throw new TypeError('Invalid character in header field name: "' + name + '"')
+  }
+  return name.toLowerCase()
+}
+
+function normalizeValue(value) {
+  if (typeof value !== 'string') {
+    value = String(value)
+  }
+  return value
+}
+
+// Build a destructive iterator for the value list
+function iteratorFor(items) {
+  var iterator = {
+    next: function() {
+      var value = items.shift()
+      return {done: value === undefined, value: value}
+    }
+  }
+
+  if (support.iterable) {
+    iterator[Symbol.iterator] = function() {
+      return iterator
+    }
+  }
+
+  return iterator
+}
+
+function Headers(headers) {
+  this.map = {}
+
+  if (headers instanceof Headers) {
+    headers.forEach(function(value, name) {
+      this.append(name, value)
+    }, this)
+  } else if (Array.isArray(headers)) {
+    headers.forEach(function(header) {
+      if (header.length != 2) {
+        throw new TypeError('Headers constructor: expected name/value pair to be length 2, found' + header.length)
+      }
+      this.append(header[0], header[1])
+    }, this)
+  } else if (headers) {
+    Object.getOwnPropertyNames(headers).forEach(function(name) {
+      this.append(name, headers[name])
+    }, this)
+  }
+}
+
+Headers.prototype.append = function(name, value) {
+  name = normalizeName(name)
+  value = normalizeValue(value)
+  var oldValue = this.map[name]
+  this.map[name] = oldValue ? oldValue + ', ' + value : value
+}
+
+Headers.prototype['delete'] = function(name) {
+  delete this.map[normalizeName(name)]
+}
+
+Headers.prototype.get = function(name) {
+  name = normalizeName(name)
+  return this.has(name) ? this.map[name] : null
+}
+
+Headers.prototype.has = function(name) {
+  return this.map.hasOwnProperty(normalizeName(name))
+}
+
+Headers.prototype.set = function(name, value) {
+  this.map[normalizeName(name)] = normalizeValue(value)
+}
+
+Headers.prototype.forEach = function(callback, thisArg) {
+  for (var name in this.map) {
+    if (this.map.hasOwnProperty(name)) {
+      callback.call(thisArg, this.map[name], name, this)
+    }
+  }
+}
+
+Headers.prototype.keys = function() {
+  var items = []
+  this.forEach(function(value, name) {
+    items.push(name)
+  })
+  return iteratorFor(items)
+}
+
+Headers.prototype.values = function() {
+  var items = []
+  this.forEach(function(value) {
+    items.push(value)
+  })
+  return iteratorFor(items)
+}
+
+Headers.prototype.entries = function() {
+  var items = []
+  this.forEach(function(value, name) {
+    items.push([name, value])
+  })
+  return iteratorFor(items)
+}
+
+if (support.iterable) {
+  Headers.prototype[Symbol.iterator] = Headers.prototype.entries
+}
+
+function consumed(body) {
+  if (body._noBody) return
+  if (body.bodyUsed) {
+    return Promise.reject(new TypeError('Already read'))
+  }
+  body.bodyUsed = true
+}
+
+function fileReaderReady(reader) {
+  return new Promise(function(resolve, reject) {
+    reader.onload = function() {
+      resolve(reader.result)
+    }
+    reader.onerror = function() {
+      reject(reader.error)
+    }
+  })
+}
+
+function readBlobAsArrayBuffer(blob) {
+  var reader = new FileReader()
+  var promise = fileReaderReady(reader)
+  reader.readAsArrayBuffer(blob)
+  return promise
+}
+
+function readBlobAsText(blob) {
+  var reader = new FileReader()
+  var promise = fileReaderReady(reader)
+  var match = /charset=([A-Za-z0-9_-]+)/.exec(blob.type)
+  var encoding = match ? match[1] : 'utf-8'
+  reader.readAsText(blob, encoding)
+  return promise
+}
+
+function readArrayBufferAsText(buf) {
+  var view = new Uint8Array(buf)
+  var chars = new Array(view.length)
+
+  for (var i = 0; i < view.length; i++) {
+    chars[i] = String.fromCharCode(view[i])
+  }
+  return chars.join('')
+}
+
+function bufferClone(buf) {
+  if (buf.slice) {
+    return buf.slice(0)
+  } else {
+    var view = new Uint8Array(buf.byteLength)
+    view.set(new Uint8Array(buf))
+    return view.buffer
+  }
+}
+
+function Body() {
+  this.bodyUsed = false
+
+  this._initBody = function(body) {
+    /*
+      fetch-mock wraps the Response object in an ES6 Proxy to
+      provide useful test harness features such as flush. However, on
+      ES5 browsers without fetch or Proxy support pollyfills must be used;
+      the proxy-pollyfill is unable to proxy an attribute unless it exists
+      on the object before the Proxy is created. This change ensures
+      Response.bodyUsed exists on the instance, while maintaining the
+      semantic of setting Request.bodyUsed in the constructor before
+      _initBody is called.
+    */
+    // eslint-disable-next-line no-self-assign
+    this.bodyUsed = this.bodyUsed
+    this._bodyInit = body
+    if (!body) {
+      this._noBody = true;
+      this._bodyText = ''
+    } else if (typeof body === 'string') {
+      this._bodyText = body
+    } else if (support.blob && Blob.prototype.isPrototypeOf(body)) {
+      this._bodyBlob = body
+    } else if (support.formData && FormData.prototype.isPrototypeOf(body)) {
+      this._bodyFormData = body
+    } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+      this._bodyText = body.toString()
+    } else if (support.arrayBuffer && support.blob && isDataView(body)) {
+      this._bodyArrayBuffer = bufferClone(body.buffer)
+      // IE 10-11 can't handle a DataView body.
+      this._bodyInit = new Blob([this._bodyArrayBuffer])
+    } else if (support.arrayBuffer && (ArrayBuffer.prototype.isPrototypeOf(body) || isArrayBufferView(body))) {
+      this._bodyArrayBuffer = bufferClone(body)
+    } else {
+      this._bodyText = body = Object.prototype.toString.call(body)
+    }
+
+    if (!this.headers.get('content-type')) {
+      if (typeof body === 'string') {
+        this.headers.set('content-type', 'text/plain;charset=UTF-8')
+      } else if (this._bodyBlob && this._bodyBlob.type) {
+        this.headers.set('content-type', this._bodyBlob.type)
+      } else if (support.searchParams && URLSearchParams.prototype.isPrototypeOf(body)) {
+        this.headers.set('content-type', 'application/x-www-form-urlencoded;charset=UTF-8')
+      }
+    }
+  }
+
+  if (support.blob) {
+    this.blob = function() {
+      var rejected = consumed(this)
+      if (rejected) {
+        return rejected
+      }
+
+      if (this._bodyBlob) {
+        return Promise.resolve(this._bodyBlob)
+      } else if (this._bodyArrayBuffer) {
+        return Promise.resolve(new Blob([this._bodyArrayBuffer]))
+      } else if (this._bodyFormData) {
+        throw new Error('could not read FormData body as blob')
+      } else {
+        return Promise.resolve(new Blob([this._bodyText]))
+      }
+    }
+  }
+
+  this.arrayBuffer = function() {
+    if (this._bodyArrayBuffer) {
+      var isConsumed = consumed(this)
+      if (isConsumed) {
+        return isConsumed
+      } else if (ArrayBuffer.isView(this._bodyArrayBuffer)) {
+        return Promise.resolve(
+          this._bodyArrayBuffer.buffer.slice(
+            this._bodyArrayBuffer.byteOffset,
+            this._bodyArrayBuffer.byteOffset + this._bodyArrayBuffer.byteLength
+          )
+        )
+      } else {
+        return Promise.resolve(this._bodyArrayBuffer)
+      }
+    } else if (support.blob) {
+      return this.blob().then(readBlobAsArrayBuffer)
+    } else {
+      throw new Error('could not read as ArrayBuffer')
+    }
+  }
+
+  this.text = function() {
+    var rejected = consumed(this)
+    if (rejected) {
+      return rejected
+    }
+
+    if (this._bodyBlob) {
+      return readBlobAsText(this._bodyBlob)
+    } else if (this._bodyArrayBuffer) {
+      return Promise.resolve(readArrayBufferAsText(this._bodyArrayBuffer))
+    } else if (this._bodyFormData) {
+      throw new Error('could not read FormData body as text')
+    } else {
+      return Promise.resolve(this._bodyText)
+    }
+  }
+
+  if (support.formData) {
+    this.formData = function() {
+      return this.text().then(decode)
+    }
+  }
+
+  this.json = function() {
+    return this.text().then(JSON.parse)
+  }
+
+  return this
+}
+
+// HTTP methods whose capitalization should be normalized
+var methods = ['CONNECT', 'DELETE', 'GET', 'HEAD', 'OPTIONS', 'PATCH', 'POST', 'PUT', 'TRACE']
+
+function normalizeMethod(method) {
+  var upcased = method.toUpperCase()
+  return methods.indexOf(upcased) > -1 ? upcased : method
+}
+
+function Request(input, options) {
+  if (!(this instanceof Request)) {
+    throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.')
+  }
+
+  options = options || {}
+  var body = options.body
+
+  if (input instanceof Request) {
+    if (input.bodyUsed) {
+      throw new TypeError('Already read')
+    }
+    this.url = input.url
+    this.credentials = input.credentials
+    if (!options.headers) {
+      this.headers = new Headers(input.headers)
+    }
+    this.method = input.method
+    this.mode = input.mode
+    this.signal = input.signal
+    if (!body && input._bodyInit != null) {
+      body = input._bodyInit
+      input.bodyUsed = true
+    }
+  } else {
+    this.url = String(input)
+  }
+
+  this.credentials = options.credentials || this.credentials || 'same-origin'
+  if (options.headers || !this.headers) {
+    this.headers = new Headers(options.headers)
+  }
+  this.method = normalizeMethod(options.method || this.method || 'GET')
+  this.mode = options.mode || this.mode || null
+  this.signal = options.signal || this.signal || (function () {
+    if ('AbortController' in g) {
+      var ctrl = new AbortController();
+      return ctrl.signal;
+    }
+  }());
+  this.referrer = null
+
+  if ((this.method === 'GET' || this.method === 'HEAD') && body) {
+    throw new TypeError('Body not allowed for GET or HEAD requests')
+  }
+  this._initBody(body)
+
+  if (this.method === 'GET' || this.method === 'HEAD') {
+    if (options.cache === 'no-store' || options.cache === 'no-cache') {
+      // Search for a '_' parameter in the query string
+      var reParamSearch = /([?&])_=[^&]*/
+      if (reParamSearch.test(this.url)) {
+        // If it already exists then set the value with the current time
+        this.url = this.url.replace(reParamSearch, '$1_=' + new Date().getTime())
+      } else {
+        // Otherwise add a new '_' parameter to the end with the current time
+        var reQueryString = /\?/
+        this.url += (reQueryString.test(this.url) ? '&' : '?') + '_=' + new Date().getTime()
+      }
+    }
+  }
+}
+
+Request.prototype.clone = function() {
+  return new Request(this, {body: this._bodyInit})
+}
+
+function decode(body) {
+  var form = new FormData()
+  body
+    .trim()
+    .split('&')
+    .forEach(function(bytes) {
+      if (bytes) {
+        var split = bytes.split('=')
+        var name = split.shift().replace(/\+/g, ' ')
+        var value = split.join('=').replace(/\+/g, ' ')
+        form.append(decodeURIComponent(name), decodeURIComponent(value))
+      }
+    })
+  return form
+}
+
+function parseHeaders(rawHeaders) {
+  var headers = new Headers()
+  // Replace instances of \r\n and \n followed by at least one space or horizontal tab with a space
+  // https://tools.ietf.org/html/rfc7230#section-3.2
+  var preProcessedHeaders = rawHeaders.replace(/\r?\n[\t ]+/g, ' ')
+  // Avoiding split via regex to work around a common IE11 bug with the core-js 3.6.0 regex polyfill
+  // https://github.com/github/fetch/issues/748
+  // https://github.com/zloirock/core-js/issues/751
+  preProcessedHeaders
+    .split('\r')
+    .map(function(header) {
+      return header.indexOf('\n') === 0 ? header.substr(1, header.length) : header
+    })
+    .forEach(function(line) {
+      var parts = line.split(':')
+      var key = parts.shift().trim()
+      if (key) {
+        var value = parts.join(':').trim()
+        try {
+          headers.append(key, value)
+        } catch (error) {
+          console.warn('Response ' + error.message)
+        }
+      }
+    })
+  return headers
+}
+
+Body.call(Request.prototype)
+
+function Response(bodyInit, options) {
+  if (!(this instanceof Response)) {
+    throw new TypeError('Please use the "new" operator, this DOM object constructor cannot be called as a function.')
+  }
+  if (!options) {
+    options = {}
+  }
+
+  this.type = 'default'
+  this.status = options.status === undefined ? 200 : options.status
+  if (this.status < 200 || this.status > 599) {
+    throw new RangeError("Failed to construct 'Response': The status provided (0) is outside the range [200, 599].")
+  }
+  this.ok = this.status >= 200 && this.status < 300
+  this.statusText = options.statusText === undefined ? '' : '' + options.statusText
+  this.headers = new Headers(options.headers)
+  this.url = options.url || ''
+  this._initBody(bodyInit)
+}
+
+Body.call(Response.prototype)
+
+Response.prototype.clone = function() {
+  return new Response(this._bodyInit, {
+    status: this.status,
+    statusText: this.statusText,
+    headers: new Headers(this.headers),
+    url: this.url
+  })
+}
+
+Response.error = function() {
+  var response = new Response(null, {status: 200, statusText: ''})
+  response.ok = false
+  response.status = 0
+  response.type = 'error'
+  return response
+}
+
+var redirectStatuses = [301, 302, 303, 307, 308]
+
+Response.redirect = function(url, status) {
+  if (redirectStatuses.indexOf(status) === -1) {
+    throw new RangeError('Invalid status code')
+  }
+
+  return new Response(null, {status: status, headers: {location: url}})
+}
+
+var DOMException = g.DOMException
+try {
+  new DOMException()
+} catch (err) {
+  DOMException = function(message, name) {
+    this.message = message
+    this.name = name
+    var error = Error(message)
+    this.stack = error.stack
+  }
+  DOMException.prototype = Object.create(Error.prototype)
+  DOMException.prototype.constructor = DOMException
+}
+
+function fetch(input, init) {
+  return new Promise(function(resolve, reject) {
+    var request = new Request(input, init)
+
+    if (request.signal && request.signal.aborted) {
+      return reject(new DOMException('Aborted', 'AbortError'))
+    }
+
+    var xhr = new XMLHttpRequest()
+
+    function abortXhr() {
+      xhr.abort()
+    }
+
+    xhr.onload = function() {
+      var options = {
+        statusText: xhr.statusText,
+        headers: parseHeaders(xhr.getAllResponseHeaders() || '')
+      }
+      // This check if specifically for when a user fetches a file locally from the file system
+      // Only if the status is out of a normal range
+      if (request.url.indexOf('file://') === 0 && (xhr.status < 200 || xhr.status > 599)) {
+        options.status = 200;
+      } else {
+        options.status = xhr.status;
+      }
+      options.url = 'responseURL' in xhr ? xhr.responseURL : options.headers.get('X-Request-URL')
+      var body = 'response' in xhr ? xhr.response : xhr.responseText
+      setTimeout(function() {
+        resolve(new Response(body, options))
+      }, 0)
+    }
+
+    xhr.onerror = function() {
+      setTimeout(function() {
+        reject(new TypeError('Network request failed'))
+      }, 0)
+    }
+
+    xhr.ontimeout = function() {
+      setTimeout(function() {
+        reject(new TypeError('Network request timed out'))
+      }, 0)
+    }
+
+    xhr.onabort = function() {
+      setTimeout(function() {
+        reject(new DOMException('Aborted', 'AbortError'))
+      }, 0)
+    }
+
+    function fixUrl(url) {
+      try {
+        return url === '' && g.location.href ? g.location.href : url
+      } catch (e) {
+        return url
+      }
+    }
+
+    xhr.open(request.method, fixUrl(request.url), true)
+
+    if (request.credentials === 'include') {
+      xhr.withCredentials = true
+    } else if (request.credentials === 'omit') {
+      xhr.withCredentials = false
+    }
+
+    if ('responseType' in xhr) {
+      if (support.blob) {
+        xhr.responseType = 'blob'
+      } else if (
+        support.arrayBuffer
+      ) {
+        xhr.responseType = 'arraybuffer'
+      }
+    }
+
+    if (init && typeof init.headers === 'object' && !(init.headers instanceof Headers || (g.Headers && init.headers instanceof g.Headers))) {
+      var names = [];
+      Object.getOwnPropertyNames(init.headers).forEach(function(name) {
+        names.push(normalizeName(name))
+        xhr.setRequestHeader(name, normalizeValue(init.headers[name]))
+      })
+      request.headers.forEach(function(value, name) {
+        if (names.indexOf(name) === -1) {
+          xhr.setRequestHeader(name, value)
+        }
+      })
+    } else {
+      request.headers.forEach(function(value, name) {
+        xhr.setRequestHeader(name, value)
+      })
+    }
+
+    if (request.signal) {
+      request.signal.addEventListener('abort', abortXhr)
+
+      xhr.onreadystatechange = function() {
+        // DONE (success or failure)
+        if (xhr.readyState === 4) {
+          request.signal.removeEventListener('abort', abortXhr)
+        }
+      }
+    }
+
+    xhr.send(typeof request._bodyInit === 'undefined' ? null : request._bodyInit)
+  })
+}
+
+fetch.polyfill = true
+
+if (!g.fetch) {
+  g.fetch = fetch
+  g.Headers = Headers
+  g.Request = Request
+  g.Response = Response
+}
+
+
+/***/ }),
+/* 16 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getRandomNumber: function() { return /* binding */ getRandomNumber; }
@@ -357,9 +1075,10 @@ const getRandomNumber = (min, max) => {
 }
 
 /***/ }),
-/* 14 */
+/* 17 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   translateGreeting: function() { return /* binding */ translateGreeting; }
@@ -376,15 +1095,16 @@ const translateGreeting = (greetingText) => {
 };
 
 /***/ }),
-/* 15 */
+/* 18 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotes: function() { return /* binding */ getQuotes; }
 /* harmony export */ });
-/* harmony import */ var _getQuoutesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
-/* harmony import */ var _showQuotes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(17);
+/* harmony import */ var _getQuoutesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _showQuotes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
 
 
 
@@ -407,9 +1127,10 @@ async function getQuotes() {
 
 
 /***/ }),
-/* 16 */
+/* 19 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuoteLanguage: function() { return /* binding */ getQuoteLanguage; }
@@ -423,14 +1144,15 @@ const getQuoteLanguage = () => {
 }
 
 /***/ }),
-/* 17 */
+/* 20 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showQuote: function() { return /* binding */ showQuote; }
 /* harmony export */ });
-/* harmony import */ var _slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
+/* harmony import */ var _slider_getRandomNumber__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 
 
 const quote = document.querySelector('.quotes__text')
@@ -443,14 +1165,15 @@ function showQuote(data) {
 }
 
 /***/ }),
-/* 18 */
+/* 21 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   createPlayList: function() { return /* binding */ createPlayList; }
 /* harmony export */ });
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
 
 
 const playList = document.querySelector('.player__list')
@@ -466,9 +1189,10 @@ const createPlayList = () => {
 }
 
 /***/ }),
-/* 19 */
+/* 22 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 const playList = [
 	{
@@ -501,16 +1225,17 @@ const playList = [
 
 
 /***/ }),
-/* 20 */
+/* 23 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   loadSong: function() { return /* binding */ loadSong; },
 /* harmony export */   updateTime: function() { return /* binding */ updateTime; }
 /* harmony export */ });
-/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
+/* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
 
 
 
@@ -541,9 +1266,10 @@ const loadSong = () => {
 
 
 /***/ }),
-/* 21 */
+/* 24 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   audio: function() { return /* binding */ audio; },
@@ -555,9 +1281,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   volumeButton: function() { return /* binding */ volumeButton; },
 /* harmony export */   volumeMuteButtonIcon: function() { return /* binding */ volumeMuteButtonIcon; }
 /* harmony export */ });
-/* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(19);
-/* harmony import */ var _updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
-/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(22);
+/* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _updateLoadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
+/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(25);
 
 
 
@@ -610,9 +1336,10 @@ const playClickedSong = (e) => {
 
 
 /***/ }),
-/* 22 */
+/* 25 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkFlagSong: function() { return /* binding */ checkFlagSong; },
@@ -620,7 +1347,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   pauseSong: function() { return /* binding */ pauseSong; },
 /* harmony export */   playSong: function() { return /* binding */ playSong; }
 /* harmony export */ });
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
 
 
 let isPlay = false;
@@ -650,15 +1377,16 @@ const checkFlagSong = () => {
 
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkClickOnProgressBar: function() { return /* binding */ checkClickOnProgressBar; },
 /* harmony export */   updateProgressBar: function() { return /* binding */ updateProgressBar; }
 /* harmony export */ });
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
 
 
 const progressBar = document.querySelector('.player__progress')
@@ -678,17 +1406,18 @@ const checkClickOnProgressBar = (e) => {
 }
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkInputChangeVolume: function() { return /* binding */ checkInputChangeVolume; },
 /* harmony export */   checkIsMute: function() { return /* binding */ checkIsMute; },
 /* harmony export */   setButtonValueContentLoaded: function() { return /* binding */ setButtonValueContentLoaded; }
 /* harmony export */ });
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
-/* harmony import */ var _sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony import */ var _sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
 
 
 
@@ -742,15 +1471,16 @@ const setButtonValueContentLoaded = () => {
 }
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getVolumeButtonValue: function() { return /* binding */ getVolumeButtonValue; },
 /* harmony export */   setVolumeButtonValue: function() { return /* binding */ setVolumeButtonValue; }
 /* harmony export */ });
-/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
+/* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
 
 
 const setVolumeButtonValue = () => {
@@ -801,6 +1531,18 @@ const getVolumeButtonValue = () => {
 /******/ 		};
 /******/ 	}();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	!function() {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	}();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	!function() {
 /******/ 		__webpack_require__.o = function(obj, prop) { return Object.prototype.hasOwnProperty.call(obj, prop); }
@@ -819,8 +1561,9 @@ const getVolumeButtonValue = () => {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 !function() {
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_date_time__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
@@ -831,15 +1574,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
 /* harmony import */ var _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
-/* harmony import */ var _components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(15);
-/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(18);
-/* harmony import */ var _components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(20);
-/* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(22);
-/* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
-/* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23);
+/* harmony import */ var _components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(18);
+/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(21);
+/* harmony import */ var _components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(23);
+/* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(25);
+/* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(24);
+/* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(26);
 /* harmony import */ var _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
 /* harmony import */ var _components_language_setSelectedValue_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(9);
-/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(24);
+/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(27);
 
 
 
@@ -892,7 +1635,7 @@ _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventLis
 	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.updateProgressBar)(e)
 })
 
-_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.select.addEventListener('change', () => {
+_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.languageSelect.addEventListener('change', () => {
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLang)()
 	;(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
 	;(0,_components_language_setSelectedValue_js__WEBPACK_IMPORTED_MODULE_16__.setSelectedValue)()

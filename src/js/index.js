@@ -13,7 +13,7 @@ import { loadSong, updateTime } from './components/player/updateLoadSong.js'
 import { checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
-import { select, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
+import { languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { setSelectedValue } from './components/language/setSelectedValue.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 
@@ -50,7 +50,7 @@ audio.addEventListener('timeupdate', function (e) {
 	updateProgressBar(e)
 })
 
-select.addEventListener('change', () => {
+languageSelect.addEventListener('change', () => {
 	setCurrentLang()
 	getWeather()
 	setSelectedValue()
