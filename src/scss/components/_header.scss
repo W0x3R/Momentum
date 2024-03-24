@@ -262,3 +262,14 @@
 		}
 	}
 }
+
+.query {
+	&__input {
+		width: 140px;
+		height: 26px;
+		color: var(--white);
+		border-radius: 4px;
+		background: #5c6664;
+		font-size: 16px;
+	}
+}
