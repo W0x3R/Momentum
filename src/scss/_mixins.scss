@@ -11,3 +11,44 @@
 	width: $width;
 	height: $height;
 }
+
+@mixin selectWrapper($width) {
+	position: relative;
+	display: flex;
+	width: $width;
+	height: 26px;
+	line-height: 1.6;
+	background: #5c6664;
+	overflow: hidden;
+	border-radius: 4px;
+
+	&:hover::after {
+		color: var(--blue);
+	}
+
+	&::after {
+		content: '\25BC';
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 6px;
+		background: var(--black-background);
+		cursor: pointer;
+		pointer-events: none;
+		transition: 0.25s color ease;
+		color: var(--white);
+	}
+}
+
+@mixin select {
+	background: #5c6664;
+	flex: 1;
+	padding: 0 8px;
+	color: var(--white);
+	cursor: pointer;
+	font-size: 16px;
+
+	&_open::after {
+		transform: rotate(180deg);
+	}
+}
