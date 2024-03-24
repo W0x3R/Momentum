@@ -1,7 +1,7 @@
-import { select } from "./transformIcon"
+import { languageSelect } from "./transformIcon"
 
 export const getCurrentLang = () => localStorage.getItem('language')
 
 export const setCurrentLang = () => {
-	localStorage.setItem('language', select.value)
+	localStorage.setItem('language', languageSelect.value)
 }

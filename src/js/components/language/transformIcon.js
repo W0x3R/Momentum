@@ -1,5 +1,5 @@
 const selectWrapper = document.querySelector('.language')
-export const select = document.querySelector('.language__select')
+export const languageSelect = document.querySelector('.language__select')
 
 export const rotateLanguageIcon = () => {
 	selectWrapper.classList.toggle('language__select_open')

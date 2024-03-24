@@ -1,7 +1,7 @@
 import { getCurrentLang } from "./localStorageLanguage";
-import { select } from "./transformIcon";
+import { languageSelect } from "./transformIcon";
 
-const selectChildrenArray = Array.from(select.children)
+const selectChildrenArray = Array.from(languageSelect.children)
 
 const findSelectedItem = (lang, value) => {
 	const item = selectChildrenArray.find(e => e.value === lang);
