@@ -16,6 +16,7 @@ import { updateProgressBar, checkClickOnProgressBar } from './components/player/
 import { languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 import { setSelectedSourceValue } from './components/imageSource/setSelectedImageSourceValue'
+import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
 
 setInterval(() => {
 	showTime()
@@ -41,6 +42,7 @@ window.addEventListener('load', () => {
 	getGreetingName()
 	getCity()
 	setSelectedSourceValue()
+	setSelectedLanguageValue()
 })
 
 
