@@ -307,7 +307,14 @@ const image = new Image();
 let randomNumberGithub = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
 let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 80)
 
+const forbiddenSymbols = ['#', '%', '&', '+', ';']
+
 const changeQueryInput = () => {
+	if (forbiddenSymbols.includes(queryInput.value)) {
+		alert('Для данного запроса не найдены изображения')
+		queryInput.value = ''
+		return
+	}
 	query = queryInput.value
 	changePexelsImages()
 }

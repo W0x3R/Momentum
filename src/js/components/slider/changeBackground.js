@@ -13,7 +13,14 @@ const image = new Image();
 let randomNumberGithub = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
 
+const forbiddenSymbols = ['#', '%', '&', '+', ';']
+
 export const changeQueryInput = () => {
+	if (forbiddenSymbols.includes(queryInput.value)) {
+		alert('Для данного запроса не найдены изображения')
+		queryInput.value = ''
+		return
+	}
 	query = queryInput.value
 	changePexelsImages()
 }
