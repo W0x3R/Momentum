@@ -10,7 +10,7 @@ const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 let query = greetingText;
 const image = new Image();
-let randomNumber = getRandomNumber(1, 20)
+let randomNumberGithub = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
 
 
@@ -23,7 +23,7 @@ const changeGithub = () => {
 	if (localStorage.getItem('source') === 'github') {
 		const currentLang = getCurrentLanguage();
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
-		let randomNumberForImages = randomNumber.toString().padStart(2, '0')
+		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
 		image.src = url;
 		image.onload = () => body.style.backgroundImage = `url(${url})`
@@ -52,9 +52,9 @@ export const changeBackground = () => {
 
 export const changeBackgroundOnClick = (direction) => {
 	if (localStorage.getItem('source') === 'github') {
-		randomNumber = (direction === 'prev') ?
-			((randomNumber === 1) ? 20 : randomNumber - 1) :
-			((randomNumber === 20) ? 1 : randomNumber + 1);
+		randomNumberGithub = (direction === 'prev') ?
+			((randomNumberGithub === 1) ? 20 : randomNumberGithub - 1) :
+			((randomNumberGithub === 20) ? 1 : randomNumberGithub + 1);
 		changeBackground()
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
