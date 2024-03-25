@@ -1,5 +1,5 @@
 import { getCurrentLanguage } from "./localStorageLanguage";
-import { languageSelect } from "./transformIcon";
+import { languageSelect } from "../transformIcons/transformIcons";
 
 const selectLanguageChildrenArray = Array.from(languageSelect.children)
 

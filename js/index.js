@@ -10,7 +10,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getCurrentLanguage: function() { return /* binding */ getCurrentLanguage; },
 /* harmony export */   setCurrentLanguage: function() { return /* binding */ setCurrentLanguage; }
 /* harmony export */ });
-/* harmony import */ var _transformIcon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
 const getCurrentLanguage = () => {
@@ -23,7 +23,7 @@ const getCurrentLanguage = () => {
 }
 
 const setCurrentLanguage = () => {
-	localStorage.setItem('language', _transformIcon__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
+	localStorage.setItem('language', _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
 }
 
 /***/ }),
@@ -35,17 +35,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   closeLanguageIcon: function() { return /* binding */ closeLanguageIcon; },
 /* harmony export */   languageSelect: function() { return /* binding */ languageSelect; },
-/* harmony export */   rotateLanguageIcon: function() { return /* binding */ rotateLanguageIcon; }
+/* harmony export */   rotateLanguageIcon: function() { return /* binding */ rotateLanguageIcon; },
+/* harmony export */   selectLanguageWrapper: function() { return /* binding */ selectLanguageWrapper; },
+/* harmony export */   selectSourceImagesWrapper: function() { return /* binding */ selectSourceImagesWrapper; }
 /* harmony export */ });
-const selectWrapper = document.querySelector('.language')
+const selectLanguageWrapper = document.querySelector('.language')
+const selectSourceImagesWrapper = document.querySelector('.source')
 const languageSelect = document.querySelector('.language__select')
 
-const rotateLanguageIcon = () => {
-	selectWrapper.classList.toggle('language__select_open')
+const rotateLanguageIcon = (tag, classToggle) => {
+	tag.classList.toggle(classToggle)
 }
 
-const closeLanguageIcon = (e) => {
-	!e.target.classList.contains('language__select') ? selectWrapper.classList.remove('language__select_open') : ''
+const closeLanguageIcon = (e, containsClassList, tag, removeClassList) => {
+	!e.target.classList.contains(containsClassList) ? tag.classList.remove(removeClassList) : ''
 }
 
 /***/ }),
@@ -309,7 +312,7 @@ let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRan
 
 queryInput.addEventListener('change', function (e) {
 	query = this.value
-	changePexels()
+	changePexelsImages()
 })
 
 const changeGithubImages = () => {
@@ -1555,11 +1558,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setSelectedLanguageValue: function() { return /* binding */ setSelectedLanguageValue; }
 /* harmony export */ });
 /* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _transformIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
+/* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 
 
 
-const selectLanguageChildrenArray = Array.from(_transformIcon__WEBPACK_IMPORTED_MODULE_1__.languageSelect.children)
+const selectLanguageChildrenArray = Array.from(_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__.languageSelect.children)
 
 const findLanguageSelectedItem = (lang, value) => {
 	const item = selectLanguageChildrenArray.find(e => e.value === lang);
@@ -1670,7 +1673,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(24);
 /* harmony import */ var _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(23);
 /* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(25);
-/* harmony import */ var _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
+/* harmony import */ var _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(26);
 /* harmony import */ var _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(28);
 /* harmony import */ var _components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(30);
@@ -1730,7 +1733,7 @@ _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventLis
 	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.updateProgressBar)(e)
 })
 
-_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.languageSelect.addEventListener('change', () => {
+_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.languageSelect.addEventListener('change', () => {
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
 	;(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
 	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
@@ -1742,7 +1745,8 @@ _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.languageSele
 const eventHandlers = {
 	'.main__button_prev': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('prev'),
 	'.main__button_next': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('next'),
-	'.language': _components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon,
+	'.language': () => (0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon)(_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.selectLanguageWrapper, 'language__select_open'),
+	'.source': () => (0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.rotateLanguageIcon)(_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.selectSourceImagesWrapper, 'source__select_open'),
 	'.player__controls-play': _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_12__.checkFlagSong,
 	'.player__progress': (e) => (0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.checkClickOnProgressBar)(e),
 	'.player__controls-prev': _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.prevSong,
@@ -1759,7 +1763,8 @@ window.addEventListener('click', function (e) {
 			break
 		}
 	}
-	(0,_components_language_transformIcon_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e)
+	(0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e, 'language__select', _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.selectLanguageWrapper, 'language__select_open')
+	;(0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.closeLanguageIcon)(e, 'source__select', _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.selectSourceImagesWrapper, 'source__select_open')
 })
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', function () {

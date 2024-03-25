@@ -15,7 +15,7 @@ let randomNumberPixels = getRandomNumber(0, 80)
 
 queryInput.addEventListener('change', function (e) {
 	query = this.value
-	changePexels()
+	changePexelsImages()
 })
 
 const changeGithubImages = () => {

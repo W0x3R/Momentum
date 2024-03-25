@@ -1,4 +1,4 @@
-import { languageSelect } from "./transformIcon"
+import { languageSelect } from "../transformIcons/transformIcons"
 
 export const getCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {

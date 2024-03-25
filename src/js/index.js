@@ -13,7 +13,7 @@ import { loadSong, updateTime } from './components/player/updateLoadSong.js'
 import { checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
-import { languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/language/transformIcon.js'
+import { selectLanguageWrapper, selectSourceImagesWrapper, languageSelect, rotateLanguageIcon, closeLanguageIcon } from './components/transformIcons/transformIcons.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
@@ -66,7 +66,8 @@ languageSelect.addEventListener('change', () => {
 const eventHandlers = {
 	'.main__button_prev': () => changeBackgroundOnClick('prev'),
 	'.main__button_next': () => changeBackgroundOnClick('next'),
-	'.language': rotateLanguageIcon,
+	'.language': () => rotateLanguageIcon(selectLanguageWrapper, 'language__select_open'),
+	'.source': () => rotateLanguageIcon(selectSourceImagesWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => checkClickOnProgressBar(e),
 	'.player__controls-prev': prevSong,
@@ -83,7 +84,8 @@ window.addEventListener('click', function (e) {
 			break
 		}
 	}
-	closeLanguageIcon(e)
+	closeLanguageIcon(e, 'language__select', selectLanguageWrapper, 'language__select_open')
+	closeLanguageIcon(e, 'source__select', selectSourceImagesWrapper, 'source__select_open')
 })
 
 audio.addEventListener('ended', function () {
