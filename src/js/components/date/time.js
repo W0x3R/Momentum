@@ -4,4 +4,3 @@ export const showTime = () => {
 	const currentTime = new Date().toLocaleTimeString()
 	time.textContent = currentTime
 }
-

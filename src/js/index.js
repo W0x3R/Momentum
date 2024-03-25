@@ -17,6 +17,7 @@ import { selectLanguageWrapper, selectSourceImagesWrapper, languageSelect, rotat
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
 import { imageSourceSelect, checkImageSourceSelectValue, setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
+import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 
 setInterval(() => {
 	showTime()
@@ -33,12 +34,11 @@ loadSong()
 
 window.addEventListener('beforeunload', () => {
 	setDefaultCurrentLanguage()
+	setImagesSourceDefault()
 	setCity()
 })
 
-greetingName.addEventListener('input', () => {
-	setGreetingName()
-})
+greetingName.addEventListener('input', setGreetingName)
 
 window.addEventListener('load', () => {
 	getGreetingName()
@@ -46,6 +46,7 @@ window.addEventListener('load', () => {
 	setSelectedSourceValue()
 	setSelectedLanguageValue()
 	changeBackground()
+	setButtonValueContentLoaded()
 })
 
 weatherCityInput.addEventListener('change', getWeather)
@@ -89,22 +90,12 @@ window.addEventListener('click', function (e) {
 	closeIcon(e, 'source__select', selectSourceImagesWrapper, 'source__select_open')
 })
 
-audio.addEventListener('ended', function () {
-	nextSong()
-})
+audio.addEventListener('ended', nextSong)
 
-volumeButton.addEventListener('input', function () {
-	checkInputChangeVolume()
-})
-
-document.addEventListener('DOMContentLoaded', function (e) {
-	setButtonValueContentLoaded()
-});
+volumeButton.addEventListener('input', checkInputChangeVolume)
 
 imageSourceSelect.addEventListener('change', function (e) {
 	checkImageSourceSelectValue(e)
 })
 
 queryInput.addEventListener('change', changeQueryInput)
-
-

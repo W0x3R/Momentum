@@ -12,4 +12,3 @@ export const showDate = () => {
 	const currentDate = new Date().toLocaleDateString(currentLanguage, dateOptions)
 	date.textContent = currentDate
 }
-

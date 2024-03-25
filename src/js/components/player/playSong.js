@@ -23,4 +23,3 @@ export const pauseSong = () => {
 export const checkFlagSong = () => {
 	isPlay ? pauseSong() : playSong()
 }
-
