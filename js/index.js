@@ -1706,8 +1706,6 @@ window.addEventListener('beforeunload', () => {
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
 })
 
-_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.greetingName.addEventListener('input', _components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName)
-
 window.addEventListener('load', () => {
 	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.getCity)()
@@ -1733,7 +1731,7 @@ _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.langu
 	;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 })
 
-const eventHandlers = {
+const eventHandlersClick = {
 	'.main__button_prev': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('prev'),
 	'.main__button_next': () => (0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackgroundOnClick)('next'),
 	'.language': () => (0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.rotateIcon)(_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.selectLanguageWrapper, 'language__select_open'),
@@ -1748,9 +1746,9 @@ const eventHandlers = {
 
 window.addEventListener('click', function (e) {
 	const target = e.target
-	for (const selector in eventHandlers) {
+	for (const selector in eventHandlersClick) {
 		if (target.closest(selector)) {
-			eventHandlers[selector](e)
+			eventHandlersClick[selector](e)
 			break
 		}
 	}
@@ -1760,13 +1758,26 @@ window.addEventListener('click', function (e) {
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)
 
-_components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.volumeButton.addEventListener('input', _components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.checkInputChangeVolume)
-
 _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.imageSourceSelect.addEventListener('change', function (e) {
 	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.checkImageSourceSelectValue)(e)
 })
 
 _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.queryInput.addEventListener('change', _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeQueryInput)
+
+const eventHandlersInput = {
+	'.player__sounds-volume': _components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.checkInputChangeVolume,
+	'.greeting__name': _components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName
+}
+
+window.addEventListener('input', function (e) {
+	let target = e.target;
+	for (const selector in eventHandlersInput) {
+		if (target.closest(selector)) {
+			eventHandlersInput[selector](e)
+			break
+		}
+	}
+})
 }();
 /******/ })()
 ;

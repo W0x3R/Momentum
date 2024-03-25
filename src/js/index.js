@@ -3,7 +3,7 @@ import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
 import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLanguage.js'
-import { greetingName, getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
+import { getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
 import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
 import { changeBackground, changeBackgroundOnClick, queryInput, changeQueryInput } from './components/slider/changeBackground'
@@ -11,7 +11,7 @@ import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
 import { checkFlagSong } from './components/player/playSong.js'
-import { audio, nextSong, prevSong, playClickedSong, volumeButton } from './components/player/switchSong.js'
+import { audio, nextSong, prevSong, playClickedSong } from './components/player/switchSong.js'
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, languageSelect, rotateIcon, closeIcon } from './components/transformIcons/transformIcons.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
@@ -38,8 +38,6 @@ window.addEventListener('beforeunload', () => {
 	setCity()
 })
 
-greetingName.addEventListener('input', setGreetingName)
-
 window.addEventListener('load', () => {
 	getGreetingName()
 	getCity()
@@ -65,7 +63,7 @@ languageSelect.addEventListener('change', () => {
 	getQuotes()
 })
 
-const eventHandlers = {
+const eventHandlersClick = {
 	'.main__button_prev': () => changeBackgroundOnClick('prev'),
 	'.main__button_next': () => changeBackgroundOnClick('next'),
 	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
@@ -80,9 +78,9 @@ const eventHandlers = {
 
 window.addEventListener('click', function (e) {
 	const target = e.target
-	for (const selector in eventHandlers) {
+	for (const selector in eventHandlersClick) {
 		if (target.closest(selector)) {
-			eventHandlers[selector](e)
+			eventHandlersClick[selector](e)
 			break
 		}
 	}
@@ -92,10 +90,23 @@ window.addEventListener('click', function (e) {
 
 audio.addEventListener('ended', nextSong)
 
-volumeButton.addEventListener('input', checkInputChangeVolume)
-
 imageSourceSelect.addEventListener('change', function (e) {
 	checkImageSourceSelectValue(e)
 })
 
 queryInput.addEventListener('change', changeQueryInput)
+
+const eventHandlersInput = {
+	'.player__sounds-volume': checkInputChangeVolume,
+	'.greeting__name': setGreetingName
+}
+
+window.addEventListener('input', function (e) {
+	let target = e.target;
+	for (const selector in eventHandlersInput) {
+		if (target.closest(selector)) {
+			eventHandlersInput[selector](e)
+			break
+		}
+	}
+})
