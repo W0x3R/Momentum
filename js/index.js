@@ -13,6 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
+
 const getCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {
 		localStorage.setItem('language', 'en')
@@ -1707,7 +1708,6 @@ setInterval(() => {
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
 
 window.addEventListener('beforeunload', () => {
-	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
 })
 

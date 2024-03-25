@@ -33,7 +33,6 @@ createPlayList()
 loadSong()
 
 window.addEventListener('beforeunload', () => {
-	setCurrentLanguage()
 	setCity()
 })
 
