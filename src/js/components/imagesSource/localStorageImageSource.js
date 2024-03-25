@@ -1,8 +1,7 @@
 export const getImagesSource = () => {
 	if (!localStorage.getItem('source')) {
 		setImagesSource('github')
-	}
-	else {
+	} else {
 		return localStorage.getItem('source')
 	}
 }

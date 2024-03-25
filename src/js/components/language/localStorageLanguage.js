@@ -3,8 +3,7 @@ import { languageSelect } from "../transformIcons/transformIcons"
 export const getCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {
 		localStorage.setItem('language', 'en')
-	}
-	else {
+	} else {
 		return localStorage.getItem('language')
 	}
 }
