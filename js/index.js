@@ -302,7 +302,7 @@ const body = document.body
 const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 const query = 'BMW';
 let randomNumber = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
-let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 74)
+let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 80)
 
 const changeGithub = (img) => {
 	if (localStorage.getItem('source') === 'github') {
@@ -319,7 +319,8 @@ const changeGithub = (img) => {
 
 const changePexels = (img) => {
 	if (localStorage.getItem('source') === 'pexels') {
-		client.photos.search({ query, per_page: 74 }).then(photos => {
+		client.photos.search({ query, per_page: 80 }).then(photos => {
+			console.log(photos);
 			img.src = photos.photos[randomNumberPixels - 1].src.landscape
 			img.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 		});
@@ -341,8 +342,8 @@ const changeBackgroundOnClick = (direction) => {
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
 		randomNumberPixels = (direction === 'prev') ?
-			((randomNumberPixels === 1) ? 74 : randomNumberPixels - 1) :
-			((randomNumberPixels === 74) ? 1 : randomNumberPixels + 1);
+			((randomNumberPixels === 1) ? 80 : randomNumberPixels - 1) :
+			((randomNumberPixels === 80) ? 1 : randomNumberPixels + 1);
 		changeBackground()
 	}
 }
