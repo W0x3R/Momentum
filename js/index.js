@@ -307,7 +307,7 @@ const image = new Image();
 let randomNumberGithub = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
 let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 80)
 
-queryInput.addEventListener('change', function (e) {
+queryInput.addEventListener('change', function () {
 	query = this.value
 	changePexelsImages()
 })
@@ -1538,7 +1538,7 @@ const setSelectedSourceValue = () => {
 	if (getSource === 'github') {
 		setSelectedImageSourceValue(1, false)
 		setSelectedImageSourceValue(0, true)
-	} else {
+	} else if (getSource === 'pexels') {
 		setSelectedImageSourceValue(0, false)
 		setSelectedImageSourceValue(1, true)
 	}
@@ -1699,7 +1699,7 @@ setInterval(() => {
 ;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 ;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
 ;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceHolderLanguage)()
-;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackground)()
+
 ;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.createPlayList)()
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
@@ -1718,6 +1718,7 @@ window.addEventListener('load', () => {
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.getCity)()
 	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.setSelectedSourceValue)()
 	;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_17__.setSelectedLanguageValue)()
+	;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackground)()
 })
 
 _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCityInput.addEventListener('change', _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)

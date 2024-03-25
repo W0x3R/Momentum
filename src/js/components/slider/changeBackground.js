@@ -13,7 +13,7 @@ const image = new Image();
 let randomNumberGithub = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
 
-queryInput.addEventListener('change', function (e) {
+queryInput.addEventListener('change', function () {
 	query = this.value
 	changePexelsImages()
 })

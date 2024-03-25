@@ -12,7 +12,7 @@ export const setSelectedSourceValue = () => {
 	if (getSource === 'github') {
 		setSelectedImageSourceValue(1, false)
 		setSelectedImageSourceValue(0, true)
-	} else {
+	} else if (getSource === 'pexels') {
 		setSelectedImageSourceValue(0, false)
 		setSelectedImageSourceValue(1, true)
 	}

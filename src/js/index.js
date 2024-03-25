@@ -27,7 +27,7 @@ showDate()
 showTime()
 showGreetingText()
 setPlaceHolderLanguage()
-changeBackground()
+
 getQuotes()
 createPlayList()
 loadSong()
@@ -46,6 +46,7 @@ window.addEventListener('load', () => {
 	getCity()
 	setSelectedSourceValue()
 	setSelectedLanguageValue()
+	changeBackground()
 })
 
 weatherCityInput.addEventListener('change', getWeather)
