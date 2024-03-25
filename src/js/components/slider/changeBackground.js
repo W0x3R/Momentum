@@ -5,38 +5,49 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 
 const body = document.body
+const queryInput = document.querySelector('.query__input')
+const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-const query = 'BMW';
+let query = greetingText;
+const image = new Image();
 let randomNumber = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
 
-const changeGithub = (img) => {
+
+queryInput.addEventListener('change', function (e) {
+	query = this.value
+	changePexels()
+})
+
+const changeGithub = () => {
 	if (localStorage.getItem('source') === 'github') {
 		const currentLang = getCurrentLanguage();
-		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
-
 		let randomNumberForImages = randomNumber.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-		img.src = url;
-		img.onload = () => body.style.backgroundImage = `url(${url})`
+		image.src = url;
+		image.onload = () => body.style.backgroundImage = `url(${url})`
 	}
 }
 
-const changePexels = (img) => {
+const changePexels = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		client.photos.search({ query, per_page: 80 }).then(photos => {
-			console.log(photos);
-			img.src = photos.photos[randomNumberPixels - 1].src.landscape
-			img.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+			try {
+				image.src = photos.photos[randomNumberPixels - 1].src.landscape
+				image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+			}
+			catch (e) {
+				alert('Для данного запроса не найдены изображения')
+				queryInput.value = ''
+			}
 		});
 	}
 }
 
 export const changeBackground = () => {
-	const image = new Image();
-	changeGithub(image)
-	changePexels(image)
+	changeGithub()
+	changePexels()
 }
 
 export const changeBackgroundOnClick = (direction) => {
