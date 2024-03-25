@@ -312,7 +312,7 @@ queryInput.addEventListener('change', function (e) {
 	changePexels()
 })
 
-const changeGithub = () => {
+const changeGithubImages = () => {
 	if (localStorage.getItem('source') === 'github') {
 		queryInput.classList.add('query__input_hide')
 		const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
@@ -325,7 +325,7 @@ const changeGithub = () => {
 	}
 }
 
-const changePexels = () => {
+const changePexelsImages = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, per_page: 80 }).then(photos => {
@@ -342,8 +342,8 @@ const changePexels = () => {
 }
 
 const changeBackground = () => {
-	changeGithub()
-	changePexels()
+	changeGithubImages()
+	changePexelsImages()
 }
 
 const changeBackgroundOnClick = (direction) => {
