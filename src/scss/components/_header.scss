@@ -271,9 +271,10 @@
 		border-radius: 4px;
 		background: #5c6664;
 		font-size: 16px;
+		transition: height 0.6s ease;
 
 		&_hide {
-			visibility: hidden;
+			height: 0;
 		}
 	}
 }
