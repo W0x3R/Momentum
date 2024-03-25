@@ -271,5 +271,9 @@
 		border-radius: 4px;
 		background: #5c6664;
 		font-size: 16px;
+
+		&_hide {
+			visibility: hidden;
+		}
 	}
 }

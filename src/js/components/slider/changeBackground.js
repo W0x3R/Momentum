@@ -8,11 +8,10 @@ const body = document.body
 const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-let query = translateGreeting(greetingText);
+let query = getCurrentLanguage() === 'ru' ? translateGreeting(greetingText) : greetingText
 const image = new Image();
 let randomNumberGithub = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
-
 
 queryInput.addEventListener('change', function (e) {
 	query = this.value
@@ -21,6 +20,8 @@ queryInput.addEventListener('change', function (e) {
 
 const changeGithub = () => {
 	if (localStorage.getItem('source') === 'github') {
+		queryInput.classList.add('query__input_hide')
+		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		const currentLang = getCurrentLanguage();
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
@@ -32,6 +33,7 @@ const changeGithub = () => {
 
 const changePexels = () => {
 	if (localStorage.getItem('source') === 'pexels') {
+		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, per_page: 80 }).then(photos => {
 			try {
 				image.src = photos.photos[randomNumberPixels - 1].src.landscape

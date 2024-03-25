@@ -302,11 +302,10 @@ const body = document.body
 const queryInput = document.querySelector('.query__input')
 const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
 const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-let query = (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText);
+let query = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)() === 'ru' ? (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText) : greetingText
 const image = new Image();
 let randomNumberGithub = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
 let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 80)
-
 
 queryInput.addEventListener('change', function (e) {
 	query = this.value
@@ -315,6 +314,8 @@ queryInput.addEventListener('change', function (e) {
 
 const changeGithub = () => {
 	if (localStorage.getItem('source') === 'github') {
+		queryInput.classList.add('query__input_hide')
+		const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
 		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)();
 		let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
@@ -326,6 +327,7 @@ const changeGithub = () => {
 
 const changePexels = () => {
 	if (localStorage.getItem('source') === 'pexels') {
+		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, per_page: 80 }).then(photos => {
 			try {
 				image.src = photos.photos[randomNumberPixels - 1].src.landscape
