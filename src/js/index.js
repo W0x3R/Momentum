@@ -4,19 +4,19 @@ import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
 import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLanguage.js'
 import { getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
-import { weatherCityInput, getWeather } from './components/weather/getWeather'
+import { getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBackground, changeBackgroundOnClick, queryInput, changeQueryInput } from './components/slider/changeBackground'
+import { changeBackground, changeBackgroundOnClick, changeQueryInput } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
 import { checkFlagSong } from './components/player/playSong.js'
 import { audio, nextSong, prevSong, playClickedSong } from './components/player/switchSong.js'
 import { updateProgressBar, checkClickOnProgressBar } from './components/player/updateProgressBar.js'
-import { selectLanguageWrapper, selectSourceImagesWrapper, languageSelect, rotateIcon, closeIcon } from './components/transformIcons/transformIcons.js'
+import { selectLanguageWrapper, selectSourceImagesWrapper, rotateIcon, closeIcon } from './components/transformIcons/transformIcons.js'
 import { checkIsMute, setButtonValueContentLoaded, checkInputChangeVolume } from './components/player/volume.js'
 import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
-import { imageSourceSelect, checkImageSourceSelectValue, setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
+import { checkImageSourceSelectValue, setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 
 setInterval(() => {
@@ -47,20 +47,9 @@ window.addEventListener('load', () => {
 	setButtonValueContentLoaded()
 })
 
-weatherCityInput.addEventListener('change', getWeather)
-
 audio.addEventListener('timeupdate', function (e) {
 	updateTime()
 	updateProgressBar(e)
-})
-
-languageSelect.addEventListener('change', () => {
-	setCurrentLanguage()
-	getWeather()
-	showDate()
-	showGreetingText()
-	setPlaceHolderLanguage()
-	getQuotes()
 })
 
 const eventHandlersClick = {
@@ -90,12 +79,6 @@ window.addEventListener('click', function (e) {
 
 audio.addEventListener('ended', nextSong)
 
-imageSourceSelect.addEventListener('change', function (e) {
-	checkImageSourceSelectValue(e)
-})
-
-queryInput.addEventListener('change', changeQueryInput)
-
 const eventHandlersInput = {
 	'.player__sounds-volume': checkInputChangeVolume,
 	'.greeting__name': setGreetingName
@@ -106,6 +89,30 @@ window.addEventListener('input', function (e) {
 	for (const selector in eventHandlersInput) {
 		if (target.closest(selector)) {
 			eventHandlersInput[selector](e)
+			break
+		}
+	}
+})
+
+const eventHandlersChange = {
+	'.query__input': changeQueryInput,
+	'.source__select': (e) => checkImageSourceSelectValue(e),
+	'.language__select': () => {
+		setCurrentLanguage()
+		getWeather()
+		showDate()
+		showGreetingText()
+		setPlaceHolderLanguage()
+		getQuotes()
+	},
+	'.weather__input': getWeather
+}
+
+window.addEventListener('change', function (e) {
+	const target = e.target
+	for (const selector in eventHandlersChange) {
+		if (target.closest(selector)) {
+			eventHandlersChange[selector](e)
 			break
 		}
 	}

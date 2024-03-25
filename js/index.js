@@ -285,8 +285,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeBackground: function() { return /* binding */ changeBackground; },
 /* harmony export */   changeBackgroundOnClick: function() { return /* binding */ changeBackgroundOnClick; },
-/* harmony export */   changeQueryInput: function() { return /* binding */ changeQueryInput; },
-/* harmony export */   queryInput: function() { return /* binding */ queryInput; }
+/* harmony export */   changeQueryInput: function() { return /* binding */ changeQueryInput; }
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
@@ -1511,7 +1510,6 @@ const setSelectedLanguageValue = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkImageSourceSelectValue: function() { return /* binding */ checkImageSourceSelectValue; },
-/* harmony export */   imageSourceSelect: function() { return /* binding */ imageSourceSelect; },
 /* harmony export */   setSelectedSourceValue: function() { return /* binding */ setSelectedSourceValue; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
@@ -1715,20 +1713,9 @@ window.addEventListener('load', () => {
 	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.setButtonValueContentLoaded)()
 })
 
-_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCityInput.addEventListener('change', _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)
-
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('timeupdate', function (e) {
 	;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.updateTime)()
 	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_14__.updateProgressBar)(e)
-})
-
-_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_15__.languageSelect.addEventListener('change', () => {
-	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
-	;(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
-	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
-	;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
-	;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceHolderLanguage)()
-	;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 })
 
 const eventHandlersClick = {
@@ -1758,12 +1745,6 @@ window.addEventListener('click', function (e) {
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('ended', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.nextSong)
 
-_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.imageSourceSelect.addEventListener('change', function (e) {
-	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.checkImageSourceSelectValue)(e)
-})
-
-_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.queryInput.addEventListener('change', _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeQueryInput)
-
 const eventHandlersInput = {
 	'.player__sounds-volume': _components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.checkInputChangeVolume,
 	'.greeting__name': _components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName
@@ -1774,6 +1755,30 @@ window.addEventListener('input', function (e) {
 	for (const selector in eventHandlersInput) {
 		if (target.closest(selector)) {
 			eventHandlersInput[selector](e)
+			break
+		}
+	}
+})
+
+const eventHandlersChange = {
+	'.query__input': _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeQueryInput,
+	'.source__select': (e) => (0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.checkImageSourceSelectValue)(e),
+	'.language__select': () => {
+		;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
+		;(0,_components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
+		;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
+		;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
+		;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceHolderLanguage)()
+		;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
+	},
+	'.weather__input': _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather
+}
+
+window.addEventListener('change', function (e) {
+	const target = e.target
+	for (const selector in eventHandlersChange) {
+		if (target.closest(selector)) {
+			eventHandlersChange[selector](e)
 			break
 		}
 	}

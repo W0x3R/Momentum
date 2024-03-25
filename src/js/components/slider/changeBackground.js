@@ -5,7 +5,7 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 
 const body = document.body
-export const queryInput = document.querySelector('.query__input')
+const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 let query = getCurrentLanguage() === 'ru' ? translateGreeting(greetingText) : greetingText

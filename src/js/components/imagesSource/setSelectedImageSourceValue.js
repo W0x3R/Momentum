@@ -1,7 +1,7 @@
 import { setImagesSource, getImagesSource } from "./localStorageImageSource";
 import { changeBackground } from "../slider/changeBackground";
 
-export const imageSourceSelect = document.querySelector('.source__select')
+const imageSourceSelect = document.querySelector('.source__select')
 const selectLanguageChildrenArray = Array.from(imageSourceSelect.children)
 const setSelectedImageSourceValue = (number, value) => {
 	selectLanguageChildrenArray[number].selected = value
