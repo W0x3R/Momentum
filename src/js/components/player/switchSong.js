@@ -30,11 +30,11 @@ export const prevSong = () => {
 }
 
 export const playClickedSong = (e) => {
-	const dataNumber = parseInt(e.target.getAttribute('datanumber'));
-	if (!isNaN(dataNumber)) {
-		if (count !== dataNumber) {
+	const songNumber = parseInt(e.target.getAttribute('song_number'));
+	if (!isNaN(songNumber)) {
+		if (count !== songNumber) {
 			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
-			count = dataNumber;
+			count = songNumber;
 			loadSong();
 			playSong();
 		} else {

@@ -7,7 +7,7 @@ export const createPlayList = () => {
 		const li = document.createElement('li')
 		li.classList.add('player__list-item')
 		li.textContent = e.title
-		li.setAttribute('datanumber', i)
+		li.setAttribute('song_number', i)
 		playList.append(li)
 	})
 }
