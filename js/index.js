@@ -285,7 +285,9 @@ const getCity = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeBackground: function() { return /* binding */ changeBackground; },
-/* harmony export */   changeBackgroundOnClick: function() { return /* binding */ changeBackgroundOnClick; }
+/* harmony export */   changeBackgroundOnClick: function() { return /* binding */ changeBackgroundOnClick; },
+/* harmony export */   changeQueryInput: function() { return /* binding */ changeQueryInput; },
+/* harmony export */   queryInput: function() { return /* binding */ queryInput; }
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 /* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
@@ -307,10 +309,10 @@ const image = new Image();
 let randomNumberGithub = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, 20)
 let randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(0, 80)
 
-queryInput.addEventListener('change', function () {
-	query = this.value
+const changeQueryInput = () => {
+	query = queryInput.value
 	changePexelsImages()
-})
+}
 
 const changeGithubImages = () => {
 	if (localStorage.getItem('source') === 'github') {
@@ -1777,6 +1779,9 @@ document.addEventListener('DOMContentLoaded', function (e) {
 _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.imageSourceSelect.addEventListener('change', function (e) {
 	(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.checkImageSourceSelectValue)(e)
 })
+
+_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.queryInput.addEventListener('change', _components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeQueryInput)
+
 
 
 }();

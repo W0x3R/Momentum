@@ -5,7 +5,7 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 
 const body = document.body
-const queryInput = document.querySelector('.query__input')
+export const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 let query = getCurrentLanguage() === 'ru' ? translateGreeting(greetingText) : greetingText
@@ -13,10 +13,10 @@ const image = new Image();
 let randomNumberGithub = getRandomNumber(1, 20)
 let randomNumberPixels = getRandomNumber(0, 80)
 
-queryInput.addEventListener('change', function () {
-	query = this.value
+export const changeQueryInput = () => {
+	query = queryInput.value
 	changePexelsImages()
-})
+}
 
 const changeGithubImages = () => {
 	if (localStorage.getItem('source') === 'github') {

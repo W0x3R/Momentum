@@ -6,7 +6,7 @@ import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLang
 import { greetingName, getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
 import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBackground, changeBackgroundOnClick } from './components/slider/changeBackground'
+import { changeBackground, changeBackgroundOnClick, queryInput, changeQueryInput } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
@@ -105,4 +105,7 @@ document.addEventListener('DOMContentLoaded', function (e) {
 imageSourceSelect.addEventListener('change', function (e) {
 	checkImageSourceSelectValue(e)
 })
+
+queryInput.addEventListener('change', changeQueryInput)
+
 
