@@ -109,16 +109,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const greetingText = document.querySelector('.greeting__text')
-
 const greetingObj = {
 	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
 	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
 }
 
 const showGreetingText = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
 	const currentTime = new Date().getHours();
-	const getGreeting = greetingObj[currentLang][Math.floor(currentTime / 6)]
+	const getGreeting = greetingObj[currentLanguage][Math.floor(currentTime / 6)]
 	greetingText.textContent = getGreeting
 	return getGreeting
 }
@@ -143,8 +142,8 @@ const greetingPlaceHolder = {
 }
 
 const setPlaceHolderLanguage = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
-	currentLang === 'en' ? _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.en : _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.ru
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	currentLanguage === 'en' ? _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.en : _localStorageGreeting__WEBPACK_IMPORTED_MODULE_1__.greetingName.placeholder = greetingPlaceHolder.ru
 }
 
 /***/ }),
@@ -165,8 +164,7 @@ const setGreetingName = () => {
 }
 
 const getGreetingName = () => {
-	const getName = localStorage.getItem('name')
-	getName === null ? '' : greetingName.value = getName
+	greetingName.value = localStorage.getItem('name') || ''
 }
 
 /***/ }),
@@ -1496,7 +1494,6 @@ __webpack_require__.r(__webpack_exports__);
 
 const imageSourceSelect = document.querySelector('.source__select')
 const selectLanguageChildrenArray = Array.from(imageSourceSelect.children)
-
 const setSelectedValue = (number, value) => {
 	selectLanguageChildrenArray[number].selected = value
 }
@@ -1506,8 +1503,7 @@ const setSelectedSourceValue = () => {
 	if (getSource === 'github') {
 		setSelectedValue(1, false)
 		setSelectedValue(0, true)
-	}
-	else {
+	} else {
 		setSelectedValue(0, false)
 		setSelectedValue(1, true)
 	}
@@ -1518,8 +1514,7 @@ const checkImageSourceSelectValue = (e) => {
 	if (target.value === 'github') {
 		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImagesSource)('github')
 		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
-	}
-	else {
+	} else {
 		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImagesSource)('pexels')
 		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
 	}
@@ -1713,9 +1708,12 @@ setInterval(() => {
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
 
 window.addEventListener('beforeunload', () => {
-	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName)()
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setCurrentLanguage)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
+})
+
+_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.greetingName.addEventListener('input', () => {
+	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.setGreetingName)()
 })
 
 window.addEventListener('load', () => {
@@ -1724,7 +1722,6 @@ window.addEventListener('load', () => {
 	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_17__.setSelectedSourceValue)()
 	;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_18__.setSelectedLanguageValue)()
 })
-
 
 _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.weatherCityInput.addEventListener('change', _components_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)
 

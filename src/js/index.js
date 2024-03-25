@@ -3,7 +3,7 @@ import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
 import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLanguage.js'
-import { getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
+import { greetingName, getGreetingName, setGreetingName } from './components/greeting/localStorageGreeting.js'
 import { weatherCityInput, getWeather } from './components/weather/getWeather'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
 import { changeBackground, changeBackgroundOnClick } from './components/slider/changeBackground'
@@ -34,9 +34,12 @@ createPlayList()
 loadSong()
 
 window.addEventListener('beforeunload', () => {
-	setGreetingName()
 	setCurrentLanguage()
 	setCity()
+})
+
+greetingName.addEventListener('input', () => {
+	setGreetingName()
 })
 
 window.addEventListener('load', () => {
@@ -45,7 +48,6 @@ window.addEventListener('load', () => {
 	setSelectedSourceValue()
 	setSelectedLanguageValue()
 })
-
 
 weatherCityInput.addEventListener('change', getWeather)
 

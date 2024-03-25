@@ -3,7 +3,6 @@ import { changeBackground } from "../slider/changeBackground";
 
 export const imageSourceSelect = document.querySelector('.source__select')
 const selectLanguageChildrenArray = Array.from(imageSourceSelect.children)
-
 const setSelectedValue = (number, value) => {
 	selectLanguageChildrenArray[number].selected = value
 }
@@ -13,8 +12,7 @@ export const setSelectedSourceValue = () => {
 	if (getSource === 'github') {
 		setSelectedValue(1, false)
 		setSelectedValue(0, true)
-	}
-	else {
+	} else {
 		setSelectedValue(0, false)
 		setSelectedValue(1, true)
 	}
@@ -25,8 +23,7 @@ export const checkImageSourceSelectValue = (e) => {
 	if (target.value === 'github') {
 		setImagesSource('github')
 		changeBackground()
-	}
-	else {
+	} else {
 		setImagesSource('pexels')
 		changeBackground()
 	}

@@ -5,6 +5,5 @@ export const setGreetingName = () => {
 }
 
 export const getGreetingName = () => {
-	const getName = localStorage.getItem('name')
-	getName === null ? '' : greetingName.value = getName
+	greetingName.value = localStorage.getItem('name') || ''
 }

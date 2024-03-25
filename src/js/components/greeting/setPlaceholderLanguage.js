@@ -7,6 +7,6 @@ const greetingPlaceHolder = {
 }
 
 export const setPlaceHolderLanguage = () => {
-	const currentLang = getCurrentLanguage()
-	currentLang === 'en' ? greetingName.placeholder = greetingPlaceHolder.en : greetingName.placeholder = greetingPlaceHolder.ru
+	const currentLanguage = getCurrentLanguage()
+	currentLanguage === 'en' ? greetingName.placeholder = greetingPlaceHolder.en : greetingName.placeholder = greetingPlaceHolder.ru
 }
