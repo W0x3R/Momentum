@@ -8,18 +8,20 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getCurrentLanguage: function() { return /* binding */ getCurrentLanguage; },
-/* harmony export */   setCurrentLanguage: function() { return /* binding */ setCurrentLanguage; }
+/* harmony export */   setCurrentLanguage: function() { return /* binding */ setCurrentLanguage; },
+/* harmony export */   setDefaultCurrentLanguage: function() { return /* binding */ setDefaultCurrentLanguage; }
 /* harmony export */ });
 /* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-
-const getCurrentLanguage = () => {
+const setDefaultCurrentLanguage = () => {
 	if (!localStorage.getItem('language')) {
 		localStorage.setItem('language', 'en')
-	} else {
-		return localStorage.getItem('language')
 	}
+}
+
+const getCurrentLanguage = () => {
+	return localStorage.getItem('language')
 }
 
 const setCurrentLanguage = () => {
@@ -1702,12 +1704,12 @@ setInterval(() => {
 ;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 ;(0,_components_greeting_showGreetingMessage_js__WEBPACK_IMPORTED_MODULE_3__.showGreetingText)()
 ;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceHolderLanguage)()
-
 ;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.createPlayList)()
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
 
 window.addEventListener('beforeunload', () => {
+	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setDefaultCurrentLanguage)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
 })
 

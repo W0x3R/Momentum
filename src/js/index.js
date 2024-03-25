@@ -1,4 +1,4 @@
-import { setCurrentLanguage } from './components/language/localStorageLanguage.js'
+import { setDefaultCurrentLanguage, setCurrentLanguage } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
@@ -27,12 +27,12 @@ showDate()
 showTime()
 showGreetingText()
 setPlaceHolderLanguage()
-
 getQuotes()
 createPlayList()
 loadSong()
 
 window.addEventListener('beforeunload', () => {
+	setDefaultCurrentLanguage()
 	setCity()
 })
 
