@@ -312,7 +312,6 @@ const forbiddenSymbols = ['#', '%', '&', '+', ';']
 const changeQueryInput = () => {
 	if (forbiddenSymbols.includes(queryInput.value)) {
 		alert('Для данного запроса не найдены изображения')
-		queryInput.value = ''
 		return
 	}
 	query = queryInput.value
@@ -335,14 +334,13 @@ const changeGithubImages = () => {
 const changePexelsImages = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
-		client.photos.search({ query, per_page: 80 }).then(photos => {
+		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
 			try {
 				image.src = photos.photos[randomNumberPixels - 1].src.landscape
 				image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 			}
 			catch (e) {
 				alert('Для данного запроса не найдены изображения')
-				queryInput.value = ''
 			}
 		});
 	}
