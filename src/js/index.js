@@ -31,6 +31,12 @@ setPlaceHolderLanguage()
 getQuotes()
 createPlayList()
 loadSong()
+setSelectedLanguageValue()
+setSelectedSourceValue()
+getCity()
+getGreetingName()
+changeBackground()
+setButtonValueContentLoaded()
 
 window.addEventListener('beforeunload', () => {
 	setDefaultCurrentLanguage()
@@ -38,14 +44,6 @@ window.addEventListener('beforeunload', () => {
 	setCity()
 })
 
-window.addEventListener('load', () => {
-	getGreetingName()
-	getCity()
-	setSelectedSourceValue()
-	setSelectedLanguageValue()
-	changeBackground()
-	setButtonValueContentLoaded()
-})
 
 audio.addEventListener('timeupdate', function (e) {
 	updateTime()

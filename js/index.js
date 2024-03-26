@@ -1704,6 +1704,12 @@ setInterval(() => {
 ;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_9__.getQuotes)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__.createPlayList)()
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.loadSong)()
+;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_17__.setSelectedLanguageValue)()
+;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.setSelectedSourceValue)()
+;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.getCity)()
+;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
+;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackground)()
+;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.setButtonValueContentLoaded)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setDefaultCurrentLanguage)()
@@ -1711,14 +1717,6 @@ window.addEventListener('beforeunload', () => {
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.setCity)()
 })
 
-window.addEventListener('load', () => {
-	;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
-	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_7__.getCity)()
-	;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_18__.setSelectedSourceValue)()
-	;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_17__.setSelectedLanguageValue)()
-	;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_8__.changeBackground)()
-	;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.setButtonValueContentLoaded)()
-})
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('timeupdate', function (e) {
 	;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_11__.updateTime)()
