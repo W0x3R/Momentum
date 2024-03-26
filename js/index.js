@@ -1103,7 +1103,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const popup = document.querySelector('.popup')
-const popupButton = document.querySelector('.popup__button')
 const popupShadow = document.querySelector('.popup__shadow')
 
 const controlErrorPopup = (value) => {
@@ -1669,7 +1668,8 @@ const eventHandlersClick = {
 	'.player__controls-next': _player_switchSong__WEBPACK_IMPORTED_MODULE_6__.nextSong,
 	'.player__list': (e) => (0,_player_switchSong__WEBPACK_IMPORTED_MODULE_6__.playClickedSong)(e),
 	'.player__sounds-mute': _player_volume__WEBPACK_IMPORTED_MODULE_9__.checkIsMute,
-	'.popup__button': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup
+	'.popup__button': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup,
+	'.popup__shadow_show': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup
 }
 
 const eventHandlersInput = {

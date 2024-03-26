@@ -25,7 +25,8 @@ export const eventHandlersClick = {
 	'.player__controls-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
 	'.player__sounds-mute': checkIsMute,
-	'.popup__button': closeErrorPopup
+	'.popup__button': closeErrorPopup,
+	'.popup__shadow_show': closeErrorPopup
 }
 
 export const eventHandlersInput = {

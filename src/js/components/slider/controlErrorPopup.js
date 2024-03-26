@@ -1,7 +1,6 @@
 import { body } from "./changeBackground"
 
 const popup = document.querySelector('.popup')
-const popupButton = document.querySelector('.popup__button')
 const popupShadow = document.querySelector('.popup__shadow')
 
 const controlErrorPopup = (value) => {
