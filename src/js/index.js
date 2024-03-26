@@ -57,13 +57,8 @@ window.addEventListener('click', function (e) {
 
 audio.addEventListener('ended', nextSong)
 
-window.addEventListener('input', function (e) {
-	callEvents(e, eventHandlersInput)
-})
-
-window.addEventListener('change', function (e) {
-	callEvents(e, eventHandlersChange)
-})
+window.addEventListener('input', (e) => callEvents(e, eventHandlersInput))
+window.addEventListener('change', (e) => callEvents(e, eventHandlersChange))
 
 popup.addEventListener('mouseleave', () => controlButtonHover('add'))
 popup.addEventListener('mouseenter', () => controlButtonHover('remove'))

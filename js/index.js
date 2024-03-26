@@ -1099,7 +1099,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   closeErrorPopup: function() { return /* binding */ closeErrorPopup; },
 /* harmony export */   controlButtonHover: function() { return /* binding */ controlButtonHover; },
 /* harmony export */   popup: function() { return /* binding */ popup; },
-/* harmony export */   popupButton: function() { return /* binding */ popupButton; },
 /* harmony export */   showErrorPopup: function() { return /* binding */ showErrorPopup; }
 /* harmony export */ });
 /* harmony import */ var _changeBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
@@ -1126,7 +1125,6 @@ const closeErrorPopup = () => {
 const controlButtonHover = (value) => {
 	popupButton.classList[value]('popup__button_hover')
 }
-
 
 /***/ }),
 /* 18 */
@@ -1861,13 +1859,8 @@ window.addEventListener('click', function (e) {
 
 _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_11__.audio.addEventListener('ended', _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_11__.nextSong)
 
-window.addEventListener('input', function (e) {
-	;(0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersInput)
-})
-
-window.addEventListener('change', function (e) {
-	;(0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersChange)
-})
+window.addEventListener('input', (e) => (0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersInput))
+window.addEventListener('change', (e) => (0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersChange))
 
 _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseleave', () => (0,_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.controlButtonHover)('add'))
 _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseenter', () => (0,_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.controlButtonHover)('remove'))
