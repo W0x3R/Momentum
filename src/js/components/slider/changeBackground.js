@@ -11,8 +11,10 @@ const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 let query = getCurrentLanguage() === 'ru' ? translateGreeting(greetingText) : greetingText
 const image = new Image();
-let randomNumberGithub = getRandomNumber(1, 20)
-let randomNumberPixels = getRandomNumber(0, 80)
+const MAX__GITHUB_IMAGES = 20;
+let MAX__PEXELS_IMAGES;
+let randomNumberGithub = getRandomNumber(1, MAX__GITHUB_IMAGES)
+let randomNumberPixels;
 
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
@@ -42,18 +44,18 @@ const changePexelsImages = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
-			try {
+			console.log(photos.photos[0]);
+			if (photos && photos.photos && photos.photos.length > 1) {
+				MAX__PEXELS_IMAGES = photos.photos.length
+				randomNumberPixels = getRandomNumber(1, MAX__PEXELS_IMAGES)
 				image.src = photos.photos[randomNumberPixels - 1].src.landscape
 				image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
-			}
-			catch (e) {
+			} else {
 				showErrorPopup()
 			}
 		});
 	}
 }
-
-
 
 export const changeBackground = () => {
 	changeGithubImages()
@@ -63,15 +65,11 @@ export const changeBackground = () => {
 export const changeBackgroundOnClick = (direction) => {
 	if (localStorage.getItem('source') === 'github') {
 		randomNumberGithub = (direction === 'prev') ?
-			((randomNumberGithub === 1) ? 20 : randomNumberGithub - 1) :
-			((randomNumberGithub === 20) ? 1 : randomNumberGithub + 1);
-		changeBackground()
+			((randomNumberGithub === 1) ? MAX__GITHUB_IMAGES : randomNumberGithub - 1) :
+			((randomNumberGithub === MAX__GITHUB_IMAGES) ? 1 : randomNumberGithub + 1);
+		changeGithubImages()
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
-		randomNumberPixels = (direction === 'prev') ?
-			((randomNumberPixels === 1) ? 80 : randomNumberPixels - 1) :
-			((randomNumberPixels === 80) ? 1 : randomNumberPixels + 1);
-		changeBackground()
+		changePexelsImages()
 	}
 }
-
