@@ -12,6 +12,7 @@ import { checkImageSourceSelectValue } from "../imagesSource/setSelectedImageSou
 import { showGreetingText } from "../greeting/showGreetingMessage"
 import { setPlaceHolderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
+import { closeErrorPopup } from "../slider/controlErrorPopup"
 
 export const eventHandlersClick = {
 	'.main__button_prev': () => changeBackgroundOnClick('prev'),
@@ -23,7 +24,8 @@ export const eventHandlersClick = {
 	'.player__controls-prev': prevSong,
 	'.player__controls-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
-	'.player__sounds-mute': checkIsMute
+	'.player__sounds-mute': checkIsMute,
+	'.popup__button': closeErrorPopup
 }
 
 export const eventHandlersInput = {

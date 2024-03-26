@@ -3,7 +3,7 @@ import { showGreetingText } from "../greeting/showGreetingMessage"
 import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
-import { showErrorPopup } from './showErrorPopup';
+import { showErrorPopup } from './controlErrorPopup';
 
 export const body = document.body
 const queryInput = document.querySelector('.query__input')
