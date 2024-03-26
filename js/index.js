@@ -1097,12 +1097,15 @@ const translateGreeting = (greetingText) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   closeErrorPopup: function() { return /* binding */ closeErrorPopup; },
+/* harmony export */   popup: function() { return /* binding */ popup; },
+/* harmony export */   popupButton: function() { return /* binding */ popupButton; },
 /* harmony export */   showErrorPopup: function() { return /* binding */ showErrorPopup; }
 /* harmony export */ });
 /* harmony import */ var _changeBackground__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
 
 
 const popup = document.querySelector('.popup')
+const popupButton = document.querySelector('.popup__button')
 const popupShadow = document.querySelector('.popup__shadow')
 
 const controlErrorPopup = (value) => {
@@ -1794,6 +1797,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(30);
 /* harmony import */ var _components_imagesSource_localStorageImageSource_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(31);
 /* harmony import */ var _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(32);
+/* harmony import */ var _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(17);
+
 
 
 
@@ -1858,6 +1863,14 @@ window.addEventListener('input', function (e) {
 
 window.addEventListener('change', function (e) {
 	;(0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersChange)
+})
+
+_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseleave', function (e) {
+	_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popupButton.classList.add('popup__button_hover')
+})
+
+_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseenter', function (e) {
+	_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popupButton.classList.remove('popup__button_hover')
 })
 }();
 /******/ })()

@@ -103,6 +103,10 @@
 		transition: 0.3s ease;
 		color: black;
 
+		&_hover {
+			color: var(--blue);
+		}
+
 		@include hover {
 			color: var(--blue);
 		}
@@ -121,6 +125,7 @@
 		background: rgba(0, 0, 0, 0.9);
 		z-index: 1;
 		min-height: 100%;
+		cursor: pointer;
 
 		&_show {
 			display: block;

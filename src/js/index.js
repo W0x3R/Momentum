@@ -17,6 +17,7 @@ import { setSelectedLanguageValue } from './components/language/setSelectedLangu
 import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
+import { popup, popupButton } from './components/slider/controlErrorPopup.js'
 
 setInterval(() => {
 	showTime()
@@ -62,4 +63,12 @@ window.addEventListener('input', function (e) {
 
 window.addEventListener('change', function (e) {
 	callEvents(e, eventHandlersChange)
+})
+
+popup.addEventListener('mouseleave', function (e) {
+	popupButton.classList.add('popup__button_hover')
+})
+
+popup.addEventListener('mouseenter', function (e) {
+	popupButton.classList.remove('popup__button_hover')
 })
