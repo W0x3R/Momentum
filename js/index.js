@@ -308,9 +308,9 @@ const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw
 let query = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)() === 'ru' ? (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText) : greetingText
 const image = new Image();
 const MAX__GITHUB_IMAGES = 20;
+let MIN__PEXELS_IMAGES = 0;
 let MAX__PEXELS_IMAGES;
 let randomNumberGithub = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, MAX__GITHUB_IMAGES)
-let randomNumberPixels;
 
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
@@ -320,6 +320,7 @@ const changeQueryInput = () => {
 		return
 	}
 	query = queryInput.value
+	MIN__PEXELS_IMAGES = 0;
 	changePexelsImages()
 }
 
@@ -340,12 +341,13 @@ const changePexelsImages = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
-			console.log(photos.photos[0]);
+			console.log(photos);
 			if (photos && photos.photos && photos.photos.length > 1) {
-				MAX__PEXELS_IMAGES = photos.photos.length
-				randomNumberPixels = (0,_getRandomNumber__WEBPACK_IMPORTED_MODULE_3__.getRandomNumber)(1, MAX__PEXELS_IMAGES)
-				image.src = photos.photos[randomNumberPixels - 1].src.landscape
-				image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
+				MAX__PEXELS_IMAGES = photos.photos.length - 1
+				image.src = photos.photos[MIN__PEXELS_IMAGES].src.landscape
+				console.log(MIN__PEXELS_IMAGES);
+				console.log(MAX__PEXELS_IMAGES);
+				image.onload = () => body.style.backgroundImage = `url(${photos.photos[MIN__PEXELS_IMAGES].src.landscape})`
 			} else {
 				(0,_controlErrorPopup__WEBPACK_IMPORTED_MODULE_5__.showErrorPopup)()
 			}
@@ -366,6 +368,9 @@ const changeBackgroundOnClick = (direction) => {
 		changeGithubImages()
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
+		MIN__PEXELS_IMAGES = (direction === 'prev') ?
+			((MIN__PEXELS_IMAGES === 0) ? MAX__PEXELS_IMAGES : MIN__PEXELS_IMAGES - 1) :
+			((MIN__PEXELS_IMAGES === MAX__PEXELS_IMAGES) ? 0 : MIN__PEXELS_IMAGES + 1);
 		changePexelsImages()
 	}
 }
