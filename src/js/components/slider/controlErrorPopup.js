@@ -18,3 +18,6 @@ export const closeErrorPopup = () => {
 	controlErrorPopup('remove')
 }
 
+export const controlButtonHover = (value) => {
+	popupButton.classList[value]('popup__button_hover')
+}

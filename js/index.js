@@ -1097,6 +1097,7 @@ const translateGreeting = (greetingText) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   closeErrorPopup: function() { return /* binding */ closeErrorPopup; },
+/* harmony export */   controlButtonHover: function() { return /* binding */ controlButtonHover; },
 /* harmony export */   popup: function() { return /* binding */ popup; },
 /* harmony export */   popupButton: function() { return /* binding */ popupButton; },
 /* harmony export */   showErrorPopup: function() { return /* binding */ showErrorPopup; }
@@ -1122,6 +1123,9 @@ const closeErrorPopup = () => {
 	controlErrorPopup('remove')
 }
 
+const controlButtonHover = (value) => {
+	popupButton.classList[value]('popup__button_hover')
+}
 
 
 /***/ }),
@@ -1865,13 +1869,8 @@ window.addEventListener('change', function (e) {
 	;(0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__.eventHandlersChange)
 })
 
-_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseleave', function (e) {
-	_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popupButton.classList.add('popup__button_hover')
-})
-
-_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseenter', function (e) {
-	_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popupButton.classList.remove('popup__button_hover')
-})
+_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseleave', () => (0,_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.controlButtonHover)('add'))
+_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.popup.addEventListener('mouseenter', () => (0,_components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__.controlButtonHover)('remove'))
 }();
 /******/ })()
 ;
