@@ -100,11 +100,14 @@
 		border-radius: 25%;
 		cursor: pointer;
 		font-size: 20px;
-		transition: 5s ease;
+		transition: 0.3s ease;
+		color: black;
 
-		&::before {
-			content: '✖';
-			color: black;
+		@include hover {
+			color: var(--blue);
+		}
+		@include hover-none {
+			color: var(--blue);
 		}
 	}
 
