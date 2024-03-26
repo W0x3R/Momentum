@@ -3,8 +3,9 @@ import { showGreetingText } from "../greeting/showGreetingMessage"
 import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
+import { showErrorPopup } from './showErrorPopup';
 
-const body = document.body
+export const body = document.body
 const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
@@ -17,7 +18,7 @@ const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 export const changeQueryInput = () => {
 	if (forbiddenSymbols.includes(queryInput.value)) {
-		alert('Для данного запроса не найдены изображения')
+		showErrorPopup()
 		return
 	}
 	query = queryInput.value
@@ -46,11 +47,13 @@ const changePexelsImages = () => {
 				image.onload = () => body.style.backgroundImage = `url(${photos.photos[randomNumberPixels - 1].src.landscape})`
 			}
 			catch (e) {
-				alert('Для данного запроса не найдены изображения')
+				showErrorPopup()
 			}
 		});
 	}
 }
+
+
 
 export const changeBackground = () => {
 	changeGithubImages()
@@ -71,3 +74,4 @@ export const changeBackgroundOnClick = (direction) => {
 		changeBackground()
 	}
 }
+

@@ -66,3 +66,61 @@
 		}
 	}
 }
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	display: none;
+	background: #d8d8d8;
+	width: 700px;
+	height: 250px;
+	border-radius: 9px;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+
+	&_show {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__inner {
+		font-size: 20px;
+		color: black;
+	}
+
+	&__button {
+		position: absolute;
+		right: -35px;
+		top: -33px;
+		width: 35px;
+		height: 35px;
+		background: white;
+		border-radius: 25%;
+		cursor: pointer;
+		font-size: 20px;
+		transition: 5s ease;
+
+		&::before {
+			content: '✖';
+			color: black;
+		}
+	}
+
+	&__shadow {
+		position: fixed;
+		display: none;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.9);
+		z-index: 1;
+		min-height: 100%;
+
+		&_show {
+			display: block;
+		}
+	}
+}

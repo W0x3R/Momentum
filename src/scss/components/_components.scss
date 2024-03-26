@@ -4,6 +4,10 @@
 	font-family: 'Arial-MT', sans-serif;
 	background: center/cover, #00000080;
 	background-blend-mode: multiply;
+
+	&_fixed {
+		overflow: hidden;
+	}
 }
 
 .wrapper {
