@@ -2,6 +2,7 @@ import { body } from "./changeBackground"
 import { getCurrentLanguage } from "../language/localStorageLanguage"
 
 export const popup = document.querySelector('.popup')
+const popupMessage = document.querySelector('.popup__message')
 const popupButton = document.querySelector('.popup__button')
 const popupShadow = document.querySelector('.popup__shadow')
 
@@ -14,7 +15,7 @@ const controlErrorPopup = (value) => {
 	const currentLanguage = getCurrentLanguage()
 	popup.classList[value]('popup_show')
 	popupShadow.classList[value]('popup__shadow_show')
-	currentLanguage === 'ru' ? popup.textContent = popupErrorObject.ru : popup.textContent = popupErrorObject.en
+	currentLanguage === 'ru' ? popupMessage.textContent = popupErrorObject.ru : popupMessage.textContent = popupErrorObject.en
 	body.classList[value]('body_fixed')
 }
 

@@ -324,7 +324,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const body = document.body
 const queryInput = document.querySelector('.query__input')
 
@@ -368,8 +367,7 @@ const changeGithubImages = () => {
 		let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-		image.src = url;
-		image.onload = () => body.style.backgroundImage = `url(${url})`
+		loadImage(url)
 	}
 }
 
@@ -380,13 +378,17 @@ const changePexelsImages = () => {
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
 			if (photos && photos.photos && photos.photos.length > 1) {
 				MAX__PEXELS_IMAGES = photos.photos.length - 1
-				image.src = photos.photos[MIN__PEXELS_IMAGES].src.landscape
-				image.onload = () => body.style.backgroundImage = `url(${photos.photos[MIN__PEXELS_IMAGES].src.landscape})`
+				loadImage(photos.photos[MIN__PEXELS_IMAGES].src.landscape)
 			} else {
 				(0,_controlErrorPopup__WEBPACK_IMPORTED_MODULE_5__.showErrorPopup)()
 			}
 		});
 	}
+}
+
+const loadImage = (url) => {
+	image.src = url
+	image.onload = () => body.style.backgroundImage = `url(${url})`
 }
 
 const changeBackground = () => {
@@ -1156,6 +1158,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const popup = document.querySelector('.popup')
+const popupMessage = document.querySelector('.popup__message')
 const popupButton = document.querySelector('.popup__button')
 const popupShadow = document.querySelector('.popup__shadow')
 
@@ -1168,7 +1171,7 @@ const controlErrorPopup = (value) => {
 	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLanguage)()
 	popup.classList[value]('popup_show')
 	popupShadow.classList[value]('popup__shadow_show')
-	currentLanguage === 'ru' ? popup.textContent = popupErrorObject.ru : popup.textContent = popupErrorObject.en
+	currentLanguage === 'ru' ? popupMessage.textContent = popupErrorObject.ru : popupMessage.textContent = popupErrorObject.en
 	_changeBackground__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
