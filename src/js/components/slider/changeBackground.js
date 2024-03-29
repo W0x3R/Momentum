@@ -4,23 +4,34 @@ import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 import { showErrorPopup } from './controlErrorPopup';
+import { getQueryInputValueLoad } from './localStorageSlider';
 
 export const body = document.body
-const queryInput = document.querySelector('.query__input')
+export const queryInput = document.querySelector('.query__input')
+
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-let query = getCurrentLanguage() === 'ru' ? translateGreeting(greetingText) : greetingText
+let query;
 const image = new Image();
 const MAX__GITHUB_IMAGES = 20;
 let MIN__PEXELS_IMAGES = 0;
 let MAX__PEXELS_IMAGES;
 let randomNumberGithub = getRandomNumber(1, MAX__GITHUB_IMAGES)
 let isAnimate = true
-
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
+export const setQueryValue = () => {
+	const queryValue = getQueryInputValueLoad()
+	const currentLanguage = getCurrentLanguage()
+	if (queryValue) {
+		query = queryValue
+	} else {
+		query = currentLanguage === 'ru' ? translateGreeting(greetingText) : greetingText
+	}
+}
+
 export const changeQueryInput = () => {
-	if (forbiddenSymbols.includes(queryInput.value)) {
+	if (forbiddenSymbols.includes(queryInput.value) || String(queryInput.value.trim()) === '') {
 		showErrorPopup()
 		return
 	}
@@ -46,12 +57,9 @@ const changePexelsImages = () => {
 	if (localStorage.getItem('source') === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
-			console.log(photos);
 			if (photos && photos.photos && photos.photos.length > 1) {
 				MAX__PEXELS_IMAGES = photos.photos.length - 1
 				image.src = photos.photos[MIN__PEXELS_IMAGES].src.landscape
-				console.log(MIN__PEXELS_IMAGES);
-				console.log(MAX__PEXELS_IMAGES);
 				image.onload = () => body.style.backgroundImage = `url(${photos.photos[MIN__PEXELS_IMAGES].src.landscape})`
 			} else {
 				showErrorPopup()

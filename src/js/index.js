@@ -5,7 +5,7 @@ import { showGreetingText } from './components/greeting/showGreetingMessage.js'
 import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLanguage.js'
 import { getGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBackground } from './components/slider/changeBackground'
+import { changeBackground, setQueryValue } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong, updateTime } from './components/player/updateLoadSong.js'
@@ -18,11 +18,14 @@ import { setSelectedSourceValue } from './components/imagesSource/setSelectedIma
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
+import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
+
 
 setInterval(() => {
 	showTime()
 	showDate()
 }, 1000)
+
 
 showDate()
 showTime()
@@ -35,13 +38,17 @@ setSelectedLanguageValue()
 setSelectedSourceValue()
 getCity()
 getGreetingName()
+setQueryValue()
 changeBackground()
 setButtonValueContentLoaded()
+getQueryInputValueLoad()
+
 
 window.addEventListener('beforeunload', () => {
 	setDefaultCurrentLanguage()
 	setImagesSourceDefault()
 	setCity()
+	setQueryInputValueBeforeUnload()
 })
 
 audio.addEventListener('timeupdate', function (e) {
