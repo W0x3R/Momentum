@@ -3,8 +3,10 @@ import { showGreetingText } from "../greeting/showGreetingMessage"
 import { getCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
-import { showErrorPopup } from './controlErrorPopup';
-import { getQueryInputValueLoad } from './localStorageSlider';
+import { showErrorPopup } from './controlErrorPopup'
+import { getQueryInputValueLoad } from './localStorageSlider'
+import { getImagesSource } from '../imagesSource/localStorageImageSource';
+
 
 export const body = document.body
 export const queryInput = document.querySelector('.query__input')
@@ -41,7 +43,8 @@ export const changeQueryInput = () => {
 }
 
 const changeGithubImages = () => {
-	if (localStorage.getItem('source') === 'github') {
+	const imagesSource = getImagesSource()
+	if (imagesSource === 'github') {
 		queryInput.classList.add('query__input_hide')
 		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		const currentLang = getCurrentLanguage();
@@ -54,7 +57,8 @@ const changeGithubImages = () => {
 }
 
 const changePexelsImages = () => {
-	if (localStorage.getItem('source') === 'pexels') {
+	const imagesSource = getImagesSource()
+	if (imagesSource === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
 			if (photos && photos.photos && photos.photos.length > 1) {
@@ -74,7 +78,8 @@ export const changeBackground = () => {
 }
 
 export const changeBackgroundOnClick = (direction) => {
-	if (localStorage.getItem('source') === 'github') {
+	const imagesSource = getImagesSource()
+	if (imagesSource === 'github') {
 		if (isAnimate) {
 			isAnimate = false
 			randomNumberGithub = (direction === 'prev') ?
@@ -86,7 +91,7 @@ export const changeBackgroundOnClick = (direction) => {
 			isAnimate = true
 		}, 1000);
 	}
-	else if (localStorage.getItem('source') === 'pexels') {
+	else if (imagesSource === 'pexels') {
 		if (isAnimate) {
 			isAnimate = false
 			MIN__PEXELS_IMAGES = (direction === 'prev') ?
