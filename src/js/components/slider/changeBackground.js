@@ -15,6 +15,7 @@ const MAX__GITHUB_IMAGES = 20;
 let MIN__PEXELS_IMAGES = 0;
 let MAX__PEXELS_IMAGES;
 let randomNumberGithub = getRandomNumber(1, MAX__GITHUB_IMAGES)
+let isAnimate = true
 
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
@@ -66,15 +67,27 @@ export const changeBackground = () => {
 
 export const changeBackgroundOnClick = (direction) => {
 	if (localStorage.getItem('source') === 'github') {
-		randomNumberGithub = (direction === 'prev') ?
-			((randomNumberGithub === 1) ? MAX__GITHUB_IMAGES : randomNumberGithub - 1) :
-			((randomNumberGithub === MAX__GITHUB_IMAGES) ? 1 : randomNumberGithub + 1);
-		changeGithubImages()
+		if (isAnimate) {
+			isAnimate = false
+			randomNumberGithub = (direction === 'prev') ?
+				((randomNumberGithub === 1) ? MAX__GITHUB_IMAGES : randomNumberGithub - 1) :
+				((randomNumberGithub === MAX__GITHUB_IMAGES) ? 1 : randomNumberGithub + 1);
+			changeGithubImages()
+		}
+		setTimeout(() => {
+			isAnimate = true
+		}, 1000);
 	}
 	else if (localStorage.getItem('source') === 'pexels') {
-		MIN__PEXELS_IMAGES = (direction === 'prev') ?
-			((MIN__PEXELS_IMAGES === 0) ? MAX__PEXELS_IMAGES : MIN__PEXELS_IMAGES - 1) :
-			((MIN__PEXELS_IMAGES === MAX__PEXELS_IMAGES) ? 0 : MIN__PEXELS_IMAGES + 1);
-		changePexelsImages()
+		if (isAnimate) {
+			isAnimate = false
+			MIN__PEXELS_IMAGES = (direction === 'prev') ?
+				((MIN__PEXELS_IMAGES === 0) ? MAX__PEXELS_IMAGES : MIN__PEXELS_IMAGES - 1) :
+				((MIN__PEXELS_IMAGES === MAX__PEXELS_IMAGES) ? 0 : MIN__PEXELS_IMAGES + 1);
+			changePexelsImages()
+		}
+		setTimeout(() => {
+			isAnimate = true
+		}, 1000);
 	}
 }
