@@ -7,7 +7,6 @@ import { showErrorPopup } from './controlErrorPopup'
 import { getQueryInputValueLoad } from './localStorageSlider'
 import { getImagesSource } from '../imagesSource/localStorageImageSource';
 
-
 export const body = document.body
 export const queryInput = document.querySelector('.query__input')
 
@@ -51,8 +50,7 @@ const changeGithubImages = () => {
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
-		image.src = url;
-		image.onload = () => body.style.backgroundImage = `url(${url})`
+		loadImage(url)
 	}
 }
 
@@ -63,13 +61,17 @@ const changePexelsImages = () => {
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
 			if (photos && photos.photos && photos.photos.length > 1) {
 				MAX__PEXELS_IMAGES = photos.photos.length - 1
-				image.src = photos.photos[MIN__PEXELS_IMAGES].src.landscape
-				image.onload = () => body.style.backgroundImage = `url(${photos.photos[MIN__PEXELS_IMAGES].src.landscape})`
+				loadImage(photos.photos[MIN__PEXELS_IMAGES].src.landscape)
 			} else {
 				showErrorPopup()
 			}
 		});
 	}
+}
+
+const loadImage = (url) => {
+	image.src = url
+	image.onload = () => body.style.backgroundImage = `url(${url})`
 }
 
 export const changeBackground = () => {
