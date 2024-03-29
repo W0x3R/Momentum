@@ -3,7 +3,7 @@ import { getWeather } from "./getWeather"
 
 export const setCity = () => {
 	if (weatherCityInput.value) {
-		localStorage.setItem('city', weatherCityInput.value)
+		localStorage.setItem('city', String(weatherCityInput.value).trim())
 	}
 }
 
