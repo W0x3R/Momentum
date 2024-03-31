@@ -1,5 +1,6 @@
 import { getCurrentLanguage } from "./localStorageLanguage";
 
+const language = document.querySelector('.language')
 export const languageSelect = document.querySelector('.language__select')
 const selectLanguageChildrenArray = Array.from(languageSelect.children)
 const languageSelectObject = {
@@ -26,6 +27,20 @@ export const changeSelectLanguage = () => {
 		setSelectLanguage('ru', 'en', 'ru', 'ru')
 	}
 }
+
+export const changeSelectIcon = () => {
+	const currentLanguage = getCurrentLanguage()
+	if (currentLanguage === 'en') {
+		language.classList.remove('language_ru')
+		language.classList.add('language_en')
+	}
+	else if (currentLanguage === 'ru') {
+		language.classList.remove('language_en')
+		language.classList.add('language_ru')
+	}
+}
+
+
 
 const findLanguageSelectedItem = (lang, value) => {
 	const item = selectLanguageChildrenArray.find(e => e.value === lang);

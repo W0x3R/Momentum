@@ -61,6 +61,26 @@
 			transform: rotate(180deg);
 		}
 	}
+
+	&_ru {
+		&::before {
+			content: url('../../../images/svg/_lang_ru.svg');
+			position: absolute;
+			right: 32px;
+			width: 27px;
+			pointer-events: none;
+		}
+	}
+
+	&_en {
+		&::before {
+			content: url('../../../images/svg/_lang_en.svg');
+			position: absolute;
+			right: 32px;
+			width: 27px;
+			pointer-events: none;
+		}
+	}
 }
 
 .source {

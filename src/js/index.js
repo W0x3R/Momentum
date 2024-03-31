@@ -13,7 +13,7 @@ import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
-import { setSelectedLanguageValue, changeSelectLanguage } from './components/language/setSelectedLanguageValue.js'
+import { setSelectedLanguageValue, changeSelectLanguage, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
 import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
@@ -34,6 +34,7 @@ getQuotes()
 createPlayList()
 loadSong()
 setSelectedLanguageValue()
+changeSelectIcon()
 setSelectedSourceValue()
 getCity()
 getGreetingName()

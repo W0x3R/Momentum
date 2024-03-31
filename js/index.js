@@ -35,6 +35,7 @@ const setCurrentLanguage = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   changeSelectIcon: function() { return /* binding */ changeSelectIcon; },
 /* harmony export */   changeSelectLanguage: function() { return /* binding */ changeSelectLanguage; },
 /* harmony export */   languageSelect: function() { return /* binding */ languageSelect; },
 /* harmony export */   setSelectedLanguageValue: function() { return /* binding */ setSelectedLanguageValue; }
@@ -42,6 +43,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
+const language = document.querySelector('.language')
 const languageSelect = document.querySelector('.language__select')
 const selectLanguageChildrenArray = Array.from(languageSelect.children)
 const languageSelectObject = {
@@ -68,6 +70,20 @@ const changeSelectLanguage = () => {
 		setSelectLanguage('ru', 'en', 'ru', 'ru')
 	}
 }
+
+const changeSelectIcon = () => {
+	const currentLanguage = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	if (currentLanguage === 'en') {
+		language.classList.remove('language_ru')
+		language.classList.add('language_en')
+	}
+	else if (currentLanguage === 'ru') {
+		language.classList.remove('language_en')
+		language.classList.add('language_ru')
+	}
+}
+
+
 
 const findLanguageSelectedItem = (lang, value) => {
 	const item = selectLanguageChildrenArray.find(e => e.value === lang);
@@ -1807,6 +1823,7 @@ const eventHandlersChange = {
 		;(0,_greeting_setPlaceholderLanguage__WEBPACK_IMPORTED_MODULE_12__.setPlaceHolderLanguage)()
 		;(0,_quotes_getQuotes__WEBPACK_IMPORTED_MODULE_13__.getQuotes)()
 		;(0,_language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_15__.changeSelectLanguage)()
+		;(0,_language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_15__.changeSelectIcon)()
 	},
 	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather
 }
@@ -1952,6 +1969,7 @@ setInterval(() => {
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_9__.createPlayList)()
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_10__.loadSong)()
 ;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__.setSelectedLanguageValue)()
+;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__.changeSelectIcon)()
 ;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_16__.setSelectedSourceValue)()
 ;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_6__.getCity)()
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
