@@ -1,5 +1,5 @@
 import { showDate } from "../date/date"
-import { setCurrentLanguage } from "../language/localStorageLanguage"
+import { setStorageCurrentLanguage } from "../language/localStorageLanguage"
 import { setStorageGreetingName } from "../greeting/localStorageGreeting"
 import { getWeather } from "../weather/getWeather"
 import { changeBackgroundOnClick, changeQueryInput } from "../slider/changeBackground"
@@ -39,7 +39,7 @@ export const eventHandlersChange = {
 	'.query__input': changeQueryInput,
 	'.source__select': (e) => changeImagesSourceSelectValue(e),
 	'.language__select': () => {
-		setCurrentLanguage()
+		setStorageCurrentLanguage()
 		getWeather()
 		showDate()
 		showGreetingText()

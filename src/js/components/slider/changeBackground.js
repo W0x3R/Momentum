@@ -1,6 +1,6 @@
 import { createClient } from 'pexels';
 import { showGreetingText } from "../greeting/showGreetingMessage"
-import { getCurrentLanguage } from "../language/localStorageLanguage"
+import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
 import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 import { showErrorPopup } from './controlErrorPopup'
@@ -23,7 +23,7 @@ const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 export const setQueryValue = () => {
 	const queryValue = getQueryInputValueLoad()
-	const currentLanguage = getCurrentLanguage()
+	const currentLanguage = getStorageCurrentLanguage()
 	if (queryValue) {
 		query = queryValue
 	} else {
@@ -48,7 +48,7 @@ const changeGithubImages = () => {
 	if (imagesSource === 'github') {
 		queryInput.classList.add('query__input_hide')
 		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
-		const currentLang = getCurrentLanguage();
+		const currentLang = getStorageCurrentLanguage();
 		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`

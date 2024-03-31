@@ -1,4 +1,4 @@
-import { getCurrentLanguage } from "../language/localStorageLanguage"
+import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
 
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherWind = document.querySelector('.weather__wind')
@@ -33,7 +33,7 @@ export const updateUI = (data, currentLang) => {
 };
 
 export const handleErrors = () => {
-	const currentLang = getCurrentLanguage()
+	const currentLang = getStorageCurrentLanguage()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';

@@ -1,4 +1,4 @@
-import { setDefaultCurrentLanguage } from './components/language/localStorageLanguage.js'
+import { setStorageDefaultCurrentLanguage } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
@@ -46,7 +46,7 @@ changeSelectLanguage()
 
 
 window.addEventListener('beforeunload', () => {
-	setDefaultCurrentLanguage()
+	setStorageDefaultCurrentLanguage()
 	setImagesSourceDefault()
 	setCity()
 	setQueryInputValueBeforeUnload()

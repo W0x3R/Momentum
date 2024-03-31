@@ -1,4 +1,4 @@
-import { getCurrentLanguage } from "./localStorageLanguage";
+import { getStorageCurrentLanguage } from "./localStorageLanguage";
 
 const language = document.querySelector('.language')
 export const languageSelect = document.querySelector('.language__select')
@@ -20,7 +20,7 @@ const setSelectLanguage = (valueOne, valueTwo, valueThree, valueFour) => {
 }
 
 export const changeSelectLanguage = () => {
-	const lang = getCurrentLanguage()
+	const lang = getStorageCurrentLanguage()
 	if (lang === 'en') {
 		setSelectLanguage('en', 'en', 'en', 'ru')
 	} else if (lang === 'ru') {
@@ -29,7 +29,7 @@ export const changeSelectLanguage = () => {
 }
 
 export const changeSelectIcon = () => {
-	const currentLanguage = getCurrentLanguage()
+	const currentLanguage = getStorageCurrentLanguage()
 	if (currentLanguage === 'en') {
 		language.classList.remove('language_ru')
 		language.classList.add('language_en')
@@ -52,7 +52,7 @@ const findLanguageSelectedItem = (lang, value) => {
 }
 
 export const setSelectedLanguageValue = () => {
-	const lang = getCurrentLanguage()
+	const lang = getStorageCurrentLanguage()
 	if (lang === 'en') {
 		findLanguageSelectedItem('ru', false)
 		findLanguageSelectedItem('en', true)

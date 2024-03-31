@@ -7,24 +7,23 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getCurrentLanguage: function() { return /* binding */ getCurrentLanguage; },
-/* harmony export */   setCurrentLanguage: function() { return /* binding */ setCurrentLanguage; },
-/* harmony export */   setDefaultCurrentLanguage: function() { return /* binding */ setDefaultCurrentLanguage; }
+/* harmony export */   getStorageCurrentLanguage: function() { return /* binding */ getStorageCurrentLanguage; },
+/* harmony export */   setStorageCurrentLanguage: function() { return /* binding */ setStorageCurrentLanguage; },
+/* harmony export */   setStorageDefaultCurrentLanguage: function() { return /* binding */ setStorageDefaultCurrentLanguage; }
 /* harmony export */ });
 /* harmony import */ var _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-const setDefaultCurrentLanguage = () => {
-	if (!localStorage.getItem('language')) {
+const setStorageDefaultCurrentLanguage = () => {
+	const language = getStorageCurrentLanguage()
+	if (!language) {
 		localStorage.setItem('language', 'en')
 	}
 }
 
-const getCurrentLanguage = () => {
-	return localStorage.getItem('language')
-}
+const getStorageCurrentLanguage = () => localStorage.getItem('language')
 
-const setCurrentLanguage = () => {
+const setStorageCurrentLanguage = () => {
 	localStorage.setItem('language', _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
 }
 
@@ -63,7 +62,7 @@ const setSelectLanguage = (valueOne, valueTwo, valueThree, valueFour) => {
 }
 
 const changeSelectLanguage = () => {
-	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	if (lang === 'en') {
 		setSelectLanguage('en', 'en', 'en', 'ru')
 	} else if (lang === 'ru') {
@@ -72,7 +71,7 @@ const changeSelectLanguage = () => {
 }
 
 const changeSelectIcon = () => {
-	const currentLanguage = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLanguage = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	if (currentLanguage === 'en') {
 		language.classList.remove('language_ru')
 		language.classList.add('language_en')
@@ -95,7 +94,7 @@ const findLanguageSelectedItem = (lang, value) => {
 }
 
 const setSelectedLanguageValue = () => {
-	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const lang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	if (lang === 'en') {
 		findLanguageSelectedItem('ru', false)
 		findLanguageSelectedItem('en', true)
@@ -141,7 +140,7 @@ const dateOptions = {
 }
 
 const showDate = () => {
-	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	const currentDate = new Date().toLocaleDateString(currentLanguage, dateOptions)
 	date.textContent = currentDate
 }
@@ -166,7 +165,7 @@ const greetingObject = {
 }
 
 const showGreetingText = () => {
-	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	const currentTime = new Date().getHours();
 	const getGreeting = greetingObject[currentLanguage][Math.floor(currentTime / 6)]
 	greetingText.textContent = getGreeting
@@ -188,7 +187,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setPlaceHolderLanguage = () => {
-	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	currentLanguage === 'en' ? (0,_setPlaceholderValue__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderValue)('en') : (0,_setPlaceholderValue__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderValue)('ru')
 }
 
@@ -279,7 +278,7 @@ const weatherCityInput = document.querySelector('.weather__input')
 
 async function getWeather() {
 	try {
-		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 		const weatherCityInputTrim = String(weatherCityInput.value).trim()
 		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityInputTrim}&lang=${currentLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
 		weatherCityInput.value = weatherCityInputTrim
@@ -338,7 +337,7 @@ const updateUI = (data, currentLang) => {
 };
 
 const handleErrors = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
@@ -394,7 +393,7 @@ const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 const setQueryValue = () => {
 	const queryValue = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getQueryInputValueLoad)()
-	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getStorageCurrentLanguage)()
 	if (queryValue) {
 		query = queryValue
 	} else {
@@ -419,7 +418,7 @@ const changeGithubImages = () => {
 	if (imagesSource === 'github') {
 		queryInput.classList.add('query__input_hide')
 		const greetingText = (0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
-		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getCurrentLanguage)();
+		const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getStorageCurrentLanguage)();
 		let value = currentLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
 		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
@@ -1224,7 +1223,7 @@ const popupErrorObject = {
 }
 
 const controlErrorPopup = (value) => {
-	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getCurrentLanguage)()
+	const currentLanguage = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageCurrentLanguage)()
 	popup.classList[value]('popup_show')
 	popupShadow.classList[value]('popup__shadow_show')
 	currentLanguage === 'ru' ? popupMessage.textContent = popupErrorObject.ru : popupMessage.textContent = popupErrorObject.en
@@ -1332,7 +1331,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const getQuotesLanguage = () => {
-	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getCurrentLanguage)()
+	const currentLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageCurrentLanguage)()
 	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
 }
 
@@ -1804,7 +1803,7 @@ const eventHandlersChange = {
 	'.query__input': _slider_changeBackground__WEBPACK_IMPORTED_MODULE_4__.changeQueryInput,
 	'.source__select': (e) => (0,_imagesSource_changeImagesSourceSelectValue__WEBPACK_IMPORTED_MODULE_10__.changeImagesSourceSelectValue)(e),
 	'.language__select': () => {
-		;(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setCurrentLanguage)()
+		;(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setStorageCurrentLanguage)()
 		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_0__.showDate)()
 		;(0,_greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_11__.showGreetingText)()
@@ -1995,7 +1994,7 @@ setInterval(() => {
 
 
 window.addEventListener('beforeunload', () => {
-	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setDefaultCurrentLanguage)()
+	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setStorageDefaultCurrentLanguage)()
 	;(0,_components_imagesSource_localStorageImageSource_js__WEBPACK_IMPORTED_MODULE_17__.setImagesSourceDefault)()
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_6__.setCity)()
 	;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_20__.setQueryInputValueBeforeUnload)()
