@@ -30,9 +30,7 @@
 						<progress class="player__progress" value="0"></progress>
 						<p class="player__duration"></p>
 					</div>
-
 					<div class="player__controls">
-
 						<button class="player__controls-prev">
 							<svg viewBox="0 0 64 64">
 								<use href='./images/svg/play-prev.svg#prev'></use>
@@ -61,8 +59,8 @@
 				</div>
 				<div class="language">
 					<select class="language__select" name="language">
-						<option value="en"></option>
-						<option value="ru"></option>
+						<option value="en" label=" "></option>
+						<option value="ru" label=" "></option>
 					</select>
 				</div>
 				<div class="source">
@@ -79,18 +77,16 @@
 					<input class="weather__input" type="text" name="city">
 					<span class="weather__icon"></span>
 					<p class="weather_error"></p>
-
 					<span class="weather__values-temperature"></span>
 					<span class="weather__values-description"></span>
-
 					<p class="weather__wind"></p>
 					<p class="weather__humidity"></p>
 				</div>
 			</header>
 			<main class="main">
 				<div class="data">
-					<time class="data__time"></time>
-					<date class="data__date"></date>
+					<p class="data__time"></p>
+					<p class="data__date"></p>
 				</div>
 				<div class="greeting">
 					<span class="greeting__text"></span>
@@ -109,7 +105,7 @@
 				</button>
 				<div class="popup">
 					<div class="popup__inner">
-						<p class="popup__message">По заданному запросу ничего не найдено.Попробуйте еще раз.</p>
+						<p class="popup__message"></p>
 						<button class="popup__button">✖</button>
 					</div>
 				</div>
@@ -128,7 +124,6 @@
 			</footer>
 		</div>
 	</div>
-
 	<script src="./js/index.js"></script>
 </body>
 
