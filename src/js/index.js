@@ -13,13 +13,12 @@ import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
-import { setSelectedLanguageValue } from './components/language/setSelectedLanguageValue.js'
+import { setSelectedLanguageValue, changeSelectLanguage } from './components/language/setSelectedLanguageValue.js'
 import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
-
 
 setInterval(() => {
 	showTime()
@@ -42,6 +41,7 @@ setQueryValue()
 changeBackground()
 setButtonValueContentLoaded()
 getQueryInputValueLoad()
+changeSelectLanguage()
 
 
 window.addEventListener('beforeunload', () => {

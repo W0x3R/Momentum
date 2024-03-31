@@ -52,7 +52,7 @@
 }
 
 .language {
-	@include selectWrapper(70px);
+	@include selectWrapper(220px);
 
 	&__select {
 		@include select;
