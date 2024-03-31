@@ -14,7 +14,7 @@ import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
 import { setSelectedLanguageValue, changeSelectLanguage, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
-import { setSelectedSourceValue } from './components/imagesSource/setSelectedImageSourceValue.js'
+import { checkSelectedImagesSourceValue } from './components/imagesSource/setSelectedImagesSourceValue.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
@@ -35,7 +35,7 @@ createPlayList()
 loadSong()
 setSelectedLanguageValue()
 changeSelectIcon()
-setSelectedSourceValue()
+checkSelectedImagesSourceValue()
 getCity()
 getGreetingName()
 setQueryValue()

@@ -1284,9 +1284,7 @@ const setImagesSourceDefault = () => {
 	}
 }
 
-const getImagesSource = () => {
-	return localStorage.getItem('source')
-}
+const getImagesSource = () => localStorage.getItem('source')
 
 const setImagesSource = (value) => {
 	localStorage.setItem('source', value)
@@ -1711,32 +1709,33 @@ const getVolumeButtonValue = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   checkImageSourceSelectValue: function() { return /* binding */ checkImageSourceSelectValue; },
-/* harmony export */   setSelectedSourceValue: function() { return /* binding */ setSelectedSourceValue; }
+/* harmony export */   checkImagesSourceSelectValue: function() { return /* binding */ checkImagesSourceSelectValue; },
+/* harmony export */   checkSelectedImagesSourceValue: function() { return /* binding */ checkSelectedImagesSourceValue; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
 /* harmony import */ var _slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
 
 
 
-const imageSourceSelect = document.querySelector('.source__select')
-const selectLanguageChildrenArray = Array.from(imageSourceSelect.children)
-const setSelectedImageSourceValue = (number, value) => {
-	selectLanguageChildrenArray[number].selected = value
+const imagesSourceSelect = document.querySelector('.source__select')
+const imagesSourceSelectArray = Array.from(imagesSourceSelect.children)
+
+const setSelectedImagesSourceValue = (number, value) => {
+	imagesSourceSelectArray[number].selected = value
 }
 
-const setSelectedSourceValue = () => {
+const checkSelectedImagesSourceValue = () => {
 	const getSource = (0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.getImagesSource)()
 	if (getSource === 'github') {
-		setSelectedImageSourceValue(1, false)
-		setSelectedImageSourceValue(0, true)
+		setSelectedImagesSourceValue(1, false)
+		setSelectedImagesSourceValue(0, true)
 	} else if (getSource === 'pexels') {
-		setSelectedImageSourceValue(0, false)
-		setSelectedImageSourceValue(1, true)
+		setSelectedImagesSourceValue(0, false)
+		setSelectedImagesSourceValue(1, true)
 	}
 }
 
-const checkImageSourceSelectValue = (e) => {
+const checkImagesSourceSelectValue = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
 		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setImagesSource)('github')
@@ -1769,7 +1768,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(29);
 /* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(30);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(31);
-/* harmony import */ var _imagesSource_setSelectedImageSourceValue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(33);
+/* harmony import */ var _imagesSource_setSelectedImagesSourceValue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(33);
 /* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setPlaceholderLanguage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6);
 /* harmony import */ var _quotes_getQuotes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
@@ -1814,7 +1813,7 @@ const eventHandlersInput = {
 
 const eventHandlersChange = {
 	'.query__input': _slider_changeBackground__WEBPACK_IMPORTED_MODULE_4__.changeQueryInput,
-	'.source__select': (e) => (0,_imagesSource_setSelectedImageSourceValue__WEBPACK_IMPORTED_MODULE_10__.checkImageSourceSelectValue)(e),
+	'.source__select': (e) => (0,_imagesSource_setSelectedImagesSourceValue__WEBPACK_IMPORTED_MODULE_10__.checkImagesSourceSelectValue)(e),
 	'.language__select': () => {
 		;(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setCurrentLanguage)()
 		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
@@ -1928,7 +1927,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(30);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(31);
 /* harmony import */ var _components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2);
-/* harmony import */ var _components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(33);
+/* harmony import */ var _components_imagesSource_setSelectedImagesSourceValue_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(33);
 /* harmony import */ var _components_imagesSource_localStorageImageSource_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(20);
 /* harmony import */ var _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(34);
 /* harmony import */ var _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(18);
@@ -1970,7 +1969,7 @@ setInterval(() => {
 ;(0,_components_player_updateLoadSong_js__WEBPACK_IMPORTED_MODULE_10__.loadSong)()
 ;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__.setSelectedLanguageValue)()
 ;(0,_components_language_setSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__.changeSelectIcon)()
-;(0,_components_imagesSource_setSelectedImageSourceValue_js__WEBPACK_IMPORTED_MODULE_16__.setSelectedSourceValue)()
+;(0,_components_imagesSource_setSelectedImagesSourceValue_js__WEBPACK_IMPORTED_MODULE_16__.checkSelectedImagesSourceValue)()
 ;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_6__.getCity)()
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__.getGreetingName)()
 ;(0,_components_slider_changeBackground__WEBPACK_IMPORTED_MODULE_7__.setQueryValue)()

@@ -4,9 +4,7 @@ export const setImagesSourceDefault = () => {
 	}
 }
 
-export const getImagesSource = () => {
-	return localStorage.getItem('source')
-}
+export const getImagesSource = () => localStorage.getItem('source')
 
 export const setImagesSource = (value) => {
 	localStorage.setItem('source', value)

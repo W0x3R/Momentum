@@ -8,7 +8,7 @@ import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { checkClickOnProgressBar } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkInputChangeVolume } from "../player/volume"
-import { checkImageSourceSelectValue } from "../imagesSource/setSelectedImageSourceValue"
+import { checkImagesSourceSelectValue } from "../imagesSource/setSelectedImagesSourceValue"
 import { showGreetingText } from "../greeting/showGreetingMessage"
 import { setPlaceHolderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
@@ -37,7 +37,7 @@ export const eventHandlersInput = {
 
 export const eventHandlersChange = {
 	'.query__input': changeQueryInput,
-	'.source__select': (e) => checkImageSourceSelectValue(e),
+	'.source__select': (e) => checkImagesSourceSelectValue(e),
 	'.language__select': () => {
 		setCurrentLanguage()
 		getWeather()
