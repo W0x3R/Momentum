@@ -1710,12 +1710,9 @@ const getVolumeButtonValue = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeImagesSourceSelectValue: function() { return /* binding */ changeImagesSourceSelectValue; },
 /* harmony export */   checkSelectedImagesSourceValue: function() { return /* binding */ checkSelectedImagesSourceValue; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
-
 
 
 const imagesSourceSelect = document.querySelector('.source__select')
@@ -1736,16 +1733,7 @@ const checkSelectedImagesSourceValue = () => {
 	}
 }
 
-const changeImagesSourceSelectValue = (e) => {
-	const target = e.target;
-	if (target.value === 'github') {
-		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSource)('github')
-		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
-	} else {
-		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSource)('pexels')
-		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
-	}
-}
+
 
 /***/ }),
 /* 34 */
@@ -1769,7 +1757,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(29);
 /* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(30);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(31);
-/* harmony import */ var _imagesSource_imagesSourceValues__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(33);
+/* harmony import */ var _imagesSource_changeImagesSourceSelectValue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(35);
 /* harmony import */ var _greeting_showGreetingMessage__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setPlaceholderLanguage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6);
 /* harmony import */ var _quotes_getQuotes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
@@ -1814,7 +1802,7 @@ const eventHandlersInput = {
 
 const eventHandlersChange = {
 	'.query__input': _slider_changeBackground__WEBPACK_IMPORTED_MODULE_4__.changeQueryInput,
-	'.source__select': (e) => (0,_imagesSource_imagesSourceValues__WEBPACK_IMPORTED_MODULE_10__.changeImagesSourceSelectValue)(e),
+	'.source__select': (e) => (0,_imagesSource_changeImagesSourceSelectValue__WEBPACK_IMPORTED_MODULE_10__.changeImagesSourceSelectValue)(e),
 	'.language__select': () => {
 		;(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setCurrentLanguage)()
 		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
@@ -1835,6 +1823,32 @@ const callEvents = (e, eventsObject) => {
 			eventsObject[selector](e)
 			break
 		}
+	}
+}
+
+/***/ }),
+/* 35 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   changeImagesSourceSelectValue: function() { return /* binding */ changeImagesSourceSelectValue; }
+/* harmony export */ });
+/* harmony import */ var _localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
+/* harmony import */ var _slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
+
+
+
+
+const changeImagesSourceSelectValue = (e) => {
+	const target = e.target;
+	if (target.value === 'github') {
+		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSource)('github')
+		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
+	} else {
+		(0,_localStorageImageSource__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSource)('pexels')
+		;(0,_slider_changeBackground__WEBPACK_IMPORTED_MODULE_1__.changeBackground)()
 	}
 }
 

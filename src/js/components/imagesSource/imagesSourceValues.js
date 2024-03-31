@@ -1,5 +1,4 @@
-import { setStorageImagesSource, getStorageImagesSource } from "./localStorageImageSource";
-import { changeBackground } from "../slider/changeBackground";
+import { getStorageImagesSource } from "./localStorageImageSource";
 
 const imagesSourceSelect = document.querySelector('.source__select')
 const imagesSourceSelectArray = Array.from(imagesSourceSelect.children)
@@ -19,13 +18,3 @@ export const checkSelectedImagesSourceValue = () => {
 	}
 }
 
-export const changeImagesSourceSelectValue = (e) => {
-	const target = e.target;
-	if (target.value === 'github') {
-		setStorageImagesSource('github')
-		changeBackground()
-	} else {
-		setStorageImagesSource('pexels')
-		changeBackground()
-	}
-}
