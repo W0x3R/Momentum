@@ -13,7 +13,8 @@ import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
-import { setSelectedLanguageValue, changeSelectLanguage, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
+import { setSelectedLanguageValue, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
+import { changeLanguageSelectChildrenText } from './components/language/languageSelectChildrenText.js'
 import { checkSelectedImagesSourceValue } from './components/imagesSource/imagesSourceValues.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
@@ -42,7 +43,7 @@ setQueryValue()
 changeBackground()
 setButtonValueContentLoaded()
 getQueryInputValueLoad()
-changeSelectLanguage()
+changeLanguageSelectChildrenText()
 
 
 window.addEventListener('beforeunload', () => {
