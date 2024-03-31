@@ -1,6 +1,6 @@
 import { showDate } from "../date/date"
 import { setCurrentLanguage } from "../language/localStorageLanguage"
-import { setGreetingName } from "../greeting/localStorageGreeting"
+import { setStorageGreetingName } from "../greeting/localStorageGreeting"
 import { getWeather } from "../weather/getWeather"
 import { changeBackgroundOnClick, changeQueryInput } from "../slider/changeBackground"
 import { checkFlagSong } from "../player/playSong"
@@ -8,7 +8,7 @@ import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { checkClickOnProgressBar } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkInputChangeVolume } from "../player/volume"
-import { checkImagesSourceSelectValue } from "../imagesSource/setSelectedImagesSourceValue"
+import { changeImagesSourceSelectValue } from "../imagesSource/imagesSourceValues"
 import { showGreetingText } from "../greeting/showGreetingMessage"
 import { setPlaceHolderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
@@ -32,12 +32,12 @@ export const eventHandlersClick = {
 
 export const eventHandlersInput = {
 	'.player__sounds-volume': checkInputChangeVolume,
-	'.greeting__name': setGreetingName
+	'.greeting__name': setStorageGreetingName
 }
 
 export const eventHandlersChange = {
 	'.query__input': changeQueryInput,
-	'.source__select': (e) => checkImagesSourceSelectValue(e),
+	'.source__select': (e) => changeImagesSourceSelectValue(e),
 	'.language__select': () => {
 		setCurrentLanguage()
 		getWeather()

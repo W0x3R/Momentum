@@ -1,11 +1,12 @@
 export const setImagesSourceDefault = () => {
-	if (!localStorage.getItem('source')) {
-		setImagesSource('github')
+	const storageImagesSource = getStorageImagesSource()
+	if (!storageImagesSource) {
+		setStorageImagesSource('github')
 	}
 }
 
-export const getImagesSource = () => localStorage.getItem('source')
+export const getStorageImagesSource = () => localStorage.getItem('source')
 
-export const setImagesSource = (value) => {
+export const setStorageImagesSource = (value) => {
 	localStorage.setItem('source', value)
 }

@@ -5,7 +5,7 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 import { showErrorPopup } from './controlErrorPopup'
 import { getQueryInputValueLoad } from './localStorageSlider'
-import { getImagesSource } from '../imagesSource/localStorageImageSource';
+import { getStorageImagesSource } from '../imagesSource/localStorageImageSource';
 
 export const body = document.body
 export const queryInput = document.querySelector('.query__input')
@@ -44,7 +44,7 @@ export const changeQueryInput = () => {
 }
 
 const changeGithubImages = () => {
-	const imagesSource = getImagesSource()
+	const imagesSource = getStorageImagesSource()
 	if (imagesSource === 'github') {
 		queryInput.classList.add('query__input_hide')
 		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
@@ -57,7 +57,7 @@ const changeGithubImages = () => {
 }
 
 const changePexelsImages = () => {
-	const imagesSource = getImagesSource()
+	const imagesSource = getStorageImagesSource()
 	if (imagesSource === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
@@ -82,7 +82,7 @@ export const changeBackground = () => {
 }
 
 export const changeBackgroundOnClick = (direction) => {
-	const imagesSource = getImagesSource()
+	const imagesSource = getStorageImagesSource()
 	if (imagesSource === 'github') {
 		if (isAnimate) {
 			isAnimate = false

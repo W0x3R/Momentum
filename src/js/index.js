@@ -3,7 +3,7 @@ import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
 import { setPlaceHolderLanguage } from './components/greeting/setPlaceholderLanguage.js'
-import { getGreetingName } from './components/greeting/localStorageGreeting.js'
+import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setCity, getCity } from './components/weather/localStorageWeather.js'
 import { changeBackground, setQueryValue } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
@@ -14,7 +14,7 @@ import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
 import { setSelectedLanguageValue, changeSelectLanguage, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
-import { checkSelectedImagesSourceValue } from './components/imagesSource/setSelectedImagesSourceValue.js'
+import { checkSelectedImagesSourceValue } from './components/imagesSource/imagesSourceValues.js'
 import { setImagesSourceDefault } from './components/imagesSource/localStorageImageSource.js'
 import { eventHandlersClick, eventHandlersInput, eventHandlersChange, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
@@ -37,7 +37,7 @@ setSelectedLanguageValue()
 changeSelectIcon()
 checkSelectedImagesSourceValue()
 getCity()
-getGreetingName()
+getStorageGreetingName()
 setQueryValue()
 changeBackground()
 setButtonValueContentLoaded()
