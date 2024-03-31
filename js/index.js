@@ -267,7 +267,7 @@ const weatherTranslations = {
 		error: "ERROR: City wasn't found!"
 	},
 	ru: {
-		wind: 'Скорость ветра',
+		wind: 'Скорость ветра:',
 		units: 'м/c',
 		humidity: 'Влажность:',
 		error: "Ошибка: Город не найден!"
@@ -279,7 +279,7 @@ const updateUI = (data, currentLang) => {
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
 	weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
 	weatherTemperatureDescription.textContent = data.weather[0].description.slice(0, 1).toUpperCase() + data.weather[0].description.slice(1);
-	weatherWind.textContent = `${weatherTranslations[currentLang].wind}: ${Math.round(data.wind.speed)} ${weatherTranslations[currentLang].units}`;
+	weatherWind.textContent = `${weatherTranslations[currentLang].wind} ${Math.round(data.wind.speed)} ${weatherTranslations[currentLang].units}`;
 	weatherHumidity.textContent = `${weatherTranslations[currentLang].humidity} ${Math.round(data.main.humidity)}%`;
 	weatherError.style.display = 'none';
 	weatherError.textContent = '';
