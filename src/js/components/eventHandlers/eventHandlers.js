@@ -13,8 +13,8 @@ import { showGreetingText } from "../greeting/showGreetingMessage"
 import { setPlaceholderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
-import { changeSelectIcon } from "../language/setSelectedLanguageValue"
-import { changeLanguageSelectChildrenText } from "../language/languageSelectChildrenText"
+import { changeLanguageSelectIcon } from "../language/changeLanguageSelectIcon"
+import { changeLanguageSelectText } from "../language/changeLanguageSelectText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBackgroundOnClick('prev'),
@@ -46,8 +46,8 @@ export const changeEvents = {
 		showGreetingText()
 		setPlaceholderLanguage()
 		getQuotes()
-		changeLanguageSelectChildrenText()
-		changeSelectIcon()
+		changeLanguageSelectText()
+		changeLanguageSelectIcon()
 	},
 	'.weather__input': getWeather
 }

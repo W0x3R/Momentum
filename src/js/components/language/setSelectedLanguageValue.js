@@ -1,37 +1,13 @@
 import { getStorageCurrentLanguage } from "./localStorageLanguage";
+import { setLanguageSelectedItem } from "./setLanguageSelectedItem";
 
-const language = document.querySelector('.language')
-export const languageSelect = document.querySelector('.language__select')
-export const selectLanguageChildrenArray = Array.from(languageSelect.children)
-
-export const changeSelectIcon = () => {
-	const currentLanguage = getStorageCurrentLanguage()
-	if (currentLanguage === 'en') {
-		language.classList.remove('language_ru')
-		language.classList.add('language_en')
-	}
-	else if (currentLanguage === 'ru') {
-		language.classList.remove('language_en')
-		language.classList.add('language_ru')
-	}
-}
-
-const findLanguageSelectedItem = (lang, value) => {
-	const item = selectLanguageChildrenArray.find(e => e.value === lang);
-	if (item) {
-		item.selected = value;
-	} else {
-		console.error(`Item with value ${lang} not found`);
-	}
-}
-
-export const setSelectedLanguageValue = () => {
+export const changeLanguageSelectedItem = () => {
 	const lang = getStorageCurrentLanguage()
 	if (lang === 'en') {
-		findLanguageSelectedItem('ru', false)
-		findLanguageSelectedItem('en', true)
+		setLanguageSelectedItem('ru', false)
+		setLanguageSelectedItem('en', true)
 	} else if (lang === 'ru') {
-		findLanguageSelectedItem('en', false)
-		findLanguageSelectedItem('ru', true)
+		setLanguageSelectedItem('en', false)
+		setLanguageSelectedItem('ru', true)
 	}
 }

@@ -1,4 +1,4 @@
-import { setStorageDefaultCurrentLanguage } from './components/language/localStorageLanguage.js'
+import { setStorageCurrentLanguageDefault } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreetingText } from './components/greeting/showGreetingMessage.js'
@@ -13,8 +13,9 @@ import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setButtonValueContentLoaded } from './components/player/volume.js'
-import { setSelectedLanguageValue, changeSelectIcon } from './components/language/setSelectedLanguageValue.js'
-import { changeLanguageSelectChildrenText } from './components/language/languageSelectChildrenText.js'
+import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
+import { changeLanguageSelectIcon } from './components/language/changeLanguageSelectIcon.js'
+import { changeLanguageSelectText } from './components/language/changeLanguageSelectText.js'
 import { checkImagesSource } from './components/imagesSource/checkImagesSource.js'
 import { setStorageImagesSourceDefault } from './components/imagesSource/localStorageImagesSource.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
@@ -34,8 +35,8 @@ setPlaceholderLanguage()
 getQuotes()
 createPlayList()
 loadSong()
-setSelectedLanguageValue()
-changeSelectIcon()
+changeLanguageSelectedItem()
+changeLanguageSelectIcon()
 checkImagesSource()
 getCity()
 getStorageGreetingName()
@@ -43,11 +44,11 @@ setQueryValue()
 changeBackground()
 setButtonValueContentLoaded()
 getQueryInputValueLoad()
-changeLanguageSelectChildrenText()
+changeLanguageSelectText()
 
 
 window.addEventListener('beforeunload', () => {
-	setStorageDefaultCurrentLanguage()
+	setStorageCurrentLanguageDefault()
 	setStorageImagesSourceDefault()
 	setCity()
 	setQueryInputValueBeforeUnload()

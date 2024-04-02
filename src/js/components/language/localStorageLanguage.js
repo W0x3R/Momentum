@@ -1,6 +1,6 @@
-import { languageSelect } from "./setSelectedLanguageValue"
+import { languageSelect } from "./setLanguageSelectedItem"
 
-export const setStorageDefaultCurrentLanguage = () => {
+export const setStorageCurrentLanguageDefault = () => {
 	const language = getStorageCurrentLanguage()
 	if (!language) {
 		localStorage.setItem('language', 'en')
