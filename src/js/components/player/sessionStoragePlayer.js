@@ -1,9 +1,7 @@
 import { volumeButton } from "./switchSong";
 
-export const setVolumeButtonValue = () => {
+export const setSessionVolumeValue = () => {
 	sessionStorage.setItem('volumeValue', volumeButton.value)
 }
 
-export const getVolumeButtonValue = () => {
-	return sessionStorage.getItem('volumeValue')
-}
+export const getSessionVolumeValue = () => sessionStorage.getItem('volumeValue')

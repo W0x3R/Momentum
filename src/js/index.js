@@ -8,7 +8,8 @@ import { setCity, getCity } from './components/weather/localStorageWeather.js'
 import { changeBackground, setQueryValue } from './components/slider/changeBackground'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
-import { loadSong, updateTime } from './components/player/updateLoadSong.js'
+import { loadSong } from './components/player/loadSong.js'
+import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
@@ -55,7 +56,7 @@ window.addEventListener('beforeunload', () => {
 })
 
 audio.addEventListener('timeupdate', function (e) {
-	updateTime()
+	updateSongTime()
 	updateProgressBar(e)
 })
 

@@ -5,7 +5,7 @@ import { getWeather } from "../weather/getWeather"
 import { changeBackgroundOnClick, changeQueryInput } from "../slider/changeBackground"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
-import { checkClickOnProgressBar } from "../player/updateProgressBar"
+import { rewindSong } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkInputChangeVolume } from "../player/volume"
 import { changeImagesSource } from "../imagesSource/changeImagesSource"
@@ -22,7 +22,7 @@ export const clickEvents = {
 	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
 	'.source': () => rotateIcon(selectSourceImagesWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
-	'.player__progress': (e) => checkClickOnProgressBar(e),
+	'.player__progress': (e) => rewindSong(e),
 	'.player__controls-prev': prevSong,
 	'.player__controls-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),

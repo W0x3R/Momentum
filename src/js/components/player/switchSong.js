@@ -1,7 +1,7 @@
 import playListSongs from "../../../../playListSongs.js"
-import { loadSong } from "./updateLoadSong.js"
-import { playSong, pauseSong } from "./playSong.js"
-import { isPlay } from "./playSong.js"
+import { loadSong } from "./loadSong.js"
+import { playSong, pauseSong, isPlay } from "./playSong.js"
+
 export const trackName = document.querySelector('.player__track-name')
 export const audio = document.querySelector('.player__audio')
 export const volumeButton = document.querySelector('.player__sounds-volume')
