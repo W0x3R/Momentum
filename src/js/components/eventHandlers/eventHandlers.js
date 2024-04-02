@@ -8,15 +8,15 @@ import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { checkClickOnProgressBar } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkInputChangeVolume } from "../player/volume"
-import { changeImagesSourceSelectValue } from "../imagesSource/changeImagesSourceSelectValue"
+import { changeImagesSource } from "../imagesSource/changeImagesSource"
 import { showGreetingText } from "../greeting/showGreetingMessage"
-import { setPlaceHolderLanguage } from "../greeting/setPlaceholderLanguage"
+import { setPlaceholderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
 import { changeSelectIcon } from "../language/setSelectedLanguageValue"
 import { changeLanguageSelectChildrenText } from "../language/languageSelectChildrenText"
 
-export const eventHandlersClick = {
+export const clickEvents = {
 	'.main__button_prev': () => changeBackgroundOnClick('prev'),
 	'.main__button_next': () => changeBackgroundOnClick('next'),
 	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
@@ -31,20 +31,20 @@ export const eventHandlersClick = {
 	'.popup__shadow_show': closeErrorPopup
 }
 
-export const eventHandlersInput = {
+export const inputEvents = {
 	'.player__sounds-volume': checkInputChangeVolume,
 	'.greeting__name': setStorageGreetingName
 }
 
-export const eventHandlersChange = {
+export const changeEvents = {
 	'.query__input': changeQueryInput,
-	'.source__select': (e) => changeImagesSourceSelectValue(e),
+	'.source__select': (e) => changeImagesSource(e),
 	'.language__select': () => {
 		setStorageCurrentLanguage()
 		getWeather()
 		showDate()
 		showGreetingText()
-		setPlaceHolderLanguage()
+		setPlaceholderLanguage()
 		getQuotes()
 		changeLanguageSelectChildrenText()
 		changeSelectIcon()
