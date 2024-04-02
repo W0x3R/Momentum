@@ -5,7 +5,7 @@ import { getRandomNumber } from "./getRandomNumber"
 import { translateGreeting } from "./translateGreeting"
 import { showErrorPopup } from './controlErrorPopup'
 import { getQueryInputValueLoad } from './localStorageSlider'
-import { getStorageImagesSource } from '../imagesSource/localStorageImageSource';
+import { getStorageImagesSource } from '../imagesSource/localStorageImagesSource';
 
 export const body = document.body
 export const queryInput = document.querySelector('.query__input')

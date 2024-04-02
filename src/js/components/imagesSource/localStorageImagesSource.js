@@ -1,4 +1,4 @@
-export const setImagesSourceDefault = () => {
+export const setStorageImagesSourceDefault = () => {
 	const storageImagesSource = getStorageImagesSource()
 	if (!storageImagesSource) {
 		setStorageImagesSource('github')
