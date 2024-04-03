@@ -70,8 +70,13 @@
 	justify-content: space-between;
 	align-items: center;
 
+	& span {
+		color: var(--white);
+		pointer-events: none;
+	}
 	& label {
 		color: var(--white);
+		cursor: pointer;
 	}
 }
 
