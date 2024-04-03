@@ -60,8 +60,9 @@
 	background: rgba(136, 136, 136, 0.5);
 	border-radius: 8px;
 	border: solid 1px rgb(138, 138, 138);
-	max-height: 145px;
 	padding: 10px;
+	align-self: flex-start;
+	gap: 15px 0;
 }
 
 .settings__wrapper {
@@ -71,6 +72,12 @@
 
 	& label {
 		color: var(--white);
+	}
+}
+
+.setting__query {
+	&_hide {
+		display: none;
 	}
 }
 
@@ -314,10 +321,5 @@
 	&__input {
 		@include select;
 		cursor: auto;
-		transition: height 0.6s ease;
-
-		&_hide {
-			height: 0;
-		}
 	}
 }

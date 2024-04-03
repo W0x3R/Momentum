@@ -9,6 +9,7 @@ import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 export const body = document.body
+const queryWrapper = document.querySelector('.setting__query')
 export const queryInput = document.querySelector('.query__input')
 const greetingText = showGreeting().split(' ')[1].slice(0, -1);
 let query;
@@ -45,7 +46,7 @@ export const changeQueryInput = () => {
 const changeGithubImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	if (imagesSrc === 'github') {
-		queryInput.classList.add('query__input_hide')
+		queryWrapper.classList.add('setting__query_hide')
 		const greetingText = showGreeting().split(' ')[1].slice(0, -1);
 		const currLang = getStorageLanguage();
 		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)
@@ -58,7 +59,7 @@ const changeGithubImages = () => {
 const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	if (imagesSrc === 'pexels') {
-		queryInput.classList.remove('query__input_hide')
+		queryWrapper.classList.remove('setting__query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
