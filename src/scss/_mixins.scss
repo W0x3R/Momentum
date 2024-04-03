@@ -18,7 +18,7 @@
 	width: $width;
 	height: 26px;
 	line-height: 1.6;
-	background: #5c6664;
+	background: rgb(92, 102, 100);
 	overflow: hidden;
 	border-radius: 4px;
 
@@ -41,10 +41,16 @@
 }
 
 @mixin select {
-	background: #5c6664;
+	background: rgb(92, 102, 100);
 	flex: 1;
 	padding: 0 8px;
 	color: var(--white);
 	cursor: pointer;
 	font-size: 16px;
+}
+
+@mixin trackTime() {
+	position: absolute;
+	bottom: 13px;
+	user-select: none;
 }

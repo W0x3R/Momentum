@@ -72,9 +72,8 @@
 	top: 50%;
 	left: 50%;
 	display: none;
-	background: #d8d8d8;
-	width: 640px;
-	height: 250px;
+	background: var(--white_215);
+	@include sizes(640px, 250px);
 	border-radius: 9px;
 	transform: translate(-50%, -50%);
 	z-index: 3;
@@ -87,21 +86,20 @@
 
 	&__inner {
 		font-size: 19px;
-		color: black;
+		color: var(--black);
 	}
 
 	&__button {
 		position: absolute;
 		right: -35px;
 		top: -33px;
-		width: 35px;
-		height: 35px;
-		background: white;
+		@include sizes(35px, 35px);
+		background: var(--white);
 		border-radius: 25%;
 		cursor: pointer;
 		font-size: 20px;
 		transition: 0.3s ease;
-		color: black;
+		color: var(--black);
 
 		&_hover {
 			color: var(--blue);

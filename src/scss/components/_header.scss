@@ -64,20 +64,20 @@
 
 	&_ru {
 		&::before {
-			content: url('../../../images/svg/_lang_ru.svg');
 			position: absolute;
 			right: 32px;
 			width: 27px;
+			content: url('../../../images/svg/_lang_ru.svg');
 			pointer-events: none;
 		}
 	}
 
 	&_en {
 		&::before {
-			content: url('../../../images/svg/_lang_en.svg');
 			position: absolute;
 			right: 32px;
 			width: 27px;
+			content: url('../../../images/svg/_lang_en.svg');
 			pointer-events: none;
 		}
 	}
@@ -124,17 +124,13 @@
 	}
 
 	&__current-time {
-		position: absolute;
-		bottom: 13px;
+		@include trackTime;
 		left: 0;
-		user-select: none;
 	}
 
 	&__duration {
-		position: absolute;
-		bottom: 13px;
+		@include trackTime;
 		right: 0;
-		user-select: none;
 	}
 
 	&__progress {
@@ -276,8 +272,8 @@
 				height: 4px;
 				border-radius: 4px;
 				border: 0px solid var(--white);
-				box-shadow: 0px 0px 0px #353535;
-				background: #d7d7d7;
+				box-shadow: 0px 0px 0px rgb(53, 53, 53);
+				background: var(--white_215);
 			}
 
 			@include hover {
@@ -293,11 +289,10 @@
 
 .query {
 	&__input {
-		width: 140px;
-		height: 26px;
-		color: var(--white);
+		@include sizes(140px, 26px);
 		border-radius: 4px;
-		background: #5c6664;
+		color: var(--white);
+		background: rgb(92, 102, 100);
 		font-size: 16px;
 		transition: height 0.6s ease;
 
