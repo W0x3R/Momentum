@@ -58,22 +58,32 @@
 					<ul class="player__list"></ul>
 				</div>
 				<div class="settings">
-					<div class="language">
-						<select class="language__select" name="language">
-							<option value="en" label=" "></option>
-							<option value="ru" label=" "></option>
-						</select>
+					<div class="settings__wrapper">
+						<label for="language">Изменить язык</label>
+						<div class="language">
+							<select id="language" class="language__select" name="language">
+								<option value="en" label=" "></option>
+								<option value="ru" label=" "></option>
+							</select>
+						</div>
 					</div>
-					<div class="source">
-						<select class="source__select" name="picture-source">
-							<option value="github">GITHUB</option>
-							<option value="pexels">PEXELS</option>
-						</select>
-						<br>
+					<div class="settings__wrapper">
+						<label for="source">Источник изображений</label>
+						<div class="source">
+							<select id="source" class="source__select" name="picture-source">
+								<option value="github">GITHUB</option>
+								<option value="pexels">PEXELS</option>
+							</select>
+							<br>
+						</div>
 					</div>
-					<div class="query">
-						<input class="query__input" type="text" name="query">
+					<div class="settings__wrapper">
+						<label for="query">Поиск изображений по тэгу</label>
+						<div class="query">
+							<input id="query" class="query__input" type="text" name="query">
+						</div>
 					</div>
+
 				</div>
 				<div class="weather">
 					<input class="weather__input" type="text" name="city">

@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-between;
 }
+
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 6px 0);
 	padding: 5px;
@@ -51,8 +52,30 @@
 	}
 }
 
+.settings {
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: rgba(136, 136, 136, 0.5);
+	border-radius: 8px;
+	border: solid 1px rgb(138, 138, 138);
+	max-height: 145px;
+	padding: 10px;
+}
+
+.settings__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	& label {
+		color: var(--white);
+	}
+}
+
 .language {
-	@include selectWrapper(220px);
+	@include selectWrapper;
 
 	&__select {
 		@include select;
@@ -84,7 +107,7 @@
 }
 
 .source {
-	@include selectWrapper(220px);
+	@include selectWrapper();
 
 	&__select {
 		@include select;
@@ -289,11 +312,8 @@
 
 .query {
 	&__input {
-		@include sizes(140px, 26px);
-		border-radius: 4px;
-		color: var(--white);
-		background: rgb(92, 102, 100);
-		font-size: 16px;
+		@include select;
+		cursor: auto;
 		transition: height 0.6s ease;
 
 		&_hide {
