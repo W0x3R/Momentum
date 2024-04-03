@@ -1,4 +1,4 @@
-import { body } from "./changeBackground"
+import { body } from "./changeBG"
 import { getStorageLanguage } from "../language/localStorageLanguage"
 
 export const popup = document.querySelector('.popup')
@@ -27,6 +27,6 @@ export const closeErrorPopup = () => {
 	controlErrorPopup('remove')
 }
 
-export const controlButtonHover = (value) => {
+export const controlBtnHover = (value) => {
 	popupBtn.classList[value]('popup__button_hover')
 }

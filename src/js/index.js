@@ -5,14 +5,14 @@ import { showGreeting } from './components/greeting/showGreeting.js'
 import { setPlaceholderLanguage } from './components/greeting/setPlaceholderLanguage.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
-import { changeBG, setQueryValue } from './components/slider/changeBackground.js'
+import { changeBG, setQueryValue } from './components/slider/changeBG.js'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong } from './components/player/loadSong.js'
 import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
-import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
+import { selectLanguageWrapper, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { setBtnValueLoad } from './components/player/volume.js'
 import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
 import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
@@ -20,14 +20,13 @@ import { changeLanguageText } from './components/language/changeLanguageText.js'
 import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
 import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
-import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
+import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 
 setInterval(() => {
 	showTime()
 	showDate()
 }, 1000)
-
 
 showDate()
 showTime()
@@ -47,7 +46,6 @@ setBtnValueLoad()
 getQueryInputValueLoad()
 changeLanguageText()
 
-
 window.addEventListener('beforeunload', () => {
 	setStorageLanguageDefault()
 	setStorageImagesSrcDefault()
@@ -63,13 +61,11 @@ audio.addEventListener('timeupdate', function (e) {
 window.addEventListener('click', function (e) {
 	callEvents(e, clickEvents)
 	closeIcon(e, 'language__select', selectLanguageWrapper, 'language__select_open')
-	closeIcon(e, 'source__select', selectSourceImagesWrapper, 'source__select_open')
+	closeIcon(e, 'source__select', selectImagesSrcWrapper, 'source__select_open')
 })
 
 audio.addEventListener('ended', nextSong)
-
 window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
-
-popup.addEventListener('mouseleave', () => controlButtonHover('add'))
-popup.addEventListener('mouseenter', () => controlButtonHover('remove'))
+popup.addEventListener('mouseleave', () => controlBtnHover('add'))
+popup.addEventListener('mouseenter', () => controlBtnHover('remove'))

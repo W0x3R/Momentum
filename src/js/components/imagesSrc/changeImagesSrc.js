@@ -1,5 +1,5 @@
 import { setStorageImagesSrc } from "./localStorageImagesSrc";
-import { changeBG } from "../slider/changeBackground";
+import { changeBG } from "../slider/changeBG";
 
 export const changeImagesSrc = (e) => {
 	const target = e.target;

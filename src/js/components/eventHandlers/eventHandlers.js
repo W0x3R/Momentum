@@ -2,11 +2,11 @@ import { showDate } from "../date/date"
 import { setStorageLanguage } from "../language/localStorageLanguage"
 import { setStorageGreetingName } from "../greeting/localStorageGreeting"
 import { getWeather } from "../weather/getWeather"
-import { changeBGOnClick, changeQueryInput } from "../slider/changeBackground"
+import { changeBGOnClick, changeQueryInput } from "../slider/changeBG"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
-import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
+import { rotateIcon, selectLanguageWrapper, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { showGreeting } from "../greeting/showGreeting"
@@ -20,7 +20,7 @@ export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
 	'.main__button_next': () => changeBGOnClick('next'),
 	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
-	'.source': () => rotateIcon(selectSourceImagesWrapper, 'source__select_open'),
+	'.source': () => rotateIcon(selectImagesSrcWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => rewindSong(e),
 	'.player__controls-prev': prevSong,

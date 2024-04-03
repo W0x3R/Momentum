@@ -1,4 +1,4 @@
-import { queryInput } from "./changeBackground";
+import { queryInput } from "./changeBG";
 
 export const getQueryInputValueLoad = () => {
 	queryInput.value = localStorage.getItem('queryInputValue')

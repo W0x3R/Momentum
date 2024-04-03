@@ -1,5 +1,5 @@
 export const selectLanguageWrapper = document.querySelector('.language')
-export const selectSourceImagesWrapper = document.querySelector('.source')
+export const selectImagesSrcWrapper = document.querySelector('.source')
 
 export const rotateIcon = (tag, classToggle) => {
 	tag.classList.toggle(classToggle)
