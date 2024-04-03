@@ -1,4 +1,4 @@
-import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/localStorageLanguage"
 
 const date = document.querySelector('.data__date')
 const dateOptions = {
@@ -8,7 +8,7 @@ const dateOptions = {
 }
 
 export const showDate = () => {
-	const currentLanguage = getStorageCurrentLanguage()
-	const currentDate = new Date().toLocaleDateString(currentLanguage, dateOptions)
-	date.textContent = currentDate
+	const currLang = getStorageLanguage()
+	const currDate = new Date().toLocaleDateString(currLang, dateOptions)
+	date.textContent = currDate
 }

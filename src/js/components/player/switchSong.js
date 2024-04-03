@@ -4,8 +4,8 @@ import { playSong, pauseSong, isPlay } from "./playSong.js"
 
 export const trackName = document.querySelector('.player__track-name')
 export const audio = document.querySelector('.player__audio')
-export const volumeButton = document.querySelector('.player__sounds-volume')
-export const volumeMuteButtonIcon = document.querySelector(`.player__sounds-mute svg use`)
+export const volumeBtn = document.querySelector('.player__sounds-volume')
+export const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
 
 export let count = 0;
 
@@ -30,11 +30,11 @@ export const prevSong = () => {
 }
 
 export const playClickedSong = (e) => {
-	const songNumber = parseInt(e.target.getAttribute('song_number'));
-	if (!isNaN(songNumber)) {
-		if (count !== songNumber) {
+	const songNum = parseInt(e.target.getAttribute('song_number'));
+	if (!isNaN(songNum)) {
+		if (count !== songNum) {
 			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
-			count = songNumber;
+			count = songNum;
 			loadSong();
 			playSong();
 		} else {

@@ -1,6 +1,6 @@
-import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/localStorageLanguage"
 
 export const getQuotesLanguage = () => {
-	const currentLang = getStorageCurrentLanguage()
-	return currentLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
+	const currLang = getStorageLanguage()
+	return currLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
 }

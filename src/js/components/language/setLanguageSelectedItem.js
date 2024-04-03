@@ -1,8 +1,8 @@
 export const languageSelect = document.querySelector('.language__select')
-export const selectLanguageChildrenArray = Array.from(languageSelect.children)
+export const selectLanguageChildrenArr = Array.from(languageSelect.children)
 
 export const setLanguageSelectedItem = (lang, value) => {
-	const item = selectLanguageChildrenArray.find(e => e.value === lang);
+	const item = selectLanguageChildrenArr.find(e => e.value === lang);
 	if (item) {
 		item.selected = value;
 	} else {

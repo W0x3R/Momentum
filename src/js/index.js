@@ -1,11 +1,11 @@
-import { setStorageCurrentLanguageDefault } from './components/language/localStorageLanguage.js'
+import { setStorageLanguageDefault } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
-import { showGreetingText } from './components/greeting/showGreetingMessage.js'
+import { showGreeting } from './components/greeting/showGreeting.js'
 import { setPlaceholderLanguage } from './components/greeting/setPlaceholderLanguage.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
-import { setCity, getCity } from './components/weather/localStorageWeather.js'
-import { changeBackground, setQueryValue } from './components/slider/changeBackground'
+import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
+import { changeBG, setQueryValue } from './components/slider/changeBackground.js'
 import { getQuotes } from './components/quotes/getQuotes.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong } from './components/player/loadSong.js'
@@ -13,12 +13,12 @@ import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectSourceImagesWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
-import { setButtonValueContentLoaded } from './components/player/volume.js'
+import { setBtnValueLoad } from './components/player/volume.js'
 import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
-import { changeLanguageSelectIcon } from './components/language/changeLanguageSelectIcon.js'
-import { changeLanguageSelectText } from './components/language/changeLanguageSelectText.js'
-import { checkImagesSource } from './components/imagesSource/checkImagesSource.js'
-import { setStorageImagesSourceDefault } from './components/imagesSource/localStorageImagesSource.js'
+import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
+import { changeLanguageText } from './components/language/changeLanguageText.js'
+import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
+import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlButtonHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
@@ -31,27 +31,27 @@ setInterval(() => {
 
 showDate()
 showTime()
-showGreetingText()
+showGreeting()
 setPlaceholderLanguage()
 getQuotes()
 createPlayList()
 loadSong()
 changeLanguageSelectedItem()
-changeLanguageSelectIcon()
-checkImagesSource()
-getCity()
+changeLanguageIcon()
+checkImagesSrc()
+getStorageCity()
 getStorageGreetingName()
 setQueryValue()
-changeBackground()
-setButtonValueContentLoaded()
+changeBG()
+setBtnValueLoad()
 getQueryInputValueLoad()
-changeLanguageSelectText()
+changeLanguageText()
 
 
 window.addEventListener('beforeunload', () => {
-	setStorageCurrentLanguageDefault()
-	setStorageImagesSourceDefault()
-	setCity()
+	setStorageLanguageDefault()
+	setStorageImagesSrcDefault()
+	setStorageCity()
 	setQueryInputValueBeforeUnload()
 })
 

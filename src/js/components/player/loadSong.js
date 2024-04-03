@@ -3,8 +3,8 @@ import { count, audio, trackName } from "./switchSong";
 import { updateSongTime } from "./updateSongTime";
 
 export const loadSong = () => {
-	const currentSong = playListSongs[count]
-	audio.src = currentSong.src
-	trackName.textContent = currentSong.title
+	const currSong = playListSongs[count]
+	audio.src = currSong.src
+	trackName.textContent = currSong.title
 	updateSongTime()
 }

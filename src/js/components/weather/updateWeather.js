@@ -1,4 +1,4 @@
-import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/localStorageLanguage"
 
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherWind = document.querySelector('.weather__wind')
@@ -21,23 +21,23 @@ const weatherTranslations = {
 	}
 }
 
-export const updateUI = (data, currentLang) => {
+export const updateUI = (data, currLang) => {
 	weatherIcon.className = "weather__icon owf";
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
 	weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
 	weatherTemperatureDescription.textContent = data.weather[0].description.slice(0, 1).toUpperCase() + data.weather[0].description.slice(1);
-	weatherWind.textContent = `${weatherTranslations[currentLang].wind} ${Math.round(data.wind.speed)} ${weatherTranslations[currentLang].units}`;
-	weatherHumidity.textContent = `${weatherTranslations[currentLang].humidity} ${Math.round(data.main.humidity)}%`;
+	weatherWind.textContent = `${weatherTranslations[currLang].wind} ${Math.round(data.wind.speed)} ${weatherTranslations[currLang].units}`;
+	weatherHumidity.textContent = `${weatherTranslations[currLang].humidity} ${Math.round(data.main.humidity)}%`;
 	weatherError.style.display = 'none';
 	weatherError.textContent = '';
 };
 
 export const handleErrors = () => {
-	const currentLang = getStorageCurrentLanguage()
+	const currLang = getStorageLanguage()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
 	weatherHumidity.textContent = '';
 	weatherError.style.display = 'block';
-	weatherError.textContent = `${weatherTranslations[currentLang].error}`;
+	weatherError.textContent = `${weatherTranslations[currLang].error}`;
 };

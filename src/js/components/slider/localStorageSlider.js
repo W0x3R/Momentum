@@ -6,6 +6,6 @@ export const getQueryInputValueLoad = () => {
 }
 
 export const setQueryInputValueBeforeUnload = () => {
-	localStorage.setItem('queryInputValue', String(queryInput.value).trim())
+	const queryInputValue = String(queryInput.value).trim()
+	localStorage.setItem('queryInputValue', queryInputValue)
 }
-

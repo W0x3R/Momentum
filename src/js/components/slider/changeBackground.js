@@ -1,69 +1,68 @@
 import { createClient } from 'pexels';
-import { showGreetingText } from "../greeting/showGreetingMessage"
-import { getStorageCurrentLanguage } from "../language/localStorageLanguage"
-import { getRandomNumber } from "./getRandomNumber"
+import { showGreeting } from "../greeting/showGreeting"
+import { getStorageLanguage } from "../language/localStorageLanguage"
+import { getRandomNum } from "./getRandomNum"
 import { translateGreeting } from "./translateGreeting"
 import { showErrorPopup } from './controlErrorPopup'
 import { getQueryInputValueLoad } from './localStorageSlider'
-import { getStorageImagesSource } from '../imagesSource/localStorageImagesSource';
+import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 
+const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 export const body = document.body
 export const queryInput = document.querySelector('.query__input')
-
-const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
-const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
+const greetingText = showGreeting().split(' ')[1].slice(0, -1);
 let query;
 const image = new Image();
-const MAX__GITHUB_IMAGES = 20;
-let MIN__PEXELS_IMAGES = 0;
-let MAX__PEXELS_IMAGES;
-let randomNumberGithub = getRandomNumber(1, MAX__GITHUB_IMAGES)
+const MAX_GITHUB_IMAGES = 20;
+let MIN_PEXELS_IMAGES = 0;
+let MAX_PEXELS_IMAGES;
+let randomNumGithub = getRandomNum(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 export const setQueryValue = () => {
 	const queryValue = getQueryInputValueLoad()
-	const currentLanguage = getStorageCurrentLanguage()
+	const currLang = getStorageLanguage()
 	if (queryValue) {
 		query = queryValue
 	} else {
-		query = currentLanguage === 'ru' ? translateGreeting(greetingText) : greetingText
+		query = currLang === 'ru' ? translateGreeting(greetingText) : greetingText
 	}
 }
 
 export const changeQueryInput = () => {
-	const queryInputTrim = String(queryInput.value.trim())
-	if (forbiddenSymbols.includes(queryInput.value) || queryInputTrim === '') {
+	const queryInputValue = String(queryInput.value.trim())
+	if (forbiddenSymbols.includes(queryInput.value) || queryInput === '') {
 		showErrorPopup()
 		return
 	}
 	query = queryInput.value
-	queryInput.value = queryInputTrim
-	MIN__PEXELS_IMAGES = 0;
+	queryInput.value = queryInputValue
+	MIN_PEXELS_IMAGES = 0;
 	changePexelsImages()
 }
 
 const changeGithubImages = () => {
-	const imagesSource = getStorageImagesSource()
-	if (imagesSource === 'github') {
+	const imagesSrc = getStorageImagesSrc()
+	if (imagesSrc === 'github') {
 		queryInput.classList.add('query__input_hide')
-		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
-		const currentLang = getStorageCurrentLanguage();
-		let value = currentLang === 'en' ? greetingText : translateGreeting(greetingText)
-		let randomNumberForImages = randomNumberGithub.toString().padStart(2, '0')
-		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNumberForImages}.webp`
+		const greetingText = showGreeting().split(' ')[1].slice(0, -1);
+		const currLang = getStorageLanguage();
+		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)
+		let randomNum = randomNumGithub.toString().padStart(2, '0')
+		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
 		loadImage(url)
 	}
 }
 
 const changePexelsImages = () => {
-	const imagesSource = getStorageImagesSource()
-	if (imagesSource === 'pexels') {
+	const imagesSrc = getStorageImagesSrc()
+	if (imagesSrc === 'pexels') {
 		queryInput.classList.remove('query__input_hide')
-		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(photos => {
-			if (photos && photos.photos && photos.photos.length > 1) {
-				MAX__PEXELS_IMAGES = photos.photos.length - 1
-				loadImage(photos.photos[MIN__PEXELS_IMAGES].src.landscape)
+		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
+			if (e && e.photos && e.photos.length > 1) {
+				MAX_PEXELS_IMAGES = e.photos.length - 1
+				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
 			} else {
 				showErrorPopup()
 			}
@@ -76,31 +75,31 @@ const loadImage = (url) => {
 	image.onload = () => body.style.backgroundImage = `url(${url})`
 }
 
-export const changeBackground = () => {
+export const changeBG = () => {
 	changeGithubImages()
 	changePexelsImages()
 }
 
-export const changeBackgroundOnClick = (direction) => {
-	const imagesSource = getStorageImagesSource()
-	if (imagesSource === 'github') {
+export const changeBGOnClick = (direction) => {
+	const imagesSrc = getStorageImagesSrc()
+	if (imagesSrc === 'github') {
 		if (isAnimate) {
 			isAnimate = false
-			randomNumberGithub = (direction === 'prev') ?
-				((randomNumberGithub === 1) ? MAX__GITHUB_IMAGES : randomNumberGithub - 1) :
-				((randomNumberGithub === MAX__GITHUB_IMAGES) ? 1 : randomNumberGithub + 1);
+			randomNumGithub = (direction === 'prev') ?
+				((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
+				((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
 			changeGithubImages()
 		}
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);
 	}
-	else if (imagesSource === 'pexels') {
+	else if (imagesSrc === 'pexels') {
 		if (isAnimate) {
 			isAnimate = false
-			MIN__PEXELS_IMAGES = (direction === 'prev') ?
-				((MIN__PEXELS_IMAGES === 0) ? MAX__PEXELS_IMAGES : MIN__PEXELS_IMAGES - 1) :
-				((MIN__PEXELS_IMAGES === MAX__PEXELS_IMAGES) ? 0 : MIN__PEXELS_IMAGES + 1);
+			MIN_PEXELS_IMAGES = (direction === 'prev') ?
+				((MIN_PEXELS_IMAGES === 0) ? MAX_PEXELS_IMAGES : MIN_PEXELS_IMAGES - 1) :
+				((MIN_PEXELS_IMAGES === MAX_PEXELS_IMAGES) ? 0 : MIN_PEXELS_IMAGES + 1);
 			changePexelsImages()
 		}
 		setTimeout(() => {

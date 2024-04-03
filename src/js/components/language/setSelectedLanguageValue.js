@@ -1,8 +1,8 @@
-import { getStorageCurrentLanguage } from "./localStorageLanguage";
+import { getStorageLanguage } from "./localStorageLanguage";
 import { setLanguageSelectedItem } from "./setLanguageSelectedItem";
 
 export const changeLanguageSelectedItem = () => {
-	const lang = getStorageCurrentLanguage()
+	const lang = getStorageLanguage()
 	if (lang === 'en') {
 		setLanguageSelectedItem('ru', false)
 		setLanguageSelectedItem('en', true)

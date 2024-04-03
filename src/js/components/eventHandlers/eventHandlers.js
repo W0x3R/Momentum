@@ -1,24 +1,24 @@
 import { showDate } from "../date/date"
-import { setStorageCurrentLanguage } from "../language/localStorageLanguage"
+import { setStorageLanguage } from "../language/localStorageLanguage"
 import { setStorageGreetingName } from "../greeting/localStorageGreeting"
 import { getWeather } from "../weather/getWeather"
-import { changeBackgroundOnClick, changeQueryInput } from "../slider/changeBackground"
+import { changeBGOnClick, changeQueryInput } from "../slider/changeBackground"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageWrapper, selectSourceImagesWrapper } from "../transformIcons/transformIcons"
-import { checkIsMute, checkInputChangeVolume } from "../player/volume"
-import { changeImagesSource } from "../imagesSource/changeImagesSource"
-import { showGreetingText } from "../greeting/showGreetingMessage"
+import { checkIsMute, checkChangeVolume } from "../player/volume"
+import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
+import { showGreeting } from "../greeting/showGreeting"
 import { setPlaceholderLanguage } from "../greeting/setPlaceholderLanguage"
 import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
-import { changeLanguageSelectIcon } from "../language/changeLanguageSelectIcon"
-import { changeLanguageSelectText } from "../language/changeLanguageSelectText"
+import { changeLanguageIcon } from "../language/changeLanguageIcon"
+import { changeLanguageText } from "../language/changeLanguageText"
 
 export const clickEvents = {
-	'.main__button_prev': () => changeBackgroundOnClick('prev'),
-	'.main__button_next': () => changeBackgroundOnClick('next'),
+	'.main__button_prev': () => changeBGOnClick('prev'),
+	'.main__button_next': () => changeBGOnClick('next'),
 	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
 	'.source': () => rotateIcon(selectSourceImagesWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
@@ -32,22 +32,22 @@ export const clickEvents = {
 }
 
 export const inputEvents = {
-	'.player__sounds-volume': checkInputChangeVolume,
+	'.player__sounds-volume': checkChangeVolume,
 	'.greeting__name': setStorageGreetingName
 }
 
 export const changeEvents = {
 	'.query__input': changeQueryInput,
-	'.source__select': (e) => changeImagesSource(e),
+	'.source__select': (e) => changeImagesSrc(e),
 	'.language__select': () => {
-		setStorageCurrentLanguage()
+		setStorageLanguage()
 		getWeather()
 		showDate()
-		showGreetingText()
+		showGreeting()
 		setPlaceholderLanguage()
 		getQuotes()
-		changeLanguageSelectText()
-		changeLanguageSelectIcon()
+		changeLanguageText()
+		changeLanguageIcon()
 	},
 	'.weather__input': getWeather
 }
