@@ -15,6 +15,7 @@ import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { changeLanguageText } from "../language/changeLanguageText"
+import { changeLanguageDescriptionText } from "../language/setLanguageText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -48,6 +49,7 @@ export const changeEvents = {
 		getQuotes()
 		changeLanguageText()
 		changeLanguageIcon()
+		changeLanguageDescriptionText()
 	},
 	'.weather__input': getWeather
 }

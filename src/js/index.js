@@ -13,6 +13,7 @@ import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageWrapper, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
+import { changeLanguageDescriptionText } from './components/language/setLanguageText.js'
 import { setBtnValueLoad } from './components/player/volume.js'
 import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
 import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
@@ -37,6 +38,7 @@ createPlayList()
 loadSong()
 changeLanguageSelectedItem()
 changeLanguageIcon()
+changeLanguageDescriptionText()
 checkImagesSrc()
 getStorageCity()
 getStorageGreetingName()
