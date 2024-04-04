@@ -12,7 +12,13 @@
 	height: $height;
 }
 
-@mixin selectWrapper() {
+@mixin trackTime {
+	position: absolute;
+	bottom: 13px;
+	user-select: none;
+}
+
+@mixin languageSelectWrapper {
 	position: relative;
 	line-height: 1.6;
 	overflow: hidden;
@@ -46,8 +52,9 @@
 	border-radius: 4px;
 }
 
-@mixin trackTime() {
+@mixin languageSelectIcon {
 	position: absolute;
-	bottom: 13px;
-	user-select: none;
+	right: 32px;
+	width: 27px;
+	pointer-events: none;
 }

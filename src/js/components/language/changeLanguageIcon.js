@@ -1,14 +1,14 @@
 import { getStorageLanguage } from "./localStorageLanguage"
-const language = document.querySelector('.language')
+import { selectLanguageInner } from "../transformIcons/transformIcons"
 
 export const changeLanguageIcon = () => {
 	const currLang = getStorageLanguage()
 	if (currLang === 'en') {
-		language.classList.remove('language_ru')
-		language.classList.add('language_en')
+		selectLanguageInner.classList.remove('language__inner_ru')
+		selectLanguageInner.classList.add('language__inner_en')
 	}
 	else if (currLang === 'ru') {
-		language.classList.remove('language_en')
-		language.classList.add('language_ru')
+		selectLanguageInner.classList.remove('language__inner_en')
+		selectLanguageInner.classList.add('language__inner_ru')
 	}
 }

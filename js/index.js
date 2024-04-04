@@ -15,8 +15,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setStorageLanguageDefault = () => {
-	const language = getStorageLanguage()
-	if (!language) {
+	const currLang = getStorageLanguage()
+	if (!currLang) {
 		localStorage.setItem('language', 'en')
 	}
 }
@@ -1572,9 +1572,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   closeIcon: function() { return /* binding */ closeIcon; },
 /* harmony export */   rotateIcon: function() { return /* binding */ rotateIcon; },
 /* harmony export */   selectImagesSrcWrapper: function() { return /* binding */ selectImagesSrcWrapper; },
-/* harmony export */   selectLanguageWrapper: function() { return /* binding */ selectLanguageWrapper; }
+/* harmony export */   selectLanguageInner: function() { return /* binding */ selectLanguageInner; }
 /* harmony export */ });
-const selectLanguageWrapper = document.querySelector('.language')
+const selectLanguageInner = document.querySelector('.language__inner')
 const selectImagesSrcWrapper = document.querySelector('.source')
 
 const rotateIcon = (tag, classToggle) => {
@@ -1751,18 +1751,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeLanguageIcon: function() { return /* binding */ changeLanguageIcon; }
 /* harmony export */ });
 /* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(32);
 
-const language = document.querySelector('.language')
+
 
 const changeLanguageIcon = () => {
 	const currLang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		language.classList.remove('language_ru')
-		language.classList.add('language_en')
+		_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_ru')
+		_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_en')
 	}
 	else if (currLang === 'ru') {
-		language.classList.remove('language_en')
-		language.classList.add('language_ru')
+		_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_en')
+		_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_ru')
 	}
 }
 
@@ -1913,7 +1914,7 @@ __webpack_require__.r(__webpack_exports__);
 const clickEvents = {
 	'.main__button_prev': () => (0,_slider_changeBG__WEBPACK_IMPORTED_MODULE_4__.changeBGOnClick)('prev'),
 	'.main__button_next': () => (0,_slider_changeBG__WEBPACK_IMPORTED_MODULE_4__.changeBGOnClick)('next'),
-	'.language': () => (0,_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.rotateIcon)(_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.selectLanguageWrapper, 'language__select_open'),
+	'.language__inner': () => (0,_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.rotateIcon)(_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.selectLanguageInner, 'language__select_open'),
 	'.source': () => (0,_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.rotateIcon)(_transformIcons_transformIcons__WEBPACK_IMPORTED_MODULE_8__.selectImagesSrcWrapper, 'source__select_open'),
 	'.player__controls-play': _player_playSong__WEBPACK_IMPORTED_MODULE_5__.checkFlagSong,
 	'.player__progress': (e) => (0,_player_updateProgressBar__WEBPACK_IMPORTED_MODULE_7__.rewindSong)(e),
@@ -2182,7 +2183,7 @@ _components_player_switchSong_js__WEBPACK_IMPORTED_MODULE_12__.audio.addEventLis
 
 window.addEventListener('click', function (e) {
 	;(0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_23__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_23__.clickEvents)
-	;(0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.closeIcon)(e, 'language__select', _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.selectLanguageWrapper, 'language__select_open')
+	;(0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.closeIcon)(e, 'language__select', _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.selectLanguageInner, 'language__select_open')
 	;(0,_components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.closeIcon)(e, 'source__select', _components_transformIcons_transformIcons_js__WEBPACK_IMPORTED_MODULE_14__.selectImagesSrcWrapper, 'source__select_open')
 })
 

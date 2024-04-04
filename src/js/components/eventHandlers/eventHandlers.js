@@ -6,7 +6,7 @@ import { changeBGOnClick, changeQueryInput } from "../slider/changeBG"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
-import { rotateIcon, selectLanguageWrapper, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
+import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { showGreeting } from "../greeting/showGreeting"
@@ -22,7 +22,7 @@ import { changeQueryLabelText } from "../query/setQueryLabelText"
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
 	'.main__button_next': () => changeBGOnClick('next'),
-	'.language': () => rotateIcon(selectLanguageWrapper, 'language__select_open'),
+	'.language__inner': () => rotateIcon(selectLanguageInner, 'language__select_open'),
 	'.source': () => rotateIcon(selectImagesSrcWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => rewindSong(e),

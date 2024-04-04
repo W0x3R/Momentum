@@ -12,7 +12,7 @@ import { loadSong } from './components/player/loadSong.js'
 import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
-import { selectLanguageWrapper, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
+import { selectLanguageInner, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
 import { changeLanguageDescriptionText } from './components/language/setLanguageText.js'
 import { setBtnValueLoad } from './components/player/volume.js'
 import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
@@ -67,7 +67,7 @@ audio.addEventListener('timeupdate', function (e) {
 
 window.addEventListener('click', function (e) {
 	callEvents(e, clickEvents)
-	closeIcon(e, 'language__select', selectLanguageWrapper, 'language__select_open')
+	closeIcon(e, 'language__select', selectLanguageInner, 'language__select_open')
 	closeIcon(e, 'source__select', selectImagesSrcWrapper, 'source__select_open')
 })
 
