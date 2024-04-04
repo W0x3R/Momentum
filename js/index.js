@@ -1614,8 +1614,8 @@ const languageObj = {
 }
 
 const languageDescriptionObj = {
-	en: 'Change language',
-	ru: 'Изменить язык'
+	en: 'Change language:',
+	ru: 'Изменить язык:'
 }
 
 const setLanguageText = (valOne, valTwo, valThree, valFour) => {
@@ -1888,6 +1888,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_changeLanguageText__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(38);
 /* harmony import */ var _language_setLanguageText__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(33);
 /* harmony import */ var _imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(41);
+/* harmony import */ var _query_setQueryLabelText__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(44);
+
 
 
 
@@ -1942,6 +1944,7 @@ const changeEvents = {
 		;(0,_language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_15__.changeLanguageIcon)()
 		;(0,_language_setLanguageText__WEBPACK_IMPORTED_MODULE_17__.changeLanguageDescriptionText)()
 		;(0,_imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_18__.changeSrcDescriptionText)()
+		;(0,_query_setQueryLabelText__WEBPACK_IMPORTED_MODULE_19__.changeQueryLabelText)()
 	},
 	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather
 }
@@ -1979,6 +1982,34 @@ const changeImagesSrc = (e) => {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
 		;(0,_slider_changeBG__WEBPACK_IMPORTED_MODULE_1__.changeBG)()
 	}
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   changeQueryLabelText: function() { return /* binding */ changeQueryLabelText; }
+/* harmony export */ });
+/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+
+
+const queryLabel = document.querySelector('.query__label')
+
+const queryObj = {
+	en: 'Search for images by tag:',
+	ru: 'Поиск изображений по тэгу:'
+}
+
+const setQueryLabelText = (value) => {
+	queryLabel.textContent = queryObj[value]
+}
+
+const changeQueryLabelText = () => {
+	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	currLang === 'en' ? setQueryLabelText('en') : setQueryLabelText('ru')
 }
 
 /***/ })
@@ -2081,6 +2112,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(42);
 /* harmony import */ var _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(18);
 /* harmony import */ var _components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(19);
+/* harmony import */ var _components_query_setQueryLabelText_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(44);
+
 
 
 
@@ -2133,6 +2166,7 @@ setInterval(() => {
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_16__.setBtnValueLoad)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_25__.getQueryInputValueLoad)()
 ;(0,_components_language_changeLanguageText_js__WEBPACK_IMPORTED_MODULE_19__.changeLanguageText)()
+;(0,_components_query_setQueryLabelText_js__WEBPACK_IMPORTED_MODULE_26__.changeQueryLabelText)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setStorageLanguageDefault)()

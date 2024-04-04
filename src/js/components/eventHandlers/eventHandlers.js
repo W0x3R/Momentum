@@ -17,6 +17,7 @@ import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { changeLanguageText } from "../language/changeLanguageText"
 import { changeLanguageDescriptionText } from "../language/setLanguageText"
 import { changeSrcDescriptionText } from "../imagesSrc/setImagesSrcText"
+import { changeQueryLabelText } from "../query/setQueryLabelText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -52,6 +53,7 @@ export const changeEvents = {
 		changeLanguageIcon()
 		changeLanguageDescriptionText()
 		changeSrcDescriptionText()
+		changeQueryLabelText()
 	},
 	'.weather__input': getWeather
 }

@@ -24,6 +24,7 @@ import { changeSrcDescriptionText } from './components/imagesSrc/setImagesSrcTex
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
+import { changeQueryLabelText } from './components/query/setQueryLabelText.js'
 
 
 setInterval(() => {
@@ -50,6 +51,7 @@ changeBG()
 setBtnValueLoad()
 getQueryInputValueLoad()
 changeLanguageText()
+changeQueryLabelText()
 
 window.addEventListener('beforeunload', () => {
 	setStorageLanguageDefault()

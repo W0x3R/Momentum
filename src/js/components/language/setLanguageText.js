@@ -15,8 +15,8 @@ const languageObj = {
 }
 
 const languageDescriptionObj = {
-	en: 'Change language',
-	ru: 'Изменить язык'
+	en: 'Change language:',
+	ru: 'Изменить язык:'
 }
 
 export const setLanguageText = (valOne, valTwo, valThree, valFour) => {
