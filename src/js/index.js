@@ -20,9 +20,11 @@ import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
 import { changeLanguageText } from './components/language/changeLanguageText.js'
 import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
 import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
+import { changeSrcDescriptionText } from './components/imagesSrc/setImagesSrcText.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
+
 
 setInterval(() => {
 	showTime()
@@ -40,6 +42,7 @@ changeLanguageSelectedItem()
 changeLanguageIcon()
 changeLanguageDescriptionText()
 checkImagesSrc()
+changeSrcDescriptionText()
 getStorageCity()
 getStorageGreetingName()
 setQueryValue()

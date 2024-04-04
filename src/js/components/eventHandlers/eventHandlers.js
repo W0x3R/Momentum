@@ -16,6 +16,7 @@ import { closeErrorPopup } from "../slider/controlErrorPopup"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { changeLanguageText } from "../language/changeLanguageText"
 import { changeLanguageDescriptionText } from "../language/setLanguageText"
+import { changeSrcDescriptionText } from "../imagesSrc/setImagesSrcText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -50,6 +51,7 @@ export const changeEvents = {
 		changeLanguageText()
 		changeLanguageIcon()
 		changeLanguageDescriptionText()
+		changeSrcDescriptionText()
 	},
 	'.weather__input': getWeather
 }
