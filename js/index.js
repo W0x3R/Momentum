@@ -252,8 +252,8 @@ __webpack_require__.r(__webpack_exports__);
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherWind = document.querySelector('.weather__wind')
 const weatherError = document.querySelector('.weather_error')
-const weatherTemperature = document.querySelector('.weather__values-temperature')
-const weatherTemperatureDescription = document.querySelector('.weather__values-description')
+const weatherTemperature = document.querySelector('.weather__temperature')
+const weatherTemperatureDescription = document.querySelector('.weather__description')
 const weatherHumidity = document.querySelector('.weather__humidity')
 const weatherTranslations = {
 	en: {
@@ -324,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 const body = document.body
-const queryWrapper = document.querySelector('.setting__query')
+const queryWrapper = document.querySelector('.query')
 const queryInput = document.querySelector('.query__input')
 const greetingText = (0,_greeting_showGreeting__WEBPACK_IMPORTED_MODULE_1__.showGreeting)().split(' ')[1].slice(0, -1);
 let query;
@@ -361,7 +361,7 @@ const changeQueryInput = () => {
 const changeGithubImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_7__.getStorageImagesSrc)()
 	if (imagesSrc === 'github') {
-		queryWrapper.classList.add('setting__query_hide')
+		queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_showGreeting__WEBPACK_IMPORTED_MODULE_1__.showGreeting)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_4__.translateGreeting)(greetingText)
@@ -374,7 +374,7 @@ const changeGithubImages = () => {
 const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_7__.getStorageImagesSrc)()
 	if (imagesSrc === 'pexels') {
-		queryWrapper.classList.remove('setting__query_hide')
+		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
@@ -1998,7 +1998,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const queryLabel = document.querySelector('.query__label')
-
 const queryObj = {
 	en: 'Search for images by tag:',
 	ru: 'Поиск изображений по тэгу:'

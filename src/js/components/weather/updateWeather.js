@@ -3,8 +3,8 @@ import { getStorageLanguage } from "../language/localStorageLanguage"
 const weatherIcon = document.querySelector('.weather__icon')
 const weatherWind = document.querySelector('.weather__wind')
 const weatherError = document.querySelector('.weather_error')
-const weatherTemperature = document.querySelector('.weather__values-temperature')
-const weatherTemperatureDescription = document.querySelector('.weather__values-description')
+const weatherTemperature = document.querySelector('.weather__temperature')
+const weatherTemperatureDescription = document.querySelector('.weather__description')
 const weatherHumidity = document.querySelector('.weather__humidity')
 const weatherTranslations = {
 	en: {
