@@ -5,6 +5,6 @@ const greetingObj = {
 	ru: '[Введите ваше имя]'
 }
 
-export const setPlaceholderValue = (lang) => {
+export const setPlaceholderText = (lang) => {
 	greetingName.placeholder = greetingObj[lang]
 }

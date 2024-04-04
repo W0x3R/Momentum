@@ -2,7 +2,7 @@ import { setStorageLanguageDefault } from './components/language/localStorageLan
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
 import { showGreeting } from './components/greeting/showGreeting.js'
-import { setPlaceholderLanguage } from './components/greeting/setPlaceholderLanguage.js'
+import { changePlaceholderText } from './components/greeting/changePlaceholderText.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
 import { changeBG, setQueryValue } from './components/slider/changeBG.js'
@@ -26,7 +26,6 @@ import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 import { changeQueryLabelText } from './components/query/setQueryLabelText.js'
 
-
 setInterval(() => {
 	showTime()
 	showDate()
@@ -35,7 +34,7 @@ setInterval(() => {
 showDate()
 showTime()
 showGreeting()
-setPlaceholderLanguage()
+changePlaceholderText()
 getQuotes()
 createPlayList()
 loadSong()

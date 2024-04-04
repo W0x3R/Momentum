@@ -10,7 +10,7 @@ import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../tran
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { showGreeting } from "../greeting/showGreeting"
-import { setPlaceholderLanguage } from "../greeting/setPlaceholderLanguage"
+import { changePlaceholderText } from "../greeting/changePlaceholderText"
 import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
@@ -47,7 +47,7 @@ export const changeEvents = {
 		getWeather()
 		showDate()
 		showGreeting()
-		setPlaceholderLanguage()
+		changePlaceholderText()
 		getQuotes()
 		changeLanguageText()
 		changeLanguageIcon()

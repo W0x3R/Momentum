@@ -124,16 +124,16 @@ const showGreeting = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setPlaceholderLanguage: function() { return /* binding */ setPlaceholderLanguage; }
+/* harmony export */   changePlaceholderText: function() { return /* binding */ changePlaceholderText; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _setPlaceholderValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+/* harmony import */ var _setPlaceholderText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 
 
 
-const setPlaceholderLanguage = () => {
+const changePlaceholderText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
-	currLang === 'en' ? (0,_setPlaceholderValue__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderValue)('en') : (0,_setPlaceholderValue__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderValue)('ru')
+	currLang === 'en' ? (0,_setPlaceholderText__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderText)('en') : (0,_setPlaceholderText__WEBPACK_IMPORTED_MODULE_1__.setPlaceholderText)('ru')
 }
 
 /***/ }),
@@ -143,7 +143,7 @@ const setPlaceholderLanguage = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setPlaceholderValue: function() { return /* binding */ setPlaceholderValue; }
+/* harmony export */   setPlaceholderText: function() { return /* binding */ setPlaceholderText; }
 /* harmony export */ });
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8);
 
@@ -153,7 +153,7 @@ const greetingObj = {
 	ru: '[Введите ваше имя]'
 }
 
-const setPlaceholderValue = (lang) => {
+const setPlaceholderText = (lang) => {
 	_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.placeholder = greetingObj[lang]
 }
 
@@ -1882,7 +1882,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(34);
 /* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(43);
 /* harmony import */ var _greeting_showGreeting__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5);
-/* harmony import */ var _greeting_setPlaceholderLanguage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6);
+/* harmony import */ var _greeting_changePlaceholderText__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(6);
 /* harmony import */ var _quotes_getQuotes__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(21);
 /* harmony import */ var _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(18);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(37);
@@ -1939,7 +1939,7 @@ const changeEvents = {
 		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_0__.showDate)()
 		;(0,_greeting_showGreeting__WEBPACK_IMPORTED_MODULE_11__.showGreeting)()
-		;(0,_greeting_setPlaceholderLanguage__WEBPACK_IMPORTED_MODULE_12__.setPlaceholderLanguage)()
+		;(0,_greeting_changePlaceholderText__WEBPACK_IMPORTED_MODULE_12__.changePlaceholderText)()
 		;(0,_quotes_getQuotes__WEBPACK_IMPORTED_MODULE_13__.getQuotes)()
 		;(0,_language_changeLanguageText__WEBPACK_IMPORTED_MODULE_16__.changeLanguageText)()
 		;(0,_language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_15__.changeLanguageIcon)()
@@ -2090,7 +2090,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date_time__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _components_date_date__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
 /* harmony import */ var _components_greeting_showGreeting_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
-/* harmony import */ var _components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
+/* harmony import */ var _components_greeting_changePlaceholderText_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6);
 /* harmony import */ var _components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9);
 /* harmony import */ var _components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
@@ -2141,7 +2141,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 setInterval(() => {
 	(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 	;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
@@ -2150,7 +2149,7 @@ setInterval(() => {
 ;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 ;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 ;(0,_components_greeting_showGreeting_js__WEBPACK_IMPORTED_MODULE_3__.showGreeting)()
-;(0,_components_greeting_setPlaceholderLanguage_js__WEBPACK_IMPORTED_MODULE_4__.setPlaceholderLanguage)()
+;(0,_components_greeting_changePlaceholderText_js__WEBPACK_IMPORTED_MODULE_4__.changePlaceholderText)()
 ;(0,_components_quotes_getQuotes_js__WEBPACK_IMPORTED_MODULE_8__.getQuotes)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_9__.createPlayList)()
 ;(0,_components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_10__.loadSong)()
