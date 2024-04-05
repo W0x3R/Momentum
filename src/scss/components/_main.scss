@@ -1,7 +1,7 @@
 .main {
 	position: relative;
-	@include flex($direction: column, $justify: center, $alignItems: center);
 	bottom: 45px;
+	@include flex($direction: column, $justify: center, $alignItems: center);
 	flex: 1;
 
 	&__button {
@@ -25,6 +25,7 @@
 	user-select: none;
 
 	&__time {
+		padding: 10px;
 		margin-bottom: 15px;
 		border-radius: 15px;
 		font-size: 100px;
@@ -34,7 +35,7 @@
 
 	&__date {
 		margin-bottom: 15px;
-		font-size: 28px;
+		font-size: 26px;
 		color: var(--white);
 
 		&::first-letter {
@@ -79,9 +80,7 @@
 	z-index: 3;
 
 	&_show {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include flex($justify: center, $alignItems: center);
 	}
 
 	&__inner {
