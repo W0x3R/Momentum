@@ -1890,6 +1890,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_setLanguageText__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(33);
 /* harmony import */ var _imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(41);
 /* harmony import */ var _query_setQueryLabelText__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(44);
+/* harmony import */ var _settings_openSettings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(45);
+/* harmony import */ var _settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(46);
+
+
 
 
 
@@ -1923,7 +1927,11 @@ const clickEvents = {
 	'.player__list': (e) => (0,_player_switchSong__WEBPACK_IMPORTED_MODULE_6__.playClickedSong)(e),
 	'.player__sounds-mute': _player_volume__WEBPACK_IMPORTED_MODULE_9__.checkIsMute,
 	'.popup__button': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup,
-	'.popup__shadow_show': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup
+	'.popup__shadow_show': _slider_controlErrorPopup__WEBPACK_IMPORTED_MODULE_14__.closeErrorPopup,
+	'.settings__icon': () => {
+		(0,_settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__.toggleSettingsActive)(),
+			(0,_settings_openSettings__WEBPACK_IMPORTED_MODULE_20__.openSettings)()
+	}
 }
 
 const inputEvents = {
@@ -2010,6 +2018,39 @@ const setQueryLabelText = (value) => {
 const changeQueryLabelText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	currLang === 'en' ? setQueryLabelText('en') : setQueryLabelText('ru')
+}
+
+/***/ }),
+/* 45 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   openSettings: function() { return /* binding */ openSettings; },
+/* harmony export */   settingsWrapper: function() { return /* binding */ settingsWrapper; }
+/* harmony export */ });
+const settingsWrapper = document.querySelector('.settings__wrapper')
+
+const openSettings = () => {
+	settingsWrapper.classList.toggle('settings__wrapper_show')
+}
+
+/***/ }),
+/* 46 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   toggleSettingsActive: function() { return /* binding */ toggleSettingsActive; }
+/* harmony export */ });
+const settingsButton = document.querySelector('.settings__button')
+const settingDescription = document.querySelector('.settings__button-description')
+
+const toggleSettingsActive = () => {
+	settingDescription.classList.toggle('settings__button-description_active')
+	settingsButton.classList.toggle('settings__button_active')
 }
 
 /***/ })

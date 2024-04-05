@@ -58,32 +58,40 @@
 					<ul class="player__list"></ul>
 				</div>
 				<div class="settings">
-					<div class="language settings__wrapper">
-						<span class="language__description"></span>
-						<div class="language__inner">
-							<select class="language__select" name="language">
-								<option value="en" label=" "></option>
-								<option value="ru" label=" "></option>
-							</select>
-						</div>
+					<div class="settings__icon"> <span class="settings__button-description">НАСТРОЙКИ</span>
+						<button class="settings__button">
+							<svg viewBox="0 0 32 32">
+								<use href='./images/svg/settings-btn.svg#settings__btn'></use>
+							</svg>
+						</button>
 					</div>
 					<div class="settings__wrapper">
-						<span class="source__description"></span>
-						<div class="source">
-							<select class="source__select" name="picture-source">
-								<option value="github">Github</option>
-								<option value="pexels">Pexels</option>
-							</select>
-							<br>
+						<div class="language settings__inner">
+							<span class="language__description"></span>
+							<div class="language__inner">
+								<select class="language__select" name="language">
+									<option value="en" label=" "></option>
+									<option value="ru" label=" "></option>
+								</select>
+							</div>
+						</div>
+						<div class="settings__inner">
+							<span class="source__description"></span>
+							<div class="source">
+								<select class="source__select" name="picture-source">
+									<option value="github">Github</option>
+									<option value="pexels">Pexels</option>
+								</select>
+								<br>
+							</div>
+						</div>
+						<div class="query settings__inner">
+							<label class="query__label" for="query"></label>
+							<div class="query__inner">
+								<input id="query" class="query__input" type="text" name="query">
+							</div>
 						</div>
 					</div>
-					<div class="query settings__wrapper">
-						<label class="query__label" for="query"></label>
-						<div class="query__inner">
-							<input id="query" class="query__input" type="text" name="query">
-						</div>
-					</div>
-
 				</div>
 				<div class="weather">
 					<input class="weather__input" type="text" name="city">

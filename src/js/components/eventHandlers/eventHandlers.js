@@ -18,6 +18,8 @@ import { changeLanguageText } from "../language/changeLanguageText"
 import { changeLanguageDescriptionText } from "../language/setLanguageText"
 import { changeSrcDescriptionText } from "../imagesSrc/setImagesSrcText"
 import { changeQueryLabelText } from "../query/setQueryLabelText"
+import { openSettings } from "../settings/openSettings"
+import { toggleSettingsActive } from "../settings/toggleSettingsActive"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -31,7 +33,11 @@ export const clickEvents = {
 	'.player__list': (e) => playClickedSong(e),
 	'.player__sounds-mute': checkIsMute,
 	'.popup__button': closeErrorPopup,
-	'.popup__shadow_show': closeErrorPopup
+	'.popup__shadow_show': closeErrorPopup,
+	'.settings__icon': () => {
+		toggleSettingsActive(),
+			openSettings()
+	}
 }
 
 export const inputEvents = {

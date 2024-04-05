@@ -196,15 +196,40 @@
 }
 
 .settings {
-	@include flex($direction: column, $justify: space-between, $gap: 20px 0);
-	width: 470px;
-	background: rgba(136, 136, 136, 0.5);
-	border-radius: 8px;
-	border: solid 1px rgb(138, 138, 138);
-	padding: 10px;
-	align-self: flex-start;
+	@include flex($direction: column, $alignItems: center);
+
+	&__icon {
+		@include flex($alignItems: center, $gap: 0 10px);
+		width: fit-content;
+		margin-bottom: 10px;
+		cursor: pointer;
+
+		@include hover {
+			.settings__button {
+				transform: rotate(360deg);
+			}
+		}
+	}
 
 	&__wrapper {
+		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
+		align-self: flex-start;
+		padding: 10px;
+		width: 470px;
+		background: rgba(136, 136, 136, 0.5);
+		border-radius: 8px;
+		border: solid 1px rgb(138, 138, 138);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.5s ease;
+
+		&_show {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+
+	&__inner {
 		@include flex($justify: space-between, $alignItems: center);
 
 		& span {
@@ -214,6 +239,30 @@
 		& label {
 			color: var(--white);
 			cursor: pointer;
+		}
+	}
+
+	&__button {
+		@include sizes(32px, 32px);
+		transition: transform 8s linear;
+		opacity: 0.7;
+
+		&_active {
+			opacity: 1;
+		}
+
+		&-description {
+			padding-bottom: 4px;
+			color: var(--white);
+			letter-spacing: 2.3px;
+			border-bottom: 3px solid var(--white);
+			transition: all 0.4s linear;
+			opacity: 0.7;
+
+			&_active {
+				border-bottom-color: var(--blue);
+				opacity: 1;
+			}
 		}
 	}
 }
