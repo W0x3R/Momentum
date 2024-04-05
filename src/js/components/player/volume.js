@@ -12,12 +12,12 @@ export const checkChangeVolume = () => {
 	audio.volume = volumeBtn.value
 	setSessionVolumeValue()
 	if (audio.volume === 0) {
-		setMuteBtnHref('noVolume.svg#mute')
+		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		volumeMuteBtn.setAttribute('disabled', true)
 		isMute = true;
 	}
 	else {
-		setMuteBtnHref('volume.svg#volume-on')
+		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		volumeMuteBtn.removeAttribute('disabled')
 		isMute = false;
 	}
@@ -32,7 +32,7 @@ const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue)
 
 export const checkIsMute = () => {
 	const volumeValue = getSessionVolumeValue()
-	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('volume.svg#volume-on'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('noVolume.svg#mute'), true)
+	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('muteSongBtn.svg#muteSong'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('unMuteSongBtn.svg#unMuteSong'), true)
 }
 
 export const setBtnValueLoad = () => {
@@ -42,10 +42,10 @@ export const setBtnValueLoad = () => {
 	audio.volume = getSessionVolumeValue()
 	volumeBtn.value = getSessionVolumeValue()
 	if (audio.volume === 0) {
-		setMuteBtnHref('noVolume.svg#mute')
+		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		isMute = true;
 	} else {
-		setMuteBtnHref('volume.svg#volume-on')
+		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		isMute = false;
 	}
 }

@@ -302,14 +302,14 @@
 		&_ru {
 			&::before {
 				@include languageSelectIcon;
-				content: url('../../../images/svg/_lang_ru.svg');
+				content: url('../../../images/svg/russianLanguageIcon.svg');
 			}
 		}
 
 		&_en {
 			&::before {
 				@include languageSelectIcon;
-				content: url('../../../images/svg/_lang_en.svg');
+				content: url('../../../images/svg/englishLanguageIcon.svg');
 			}
 		}
 	}

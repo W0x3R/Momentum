@@ -1475,14 +1475,14 @@ const playSong = () => {
 	let li = document.querySelectorAll('li')[_switchSong__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.trackName.classList.add('player__track-name_active')
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.play()
-	playBtnIcon.setAttribute('href', './images/svg/pause.svg#pause')
+	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
 	playBtn.classList.add('player__controls-play_active')
 	isPlay = true
 }
 
 const pauseSong = () => {
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.pause()
-	playBtnIcon.setAttribute('href', './images/svg/play.svg#play')
+	playBtnIcon.setAttribute('href', './images/svg/playSongBtn.svg#playSong')
 	playBtn.classList.remove('player__controls-play_active')
 	isPlay = false
 }
@@ -1660,12 +1660,12 @@ const checkChangeVolume = () => {
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
 	;(0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setSessionVolumeValue)()
 	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
-		setMuteBtnHref('noVolume.svg#mute')
+		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		volumeMuteBtn.setAttribute('disabled', true)
 		isMute = true;
 	}
 	else {
-		setMuteBtnHref('volume.svg#volume-on')
+		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		volumeMuteBtn.removeAttribute('disabled')
 		isMute = false;
 	}
@@ -1680,7 +1680,7 @@ const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue)
 
 const checkIsMute = () => {
 	const volumeValue = (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getSessionVolumeValue)()
-	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('volume.svg#volume-on'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('noVolume.svg#mute'), true)
+	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('muteSongBtn.svg#muteSong'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('unMuteSongBtn.svg#unMuteSong'), true)
 }
 
 const setBtnValueLoad = () => {
@@ -1690,10 +1690,10 @@ const setBtnValueLoad = () => {
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getSessionVolumeValue)()
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value = (0,_sessionStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getSessionVolumeValue)()
 	if (_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
-		setMuteBtnHref('noVolume.svg#mute')
+		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		isMute = true;
 	} else {
-		setMuteBtnHref('volume.svg#volume-on')
+		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		isMute = false;
 	}
 }

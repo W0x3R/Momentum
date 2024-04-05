@@ -8,14 +8,14 @@ export const playSong = () => {
 	let li = document.querySelectorAll('li')[count].classList.add('player__list-item_active')
 	trackName.classList.add('player__track-name_active')
 	audio.play()
-	playBtnIcon.setAttribute('href', './images/svg/pause.svg#pause')
+	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
 	playBtn.classList.add('player__controls-play_active')
 	isPlay = true
 }
 
 export const pauseSong = () => {
 	audio.pause()
-	playBtnIcon.setAttribute('href', './images/svg/play.svg#play')
+	playBtnIcon.setAttribute('href', './images/svg/playSongBtn.svg#playSong')
 	playBtn.classList.remove('player__controls-play_active')
 	isPlay = false
 }
