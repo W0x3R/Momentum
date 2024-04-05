@@ -248,7 +248,7 @@
 		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
 		align-self: flex-start;
 		padding: 10px;
-		width: 470px;
+		width: 450px;
 		opacity: 0;
 		border: solid 1px rgb(138, 138, 138);
 		border-radius: 8px;
@@ -294,7 +294,7 @@
 
 .language {
 	&__description {
-		font-size: 14px;
+		font-size: 15px;
 	}
 	&__inner {
 		@include languageSelectWrapper;
@@ -326,7 +326,7 @@
 	@include languageSelectWrapper;
 
 	&__description {
-		font-size: 14px;
+		font-size: 15px;
 	}
 
 	&__select {
@@ -344,7 +344,7 @@
 	}
 
 	&__label {
-		font-size: 14px;
+		font-size: 15px;
 	}
 
 	&__input {
