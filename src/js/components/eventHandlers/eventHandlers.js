@@ -22,6 +22,7 @@ import { openSettings } from "../settings/openSettings"
 import { toggleSettingsActive } from "../settings/toggleSettingsActive"
 import { closeSettings } from "../settings/closeSettings"
 import { closeSettingsActive } from "../settings/removeSettingsActive"
+import { changeSettingsTitleText } from "../settings/changeSettingsTitleText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -43,7 +44,7 @@ export const clickEvents = {
 	'.settings__close-button': () => {
 		closeSettings(),
 			closeSettingsActive()
-	}п
+	}
 }
 
 export const inputEvents = {
@@ -66,6 +67,7 @@ export const changeEvents = {
 		changeLanguageDescriptionText()
 		changeSrcDescriptionText()
 		changeQueryLabelText()
+		changeSettingsTitleText()
 	},
 	'.weather__input': getWeather
 }

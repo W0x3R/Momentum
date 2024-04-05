@@ -1894,6 +1894,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(46);
 /* harmony import */ var _settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(47);
 /* harmony import */ var _settings_removeSettingsActive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(48);
+/* harmony import */ var _settings_changeSettingsTitleText__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(49);
+
 
 
 
@@ -1962,6 +1964,7 @@ const changeEvents = {
 		;(0,_language_setLanguageText__WEBPACK_IMPORTED_MODULE_17__.changeLanguageDescriptionText)()
 		;(0,_imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_18__.changeSrcDescriptionText)()
 		;(0,_query_setQueryLabelText__WEBPACK_IMPORTED_MODULE_19__.changeQueryLabelText)()
+		;(0,_settings_changeSettingsTitleText__WEBPACK_IMPORTED_MODULE_24__.changeSettingsTitleText)()
 	},
 	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather
 }
@@ -2096,6 +2099,46 @@ const closeSettingsActive = () => {
 	_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__.settingsButton.classList.remove('settings__button_active')
 }
 
+/***/ }),
+/* 49 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   changeSettingsTitleText: function() { return /* binding */ changeSettingsTitleText; }
+/* harmony export */ });
+/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _setSettingsTitleText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50);
+
+
+
+const changeSettingsTitleText = () => {
+	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	currLang === 'en' ? (0,_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_1__.setSettingsTitleText)('en') : (0,_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_1__.setSettingsTitleText)('ru')
+}
+
+/***/ }),
+/* 50 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setSettingsTitleText: function() { return /* binding */ setSettingsTitleText; }
+/* harmony export */ });
+/* harmony import */ var _toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
+
+
+const settingsTitleObj = {
+	en: 'SETTINGS',
+	ru: 'НАСТРОЙКИ'
+}
+
+const setSettingsTitleText = (value) => {
+	_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = settingsTitleObj[value]
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -2197,6 +2240,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider_controlErrorPopup_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(18);
 /* harmony import */ var _components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(19);
 /* harmony import */ var _components_query_setQueryLabelText_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(44);
+/* harmony import */ var _components_settings_changeSettingsTitleText_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(49);
+
 
 
 
@@ -2250,6 +2295,7 @@ setInterval(() => {
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_25__.getQueryInputValueLoad)()
 ;(0,_components_language_changeLanguageText_js__WEBPACK_IMPORTED_MODULE_19__.changeLanguageText)()
 ;(0,_components_query_setQueryLabelText_js__WEBPACK_IMPORTED_MODULE_26__.changeQueryLabelText)()
+;(0,_components_settings_changeSettingsTitleText_js__WEBPACK_IMPORTED_MODULE_27__.changeSettingsTitleText)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_language_localStorageLanguage_js__WEBPACK_IMPORTED_MODULE_0__.setStorageLanguageDefault)()

@@ -25,6 +25,7 @@ import { clickEvents, inputEvents, changeEvents, callEvents } from './components
 import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 import { changeQueryLabelText } from './components/query/setQueryLabelText.js'
+import { changeSettingsTitleText } from './components/settings/changeSettingsTitleText.js'
 
 setInterval(() => {
 	showTime()
@@ -51,6 +52,7 @@ setBtnValueLoad()
 getQueryInputValueLoad()
 changeLanguageText()
 changeQueryLabelText()
+changeSettingsTitleText()
 
 window.addEventListener('beforeunload', () => {
 	setStorageLanguageDefault()
