@@ -348,11 +348,12 @@ const setQueryValue = () => {
 
 const changeQueryInput = () => {
 	const queryInputValue = String(queryInput.value.trim())
-	if (forbiddenSymbols.includes(queryInput.value) || queryInput === '') {
+	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
+	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
 		(0,_controlErrorPopup__WEBPACK_IMPORTED_MODULE_5__.showErrorPopup)()
 		return
 	}
-	query = queryInput.value
+	query = queryInputValue
 	queryInput.value = queryInputValue
 	MIN_PEXELS_IMAGES = 0;
 	changePexelsImages()

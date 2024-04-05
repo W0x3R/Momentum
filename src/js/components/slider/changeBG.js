@@ -33,11 +33,12 @@ export const setQueryValue = () => {
 
 export const changeQueryInput = () => {
 	const queryInputValue = String(queryInput.value.trim())
-	if (forbiddenSymbols.includes(queryInput.value) || queryInput === '') {
+	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
+	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
 		showErrorPopup()
 		return
 	}
-	query = queryInput.value
+	query = queryInputValue
 	queryInput.value = queryInputValue
 	MIN_PEXELS_IMAGES = 0;
 	changePexelsImages()
