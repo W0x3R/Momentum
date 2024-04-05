@@ -21,6 +21,7 @@ import { changeQueryLabelText } from "../query/setQueryLabelText"
 import { openSettings } from "../settings/openSettings"
 import { toggleSettingsActive } from "../settings/toggleSettingsActive"
 import { closeSettings } from "../settings/closeSettings"
+import { closeSettingsActive } from "../settings/removeSettingsActive"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -39,7 +40,10 @@ export const clickEvents = {
 		toggleSettingsActive(),
 			openSettings()
 	},
-	'.settings__close-button': closeSettings
+	'.settings__close-button': () => {
+		closeSettings(),
+			closeSettingsActive()
+	}п
 }
 
 export const inputEvents = {

@@ -1,5 +1,5 @@
-const settingsButton = document.querySelector('.settings__button')
-const settingTitle = document.querySelector('.settings__title')
+export const settingsButton = document.querySelector('.settings__button')
+export const settingTitle = document.querySelector('.settings__title')
 
 export const toggleSettingsActive = () => {
 	settingTitle.classList.toggle('settings__title_active')

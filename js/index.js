@@ -1893,6 +1893,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_openSettings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(45);
 /* harmony import */ var _settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(46);
 /* harmony import */ var _settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(47);
+/* harmony import */ var _settings_removeSettingsActive__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(48);
+
 
 
 
@@ -1934,7 +1936,10 @@ const clickEvents = {
 		(0,_settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__.toggleSettingsActive)(),
 			(0,_settings_openSettings__WEBPACK_IMPORTED_MODULE_20__.openSettings)()
 	},
-	'.settings__close-button': _settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__.closeSettings
+	'.settings__close-button': () => {
+		(0,_settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__.closeSettings)(),
+			(0,_settings_removeSettingsActive__WEBPACK_IMPORTED_MODULE_23__.closeSettingsActive)()
+	}
 }
 
 const inputEvents = {
@@ -2046,6 +2051,8 @@ const openSettings = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   settingTitle: function() { return /* binding */ settingTitle; },
+/* harmony export */   settingsButton: function() { return /* binding */ settingsButton; },
 /* harmony export */   toggleSettingsActive: function() { return /* binding */ toggleSettingsActive; }
 /* harmony export */ });
 const settingsButton = document.querySelector('.settings__button')
@@ -2070,6 +2077,23 @@ __webpack_require__.r(__webpack_exports__);
 
 const closeSettings = () => {
 	_openSettings__WEBPACK_IMPORTED_MODULE_0__.settingsWrapper.classList.remove('settings__wrapper_show')
+}
+
+/***/ }),
+/* 48 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeSettingsActive: function() { return /* binding */ closeSettingsActive; }
+/* harmony export */ });
+/* harmony import */ var _toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
+
+
+const closeSettingsActive = () => {
+	_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__.settingTitle.classList.remove('settings__title_active')
+	_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_0__.settingsButton.classList.remove('settings__button_active')
 }
 
 /***/ })
