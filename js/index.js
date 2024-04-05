@@ -2046,10 +2046,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   toggleSettingsActive: function() { return /* binding */ toggleSettingsActive; }
 /* harmony export */ });
 const settingsButton = document.querySelector('.settings__button')
-const settingDescription = document.querySelector('.settings__button-description')
+const settingTitle = document.querySelector('.settings__title')
 
 const toggleSettingsActive = () => {
-	settingDescription.classList.toggle('settings__button-description_active')
+	settingTitle.classList.toggle('settings__title_active')
 	settingsButton.classList.toggle('settings__button_active')
 }
 

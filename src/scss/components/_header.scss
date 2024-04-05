@@ -211,6 +211,20 @@
 		}
 	}
 
+	&__title {
+		padding-bottom: 4px;
+		color: var(--white);
+		letter-spacing: 2.3px;
+		border-bottom: 3px solid var(--white);
+		transition: all 0.4s linear;
+		opacity: 0.7;
+
+		&_active {
+			border-bottom-color: var(--blue);
+			opacity: 1;
+		}
+	}
+
 	&__wrapper {
 		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
 		align-self: flex-start;
@@ -249,20 +263,6 @@
 
 		&_active {
 			opacity: 1;
-		}
-
-		&-description {
-			padding-bottom: 4px;
-			color: var(--white);
-			letter-spacing: 2.3px;
-			border-bottom: 3px solid var(--white);
-			transition: all 0.4s linear;
-			opacity: 0.7;
-
-			&_active {
-				border-bottom-color: var(--blue);
-				opacity: 1;
-			}
 		}
 	}
 }
