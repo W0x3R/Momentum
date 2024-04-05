@@ -20,6 +20,7 @@ import { changeSrcDescriptionText } from "../imagesSrc/setImagesSrcText"
 import { changeQueryLabelText } from "../query/setQueryLabelText"
 import { openSettings } from "../settings/openSettings"
 import { toggleSettingsActive } from "../settings/toggleSettingsActive"
+import { closeSettings } from "../settings/closeSettings"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -37,7 +38,8 @@ export const clickEvents = {
 	'.settings__icon': () => {
 		toggleSettingsActive(),
 			openSettings()
-	}
+	},
+	'.settings__close-button': closeSettings
 }
 
 export const inputEvents = {

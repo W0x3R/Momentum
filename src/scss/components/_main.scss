@@ -90,27 +90,7 @@
 	}
 
 	&__button {
-		position: absolute;
-		right: -35px;
-		top: -33px;
-		@include sizes(35px, 35px);
-		background: var(--white);
-		border-radius: 25%;
-		cursor: pointer;
-		font-size: 20px;
-		transition: 0.3s ease;
-		color: var(--black);
-
-		&_hover {
-			color: var(--blue);
-		}
-
-		@include hover {
-			color: var(--blue);
-		}
-		@include hover-none {
-			color: var(--blue);
-		}
+		@include closeButton(35px, 35px, 20px);
 	}
 
 	&__shadow {

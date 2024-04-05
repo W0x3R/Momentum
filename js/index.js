@@ -1892,6 +1892,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_setQueryLabelText__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(44);
 /* harmony import */ var _settings_openSettings__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(45);
 /* harmony import */ var _settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(46);
+/* harmony import */ var _settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(47);
+
 
 
 
@@ -1931,7 +1933,8 @@ const clickEvents = {
 	'.settings__icon': () => {
 		(0,_settings_toggleSettingsActive__WEBPACK_IMPORTED_MODULE_21__.toggleSettingsActive)(),
 			(0,_settings_openSettings__WEBPACK_IMPORTED_MODULE_20__.openSettings)()
-	}
+	},
+	'.settings__close-button': _settings_closeSettings__WEBPACK_IMPORTED_MODULE_22__.closeSettings
 }
 
 const inputEvents = {
@@ -2051,6 +2054,22 @@ const settingTitle = document.querySelector('.settings__title')
 const toggleSettingsActive = () => {
 	settingTitle.classList.toggle('settings__title_active')
 	settingsButton.classList.toggle('settings__button_active')
+}
+
+/***/ }),
+/* 47 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   closeSettings: function() { return /* binding */ closeSettings; }
+/* harmony export */ });
+/* harmony import */ var _openSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45);
+
+
+const closeSettings = () => {
+	_openSettings__WEBPACK_IMPORTED_MODULE_0__.settingsWrapper.classList.remove('settings__wrapper_show')
 }
 
 /***/ })

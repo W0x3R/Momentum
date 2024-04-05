@@ -226,6 +226,7 @@
 	}
 
 	&__wrapper {
+		position: relative;
 		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
 		align-self: flex-start;
 		padding: 10px;
@@ -241,6 +242,10 @@
 			opacity: 1;
 			pointer-events: auto;
 		}
+	}
+
+	&__close-button {
+		@include closeButton(28px, 28px, 18px);
 	}
 
 	&__inner {

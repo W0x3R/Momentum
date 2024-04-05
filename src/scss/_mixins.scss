@@ -58,3 +58,27 @@
 	width: 27px;
 	pointer-events: none;
 }
+
+@mixin closeButton($width, $height, $fs) {
+	position: absolute;
+	right: -35px;
+	top: -33px;
+	@include sizes($width, $height);
+	background: var(--white);
+	border-radius: 25%;
+	cursor: pointer;
+	font-size: $fs;
+	transition: 0.3s ease;
+	color: var(--black);
+
+	&_hover {
+		color: var(--blue);
+	}
+
+	@include hover {
+		color: var(--blue);
+	}
+	@include hover-none {
+		color: var(--blue);
+	}
+}
