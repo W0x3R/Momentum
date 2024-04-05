@@ -5,22 +5,23 @@
 
 .player {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center);
+	z-index: 1;
 	padding: 10px 15px;
 	min-width: 300px;
-	border-radius: 16px;
+	border-radius: 20px;
 	background: var(--black-background);
 	color: var(--white);
-	z-index: 1;
+	box-shadow: 11px 11px 16px 0px rgb(0 0 0 / 75%);
 
 	&__track-name {
-		margin-bottom: 18px;
-		font-size: 18px;
+		margin-bottom: 16px;
 		opacity: 0.8;
 		user-select: none;
+		font-size: 18px;
 
 		&_active {
-			animation: changeColor 2s infinite;
 			opacity: 1;
+			animation: changeColor 2s infinite;
 		}
 	}
 
@@ -108,15 +109,15 @@
 
 	&__list {
 		@include flex($direction: column, $gap: 13px 0);
-		transition: all 0.5s ease;
 
 		&-item {
 			opacity: 0.6;
 			cursor: pointer;
+			transition: all 0.5s ease;
 
 			&_active {
-				color: var(--blue);
 				opacity: 1;
+				color: var(--blue);
 			}
 
 			@include hover {
@@ -137,7 +138,7 @@
 		&-mute {
 			@include sizes(20px, 20px);
 			opacity: 0.8;
-			transition: all 0.3s ease;
+			transition: all 0.5s ease;
 
 			@include hover {
 				opacity: 1;
@@ -150,30 +151,31 @@
 
 		&-volume {
 			@include sizes(80%, 18px);
-			appearance: none;
+			opacity: 0.8;
 			border-radius: 4px;
+			appearance: none;
 			overflow: hidden;
 			cursor: pointer;
-			opacity: 0.8;
+			transition: all 0.5s ease;
 
 			&::-webkit-slider-thumb {
-				@include sizes(16px, 16px);
+				@include sizes(18px, 18px);
+				margin-top: -7px;
 				appearance: none;
 				background-color: var(--blue);
 				border: 0px solid var(--blue);
 				border-radius: 50%;
-				margin-top: -7px;
-				box-shadow: calc(-100vmax - 16px) 0 0 100vmax var(--blue);
+				box-shadow: calc(-100vmax - 17.8px) 0 0 100vmax var(--blue);
 				clip-path: var(--polygon);
 			}
 
 			&::-moz-range-thumb {
-				@include sizes(16px, 16px);
+				@include sizes(18px, 18px);
+				margin-top: -7px;
 				appearance: none;
 				background-color: var(--blue);
 				border: 0px solid var(--blue);
 				border-radius: 50%;
-				margin-top: -7px;
 			}
 
 			&::-webkit-slider-runnable-track {
@@ -200,13 +202,29 @@
 
 	&__icon {
 		@include flex($alignItems: center, $gap: 0 10px);
-		width: fit-content;
 		margin-bottom: 10px;
+		width: fit-content;
 		cursor: pointer;
 
 		@include hover {
 			.settings__button {
 				transform: rotate(360deg);
+				opacity: 1;
+			}
+
+			.settings__title {
+				opacity: 1;
+			}
+		}
+
+		@include hover-none {
+			.settings__button {
+				transform: rotate(360deg);
+				opacity: 1;
+			}
+
+			.settings__title {
+				opacity: 1;
 			}
 		}
 	}
@@ -216,12 +234,12 @@
 		color: var(--white);
 		letter-spacing: 2.3px;
 		border-bottom: 3px solid var(--white);
-		transition: all 0.4s linear;
+		transition: all 0.5s linear;
 		opacity: 0.7;
 
 		&_active {
-			border-bottom-color: var(--blue);
 			opacity: 1;
+			border-bottom-color: var(--blue);
 		}
 	}
 
@@ -231,11 +249,11 @@
 		align-self: flex-start;
 		padding: 10px;
 		width: 470px;
-		background: rgba(136, 136, 136, 0.5);
-		border-radius: 8px;
-		border: solid 1px rgb(138, 138, 138);
 		opacity: 0;
+		border: solid 1px rgb(138, 138, 138);
+		border-radius: 8px;
 		pointer-events: none;
+		background: rgba(136, 136, 136, 0.5);
 		transition: opacity 0.5s ease;
 
 		&_show {
@@ -263,7 +281,9 @@
 
 	&__button {
 		@include sizes(32px, 32px);
-		transition: transform 8s linear;
+		transition:
+			transform 8s linear,
+			opacity 0.5s linear;
 		opacity: 0.7;
 
 		&_active {
