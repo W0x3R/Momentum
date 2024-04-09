@@ -6,7 +6,7 @@ const greetingObj = {
 	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
 }
 
-export const showGreeting = () => {
+export const showGreetingText = () => {
 	const currLang = getStorageLanguage()
 	const currTime = new Date().getHours();
 	const greeting = greetingObj[currLang][Math.floor(currTime / 6)]

@@ -1,8 +1,7 @@
 import { setStorageLanguageDefault } from './components/language/localStorageLanguage.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
-import { showGreeting } from './components/greeting/showGreeting.js'
-import { changePlaceholderText } from './components/greeting/changePlaceholderText.js'
+import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
 import { changeBG, setQueryValue } from './components/slider/changeBG.js'
@@ -13,19 +12,14 @@ import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageInner, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
-import { changeLanguageDescriptionText } from './components/language/setLanguageText.js'
 import { setBtnValueLoad } from './components/player/volume.js'
 import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
 import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
-import { changeLanguageText } from './components/language/changeLanguageText.js'
 import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
 import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
-import { changeSrcDescriptionText } from './components/imagesSrc/setImagesSrcText.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
 import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
-import { changeQueryLabelText } from './components/query/setQueryLabelText.js'
-import { changeSettingsTitleText } from './components/settings/changeSettingsTitleText.js'
 
 setInterval(() => {
 	showTime()
@@ -34,25 +28,19 @@ setInterval(() => {
 
 showDate()
 showTime()
-showGreeting()
-changePlaceholderText()
+changeAppText()
 getQuotes()
 createPlayList()
 loadSong()
 changeLanguageSelectedItem()
 changeLanguageIcon()
-changeLanguageDescriptionText()
 checkImagesSrc()
-changeSrcDescriptionText()
 getStorageCity()
 getStorageGreetingName()
 setQueryValue()
 changeBG()
 setBtnValueLoad()
 getQueryInputValueLoad()
-changeLanguageText()
-changeQueryLabelText()
-changeSettingsTitleText()
 
 window.addEventListener('beforeunload', () => {
 	setStorageLanguageDefault()

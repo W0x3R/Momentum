@@ -1,5 +1,5 @@
 import { createClient } from 'pexels';
-import { showGreeting } from "../greeting/showGreeting"
+import { showGreetingText } from "../greeting/showGreeting"
 import { getStorageLanguage } from "../language/localStorageLanguage"
 import { getRandomNum } from "./getRandomNum"
 import { translateGreeting } from "./translateGreeting"
@@ -11,7 +11,7 @@ const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPa
 export const body = document.body
 const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
-const greetingText = showGreeting().split(' ')[1].slice(0, -1);
+const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 let query;
 const image = new Image();
 const MAX_GITHUB_IMAGES = 20;
@@ -48,7 +48,7 @@ const changeGithubImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	if (imagesSrc === 'github') {
 		queryWrapper.classList.add('query_hide')
-		const greetingText = showGreeting().split(' ')[1].slice(0, -1);
+		const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 		const currLang = getStorageLanguage();
 		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)
 		let randomNum = randomNumGithub.toString().padStart(2, '0')

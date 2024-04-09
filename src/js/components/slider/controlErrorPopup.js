@@ -30,3 +30,5 @@ export const closeErrorPopup = () => {
 export const controlBtnHover = (value) => {
 	popupBtn.classList[value]('popup__button_hover')
 }
+
+// НАЧНУ ОТСЮДА ЗАВТРА

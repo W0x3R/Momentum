@@ -9,20 +9,14 @@ import { rewindSong } from "../player/updateProgressBar"
 import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
-import { showGreeting } from "../greeting/showGreeting"
-import { changePlaceholderText } from "../greeting/changePlaceholderText"
+import { changeAppText } from "../changeAppText/changeAppText"
 import { getQuotes } from "../quotes/getQuotes"
 import { closeErrorPopup } from "../slider/controlErrorPopup"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
-import { changeLanguageText } from "../language/changeLanguageText"
-import { changeLanguageDescriptionText } from "../language/setLanguageText"
-import { changeSrcDescriptionText } from "../imagesSrc/setImagesSrcText"
-import { changeQueryLabelText } from "../query/setQueryLabelText"
 import { openSettings } from "../settings/openSettings"
 import { toggleSettingsActive } from "../settings/toggleSettingsActive"
 import { closeSettings } from "../settings/closeSettings"
 import { closeSettingsActive } from "../settings/removeSettingsActive"
-import { changeSettingsTitleText } from "../settings/changeSettingsTitleText"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -59,15 +53,9 @@ export const changeEvents = {
 		setStorageLanguage()
 		getWeather()
 		showDate()
-		showGreeting()
-		changePlaceholderText()
+		changeAppText()
 		getQuotes()
-		changeLanguageText()
 		changeLanguageIcon()
-		changeLanguageDescriptionText()
-		changeSrcDescriptionText()
-		changeQueryLabelText()
-		changeSettingsTitleText()
 	},
 	'.weather__input': getWeather
 }

@@ -1,4 +1,3 @@
-import { getStorageLanguage } from './localStorageLanguage'
 import { selectLanguageChildrenArr } from "./setLanguageSelectedItem"
 
 const languageDescription = document.querySelector('.language__description')
@@ -19,16 +18,8 @@ const languageDescriptionObj = {
 	ru: 'Изменить язык:'
 }
 
-export const setLanguageText = (valOne, valTwo, valThree, valFour) => {
+export const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
 	selectLanguageChildrenArr[0].textContent = languageObj[valOne][valTwo]
 	selectLanguageChildrenArr[1].textContent = languageObj[valThree][valFour]
-}
-
-const setLanguageDescriptionText = (lang) => {
 	languageDescription.textContent = languageDescriptionObj[lang]
-}
-
-export const changeLanguageDescriptionText = () => {
-	const currLang = getStorageLanguage()
-	currLang === 'en' ? setLanguageDescriptionText('en') : setLanguageDescriptionText('ru')
 }
