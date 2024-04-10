@@ -5,20 +5,20 @@ import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
 import { changeBG, setQueryValue } from './components/slider/changeBG.js'
-import { getQuotes } from './components/quotes/getQuotes.js'
+import { changeQuote } from './components/quotes/changeQoute.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong } from './components/player/loadSong.js'
 import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio, nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { selectLanguageInner, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
-import { setBtnValueLoad } from './components/player/volume.js'
-import { changeLanguageSelectedItem } from './components/language/setSelectedLanguageValue.js'
+import { setVolumeBtnValue } from './components/player/volume.js'
+import { changeSelectedLanguageValue } from './components/language/changeSelectedLanguageValue.js'
 import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
-import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
+import { checkSelectedImagesSrc } from './components/imagesSrc/checkSelectedImagesSrc.js'
 import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
-import { controlBtnHover } from './components/slider/controlBtnHover.js'
+import { controlPopupBtnHover } from './components/slider/controlPopupBtnHover.js'
 import { popup } from './components/slider/setErrorPopupClass.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 
@@ -30,17 +30,17 @@ setInterval(() => {
 showDate()
 showTime()
 changeAppText()
-getQuotes()
+changeQuote()
 createPlayList()
 loadSong()
-changeLanguageSelectedItem()
+changeSelectedLanguageValue()
 changeLanguageIcon()
-checkImagesSrc()
+checkSelectedImagesSrc()
 getStorageCity()
 getStorageGreetingName()
 setQueryValue()
 changeBG()
-setBtnValueLoad()
+setVolumeBtnValue()
 getQueryInputValueLoad()
 
 window.addEventListener('beforeunload', () => {
@@ -64,5 +64,5 @@ window.addEventListener('click', function (e) {
 audio.addEventListener('ended', nextSong)
 window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
-popup.addEventListener('mouseleave', () => controlBtnHover('add'))
-popup.addEventListener('mouseenter', () => controlBtnHover('remove'))
+popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
+popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))

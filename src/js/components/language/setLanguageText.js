@@ -1,4 +1,4 @@
-import { selectLanguageChildrenArr } from "./setLanguageSelectedItem"
+import { selectLanguageChildrenArr } from "./setSelectedLanguageValue"
 
 const languageDescription = document.querySelector('.language__description')
 

@@ -1,4 +1,4 @@
-import { languageSelect } from "./setLanguageSelectedItem"
+import { languageSelect } from "./setSelectedLanguageValue"
 
 export const setStorageLanguageDefault = () => {
 	const currLang = getStorageLanguage()

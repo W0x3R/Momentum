@@ -4,6 +4,6 @@ const queryObj = {
 	ru: 'Поиск изображений по тэгу:'
 }
 
-export const setQueryLabelText = (value) => {
-	queryLabel.textContent = queryObj[value]
+export const setQueryLabelText = (lang) => {
+	queryLabel.textContent = queryObj[lang]
 }

@@ -10,7 +10,7 @@ import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../tran
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { changeAppText } from "../changeAppText/changeAppText"
-import { getQuotes } from "../quotes/getQuotes"
+import { changeQuote } from "../quotes/changeQoute"
 import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { openSettings } from "../settings/openSettings"
@@ -42,7 +42,8 @@ export const clickEvents = {
 	'.settings__close-button': () => {
 		closeSettings(),
 			closeSettingsActive()
-	}
+	},
+	'.quotes__change-btn': changeQuote
 }
 
 export const inputEvents = {
@@ -58,7 +59,7 @@ export const changeEvents = {
 		getWeather()
 		showDate()
 		changeAppText()
-		getQuotes()
+		changeQuote()
 		changeLanguageIcon()
 	},
 	'.weather__input': getWeather
