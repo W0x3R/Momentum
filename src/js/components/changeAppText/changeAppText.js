@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setPlaceholderText } from "../greeting/setPlaceholderText";
-import { showGreetingText } from "../greeting/showGreeting";
+import { showGreetingText } from "../greeting/showGreetingText";
 import { setImagesSrcText } from "../imagesSrc/setImagesSrcText";
 import { setLanguageText } from "../language/setLanguageText";
 import { setQueryLabelText } from "../query/setQueryLabelText";

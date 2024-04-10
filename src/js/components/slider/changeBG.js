@@ -1,5 +1,5 @@
 import { createClient } from 'pexels';
-import { showGreetingText } from "../greeting/showGreeting"
+import { showGreetingText } from "../greeting/showGreetingText"
 import { getStorageLanguage } from "../language/localStorageLanguage"
 import { getRandomNum } from "./getRandomNum"
 import { translateGreeting } from "./translateGreeting"

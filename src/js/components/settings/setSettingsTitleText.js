@@ -1,4 +1,4 @@
-import { settingTitle } from "./setSettingsActive";
+import { settingTitle } from "./setSettingsActiveStyles";
 
 const settingsTitleObj = {
 	en: 'SETTINGS',
