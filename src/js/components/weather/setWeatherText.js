@@ -10,7 +10,7 @@ const weatherTranslations = {
 		wind: 'Wind speed:',
 		units: 'm/s',
 		humidity: 'Humidity:',
-		error: "ERROR: City wasn't found!"
+		error: "Error: City wasn't found!"
 	},
 	ru: {
 		wind: 'Скорость ветра:',

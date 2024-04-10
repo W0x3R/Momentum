@@ -10,7 +10,7 @@ import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../tran
 import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { changeAppText } from "../changeAppText/changeAppText"
-import { changeQuote } from "../quotes/changeQoute"
+import { changeQuote } from "../quotes/changeQuote"
 import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { openSettings } from "../settings/openSettings"

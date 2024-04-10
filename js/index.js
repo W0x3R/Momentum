@@ -425,7 +425,7 @@ const weatherTranslations = {
 		wind: 'Wind speed:',
 		units: 'm/s',
 		humidity: 'Humidity:',
-		error: "ERROR: City wasn't found!"
+		error: "Error: City wasn't found!"
 	},
 	ru: {
 		wind: 'Скорость ветра:',
@@ -1578,15 +1578,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const trackName = document.querySelector('.player__track-name')
 const audio = document.querySelector('.player__audio')
 const volumeBtn = document.querySelector('.player__sounds-volume')
 const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
-
 let count = 0;
 
 const nextSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
 	count++
 	if (count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
 		count = 0;
@@ -1596,7 +1596,7 @@ const nextSong = () => {
 }
 
 const prevSong = () => {
-	let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
 	count--
 	if (count < 0) {
 		count = _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1
@@ -1609,16 +1609,12 @@ const playClickedSong = (e) => {
 	const songNum = parseInt(e.target.getAttribute('song_number'));
 	if (!isNaN(songNum)) {
 		if (count !== songNum) {
-			let li = document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
+			document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
 			count = songNum;
 			(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)();
 			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
 		} else {
-			if (_playSong_js__WEBPACK_IMPORTED_MODULE_2__.isPlay) {
-				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.pauseSong)();
-			} else {
-				(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
-			}
+			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.checkFlagSong)()
 		}
 	}
 }
@@ -1631,8 +1627,6 @@ const playClickedSong = (e) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkFlagSong: function() { return /* binding */ checkFlagSong; },
-/* harmony export */   isPlay: function() { return /* binding */ isPlay; },
-/* harmony export */   pauseSong: function() { return /* binding */ pauseSong; },
 /* harmony export */   playSong: function() { return /* binding */ playSong; }
 /* harmony export */ });
 /* harmony import */ var _switchSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(35);
@@ -1643,7 +1637,7 @@ const playBtn = document.querySelector('.player__controls-play')
 const playBtnIcon = document.querySelector('.player__controls-play-icon use')
 
 const playSong = () => {
-	let li = document.querySelectorAll('li')[_switchSong__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
+	document.querySelectorAll('li')[_switchSong__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.trackName.classList.add('player__track-name_active')
 	_switchSong__WEBPACK_IMPORTED_MODULE_0__.audio.play()
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
@@ -1959,7 +1953,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(41);
 /* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(48);
 /* harmony import */ var _changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5);
-/* harmony import */ var _quotes_changeQoute__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(28);
+/* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(28);
 /* harmony import */ var _slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(25);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(44);
 /* harmony import */ var _settings_openSettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(49);
@@ -2011,7 +2005,7 @@ const clickEvents = {
 		(0,_settings_closeSettings__WEBPACK_IMPORTED_MODULE_17__.closeSettings)(),
 			(0,_settings_removeSettingsActive__WEBPACK_IMPORTED_MODULE_18__.closeSettingsActive)()
 	},
-	'.quotes__change-btn': _quotes_changeQoute__WEBPACK_IMPORTED_MODULE_12__.changeQuote
+	'.quotes__change-btn': _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__.changeQuote
 }
 
 const inputEvents = {
@@ -2027,7 +2021,7 @@ const changeEvents = {
 		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_0__.showDate)()
 		;(0,_changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_11__.changeAppText)()
-		;(0,_quotes_changeQoute__WEBPACK_IMPORTED_MODULE_12__.changeQuote)()
+		;(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__.changeQuote)()
 		;(0,_language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_14__.changeLanguageIcon)()
 	},
 	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_3__.getWeather
@@ -2213,7 +2207,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
 /* harmony import */ var _components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(19);
-/* harmony import */ var _components_quotes_changeQoute_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(28);
+/* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(28);
 /* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(32);
 /* harmony import */ var _components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(34);
 /* harmony import */ var _components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(37);
@@ -2261,7 +2255,7 @@ setInterval(() => {
 ;(0,_components_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 ;(0,_components_date_time__WEBPACK_IMPORTED_MODULE_1__.showTime)()
 ;(0,_components_changeAppText_changeAppText_js__WEBPACK_IMPORTED_MODULE_3__.changeAppText)()
-;(0,_components_quotes_changeQoute_js__WEBPACK_IMPORTED_MODULE_7__.changeQuote)()
+;(0,_components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_7__.changeQuote)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_8__.createPlayList)()
 ;(0,_components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_9__.loadSong)()
 ;(0,_components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_15__.changeSelectedLanguageValue)()
