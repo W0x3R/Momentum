@@ -3,7 +3,7 @@ import { showGreetingText } from "../greeting/showGreeting"
 import { getStorageLanguage } from "../language/localStorageLanguage"
 import { getRandomNum } from "./getRandomNum"
 import { translateGreeting } from "./translateGreeting"
-import { showErrorPopup } from './controlErrorPopup'
+import { setErrorPopupClass } from './setErrorPopupClass';
 import { getQueryInputValueLoad } from './localStorageSlider'
 import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 
@@ -35,7 +35,7 @@ export const changeQueryInput = () => {
 	const queryInputValue = String(queryInput.value.trim())
 	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
 	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
-		showErrorPopup()
+		setErrorPopupClass('add')
 		return
 	}
 	query = queryInputValue
@@ -66,7 +66,7 @@ const changePexelsImages = () => {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
 			} else {
-				showErrorPopup()
+				setErrorPopupClass('remove')
 			}
 		});
 	}

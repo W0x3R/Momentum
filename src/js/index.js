@@ -18,7 +18,8 @@ import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
 import { checkImagesSrc } from './components/imagesSrc/checkImagesSrc.js'
 import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
 import { clickEvents, inputEvents, changeEvents, callEvents } from './components/eventHandlers/eventHandlers.js'
-import { popup, controlBtnHover } from './components/slider/controlErrorPopup.js'
+import { controlBtnHover } from './components/slider/controlBtnHover.js'
+import { popup } from './components/slider/setErrorPopupClass.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 
 setInterval(() => {

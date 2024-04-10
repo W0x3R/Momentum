@@ -11,7 +11,7 @@ import { checkIsMute, checkChangeVolume } from "../player/volume"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { changeAppText } from "../changeAppText/changeAppText"
 import { getQuotes } from "../quotes/getQuotes"
-import { closeErrorPopup } from "../slider/controlErrorPopup"
+import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { openSettings } from "../settings/openSettings"
 import { toggleSettingsActive } from "../settings/toggleSettingsActive"
@@ -29,8 +29,12 @@ export const clickEvents = {
 	'.player__controls-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
 	'.player__sounds-mute': checkIsMute,
-	'.popup__button': closeErrorPopup,
-	'.popup__shadow_show': closeErrorPopup,
+	'.popup__button': () => {
+		setErrorPopupClass('remove')
+	},
+	'.popup__shadow_show': () => {
+		closeErrorPopup('remove')
+	},
 	'.settings__icon': () => {
 		toggleSettingsActive(),
 			openSettings()
