@@ -1,4 +1,4 @@
-import { settingTitle } from "./toggleSettingsActive";
+import { settingTitle } from "./setSettingsActive";
 
 const settingsTitleObj = {
 	en: 'SETTINGS',

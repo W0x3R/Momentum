@@ -14,9 +14,8 @@ import { changeQuote } from "../quotes/changeQuote"
 import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { openSettings } from "../settings/openSettings"
-import { toggleSettingsActive } from "../settings/toggleSettingsActive"
+import { setSettingsActive } from "../settings/setSettingsActive"
 import { closeSettings } from "../settings/closeSettings"
-import { closeSettingsActive } from "../settings/removeSettingsActive"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -36,12 +35,12 @@ export const clickEvents = {
 		closeErrorPopup('remove')
 	},
 	'.settings__icon': () => {
-		toggleSettingsActive(),
+		setSettingsActive('toggle'),
 			openSettings()
 	},
 	'.settings__close-button': () => {
 		closeSettings(),
-			closeSettingsActive()
+			setSettingsActive('remove')
 	},
 	'.quotes__change-btn': changeQuote
 }
