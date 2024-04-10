@@ -1955,10 +1955,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(28);
 /* harmony import */ var _slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(25);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(44);
-/* harmony import */ var _settings_openSettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(49);
+/* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(49);
 /* harmony import */ var _settings_setSettingsActive__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(13);
-/* harmony import */ var _settings_closeSettings__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(50);
-
 
 
 
@@ -1996,10 +1994,10 @@ const clickEvents = {
 	},
 	'.settings__icon': () => {
 		(0,_settings_setSettingsActive__WEBPACK_IMPORTED_MODULE_16__.setSettingsActive)('toggle'),
-			(0,_settings_openSettings__WEBPACK_IMPORTED_MODULE_15__.openSettings)()
+			(0,_settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__.displaySettings)('toggle')
 	},
 	'.settings__close-button': () => {
-		(0,_settings_closeSettings__WEBPACK_IMPORTED_MODULE_17__.closeSettings)(),
+		(0,_settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__.displaySettings)('remove'),
 			(0,_settings_setSettingsActive__WEBPACK_IMPORTED_MODULE_16__.setSettingsActive)('remove')
 	},
 	'.quotes__change-btn': _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__.changeQuote
@@ -2066,33 +2064,16 @@ const changeImagesSrc = (e) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   openSettings: function() { return /* binding */ openSettings; },
-/* harmony export */   settingsWrapper: function() { return /* binding */ settingsWrapper; }
+/* harmony export */   displaySettings: function() { return /* binding */ displaySettings; }
 /* harmony export */ });
 const settingsWrapper = document.querySelector('.settings__wrapper')
 
-const openSettings = () => {
-	settingsWrapper.classList.toggle('settings__wrapper_show')
+const displaySettings = (value) => {
+	settingsWrapper.classList[value]('settings__wrapper_show')
 }
 
 /***/ }),
 /* 50 */
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   closeSettings: function() { return /* binding */ closeSettings; }
-/* harmony export */ });
-/* harmony import */ var _openSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
-
-
-const closeSettings = () => {
-	_openSettings__WEBPACK_IMPORTED_MODULE_0__.settingsWrapper.classList.remove('settings__wrapper_show')
-}
-
-/***/ }),
-/* 51 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2200,7 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(45);
 /* harmony import */ var _components_imagesSrc_localStorageImagesSrc_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(27);
 /* harmony import */ var _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(47);
-/* harmony import */ var _components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(51);
+/* harmony import */ var _components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(50);
 /* harmony import */ var _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(25);
 /* harmony import */ var _components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(26);
 
