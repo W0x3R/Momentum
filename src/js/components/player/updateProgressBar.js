@@ -1,4 +1,4 @@
-import { audio } from "./switchSong";
+import { audio } from "./playSong";
 
 const progressBar = document.querySelector('.player__progress')
 

@@ -1,4 +1,4 @@
-import { volumeBtn } from "./switchSong";
+import { volumeBtn } from "./volume"
 
 export const setStorageVolumeValue = () => {
 	localStorage.setItem('volumeValue', volumeBtn.value)

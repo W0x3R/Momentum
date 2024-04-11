@@ -1,6 +1,8 @@
-import { volumeBtn, volumeMuteBtnIcon, audio } from "./switchSong";
+import { audio } from "./playSong";
 import { setStorageVolumeValue, getStorageVolumeValue } from "./localStoragePlayer";
 
+export const volumeBtn = document.querySelector('.player__sounds-volume')
+const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
 let isMute = false;
 

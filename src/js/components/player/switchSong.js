@@ -1,12 +1,7 @@
 import playListSongs from "../../../../playListSongs.js"
 import { loadSong } from "./loadSong.js"
-import { playSong } from "./playSong.js"
-import { checkFlagSong } from "./playSong.js"
+import { playSong, checkFlagSong } from "./playSong.js"
 
-export const trackName = document.querySelector('.player__track-name')
-export const audio = document.querySelector('.player__audio')
-export const volumeBtn = document.querySelector('.player__sounds-volume')
-export const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
 export let count = 0;
 
 export const nextSong = () => {
