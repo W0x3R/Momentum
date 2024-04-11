@@ -243,7 +243,9 @@
 	}
 
 	&__wrapper {
-		position: relative;
+		position: absolute;
+		left: calc(50% - 225px);
+		top: 12%;
 		z-index: 2;
 		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
 		align-self: flex-start;
@@ -253,7 +255,7 @@
 		border: solid 1px rgb(138, 138, 138);
 		border-radius: 8px;
 		pointer-events: none;
-		background: rgba(136, 136, 136, 0.5);
+		background: #363636;
 		transition: opacity 0.5s ease;
 
 		&_show {
