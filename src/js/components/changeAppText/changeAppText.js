@@ -4,9 +4,8 @@ import { showGreetingText } from "../greeting/showGreetingText";
 import { setImagesSrcText } from "../imagesSrc/setImagesSrcText";
 import { setLanguageText } from "../language/setLanguageText";
 import { setQueryLabelText } from "../query/setQueryLabelText";
-import { setSettingsTitleText } from "../settings/setSettingsTitleText";
 import { setErrorPopupText } from "../slider/setErrorPopupText";
-import { setSettingsShowText } from "../settings/setSettingsShowText";
+import { setSettingsText } from "../settings/setSettingsText";
 
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()
@@ -15,18 +14,16 @@ export const changeAppText = () => {
 		setImagesSrcText('en')
 		setLanguageText('en', 'en', 'en', 'ru', 'en')
 		setQueryLabelText('en')
-		setSettingsTitleText('en')
 		setErrorPopupText('en')
-		setSettingsShowText('en')
+		setSettingsText('en')
 	}
 	else if (currLang === 'ru') {
 		setPlaceholderText('ru')
 		setImagesSrcText('ru')
 		setLanguageText('ru', 'en', 'ru', 'ru', 'ru')
 		setQueryLabelText('ru')
-		setSettingsTitleText('ru')
 		setErrorPopupText('ru')
-		setSettingsShowText('ru')
+		setSettingsText('ru')
 	}
 	showGreetingText()
 }
