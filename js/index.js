@@ -2256,6 +2256,24 @@ window.addEventListener('input', (e) => (0,_components_eventHandlers_eventHandle
 window.addEventListener('change', (e) => (0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_8__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_8__.changeEvents))
 _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_23__.popup.addEventListener('mouseleave', () => (0,_components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_22__.controlPopupBtnHover)('add'))
 _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_23__.popup.addEventListener('mouseenter', () => (0,_components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_22__.controlPopupBtnHover)('remove'))
+
+
+const settingsShow = document.querySelector('.settings__show')
+
+settingsShow.addEventListener('click', (e) => {
+	if (e.target.classList.contains('settings__show-label')) {
+		if (e.target.nextElementSibling.checked === true) {
+			e.target.nextElementSibling.checked = false
+		}
+		else {
+			e.target.nextElementSibling.checked = true
+		}
+	}
+	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show')) {
+		const dataShow = e.target.closest('[data-show]').dataset.show
+		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
+	}
+})
 }();
 /******/ })()
 ;

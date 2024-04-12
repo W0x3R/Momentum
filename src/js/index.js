@@ -67,3 +67,21 @@ window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
 popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
 popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
+
+
+const settingsShow = document.querySelector('.settings__show')
+
+settingsShow.addEventListener('click', (e) => {
+	if (e.target.classList.contains('settings__show-label')) {
+		if (e.target.nextElementSibling.checked === true) {
+			e.target.nextElementSibling.checked = false
+		}
+		else {
+			e.target.nextElementSibling.checked = true
+		}
+	}
+	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show')) {
+		const dataShow = e.target.closest('[data-show]').dataset.show
+		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
+	}
+})

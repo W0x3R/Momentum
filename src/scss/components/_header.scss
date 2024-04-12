@@ -352,6 +352,11 @@
 			padding: 10px 5px;
 			color: white;
 		}
+
+		&_hide {
+			opacity: 0;
+			pointer-events: none;
+		}
 	}
 }
 
