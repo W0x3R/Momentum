@@ -9,4 +9,4 @@ export const setSettingsShowText = (lang) => {
 	settingsShowTitles.forEach((e, i) => {
 		e.textContent = settingsShowObj[lang][i]
 	})
-} 
+}

@@ -1373,7 +1373,7 @@ const setSettingsShowText = (lang) => {
 	settingsShowTitles.forEach((e, i) => {
 		e.textContent = settingsShowObj[lang][i]
 	})
-} 
+}
 
 /***/ }),
 /* 27 */
@@ -2285,6 +2285,7 @@ _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_23__.popup.add
 
 
 const settingsShow = document.querySelector('.settings__show')
+const settingsShowInputs = document.querySelectorAll('.settings__show input')
 
 settingsShow.addEventListener('click', (e) => {
 	if (e.target.classList.contains('settings__show-label')) {
@@ -2295,11 +2296,20 @@ settingsShow.addEventListener('click', (e) => {
 			e.target.nextElementSibling.checked = true
 		}
 	}
-	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show')) {
+	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show') && !e.target.classList.contains('settings__show-inner')) {
 		const dataShow = e.target.closest('[data-show]').dataset.show
 		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
 	}
+	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
+	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
 })
+
+for (let i = 0; i < JSON.parse(localStorage.getItem('indexOfCheckedInputs')).length; i++) {
+	settingsShowInputs[(JSON.parse(localStorage.getItem('indexOfCheckedInputs'))[i])].checked = true;
+}
+
+const r = Array.from(settingsShowInputs).filter(e => e.checked)
+r.map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__show_hide'))
 }();
 /******/ })()
 ;
