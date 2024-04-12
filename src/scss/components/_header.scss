@@ -13,6 +13,7 @@
 	background: var(--black-background);
 	color: var(--white);
 	box-shadow: 11px 11px 16px 0px rgb(0 0 0 / 75%);
+	transition: opacity 0.5s ease;
 
 	&__track-name {
 		margin-bottom: 16px;
@@ -432,6 +433,7 @@
 	color: var(--white);
 	font-size: 17px;
 	box-shadow: 11px 11px 16px 0px rgba(0, 0, 0, 0.75);
+	transition: opacity 0.5s ease;
 
 	&:focus-within .weather__icon {
 		animation: shake 2s infinite;
