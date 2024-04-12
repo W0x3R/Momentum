@@ -6,6 +6,7 @@ import { setLanguageText } from "../language/setLanguageText";
 import { setQueryLabelText } from "../query/setQueryLabelText";
 import { setSettingsTitleText } from "../settings/setSettingsTitleText";
 import { setErrorPopupText } from "../slider/setErrorPopupText";
+import { setSettingsShowText } from "../settings/setSettingsShowText";
 
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()
@@ -16,6 +17,7 @@ export const changeAppText = () => {
 		setQueryLabelText('en')
 		setSettingsTitleText('en')
 		setErrorPopupText('en')
+		setSettingsShowText('en')
 	}
 	else if (currLang === 'ru') {
 		setPlaceholderText('ru')
@@ -24,6 +26,7 @@ export const changeAppText = () => {
 		setQueryLabelText('ru')
 		setSettingsTitleText('ru')
 		setErrorPopupText('ru')
+		setSettingsShowText('ru')
 	}
 	showGreetingText()
 }
