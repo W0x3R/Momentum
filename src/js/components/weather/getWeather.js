@@ -13,8 +13,8 @@ export async function getWeather() {
 		weatherCityInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
-		setWeatherText(data, currLang)
 		setWeatherStyles(data)
+		setWeatherText(data, currLang)
 	}
 	catch (error) {
 		setWeatherErrorText()

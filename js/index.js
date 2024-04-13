@@ -125,8 +125,8 @@ async function getWeather() {
 		weatherCityInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
-		;(0,_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
 		;(0,_setWeatherStyles__WEBPACK_IMPORTED_MODULE_2__.setWeatherStyles)(data)
+		;(0,_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
 	}
 	catch (error) {
 		(0,_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherErrorText)()
