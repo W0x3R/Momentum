@@ -16,7 +16,7 @@
 	transition: opacity 0.5s ease;
 
 	&__track-name {
-		margin-bottom: 16px;
+		margin-bottom: 17px;
 		opacity: 0.8;
 		user-select: none;
 		font-size: 18px;
@@ -32,6 +32,7 @@
 		margin-bottom: 10px;
 		width: 100%;
 		font-size: 14px;
+		letter-spacing: 1.8px;
 	}
 
 	&__current-time {
@@ -118,9 +119,11 @@
 		@include flex($direction: column, $gap: 13px 0);
 
 		&-item {
+			position: relative;
 			opacity: 0.6;
 			cursor: pointer;
 			transition: all 0.5s ease;
+			letter-spacing: 1.6px;
 
 			&_active {
 				opacity: 1;
