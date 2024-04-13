@@ -13,16 +13,20 @@
 
 	&__change-btn {
 		margin-bottom: 15px;
+		@include sizes(32px, 32px);
 		background: transparent;
-		transition: transform 2s linear;
+		opacity: 0.8;
+		transition:
+			opacity 0.5s linear,
+			transform 0.4s ease;
 
 		@include hover {
-			transform: rotate(720deg);
+			opacity: 1;
 		}
-	}
 
-	&__change-icon {
-		@include sizes(32px, 32px);
+		@include hover-none {
+			opacity: 1;
+		}
 	}
 
 	&__text {

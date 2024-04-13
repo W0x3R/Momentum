@@ -15,6 +15,7 @@ import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { displaySettings } from "../settings/displaySettings"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
+import { setQuotesActiveStyles } from "../quotes/setQuotesActiveStyles"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -41,7 +42,10 @@ export const clickEvents = {
 		displaySettings('remove'),
 			setSettingsActiveStyles('remove')
 	},
-	'.quotes__change-btn': changeQuote
+	'.quotes__change-btn': () => {
+		changeQuote()
+		setQuotesActiveStyles()
+	}
 }
 
 export const inputEvents = {
