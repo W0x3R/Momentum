@@ -12,53 +12,6 @@
 	height: $height;
 }
 
-@mixin trackTime {
-	position: absolute;
-	bottom: 13px;
-	user-select: none;
-}
-
-@mixin languageSelectWrapper {
-	position: relative;
-	line-height: 1.6;
-	overflow: hidden;
-
-	&:hover::after {
-		color: var(--blue);
-	}
-
-	&::after {
-		content: '\25BC';
-		position: absolute;
-		top: 0;
-		right: 0;
-		padding: 0 6px;
-		background: var(--black-background);
-		cursor: pointer;
-		pointer-events: none;
-		transition: 0.25s color ease;
-		color: var(--white);
-	}
-}
-
-@mixin select {
-	width: 180px;
-	height: 26px;
-	background: rgb(92, 102, 100);
-	padding-left: 8px;
-	color: var(--white);
-	cursor: pointer;
-	font-size: 16px;
-	border-radius: 4px;
-}
-
-@mixin languageSelectIcon {
-	position: absolute;
-	right: 34px;
-	width: 27px;
-	pointer-events: none;
-}
-
 @mixin closeButton($width, $height, $fs) {
 	position: absolute;
 	right: -35px;
@@ -75,10 +28,26 @@
 		color: var(--blue);
 	}
 
-	@include hover {
+	@include hoverOrActive {
 		color: var(--blue);
 	}
-	@include hover-none {
-		color: var(--blue);
-	}
+}
+
+@mixin volumeThumb {
+	@include sizes(18px, 18px);
+	margin-top: -7px;
+	appearance: none;
+	background-color: var(--blue);
+	border: 0px solid var(--blue);
+	border-radius: 50%;
+	box-shadow: calc(-100vmax - 17.8px) 0 0 100vmax var(--blue);
+	clip-path: var(--polygon);
+}
+
+@mixin volumeTrack {
+	height: 4px;
+	border-radius: 4px;
+	border: 0px solid var(--white);
+	box-shadow: 0px 0px 0px rgb(53, 53, 53);
+	background: var(--white_215);
 }

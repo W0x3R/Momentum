@@ -36,12 +36,12 @@
 	}
 
 	&__current-time {
-		@include trackTime;
+		@extend %trackTime;
 		left: 0;
 	}
 
 	&__duration {
-		@include trackTime;
+		@extend %trackTime;
 		right: 0;
 	}
 
@@ -125,7 +125,8 @@
 	}
 
 	&__sounds {
-		@include flex($justify: center, $alignItems: center, $gap: 0 10px);
+		@extend %flexCenter;
+		gap: 0 10px;
 		margin-bottom: 15px;
 		width: 100%;
 
@@ -149,31 +150,19 @@
 			transition: all 0.5s ease;
 
 			&::-webkit-slider-thumb {
-				@include sizes(18px, 18px);
-				margin-top: -7px;
-				appearance: none;
-				background-color: var(--blue);
-				border: 0px solid var(--blue);
-				border-radius: 50%;
-				box-shadow: calc(-100vmax - 17.8px) 0 0 100vmax var(--blue);
-				clip-path: var(--polygon);
+				@include volumeThumb;
 			}
 
 			&::-moz-range-thumb {
-				@include sizes(18px, 18px);
-				margin-top: -7px;
-				appearance: none;
-				background-color: var(--blue);
-				border: 0px solid var(--blue);
-				border-radius: 50%;
+				@include volumeThumb;
 			}
 
 			&::-webkit-slider-runnable-track {
-				height: 4px;
-				border-radius: 4px;
-				border: 0px solid var(--white);
-				box-shadow: 0px 0px 0px rgb(53, 53, 53);
-				background: var(--white_215);
+				@include volumeTrack;
+			}
+
+			&::-moz-range-track {
+				@include volumeTrack;
 			}
 
 			@include hoverOrActive {
@@ -193,10 +182,7 @@
 		cursor: pointer;
 
 		@include hoverOrActive {
-			.settings__button {
-				opacity: 1;
-			}
-
+			.settings__button,
 			.settings__title {
 				opacity: 1;
 			}
@@ -250,6 +236,7 @@
 			color: var(--white);
 			pointer-events: none;
 		}
+
 		& label {
 			color: var(--white);
 			cursor: pointer;
@@ -280,7 +267,7 @@
 
 		&-inner {
 			@include flex($alignItems: center, $justify: space-between);
-			border-top: 1px solid white;
+			border-top: 1px solid var(--white);
 
 			& > input[type='checkbox'] {
 				position: relative;
@@ -322,7 +309,7 @@
 			width: 100%;
 			cursor: pointer;
 			padding: 10px 5px;
-			color: white;
+			color: var(--white);
 		}
 
 		&_hide {
@@ -337,24 +324,24 @@
 		font-size: 15px;
 	}
 	&__inner {
-		@include languageSelectWrapper;
+		@extend %languageSelectWrapper;
 
 		&_ru {
 			&::before {
-				@include languageSelectIcon;
+				@extend %languageSelectIcon;
 				content: url('../../../images/svg/russianLanguageIcon.svg');
 			}
 		}
 
 		&_en {
 			&::before {
-				@include languageSelectIcon;
+				@extend %languageSelectIcon;
 				content: url('../../../images/svg/englishLanguageIcon.svg');
 			}
 		}
 	}
 	&__select {
-		@include select;
+		@extend %languageSelect;
 
 		&_open::after {
 			transform: rotate(180deg);
@@ -363,14 +350,14 @@
 }
 
 .source {
-	@include languageSelectWrapper;
+	@extend %languageSelectWrapper;
 
 	&__description {
 		font-size: 15px;
 	}
 
 	&__select {
-		@include select;
+		@extend %languageSelect;
 
 		&_open::after {
 			transform: rotate(180deg);
@@ -388,7 +375,7 @@
 	}
 
 	&__input {
-		@include select;
+		@extend %languageSelect;
 		cursor: auto;
 	}
 }
@@ -403,7 +390,7 @@
 	background: var(--black-background);
 	color: var(--white);
 	font-size: 17px;
-	box-shadow: var(----blocks-box-shadow);
+	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
 	&:focus-within .weather__icon {

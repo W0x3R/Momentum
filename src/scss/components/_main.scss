@@ -1,7 +1,8 @@
 .main {
 	position: relative;
 	bottom: 45px;
-	@include flex($direction: column, $justify: center, $alignItems: center);
+	@extend %flexCenter;
+	flex-direction: column;
 	flex: 1;
 
 	&__button {

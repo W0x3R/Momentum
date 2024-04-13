@@ -1,0 +1,52 @@
+%trackTime {
+	position: absolute;
+	bottom: 13px;
+	user-select: none;
+}
+
+%flexCenter {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%languageSelectWrapper {
+	position: relative;
+	line-height: 1.6;
+	overflow: hidden;
+
+	&:hover::after {
+		color: var(--blue);
+	}
+
+	&::after {
+		content: '\25BC';
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 0 6px;
+		background: var(--black-background);
+		cursor: pointer;
+		pointer-events: none;
+		transition: 0.25s color ease;
+		color: var(--white);
+	}
+}
+
+%languageSelectIcon {
+	position: absolute;
+	right: 34px;
+	width: 27px;
+	pointer-events: none;
+}
+
+%languageSelect {
+	width: 180px;
+	height: 26px;
+	background: var(--grey);
+	padding-left: 8px;
+	color: var(--white);
+	cursor: pointer;
+	font-size: 16px;
+	border-radius: 4px;
+}
