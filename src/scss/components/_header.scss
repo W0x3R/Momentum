@@ -61,6 +61,11 @@
 	&__controls {
 		@include flex($alignItems: center, $gap: 0 20px);
 		margin-bottom: 10px;
+		pointer-events: inherit;
+
+		& svg {
+			pointer-events: inherit;
+		}
 	}
 
 	&__controls-prev {

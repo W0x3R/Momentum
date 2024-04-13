@@ -7,6 +7,10 @@
 	color: var(--white);
 	transition: opacity 0.5s ease;
 
+	& svg {
+		pointer-events: inherit;
+	}
+
 	&__change-btn {
 		margin-bottom: 15px;
 		background: transparent;
