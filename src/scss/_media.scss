@@ -1,12 +1,9 @@
-@mixin hover {
+@mixin hoverOrActive {
 	@media (hover: hover) {
 		&:hover {
 			@content;
 		}
 	}
-}
-
-@mixin hover-none {
 	@media (hover: none) {
 		&:active {
 			@content;
