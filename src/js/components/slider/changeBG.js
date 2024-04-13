@@ -66,7 +66,7 @@ const changePexelsImages = () => {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
 			} else {
-				setErrorPopupClass('remove')
+				setErrorPopupClass('add')
 			}
 		});
 	}

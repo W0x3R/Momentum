@@ -341,7 +341,7 @@ const changePexelsImages = () => {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
 			} else {
-				(0,_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.setErrorPopupClass)('remove')
+				(0,_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.setErrorPopupClass)('add')
 			}
 		});
 	}
@@ -1462,7 +1462,7 @@ const clickEvents = {
 		(0,_slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__.setErrorPopupClass)('remove')
 	},
 	'.popup__shadow_show': () => {
-		closeErrorPopup('remove')
+		(0,_slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__.setErrorPopupClass)('remove')
 	},
 	'.settings__icon': () => {
 		(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_16__.setSettingsActiveStyles)('toggle'),

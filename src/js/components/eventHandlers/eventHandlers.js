@@ -32,7 +32,7 @@ export const clickEvents = {
 		setErrorPopupClass('remove')
 	},
 	'.popup__shadow_show': () => {
-		closeErrorPopup('remove')
+		setErrorPopupClass('remove')
 	},
 	'.settings__icon': () => {
 		setSettingsActiveStyles('toggle'),
