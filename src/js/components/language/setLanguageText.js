@@ -19,7 +19,7 @@ const languageDescriptionObj = {
 }
 
 export const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
-	selectLanguageChildrenArr[0].textContent = languageObj[valOne][valTwo]
-	selectLanguageChildrenArr[1].textContent = languageObj[valThree][valFour]
+	selectLanguageChildrenArr[0].label = languageObj[valOne][valTwo]
+	selectLanguageChildrenArr[1].label = languageObj[valThree][valFour]
 	languageDescription.textContent = languageDescriptionObj[lang]
 }

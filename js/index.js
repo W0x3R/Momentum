@@ -1267,8 +1267,8 @@ const languageDescriptionObj = {
 }
 
 const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
-	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[0].textContent = languageObj[valOne][valTwo]
-	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[1].textContent = languageObj[valThree][valFour]
+	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[0].label = languageObj[valOne][valTwo]
+	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[1].label = languageObj[valThree][valFour]
 	languageDescription.textContent = languageDescriptionObj[lang]
 }
 
