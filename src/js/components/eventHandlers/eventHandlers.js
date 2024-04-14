@@ -16,6 +16,9 @@ import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { displaySettings } from "../settings/displaySettings"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { setQuotesActiveStyles } from "../quotes/setQuotesActiveStyles"
+import { setStorageCheckedItems } from "../settings/localStorageSettingsShow"
+import { setCheckedInputsClick } from "../settings/setCheckedInputsClick"
+import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocksClick"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -45,6 +48,11 @@ export const clickEvents = {
 	'.quotes__change-btn': () => {
 		changeQuote()
 		setQuotesActiveStyles()
+	},
+	'.settings__show': (e) => {
+		setCheckedInputsClick(e)
+		hideCheckedBlocksClick(e)
+		setStorageCheckedItems()
 	}
 }
 

@@ -1412,6 +1412,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(45);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(25);
 /* harmony import */ var _quotes_setQuotesActiveStyles__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(46);
+/* harmony import */ var _settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(47);
+/* harmony import */ var _settings_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(48);
+/* harmony import */ var _settings_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(49);
+
+
+
 
 
 
@@ -1459,6 +1465,11 @@ const clickEvents = {
 	'.quotes__change-btn': () => {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_12__.changeQuote)()
 		;(0,_quotes_setQuotesActiveStyles__WEBPACK_IMPORTED_MODULE_17__.setQuotesActiveStyles)()
+	},
+	'.settings__show': (e) => {
+		(0,_settings_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_19__.setCheckedInputsClick)(e)
+		;(0,_settings_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_20__.hideCheckedBlocksClick)(e)
+		;(0,_settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_18__.setStorageCheckedItems)()
 	}
 }
 
@@ -2004,10 +2015,63 @@ const setQuotesActiveStyles = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStorageCheckedItems: function() { return /* binding */ getStorageCheckedItems; },
+/* harmony export */   setStorageCheckedItems: function() { return /* binding */ setStorageCheckedItems; },
+/* harmony export */   settingsShowInputs: function() { return /* binding */ settingsShowInputs; }
+/* harmony export */ });
+const settingsShowInputs = document.querySelectorAll('.settings__show input')
+
+const setStorageCheckedItems = () => {
+	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
+	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
+}
+
+const getStorageCheckedItems = () => JSON.parse(localStorage.getItem('indexOfCheckedInputs'))
+
+/***/ }),
+/* 48 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setCheckedInputsClick: function() { return /* binding */ setCheckedInputsClick; }
+/* harmony export */ });
+const setCheckedInputsClick = (e) => {
+	if (e.target.classList.contains('settings__show-label')) {
+		e.target.nextElementSibling.checked = e.target.nextElementSibling.checked ? false : true;
+	}
+}
+
+/***/ }),
+/* 49 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hideCheckedBlocksClick: function() { return /* binding */ hideCheckedBlocksClick; }
+/* harmony export */ });
+const forbiddenClasses = ['settings__show-title', 'settings__show', 'settings__show-inner']
+
+const hideCheckedBlocksClick = (e) => {
+	if (!forbiddenClasses.includes(e.target.className)) {
+		const dataShow = e.target.closest('[data-show]').dataset.show
+		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
+	}
+}
+
+/***/ }),
+/* 50 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkSelectedImagesSrc: function() { return /* binding */ checkSelectedImagesSrc; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48);
+/* harmony import */ var _setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 
 
 
@@ -2023,7 +2087,7 @@ const checkSelectedImagesSrc = () => {
 }
 
 /***/ }),
-/* 48 */
+/* 51 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2040,7 +2104,7 @@ const setSelectedImagesSrc = (num, value) => {
 
 
 /***/ }),
-/* 49 */
+/* 52 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2065,7 +2129,7 @@ const changeSelectedLanguageValue = () => {
 }
 
 /***/ }),
-/* 50 */
+/* 53 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2089,7 +2153,7 @@ const createPlayList = () => {
 }
 
 /***/ }),
-/* 51 */
+/* 54 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2101,6 +2165,43 @@ const popupBtn = document.querySelector('.popup__button')
 
 const controlPopupBtnHover = (value) => {
 	popupBtn.classList[value]('popup__button_hover')
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setCheckedInputsLoad: function() { return /* binding */ setCheckedInputsLoad; }
+/* harmony export */ });
+/* harmony import */ var _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47);
+
+
+const setCheckedInputsLoad = () => {
+	const checkedItems = (0,_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.getStorageCheckedItems)()
+	if (checkedItems) {
+		for (let i = 0; i < checkedItems.length; i++) {
+			_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[checkedItems[i]].checked = true;
+		}
+	}
+}
+
+/***/ }),
+/* 56 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   hideCheckedBlocksLoad: function() { return /* binding */ hideCheckedBlocksLoad; }
+/* harmony export */ });
+/* harmony import */ var _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47);
+
+
+const hideCheckedBlocksLoad = () => {
+	Array.from(_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__show_hide'))
 }
 
 /***/ })
@@ -2184,10 +2285,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date_time__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(26);
 /* harmony import */ var _components_date_date__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(27);
 /* harmony import */ var _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(28);
-/* harmony import */ var _components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(47);
-/* harmony import */ var _components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49);
+/* harmony import */ var _components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(50);
+/* harmony import */ var _components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(52);
 /* harmony import */ var _components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(44);
-/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(50);
+/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(53);
 /* harmony import */ var _components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(32);
 /* harmony import */ var _components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(33);
 /* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(29);
@@ -2197,8 +2298,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(37);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(40);
 /* harmony import */ var _components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(9);
-/* harmony import */ var _components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(51);
+/* harmony import */ var _components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(54);
 /* harmony import */ var _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(16);
+/* harmony import */ var _components_settings_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(55);
+/* harmony import */ var _components_settings_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(56);
+
+
 
 
 
@@ -2242,6 +2347,8 @@ setInterval(() => {
 ;(0,_components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_19__.changeBG)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.setVolumeBtnValue)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.getQueryInputValueLoad)()
+;(0,_components_settings_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_22__.setCheckedInputsLoad)()
+;(0,_components_settings_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_23__.hideCheckedBlocksLoad)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__.setStorageCity)()
@@ -2264,40 +2371,6 @@ window.addEventListener('input', (e) => (0,_components_eventHandlers_eventHandle
 window.addEventListener('change', (e) => (0,_components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_6__.callEvents)(e, _components_eventHandlers_eventHandlers_js__WEBPACK_IMPORTED_MODULE_6__.changeEvents))
 _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_21__.popup.addEventListener('mouseleave', () => (0,_components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__.controlPopupBtnHover)('add'))
 _components_slider_setErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_21__.popup.addEventListener('mouseenter', () => (0,_components_slider_controlPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_20__.controlPopupBtnHover)('remove'))
-
-
-const settingsShow = document.querySelector('.settings__show')
-const settingsShowInputs = document.querySelectorAll('.settings__show input')
-
-const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
-
-// if (!(JSON.parse(localStorage.getItem('indexOfCheckedInputs')))) {
-// 	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
-// }
-
-settingsShow.addEventListener('click', (e) => {
-	if (e.target.classList.contains('settings__show-label')) {
-		if (e.target.nextElementSibling.checked === true) {
-			e.target.nextElementSibling.checked = false
-		}
-		else {
-			e.target.nextElementSibling.checked = true
-		}
-	}
-	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show') && !e.target.classList.contains('settings__show-inner')) {
-		const dataShow = e.target.closest('[data-show]').dataset.show
-		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
-	}
-	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
-	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
-})
-
-for (let i = 0; i < JSON.parse(localStorage.getItem('indexOfCheckedInputs')).length; i++) {
-	settingsShowInputs[(JSON.parse(localStorage.getItem('indexOfCheckedInputs'))[i])].checked = true;
-}
-
-const r = Array.from(settingsShowInputs).filter(e => e.checked)
-r.map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__show_hide'))
 }();
 /******/ })()
 ;

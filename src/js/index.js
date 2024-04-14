@@ -20,6 +20,8 @@ import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeBG, setQueryValue } from './components/slider/changeBG.js'
 import { controlPopupBtnHover } from './components/slider/controlPopupBtnHover.js'
 import { popup } from './components/slider/setErrorPopupClass.js'
+import { setCheckedInputsLoad } from './components/settings/setCheckedInputsLoad.js'
+import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocksLoad.js'
 
 setInterval(() => {
 	showTime()
@@ -41,6 +43,8 @@ setQueryValue()
 changeBG()
 setVolumeBtnValue()
 getQueryInputValueLoad()
+setCheckedInputsLoad()
+hideCheckedBlocksLoad()
 
 window.addEventListener('beforeunload', () => {
 	setStorageCity()
@@ -63,37 +67,3 @@ window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
 popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
 popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
-
-
-const settingsShow = document.querySelector('.settings__show')
-const settingsShowInputs = document.querySelectorAll('.settings__show input')
-
-const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
-
-// if (!(JSON.parse(localStorage.getItem('indexOfCheckedInputs')))) {
-// 	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
-// }
-
-settingsShow.addEventListener('click', (e) => {
-	if (e.target.classList.contains('settings__show-label')) {
-		if (e.target.nextElementSibling.checked === true) {
-			e.target.nextElementSibling.checked = false
-		}
-		else {
-			e.target.nextElementSibling.checked = true
-		}
-	}
-	if (!e.target.classList.contains('settings__show-title') && !e.target.classList.contains('settings__show') && !e.target.classList.contains('settings__show-inner')) {
-		const dataShow = e.target.closest('[data-show]').dataset.show
-		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
-	}
-	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
-	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
-})
-
-for (let i = 0; i < JSON.parse(localStorage.getItem('indexOfCheckedInputs')).length; i++) {
-	settingsShowInputs[(JSON.parse(localStorage.getItem('indexOfCheckedInputs'))[i])].checked = true;
-}
-
-const r = Array.from(settingsShowInputs).filter(e => e.checked)
-r.map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__show_hide'))
