@@ -1,7 +1,5 @@
-import { setStorageLanguageDefault } from './components/language/localStorageLanguage.js'
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
-import { setStorageImagesSrcDefault } from './components/imagesSrc/localStorageImagesSrc.js'
 import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
@@ -45,8 +43,6 @@ setVolumeBtnValue()
 getQueryInputValueLoad()
 
 window.addEventListener('beforeunload', () => {
-	setStorageLanguageDefault()
-	setStorageImagesSrcDefault()
 	setStorageCity()
 	setQueryInputValueBeforeUnload()
 })
@@ -71,6 +67,12 @@ popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
 
 const settingsShow = document.querySelector('.settings__show')
 const settingsShowInputs = document.querySelectorAll('.settings__show input')
+
+const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
+
+// if (!(JSON.parse(localStorage.getItem('indexOfCheckedInputs')))) {
+// 	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
+// }
 
 settingsShow.addEventListener('click', (e) => {
 	if (e.target.classList.contains('settings__show-label')) {
