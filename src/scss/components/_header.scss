@@ -12,7 +12,7 @@
 	border-radius: 20px;
 	background: var(--black-background);
 	color: var(--white);
-	box-shadow: var(----blocks-box-shadow);
+	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
 	&__track-name {
@@ -48,7 +48,6 @@
 	&__progress {
 		@include sizes(100%, 6px);
 		background-color: var(--progress-bg);
-		cursor: pointer;
 
 		&::-webkit-progress-bar {
 			background-color: var(--progress-bg);
@@ -67,59 +66,27 @@
 		& svg {
 			pointer-events: inherit;
 		}
-	}
 
-	&__controls-prev {
-		@include sizes(36px, 36px);
-		opacity: 0.8;
-		transition: all 0.5s ease;
-
-		@include hoverOrActive {
-			opacity: 1;
-		}
-	}
-
-	&__controls-play {
-		@include sizes(46px, 46px);
-		opacity: 0.8;
-		transition: all 0.5s ease;
-
-		@include hoverOrActive {
-			opacity: 1;
-		}
-
-		&_active {
-			animation: turnAround 2s linear 0s infinite;
-		}
-	}
-
-	&__controls-next {
-		@include sizes(36px, 36px);
-		opacity: 0.8;
-		transition: all 0.5s ease;
-
-		@include hoverOrActive {
-			opacity: 1;
-		}
-	}
-
-	&__list {
-		@include flex($direction: column, $gap: 13px 0);
-
-		&-item {
-			position: relative;
-			opacity: 0.6;
-			cursor: pointer;
-			transition: all 0.5s ease;
-			letter-spacing: 1.6px;
-
-			&_active {
-				opacity: 1;
-				color: var(--white);
-			}
+		&-prev,
+		&-next {
+			@include sizes(36px, 36px);
+			@extend %playerOpacity;
 
 			@include hoverOrActive {
-				opacity: 0.8;
+				opacity: 1;
+			}
+		}
+
+		&-play {
+			@include sizes(46px, 46px);
+			@extend %playerOpacity;
+
+			@include hoverOrActive {
+				opacity: 1;
+			}
+
+			&_active {
+				animation: turnAround 2s linear 0s infinite;
 			}
 		}
 	}
@@ -132,8 +99,7 @@
 
 		&-mute {
 			@include sizes(20px, 20px);
-			opacity: 0.8;
-			transition: all 0.5s ease;
+			@extend %playerOpacity;
 
 			@include hoverOrActive {
 				opacity: 1;
@@ -142,12 +108,11 @@
 
 		&-volume {
 			@include sizes(80%, 18px);
-			opacity: 0.8;
+			@extend %playerOpacity;
 			border-radius: 4px;
 			appearance: none;
 			overflow: hidden;
 			cursor: pointer;
-			transition: all 0.5s ease;
 
 			&::-webkit-slider-thumb {
 				@include volumeThumb;
@@ -170,15 +135,32 @@
 			}
 		}
 	}
+
+	&__list {
+		@include flex($direction: column, $gap: 13px 0);
+
+		&-item {
+			position: relative;
+			@extend %playerOpacity;
+			cursor: pointer;
+			letter-spacing: 1.6px;
+
+			&_active {
+				opacity: 1;
+				color: var(--blue);
+			}
+
+			@include hoverOrActive {
+				opacity: 0.8;
+			}
+		}
+	}
 }
 
 .settings {
-	@include flex($direction: column, $alignItems: center);
-
 	&__icon {
 		@include flex($alignItems: center, $gap: 0 10px);
 		margin-bottom: 10px;
-		width: fit-content;
 		cursor: pointer;
 
 		@include hoverOrActive {
@@ -195,7 +177,8 @@
 		letter-spacing: 2.3px;
 		border-bottom: 3px solid var(--white);
 		transition: all 0.5s linear;
-		opacity: 0.7;
+		opacity: 0.8;
+		font-size: 18px;
 
 		&_active {
 			opacity: 1;
@@ -205,13 +188,14 @@
 
 	&__wrapper {
 		position: absolute;
-		left: calc(50% - 225px);
+		left: calc(50% - 240px);
 		top: 12%;
-		z-index: 2;
-		@include flex($direction: column, $justify: space-between, $gap: 20px 0);
-		align-self: flex-start;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		gap: 20px 0;
 		padding: 10px;
-		width: 450px;
+		width: 480px;
 		opacity: 0;
 		border: solid 1px rgb(138, 138, 138);
 		border-radius: 8px;
@@ -246,21 +230,21 @@
 	&__button {
 		@include sizes(32px, 32px);
 		transition:
-			transform 0.5s linear,
-			opacity 0.5s linear;
-		opacity: 0.7;
+			opacity 0.5s linear,
+			transform 0.4s linear;
+		opacity: 0.8;
 
 		&_active {
-			transform: rotate(90deg);
+			transform: rotate(180deg);
 			opacity: 1;
 		}
 	}
 
 	&__show {
 		&-title {
-			font-size: 16px;
+			font-size: 18px;
 			color: var(--white);
-			margin-bottom: 20px;
+			margin-bottom: 15px;
 			text-align: center;
 			pointer-events: none;
 		}
@@ -273,7 +257,6 @@
 				position: relative;
 				@include sizes(50px, 20px);
 				appearance: none;
-				outline: none;
 				background-color: var(--grey);
 				border-radius: 20px;
 				transition: 0.5s;
@@ -307,9 +290,10 @@
 
 		&-label {
 			width: 100%;
+			padding: 11px 6px;
 			cursor: pointer;
-			padding: 10px 5px;
 			color: var(--white);
+			@extend %settingsDescriptionFont;
 		}
 
 		&_hide {
@@ -321,7 +305,7 @@
 
 .language {
 	&__description {
-		font-size: 15px;
+		@extend %settingsDescriptionFont;
 	}
 	&__inner {
 		@extend %languageSelectWrapper;
@@ -353,7 +337,7 @@
 	@extend %languageSelectWrapper;
 
 	&__description {
-		font-size: 15px;
+		@extend %settingsDescriptionFont;
 	}
 
 	&__select {
@@ -371,7 +355,7 @@
 	}
 
 	&__label {
-		font-size: 15px;
+		@extend %settingsDescriptionFont;
 	}
 
 	&__input {
@@ -386,7 +370,7 @@
 	max-width: 283px;
 	min-height: 180px;
 	border-radius: 21px;
-	height: 204px;
+	height: fit-content;
 	background: var(--black-background);
 	color: var(--white);
 	font-size: 17px;
