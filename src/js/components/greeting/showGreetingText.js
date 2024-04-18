@@ -8,8 +8,8 @@ const greetingObj = {
 
 export const showGreetingText = () => {
 	const currLang = getStorageLanguage()
-	const currTime = new Date().getHours();
-	const greeting = greetingObj[currLang][Math.floor(currTime / 6)]
+	const currHour = new Date().getHours();
+	const greeting = greetingObj[currLang][Math.floor(currHour / 6)]
 	greetingText.textContent = greeting
 	return greeting
 }

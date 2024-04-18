@@ -1054,8 +1054,8 @@ const greetingObj = {
 
 const showGreetingText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
-	const currTime = new Date().getHours();
-	const greeting = greetingObj[currLang][Math.floor(currTime / 6)]
+	const currHour = new Date().getHours();
+	const greeting = greetingObj[currLang][Math.floor(currHour / 6)]
 	greetingText.textContent = greeting
 	return greeting
 }
