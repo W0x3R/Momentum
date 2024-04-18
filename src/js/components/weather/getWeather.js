@@ -5,7 +5,7 @@ import { setWeatherErrorText } from "./setWeatherText"
 
 export const weatherCityInput = document.querySelector('.weather__input')
 
-export async function getWeather() {
+export const getWeather = async () => {
 	try {
 		const currLang = getStorageLanguage()
 		const weatherCityValue = String(weatherCityInput.value).trim()

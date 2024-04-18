@@ -1,7 +1,7 @@
 let seconds;
 let minutes;
 
-export function getSongTimeCode(num) {
+export const getSongTimeCode = (num) => {
 	seconds = parseInt(num);
 	minutes = parseInt(seconds / 60);
 	seconds -= minutes * 60;

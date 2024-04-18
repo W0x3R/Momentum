@@ -67,7 +67,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const weatherCityInput = document.querySelector('.weather__input')
 
-async function getWeather() {
+const getWeather = async () => {
 	try {
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 		const weatherCityValue = String(weatherCityInput.value).trim()
@@ -1697,7 +1697,7 @@ __webpack_require__.r(__webpack_exports__);
 let seconds;
 let minutes;
 
-function getSongTimeCode(num) {
+const getSongTimeCode = (num) => {
 	seconds = parseInt(num);
 	minutes = parseInt(seconds / 60);
 	seconds -= minutes * 60;
@@ -1944,7 +1944,7 @@ __webpack_require__.r(__webpack_exports__);
 const quote = document.querySelector('.quotes__text')
 const author = document.querySelector('.quotes__author')
 
-function showQuote(data) {
+const showQuote = (data) => {
 	const randomNum = (0,_slider_getRandomNum__WEBPACK_IMPORTED_MODULE_0__.getRandomNum)(0, data.length - 1)
 	quote.textContent = data[randomNum].quote
 	author.textContent = data[randomNum].author
