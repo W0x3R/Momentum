@@ -34,7 +34,7 @@ export const clickEvents = {
 	'.popup__button': () => {
 		setErrorPopupClass('remove')
 	},
-	'.popup__shadow_show': () => {
+	'.popup__shadow_show-slider': () => {
 		setErrorPopupClass('remove')
 	},
 	'.settings__icon': () => {

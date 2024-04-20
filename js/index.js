@@ -1113,7 +1113,7 @@ const popupShadow = document.querySelector('.popup__shadow')
 
 const setErrorPopupClass = (value) => {
 	popup.classList[value]('popup_show')
-	popupShadow.classList[value]('popup__shadow_show')
+	popupShadow.classList[value]('popup__shadow_show-slider')
 	_changeBG__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
@@ -1451,7 +1451,7 @@ const clickEvents = {
 	'.popup__button': () => {
 		(0,_slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__.setErrorPopupClass)('remove')
 	},
-	'.popup__shadow_show': () => {
+	'.popup__shadow_show-slider': () => {
 		(0,_slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_13__.setErrorPopupClass)('remove')
 	},
 	'.settings__icon': () => {
