@@ -490,9 +490,10 @@
 }
 
 .weather {
-	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 6px 0);
+	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 8px 0);
 	padding: 5px;
 	border-radius: 21px;
+	max-width: 260px;
 	height: fit-content;
 	background: var(--black-background);
 	color: var(--white);
