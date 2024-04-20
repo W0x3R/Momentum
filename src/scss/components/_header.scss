@@ -7,7 +7,7 @@
 	@include flex($direction: column, $justify: flex-start, $alignItems: center);
 	z-index: 1;
 	padding: 10px 15px;
-	min-width: 300px;
+	min-width: 290px;
 	height: fit-content;
 	border-radius: 20px;
 	background: var(--black-background);
