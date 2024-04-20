@@ -2,6 +2,16 @@
 	position: absolute;
 	bottom: 13px;
 	user-select: none;
+
+	@include tablet {
+		bottom: 11px;
+	}
+	@include mobile {
+		bottom: 9px;
+	}
+	@include smallMobile {
+		bottom: 7px;
+	}
 }
 
 %flexCenter {
@@ -12,7 +22,7 @@
 
 %languageSelectWrapper {
 	position: relative;
-	line-height: 1.6;
+	line-height: 26px;
 	overflow: hidden;
 
 	&:hover::after {
@@ -24,36 +34,76 @@
 		position: absolute;
 		top: 0;
 		right: 0;
-		padding: 0 6px;
+		padding-inline: 6px;
 		background: var(--black-background);
 		cursor: pointer;
 		pointer-events: none;
 		transition: 0.25s color ease;
 		color: var(--white);
+
+		@include mobile {
+			top: 2px;
+			line-height: 23px;
+			padding-inline: 4px;
+		}
+
+		@include smallMobile {
+			top: 0px;
+			line-height: 28px;
+			padding-inline: 6px;
+		}
 	}
 }
 
 %languageSelectIcon {
 	position: absolute;
 	right: 34px;
-	width: 27px;
+	width: 26px;
+	height: 26px;
 	pointer-events: none;
+
+	@include mobile {
+		@include sizes(22px, 22px);
+		top: calc(50% - 11px);
+	}
+
+	@include smallMobile {
+		right: 38px;
+		top: calc(50% - 13.5px);
+		@include sizes(27px, 27px);
+	}
 }
 
 %languageSelect {
-	width: 180px;
-	height: 26px;
+	@include sizes(180px, 26px);
 	background: var(--grey);
 	padding-left: 8px;
 	color: var(--white);
 	cursor: pointer;
 	font-size: 16px;
 	border-radius: 4px;
+
+	@include mobile {
+		@include sizes(150px, 22px);
+		font-size: 13px;
+	}
+
+	@include smallMobile {
+		@include sizes(210px, 27px);
+		font-size: 15px;
+	}
 }
 
 %settingsDescriptionFont {
 	font-size: 16px;
 	letter-spacing: 0.5px;
+
+	@include mobile {
+		font-size: 13px;
+	}
+	@include smallMobile {
+		font-size: 15px;
+	}
 }
 
 %playerOpacity {

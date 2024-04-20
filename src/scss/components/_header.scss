@@ -15,11 +15,24 @@
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
+	@include tablet {
+		padding: 5px 10px;
+		min-width: 270px;
+	}
+
+	@include mobile {
+		min-width: 195px;
+	}
+
+	@include smallMobile {
+		min-width: 165px;
+	}
+
 	&__track-name {
-		margin-bottom: 17px;
+		margin-bottom: clamp(7px, 1.8vw, 17px);
 		opacity: 0.8;
 		user-select: none;
-		font-size: 18px;
+		font-size: clamp(11px, 2vw, 18px);
 
 		&_active {
 			opacity: 1;
@@ -29,9 +42,9 @@
 
 	&__progress-wrapper {
 		position: relative;
-		margin-bottom: 10px;
+		margin-bottom: clamp(5px, 0.9vw, 10px);
 		width: 100%;
-		font-size: 14px;
+		font-size: clamp(7px, 1.3vw, 14px);
 		letter-spacing: 1.8px;
 	}
 
@@ -49,6 +62,10 @@
 		@include sizes(100%, 6px);
 		background-color: var(--progress-bg);
 
+		@include tablet {
+			height: 4px;
+		}
+
 		&::-webkit-progress-bar {
 			background-color: var(--progress-bg);
 		}
@@ -60,8 +77,16 @@
 
 	&__controls {
 		@include flex($alignItems: center, $gap: 0 20px);
-		margin-bottom: 10px;
+		margin-bottom: clamp(5px, 1vw, 10px);
 		pointer-events: inherit;
+
+		@include tablet {
+			gap: 0 13px;
+		}
+
+		@include mobile {
+			gap: 0 8px;
+		}
 
 		& svg {
 			pointer-events: inherit;
@@ -69,7 +94,7 @@
 
 		&-prev,
 		&-next {
-			@include sizes(36px, 36px);
+			@include sizes(clamp(22px, 4vw, 36px), clamp(22px, 4vw, 36px));
 			@extend %playerOpacity;
 
 			@include hoverOrActive {
@@ -78,7 +103,7 @@
 		}
 
 		&-play {
-			@include sizes(46px, 46px);
+			@include sizes(clamp(32px, 5vw, 46px), clamp(32px, 5vw, 46px));
 			@extend %playerOpacity;
 
 			@include hoverOrActive {
@@ -94,11 +119,11 @@
 	&__sounds {
 		@extend %flexCenter;
 		gap: 0 10px;
-		margin-bottom: 15px;
+		margin-bottom: clamp(8px, 1.5vw, 15px);
 		width: 100%;
 
 		&-mute {
-			@include sizes(20px, 20px);
+			@include sizes(clamp(14px, 2vw, 20px), clamp(14px, 2vw, 20px));
 			@extend %playerOpacity;
 
 			@include hoverOrActive {
@@ -113,6 +138,10 @@
 			appearance: none;
 			overflow: hidden;
 			cursor: pointer;
+
+			@include mobile {
+				height: 14px;
+			}
 
 			&::-webkit-slider-thumb {
 				@include volumeThumb;
@@ -139,11 +168,19 @@
 	&__list {
 		@include flex($direction: column, $gap: 13px 0);
 
+		@include mobile {
+			gap: 9px 0;
+		}
+		@include smallMobile {
+			gap: 7px 0;
+		}
+
 		&-item {
 			position: relative;
 			@extend %playerOpacity;
 			cursor: pointer;
-			letter-spacing: 1.6px;
+			letter-spacing: clamp(1.2px, 0.16vw, 1.6px);
+			font-size: clamp(9px, 1.7vw, 16px);
 
 			&_active {
 				opacity: 1;
@@ -160,8 +197,11 @@
 .settings {
 	&__icon {
 		@include flex($alignItems: center, $gap: 0 10px);
-		margin-bottom: 10px;
 		cursor: pointer;
+
+		@include mobile {
+			gap: 0 5px;
+		}
 
 		@include hoverOrActive {
 			.settings__button,
@@ -172,13 +212,17 @@
 	}
 
 	&__title {
-		padding-bottom: 4px;
+		padding-bottom: clamp(2px, 0.4vw, 4px);
 		color: var(--white);
 		letter-spacing: 2.3px;
 		border-bottom: 3px solid var(--white);
 		transition: all 0.5s linear;
 		opacity: 0.8;
-		font-size: 18px;
+		font-size: clamp(14px, 1.8vw, 18px);
+
+		@include smallMobile {
+			display: none;
+		}
 
 		&_active {
 			opacity: 1;
@@ -186,15 +230,34 @@
 		}
 	}
 
+	&__button {
+		@include sizes(clamp(22px, 3.2vw, 32px), clamp(22px, 3.2vw, 32px));
+		transition:
+			opacity 0.5s linear,
+			transform 0.4s linear;
+		opacity: 0.8;
+
+		@include mobile {
+			right: -30px;
+			top: -27px;
+			@include sizes(26px, 26px);
+		}
+
+		&_active {
+			transform: rotate(180deg);
+			opacity: 1;
+		}
+	}
+
 	&__wrapper {
 		position: absolute;
 		left: calc(50% - 240px);
-		top: 12%;
+		top: calc(50% - 209.45px);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 20px 0;
-		padding: 10px;
+		padding: 10px 10px 0;
 		width: 480px;
 		opacity: 0;
 		border: solid 1px rgb(138, 138, 138);
@@ -203,6 +266,21 @@
 		background: rgb(54, 54, 54);
 		transition: opacity 0.5s ease;
 
+		@include mobile {
+			left: calc(50% - 207.5px);
+			top: calc(50% - 177.75px);
+			gap: 14px 0;
+			padding: 7px 7px 0;
+			width: 415px;
+		}
+
+		@include smallMobile {
+			left: calc(50% - 127.5px);
+			top: calc(50% - 217.5px);
+			width: 255px;
+			padding: 4px 4px 0;
+		}
+
 		&_show {
 			opacity: 1;
 			pointer-events: auto;
@@ -210,11 +288,21 @@
 	}
 
 	&__close-button {
-		@include closeButton(28px, 28px, 18px);
+		@include closeButton(30px, 30px, 20px);
+		@include mobile {
+			right: -31px;
+			top: -30px;
+			@include sizes(26px, 26px);
+			font-size: 16px;
+		}
 	}
 
 	&__inner {
 		@include flex($justify: space-between, $alignItems: center);
+
+		@include smallMobile {
+			flex-direction: column;
+		}
 
 		& span {
 			color: var(--white);
@@ -227,26 +315,22 @@
 		}
 	}
 
-	&__button {
-		@include sizes(32px, 32px);
-		transition:
-			opacity 0.5s linear,
-			transform 0.4s linear;
-		opacity: 0.8;
-
-		&_active {
-			transform: rotate(180deg);
-			opacity: 1;
-		}
-	}
-
 	&__show {
 		&-title {
+			margin-bottom: 13px;
 			font-size: 18px;
 			color: var(--white);
-			margin-bottom: 15px;
 			text-align: center;
 			pointer-events: none;
+
+			@include mobile {
+				margin-bottom: 10px;
+				font-size: 16px;
+			}
+
+			@include smallMobile {
+				margin-bottom: 8px;
+			}
 		}
 
 		&-inner {
@@ -255,20 +339,35 @@
 
 			& > input[type='checkbox'] {
 				position: relative;
-				@include sizes(50px, 20px);
+				@include sizes(56px, 22px);
 				appearance: none;
 				background-color: var(--grey);
 				border-radius: 20px;
 				transition: 0.5s;
 				cursor: pointer;
 				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+
+				@include mobile {
+					@include sizes(46px, 18px);
+				}
+				@include smallMobile {
+					@include sizes(56px, 19px);
+				}
 			}
 			& > input:checked[type='checkbox'] {
 				background-color: var(--blue);
 			}
 
 			& > input:checked[type='checkbox']::before {
-				left: 25px;
+				left: 28px;
+
+				@include mobile {
+					left: 23px;
+				}
+
+				@include smallMobile {
+					left: 28px;
+				}
 			}
 
 			& > input[type='checkbox']:before {
@@ -276,11 +375,19 @@
 				position: absolute;
 				left: 0;
 				top: 0;
-				@include sizes(20px, 20px);
+				@include sizes(22px, 22px);
 				border-radius: 20px;
 				background-color: var(--white);
 				transform: scale(1.2);
 				transition: 0.5s;
+
+				@include mobile {
+					@include sizes(18px, 18px);
+				}
+
+				@include smallMobile {
+					@include sizes(19px, 19px);
+				}
 			}
 
 			@include hoverOrActive {
@@ -289,11 +396,19 @@
 		}
 
 		&-label {
+			@extend %settingsDescriptionFont;
+			padding: 10px 6px;
 			width: 100%;
-			padding: 11px 6px;
 			cursor: pointer;
 			color: var(--white);
-			@extend %settingsDescriptionFont;
+
+			@include mobile {
+				padding: 9px 4px;
+			}
+
+			@include smallMobile {
+				padding-block: 8px;
+			}
 		}
 
 		&_hide {
@@ -306,6 +421,9 @@
 .language {
 	&__description {
 		@extend %settingsDescriptionFont;
+		@include smallMobile {
+			margin-bottom: 8px;
+		}
 	}
 	&__inner {
 		@extend %languageSelectWrapper;
@@ -338,6 +456,9 @@
 
 	&__description {
 		@extend %settingsDescriptionFont;
+		@include smallMobile {
+			margin-bottom: 8px;
+		}
 	}
 
 	&__select {
@@ -356,6 +477,9 @@
 
 	&__label {
 		@extend %settingsDescriptionFont;
+		@include smallMobile {
+			margin-bottom: 8px;
+		}
 	}
 
 	&__input {
@@ -367,15 +491,21 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 6px 0);
 	padding: 5px;
-	max-width: 283px;
-	min-height: 180px;
 	border-radius: 21px;
 	height: fit-content;
 	background: var(--black-background);
 	color: var(--white);
-	font-size: 17px;
+	font-size: clamp(9px, 1.7vw, 17px);
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
+
+	@include mobile {
+		max-width: 140px;
+	}
+
+	@include smallMobile {
+		max-width: 120px;
+	}
 
 	&:focus-within .weather__icon {
 		animation: shake 2s infinite;
@@ -388,23 +518,29 @@
 	}
 
 	&__input {
-		padding: 5px;
-		line-height: 24px;
+		padding: clamp(2px, 0.4vw, 5px);
+		line-height: clamp(18px, 2.4vw, 24px);
 		color: var(--white);
-		border-bottom: 1px solid var(--white);
 		background-color: transparent;
-		font-size: 22px;
+		font-size: clamp(13px, 1.7vw, 22px);
 		letter-spacing: 2px;
 		text-align: center;
 
-		&:focus {
-			border-bottom-color: var(--blue);
+		&:focus + .weather__hr {
+			border-color: var(--blue);
 		}
 	}
 
+	&__hr {
+		margin: 0;
+		margin-top: -7px;
+		width: 100%;
+	}
+
 	&__icon {
-		font-size: 42px;
+		font-size: clamp(28px, 4.2vw, 42px);
 		color: var(--white);
+		height: clamp(21px, 3.2vw, 32px);
 	}
 
 	&__temperature,
