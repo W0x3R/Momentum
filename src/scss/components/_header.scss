@@ -195,6 +195,7 @@
 }
 
 .settings {
+	z-index: 2;
 	&__icon {
 		@include flex($alignItems: center, $gap: 0 10px);
 		cursor: pointer;

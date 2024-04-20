@@ -1103,6 +1103,7 @@ const translateGreeting = (greetingText) => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   popup: function() { return /* binding */ popup; },
+/* harmony export */   popupShadow: function() { return /* binding */ popupShadow; },
 /* harmony export */   setErrorPopupClass: function() { return /* binding */ setErrorPopupClass; }
 /* harmony export */ });
 /* harmony import */ var _changeBG__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
@@ -1985,10 +1986,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   displaySettings: function() { return /* binding */ displaySettings; }
 /* harmony export */ });
+/* harmony import */ var _slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+
+
 const settingsWrapper = document.querySelector('.settings__wrapper')
 
 const displaySettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
+	_slider_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__.popupShadow.classList[value]('popup__shadow_show-settings')
 }
 
 /***/ }),
