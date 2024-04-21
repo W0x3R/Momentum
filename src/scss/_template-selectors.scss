@@ -1,16 +1,16 @@
 %trackTime {
 	position: absolute;
-	bottom: 13px;
+	top: 15px;
 	user-select: none;
 
 	@include tablet {
-		bottom: 11px;
+		top: 13px;
 	}
 	@include mobile {
-		bottom: 9px;
+		top: 11px;
 	}
 	@include smallMobile {
-		bottom: 7px;
+		top: 9px;
 	}
 }
 

@@ -29,7 +29,7 @@
 	}
 
 	&__track-name {
-		margin-bottom: clamp(7px, 1.8vw, 20px);
+		margin-bottom: 4px;
 		opacity: 0.8;
 		user-select: none;
 		font-size: clamp(11px, 2vw, 18px);
@@ -44,7 +44,7 @@
 		position: relative;
 		margin-bottom: clamp(5px, 0.9vw, 10px);
 		width: 100%;
-		font-size: clamp(7px, 1.3vw, 14px);
+		font-size: clamp(7px, 1.3vw, 12px);
 		letter-spacing: 1.8px;
 	}
 
@@ -76,7 +76,7 @@
 	}
 
 	&__controls {
-		@include flex($alignItems: center, $gap: 0 20px);
+		@include flex($alignItems: center, $gap: 0 15px);
 		margin-bottom: clamp(5px, 0.8vw, 8px);
 		pointer-events: inherit;
 
