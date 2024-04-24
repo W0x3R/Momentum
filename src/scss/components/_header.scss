@@ -317,7 +317,7 @@
 		}
 
 		@include tablet {
-			font-size: 16px;
+			font-size: 15px;
 		}
 
 		@include mobile {
@@ -342,7 +342,7 @@
 		}
 
 		@include tablet {
-			@include sizes(26px, 26px);
+			@include sizes(25px, 25px);
 		}
 
 		&_active {
@@ -603,7 +603,7 @@
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
 	border-radius: 21px;
-	max-width: 260px;
+	max-width: 282px;
 	height: fit-content;
 	background: var(--black-background);
 	color: var(--white);
@@ -617,12 +617,12 @@
 
 	@include tablet {
 		gap: 8px 0;
-		max-width: 218px;
+		max-width: 224px;
 		font-size: 13px;
 	}
 
 	@include mobile {
-		max-width: 194px;
+		max-width: 199px;
 		font-size: 12px;
 		letter-spacing: 0.6px;
 	}
@@ -646,7 +646,8 @@
 	}
 
 	&__input {
-		padding: 5px;
+		padding-bottom: 5px;
+		max-width: 250px;
 		color: var(--white);
 		background-color: transparent;
 		font-size: 22px;
@@ -654,20 +655,23 @@
 		text-align: center;
 
 		@include desktop {
-			padding: 2px;
+			max-width: 240px;
 			font-size: 20px;
 		}
 
 		@include tablet {
+			max-width: 200px;
 			font-size: 18px;
 		}
 
 		@include mobile {
+			max-width: 180px;
 			font-size: 16px;
 		}
 
 		@include smallMobile {
-			font-size: 15px;
+			max-width: 148px;
+			font-size: 14px;
 		}
 
 		&:focus + .weather__hr {
