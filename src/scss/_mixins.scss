@@ -14,13 +14,14 @@
 
 @mixin closeButton($width, $height, $fs) {
 	position: absolute;
-	right: -35px;
-	top: -33px;
+	right: -46px;
+	top: -40px;
 	@include sizes($width, $height);
 	background: var(--white);
 	border-radius: 25%;
 	cursor: pointer;
 	font-size: $fs;
+	font-weight: bold;
 	transition: 0.3s ease;
 	color: var(--black);
 
@@ -43,7 +44,7 @@
 	box-shadow: calc(-100vmax - 17.77px) 0 0 100vmax var(--blue);
 	clip-path: polygon(100% 0, 2px 0, 0 7px, -100vmax 7px, -100vmax 11px, 0 11px, 2px 100%, 100% 100%);
 
-	@include mobile {
+	@include tablet {
 		@include sizes(13px, 13px);
 		margin-top: -4.5px;
 		box-shadow: calc(-100vmax - 12.9px) 0 0 100vmax var(--blue);
