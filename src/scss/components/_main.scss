@@ -1,9 +1,13 @@
 .main {
 	position: relative;
-	bottom: 45px;
+	bottom: 60px;
 	@extend %flexCenter;
 	flex-direction: column;
 	flex: 1;
+
+	@include desktop {
+		bottom: 16px;
+	}
 
 	&__button {
 		position: absolute;
@@ -14,10 +18,18 @@
 
 		&_prev {
 			left: 4%;
+
+			@include smallMobile {
+				left: 1%;
+			}
 		}
 
 		&_next {
 			right: 4%;
+
+			@include smallMobile {
+				right: 1%;
+			}
 		}
 	}
 }
@@ -26,20 +38,55 @@
 	user-select: none;
 
 	&__time {
-		padding: 10px;
-		margin-bottom: 12px;
+		padding: 6px;
+		margin-bottom: 4px;
 		border-radius: 15px;
 		font-size: 100px;
 		color: var(--white);
 		background: var(--black-background);
 		transition: opacity 0.5s ease;
+
+		@include desktop {
+			font-size: 92px;
+		}
+
+		@include tablet {
+			font-size: 82px;
+		}
+
+		@include mobile {
+			font-size: 74px;
+			margin-bottom: 2px;
+		}
+
+		@include smallMobile {
+			font-size: 66px;
+		}
 	}
 
 	&__date {
-		margin-bottom: 15px;
+		margin-bottom: 12px;
 		font-size: 26px;
 		color: var(--white);
 		transition: opacity 0.5s ease;
+
+		@include desktop {
+			font-size: 24px;
+			margin-bottom: 8px;
+		}
+
+		@include tablet {
+			font-size: 20px;
+		}
+
+		@include mobile {
+			font-size: 15px;
+		}
+
+		@include smallMobile {
+			margin-bottom: 6px;
+			font-size: 14px;
+		}
 
 		&::first-letter {
 			text-transform: uppercase;
@@ -53,6 +100,22 @@
 	font-size: 38px;
 	transition: opacity 0.5s ease;
 
+	@include desktop {
+		font-size: 36px;
+	}
+
+	@include tablet {
+		font-size: 28px;
+	}
+
+	@include mobile {
+		font-size: 23px;
+	}
+
+	@include smallMobile {
+		font-size: 20px;
+	}
+
 	&__text {
 		color: var(--white);
 		text-align: right;
@@ -65,6 +128,7 @@
 		background: transparent;
 		color: var(--white);
 		text-align: left;
+		letter-spacing: -0.6px;
 
 		&::placeholder {
 			color: rgb(200, 200, 200);
