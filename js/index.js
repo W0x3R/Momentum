@@ -1194,8 +1194,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const greetingObj = {
-	en: '[Enter your name]',
-	ru: '[Введите ваше имя]'
+	en: '[Enter name]',
+	ru: '[Введите имя]'
 }
 
 const setPlaceholderText = (lang) => {

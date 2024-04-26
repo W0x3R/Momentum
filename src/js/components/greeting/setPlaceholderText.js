@@ -1,8 +1,8 @@
 import { greetingName } from "./localStorageGreeting"
 
 const greetingObj = {
-	en: '[Enter your name]',
-	ru: '[Введите ваше имя]'
+	en: '[Enter name]',
+	ru: '[Введите имя]'
 }
 
 export const setPlaceholderText = (lang) => {
