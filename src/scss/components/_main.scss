@@ -47,7 +47,7 @@
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			font-size: 92px;
+			font-size: 90px;
 		}
 
 		@include tablet {
@@ -71,7 +71,7 @@
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			font-size: 24px;
+			font-size: 22px;
 			margin-bottom: 8px;
 		}
 
@@ -80,12 +80,8 @@
 		}
 
 		@include mobile {
-			font-size: 15px;
-		}
-
-		@include smallMobile {
 			margin-bottom: 6px;
-			font-size: 14px;
+			font-size: 16px;
 		}
 
 		&::first-letter {
@@ -101,7 +97,7 @@
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		font-size: 36px;
+		font-size: 34px;
 	}
 
 	@include tablet {
@@ -109,11 +105,11 @@
 	}
 
 	@include mobile {
-		font-size: 23px;
+		font-size: 24px;
 	}
 
 	@include smallMobile {
-		font-size: 20px;
+		font-size: 22px;
 	}
 
 	&__text {
