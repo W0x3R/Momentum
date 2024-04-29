@@ -1,0 +1,37 @@
+
+import { showGreetingText } from "../greeting/showGreetingText";
+import { getStorageLanguage } from "../language/localStorageLanguage";
+import { translateGreeting } from "../slider/translateGreeting"
+import { setErrorPopupClass } from "../slider/setErrorPopupClass";
+import { getQueryInputValueLoad, setNumPicturePexels } from '../slider/localStorageSlider'
+import { changePexelsImages } from "../slider/changeBG";
+
+
+export const queryInput = document.querySelector('.query__input')
+const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
+export let query;
+
+const forbiddenSymbols = ['#', '%', '&', '+', ';']
+
+export const setQueryValue = () => {
+	const queryValue = getQueryInputValueLoad()
+	const currLang = getStorageLanguage()
+	if (queryValue) {
+		query = queryValue
+	} else {
+		query = currLang === 'ru' ? translateGreeting(greetingText) : greetingText
+	}
+}
+
+export const changeQueryInput = () => {
+	const queryInputValue = String(queryInput.value.trim())
+	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
+	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
+		setErrorPopupClass('add')
+		return
+	}
+	query = queryInputValue
+	queryInput.value = queryInputValue
+	setNumPicturePexels(0)
+	changePexelsImages()
+}

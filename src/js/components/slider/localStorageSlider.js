@@ -1,4 +1,4 @@
-import { queryInput } from "./changeBG";
+import { queryInput } from "../query/queryValues"
 
 export const getQueryInputValueLoad = () => {
 	queryInput.value = localStorage.getItem('queryInputValue')

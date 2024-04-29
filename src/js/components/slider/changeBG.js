@@ -1,47 +1,19 @@
 import { createClient } from 'pexels';
-import { showGreetingText } from "../greeting/showGreetingText"
-import { getStorageLanguage } from "../language/localStorageLanguage"
+import { query } from '../query/queryValues';
+import { getStorageLanguage } from '../language/localStorageLanguage';
 import { getRandomNum } from "./getRandomNum"
-import { translateGreeting } from "./translateGreeting"
-import { setErrorPopupClass } from './setErrorPopupClass';
-import { getQueryInputValueLoad, getNumPicturePexels, setNumPicturePexels } from './localStorageSlider'
 import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
+import { showGreetingText } from '../greeting/showGreetingText';
+import { getNumPicturePexels, setNumPicturePexels } from './localStorageSlider';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-export const body = document.body
-const queryWrapper = document.querySelector('.query')
-export const queryInput = document.querySelector('.query__input')
-const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
-let query;
 const image = new Image();
 const MAX_GITHUB_IMAGES = 20;
 let MAX_PEXELS_IMAGES;
 let randomNumGithub = getRandomNum(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
-const forbiddenSymbols = ['#', '%', '&', '+', ';']
-
-export const setQueryValue = () => {
-	const queryValue = getQueryInputValueLoad()
-	const currLang = getStorageLanguage()
-	if (queryValue) {
-		query = queryValue
-	} else {
-		query = currLang === 'ru' ? translateGreeting(greetingText) : greetingText
-	}
-}
-
-export const changeQueryInput = () => {
-	const queryInputValue = String(queryInput.value.trim())
-	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
-	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
-		setErrorPopupClass('add')
-		return
-	}
-	query = queryInputValue
-	queryInput.value = queryInputValue
-	setNumPicturePexels(0)
-	changePexelsImages()
-}
+const queryWrapper = document.querySelector('.query')
+export const body = document.body
 
 const changeGithubImages = () => {
 	const imagesSrc = getStorageImagesSrc()
@@ -56,7 +28,7 @@ const changeGithubImages = () => {
 	}
 }
 
-const changePexelsImages = () => {
+export const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	const pexelsNumb = getNumPicturePexels()
 	if (imagesSrc === 'pexels') {
@@ -103,7 +75,7 @@ export const changeBGOnClick = (direction) => {
 	}
 	else if (imagesSrc === 'pexels' && isAnimate) {
 		isAnimate = false
-		direction === 'prev' ? pexelsNumb <= 0 ? setNumPicturePexels(MAX_PEXELS_IMAGES) : setNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setNumPicturePexels(pexelsNumb) : setNumPicturePexels(++pexelsNumb)
+		direction === 'prev' ? pexelsNumb <= 0 ? setNumPicturePexels(MAX_PEXELS_IMAGES) : setNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setNumPicturePexels(0) : setNumPicturePexels(++pexelsNumb)
 		changePexelsImages()
 		setTimeout(() => {
 			isAnimate = true
