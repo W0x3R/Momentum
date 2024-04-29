@@ -1,6 +1,6 @@
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
 import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
-import { setQueryInputValueBeforeUnload, getQueryInputValueLoad } from './components/slider/localStorageSlider.js'
+import { setStorageQueryInputValueUnload, getStorageQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
@@ -43,13 +43,13 @@ getStorageGreetingName()
 setQueryValue()
 changeBG()
 setVolumeBtnValue()
-getQueryInputValueLoad()
+getStorageQueryInputValueLoad()
 setCheckedInputsLoad()
 hideCheckedBlocksLoad()
 
 window.addEventListener('beforeunload', () => {
 	setStorageCity()
-	setQueryInputValueBeforeUnload()
+	setStorageQueryInputValueUnload()
 })
 
 audio.addEventListener('timeupdate', function (e) {

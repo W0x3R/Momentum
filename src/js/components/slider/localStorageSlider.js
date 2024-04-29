@@ -1,17 +1,17 @@
 import { queryInput } from "../query/queryValues"
 
-export const getQueryInputValueLoad = () => {
+export const getStorageQueryInputValueLoad = () => {
 	queryInput.value = localStorage.getItem('queryInputValue')
 	return localStorage.getItem('queryInputValue')
 }
 
-export const setQueryInputValueBeforeUnload = () => {
+export const setStorageQueryInputValueUnload = () => {
 	const queryInputValue = String(queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
 }
 
-export const getNumPicturePexels = () => +localStorage.getItem('pexelsNum')
+export const getStorageNumPicturePexels = () => +localStorage.getItem('pexelsNum')
 
-export const setNumPicturePexels = (value) => {
+export const setStorageNumPicturePexels = (value) => {
 	localStorage.setItem('pexelsNum', value)
 }

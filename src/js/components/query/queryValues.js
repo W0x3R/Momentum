@@ -3,9 +3,8 @@ import { showGreetingText } from "../greeting/showGreetingText";
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { translateGreeting } from "../slider/translateGreeting"
 import { setErrorPopupClass } from "../slider/setErrorPopupClass";
-import { getQueryInputValueLoad, setNumPicturePexels } from '../slider/localStorageSlider'
+import { getStorageQueryInputValueLoad, setStorageNumPicturePexels } from '../slider/localStorageSlider'
 import { changePexelsImages } from "../slider/changeBG";
-
 
 export const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
@@ -14,7 +13,7 @@ export let query;
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 export const setQueryValue = () => {
-	const queryValue = getQueryInputValueLoad()
+	const queryValue = getStorageQueryInputValueLoad()
 	const currLang = getStorageLanguage()
 	if (queryValue) {
 		query = queryValue
@@ -32,6 +31,6 @@ export const changeQueryInput = () => {
 	}
 	query = queryInputValue
 	queryInput.value = queryInputValue
-	setNumPicturePexels(0)
+	setStorageNumPicturePexels(0)
 	changePexelsImages()
 }

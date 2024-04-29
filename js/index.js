@@ -203,27 +203,27 @@ const setWeatherStyles = (data) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getNumPicturePexels: function() { return /* binding */ getNumPicturePexels; },
-/* harmony export */   getQueryInputValueLoad: function() { return /* binding */ getQueryInputValueLoad; },
-/* harmony export */   setNumPicturePexels: function() { return /* binding */ setNumPicturePexels; },
-/* harmony export */   setQueryInputValueBeforeUnload: function() { return /* binding */ setQueryInputValueBeforeUnload; }
+/* harmony export */   getStorageNumPicturePexels: function() { return /* binding */ getStorageNumPicturePexels; },
+/* harmony export */   getStorageQueryInputValueLoad: function() { return /* binding */ getStorageQueryInputValueLoad; },
+/* harmony export */   setStorageNumPicturePexels: function() { return /* binding */ setStorageNumPicturePexels; },
+/* harmony export */   setStorageQueryInputValueUnload: function() { return /* binding */ setStorageQueryInputValueUnload; }
 /* harmony export */ });
 /* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
 
 
-const getQueryInputValueLoad = () => {
+const getStorageQueryInputValueLoad = () => {
 	_query_queryValues__WEBPACK_IMPORTED_MODULE_0__.queryInput.value = localStorage.getItem('queryInputValue')
 	return localStorage.getItem('queryInputValue')
 }
 
-const setQueryInputValueBeforeUnload = () => {
+const setStorageQueryInputValueUnload = () => {
 	const queryInputValue = String(_query_queryValues__WEBPACK_IMPORTED_MODULE_0__.queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
 }
 
-const getNumPicturePexels = () => +localStorage.getItem('pexelsNum')
+const getStorageNumPicturePexels = () => +localStorage.getItem('pexelsNum')
 
-const setNumPicturePexels = (value) => {
+const setStorageNumPicturePexels = (value) => {
 	localStorage.setItem('pexelsNum', value)
 }
 
@@ -253,7 +253,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const queryInput = document.querySelector('.query__input')
 const greetingText = (0,_greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_0__.showGreetingText)().split(' ')[1].slice(0, -1);
 let query;
@@ -261,7 +260,7 @@ let query;
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 const setQueryValue = () => {
-	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.getQueryInputValueLoad)()
+	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.getStorageQueryInputValueLoad)()
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
 	if (queryValue) {
 		query = queryValue
@@ -279,7 +278,7 @@ const changeQueryInput = () => {
 	}
 	query = queryInputValue
 	queryInput.value = queryInputValue
-	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.setNumPicturePexels)(0)
+	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.setStorageNumPicturePexels)(0)
 	;(0,_slider_changeBG__WEBPACK_IMPORTED_MODULE_5__.changePexelsImages)()
 }
 
@@ -403,14 +402,14 @@ const changeGithubImages = () => {
 
 const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
-	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getNumPicturePexels)()
+	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query: _query_queryValues__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
-					(0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(0)
+					(0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setStorageNumPicturePexels)(0)
 					loadImage(e.photos[pexelsNumb].src.landscape)
 				}
 				else {
@@ -434,7 +433,7 @@ const changeBG = () => {
 }
 
 const changeBGOnClick = (direction) => {
-	let pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getNumPicturePexels)()
+	let pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getStorageNumPicturePexels)()
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
 	if (imagesSrc === 'github' && isAnimate) {
 		isAnimate = false
@@ -448,7 +447,7 @@ const changeBGOnClick = (direction) => {
 	}
 	else if (imagesSrc === 'pexels' && isAnimate) {
 		isAnimate = false
-		direction === 'prev' ? pexelsNumb <= 0 ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(MAX_PEXELS_IMAGES) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(0) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(++pexelsNumb)
+		direction === 'prev' ? pexelsNumb <= 0 ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setStorageNumPicturePexels)(MAX_PEXELS_IMAGES) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setStorageNumPicturePexels)(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setStorageNumPicturePexels)(0) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setStorageNumPicturePexels)(++pexelsNumb)
 		changePexelsImages()
 		setTimeout(() => {
 			isAnimate = true
@@ -2389,13 +2388,13 @@ setInterval(() => {
 ;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_20__.setQueryValue)()
 ;(0,_components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_19__.changeBG)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_17__.setVolumeBtnValue)()
-;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.getQueryInputValueLoad)()
+;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.getStorageQueryInputValueLoad)()
 ;(0,_components_settings_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_23__.setCheckedInputsLoad)()
 ;(0,_components_settings_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_24__.hideCheckedBlocksLoad)()
 
 window.addEventListener('beforeunload', () => {
 	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__.setStorageCity)()
-	;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.setQueryInputValueBeforeUnload)()
+	;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.setStorageQueryInputValueUnload)()
 })
 
 _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_13__.audio.addEventListener('timeupdate', function (e) {

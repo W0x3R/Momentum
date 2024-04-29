@@ -4,7 +4,7 @@ import { getStorageLanguage } from '../language/localStorageLanguage';
 import { getRandomNum } from "./getRandomNum"
 import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 import { showGreetingText } from '../greeting/showGreetingText';
-import { getNumPicturePexels, setNumPicturePexels } from './localStorageSlider';
+import { getStorageNumPicturePexels, setStorageNumPicturePexels } from './localStorageSlider';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 const image = new Image();
@@ -30,14 +30,14 @@ const changeGithubImages = () => {
 
 export const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
-	const pexelsNumb = getNumPicturePexels()
+	const pexelsNumb = getStorageNumPicturePexels()
 	if (imagesSrc === 'pexels') {
 		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
-					setNumPicturePexels(0)
+					setStorageNumPicturePexels(0)
 					loadImage(e.photos[pexelsNumb].src.landscape)
 				}
 				else {
@@ -61,7 +61,7 @@ export const changeBG = () => {
 }
 
 export const changeBGOnClick = (direction) => {
-	let pexelsNumb = getNumPicturePexels()
+	let pexelsNumb = getStorageNumPicturePexels()
 	const imagesSrc = getStorageImagesSrc()
 	if (imagesSrc === 'github' && isAnimate) {
 		isAnimate = false
@@ -75,7 +75,7 @@ export const changeBGOnClick = (direction) => {
 	}
 	else if (imagesSrc === 'pexels' && isAnimate) {
 		isAnimate = false
-		direction === 'prev' ? pexelsNumb <= 0 ? setNumPicturePexels(MAX_PEXELS_IMAGES) : setNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setNumPicturePexels(0) : setNumPicturePexels(++pexelsNumb)
+		direction === 'prev' ? pexelsNumb <= 0 ? setStorageNumPicturePexels(MAX_PEXELS_IMAGES) : setStorageNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setStorageNumPicturePexels(0) : setStorageNumPicturePexels(++pexelsNumb)
 		changePexelsImages()
 		setTimeout(() => {
 			isAnimate = true
