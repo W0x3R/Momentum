@@ -203,7 +203,9 @@ const setWeatherStyles = (data) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getNumPicturePexels: function() { return /* binding */ getNumPicturePexels; },
 /* harmony export */   getQueryInputValueLoad: function() { return /* binding */ getQueryInputValueLoad; },
+/* harmony export */   setNumPicturePexels: function() { return /* binding */ setNumPicturePexels; },
 /* harmony export */   setQueryInputValueBeforeUnload: function() { return /* binding */ setQueryInputValueBeforeUnload; }
 /* harmony export */ });
 /* harmony import */ var _changeBG__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9);
@@ -217,6 +219,12 @@ const getQueryInputValueLoad = () => {
 const setQueryInputValueBeforeUnload = () => {
 	const queryInputValue = String(_changeBG__WEBPACK_IMPORTED_MODULE_0__.queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
+}
+
+const getNumPicturePexels = () => +localStorage.getItem('pexelsNum')
+
+const setNumPicturePexels = (value) => {
+	localStorage.setItem('pexelsNum', value)
 }
 
 /***/ }),
@@ -258,7 +266,6 @@ const greetingText = (0,_greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_1__.
 let query;
 const image = new Image();
 const MAX_GITHUB_IMAGES = 20;
-let MIN_PEXELS_IMAGES = 0;
 let MAX_PEXELS_IMAGES;
 let randomNumGithub = (0,_getRandomNum__WEBPACK_IMPORTED_MODULE_3__.getRandomNum)(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
@@ -283,7 +290,7 @@ const changeQueryInput = () => {
 	}
 	query = queryInputValue
 	queryInput.value = queryInputValue
-	MIN_PEXELS_IMAGES = 0;
+	;(0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(0)
 	changePexelsImages()
 }
 
@@ -302,12 +309,19 @@ const changeGithubImages = () => {
 
 const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_7__.getStorageImagesSrc)()
+	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
-				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
+				if (!pexelsNumb) {
+					(0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(0)
+					loadImage(e.photos[pexelsNumb].src.landscape)
+				}
+				else {
+					pexelsNumb >= 0 ? loadImage(e.photos[pexelsNumb].src.landscape) : loadImage(e.photos[MAX_PEXELS_IMAGES + pexelsNumb].src.landscape)
+				}
 			} else {
 				(0,_setErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.setErrorPopupClass)('add')
 			}
@@ -326,27 +340,22 @@ const changeBG = () => {
 }
 
 const changeBGOnClick = (direction) => {
+	let pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.getNumPicturePexels)()
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_7__.getStorageImagesSrc)()
-	if (imagesSrc === 'github') {
-		if (isAnimate) {
-			isAnimate = false
-			randomNumGithub = (direction === 'prev') ?
-				((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
-				((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
-			changeGithubImages()
-		}
+	if (imagesSrc === 'github' && isAnimate) {
+		isAnimate = false
+		randomNumGithub = (direction === 'prev') ?
+			((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
+			((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
+		changeGithubImages()
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);
 	}
-	else if (imagesSrc === 'pexels') {
-		if (isAnimate) {
-			isAnimate = false
-			MIN_PEXELS_IMAGES = (direction === 'prev') ?
-				((MIN_PEXELS_IMAGES === 0) ? MAX_PEXELS_IMAGES : MIN_PEXELS_IMAGES - 1) :
-				((MIN_PEXELS_IMAGES === MAX_PEXELS_IMAGES) ? 0 : MIN_PEXELS_IMAGES + 1);
-			changePexelsImages()
-		}
+	else if (imagesSrc === 'pexels' && isAnimate) {
+		isAnimate = false
+		direction === 'prev' ? pexelsNumb <= 0 ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(MAX_PEXELS_IMAGES) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(pexelsNumb) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_6__.setNumPicturePexels)(++pexelsNumb)
+		changePexelsImages()
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);

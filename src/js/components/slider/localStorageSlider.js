@@ -9,3 +9,9 @@ export const setQueryInputValueBeforeUnload = () => {
 	const queryInputValue = String(queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
 }
+
+export const getNumPicturePexels = () => +localStorage.getItem('pexelsNum')
+
+export const setNumPicturePexels = (value) => {
+	localStorage.setItem('pexelsNum', value)
+}

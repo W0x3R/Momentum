@@ -4,7 +4,7 @@ import { getStorageLanguage } from "../language/localStorageLanguage"
 import { getRandomNum } from "./getRandomNum"
 import { translateGreeting } from "./translateGreeting"
 import { setErrorPopupClass } from './setErrorPopupClass';
-import { getQueryInputValueLoad } from './localStorageSlider'
+import { getQueryInputValueLoad, getNumPicturePexels, setNumPicturePexels } from './localStorageSlider'
 import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
@@ -15,7 +15,6 @@ const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 let query;
 const image = new Image();
 const MAX_GITHUB_IMAGES = 20;
-let MIN_PEXELS_IMAGES = 0;
 let MAX_PEXELS_IMAGES;
 let randomNumGithub = getRandomNum(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
@@ -40,7 +39,7 @@ export const changeQueryInput = () => {
 	}
 	query = queryInputValue
 	queryInput.value = queryInputValue
-	MIN_PEXELS_IMAGES = 0;
+	setNumPicturePexels(0)
 	changePexelsImages()
 }
 
@@ -59,12 +58,19 @@ const changeGithubImages = () => {
 
 const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
+	const pexelsNumb = getNumPicturePexels()
 	if (imagesSrc === 'pexels') {
 		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
-				loadImage(e.photos[MIN_PEXELS_IMAGES].src.landscape)
+				if (!pexelsNumb) {
+					setNumPicturePexels(0)
+					loadImage(e.photos[pexelsNumb].src.landscape)
+				}
+				else {
+					pexelsNumb >= 0 ? loadImage(e.photos[pexelsNumb].src.landscape) : loadImage(e.photos[MAX_PEXELS_IMAGES + pexelsNumb].src.landscape)
+				}
 			} else {
 				setErrorPopupClass('add')
 			}
@@ -83,27 +89,22 @@ export const changeBG = () => {
 }
 
 export const changeBGOnClick = (direction) => {
+	let pexelsNumb = getNumPicturePexels()
 	const imagesSrc = getStorageImagesSrc()
-	if (imagesSrc === 'github') {
-		if (isAnimate) {
-			isAnimate = false
-			randomNumGithub = (direction === 'prev') ?
-				((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
-				((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
-			changeGithubImages()
-		}
+	if (imagesSrc === 'github' && isAnimate) {
+		isAnimate = false
+		randomNumGithub = (direction === 'prev') ?
+			((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
+			((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
+		changeGithubImages()
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);
 	}
-	else if (imagesSrc === 'pexels') {
-		if (isAnimate) {
-			isAnimate = false
-			MIN_PEXELS_IMAGES = (direction === 'prev') ?
-				((MIN_PEXELS_IMAGES === 0) ? MAX_PEXELS_IMAGES : MIN_PEXELS_IMAGES - 1) :
-				((MIN_PEXELS_IMAGES === MAX_PEXELS_IMAGES) ? 0 : MIN_PEXELS_IMAGES + 1);
-			changePexelsImages()
-		}
+	else if (imagesSrc === 'pexels' && isAnimate) {
+		isAnimate = false
+		direction === 'prev' ? pexelsNumb <= 0 ? setNumPicturePexels(MAX_PEXELS_IMAGES) : setNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setNumPicturePexels(pexelsNumb) : setNumPicturePexels(++pexelsNumb)
+		changePexelsImages()
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);
