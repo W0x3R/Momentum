@@ -347,7 +347,7 @@
 		}
 
 		@include tablet {
-			@include sizes(25px, 25px);
+			@include sizes(26px, 26px);
 		}
 
 		&_active {
@@ -382,9 +382,16 @@
 		}
 
 		@include mobile {
-			left: calc(50% - 127.5px);
+			left: calc(50% - 185px);
+			top: calc(50% - 228.7px);
+			width: 370px;
+			padding: 4px 4px 0;
+		}
+
+		@include smallMobile {
+			left: calc(50% - 150px);
 			top: calc(50% - 217.5px);
-			width: 255px;
+			width: 300px;
 			padding: 4px 4px 0;
 		}
 
