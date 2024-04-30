@@ -1,9 +1,9 @@
 import { showDate } from "../date/date"
 import { setStorageLanguage } from "../language/localStorageLanguage"
-import { setStorageGreetingName } from "../greeting/localStorageGreeting"
-import { getWeather } from "../weather/getWeather"
+import { setStorageGreetingName, greetingName } from "../greeting/localStorageGreeting"
+import { getWeather, weatherCityInput } from "../weather/getWeather"
 import { changeBGOnClick } from "../slider/changeBG"
-import { changeQueryInput } from "../query/queryValues"
+import { queryInput, changeQueryInput } from "../query/queryValues"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
@@ -76,6 +76,25 @@ export const changeEvents = {
 		changeLanguageIcon()
 	},
 	'.weather__input': getWeather
+}
+
+export const keydownEvents = {
+	'Enter': () => {
+		greetingName.blur()
+		weatherCityInput.blur()
+		queryInput.blur()
+	},
+	'Escape': () => {
+		displaySettings('remove')
+		setSettingsActiveStyles('remove')
+	}
+}
+
+export const callKeydownEvent = (e) => {
+	const key = e.key
+	if (key in keydownEvents) {
+		keydownEvents[key]()
+	}
 }
 
 export const callEvents = (e, eventsObject) => {
