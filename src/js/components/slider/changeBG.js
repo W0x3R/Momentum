@@ -6,6 +6,7 @@ import { getStorageImagesSrc } from '../imagesSrc/localStorageImagesSrc';
 import { showGreetingText } from '../greeting/showGreetingText';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from './localStorageSlider';
 import { translateGreeting } from './translateGreeting';
+import { setErrorPopupClass } from './setErrorPopupClass';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 const image = new Image();
