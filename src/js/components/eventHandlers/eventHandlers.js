@@ -20,6 +20,7 @@ import { setQuotesActiveStyles } from "../quotes/setQuotesActiveStyles"
 import { setStorageCheckedItems } from "../settings/localStorageSettingsShow"
 import { setCheckedInputsClick } from "../settings/setCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocksClick"
+import { clearGreetingsName } from "../greeting/clearGreetingsName"
 
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
@@ -54,7 +55,8 @@ export const clickEvents = {
 		setCheckedInputsClick(e)
 		hideCheckedBlocksClick(e)
 		setStorageCheckedItems()
-	}
+	},
+	'.greeting__name': clearGreetingsName
 }
 
 export const inputEvents = {
