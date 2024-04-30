@@ -370,6 +370,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(18);
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10);
 /* harmony import */ var _localStorageSlider__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
+/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
+
 
 
 
@@ -393,7 +395,7 @@ const changeGithubImages = () => {
 		queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_5__.showGreetingText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_2__.getStorageLanguage)();
-		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)
+		let value = currLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_7__.translateGreeting)(greetingText)
 		let randomNum = randomNumGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
 		loadImage(url)
