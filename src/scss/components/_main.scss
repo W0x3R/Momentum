@@ -115,6 +115,7 @@
 
 	&__text {
 		color: var(--white);
+		user-select: none;
 	}
 
 	&__name {
