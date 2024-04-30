@@ -1,9 +1,9 @@
 export const greetingName = document.querySelector('.greeting__name')
 
 export const setStorageGreetingName = () => {
-	localStorage.setItem('name', greetingName.value)
+	localStorage.setItem('name', greetingName.textContent)
 }
 
 export const getStorageGreetingName = () => {
-	greetingName.value = localStorage.getItem('name') || ''
+	greetingName.textContent = localStorage.getItem('name')
 }
