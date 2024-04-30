@@ -23,6 +23,8 @@ import { controlPopupBtnHover } from './components/slider/controlPopupBtnHover.j
 import { popup } from './components/slider/setErrorPopupClass.js'
 import { setCheckedInputsLoad } from './components/settings/setCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocksLoad.js'
+import { callKeydownEvent } from './components/eventHandlers/eventHandlers.js'
+import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
 
 setInterval(() => {
 	showTime()
@@ -61,6 +63,8 @@ window.addEventListener('click', function (e) {
 	callEvents(e, clickEvents)
 	closeIcon(e, 'language__select', selectLanguageInner, 'language__select_open')
 	closeIcon(e, 'source__select', selectImagesSrcWrapper, 'source__select_open')
+	checkClickOutGreetingName(e)
+	console.log(e.target);
 })
 
 audio.addEventListener('ended', nextSong)
@@ -68,3 +72,6 @@ window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
 popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
 popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
+
+window.addEventListener('keydown', (e) => callKeydownEvent(e)
+)
