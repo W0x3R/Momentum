@@ -122,7 +122,10 @@
 		color: var(--white);
 		letter-spacing: -0.6px;
 		min-width: 10%;
-		border-bottom: 1px solid white;
+
+		&:focus {
+			border-bottom: 1px solid white;
+		}
 	}
 }
 
