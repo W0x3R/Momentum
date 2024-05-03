@@ -12,10 +12,10 @@
 	height: $height;
 }
 
-@mixin closeButton($width, $height, $fs) {
+@mixin closeButton($top, $right, $width, $height, $fs) {
 	position: absolute;
-	right: -46px;
-	top: -40px;
+	top: $top;
+	right: $right;
 	@include sizes($width, $height);
 	background: var(--white);
 	border-radius: 25%;
