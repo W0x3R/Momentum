@@ -377,3 +377,7 @@ p,
 ul {
 	margin: 0;
 }
+
+[contenteditable='true'] {
+	outline: none;
+}

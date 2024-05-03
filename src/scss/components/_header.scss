@@ -614,9 +614,9 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
-	border-radius: 21px;
 	max-width: 282px;
 	height: fit-content;
+	border-radius: 21px;
 	background: var(--black-background);
 	color: var(--white);
 	font-size: 16px;
