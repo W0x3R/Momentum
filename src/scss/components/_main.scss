@@ -170,7 +170,9 @@
 
 		&_show-slider {
 			display: block;
+			z-index: 2;
 		}
+
 		&_show-settings {
 			display: block;
 		}
