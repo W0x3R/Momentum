@@ -39,11 +39,10 @@ export const checkIsMute = () => {
 
 export const setVolumeBtnValue = () => {
 	const volumeValue = getStorageVolumeValue()
-	if (!volumeValue) {
-		setStorageVolumeValue()
-	}
 	audio.volume = volumeValue
 	volumeBtn.value = volumeValue
+	console.log(audio.volume);
+	console.log(volumeBtn.value);
 	if (audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		isMute = true;

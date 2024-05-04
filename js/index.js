@@ -1925,11 +1925,10 @@ const checkIsMute = () => {
 
 const setVolumeBtnValue = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)()
-	if (!volumeValue) {
-		(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
-	}
 	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
 	volumeBtn.value = volumeValue
+	console.log(_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume);
+	console.log(volumeBtn.value);
 	if (_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		isMute = true;
@@ -1956,7 +1955,7 @@ const setStorageVolumeValue = () => {
 	localStorage.setItem('volumeValue', _volume__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value)
 }
 
-const getStorageVolumeValue = () => localStorage.getItem('volumeValue')
+const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
 
 /***/ }),
 /* 46 */
