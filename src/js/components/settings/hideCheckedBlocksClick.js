@@ -1,4 +1,4 @@
-const forbiddenClasses = ['settings__show-title', 'settings__show', 'settings__show-inner']
+const forbiddenClasses = ['settings__show-title', 'settings__show']
 
 export const hideCheckedBlocksClick = (e) => {
 	if (!forbiddenClasses.includes(e.target.className)) {
