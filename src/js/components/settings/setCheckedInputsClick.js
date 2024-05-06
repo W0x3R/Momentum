@@ -1,5 +1,6 @@
 export const setCheckedInputsClick = (e) => {
-	if (e.target.classList.contains('settings__show-label')) {
-		e.target.nextElementSibling.checked = e.target.nextElementSibling.checked ? false : true;
+	if (e.target.closest('.settings__show-inner') && e.target.tagName !== 'INPUT') {
+		const closestInput = e.target.closest('.settings__show-inner').querySelector('input')
+		closestInput.checked = closestInput.checked ? false : true
 	}
 }
