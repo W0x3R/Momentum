@@ -31,7 +31,6 @@
 
 	@include smallMobile {
 		max-width: 170px;
-		padding: 4px 7px;
 	}
 
 	&__track-name {
@@ -140,6 +139,7 @@
 			@include desktop {
 				@include sizes(32px, 32px);
 			}
+
 			@include tablet {
 				@include sizes(28px, 28px);
 			}

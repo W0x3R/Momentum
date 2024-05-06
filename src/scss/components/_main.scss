@@ -56,8 +56,8 @@
 		}
 
 		@include mobile {
-			font-size: 74px;
 			margin-bottom: 2px;
+			font-size: 74px;
 		}
 
 		@include smallMobile {
@@ -72,8 +72,8 @@
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			font-size: 22px;
 			margin-bottom: 8px;
+			font-size: 22px;
 		}
 
 		@include tablet {
@@ -120,10 +120,10 @@
 	}
 
 	&__name {
+		min-width: 10%;
 		background: transparent;
 		color: var(--white);
 		letter-spacing: -0.6px;
-		min-width: 10%;
 
 		&:focus {
 			box-shadow: 0px 1px 0px 0px var(--white);
@@ -165,9 +165,9 @@
 		right: 0;
 		top: 0;
 		bottom: 0;
-		background: rgba(0, 0, 0, 0.8);
 		z-index: 1;
 		min-height: 100%;
+		background: rgba(0, 0, 0, 0.8);
 
 		&_show-slider {
 			display: block;
