@@ -453,6 +453,7 @@
 		&-inner {
 			@include flex($alignItems: center, $justify: space-between);
 			border-top: 1px solid var(--white);
+			cursor: pointer;
 
 			& > input[type='checkbox'] {
 				position: relative;
@@ -517,7 +518,6 @@
 			@extend %settingsDescriptionFont;
 			padding: 10px 6px;
 			width: 100%;
-			cursor: pointer;
 			color: var(--white);
 
 			@include tablet {
