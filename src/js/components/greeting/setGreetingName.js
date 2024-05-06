@@ -1,5 +1,4 @@
-import { greetingName } from "./localStorageGreeting"
-import { setStorageGreetingName } from "./localStorageGreeting"
+import { greetingName, setStorageGreetingName } from "./localStorageGreeting"
 
 const greetingObj = {
 	en: '[Enter name]',

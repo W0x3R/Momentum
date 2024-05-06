@@ -14,7 +14,6 @@ import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { displaySettings } from "../settings/displaySettings"
 import { changeQuote } from "../quotes/changeQuote"
 
-
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
 	'.main__button_next': () => changeBGOnClick('next'),

@@ -1,10 +1,9 @@
-import { greetingName } from "./localStorageGreeting";
-import { setStorageGreetingName } from "./localStorageGreeting";
+import { greetingName, setStorageGreetingName } from "./localStorageGreeting";
 
-const forbiddenName = ['[Enter name]', '[Введите имя]']
+const forbiddenNames = ['[Enter name]', '[Введите имя]']
 
 export const clearGreetingsName = () => {
-	if (forbiddenName.includes((greetingName.textContent))) {
+	if (forbiddenNames.includes((greetingName.textContent))) {
 		greetingName.textContent = ''
 		setStorageGreetingName()
 	}

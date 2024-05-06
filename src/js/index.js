@@ -67,14 +67,11 @@ window.addEventListener('click', function (e) {
 	closeIcon(e, 'language__select', selectLanguageInner, 'language__select_open')
 	closeIcon(e, 'source__select', selectImagesSrcWrapper, 'source__select_open')
 	checkClickOutGreetingName(e)
-	console.log(e.target);
 })
 
 audio.addEventListener('ended', nextSong)
 window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
+window.addEventListener('keydown', (e) => callKeydownEvent(e))
 popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
 popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
-
-window.addEventListener('keydown', (e) => callKeydownEvent(e)
-)
