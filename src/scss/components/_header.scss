@@ -109,7 +109,7 @@
 		}
 
 		&::-webkit-progress-value {
-			background-color: var(--blue);
+			background-color: var(--orange);
 		}
 	}
 
@@ -280,7 +280,7 @@
 
 			&_active {
 				opacity: 1;
-				color: var(--blue);
+				color: var(--orange);
 			}
 
 			@include hoverOrActive {
@@ -323,7 +323,7 @@
 		}
 
 		@include tablet {
-			font-size: 15px;
+			font-size: 17px;
 		}
 
 		@include mobile {
@@ -332,7 +332,7 @@
 
 		&_active {
 			opacity: 1;
-			border-bottom-color: var(--blue);
+			border-bottom-color: var(--orange);
 		}
 	}
 
@@ -359,14 +359,14 @@
 
 	&__wrapper {
 		position: absolute;
-		left: calc(50% - 240px);
-		top: calc(50% - 209.45px);
+		left: calc(50% - 250px);
+		top: calc(50% - 224px);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 20px 0;
 		padding: 10px 10px 0;
-		width: 480px;
+		width: 500px;
 		opacity: 0;
 		border: solid 1px rgb(138, 138, 138);
 		border-radius: 8px;
@@ -375,23 +375,23 @@
 		transition: opacity 0.5s ease;
 
 		@include tablet {
-			left: calc(50% - 220px);
-			top: calc(50% - 187.2px);
+			left: calc(50% - 227.5px);
+			top: calc(50% - 207px);
 			gap: 18px 0;
 			padding: 7px 7px 0;
-			width: 440px;
+			width: 455px;
 		}
 
 		@include mobile {
-			left: calc(50% - 185px);
-			top: calc(50% - 228.7px);
-			width: 370px;
+			left: calc(50% - 180px);
+			top: calc(50% - 250px);
+			width: 360px;
 			padding: 4px 4px 0;
 		}
 
 		@include smallMobile {
 			left: calc(50% - 150px);
-			top: calc(50% - 217.5px);
+			top: calc(50% - 248px);
 			width: 300px;
 			padding: 4px 4px 0;
 		}
@@ -435,7 +435,7 @@
 	&__show {
 		&-title {
 			margin-bottom: 13px;
-			font-size: 18px;
+			font-size: 19px;
 			color: var(--white);
 			text-align: center;
 			pointer-events: none;
@@ -447,13 +447,23 @@
 
 			@include mobile {
 				margin-bottom: 8px;
+				font-size: 18px;
+			}
+
+			@include smallMobile {
+				font-size: 17px;
 			}
 		}
 
 		&-inner {
 			@include flex($alignItems: center, $justify: space-between);
+			padding-block: 10px;
 			border-top: 1px solid var(--white);
 			cursor: pointer;
+
+			@include tablet {
+				padding-block: 9px;
+			}
 
 			& > input[type='checkbox'] {
 				position: relative;
@@ -466,22 +476,22 @@
 				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 
 				@include tablet {
-					@include sizes(46px, 18px);
+					@include sizes(48px, 20px);
 				}
 
 				@include mobile {
-					@include sizes(56px, 19px);
+					@include sizes(50px, 22px);
 				}
 			}
 			& > input:checked[type='checkbox'] {
-				background-color: var(--blue);
+				background-color: var(--orange);
 			}
 
 			& > input:checked[type='checkbox']::before {
-				left: 28px;
+				left: 32px;
 
 				@include tablet {
-					left: 23px;
+					left: 27px;
 				}
 
 				@include mobile {
@@ -501,11 +511,11 @@
 				transition: 0.5s;
 
 				@include tablet {
-					@include sizes(18px, 18px);
+					@include sizes(20px, 20px);
 				}
 
 				@include mobile {
-					@include sizes(19px, 19px);
+					@include sizes(22px, 22px);
 				}
 			}
 
@@ -516,17 +526,7 @@
 
 		&-label {
 			@extend %settingsDescriptionFont;
-			padding: 10px 6px;
-			width: 100%;
 			color: var(--white);
-
-			@include tablet {
-				padding: 9px 4px;
-			}
-
-			@include mobile {
-				padding-block: 8px;
-			}
 		}
 
 		&_hide {
@@ -565,6 +565,7 @@
 
 		&_open::after {
 			transform: rotate(180deg);
+			color: var(--orange);
 		}
 	}
 }
@@ -584,6 +585,7 @@
 
 		&_open::after {
 			transform: rotate(180deg);
+			color: var(--orange);
 		}
 	}
 }
@@ -681,7 +683,7 @@
 		}
 
 		&:focus + .weather__hr {
-			border-color: var(--blue);
+			border-color: var(--orange);
 		}
 	}
 

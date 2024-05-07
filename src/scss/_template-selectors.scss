@@ -22,35 +22,33 @@
 
 %languageSelectWrapper {
 	position: relative;
-	line-height: 26px;
 	overflow: hidden;
 
 	&:hover::after {
-		color: var(--blue);
+		color: var(--orange);
 	}
 
 	&::after {
-		content: '\25BC';
+		content: '▼';
 		position: absolute;
 		top: 0;
 		right: 0;
-		padding-inline: 6px;
-		background: var(--black-background);
+		@include sizes(28px, 28px);
 		cursor: pointer;
 		pointer-events: none;
-		transition: 0.25s color ease;
+		transition: 0.25s all ease;
+		font-size: 24px;
+		text-align: center;
 		color: var(--white);
 
 		@include tablet {
-			top: 2px;
-			line-height: 24px;
-			padding-inline: 4px;
+			@include sizes(26px, 26px);
+			font-size: 22px;
 		}
 
 		@include mobile {
-			top: 0px;
-			line-height: 28px;
-			padding-inline: 6px;
+			@include sizes(28px, 28px);
+			font-size: 24px;
 		}
 	}
 }
@@ -58,50 +56,58 @@
 %languageSelectIcon {
 	position: absolute;
 	right: 34px;
-	width: 26px;
-	height: 26px;
+	width: 28px;
+	height: 28px;
 	pointer-events: none;
 
 	@include tablet {
-		@include sizes(24px, 24px);
-		top: calc(50% - 12px);
+		@include sizes(26px, 26px);
+		top: calc(50% - 13px);
 	}
 
 	@include mobile {
-		right: 38px;
-		top: calc(50% - 13.5px);
-		@include sizes(27px, 27px);
+		top: calc(50% - 14px);
+		@include sizes(28px, 28px);
 	}
 }
 
 %languageSelect {
-	@include sizes(180px, 26px);
+	@include sizes(190px, 28px);
 	background: var(--grey);
 	padding-left: 8px;
 	color: var(--white);
 	cursor: pointer;
-	font-size: 16px;
-	border-radius: 4px;
+	font-size: 17px;
+	border-radius: 8px;
 
 	@include tablet {
-		@include sizes(160px, 24px);
-		font-size: 14px;
+		@include sizes(170px, 26px);
+		font-size: 15px;
 	}
 
 	@include mobile {
-		@include sizes(210px, 27px);
+		@include sizes(230px, 28px);
+		font-size: 17px;
+	}
+
+	@include smallMobile {
 		font-size: 16px;
 	}
 }
 
 %settingsDescriptionFont {
-	font-size: 16px;
-	letter-spacing: 0.5px;
+	font-size: 17px;
+	letter-spacing: 0.3px;
 
 	@include tablet {
-		font-size: 14px;
+		font-size: 15px;
 	}
+
 	@include mobile {
+		font-size: 17px;
+	}
+
+	@include smallMobile {
 		font-size: 16px;
 	}
 }
