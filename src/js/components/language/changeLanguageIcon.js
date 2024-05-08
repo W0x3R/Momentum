@@ -1,5 +1,5 @@
 import { getStorageLanguage } from "./localStorageLanguage"
-import { selectLanguageInner } from "../transformIcons/transformIcons"
+import { selectLanguageInner } from "../settings/closeSettingsIcons"
 
 export const changeLanguageIcon = () => {
 	const currLang = getStorageLanguage()
