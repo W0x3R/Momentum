@@ -1904,6 +1904,7 @@ const setVolumeBtnValue = () => {
 	} else {
 		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		isMute = false;
+		(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
 	}
 }
 
@@ -2515,6 +2516,7 @@ setInterval(() => {
 ;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_22__.setQueryValue)()
 ;(0,_components_slider_changeBG_js__WEBPACK_IMPORTED_MODULE_21__.changeBG)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_19__.setVolumeBtnValue)()
+;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_19__.checkChangeVolume)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_2__.getStorageQueryInputValueLoad)()
 ;(0,_components_settings_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_25__.setCheckedInputsLoad)()
 ;(0,_components_settings_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_26__.hideCheckedBlocksLoad)()

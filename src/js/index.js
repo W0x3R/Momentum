@@ -17,7 +17,7 @@ import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio } from './components/player/playSong.js'
 import { nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
-import { setVolumeBtnValue } from './components/player/volume.js'
+import { setVolumeBtnValue, checkChangeVolume } from './components/player/volume.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeBG } from './components/slider/changeBG.js'
 import { setQueryValue } from './components/query/queryValues.js'
@@ -47,6 +47,7 @@ getStorageGreetingName()
 setQueryValue()
 changeBG()
 setVolumeBtnValue()
+checkChangeVolume()
 getStorageQueryInputValueLoad()
 setCheckedInputsLoad()
 hideCheckedBlocksLoad()

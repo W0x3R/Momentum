@@ -47,5 +47,6 @@ export const setVolumeBtnValue = () => {
 	} else {
 		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		isMute = false;
+		setStorageVolumeValue()
 	}
 }
