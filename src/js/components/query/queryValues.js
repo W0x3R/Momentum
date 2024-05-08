@@ -2,10 +2,11 @@
 import { showGreetingText } from "../greeting/showGreetingText";
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { translateGreeting } from "../slider/translateGreeting"
-import { setErrorPopupClass } from "../slider/setErrorPopupClass";
+import { controlErrorPopupClass } from "../slider/controlErrorPopupClass";
 import { getStorageQueryInputValueLoad, setStorageNumPicturePexels } from '../slider/localStorageSlider'
-import { changePexelsImages } from "../slider/changeBG";
+import { changePexelsImages } from "../slider/changePexelsImages";
 
+export const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
 const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
 export let query;
@@ -26,7 +27,7 @@ export const changeQueryInput = () => {
 	const queryInputValue = String(queryInput.value.trim())
 	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
 	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
-		setErrorPopupClass('add')
+		controlErrorPopupClass('add')
 		return
 	}
 	query = queryInputValue

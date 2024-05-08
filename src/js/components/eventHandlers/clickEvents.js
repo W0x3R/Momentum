@@ -3,19 +3,26 @@ import { setStorageCheckedItems } from "../settings/localStorageSettingsShow"
 import { setCheckedInputsClick } from "../settings/setCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
-import { setErrorPopupClass } from "../slider/setErrorPopupClass"
+import { controlErrorPopupClass } from "../slider/controlErrorPopupClass"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
-import { changeBGOnClick } from "../slider/changeBG"
+import { changePexelsImagesClick } from "../slider/changePexelsImages"
+import { changeGithubImagesClick } from "../slider/changeGithubImages"
 import { checkIsMute } from "../player/volume"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { displaySettings } from "../settings/displaySettings"
 import { changeQuote } from "../quotes/changeQuote"
 
 export const clickEvents = {
-	'.main__button_prev': () => changeBGOnClick('prev'),
-	'.main__button_next': () => changeBGOnClick('next'),
+	'.main__button_prev': () => {
+		changeGithubImagesClick('prev')
+		changePexelsImagesClick('prev')
+	},
+	'.main__button_next': () => {
+		changeGithubImagesClick('next')
+		changePexelsImagesClick('next')
+	},
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => rewindSong(e),
 	'.player__controls-prev': prevSong,
@@ -23,10 +30,10 @@ export const clickEvents = {
 	'.player__list': (e) => playClickedSong(e),
 	'.player__sounds-mute': checkIsMute,
 	'.popup__button': () => {
-		setErrorPopupClass('remove')
+		controlErrorPopupClass('remove')
 	},
 	'.popup__shadow_show-slider': () => {
-		setErrorPopupClass('remove')
+		controlErrorPopupClass('remove')
 	},
 	'.settings__icon': () => {
 		setSettingsActiveStyles('toggle'),

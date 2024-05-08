@@ -21,10 +21,11 @@ import { nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
 import { setVolumeBtnValue, checkChangeVolume } from './components/player/volume.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
-import { changeBG } from './components/slider/changeBG.js'
+import { changeGithubImages } from './components/slider/changeGithubImages.js'
+import { changePexelsImages } from './components/slider/changePexelsImages.js'
 import { setQueryValue } from './components/query/queryValues.js'
-import { controlPopupBtnHover } from './components/slider/controlPopupBtnHover.js'
-import { popup } from './components/slider/setErrorPopupClass.js'
+import { controlErrorPopupBtnHover } from './components/slider/controlErrorPopupBtnHover.js'
+import { popup } from './components/slider/controlErrorPopupClass.js'
 import { setCheckedInputsLoad } from './components/settings/setCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/keydownEvents.js'
@@ -48,7 +49,8 @@ setWeatherInputValue()
 getWeather()
 getStorageGreetingName()
 setQueryValue()
-changeBG()
+changeGithubImages()
+changePexelsImages()
 setVolumeBtnValue()
 checkChangeVolume()
 getStorageQueryInputValueLoad()
@@ -74,5 +76,5 @@ audio.addEventListener('ended', nextSong)
 window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
 window.addEventListener('keydown', (e) => callKeydownEvent(e))
-popup.addEventListener('mouseleave', () => controlPopupBtnHover('add'))
-popup.addEventListener('mouseenter', () => controlPopupBtnHover('remove'))
+popup.addEventListener('mouseleave', () => controlErrorPopupBtnHover('add'))
+popup.addEventListener('mouseenter', () => controlErrorPopupBtnHover('remove'))

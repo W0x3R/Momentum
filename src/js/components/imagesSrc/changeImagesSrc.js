@@ -1,13 +1,14 @@
 import { setStorageImagesSrc } from "./localStorageImagesSrc";
-import { changeBG } from "../slider/changeBG";
+import { changeGithubImages } from "../slider/changeGithubImages";
+import { changePexelsImages } from "../slider/changePexelsImages";
 
 export const changeImagesSrc = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
 		setStorageImagesSrc('github')
-		changeBG()
+		changeGithubImages()
 	} else {
 		setStorageImagesSrc('pexels')
-		changeBG()
+		changePexelsImages()
 	}
 }
