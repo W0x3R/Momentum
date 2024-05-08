@@ -1,5 +1,7 @@
 import { getStorageGreetingName } from './components/greeting/localStorageGreeting.js'
-import { setStorageCity, getStorageCity } from './components/weather/localStorageWeather.js'
+import { setStorageCity } from './components/weather/localStorageWeather.js'
+import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
+import { getWeather } from './components/weather/getWeather.js'
 import { setStorageQueryInputValueUnload, getStorageQueryInputValueLoad } from './components/slider/localStorageSlider.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
@@ -42,7 +44,8 @@ loadSong()
 changeSelectedLanguageValue()
 changeLanguageIcon()
 checkSelectedImagesSrc()
-getStorageCity()
+setWeatherInputValue()
+getWeather()
 getStorageGreetingName()
 setQueryValue()
 changeBG()

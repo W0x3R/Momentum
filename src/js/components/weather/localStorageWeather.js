@@ -1,14 +1,9 @@
-import { weatherCityInput } from "./getWeather"
-import { getWeather } from "./getWeather"
+import { weatherInput } from "./getWeather"
 
 export const setStorageCity = () => {
-	if (weatherCityInput.value) {
-		localStorage.setItem('city', String(weatherCityInput.value).trim())
+	if (weatherInput.value) {
+		localStorage.setItem('city', String(weatherInput.value).trim())
 	}
 }
 
-export const getStorageCity = () => {
-	const getCity = localStorage.getItem('city')
-	weatherCityInput.value = getCity ? getCity : 'Гомель'
-	getWeather()
-}
+export const getStorageCity = () => localStorage.getItem('city')
