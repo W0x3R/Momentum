@@ -24,10 +24,6 @@
 	position: relative;
 	overflow: hidden;
 
-	&:hover::after {
-		color: var(--orange);
-	}
-
 	&::after {
 		content: '▼';
 		position: absolute;

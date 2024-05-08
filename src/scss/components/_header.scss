@@ -546,6 +546,11 @@
 	&__inner {
 		@extend %languageSelectWrapper;
 
+		&:focus-within::after {
+			transform: rotate(180deg);
+			color: var(--orange);
+		}
+
 		&_ru {
 			&::before {
 				@extend %languageSelectIcon;
@@ -562,16 +567,16 @@
 	}
 	&__select {
 		@extend %languageSelect;
-
-		&_open::after {
-			transform: rotate(180deg);
-			color: var(--orange);
-		}
 	}
 }
 
 .source {
 	@extend %languageSelectWrapper;
+
+	&:focus-within::after {
+		transform: rotate(180deg);
+		color: var(--orange);
+	}
 
 	&__description {
 		@extend %settingsDescriptionFont;
@@ -582,11 +587,6 @@
 
 	&__select {
 		@extend %languageSelect;
-
-		&_open::after {
-			transform: rotate(180deg);
-			color: var(--orange);
-		}
 	}
 }
 

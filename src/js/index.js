@@ -17,7 +17,7 @@ import { updateSongTime } from './components/player/updateSongTime.js'
 import { audio } from './components/player/playSong.js'
 import { nextSong } from './components/player/switchSong.js'
 import { updateProgressBar } from './components/player/updateProgressBar.js'
-import { selectLanguageInner, selectImagesSrcWrapper, closeIcon } from './components/transformIcons/transformIcons.js'
+import { selectLanguageInner, selectImagesSrcWrapper } from './components/transformIcons/transformIcons.js'
 import { setVolumeBtnValue } from './components/player/volume.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeBG } from './components/slider/changeBG.js'
@@ -64,8 +64,6 @@ audio.addEventListener('timeupdate', function (e) {
 
 window.addEventListener('click', function (e) {
 	callEvents(e, clickEvents)
-	closeIcon(e, 'language__select', selectLanguageInner, 'language__select_open')
-	closeIcon(e, 'source__select', selectImagesSrcWrapper, 'source__select_open')
 	checkClickOutGreetingName(e)
 })
 

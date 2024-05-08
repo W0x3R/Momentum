@@ -7,7 +7,7 @@ import { setErrorPopupClass } from "../slider/setErrorPopupClass"
 import { checkFlagSong } from "../player/playSong"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
-import { rotateIcon, selectLanguageInner, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
+import { selectLanguageInner, selectImagesSrcWrapper } from "../transformIcons/transformIcons"
 import { changeBGOnClick } from "../slider/changeBG"
 import { checkIsMute } from "../player/volume"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
@@ -17,8 +17,6 @@ import { changeQuote } from "../quotes/changeQuote"
 export const clickEvents = {
 	'.main__button_prev': () => changeBGOnClick('prev'),
 	'.main__button_next': () => changeBGOnClick('next'),
-	'.language__inner': () => rotateIcon(selectLanguageInner, 'language__select_open'),
-	'.source': () => rotateIcon(selectImagesSrcWrapper, 'source__select_open'),
 	'.player__controls-play': checkFlagSong,
 	'.player__progress': (e) => rewindSong(e),
 	'.player__controls-prev': prevSong,

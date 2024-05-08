@@ -1,4 +1,4 @@
-const imagesSrcSelect = document.querySelector('.source__select')
+export const imagesSrcSelect = document.querySelector('.source__select')
 const imagesSrcSelectArr = Array.from(imagesSrcSelect.children)
 
 export const setSelectedImagesSrc = (num, value) => {
