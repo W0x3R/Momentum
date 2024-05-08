@@ -1,5 +1,5 @@
 const popupBtn = document.querySelector('.popup__button')
 
-export const controlPopupBtnHover = (value) => {
+export const controlErrorPopupBtnHover = (value) => {
 	popupBtn.classList[value]('popup__button_hover')
 }
