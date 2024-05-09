@@ -1,8 +1,8 @@
 import { count } from "./switchSong";
+import { isPlay, setIsPlay } from "./setIsPlay";
 
 export const trackName = document.querySelector('.player__track-name')
 export const audio = document.querySelector('.player__audio')
-let isPlay = false;
 const playBtn = document.querySelector('.player__controls-play')
 const playBtnIcon = document.querySelector('.player__controls-play-icon use')
 
@@ -12,14 +12,14 @@ export const playSong = () => {
 	audio.play()
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
 	playBtn.classList.add('player__controls-play_active')
-	isPlay = true
+	setIsPlay(true)
 }
 
 const pauseSong = () => {
 	audio.pause()
 	playBtnIcon.setAttribute('href', './images/svg/playSongBtn.svg#playSong')
 	playBtn.classList.remove('player__controls-play_active')
-	isPlay = false
+	setIsPlay(false)
 }
 
 export const checkFlagSong = () => {
