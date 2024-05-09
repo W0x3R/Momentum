@@ -6,8 +6,7 @@ import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../local
 import { loadImage } from './loadImage';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
-let MAX_PEXELS_IMAGES;
-let isAnimate = true
+export let MAX_PEXELS_IMAGES;
 
 export const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
@@ -29,18 +28,5 @@ export const changePexelsImages = () => {
 				controlErrorPopupClass('add')
 			}
 		});
-	}
-}
-
-export const changePexelsImagesClick = (direction) => {
-	let pexelsNumb = getStorageNumPicturePexels()
-	const imagesSrc = getStorageImagesSrc()
-	if (imagesSrc === 'pexels' && isAnimate) {
-		isAnimate = false
-		direction === 'prev' ? pexelsNumb <= 0 ? setStorageNumPicturePexels(MAX_PEXELS_IMAGES) : setStorageNumPicturePexels(--pexelsNumb) : pexelsNumb >= MAX_PEXELS_IMAGES ? setStorageNumPicturePexels(0) : setStorageNumPicturePexels(++pexelsNumb)
-		changePexelsImages()
-		setTimeout(() => {
-			isAnimate = true
-		}, 1000);
 	}
 }
