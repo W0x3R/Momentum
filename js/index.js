@@ -1698,11 +1698,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCount: function() { return /* binding */ setCount; }
 /* harmony export */ });
 let count = 0;
-
-const setCount = (value) => {
-	count = value;
-}
-
+const setCount = (value) => count = value
 const incrementCount = () => count++
 const decrementCount = () => count--
 
