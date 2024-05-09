@@ -1,4 +1,4 @@
-import { setQuotesActiveStyles } from "../quotes/setQuotesActiveStyles"
+import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
 import { setStorageCheckedItems } from "../settings/localStorageSettingsShow"
 import { setCheckedInputsClick } from "../settings/setCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocksClick"
@@ -45,7 +45,7 @@ export const clickEvents = {
 	},
 	'.quotes__change-btn': () => {
 		changeQuote()
-		setQuotesActiveStyles()
+		rotateQuotesChangeBtn()
 	},
 	'.settings__show': (e) => {
 		setCheckedInputsClick(e)

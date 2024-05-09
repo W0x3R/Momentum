@@ -1451,7 +1451,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   clickEvents: function() { return /* binding */ clickEvents; }
 /* harmony export */ });
-/* harmony import */ var _quotes_setQuotesActiveStyles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
+/* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
 /* harmony import */ var _settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35);
 /* harmony import */ var _settings_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(36);
 /* harmony import */ var _settings_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37);
@@ -1513,7 +1513,7 @@ const clickEvents = {
 	},
 	'.quotes__change-btn': () => {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_14__.changeQuote)()
-		;(0,_quotes_setQuotesActiveStyles__WEBPACK_IMPORTED_MODULE_0__.setQuotesActiveStyles)()
+		;(0,_quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
 	},
 	'.settings__show': (e) => {
 		(0,_settings_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setCheckedInputsClick)(e)
@@ -1530,15 +1530,16 @@ const clickEvents = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setQuotesActiveStyles: function() { return /* binding */ setQuotesActiveStyles; }
+/* harmony export */   rotateQuotesChangeBtn: function() { return /* binding */ rotateQuotesChangeBtn; }
 /* harmony export */ });
 const quotesChangeBtn = document.querySelector('.quotes__change-btn')
 let rotate = 0;
 
-const setQuotesActiveStyles = () => {
+const rotateQuotesChangeBtn = () => {
 	rotate += 180;
 	quotesChangeBtn.style.transform = `rotate(${rotate}deg)`
 }
+
 
 /***/ }),
 /* 35 */
