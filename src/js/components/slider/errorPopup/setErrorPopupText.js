@@ -1,9 +1,4 @@
-const popupMessage = document.querySelector('.popup__message')
-const popupErrorText = {
-	en: ['Nothing was found for this query. Try again.'],
-	ru: ['По заданному запросу ничего не найдено. Попробуйте еще раз.']
-}
+import { popupErrorText } from "./errorPopupText"
 
-export const setErrorPopupText = (value) => {
-	popupMessage.textContent = popupErrorText[value]
-}
+const popupMessage = document.querySelector('.popup__message')
+export const setErrorPopupText = (value) => popupMessage.textContent = popupErrorText[value]
