@@ -1,9 +1,9 @@
 import { createClient } from 'pexels';
-import { query, queryWrapper } from "../../query/queryValues"
-import { controlErrorPopupClass } from '../controlErrorPopupClass';
-import { getStorageImagesSrc } from '../../imagesSrc/localStorageImagesSrc';
-import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../localStorageSlider';
-import { loadImage } from './loadImage';
+import { query, queryWrapper } from "../../../query/queryValues"
+import { controlErrorPopupClass } from '../../controlErrorPopupClass';
+import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
+import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../localStorageSlider';
+import { loadImage } from '../loadImage';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 export let MAX_PEXELS_IMAGES;

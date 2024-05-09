@@ -269,7 +269,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _slider_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(10);
-/* harmony import */ var _slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
+/* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
 
 
 
@@ -305,7 +305,7 @@ const changeQueryInput = () => {
 	query = queryInputValue
 	queryInput.value = queryInputValue
 	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.setStorageNumPicturePexels)(0)
-	;(0,_slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_5__.changePexelsImages)()
+	;(0,_slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_5__.changePexelsImages)()
 }
 
 /***/ }),
@@ -1461,7 +1461,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_nextSong__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(50);
 /* harmony import */ var _player_prevSong__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(51);
 /* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(52);
-/* harmony import */ var _slider_changeImages_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(53);
+/* harmony import */ var _slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(53);
 /* harmony import */ var _slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(54);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(57);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(29);
@@ -1488,11 +1488,11 @@ __webpack_require__.r(__webpack_exports__);
 const clickEvents = {
 	'.main__button_prev': () => {
 		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('prev')
-		;(0,_slider_changeImages_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('prev')
+		;(0,_slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('prev')
 	},
 	'.main__button_next': () => {
 		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
-		;(0,_slider_changeImages_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
+		;(0,_slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
 	},
 	'.player__controls-play': _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
 	'.player__progress': (e) => (0,_player_updateProgressBar__WEBPACK_IMPORTED_MODULE_10__.rewindSong)(e),
@@ -2317,7 +2317,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
 /* harmony import */ var _slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(55);
-/* harmony import */ var _slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
+/* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
 
 
 
@@ -2329,7 +2329,7 @@ const changeImagesSrc = (e) => {
 		;(0,_slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
 	} else {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
-		;(0,_slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
+		;(0,_slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
 	}
 }
 
@@ -2693,7 +2693,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(57);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(60);
 /* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(55);
-/* harmony import */ var _components_slider_changeImages_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(16);
+/* harmony import */ var _components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(16);
 /* harmony import */ var _components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(11);
 /* harmony import */ var _components_slider_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(73);
 /* harmony import */ var _components_slider_controlErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(14);
@@ -2753,7 +2753,7 @@ setInterval(() => {
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
 ;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValue)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
-;(0,_components_slider_changeImages_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
+;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.checkChangeVolume)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_4__.getStorageQueryInputValueLoad)()
