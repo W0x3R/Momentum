@@ -1,6 +1,6 @@
-import { getStorageImagesSrc } from "../../imagesSrc/localStorageImagesSrc"
+import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc"
 import { changeGithubImages } from "./changeGithubImages";
-import { getRandomNum } from "../getRandomNum";
+import { getRandomNum } from "../../getRandomNum";
 
 const MAX_GITHUB_IMAGES = 20;
 export let randomNumGithub = getRandomNum(1, MAX_GITHUB_IMAGES)

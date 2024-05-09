@@ -1,9 +1,9 @@
-import { getStorageLanguage } from "../../language/localStorageLanguage";
-import { showGreetingText } from "../../greeting/showGreetingText";
-import { translateGreeting } from "../translateGreeting";
-import { getStorageImagesSrc } from "../../imagesSrc/localStorageImagesSrc";
-import { queryWrapper } from "../../query/queryValues";
-import { loadImage } from "./loadImage";
+import { getStorageLanguage } from "../../../language/localStorageLanguage";
+import { showGreetingText } from "../../../greeting/showGreetingText";
+import { translateGreeting } from "../../translateGreeting";
+import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";
+import { queryWrapper } from "../../../query/queryValues";
+import { loadImage } from "../loadImage";
 import { randomNumGithub } from "./changeGithubImagesClick";
 
 export const changeGithubImages = () => {

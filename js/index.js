@@ -1476,7 +1476,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_prevSong__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(51);
 /* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(52);
 /* harmony import */ var _slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(16);
-/* harmony import */ var _slider_changeImages_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(53);
+/* harmony import */ var _slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(53);
 /* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(56);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(29);
 /* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(58);
@@ -1501,11 +1501,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const clickEvents = {
 	'.main__button_prev': () => {
-		(0,_slider_changeImages_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('prev')
+		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('prev')
 		;(0,_slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('prev')
 	},
 	'.main__button_next': () => {
-		(0,_slider_changeImages_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
+		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
 		;(0,_slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
 	},
 	'.player__controls-play': _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
@@ -2299,7 +2299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeImagesSrc: function() { return /* binding */ changeImagesSrc; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _slider_changeImages_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
+/* harmony import */ var _slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(54);
 /* harmony import */ var _slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
 
 
@@ -2309,7 +2309,7 @@ const changeImagesSrc = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('github')
-		;(0,_slider_changeImages_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
+		;(0,_slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
 	} else {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
 		;(0,_slider_changeImages_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
@@ -2675,7 +2675,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(52);
 /* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(56);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(59);
-/* harmony import */ var _components_slider_changeImages_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(54);
+/* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(54);
 /* harmony import */ var _components_slider_changeImages_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(16);
 /* harmony import */ var _components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(11);
 /* harmony import */ var _components_slider_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(72);
@@ -2735,7 +2735,7 @@ setInterval(() => {
 ;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
 ;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValue)()
-;(0,_components_slider_changeImages_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
+;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
 ;(0,_components_slider_changeImages_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.checkChangeVolume)()
