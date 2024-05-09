@@ -2,7 +2,7 @@
 import { showGreetingText } from "../greeting/showGreetingText";
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { translateGreeting } from "../slider/translateGreeting"
-import { controlErrorPopupClass } from "../slider/controlErrorPopupClass";
+import { controlErrorPopupClass } from "../slider/errorPopup/controlErrorPopupClass";
 import { getStorageQueryInputValueLoad, setStorageNumPicturePexels } from '../slider/localStorageSlider'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
 

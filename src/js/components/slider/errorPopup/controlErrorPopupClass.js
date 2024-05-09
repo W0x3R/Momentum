@@ -1,4 +1,4 @@
-import { body } from "./changeImages/loadImage"
+import { body } from "../changeImages/loadImage"
 
 export const popup = document.querySelector('.popup')
 export const popupShadow = document.querySelector('.popup__shadow')
