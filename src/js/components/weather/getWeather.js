@@ -1,5 +1,5 @@
 import { getStorageLanguage } from "../language/localStorageLanguage"
-import { setWeatherText, setWeatherErrorText } from "./setWeatherText"
+import { setWeatherText, setWeatherErrorText } from "./setText/setWeatherText"
 import { setWeatherIcon } from "./setWeatherStyles"
 
 export const weatherInput = document.querySelector('.weather__input')

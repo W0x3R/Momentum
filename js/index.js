@@ -53,7 +53,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   weatherInput: function() { return /* binding */ weatherInput; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
+/* harmony import */ var _setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 /* harmony import */ var _setWeatherStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(7);
 
 
@@ -70,9 +70,9 @@ const getWeather = async () => {
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
 		;(0,_setWeatherStyles__WEBPACK_IMPORTED_MODULE_2__.setWeatherIcon)(data)
-		;(0,_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
+		;(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
 	} catch (error) {
-		(0,_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherErrorText)()
+		(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherErrorText)()
 	}
 }
 

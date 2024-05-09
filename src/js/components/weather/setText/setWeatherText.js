@@ -1,5 +1,5 @@
-import { getStorageLanguage } from "../language/localStorageLanguage"
-import { weatherError } from "./setWeatherStyles"
+import { getStorageLanguage } from "../../language/localStorageLanguage"
+import { weatherError } from "../setWeatherStyles"
 import { weatherText } from "./weatherText"
 
 const weatherTemperature = document.querySelector('.weather__temperature')
