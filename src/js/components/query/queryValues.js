@@ -4,7 +4,7 @@ import { getStorageLanguage } from "../language/localStorageLanguage";
 import { translateGreeting } from "../slider/translateGreeting"
 import { controlErrorPopupClass } from "../slider/controlErrorPopupClass";
 import { getStorageQueryInputValueLoad, setStorageNumPicturePexels } from '../slider/localStorageSlider'
-import { changePexelsImages } from "../slider/changePexelsImages";
+import { changePexelsImages } from "../slider/changeImages/changePexelsImages";
 
 export const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
