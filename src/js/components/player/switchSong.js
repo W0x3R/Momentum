@@ -1,6 +1,7 @@
 import playListSongs from "../../../../playListSongs.js"
 import { loadSong } from "./loadSong.js"
-import { playSong, checkFlagSong } from "./playSong.js"
+import { playSong } from "./playSong.js"
+import { checkFlagSong } from "./checkIsPlaySong.js";
 
 export let count = 0;
 

@@ -1,6 +1,5 @@
 import { count } from "./switchSong";
-import { isPlay, setIsPlay } from "./setIsPlay";
-import { pauseSong } from "./pauseSong";
+import { setIsPlay } from "./setIsPlay";
 
 export const trackName = document.querySelector('.player__track-name')
 export const audio = document.querySelector('.player__audio')
@@ -14,8 +13,4 @@ export const playSong = () => {
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
 	playBtn.classList.add('player__controls-play_active')
 	setIsPlay(true)
-}
-
-export const checkFlagSong = () => {
-	isPlay ? pauseSong() : playSong()
 }
