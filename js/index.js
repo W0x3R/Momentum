@@ -1930,7 +1930,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const prevSong = () => {
-	document.querySelectorAll('li')[_setCount__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
+	const songList = document.querySelectorAll('.player__list-item')
+	songList[_setCount__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
 	;(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.decrementCount)()
 	if (_setCount__WEBPACK_IMPORTED_MODULE_1__.count < 0) {
 		(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.setCount)(_playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1)

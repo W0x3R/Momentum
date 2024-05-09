@@ -4,7 +4,8 @@ import { loadSong } from "./loadSong"
 import { playSong } from "./playSong"
 
 export const prevSong = () => {
-	document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
+	const songList = document.querySelectorAll('.player__list-item')
+	songList[count].classList.remove('player__list-item_active')
 	decrementCount()
 	if (count < 0) {
 		setCount(playListSongs.length - 1)
