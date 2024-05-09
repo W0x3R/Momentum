@@ -4,7 +4,7 @@ import { setCheckedInputsClick } from "../settings/setCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
 import { controlErrorPopupClass } from "../slider/controlErrorPopupClass"
-import { checkFlagSong } from "../player/checkIsPlaySong"
+import { playbackControl } from "../player/playbackControl"
 import { prevSong, playClickedSong, nextSong } from "../player/switchSong"
 import { rewindSong } from "../player/updateProgressBar"
 import { changePexelsImagesClick } from "../slider/changePexelsImages"
@@ -23,7 +23,7 @@ export const clickEvents = {
 		changeGithubImagesClick('next')
 		changePexelsImagesClick('next')
 	},
-	'.player__controls-play': checkFlagSong,
+	'.player__controls-play': playbackControl,
 	'.player__progress': (e) => rewindSong(e),
 	'.player__controls-prev': prevSong,
 	'.player__controls-next': nextSong,

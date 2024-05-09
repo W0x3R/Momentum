@@ -1,7 +1,7 @@
 import playListSongs from "../../../../playListSongs.js"
 import { loadSong } from "./loadSong.js"
 import { playSong } from "./playSong.js"
-import { checkFlagSong } from "./checkIsPlaySong.js";
+import { playbackControl } from "./playbackControl.js";
 
 export let count = 0;
 
@@ -34,7 +34,7 @@ export const playClickedSong = (e) => {
 			loadSong();
 			playSong();
 		} else {
-			checkFlagSong()
+			playbackControl()
 		}
 	}
 }

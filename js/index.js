@@ -1470,7 +1470,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(39);
 /* harmony import */ var _slider_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
-/* harmony import */ var _player_checkIsPlaySong__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
+/* harmony import */ var _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(40);
 /* harmony import */ var _player_switchSong__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(42);
 /* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49);
 /* harmony import */ var _slider_changePexelsImages__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(16);
@@ -1504,7 +1504,7 @@ const clickEvents = {
 		(0,_slider_changeGithubImages__WEBPACK_IMPORTED_MODULE_10__.changeGithubImagesClick)('next')
 		;(0,_slider_changePexelsImages__WEBPACK_IMPORTED_MODULE_9__.changePexelsImagesClick)('next')
 	},
-	'.player__controls-play': _player_checkIsPlaySong__WEBPACK_IMPORTED_MODULE_6__.checkFlagSong,
+	'.player__controls-play': _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
 	'.player__progress': (e) => (0,_player_updateProgressBar__WEBPACK_IMPORTED_MODULE_8__.rewindSong)(e),
 	'.player__controls-prev': _player_switchSong__WEBPACK_IMPORTED_MODULE_7__.prevSong,
 	'.player__controls-next': _player_switchSong__WEBPACK_IMPORTED_MODULE_7__.nextSong,
@@ -1636,7 +1636,7 @@ const clearGreetingsName = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   checkFlagSong: function() { return /* binding */ checkFlagSong; }
+/* harmony export */   playbackControl: function() { return /* binding */ playbackControl; }
 /* harmony export */ });
 /* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(41);
 /* harmony import */ var _pauseSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48);
@@ -1645,7 +1645,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const checkFlagSong = () => {
+const playbackControl = () => {
 	_setIsPlay__WEBPACK_IMPORTED_MODULE_2__.isPlay ? (0,_pauseSong__WEBPACK_IMPORTED_MODULE_1__.pauseSong)() : (0,_playSong__WEBPACK_IMPORTED_MODULE_0__.playSong)()
 }
 
@@ -1696,7 +1696,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
 /* harmony import */ var _loadSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 /* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41);
-/* harmony import */ var _checkIsPlaySong_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
+/* harmony import */ var _playbackControl_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
 
 
 
@@ -1733,7 +1733,7 @@ const playClickedSong = (e) => {
 			(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_1__.loadSong)();
 			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_2__.playSong)();
 		} else {
-			(0,_checkIsPlaySong_js__WEBPACK_IMPORTED_MODULE_3__.checkFlagSong)()
+			(0,_playbackControl_js__WEBPACK_IMPORTED_MODULE_3__.playbackControl)()
 		}
 	}
 }
