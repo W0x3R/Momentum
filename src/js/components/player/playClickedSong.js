@@ -7,7 +7,8 @@ export const playClickedSong = (e) => {
 	const songNum = parseInt(e.target.getAttribute('song_number'));
 	if (!isNaN(songNum)) {
 		if (count !== songNum) {
-			document.querySelectorAll('li')[count].classList.remove('player__list-item_active');
+			const songList = document.querySelectorAll('.player__list-item')
+			songList[count].classList.remove('player__list-item_active');
 			setCount(songNum)
 			loadSong();
 			playSong();

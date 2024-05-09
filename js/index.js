@@ -1766,7 +1766,8 @@ const playClickedSong = (e) => {
 	const songNum = parseInt(e.target.getAttribute('song_number'));
 	if (!isNaN(songNum)) {
 		if (_setCount_js__WEBPACK_IMPORTED_MODULE_3__.count !== songNum) {
-			document.querySelectorAll('li')[_setCount_js__WEBPACK_IMPORTED_MODULE_3__.count].classList.remove('player__list-item_active');
+			const songList = document.querySelectorAll('.player__list-item')
+			songList[_setCount_js__WEBPACK_IMPORTED_MODULE_3__.count].classList.remove('player__list-item_active');
 			(0,_setCount_js__WEBPACK_IMPORTED_MODULE_3__.setCount)(songNum)
 			;(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_0__.loadSong)();
 			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_1__.playSong)();
