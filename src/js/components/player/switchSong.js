@@ -2,17 +2,7 @@ import playListSongs from "../../../../playListSongs.js"
 import { loadSong } from "./loadSong.js"
 import { playSong } from "./playSong.js"
 import { playbackControl } from "./playbackControl.js";
-import { count, setCount, incrementCount, decrementCount } from "./setCount.js";
-
-export const nextSong = () => {
-	document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
-	incrementCount()
-	if (count > playListSongs.length - 1) {
-		setCount(0)
-	}
-	loadSong()
-	playSong()
-}
+import { count, setCount, decrementCount } from "./setCount.js";
 
 export const prevSong = () => {
 	document.querySelectorAll('li')[count].classList.remove('player__list-item_active')
