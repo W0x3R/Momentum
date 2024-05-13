@@ -54,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var _setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
-/* harmony import */ var _setWeatherStyles__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
+/* harmony import */ var _setWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
 /* harmony import */ var _showWeatherError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7);
 
 
@@ -71,7 +71,7 @@ const getWeather = async () => {
 		weatherInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
-		;(0,_setWeatherStyles__WEBPACK_IMPORTED_MODULE_2__.setWeatherIcon)(data)
+		;(0,_setWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__.setWeatherIconStyle)(data)
 		;(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
 		;(0,_showWeatherError__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('remove')
 	} catch (error) {
@@ -207,10 +207,10 @@ const weatherText = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setWeatherIcon: function() { return /* binding */ setWeatherIcon; }
+/* harmony export */   setWeatherIconStyle: function() { return /* binding */ setWeatherIconStyle; }
 /* harmony export */ });
 const weatherIcon = document.querySelector('.weather__icon')
-const setWeatherIcon = (data) => {
+const setWeatherIconStyle = (data) => {
 	weatherIcon.className = "weather__icon owf";
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
 }
