@@ -4,7 +4,7 @@ import { showGreetingText } from "../greeting/showGreetingText";
 import { setImagesSrcText } from "../imagesSrc/setImagesSrcText";
 import { setLanguageText } from "../language/setLanguageText";
 import { setQueryLabelText } from "../query/setQueryLabelText";
-import { setErrorPopupText } from "../slider/errorPopup/setErrorPopupText";
+import { setErrorPopupText } from "../slider/errorPopup/setText/setErrorPopupText";
 import { setSettingsText } from "../settings/setSettingsText";
 
 export const changeAppText = () => {
