@@ -5,7 +5,7 @@ import { setImagesSrcText } from "../imagesSrc/setImagesSrcText";
 import { setLanguageText } from "../language/setLanguageText";
 import { setQueryLabelText } from "../query/setQueryLabelText";
 import { setErrorPopupText } from "../slider/errorPopup/setText/setErrorPopupText";
-import { setSettingsText } from "../settings/setSettingsText";
+import { setSettingsText } from "../settings/setText/setSettingsText";
 
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()

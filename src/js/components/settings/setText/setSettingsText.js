@@ -1,4 +1,4 @@
-import { settingTitle } from "./setSettingsActiveStyles"
+import { settingTitle } from "../setSettingsActiveStyles"
 import { settingsTitleText, settingsShowText } from "./settingsText"
 
 const settingsShowTitles = document.querySelectorAll('.settings__show p')
