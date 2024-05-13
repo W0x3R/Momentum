@@ -1,5 +1,5 @@
 import { getStorageLanguage } from "../../language/localStorageLanguage"
-import { weatherError } from "../setWeatherStyles"
+import { weatherError } from "../showWeatherError"
 import { weatherText } from "./weatherText"
 
 const weatherTemperature = document.querySelector('.weather__temperature')
@@ -21,6 +21,5 @@ export const setWeatherErrorText = () => {
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
 	weatherHumidity.textContent = '';
-	weatherError.style.display = 'block';
 	weatherError.textContent = `${weatherText[currLang].error}`;
 }

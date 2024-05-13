@@ -652,6 +652,10 @@
 		margin: auto;
 		display: none;
 		user-select: none;
+
+		&-show {
+			display: block;
+		}
 	}
 
 	&__input {
