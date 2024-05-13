@@ -6,7 +6,7 @@ import { changeQuote } from "../quotes/changeQuote"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
 import { getWeather } from "../weather/getWeather"
 import { changeQueryInput } from "../query/queryValues"
-import { closeSettingsIcons } from "../settings/closeSettingsIcons"
+import { closeSettingsIcon } from "../settings/closeSettingsIcon"
 import { languageSelect } from "../language/setSelectedLanguageValue"
 import { imagesSrcSelect } from "../imagesSrc/setSelectedImagesSrc"
 
@@ -14,7 +14,7 @@ export const changeEvents = {
 	'.query__input': changeQueryInput,
 	'.source__select': (e) => {
 		changeImagesSrc(e),
-			closeSettingsIcons(imagesSrcSelect)
+			closeSettingsIcon(imagesSrcSelect)
 	},
 	'.language__select': () => {
 		setStorageLanguage()
@@ -23,7 +23,7 @@ export const changeEvents = {
 		changeAppText()
 		changeQuote()
 		changeLanguageIcon()
-		closeSettingsIcons(languageSelect)
+		closeSettingsIcon(languageSelect)
 	},
 	'.weather__input': getWeather
 }

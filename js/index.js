@@ -2284,7 +2284,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(67);
 /* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
 /* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(11);
-/* harmony import */ var _settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(68);
+/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(68);
 /* harmony import */ var _language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5);
 /* harmony import */ var _imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(69);
 
@@ -2303,7 +2303,7 @@ const changeEvents = {
 	'.query__input': _query_queryValues__WEBPACK_IMPORTED_MODULE_7__.changeQueryInput,
 	'.source__select': (e) => {
 		(0,_imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__.changeImagesSrc)(e),
-			(0,_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcons)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
+			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
 	},
 	'.language__select': () => {
 		(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setStorageLanguage)()
@@ -2312,7 +2312,7 @@ const changeEvents = {
 		;(0,_changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_0__.changeAppText)()
 		;(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__.changeQuote)()
 		;(0,_language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__.changeLanguageIcon)()
-		;(0,_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcons)(_language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__.languageSelect)
+		;(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__.languageSelect)
 	},
 	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather
 }
@@ -2354,19 +2354,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeLanguageIcon: function() { return /* binding */ changeLanguageIcon; }
 /* harmony export */ });
 /* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(68);
+/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(68);
 
 
 
 const changeLanguageIcon = () => {
 	const currLang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_ru')
-		_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_en')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_ru')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_en')
 	}
 	else if (currLang === 'ru') {
-		_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_en')
-		_settings_closeSettingsIcons__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_ru')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_en')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_ru')
 	}
 }
 
@@ -2377,12 +2377,12 @@ const changeLanguageIcon = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   closeSettingsIcons: function() { return /* binding */ closeSettingsIcons; },
+/* harmony export */   closeSettingsIcon: function() { return /* binding */ closeSettingsIcon; },
 /* harmony export */   selectLanguageInner: function() { return /* binding */ selectLanguageInner; }
 /* harmony export */ });
 const selectLanguageInner = document.querySelector('.language__inner')
 
-const closeSettingsIcons = (el) => {
+const closeSettingsIcon = (el) => {
 	el.blur()
 }
 
