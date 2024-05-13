@@ -3,8 +3,7 @@ import { settingsShowInputs, getStorageCheckedItems } from "./localStorageSettin
 export const setCheckedInputsLoad = () => {
 	const checkedItems = getStorageCheckedItems()
 	if (checkedItems) {
-		for (let i = 0; i < checkedItems.length; i++) {
-			settingsShowInputs[checkedItems[i]].checked = true;
-		}
+		checkedItems.map((e) => settingsShowInputs[e].checked = true)
 	}
 }
+

@@ -2527,11 +2527,11 @@ __webpack_require__.r(__webpack_exports__);
 const setCheckedInputsLoad = () => {
 	const checkedItems = (0,_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.getStorageCheckedItems)()
 	if (checkedItems) {
-		for (let i = 0; i < checkedItems.length; i++) {
-			_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[checkedItems[i]].checked = true;
-		}
+		checkedItems.map((e) => _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
 }
+
+
 
 /***/ }),
 /* 76 */
