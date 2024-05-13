@@ -1,4 +1,4 @@
-import { settingsShowInputs, getStorageCheckedItems } from "./localStorageSettingsShow";
+import { settingsShowInputs, getStorageCheckedItems } from "../localStorageSettingsShow";
 
 export const setCheckedInputsLoad = () => {
 	const checkedItems = getStorageCheckedItems()

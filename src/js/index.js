@@ -26,7 +26,7 @@ import { changePexelsImages } from './components/slider/changeImages/Pexels/chan
 import { setQueryValue } from './components/query/queryValues.js'
 import { controlErrorPopupBtnHover } from './components/slider/errorPopup/controlErrorPopupBtnHover.js'
 import { popup } from './components/slider/errorPopup/controlErrorPopupClass.js'
-import { setCheckedInputsLoad } from './components/settings/setCheckedInputsLoad.js'
+import { setCheckedInputsLoad } from './components/settings/setCheckedInputs/setCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/keydownEvents.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
