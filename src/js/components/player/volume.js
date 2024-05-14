@@ -1,10 +1,10 @@
 import { audio } from "./playbackControl/playSong";
 import { setStorageVolumeValue, getStorageVolumeValue } from "./localStoragePlayer";
+import { isMute, setIsMute } from "./setMute";
 
 export const volumeBtn = document.querySelector('.player__sounds-volume')
 const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
-let isMute = false;
 
 const setMuteBtnHref = (iconName) => {
 	volumeMuteBtnIcon.setAttribute('href', `./images/svg/${iconName}`)
@@ -16,12 +16,12 @@ export const checkChangeVolume = () => {
 	if (audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		volumeMuteBtn.setAttribute('disabled', true)
-		isMute = true;
+		setIsMute(true)
 	}
 	else {
 		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		volumeMuteBtn.removeAttribute('disabled')
-		isMute = false;
+		setIsMute(false)
 	}
 }
 
@@ -29,7 +29,7 @@ const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue)
 	audio.volume = volumeValue
 	volumeBtn.value = volumeButtonValue
 	getStorageVolumeValue(iconName)
-	isMute = isMuteValue
+	setIsMute(isMuteValue)
 }
 
 export const checkIsMute = () => {
@@ -43,10 +43,10 @@ export const setVolumeBtnValue = () => {
 	volumeBtn.value = volumeValue
 	if (audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
-		isMute = true;
+		setIsMute(true)
 	} else {
 		setMuteBtnHref('muteSongBtn.svg#muteSong')
-		isMute = false;
+		setIsMute(false)
 		setStorageVolumeValue()
 	}
 }
