@@ -1,4 +1,4 @@
-import { queryInput } from "../query/queryValues"
+import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 
 export const getStorageQueryInputValueLoad = () => {
 	queryInput.value = localStorage.getItem('queryInputValue')

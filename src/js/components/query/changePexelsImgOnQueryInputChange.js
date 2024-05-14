@@ -5,10 +5,9 @@ import { setQueryValue } from "./setQueryValue";
 
 export const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
-
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
-export const changeQueryInput = () => {
+export const changePexelsImgOnQueryInputChange = () => {
 	const queryInputValue = String(queryInput.value.trim())
 	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
 	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {

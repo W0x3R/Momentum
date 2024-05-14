@@ -246,16 +246,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setStorageNumPicturePexels: function() { return /* binding */ setStorageNumPicturePexels; },
 /* harmony export */   setStorageQueryInputValueUnload: function() { return /* binding */ setStorageQueryInputValueUnload; }
 /* harmony export */ });
-/* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
+/* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(12);
 
 
 const getStorageQueryInputValueLoad = () => {
-	_query_queryValues__WEBPACK_IMPORTED_MODULE_0__.queryInput.value = localStorage.getItem('queryInputValue')
+	_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_0__.queryInput.value = localStorage.getItem('queryInputValue')
 	return localStorage.getItem('queryInputValue')
 }
 
 const setStorageQueryInputValueUnload = () => {
-	const queryInputValue = String(_query_queryValues__WEBPACK_IMPORTED_MODULE_0__.queryInput.value).trim()
+	const queryInputValue = String(_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_0__.queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
 }
 
@@ -272,7 +272,7 @@ const setStorageNumPicturePexels = (value) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   changeQueryInput: function() { return /* binding */ changeQueryInput; },
+/* harmony export */   changePexelsImgOnQueryInputChange: function() { return /* binding */ changePexelsImgOnQueryInputChange; },
 /* harmony export */   queryInput: function() { return /* binding */ queryInput; },
 /* harmony export */   queryWrapper: function() { return /* binding */ queryWrapper; }
 /* harmony export */ });
@@ -287,10 +287,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const queryWrapper = document.querySelector('.query')
 const queryInput = document.querySelector('.query__input')
-
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
-const changeQueryInput = () => {
+const changePexelsImgOnQueryInputChange = () => {
 	const queryInputValue = String(queryInput.value.trim())
 	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
 	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
@@ -356,7 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 /* harmony import */ var _query_setQueryValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
-/* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
 /* harmony import */ var _localStorageSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(11);
@@ -377,7 +376,7 @@ const changePexelsImages = () => {
 	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		console.log('pex');
-		_query_queryValues__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
+		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query: _query_setQueryValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
@@ -2035,7 +2034,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
 /* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
-/* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
+/* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 /* harmony import */ var _loadImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
 /* harmony import */ var _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56);
 
@@ -2049,7 +2048,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeGithubImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__.getStorageImagesSrc)()
 	if (imagesSrc === 'github') {
-		_query_queryValues__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
+		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_1__.showGreetingText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
@@ -2296,7 +2295,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69);
 /* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
-/* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
+/* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
 /* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(70);
 /* harmony import */ var _language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5);
 /* harmony import */ var _imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(71);
@@ -2313,7 +2312,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeEvents = {
-	'.query__input': _query_queryValues__WEBPACK_IMPORTED_MODULE_7__.changeQueryInput,
+	'.query__input': _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__.changePexelsImgOnQueryInputChange,
 	'.source__select': (e) => {
 		(0,_imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__.changeImagesSrc)(e),
 			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
@@ -2605,7 +2604,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _query_queryValues__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
+/* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(31);
 
@@ -2618,7 +2617,7 @@ const keydownEvents = {
 	'Enter': () => {
 		_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
 		_weather_getWeather__WEBPACK_IMPORTED_MODULE_1__.weatherInput.blur()
-		_query_queryValues__WEBPACK_IMPORTED_MODULE_2__.queryInput.blur()
+		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryInput.blur()
 	},
 	'Escape': () => {
 		(0,_settings_displaySettings__WEBPACK_IMPORTED_MODULE_3__.displaySettings)('remove')
