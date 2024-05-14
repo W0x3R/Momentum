@@ -15,7 +15,7 @@ import { changeSelectedLanguageValue } from './components/language/changeSelecte
 import { changeLanguageIcon } from './components/language/changeLanguageIcon.js'
 import { createPlayList } from './components/player/createPlayList'
 import { loadSong } from './components/player/loadSong.js'
-import { updateSongTime } from './components/player/updateSongTime.js'
+import { updateSongTime } from './components/player/songTime/updateSongTime.js'
 import { audio } from './components/player/playbackControl/playSong.js'
 import { nextSong } from './components/player/switchSong/nextSong.js'
 import { updateProgressBar } from './components/player/progressBar/updateProgressBar.js'

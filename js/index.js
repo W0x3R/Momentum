@@ -1774,7 +1774,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
 /* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
 /* harmony import */ var _switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
-/* harmony import */ var _updateSongTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50);
+/* harmony import */ var _songTime_updateSongTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50);
 
 
 
@@ -1784,7 +1784,7 @@ const loadSong = () => {
 	const currSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__.count]
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__.audio.src = currSong.src
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__.trackName.textContent = currSong.title
-	;(0,_updateSongTime__WEBPACK_IMPORTED_MODULE_3__.updateSongTime)()
+	;(0,_songTime_updateSongTime__WEBPACK_IMPORTED_MODULE_3__.updateSongTime)()
 }
 
 /***/ }),
@@ -2752,7 +2752,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(70);
 /* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(76);
 /* harmony import */ var _components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(48);
-/* harmony import */ var _components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(50);
+/* harmony import */ var _components_player_songTime_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(50);
 /* harmony import */ var _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(43);
 /* harmony import */ var _components_player_switchSong_nextSong_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(52);
 /* harmony import */ var _components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(55);
@@ -2832,7 +2832,7 @@ window.addEventListener('beforeunload', () => {
 })
 
 _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__.audio.addEventListener('timeupdate', function (e) {
-	;(0,_components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__.updateSongTime)()
+	;(0,_components_player_songTime_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__.updateSongTime)()
 	;(0,_components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__.updateProgressBar)(e)
 })
 
