@@ -1459,17 +1459,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(41);
 /* harmony import */ var _slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(13);
-/* harmony import */ var _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(42);
-/* harmony import */ var _player_playClickedSong__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(47);
-/* harmony import */ var _player_nextSong__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(52);
-/* harmony import */ var _player_prevSong__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(53);
-/* harmony import */ var _player_updateProgressBar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(54);
-/* harmony import */ var _slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(55);
-/* harmony import */ var _slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(56);
-/* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(60);
+/* harmony import */ var _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(42);
+/* harmony import */ var _player_switchSong_playClickedSong__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(47);
+/* harmony import */ var _player_switchSong_nextSong__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(52);
+/* harmony import */ var _player_switchSong_prevSong__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(53);
+/* harmony import */ var _player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(54);
+/* harmony import */ var _slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(56);
+/* harmony import */ var _slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(57);
+/* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(61);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(31);
-/* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(62);
-/* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(63);
+/* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(63);
+/* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(64);
 
 
 
@@ -1497,11 +1497,11 @@ const clickEvents = {
 		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
 		;(0,_slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
 	},
-	'.player__controls-play': _player_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
-	'.player__progress': (e) => (0,_player_updateProgressBar__WEBPACK_IMPORTED_MODULE_10__.rewindSong)(e),
-	'.player__controls-prev': _player_prevSong__WEBPACK_IMPORTED_MODULE_9__.prevSong,
-	'.player__controls-next': _player_nextSong__WEBPACK_IMPORTED_MODULE_8__.nextSong,
-	'.player__list': (e) => (0,_player_playClickedSong__WEBPACK_IMPORTED_MODULE_7__.playClickedSong)(e),
+	'.player__controls-play': _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
+	'.player__progress': (e) => (0,_player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_10__.rewindSong)(e),
+	'.player__controls-prev': _player_switchSong_prevSong__WEBPACK_IMPORTED_MODULE_9__.prevSong,
+	'.player__controls-next': _player_switchSong_nextSong__WEBPACK_IMPORTED_MODULE_8__.nextSong,
+	'.player__list': (e) => (0,_player_switchSong_playClickedSong__WEBPACK_IMPORTED_MODULE_7__.playClickedSong)(e),
 	'.player__sounds-mute': _player_volume__WEBPACK_IMPORTED_MODULE_13__.checkIsMute,
 	'.popup__button': () => {
 		(0,_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.controlErrorPopupClass)('remove')
@@ -1655,7 +1655,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   playSong: function() { return /* binding */ playSong; },
 /* harmony export */   trackName: function() { return /* binding */ trackName; }
 /* harmony export */ });
-/* harmony import */ var _setCount__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var _switchSong_setCount__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
 /* harmony import */ var _setIsPlay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(45);
 
 
@@ -1666,7 +1666,7 @@ const playBtn = document.querySelector('.player__controls-play')
 const playBtnIcon = document.querySelector('.player__controls-play-icon use')
 
 const playSong = () => {
-	document.querySelectorAll('li')[_setCount__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
+	document.querySelectorAll('li')[_switchSong_setCount__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
 	trackName.classList.add('player__track-name_active')
 	audio.play()
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
@@ -1739,8 +1739,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   playClickedSong: function() { return /* binding */ playClickedSong; }
 /* harmony export */ });
 /* harmony import */ var _loadSong_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48);
-/* harmony import */ var _playSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
-/* harmony import */ var _playbackControl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
+/* harmony import */ var _playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
+/* harmony import */ var _playbackControl_playbackControl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(42);
 /* harmony import */ var _setCount_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(44);
 
 
@@ -1755,9 +1755,9 @@ const playClickedSong = (e) => {
 			songList[_setCount_js__WEBPACK_IMPORTED_MODULE_3__.count].classList.remove('player__list-item_active');
 			(0,_setCount_js__WEBPACK_IMPORTED_MODULE_3__.setCount)(songNum)
 			;(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_0__.loadSong)();
-			(0,_playSong_js__WEBPACK_IMPORTED_MODULE_1__.playSong)();
+			(0,_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_1__.playSong)();
 		} else {
-			(0,_playbackControl_js__WEBPACK_IMPORTED_MODULE_2__.playbackControl)()
+			(0,_playbackControl_playbackControl_js__WEBPACK_IMPORTED_MODULE_2__.playbackControl)()
 		}
 	}
 }
@@ -1772,8 +1772,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   loadSong: function() { return /* binding */ loadSong; }
 /* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
-/* harmony import */ var _setCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+/* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43);
+/* harmony import */ var _switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
 /* harmony import */ var _updateSongTime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(50);
 
 
@@ -1781,9 +1781,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const loadSong = () => {
-	const currSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_setCount__WEBPACK_IMPORTED_MODULE_2__.count]
-	_playSong__WEBPACK_IMPORTED_MODULE_1__.audio.src = currSong.src
-	_playSong__WEBPACK_IMPORTED_MODULE_1__.trackName.textContent = currSong.title
+	const currSong = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__.count]
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__.audio.src = currSong.src
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_1__.trackName.textContent = currSong.title
 	;(0,_updateSongTime__WEBPACK_IMPORTED_MODULE_3__.updateSongTime)()
 }
 
@@ -1834,8 +1834,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _playListSongs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
 /* harmony import */ var _getSongTimeCode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
-/* harmony import */ var _setCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
+/* harmony import */ var _switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(44);
+/* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
 
 
 
@@ -1845,8 +1845,8 @@ let songCurrTime = document.querySelector('.player__current-time')
 let songDurationTime = document.querySelector('.player__duration')
 
 const updateSongTime = () => {
-	songCurrTime.textContent = (0,_getSongTimeCode__WEBPACK_IMPORTED_MODULE_1__.getSongTimeCode)(_playSong__WEBPACK_IMPORTED_MODULE_3__.audio.currentTime)
-	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_setCount__WEBPACK_IMPORTED_MODULE_2__.count].duration
+	songCurrTime.textContent = (0,_getSongTimeCode__WEBPACK_IMPORTED_MODULE_1__.getSongTimeCode)(_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_3__.audio.currentTime)
+	songDurationTime.textContent = _playListSongs__WEBPACK_IMPORTED_MODULE_0__["default"][_switchSong_setCount__WEBPACK_IMPORTED_MODULE_2__.count].duration
 }
 
 /***/ }),
@@ -1878,9 +1878,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   nextSong: function() { return /* binding */ nextSong; }
 /* harmony export */ });
 /* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
-/* harmony import */ var _setCount__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
+/* harmony import */ var _setCount_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
 /* harmony import */ var _loadSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48);
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
+/* harmony import */ var _playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
 
 
 
@@ -1888,13 +1888,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const nextSong = () => {
 	const songList = document.querySelectorAll('.player__list-item')
-	songList[_setCount__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
-	;(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.incrementCount)()
-	if (_setCount__WEBPACK_IMPORTED_MODULE_1__.count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
-		(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.setCount)(0)
+	songList[_setCount_js__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
+	;(0,_setCount_js__WEBPACK_IMPORTED_MODULE_1__.incrementCount)()
+	if (_setCount_js__WEBPACK_IMPORTED_MODULE_1__.count > _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1) {
+		(0,_setCount_js__WEBPACK_IMPORTED_MODULE_1__.setCount)(0)
 	}
 	(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_2__.loadSong)()
-	;(0,_playSong__WEBPACK_IMPORTED_MODULE_3__.playSong)()
+	;(0,_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_3__.playSong)()
 }
 
 /***/ }),
@@ -1907,9 +1907,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   prevSong: function() { return /* binding */ prevSong; }
 /* harmony export */ });
 /* harmony import */ var _playListSongs_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(49);
-/* harmony import */ var _setCount__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
-/* harmony import */ var _loadSong__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48);
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
+/* harmony import */ var _setCount_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(44);
+/* harmony import */ var _loadSong_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48);
+/* harmony import */ var _playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(43);
 
 
 
@@ -1917,13 +1917,13 @@ __webpack_require__.r(__webpack_exports__);
 
 const prevSong = () => {
 	const songList = document.querySelectorAll('.player__list-item')
-	songList[_setCount__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
-	;(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.decrementCount)()
-	if (_setCount__WEBPACK_IMPORTED_MODULE_1__.count < 0) {
-		(0,_setCount__WEBPACK_IMPORTED_MODULE_1__.setCount)(_playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1)
+	songList[_setCount_js__WEBPACK_IMPORTED_MODULE_1__.count].classList.remove('player__list-item_active')
+	;(0,_setCount_js__WEBPACK_IMPORTED_MODULE_1__.decrementCount)()
+	if (_setCount_js__WEBPACK_IMPORTED_MODULE_1__.count < 0) {
+		(0,_setCount_js__WEBPACK_IMPORTED_MODULE_1__.setCount)(_playListSongs_js__WEBPACK_IMPORTED_MODULE_0__["default"].length - 1)
 	}
-	(0,_loadSong__WEBPACK_IMPORTED_MODULE_2__.loadSong)()
-	;(0,_playSong__WEBPACK_IMPORTED_MODULE_3__.playSong)()
+	(0,_loadSong_js__WEBPACK_IMPORTED_MODULE_2__.loadSong)()
+	;(0,_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_3__.playSong)()
 }
 
 /***/ }),
@@ -1933,12 +1933,29 @@ const prevSong = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   rewindSong: function() { return /* binding */ rewindSong; },
+/* harmony export */   rewindSong: function() { return /* binding */ rewindSong; }
+/* harmony export */ });
+/* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
+/* harmony import */ var _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(55);
+
+
+
+const rewindSong = (e) => {
+	let x = e.pageX - _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.getBoundingClientRect().left
+	let clickedValue = (x * _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.max) / _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.clientWidth;
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.currentTime = (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.duration * clickedValue) / _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.max;
+}
+
+/***/ }),
+/* 55 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   progressBar: function() { return /* binding */ progressBar; },
 /* harmony export */   updateProgressBar: function() { return /* binding */ updateProgressBar; }
 /* harmony export */ });
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
-
-
 const progressBar = document.querySelector('.player__progress')
 
 const updateProgressBar = (e) => {
@@ -1949,14 +1966,8 @@ const updateProgressBar = (e) => {
 	}
 }
 
-const rewindSong = (e) => {
-	let x = e.pageX - progressBar.getBoundingClientRect().left
-	let clickedValue = (x * progressBar.max) / progressBar.clientWidth;
-	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.currentTime = (_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.duration * clickedValue) / progressBar.max;
-}
-
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1987,7 +1998,7 @@ const changePexelsImagesClick = (direction) => {
 }
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1997,8 +2008,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   randomNumGithub: function() { return /* binding */ randomNumGithub; }
 /* harmony export */ });
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
-/* harmony import */ var _getRandomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59);
+/* harmony import */ var _changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58);
+/* harmony import */ var _getRandomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(60);
 
 
 
@@ -2022,7 +2033,7 @@ const changeGithubImagesClick = (direction) => {
 }
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2032,11 +2043,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
-/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58);
+/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 /* harmony import */ var _loadImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
-/* harmony import */ var _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56);
+/* harmony import */ var _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(57);
 
 
 
@@ -2059,7 +2070,7 @@ const changeGithubImages = () => {
 }
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2079,7 +2090,7 @@ const translateGreeting = (greetingText) => {
 };
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2094,7 +2105,7 @@ const getRandomNum = (min, max) => {
 }
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2105,8 +2116,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setVolumeBtnValue: function() { return /* binding */ setVolumeBtnValue; },
 /* harmony export */   volumeBtn: function() { return /* binding */ volumeBtn; }
 /* harmony export */ });
-/* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
-/* harmony import */ var _localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(61);
+/* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
+/* harmony import */ var _localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62);
 
 
 
@@ -2120,9 +2131,9 @@ const setMuteBtnHref = (iconName) => {
 }
 
 const checkChangeVolume = () => {
-	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeBtn.value
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeBtn.value
 	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
-	if (_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
+	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		volumeMuteBtn.setAttribute('disabled', true)
 		isMute = true;
@@ -2135,7 +2146,7 @@ const checkChangeVolume = () => {
 }
 
 const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
-	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
 	volumeBtn.value = volumeButtonValue
 	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)(iconName)
 	isMute = isMuteValue
@@ -2148,9 +2159,9 @@ const checkIsMute = () => {
 
 const setVolumeBtnValue = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)()
-	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
 	volumeBtn.value = volumeValue
-	if (_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
+	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		isMute = true;
 	} else {
@@ -2161,7 +2172,7 @@ const setVolumeBtnValue = () => {
 }
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2170,7 +2181,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getStorageVolumeValue: function() { return /* binding */ getStorageVolumeValue; },
 /* harmony export */   setStorageVolumeValue: function() { return /* binding */ setStorageVolumeValue; }
 /* harmony export */ });
-/* harmony import */ var _volume__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60);
+/* harmony import */ var _volume__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(61);
 
 
 const setStorageVolumeValue = () => {
@@ -2180,7 +2191,7 @@ const setStorageVolumeValue = () => {
 const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2199,7 +2210,7 @@ const displaySettings = (value) => {
 }
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2207,8 +2218,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeQuote: function() { return /* binding */ changeQuote; }
 /* harmony export */ });
-/* harmony import */ var _getQuotesData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(64);
-/* harmony import */ var _showQuote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(66);
+/* harmony import */ var _getQuotesData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65);
+/* harmony import */ var _showQuote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(67);
 
 
 
@@ -2223,7 +2234,7 @@ const changeQuote = async () => {
 }
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2231,7 +2242,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotesData: function() { return /* binding */ getQuotesData; }
 /* harmony export */ });
-/* harmony import */ var _getQuotesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(65);
+/* harmony import */ var _getQuotesLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(66);
 
 
 const getQuotesData = async () => {
@@ -2242,7 +2253,7 @@ const getQuotesData = async () => {
 }
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2259,7 +2270,7 @@ const getQuotesLanguage = () => {
 }
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2267,7 +2278,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showQuote: function() { return /* binding */ showQuote; }
 /* harmony export */ });
-/* harmony import */ var _slider_getRandomNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(59);
+/* harmony import */ var _slider_getRandomNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(60);
 
 
 const quote = document.querySelector('.quotes__text')
@@ -2280,7 +2291,7 @@ const showQuote = (data) => {
 }
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2291,14 +2302,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(21);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _date_date__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(34);
-/* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(68);
-/* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
-/* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69);
+/* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(69);
+/* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(64);
+/* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(70);
 /* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(3);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(12);
-/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(70);
+/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(71);
 /* harmony import */ var _language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(5);
-/* harmony import */ var _imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(71);
+/* harmony import */ var _imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(72);
 
 
 
@@ -2330,7 +2341,7 @@ const changeEvents = {
 }
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2339,7 +2350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeImagesSrc: function() { return /* binding */ changeImagesSrc; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57);
+/* harmony import */ var _slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(58);
 /* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
 
 
@@ -2357,7 +2368,7 @@ const changeImagesSrc = (e) => {
 }
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2366,7 +2377,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeLanguageIcon: function() { return /* binding */ changeLanguageIcon; }
 /* harmony export */ });
 /* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(70);
+/* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71);
 
 
 
@@ -2383,7 +2394,7 @@ const changeLanguageIcon = () => {
 }
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2399,7 +2410,7 @@ const closeSettingsIcon = (el) => {
 }
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2417,7 +2428,7 @@ const setSelectedImagesSrc = (num, value) => {
 
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2426,7 +2437,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   inputEvents: function() { return /* binding */ inputEvents; }
 /* harmony export */ });
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(60);
+/* harmony import */ var _player_volume__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(61);
 
 
 
@@ -2436,7 +2447,7 @@ const inputEvents = {
 }
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2445,7 +2456,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   checkSelectedImagesSrc: function() { return /* binding */ checkSelectedImagesSrc; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20);
-/* harmony import */ var _setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71);
+/* harmony import */ var _setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
 
 
 
@@ -2461,7 +2472,7 @@ const checkSelectedImagesSrc = () => {
 }
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2486,7 +2497,7 @@ const changeSelectedLanguageValue = () => {
 }
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2510,7 +2521,7 @@ const createPlayList = () => {
 }
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2520,7 +2531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(23);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
-/* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(58);
+/* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(59);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
 /* harmony import */ var _setQueryValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(19);
 
@@ -2542,7 +2553,7 @@ const setQueryValueLoad = () => {
 }
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2557,7 +2568,7 @@ const controlErrorPopupBtnHover = (value) => {
 }
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2578,7 +2589,7 @@ const setCheckedInputsLoad = () => {
 
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2594,7 +2605,7 @@ const hideCheckedBlocksLoad = () => {
 }
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2605,7 +2616,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
-/* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(62);
+/* harmony import */ var _settings_displaySettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(63);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(31);
 
 
@@ -2633,7 +2644,7 @@ const callKeydownEvent = (e) => {
 }
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2734,28 +2745,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_date_date__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(34);
 /* harmony import */ var _components_eventHandlers_callEvents_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(35);
 /* harmony import */ var _components_eventHandlers_clickEvents_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(36);
-/* harmony import */ var _components_eventHandlers_changeEvents_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(67);
-/* harmony import */ var _components_eventHandlers_inputEvents_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(72);
-/* harmony import */ var _components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(73);
-/* harmony import */ var _components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(74);
-/* harmony import */ var _components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(69);
-/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(75);
+/* harmony import */ var _components_eventHandlers_changeEvents_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(68);
+/* harmony import */ var _components_eventHandlers_inputEvents_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(73);
+/* harmony import */ var _components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(74);
+/* harmony import */ var _components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(75);
+/* harmony import */ var _components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(70);
+/* harmony import */ var _components_player_createPlayList__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(76);
 /* harmony import */ var _components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(48);
 /* harmony import */ var _components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(50);
-/* harmony import */ var _components_player_playSong_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(43);
-/* harmony import */ var _components_player_nextSong_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(52);
-/* harmony import */ var _components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(54);
-/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(60);
-/* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(63);
-/* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(57);
+/* harmony import */ var _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(43);
+/* harmony import */ var _components_player_switchSong_nextSong_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(52);
+/* harmony import */ var _components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(55);
+/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(61);
+/* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(64);
+/* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(58);
 /* harmony import */ var _components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(15);
-/* harmony import */ var _components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(76);
-/* harmony import */ var _components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(77);
+/* harmony import */ var _components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(77);
+/* harmony import */ var _components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(78);
 /* harmony import */ var _components_slider_errorPopup_controlErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(13);
-/* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(78);
-/* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(79);
-/* harmony import */ var _components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(80);
-/* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(81);
+/* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(79);
+/* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(80);
+/* harmony import */ var _components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(81);
+/* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(82);
 
 
 
@@ -2820,9 +2831,9 @@ window.addEventListener('beforeunload', () => {
 	;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_4__.setStorageQueryInputValueUnload)()
 })
 
-_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_18__.audio.addEventListener('timeupdate', function (e) {
+_components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__.audio.addEventListener('timeupdate', function (e) {
 	;(0,_components_player_updateSongTime_js__WEBPACK_IMPORTED_MODULE_17__.updateSongTime)()
-	;(0,_components_player_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__.updateProgressBar)(e)
+	;(0,_components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__.updateProgressBar)(e)
 })
 
 window.addEventListener('click', function (e) {
@@ -2830,7 +2841,7 @@ window.addEventListener('click', function (e) {
 	;(0,_components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_31__.checkClickOutGreetingName)(e)
 })
 
-_components_player_playSong_js__WEBPACK_IMPORTED_MODULE_18__.audio.addEventListener('ended', _components_player_nextSong_js__WEBPACK_IMPORTED_MODULE_19__.nextSong)
+_components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__.audio.addEventListener('ended', _components_player_switchSong_nextSong_js__WEBPACK_IMPORTED_MODULE_19__.nextSong)
 window.addEventListener('input', (e) => (0,_components_eventHandlers_callEvents_js__WEBPACK_IMPORTED_MODULE_8__.callEvents)(e, _components_eventHandlers_inputEvents_js__WEBPACK_IMPORTED_MODULE_11__.inputEvents))
 window.addEventListener('change', (e) => (0,_components_eventHandlers_callEvents_js__WEBPACK_IMPORTED_MODULE_8__.callEvents)(e, _components_eventHandlers_changeEvents_js__WEBPACK_IMPORTED_MODULE_10__.changeEvents))
 window.addEventListener('keydown', (e) => (0,_components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_30__.callKeydownEvent)(e))

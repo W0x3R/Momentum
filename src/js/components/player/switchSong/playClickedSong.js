@@ -1,6 +1,6 @@
 import { loadSong } from "../loadSong.js"
-import { playSong } from "./playSong.js"
-import { playbackControl } from "./playbackControl.js";
+import { playSong } from "../playbackControl/playSong.js";
+import { playbackControl } from "../playbackControl/playbackControl.js";
 import { count, setCount } from "./setCount.js";
 
 export const playClickedSong = (e) => {

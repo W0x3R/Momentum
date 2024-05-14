@@ -1,4 +1,4 @@
-import { audio } from "./playSong";
+import { audio } from "./playbackControl/playSong";
 import { setStorageVolumeValue, getStorageVolumeValue } from "./localStoragePlayer";
 
 export const volumeBtn = document.querySelector('.player__sounds-volume')

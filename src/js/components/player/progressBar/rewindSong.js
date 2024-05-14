@@ -1,4 +1,4 @@
-import { audio } from "./playbackControl/playSong";
+import { audio } from "../playbackControl/playSong";
 import { progressBar } from "./updateProgressBar";
 
 export const rewindSong = (e) => {

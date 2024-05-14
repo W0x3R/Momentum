@@ -1,4 +1,4 @@
-import { count } from "./setCount";
+import { count } from "../switchSong/setCount";
 import { setIsPlay } from "./setIsPlay";
 
 export const trackName = document.querySelector('.player__track-name')

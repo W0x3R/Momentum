@@ -1,5 +1,5 @@
 import playListSongs from "../../../../playListSongs"
-import { trackName, audio } from "./playSong";
+import { audio, trackName } from "./playbackControl/playSong";
 import { count } from "./switchSong/setCount";
 import { updateSongTime } from "./updateSongTime";
 
