@@ -1,4 +1,4 @@
-import { loadSong } from "./loadSong.js"
+import { loadSong } from "../loadSong.js"
 import { playSong } from "./playSong.js"
 import { playbackControl } from "./playbackControl.js";
 import { count, setCount } from "./setCount.js";

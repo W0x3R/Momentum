@@ -1,6 +1,6 @@
 import playListSongs from "../../../../playListSongs"
 import { trackName, audio } from "./playSong";
-import { count } from "./setCount";
+import { count } from "./switchSong/setCount";
 import { updateSongTime } from "./updateSongTime";
 
 export const loadSong = () => {

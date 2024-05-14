@@ -1,6 +1,6 @@
-import playListSongs from "../../../../playListSongs.js"
-import { count, setCount, incrementCount } from "./setCount"
-import { loadSong } from "./loadSong.js"
+import playListSongs from "../../../../../playListSongs.js"
+import { count, setCount, incrementCount } from "./setCount.js"
+import { loadSong } from "../loadSong.js"
 import { playSong } from "./playSong"
 
 export const nextSong = () => {

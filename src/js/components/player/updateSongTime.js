@@ -1,6 +1,6 @@
 import playListSongs from "../../../../playListSongs"
 import { getSongTimeCode } from "./getSongTimeCode"
-import { count } from "./setCount"
+import { count } from "./switchSong/setCount"
 import { audio } from "./playSong"
 
 let songCurrTime = document.querySelector('.player__current-time')
