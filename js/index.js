@@ -279,7 +279,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
 /* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(15);
-/* harmony import */ var _setQueryValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
+/* harmony import */ var _setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(19);
 
 
 
@@ -296,7 +296,7 @@ const changePexelsImgOnQueryInputChange = () => {
 		(0,_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__.controlErrorPopupClass)('add')
 		return
 	}
-	(0,_setQueryValue__WEBPACK_IMPORTED_MODULE_3__.setQueryValue)(queryInputValue)
+	(0,_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_3__.setQueryValue)(queryInputValue)
 	queryInput.value = queryInputValue
 	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__.setStorageNumPicturePexels)(0)
 	;(0,_slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
@@ -354,7 +354,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changePexelsImages: function() { return /* binding */ changePexelsImages; }
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
-/* harmony import */ var _query_setQueryValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
+/* harmony import */ var _query_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(19);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12);
 /* harmony import */ var _errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(13);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
@@ -377,7 +377,7 @@ const changePexelsImages = () => {
 	if (imagesSrc === 'pexels') {
 		console.log('pex');
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
-		client.photos.search({ query: _query_setQueryValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
+		client.photos.search({ query: _query_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
@@ -2749,7 +2749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(63);
 /* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(57);
 /* harmony import */ var _components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(15);
-/* harmony import */ var _components_query_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(76);
+/* harmony import */ var _components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(76);
 /* harmony import */ var _components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(77);
 /* harmony import */ var _components_slider_errorPopup_controlErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(13);
 /* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(78);
@@ -2806,7 +2806,7 @@ setInterval(() => {
 ;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
 ;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
-;(0,_components_query_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValueLoad)()
+;(0,_components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()

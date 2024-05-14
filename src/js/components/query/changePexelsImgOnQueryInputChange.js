@@ -1,7 +1,7 @@
 import { controlErrorPopupClass } from "../slider/errorPopup/controlErrorPopupClass";
 import { setStorageNumPicturePexels } from '../slider/localStorageSlider'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
-import { setQueryValue } from "./setQueryValue";
+import { setQueryValue } from "./setQueryValue/setQueryValue";
 
 export const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
