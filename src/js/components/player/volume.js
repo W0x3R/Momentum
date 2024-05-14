@@ -6,7 +6,7 @@ import { setMuteBtnHref } from "./setMuteBtnHref";
 export const volumeBtn = document.querySelector('.player__sounds-volume')
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
 
-export const checkChangeVolume = () => {
+export const setBtnStateOnVolumeValue = () => {
 	audio.volume = volumeBtn.value
 	setStorageVolumeValue()
 	if (audio.volume === 0) {

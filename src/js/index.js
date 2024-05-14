@@ -19,7 +19,7 @@ import { updateSongTime } from './components/player/songTime/updateSongTime.js'
 import { audio } from './components/player/playbackControl/playSong.js'
 import { nextSong } from './components/player/switchSong/nextSong.js'
 import { updateProgressBar } from './components/player/progressBar/updateProgressBar.js'
-import { setVolumeBtnValue, checkChangeVolume } from './components/player/volume.js'
+import { setVolumeBtnValue, setBtnStateOnVolumeValue } from './components/player/volume.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeGithubImages } from './components/slider/changeImages/Github/changeGithubImages.js'
 import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
@@ -52,7 +52,7 @@ setQueryValueLoad()
 changeGithubImages()
 changePexelsImages()
 setVolumeBtnValue()
-checkChangeVolume()
+setBtnStateOnVolumeValue()
 getStorageQueryInputValueLoad()
 setCheckedInputsLoad()
 hideCheckedBlocksLoad()

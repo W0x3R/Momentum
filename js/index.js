@@ -2111,8 +2111,8 @@ const getRandomNum = (min, max) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   checkChangeVolume: function() { return /* binding */ checkChangeVolume; },
 /* harmony export */   checkIsMute: function() { return /* binding */ checkIsMute; },
+/* harmony export */   setBtnStateOnVolumeValue: function() { return /* binding */ setBtnStateOnVolumeValue; },
 /* harmony export */   setVolumeBtnValue: function() { return /* binding */ setVolumeBtnValue; },
 /* harmony export */   volumeBtn: function() { return /* binding */ volumeBtn; }
 /* harmony export */ });
@@ -2128,7 +2128,7 @@ __webpack_require__.r(__webpack_exports__);
 const volumeBtn = document.querySelector('.player__sounds-volume')
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
 
-const checkChangeVolume = () => {
+const setBtnStateOnVolumeValue = () => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeBtn.value
 	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
 	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
@@ -2468,7 +2468,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const inputEvents = {
-	'.player__sounds-volume': _player_volume__WEBPACK_IMPORTED_MODULE_1__.checkChangeVolume,
+	'.player__sounds-volume': _player_volume__WEBPACK_IMPORTED_MODULE_1__.setBtnStateOnVolumeValue,
 	'.greeting__name': _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName
 }
 
@@ -2847,7 +2847,7 @@ setInterval(() => {
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
-;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.checkChangeVolume)()
+;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setBtnStateOnVolumeValue)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_4__.getStorageQueryInputValueLoad)()
 ;(0,_components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_28__.setCheckedInputsLoad)()
 ;(0,_components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_29__.hideCheckedBlocksLoad)()
