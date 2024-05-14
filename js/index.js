@@ -2149,13 +2149,13 @@ const checkChangeVolume = () => {
 const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
 	volumeBtn.value = volumeButtonValue
-	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)(iconName)
+	setMuteBtnHref(iconName)
 	;(0,_setMute__WEBPACK_IMPORTED_MODULE_2__.setIsMute)(isMuteValue)
 }
 
 const checkIsMute = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)()
-	_setMute__WEBPACK_IMPORTED_MODULE_2__.isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('muteSongBtn.svg#muteSong'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('unMuteSongBtn.svg#unMuteSong'), true)
+	_setMute__WEBPACK_IMPORTED_MODULE_2__.isMute ? setVolumeBtnIcon(volumeValue, volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 0, 'unMuteSongBtn.svg#unMuteSong', true)
 }
 
 const setVolumeBtnValue = () => {

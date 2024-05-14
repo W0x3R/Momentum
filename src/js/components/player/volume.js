@@ -28,13 +28,13 @@ export const checkChangeVolume = () => {
 const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
 	audio.volume = volumeValue
 	volumeBtn.value = volumeButtonValue
-	getStorageVolumeValue(iconName)
+	setMuteBtnHref(iconName)
 	setIsMute(isMuteValue)
 }
 
 export const checkIsMute = () => {
 	const volumeValue = getStorageVolumeValue()
-	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, setMuteBtnHref('muteSongBtn.svg#muteSong'), false) : setVolumeBtnIcon(0, 0, setMuteBtnHref('unMuteSongBtn.svg#unMuteSong'), true)
+	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 0, 'unMuteSongBtn.svg#unMuteSong', true)
 }
 
 export const setVolumeBtnValue = () => {
