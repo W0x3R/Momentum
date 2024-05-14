@@ -1,5 +1,6 @@
 import { createClient } from 'pexels';
-import { query, queryWrapper } from "../../../query/queryValues"
+import { query } from '../../../query/setQueryValue';
+import { queryWrapper } from "../../../query/queryValues"
 import { controlErrorPopupClass } from '../../errorPopup/controlErrorPopupClass';
 import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../localStorageSlider';
