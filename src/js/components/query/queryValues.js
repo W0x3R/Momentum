@@ -13,7 +13,7 @@ export let query;
 
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
-export const setQueryValue = () => {
+export const setQueryValueLoad = () => {
 	const queryValue = getStorageQueryInputValueLoad()
 	const currLang = getStorageLanguage()
 	if (queryValue) {

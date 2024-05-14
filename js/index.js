@@ -276,7 +276,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   query: function() { return /* binding */ query; },
 /* harmony export */   queryInput: function() { return /* binding */ queryInput; },
 /* harmony export */   queryWrapper: function() { return /* binding */ queryWrapper; },
-/* harmony export */   setQueryValue: function() { return /* binding */ setQueryValue; }
+/* harmony export */   setQueryValueLoad: function() { return /* binding */ setQueryValueLoad; }
 /* harmony export */ });
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
@@ -299,7 +299,7 @@ let query;
 
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
-const setQueryValue = () => {
+const setQueryValueLoad = () => {
 	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_4__.getStorageQueryInputValueLoad)()
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
 	if (queryValue) {
@@ -2776,7 +2776,7 @@ setInterval(() => {
 ;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
 ;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 ;(0,_components_greeting_localStorageGreeting_js__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
-;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValue)()
+;(0,_components_query_queryValues_js__WEBPACK_IMPORTED_MODULE_25__.setQueryValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_23__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_24__.changePexelsImages)()
 ;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
