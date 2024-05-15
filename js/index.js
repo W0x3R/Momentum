@@ -1136,7 +1136,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeAppText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingName)('en')
+		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('en')
@@ -1144,7 +1144,7 @@ const changeAppText = () => {
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('en')
 	}
 	else if (currLang === 'ru') {
-		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingName)('ru')
+		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('ru')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('ru')
@@ -1161,7 +1161,7 @@ const changeAppText = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setGreetingName: function() { return /* binding */ setGreetingName; }
+/* harmony export */   setGreetingNameText: function() { return /* binding */ setGreetingNameText; }
 /* harmony export */ });
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
@@ -1171,7 +1171,7 @@ const greetingNameText = {
 	ru: '[Введите имя]'
 }
 
-const setGreetingName = (lang) => {
+const setGreetingNameText = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
 		|| greetingNameText.en === name || greetingNameText.ru === name || name === '') {

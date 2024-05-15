@@ -5,7 +5,7 @@ const greetingNameText = {
 	ru: '[Введите имя]'
 }
 
-export const setGreetingName = (lang) => {
+export const setGreetingNameText = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
 		|| greetingNameText.en === name || greetingNameText.ru === name || name === '') {
