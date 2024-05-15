@@ -1,25 +1,10 @@
 import { selectLanguageChildrenArr } from "./setSelectedLanguageValue"
+import { languageText, languageDescriptionText } from "./languageText"
 
 const languageDescription = document.querySelector('.language__description')
 
-const languageObj = {
-	en: {
-		en: 'English',
-		ru: 'Russian'
-	},
-	ru: {
-		en: 'Английский',
-		ru: 'Русский'
-	}
-}
-
-const languageDescriptionObj = {
-	en: 'Change language:',
-	ru: 'Изменить язык:'
-}
-
 export const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
-	selectLanguageChildrenArr[0].label = languageObj[valOne][valTwo]
-	selectLanguageChildrenArr[1].label = languageObj[valThree][valFour]
-	languageDescription.textContent = languageDescriptionObj[lang]
+	selectLanguageChildrenArr[0].label = languageText[valOne][valTwo]
+	selectLanguageChildrenArr[1].label = languageText[valThree][valFour]
+	languageDescription.textContent = languageDescriptionText[lang]
 }
