@@ -1,4 +1,4 @@
-import { getStorageVolumeValue } from "./localStoragePlayer"
+import { getStorageVolumeValue } from "../localStoragePlayer"
 import { isMute } from "./setMute"
 import { setVolumeBtnIcon } from "./setVolumeBtnIcon"
 

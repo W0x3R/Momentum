@@ -1,4 +1,4 @@
-import { volumeBtn } from "./setVolumeBtnValue"
+import { volumeBtn } from "./volume/setVolumeBtnValue"
 
 export const setStorageVolumeValue = () => {
 	localStorage.setItem('volumeValue', volumeBtn.value)
