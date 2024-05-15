@@ -2126,16 +2126,16 @@ __webpack_require__.r(__webpack_exports__);
 
 const volumeBtn = document.querySelector('.player__sounds-volume')
 
-const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
+const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
-	volumeBtn.value = volumeButtonValue
+	volumeBtn.value = volumeValue
 	;(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_3__.setMuteBtnHref)(iconName)
 	;(0,_setMute__WEBPACK_IMPORTED_MODULE_2__.setIsMute)(isMuteValue)
 }
 
 const checkIsMute = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)()
-	_setMute__WEBPACK_IMPORTED_MODULE_2__.isMute ? setVolumeBtnIcon(volumeValue, volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 0, 'unMuteSongBtn.svg#unMuteSong', true)
+	_setMute__WEBPACK_IMPORTED_MODULE_2__.isMute ? setVolumeBtnIcon(volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 'unMuteSongBtn.svg#unMuteSong', true)
 }
 
 const setVolumeBtnValue = () => {

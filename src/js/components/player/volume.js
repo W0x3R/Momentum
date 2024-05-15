@@ -5,16 +5,16 @@ import { setMuteBtnHref } from "./setMuteBtnHref";
 
 export const volumeBtn = document.querySelector('.player__sounds-volume')
 
-const setVolumeBtnIcon = (volumeValue, volumeButtonValue, iconName, isMuteValue) => {
+const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
 	audio.volume = volumeValue
-	volumeBtn.value = volumeButtonValue
+	volumeBtn.value = volumeValue
 	setMuteBtnHref(iconName)
 	setIsMute(isMuteValue)
 }
 
 export const checkIsMute = () => {
 	const volumeValue = getStorageVolumeValue()
-	isMute ? setVolumeBtnIcon(volumeValue, volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 0, 'unMuteSongBtn.svg#unMuteSong', true)
+	isMute ? setVolumeBtnIcon(volumeValue, 'muteSongBtn.svg#muteSong', false) : setVolumeBtnIcon(0, 'unMuteSongBtn.svg#unMuteSong', true)
 }
 
 export const setVolumeBtnValue = () => {
