@@ -7,7 +7,7 @@
 	user-select: none;
 
 	@include desktop {
-		bottom: 16px;
+		bottom: 10px;
 	}
 
 	&__button {
@@ -48,7 +48,7 @@
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			font-size: 90px;
+			font-size: 88px;
 		}
 
 		@include tablet {
@@ -73,7 +73,7 @@
 
 		@include desktop {
 			margin-bottom: 8px;
-			font-size: 22px;
+			font-size: 21px;
 		}
 
 		@include tablet {
@@ -99,7 +99,7 @@
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		font-size: 34px;
+		font-size: 33px;
 	}
 
 	@include tablet {
