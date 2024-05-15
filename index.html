@@ -28,39 +28,39 @@
 					<div class="player__progress-wrapper">
 						<p class="player__current-time"></p>
 						<progress class="player__progress" value="0"></progress>
-						<p class="player__duration"></p>
+						<p class="player__duration-time"></p>
 					</div>
-					<div class="player__controls">
-						<button class="player__controls-prev">
+					<div class="player__playback">
+						<button class="player__playback-prev">
 							<svg viewBox="0 0 64 64">
 								<use href='./images/svg/prevSongBtn.svg#prevSong'></use>
 							</svg>
 						</button>
-						<button class="player__controls-play">
-							<svg class="player__controls-play-icon" viewBox="0 0 64 64">
+						<button class="player__playback-play">
+							<svg class="player__playback-play-icon" viewBox="0 0 64 64">
 								<use href='./images/svg/playSongBtn.svg#playSong'></use>
 							</svg>
 						</button>
-						<button class="player__controls-next">
+						<button class="player__playback-next">
 							<svg viewBox="0 0 64 64">
 								<use href='./images/svg/nextSongBtn.svg#nextSong'></use>
 							</svg>
 						</button>
 					</div>
-					<div class="player__sounds">
-						<button class="player__sounds-mute">
+					<div class="player__volume">
+						<button class="player__volume-mute">
 							<svg viewBox="0 0 42.878 42.878">
 								<use></use>
 							</svg>
 						</button>
-						<input class="player__sounds-volume" type="range" name="volume" min="0" max="1" step="0.1" value="0.7">
+						<input class="player__volume-input" type="range" name="volume" min="0" max="1" step="0.1" value="0.7">
 					</div>
 					<ul class="player__list"></ul>
 				</div>
 				<div class="settings">
-					<div class="settings__icon">
-						<p class="settings__title"></p>
-						<button class="settings__button">
+					<div class="settings__header">
+						<p class="settings__header-title"></p>
+						<button class="settings__header-button">
 							<svg viewBox="0 0 32 32">
 								<use href='./images/svg/settingsBtn.svg#settingsBtn'></use>
 							</svg>
@@ -93,34 +93,39 @@
 								<input id="query" class="query__input" type="text" name="query">
 							</div>
 						</div>
-						<div class="settings__show">
-							<p class="settings__show-title"></p>
-							<div class="settings__show-player settings__show-inner" data-show="player">
-								<p class="settings__show-label"></p>
+						<div class="settings__blocksHideControl">
+							<p class="settings__blocksHideControl-title"></p>
+							<div class="settings__blocksHideControl-player settings__blocksHideControl-inner"
+								data-blockshide="player">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="player">
 							</div>
-							<div class="settings__show-weather settings__show-inner" data-show="weather">
-								<p class="settings__show-label"></p>
+							<div class="settings__blocksHideControl-weather settings__blocksHideControl-inner"
+								data-blockshide="weather">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="weather">
 							</div>
-							<div class="settings__show-time settings__show-inner" data-show="data__time">
-								<p class="settings__show-label"></p>
+							<div class="settings__blocksHideControl-time settings__blocksHideControl-inner"
+								data-blockshide="data__time">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="data__time">
 							</div>
-							<div class="settings__show-date settings__show-inner" data-show="data__date">
-								<p class="settings__show-label"></p>
+							<div class="settings__blocksHideControl-date settings__blocksHideControl-inner"
+								data-blockshide="data__date">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="data__date">
 							</div>
-							<div class="settings__show-greeting settings__show-inner" data-show="greeting">
-								<p class="settings__show-label"></p>
+							<div class="settings__blocksHideControl-greeting settings__blocksHideControl-inner"
+								data-blockshide="greeting">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="greeting">
 							</div>
-							<div class="settings__show-quotes settings__show-inner" data-show="quotes">
-								<p class="settings__show-label"></p>
+							<div class="settings__blocksHideControl-quotes settings__blocksHideControl-inner"
+								data-blockshide="quotes">
+								<p class="settings__blocksHideControl-label"></p>
 								<input type="checkbox" name="quotes">
 							</div>
 						</div>
-
 					</div>
 				</div>
 				<div class="weather">
@@ -156,7 +161,7 @@
 				<div class="popup">
 					<div class="popup__inner">
 						<p class="popup__message"></p>
-						<button class="popup__button">✖</button>
+						<button class="popup__close-button">✖</button>
 					</div>
 				</div>
 				<div class="popup__shadow"></div>

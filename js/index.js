@@ -321,7 +321,7 @@ const popupShadow = document.querySelector('.popup__shadow')
 
 const controlErrorPopupClass = (value) => {
 	popup.classList[value]('popup_show')
-	popupShadow.classList[value]('popup__shadow_show-slider')
+	popupShadow.classList[value]('popup__shadow-slider_show')
 	_changeImages_loadImage__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
@@ -375,7 +375,6 @@ const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
 	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
-		console.log('pex');
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query: _query_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
@@ -1168,7 +1167,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const setGreetingNameText = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
@@ -1388,10 +1386,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const settingsShowTitles = document.querySelectorAll('.settings__show p')
+const settingsBlocksHideControlTitles = document.querySelectorAll('.settings__blocksHideControl p')
 
 const setSettingsText = (lang) => {
-	settingsShowTitles.forEach((e, i) => {
+	settingsBlocksHideControlTitles.forEach((e, i) => {
 		e.textContent = _settingsText__WEBPACK_IMPORTED_MODULE_1__.settingsShowText[lang][i]
 	})
 	_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
@@ -1407,12 +1405,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setSettingsActiveStyles: function() { return /* binding */ setSettingsActiveStyles; },
 /* harmony export */   settingTitle: function() { return /* binding */ settingTitle; }
 /* harmony export */ });
-const settingsButton = document.querySelector('.settings__button')
-const settingTitle = document.querySelector('.settings__title')
+const settingsButton = document.querySelector('.settings__header-button')
+const settingTitle = document.querySelector('.settings__header-title')
 
 const setSettingsActiveStyles = (value) => {
-	settingTitle.classList[value]('settings__title_active')
-	settingsButton.classList[value]('settings__button_active')
+	settingTitle.classList[value]('settings__header-title_active')
+	settingsButton.classList[value]('settings__header-button_active')
 }
 
 /***/ }),
@@ -1547,19 +1545,19 @@ const clickEvents = {
 		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
 		;(0,_slider_changeImages_Pexels_changePexelsImagesClick__WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
 	},
-	'.player__controls-play': _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
+	'.player__playback-play': _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
 	'.player__progress': (e) => (0,_player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_10__.rewindSong)(e),
-	'.player__controls-prev': _player_switchSong_prevSong__WEBPACK_IMPORTED_MODULE_9__.prevSong,
-	'.player__controls-next': _player_switchSong_nextSong__WEBPACK_IMPORTED_MODULE_8__.nextSong,
+	'.player__playback-prev': _player_switchSong_prevSong__WEBPACK_IMPORTED_MODULE_9__.prevSong,
+	'.player__playback-next': _player_switchSong_nextSong__WEBPACK_IMPORTED_MODULE_8__.nextSong,
 	'.player__list': (e) => (0,_player_switchSong_playClickedSong__WEBPACK_IMPORTED_MODULE_7__.playClickedSong)(e),
-	'.player__sounds-mute': _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__.checkIsMute,
-	'.popup__button': () => {
+	'.player__volume-mute': _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__.checkIsMute,
+	'.popup__close-button': () => {
 		(0,_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.controlErrorPopupClass)('remove')
 	},
-	'.popup__shadow_show-slider': () => {
+	'.popup__shadow-slider_show': () => {
 		(0,_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_5__.controlErrorPopupClass)('remove')
 	},
-	'.settings__icon': () => {
+	'.settings__header': () => {
 		(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__.setSettingsActiveStyles)('toggle'),
 			(0,_settings_displaySettings__WEBPACK_IMPORTED_MODULE_15__.displaySettings)('toggle')
 	},
@@ -1571,7 +1569,7 @@ const clickEvents = {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__.changeQuote)()
 		;(0,_quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
 	},
-	'.settings__show': (e) => {
+	'.settings__blocksHideControl': (e) => {
 		(0,_settings_setCheckedInputs_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
 		;(0,_settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__.setStorageCheckedItems)()
@@ -1608,7 +1606,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setStorageCheckedItems: function() { return /* binding */ setStorageCheckedItems; },
 /* harmony export */   settingsShowInputs: function() { return /* binding */ settingsShowInputs; }
 /* harmony export */ });
-const settingsShowInputs = document.querySelectorAll('.settings__show input')
+const settingsShowInputs = document.querySelectorAll('.settings__blocksHideControl input')
 
 const setStorageCheckedItems = () => {
 	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
@@ -1627,8 +1625,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCheckedInputsClick: function() { return /* binding */ setCheckedInputsClick; }
 /* harmony export */ });
 const setCheckedInputsClick = (e) => {
-	if (e.target.closest('.settings__show-inner') && e.target.tagName !== 'INPUT') {
-		const closestInput = e.target.closest('.settings__show-inner').querySelector('input')
+	if (e.target.closest('.settings__blocksHideControl-inner') && e.target.tagName !== 'INPUT') {
+		const closestInput = e.target.closest('.settings__blocksHideControl-inner').querySelector('input')
 		closestInput.checked = closestInput.checked ? false : true
 	}
 }
@@ -1642,12 +1640,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   hideCheckedBlocksClick: function() { return /* binding */ hideCheckedBlocksClick; }
 /* harmony export */ });
-const forbiddenClasses = ['settings__show-title', 'settings__show']
+const forbiddenClasses = ['settings__blocksHideControl-title', 'settings__blocksHideControl']
 
 const hideCheckedBlocksClick = (e) => {
 	if (!forbiddenClasses.includes(e.target.className)) {
-		const dataShow = e.target.closest('[data-show]').dataset.show
-		document.querySelector(`.${dataShow}`).classList.toggle('settings__show_hide')
+		const dataShow = e.target.closest('[data-blockshide]').dataset.blockshide
+		document.querySelector(`.${dataShow}`).classList.toggle('settings__blocksHideControl_hide')
 	}
 }
 
@@ -1712,15 +1710,15 @@ __webpack_require__.r(__webpack_exports__);
 
 const trackName = document.querySelector('.player__track-name')
 const audio = document.querySelector('.player__audio')
-const playBtn = document.querySelector('.player__controls-play')
-const playBtnIcon = document.querySelector('.player__controls-play-icon use')
+const playBtn = document.querySelector('.player__playback-play')
+const playBtnIcon = document.querySelector('.player__playback-play-icon use')
 
 const playSong = () => {
 	document.querySelectorAll('li')[_switchSong_setCount__WEBPACK_IMPORTED_MODULE_0__.count].classList.add('player__list-item_active')
 	trackName.classList.add('player__track-name_active')
 	audio.play()
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
-	playBtn.classList.add('player__controls-play_active')
+	playBtn.classList.add('player__playback-play_active')
 	;(0,_setIsPlay__WEBPACK_IMPORTED_MODULE_1__.setIsPlay)(true)
 }
 
@@ -1775,7 +1773,7 @@ __webpack_require__.r(__webpack_exports__);
 const pauseSong = () => {
 	_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.pause()
 	_playSong__WEBPACK_IMPORTED_MODULE_0__.playBtnIcon.setAttribute('href', './images/svg/playSongBtn.svg#playSong')
-	_playSong__WEBPACK_IMPORTED_MODULE_0__.playBtn.classList.remove('player__controls-play_active')
+	_playSong__WEBPACK_IMPORTED_MODULE_0__.playBtn.classList.remove('player__playback-play_active')
 	;(0,_setIsPlay__WEBPACK_IMPORTED_MODULE_1__.setIsPlay)(false)
 }
 
@@ -1892,7 +1890,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let songCurrTime = document.querySelector('.player__current-time')
-let songDurationTime = document.querySelector('.player__duration')
+let songDurationTime = document.querySelector('.player__duration-time')
 
 const updateSongTime = () => {
 	songCurrTime.textContent = (0,_getSongTimeCode__WEBPACK_IMPORTED_MODULE_1__.getSongTimeCode)(_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_3__.audio.currentTime)
@@ -2189,10 +2187,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setStorageVolumeValue = () => {
-	localStorage.setItem('volumeValue', _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value)
+	localStorage.setItem('volumeValue', _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value)
 }
 
-const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
+const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value
 
 /***/ }),
 /* 67 */
@@ -2202,7 +2200,7 @@ const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volu
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setVolumeBtnValue: function() { return /* binding */ setVolumeBtnValue; },
-/* harmony export */   volumeBtn: function() { return /* binding */ volumeBtn; }
+/* harmony export */   volumeInput: function() { return /* binding */ volumeInput; }
 /* harmony export */ });
 /* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47);
 /* harmony import */ var _localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(66);
@@ -2213,12 +2211,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const volumeBtn = document.querySelector('.player__sounds-volume')
+const volumeInput = document.querySelector('.player__volume-input')
 
 const setVolumeBtnValue = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.getStorageVolumeValue)()
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
-	volumeBtn.value = volumeValue
+	volumeInput.value = volumeValue
 	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_3__.setMuteBtnHref)('unMuteSongBtn.svg#unMuteSong')
 		;(0,_setMute__WEBPACK_IMPORTED_MODULE_2__.setIsMute)(true)
@@ -2251,7 +2249,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setMuteBtnHref: function() { return /* binding */ setMuteBtnHref; }
 /* harmony export */ });
-const volumeMuteBtnIcon = document.querySelector(`.player__sounds-mute svg use`)
+const volumeMuteBtnIcon = document.querySelector(`.player__volume-mute svg use`)
 
 const setMuteBtnHref = (iconName) => {
 	volumeMuteBtnIcon.setAttribute('href', `./images/svg/${iconName}`)
@@ -2277,7 +2275,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
-	_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_1__.volumeBtn.value = volumeValue
+	_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_1__.volumeInput.value = volumeValue
 	;(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__.setMuteBtnHref)(iconName)
 	;(0,_setMute__WEBPACK_IMPORTED_MODULE_3__.setIsMute)(isMuteValue)
 }
@@ -2298,7 +2296,7 @@ const settingsWrapper = document.querySelector('.settings__wrapper')
 
 const displaySettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
-	_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__.popupShadow.classList[value]('popup__shadow_show-settings')
+	_slider_errorPopup_controlErrorPopupClass__WEBPACK_IMPORTED_MODULE_0__.popupShadow.classList[value]('popup__shadow-settings_show')
 }
 
 /***/ }),
@@ -2533,7 +2531,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const inputEvents = {
-	'.player__sounds-volume': _player_volume_setBtnStateOnVolumeValue__WEBPACK_IMPORTED_MODULE_1__.setBtnStateOnVolumeValue,
+	'.player__volume-input': _player_volume_setBtnStateOnVolumeValue__WEBPACK_IMPORTED_MODULE_1__.setBtnStateOnVolumeValue,
 	'.greeting__name': _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName
 }
 
@@ -2557,10 +2555,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const volumeMuteBtn = document.querySelector('.player__sounds-mute')
+const volumeMuteBtn = document.querySelector('.player__volume-mute')
 
 const setBtnStateOnVolumeValue = () => {
-	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_4__.volumeBtn.value
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_4__.volumeInput.value
 	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
 	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__.setMuteBtnHref)('unMuteSongBtn.svg#unMuteSong')
@@ -2689,10 +2687,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   controlErrorPopupBtnHover: function() { return /* binding */ controlErrorPopupBtnHover; }
 /* harmony export */ });
-const popupBtn = document.querySelector('.popup__button')
+const popupBtn = document.querySelector('.popup__close-button')
 
 const controlErrorPopupBtnHover = (value) => {
-	popupBtn.classList[value]('popup__button_hover')
+	popupBtn.classList[value]('popup__close-button_hover')
 }
 
 /***/ }),
@@ -2729,7 +2727,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const hideCheckedBlocksLoad = () => {
-	Array.from(_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__show_hide'))
+	Array.from(_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocksHideControl_hide'))
 }
 
 /***/ }),

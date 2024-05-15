@@ -81,7 +81,7 @@
 
 	&__progress-wrapper {
 		position: relative;
-		margin-bottom: 8px;
+		margin-bottom: 12px;
 		width: 100%;
 		font-size: 12px;
 		letter-spacing: 1px;
@@ -91,7 +91,7 @@
 		}
 
 		@include tablet {
-			margin-bottom: 5px;
+			margin-bottom: 8px;
 			font-size: 8px;
 		}
 
@@ -105,7 +105,7 @@
 		left: 0;
 	}
 
-	&__duration {
+	&__duration-time {
 		@extend %trackTime;
 		right: 0;
 	}
@@ -114,12 +114,8 @@
 		@include sizes(100%, 6px);
 		background-color: var(--progress-bg);
 
-		@include desktop {
-			height: 5px;
-		}
-
 		@include tablet {
-			height: 4px;
+			height: 5px;
 		}
 
 		&::-webkit-progress-bar {
@@ -131,7 +127,7 @@
 		}
 	}
 
-	&__controls {
+	&__playback {
 		@include flex($alignItems: center, $gap: 0 15px);
 		margin-bottom: 6px;
 		pointer-events: inherit;
@@ -152,18 +148,18 @@
 		&-prev,
 		&-next {
 			@extend %playerOpacity;
-			@include sizes(36px, 36px);
+			@include sizes(38px, 38px);
 
 			@include desktop {
-				@include sizes(32px, 32px);
+				@include sizes(36px, 36px);
 			}
 
 			@include tablet {
-				@include sizes(28px, 28px);
+				@include sizes(32px, 32px);
 			}
 
 			@include mobile {
-				@include sizes(24px, 24px);
+				@include sizes(28px, 28px);
 			}
 
 			@include hoverOrActive {
@@ -172,19 +168,19 @@
 		}
 
 		&-play {
-			@include sizes(46px, 46px);
+			@include sizes(48px, 48px);
 			@extend %playerOpacity;
 
 			@include desktop {
-				@include sizes(42px, 42px);
+				@include sizes(46px, 46px);
 			}
 
 			@include tablet {
-				@include sizes(38px, 38px);
+				@include sizes(42px, 42px);
 			}
 
 			@include mobile {
-				@include sizes(34px, 34px);
+				@include sizes(38px, 38px);
 			}
 
 			@include hoverOrActive {
@@ -197,7 +193,7 @@
 		}
 	}
 
-	&__sounds {
+	&__volume {
 		@extend %flexCenter;
 		gap: 0 10px;
 		margin-bottom: 13px;
@@ -228,7 +224,7 @@
 			}
 		}
 
-		&-volume {
+		&-input {
 			@include sizes(80%, 18px);
 			@extend %playerOpacity;
 			border-radius: 4px;
@@ -312,7 +308,7 @@
 
 .settings {
 	z-index: 2;
-	&__icon {
+	&__header {
 		@include flex($alignItems: center, $gap: 0 10px);
 		cursor: pointer;
 
@@ -326,63 +322,63 @@
 				opacity: 1;
 			}
 		}
-	}
 
-	&__title {
-		padding-bottom: 4px;
-		color: var(--white);
-		letter-spacing: 2.3px;
-		border-bottom: 3px solid var(--white);
-		transition: all 0.5s linear;
-		opacity: 0.8;
-		font-size: 20px;
+		&-title {
+			padding-bottom: 4px;
+			color: var(--white);
+			letter-spacing: 2.3px;
+			border-bottom: 3px solid var(--white);
+			transition: all 0.5s linear;
+			opacity: 0.8;
+			font-size: 20px;
 
-		@include desktop {
-			padding-bottom: 2px;
-			font-size: 18px;
+			@include desktop {
+				padding-bottom: 2px;
+				font-size: 18px;
+			}
+
+			@include tablet {
+				font-size: 17px;
+			}
+
+			@include mobile {
+				display: none;
+			}
+
+			@include smallestMobile {
+				display: block;
+				font-size: 19px;
+			}
+
+			&_active {
+				opacity: 1;
+				border-bottom-color: var(--orange);
+			}
 		}
 
-		@include tablet {
-			font-size: 17px;
-		}
+		&-button {
+			@include sizes(32px, 32px);
+			transition:
+				opacity 0.5s linear,
+				transform 0.4s linear;
+			opacity: 0.8;
 
-		@include mobile {
-			display: none;
-		}
+			@include desktop {
+				@include sizes(30px, 30px);
+			}
 
-		@include smallestMobile {
-			display: block;
-			font-size: 19px;
-		}
+			@include tablet {
+				@include sizes(26px, 26px);
+			}
 
-		&_active {
-			opacity: 1;
-			border-bottom-color: var(--orange);
-		}
-	}
+			@include smallestMobile {
+				@include sizes(28px, 28px);
+			}
 
-	&__button {
-		@include sizes(32px, 32px);
-		transition:
-			opacity 0.5s linear,
-			transform 0.4s linear;
-		opacity: 0.8;
-
-		@include desktop {
-			@include sizes(30px, 30px);
-		}
-
-		@include tablet {
-			@include sizes(26px, 26px);
-		}
-
-		@include smallestMobile {
-			@include sizes(28px, 28px);
-		}
-
-		&_active {
-			transform: rotate(180deg);
-			opacity: 1;
+			&_active {
+				transform: rotate(180deg);
+				opacity: 1;
+			}
 		}
 	}
 
@@ -405,7 +401,7 @@
 
 		@include tablet {
 			left: calc(50% - 227.5px);
-			top: calc(50% - 207px);
+			top: calc(50% - 200.9px);
 			gap: 18px 0;
 			padding: 7px 7px 0;
 			width: 455px;
@@ -415,20 +411,19 @@
 			left: calc(50% - 180px);
 			top: calc(50% - 250px);
 			width: 360px;
-			padding: 4px 4px 0;
+			padding: 4px 6px 0;
 		}
 
 		@include smallMobile {
 			left: calc(50% - 150px);
 			top: calc(50% - 248px);
 			width: 300px;
-			padding: 4px 4px 0;
 		}
 
 		@include smallestMobile {
 			width: 250px;
 			left: calc(50% - 125px);
-			top: calc(50% - 191px);
+			top: calc(50% - 227px);
 		}
 
 		&_show {
@@ -467,7 +462,7 @@
 		}
 	}
 
-	&__show {
+	&__blocksHideControl {
 		&-title {
 			margin-bottom: 13px;
 			font-size: 19px;

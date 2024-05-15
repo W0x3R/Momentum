@@ -3,12 +3,12 @@ import { setStorageVolumeValue, getStorageVolumeValue } from "../localStoragePla
 import { setIsMute } from "./setMute";
 import { setMuteBtnHref } from "./setMuteBtnHref";
 
-export const volumeBtn = document.querySelector('.player__sounds-volume')
+export const volumeInput = document.querySelector('.player__volume-input')
 
 export const setVolumeBtnValue = () => {
 	const volumeValue = getStorageVolumeValue()
 	audio.volume = volumeValue
-	volumeBtn.value = volumeValue
+	volumeInput.value = volumeValue
 	if (audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		setIsMute(true)

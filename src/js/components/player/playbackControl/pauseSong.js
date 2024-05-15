@@ -5,6 +5,6 @@ import { playBtn, playBtnIcon } from "./playSong"
 export const pauseSong = () => {
 	audio.pause()
 	playBtnIcon.setAttribute('href', './images/svg/playSongBtn.svg#playSong')
-	playBtn.classList.remove('player__controls-play_active')
+	playBtn.classList.remove('player__playback-play_active')
 	setIsPlay(false)
 }

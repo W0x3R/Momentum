@@ -1,4 +1,4 @@
-export const settingsShowInputs = document.querySelectorAll('.settings__show input')
+export const settingsShowInputs = document.querySelectorAll('.settings__blocksHideControl input')
 
 export const setStorageCheckedItems = () => {
 	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)

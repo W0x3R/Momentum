@@ -1,10 +1,10 @@
 import { settingTitle } from "../setSettingsActiveStyles"
 import { settingsTitleText, settingsShowText } from "./settingsText"
 
-const settingsShowTitles = document.querySelectorAll('.settings__show p')
+const settingsBlocksHideControlTitles = document.querySelectorAll('.settings__blocksHideControl p')
 
 export const setSettingsText = (lang) => {
-	settingsShowTitles.forEach((e, i) => {
+	settingsBlocksHideControlTitles.forEach((e, i) => {
 		e.textContent = settingsShowText[lang][i]
 	})
 	settingTitle.textContent = settingsTitleText[lang]

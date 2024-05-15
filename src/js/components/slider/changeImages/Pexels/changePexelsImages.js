@@ -13,7 +13,6 @@ export const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	const pexelsNumb = getStorageNumPicturePexels()
 	if (imagesSrc === 'pexels') {
-		console.log('pex');
 		queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {

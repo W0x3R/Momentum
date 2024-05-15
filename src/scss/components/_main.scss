@@ -175,8 +175,12 @@
 		color: var(--white);
 	}
 
-	&__button {
+	&__close-button {
 		@include closeButton(-40px, -40px, 40px, 40px, 20px);
+
+		&_hover {
+			color: var(--orange);
+		}
 	}
 
 	&__shadow {
@@ -190,12 +194,12 @@
 		min-height: 100%;
 		background: rgba(0, 0, 0, 0.8);
 
-		&_show-slider {
+		&-slider_show {
 			display: block;
 			z-index: 2;
 		}
 
-		&_show-settings {
+		&-settings_show {
 			display: block;
 		}
 	}

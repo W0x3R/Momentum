@@ -5,6 +5,6 @@ export const popupShadow = document.querySelector('.popup__shadow')
 
 export const controlErrorPopupClass = (value) => {
 	popup.classList[value]('popup_show')
-	popupShadow.classList[value]('popup__shadow_show-slider')
+	popupShadow.classList[value]('popup__shadow-slider_show')
 	body.classList[value]('body_fixed')
 }

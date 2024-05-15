@@ -25,19 +25,19 @@ export const clickEvents = {
 		changeGithubImagesClick('next')
 		changePexelsImagesClick('next')
 	},
-	'.player__controls-play': playbackControl,
+	'.player__playback-play': playbackControl,
 	'.player__progress': (e) => rewindSong(e),
-	'.player__controls-prev': prevSong,
-	'.player__controls-next': nextSong,
+	'.player__playback-prev': prevSong,
+	'.player__playback-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
-	'.player__sounds-mute': checkIsMute,
-	'.popup__button': () => {
+	'.player__volume-mute': checkIsMute,
+	'.popup__close-button': () => {
 		controlErrorPopupClass('remove')
 	},
-	'.popup__shadow_show-slider': () => {
+	'.popup__shadow-slider_show': () => {
 		controlErrorPopupClass('remove')
 	},
-	'.settings__icon': () => {
+	'.settings__header': () => {
 		setSettingsActiveStyles('toggle'),
 			displaySettings('toggle')
 	},
@@ -49,7 +49,7 @@ export const clickEvents = {
 		changeQuote()
 		rotateQuotesChangeBtn()
 	},
-	'.settings__show': (e) => {
+	'.settings__blocksHideControl': (e) => {
 		setCheckedInputsClick(e)
 		hideCheckedBlocksClick(e)
 		setStorageCheckedItems()

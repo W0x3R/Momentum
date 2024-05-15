@@ -25,10 +25,6 @@
 	transition: 0.3s ease;
 	color: var(--black);
 
-	&_hover {
-		color: var(--orange);
-	}
-
 	@include hoverOrActive {
 		color: var(--orange);
 	}
