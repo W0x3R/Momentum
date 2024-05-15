@@ -30,6 +30,7 @@
 	@include mobile {
 		padding: 4px 8px;
 		max-width: 185px;
+		min-width: 175px;
 	}
 
 	@include smallMobile {
@@ -274,7 +275,7 @@
 
 			@include mobile {
 				font-size: 11px;
-				letter-spacing: 1.1px;
+				letter-spacing: 0.6px;
 			}
 
 			@include smallMobile {
