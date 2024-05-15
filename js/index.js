@@ -1120,7 +1120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
 /* harmony import */ var _greeting_showGreetingText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(23);
 /* harmony import */ var _imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(24);
-/* harmony import */ var _language_setLanguageText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(25);
+/* harmony import */ var _language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(25);
 /* harmony import */ var _query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(27);
 /* harmony import */ var _slider_errorPopup_setText_setErrorPopupText__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(29);
 /* harmony import */ var _settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(31);
@@ -1138,7 +1138,7 @@ const changeAppText = () => {
 	if (currLang === 'en') {
 		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingName)('en')
 		;(0,_imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
-		;(0,_language_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
+		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('en')
 		;(0,_slider_errorPopup_setText_setErrorPopupText__WEBPACK_IMPORTED_MODULE_6__.setErrorPopupText)('en')
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('en')
@@ -1146,7 +1146,7 @@ const changeAppText = () => {
 	else if (currLang === 'ru') {
 		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingName)('ru')
 		;(0,_imagesSrc_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
-		;(0,_language_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
+		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('ru')
 		;(0,_slider_errorPopup_setText_setErrorPopupText__WEBPACK_IMPORTED_MODULE_6__.setErrorPopupText)('ru')
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('ru')
