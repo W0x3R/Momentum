@@ -19,6 +19,7 @@
 	@include desktop {
 		padding: 5px 10px;
 		max-width: 260px;
+		min-width: 232px;
 	}
 
 	@include tablet {
@@ -43,6 +44,7 @@
 
 		@include desktop {
 			font-size: 16px;
+			letter-spacing: 0.6px;
 		}
 
 		@include tablet {
@@ -262,7 +264,6 @@
 
 			@include desktop {
 				font-size: 14px;
-				letter-spacing: 1.5px;
 			}
 
 			@include tablet {
