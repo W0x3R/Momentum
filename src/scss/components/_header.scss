@@ -35,6 +35,7 @@
 
 	@include smallMobile {
 		max-width: 170px;
+		min-width: 169px;
 	}
 
 	&__track-name {
@@ -58,7 +59,8 @@
 		}
 
 		@include smallMobile {
-			font-size: 10.4px;
+			font-size: 11.2px;
+			letter-spacing: 0.2px;
 		}
 
 		&_active {
@@ -279,8 +281,7 @@
 			}
 
 			@include smallMobile {
-				font-size: 10.6px;
-				letter-spacing: 0.6px;
+				letter-spacing: 0.4px;
 			}
 
 			&_active {
