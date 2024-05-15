@@ -1,5 +1,5 @@
 import { setStorageGreetingName } from "../greeting/localStorageGreeting"
-import { setBtnStateOnVolumeValue } from "../player/volume"
+import { setBtnStateOnVolumeValue } from "../player/setBtnStateOnVolumeValue"
 
 export const inputEvents = {
 	'.player__sounds-volume': setBtnStateOnVolumeValue,
