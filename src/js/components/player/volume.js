@@ -2,15 +2,9 @@ import { audio } from "./playbackControl/playSong";
 import { setStorageVolumeValue, getStorageVolumeValue } from "./localStoragePlayer";
 import { isMute, setIsMute } from "./setMute";
 import { setMuteBtnHref } from "./setMuteBtnHref";
+import { setVolumeBtnIcon } from "./setVolumeBtnIcon";
 
 export const volumeBtn = document.querySelector('.player__sounds-volume')
-
-const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
-	audio.volume = volumeValue
-	volumeBtn.value = volumeValue
-	setMuteBtnHref(iconName)
-	setIsMute(isMuteValue)
-}
 
 export const checkIsMute = () => {
 	const volumeValue = getStorageVolumeValue()
