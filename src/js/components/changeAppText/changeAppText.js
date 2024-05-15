@@ -1,7 +1,7 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setGreetingName } from "../greeting/setGreetingName";
 import { showGreetingText } from "../greeting/showGreetingText";
-import { setImagesSrcText } from "../imagesSrc/setImagesSrcText";
+import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setErrorPopupText } from "../slider/errorPopup/setText/setErrorPopupText";
