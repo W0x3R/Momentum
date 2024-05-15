@@ -24,6 +24,7 @@
 
 	@include tablet {
 		max-width: 210px;
+		min-width: 190px;
 	}
 
 	@include mobile {
@@ -48,7 +49,7 @@
 		}
 
 		@include tablet {
-			font-size: 13.2px;
+			font-size: 13px;
 		}
 
 		@include mobile {
@@ -268,7 +269,7 @@
 
 			@include tablet {
 				font-size: 12px;
-				letter-spacing: 1.3px;
+				letter-spacing: 0.8px;
 			}
 
 			@include mobile {
