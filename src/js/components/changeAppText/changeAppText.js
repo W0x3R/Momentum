@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setGreetingName } from "../greeting/setGreetingName";
-import { showGreetingText } from "../greeting/showGreetingText";
+import { showGreetingMessageText } from "../greeting/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
@@ -25,5 +25,5 @@ export const changeAppText = () => {
 		setErrorPopupText('ru')
 		setSettingsText('ru')
 	}
-	showGreetingText()
+	showGreetingMessageText()
 }

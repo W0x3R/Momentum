@@ -1,10 +1,10 @@
-import { showGreetingText } from "../../greeting/showGreetingText";
+import { showGreetingMessageText } from "../../greeting/showGreetingMessageText";
 import { getStorageLanguage } from "../../language/localStorageLanguage";
 import { translateGreeting } from "../../slider/translateGreeting"
 import { getStorageQueryInputValueLoad } from "../../slider/localStorageSlider";
 import { setQueryValue } from "./setQueryValue";
 
-const greetingText = showGreetingText().split(' ')[1].slice(0, -1);
+const greetingText = showGreetingMessageText().split(' ')[1].slice(0, -1);
 
 export const setQueryValueLoad = () => {
 	const queryValue = getStorageQueryInputValueLoad()
