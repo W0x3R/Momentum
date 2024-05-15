@@ -255,6 +255,10 @@
 	&__list {
 		@include flex($direction: column, $gap: 12px 0);
 
+		@include desktop {
+			gap: 11px 0;
+		}
+
 		@include tablet {
 			gap: 9px 0;
 		}
