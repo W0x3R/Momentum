@@ -2135,14 +2135,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getStorageVolumeValue: function() { return /* binding */ getStorageVolumeValue; },
 /* harmony export */   setStorageVolumeValue: function() { return /* binding */ setStorageVolumeValue; }
 /* harmony export */ });
-/* harmony import */ var _volume__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
+/* harmony import */ var _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(63);
 
 
 const setStorageVolumeValue = () => {
-	localStorage.setItem('volumeValue', _volume__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value)
+	localStorage.setItem('volumeValue', _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value)
 }
 
-const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
+const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeBtn.value
 
 /***/ }),
 /* 63 */
@@ -2217,7 +2217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setVolumeBtnIcon: function() { return /* binding */ setVolumeBtnIcon; }
 /* harmony export */ });
 /* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(43);
-/* harmony import */ var _volume__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(63);
+/* harmony import */ var _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(63);
 /* harmony import */ var _setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(65);
 /* harmony import */ var _setMute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(64);
 
@@ -2227,7 +2227,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
-	_volume__WEBPACK_IMPORTED_MODULE_1__.volumeBtn.value = volumeValue
+	_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_1__.volumeBtn.value = volumeValue
 	;(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__.setMuteBtnHref)(iconName)
 	;(0,_setMute__WEBPACK_IMPORTED_MODULE_3__.setIsMute)(isMuteValue)
 }
@@ -2501,7 +2501,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(62);
 /* harmony import */ var _setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(65);
 /* harmony import */ var _setMute__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(64);
-/* harmony import */ var _volume__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
+/* harmony import */ var _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(63);
 
 
 
@@ -2511,7 +2511,7 @@ __webpack_require__.r(__webpack_exports__);
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
 
 const setBtnStateOnVolumeValue = () => {
-	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _volume__WEBPACK_IMPORTED_MODULE_4__.volumeBtn.value
+	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = _setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_4__.volumeBtn.value
 	;(0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_1__.setStorageVolumeValue)()
 	if (_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume === 0) {
 		(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_2__.setMuteBtnHref)('unMuteSongBtn.svg#unMuteSong')
@@ -2835,7 +2835,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(43);
 /* harmony import */ var _components_player_switchSong_nextSong_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(52);
 /* harmony import */ var _components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(55);
-/* harmony import */ var _components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(63);
+/* harmony import */ var _components_player_setVolumeBtnValue_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(63);
 /* harmony import */ var _components_player_setBtnStateOnVolumeValue_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(78);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(68);
 /* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(58);
@@ -2901,7 +2901,7 @@ setInterval(() => {
 ;(0,_components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_26__.setQueryValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_24__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_25__.changePexelsImages)()
-;(0,_components_player_volume_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
+;(0,_components_player_setVolumeBtnValue_js__WEBPACK_IMPORTED_MODULE_21__.setVolumeBtnValue)()
 ;(0,_components_player_setBtnStateOnVolumeValue_js__WEBPACK_IMPORTED_MODULE_22__.setBtnStateOnVolumeValue)()
 ;(0,_components_slider_localStorageSlider_js__WEBPACK_IMPORTED_MODULE_4__.getStorageQueryInputValueLoad)()
 ;(0,_components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_29__.setCheckedInputsLoad)()

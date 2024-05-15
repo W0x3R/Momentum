@@ -1,5 +1,5 @@
 import { audio } from "./playbackControl/playSong"
-import { volumeBtn } from "./volume"
+import { volumeBtn } from "./setVolumeBtnValue"
 import { setMuteBtnHref } from "./setMuteBtnHref"
 import { setIsMute } from "./setMute"
 

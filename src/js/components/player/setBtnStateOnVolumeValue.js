@@ -2,7 +2,7 @@ import { audio } from "./playbackControl/playSong"
 import { setStorageVolumeValue } from "./localStoragePlayer"
 import { setMuteBtnHref } from "./setMuteBtnHref"
 import { setIsMute } from "./setMute"
-import { volumeBtn } from "./volume"
+import { volumeBtn } from "./setVolumeBtnValue"
 
 const volumeMuteBtn = document.querySelector('.player__sounds-mute')
 
