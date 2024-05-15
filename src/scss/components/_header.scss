@@ -1,6 +1,12 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+
+	@include smallestMobile {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px 0;
+	}
 }
 
 .player {
@@ -36,6 +42,10 @@
 	@include smallMobile {
 		max-width: 170px;
 		min-width: 169px;
+	}
+
+	@include smallestMobile {
+		display: none;
 	}
 
 	&__track-name {
@@ -340,6 +350,11 @@
 			display: none;
 		}
 
+		@include smallestMobile {
+			display: block;
+			font-size: 19px;
+		}
+
 		&_active {
 			opacity: 1;
 			border-bottom-color: var(--orange);
@@ -359,6 +374,10 @@
 
 		@include tablet {
 			@include sizes(26px, 26px);
+		}
+
+		@include smallestMobile {
+			@include sizes(28px, 28px);
 		}
 
 		&_active {
@@ -404,6 +423,12 @@
 			top: calc(50% - 248px);
 			width: 300px;
 			padding: 4px 4px 0;
+		}
+
+		@include smallestMobile {
+			width: 250px;
+			left: calc(50% - 125px);
+			top: calc(50% - 191px);
 		}
 
 		&_show {
@@ -473,6 +498,12 @@
 
 			@include tablet {
 				padding-block: 9px;
+			}
+
+			&:first-of-type {
+				@include smallestMobile {
+					display: none;
+				}
 			}
 
 			& > input[type='checkbox'] {
@@ -654,6 +685,13 @@
 		letter-spacing: 0.3px;
 	}
 
+	@include smallestMobile {
+		font-size: 16px;
+		letter-spacing: 1px;
+		max-width: 280px;
+		gap: 5px 0;
+	}
+
 	&:focus-within .weather__icon {
 		animation: shake 2s infinite;
 	}
@@ -696,6 +734,11 @@
 			max-width: 148px;
 		}
 
+		@include smallestMobile {
+			max-width: 275px;
+			font-size: 24px;
+		}
+
 		&:focus + .weather__hr {
 			border-color: var(--orange);
 		}
@@ -729,6 +772,11 @@
 
 		@include smallMobile {
 			font-size: 28px;
+		}
+
+		@include smallestMobile {
+			font-size: 34px;
+			height: 31px;
 		}
 	}
 

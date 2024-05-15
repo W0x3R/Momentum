@@ -10,12 +10,20 @@
 		bottom: 10px;
 	}
 
+	@include smallestMobile {
+		bottom: 20px;
+	}
+
 	&__button {
 		position: absolute;
 		top: calc(50% - 16px);
 		@include sizes(32px, 32px);
 		background-color: transparent;
 		cursor: pointer;
+
+		@include smallestMobile {
+			top: 83%;
+		}
 
 		&_prev {
 			left: 4%;
@@ -63,6 +71,10 @@
 		@include smallMobile {
 			font-size: 62px;
 		}
+
+		@include smallestMobile {
+			font-size: 66px;
+		}
 	}
 
 	&__date {
@@ -83,6 +95,10 @@
 		@include mobile {
 			margin-bottom: 6px;
 			font-size: 16px;
+		}
+
+		@include smallestMobile {
+			font-size: 17px;
 		}
 
 		&::first-letter {
@@ -112,6 +128,11 @@
 
 	@include smallMobile {
 		font-size: 22px;
+	}
+
+	@include smallestMobile {
+		letter-spacing: 0;
+		font-size: 19.9px;
 	}
 
 	&__text {
