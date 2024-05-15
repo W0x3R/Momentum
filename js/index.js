@@ -1117,8 +1117,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeAppText: function() { return /* binding */ changeAppText; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
-/* harmony import */ var _greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24);
+/* harmony import */ var _greeting_setText_greetingName_setGreetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24);
 /* harmony import */ var _imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(26);
 /* harmony import */ var _language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(28);
 /* harmony import */ var _query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(30);
@@ -1136,7 +1136,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeAppText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('en')
+		(0,_greeting_setText_greetingName_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('en')
@@ -1144,14 +1144,14 @@ const changeAppText = () => {
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('en')
 	}
 	else if (currLang === 'ru') {
-		(0,_greeting_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('ru')
+		(0,_greeting_setText_greetingName_setGreetingName__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameText)('ru')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('ru')
 		;(0,_slider_errorPopup_setText_setErrorPopupText__WEBPACK_IMPORTED_MODULE_6__.setErrorPopupText)('ru')
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('ru')
 	}
-	(0,_greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__.showGreetingMessageText)()
+	(0,_greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__.showGreetingMessageText)()
 }
 
 /***/ }),
@@ -2092,7 +2092,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeGithubImages: function() { return /* binding */ changeGithubImages; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
+/* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
 /* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
@@ -2110,7 +2110,7 @@ const changeGithubImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__.getStorageImagesSrc)()
 	if (imagesSrc === 'github') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
-		const greetingText = (0,_greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
+		const greetingText = (0,_greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
 		let randomNum = _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__.randomNumGithub.toString().padStart(2, '0')
@@ -2657,7 +2657,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setQueryValueLoad: function() { return /* binding */ setQueryValueLoad; }
 /* harmony export */ });
-/* harmony import */ var _greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
+/* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(63);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(11);
@@ -2668,7 +2668,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const greetingText = (0,_greeting_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
+const greetingText = (0,_greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
 
 const setQueryValueLoad = () => {
 	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__.getStorageQueryInputValueLoad)()

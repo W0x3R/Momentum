@@ -1,4 +1,4 @@
-import { greetingName, setStorageGreetingName } from "./localStorageGreeting"
+import { greetingName, setStorageGreetingName } from "../../localStorageGreeting"
 import { greetingNameText } from "./greetingNameText"
 
 

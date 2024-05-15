@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
-import { setGreetingNameText } from "../greeting/setGreetingName";
-import { showGreetingMessageText } from "../greeting/showGreetingMessageText";
+import { setGreetingNameText } from "../greeting/setText/greetingName/setGreetingName";
+import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
