@@ -1,9 +1,6 @@
 import { greetingName, setStorageGreetingName } from "./localStorageGreeting"
+import { greetingNameText } from "./greetingNameText"
 
-const greetingNameText = {
-	en: '[Enter name]',
-	ru: '[Введите имя]'
-}
 
 export const setGreetingNameText = (lang) => {
 	const name = localStorage.getItem('name')
