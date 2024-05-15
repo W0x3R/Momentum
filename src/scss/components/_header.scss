@@ -198,19 +198,19 @@
 		}
 
 		&-mute {
-			@include sizes(20px, 20px);
+			@include sizes(24px, 24px);
 			@extend %playerOpacity;
 
 			@include desktop {
-				@include sizes(18px, 18px);
+				@include sizes(22px, 22px);
 			}
 
 			@include tablet {
-				@include sizes(16px, 16px);
+				@include sizes(18px, 18px);
 			}
 
 			@include mobile {
-				@include sizes(14px, 14px);
+				@include sizes(18px, 18сpx);
 			}
 
 			@include hoverOrActive {
