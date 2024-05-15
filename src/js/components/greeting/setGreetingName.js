@@ -1,6 +1,6 @@
 import { greetingName, setStorageGreetingName } from "./localStorageGreeting"
 
-const greetingObj = {
+const greetingNameText = {
 	en: '[Enter name]',
 	ru: '[Введите имя]'
 }
@@ -8,8 +8,8 @@ const greetingObj = {
 export const setGreetingName = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
-		|| greetingObj.en === name || greetingObj.ru === name || name === '') {
-		greetingName.textContent = greetingObj[lang]
+		|| greetingNameText.en === name || greetingNameText.ru === name || name === '') {
+		greetingName.textContent = greetingNameText[lang]
 		setStorageGreetingName()
 	}
 }

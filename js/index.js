@@ -1166,7 +1166,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 
 
-const greetingObj = {
+const greetingNameText = {
 	en: '[Enter name]',
 	ru: '[Введите имя]'
 }
@@ -1174,8 +1174,8 @@ const greetingObj = {
 const setGreetingName = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
-		|| greetingObj.en === name || greetingObj.ru === name || name === '') {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = greetingObj[lang]
+		|| greetingNameText.en === name || greetingNameText.ru === name || name === '') {
+		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = greetingNameText[lang]
 		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 	}
 }
