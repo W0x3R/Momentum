@@ -1,10 +1,7 @@
 import { getStorageLanguage } from "../language/localStorageLanguage"
+import { greetingMessageText } from "./greetingMessageText"
 
 const greetingText = document.querySelector('.greeting__text')
-const greetingMessageText = {
-	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
-	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
-}
 
 export const showGreetingMessageText = () => {
 	const currLang = getStorageLanguage()
