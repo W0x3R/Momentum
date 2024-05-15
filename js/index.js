@@ -1194,7 +1194,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const greetingText = document.querySelector('.greeting__text')
-const greetingObj = {
+const greetingMessageText = {
 	en: ['Good night, ', 'Good morning, ', 'Good afternoon, ', 'Good evening, '],
 	ru: ['Доброй ночи, ', 'Доброе утро, ', 'Добрый день, ', 'Добрый вечер, ']
 }
@@ -1202,7 +1202,7 @@ const greetingObj = {
 const showGreetingText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	const currHour = new Date().getHours();
-	const greeting = greetingObj[currLang][Math.floor(currHour / 6)]
+	const greeting = greetingMessageText[currLang][Math.floor(currHour / 6)]
 	greetingText.textContent = greeting
 	return greeting
 }
