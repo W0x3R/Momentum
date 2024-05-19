@@ -1170,7 +1170,7 @@ __webpack_require__.r(__webpack_exports__);
 const setGreetingNameText = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
-		|| _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.en === name || _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.ru === name || name === '') {
+		|| _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.en === name || _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.ru === name) {
 		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText[lang]
 		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 	}
