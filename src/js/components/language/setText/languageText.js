@@ -8,8 +8,3 @@ export const languageText = {
 		ru: 'Русский'
 	}
 }
-
-export const languageDescriptionText = {
-	en: 'Change language:',
-	ru: 'Изменить язык:'
-}
