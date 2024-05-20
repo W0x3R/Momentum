@@ -2,7 +2,7 @@ import { setGreetingName } from './components/greeting/setText/setGreetingName.j
 import { setStorageCity } from './components/weather/localStorageWeather.js'
 import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
 import { getWeather } from './components/weather/getWeather.js'
-import { setStorageQueryInputValueUnload } from './components/slider/localStorageSlider.js'
+import { setStorageQueryInputValue } from './components/slider/localStorageSlider.js'
 import { setQueryInputValue } from './components/slider/setQueryInputValue.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
@@ -63,7 +63,7 @@ hideCheckedBlocksLoad()
 
 window.addEventListener('beforeunload', () => {
 	setStorageCity()
-	setStorageQueryInputValueUnload()
+	setStorageQueryInputValue()
 })
 
 audio.addEventListener('timeupdate', function (e) {

@@ -5,6 +5,4 @@ const greetingTranslations = {
 	вечер: 'evening'
 };
 
-export const translateGreeting = (greetingText) => {
-	return greetingTranslations[greetingText];
-};
+export const translateGreeting = (greetingText) => greetingTranslations[greetingText];
