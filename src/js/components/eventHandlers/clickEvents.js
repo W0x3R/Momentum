@@ -32,13 +32,9 @@ export const clickEvents = {
 	'.player__playback-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
 	'.player__volume-mute': checkIsMute,
-	'.slider__popup-close-button': () => {
-		showSliderPopup('remove')
-	},
+	'.slider__popup-close-button': () => showSliderPopup('remove'),
 	'.greeting__popup-close-button': () => showGreetingPopup('remove'),
-	'.popup__shadow-slider_show': () => {
-		showSliderPopup('remove')
-	},
+	'.popup__shadow-slider_show': () => showSliderPopup('remove'),
 	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
 	'.settings__header': () => {
 		setSettingsActiveStyles('toggle'),

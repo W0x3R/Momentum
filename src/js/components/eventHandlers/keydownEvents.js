@@ -6,7 +6,7 @@ import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { trimGreetingName } from "../greeting/setText/trimGreetingName"
 import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
-const keydownEvents = {
+export const keydownEvents = {
 	'Enter': () => {
 		greetingName.blur()
 		weatherInput.blur()
@@ -17,12 +17,5 @@ const keydownEvents = {
 		showSettings('remove')
 		setSettingsActiveStyles('remove')
 		showGreetingPopup('remove')
-	}
-}
-
-export const callKeydownEvent = (e) => {
-	const key = e.key
-	if (key in keydownEvents) {
-		keydownEvents[key]()
 	}
 }
