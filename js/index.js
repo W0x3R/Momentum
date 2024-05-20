@@ -1630,7 +1630,7 @@ const clickEvents = {
 	'.settings__blocksHideControl': (e) => {
 		(0,_settings_setCheckedInputs_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
-		;(0,_settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__.setStorageCheckedItems)()
+		;(0,_settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
 	},
 	'.greeting__name': _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__.clearGreetingsName
 }
@@ -1660,18 +1660,18 @@ const rotateQuotesChangeBtn = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getStorageCheckedItems: function() { return /* binding */ getStorageCheckedItems; },
-/* harmony export */   setStorageCheckedItems: function() { return /* binding */ setStorageCheckedItems; },
+/* harmony export */   getStorageSettingsCheckedInputs: function() { return /* binding */ getStorageSettingsCheckedInputs; },
+/* harmony export */   setStorageSettingsCheckedInputs: function() { return /* binding */ setStorageSettingsCheckedInputs; },
 /* harmony export */   settingsShowInputs: function() { return /* binding */ settingsShowInputs; }
 /* harmony export */ });
 const settingsShowInputs = document.querySelectorAll('.settings__blocksHideControl input')
 
-const setStorageCheckedItems = () => {
+const setStorageSettingsCheckedInputs = () => {
 	const indexOfCheckedInputs = Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
 	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
 }
 
-const getStorageCheckedItems = () => JSON.parse(localStorage.getItem('indexOfCheckedInputs'))
+const getStorageSettingsCheckedInputs = () => JSON.parse(localStorage.getItem('indexOfCheckedInputs'))
 
 /***/ }),
 /* 47 */
@@ -2814,7 +2814,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setCheckedInputsLoad = () => {
-	const checkedItems = (0,_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.getStorageCheckedItems)()
+	const checkedItems = (0,_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.getStorageSettingsCheckedInputs)()
 	if (checkedItems) {
 		checkedItems.map((e) => _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
