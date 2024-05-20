@@ -1,11 +1,11 @@
 import { greetingName, setStorageGreetingName } from "../../localStorageGreeting"
-import { greetingNameText } from "./greetingNameText"
+import { greetingNamePlaceholderText } from "./greetingNamePlaceholderText"
 
 export const setGreetingNamePlaceholder = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
-		|| greetingNameText.en === name || greetingNameText.ru === name) {
-		greetingName.textContent = greetingNameText[lang]
+		|| greetingNamePlaceholderText.en === name || greetingNamePlaceholderText.ru === name) {
+		greetingName.textContent = greetingNamePlaceholderText[lang]
 		setStorageGreetingName()
 	}
 }

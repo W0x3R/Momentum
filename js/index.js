@@ -1163,15 +1163,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setGreetingNamePlaceholder: function() { return /* binding */ setGreetingNamePlaceholder; }
 /* harmony export */ });
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _greetingNameText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
+/* harmony import */ var _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(23);
 
 
 
 const setGreetingNamePlaceholder = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
-		|| _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.en === name || _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText.ru === name) {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingNameText__WEBPACK_IMPORTED_MODULE_1__.greetingNameText[lang]
+		|| _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText.en === name || _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText.ru === name) {
+		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText[lang]
 		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 	}
 }
@@ -1183,9 +1183,9 @@ const setGreetingNamePlaceholder = (lang) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   greetingNameText: function() { return /* binding */ greetingNameText; }
+/* harmony export */   greetingNamePlaceholderText: function() { return /* binding */ greetingNamePlaceholderText; }
 /* harmony export */ });
-const greetingNameText = {
+const greetingNamePlaceholderText = {
 	en: '[Enter name]',
 	ru: '[Введите имя]'
 }
