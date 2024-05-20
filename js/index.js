@@ -1556,7 +1556,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   clickEvents: function() { return /* binding */ clickEvents; }
 /* harmony export */ });
 /* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45);
-/* harmony import */ var _settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(46);
+/* harmony import */ var _settings_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(46);
 /* harmony import */ var _settings_setCheckedInputs_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(47);
 /* harmony import */ var _settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(49);
@@ -1630,7 +1630,7 @@ const clickEvents = {
 	'.settings__blocksHideControl': (e) => {
 		(0,_settings_setCheckedInputs_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
-		;(0,_settings_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
+		;(0,_settings_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
 	},
 	'.greeting__name': _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__.clearGreetingsName
 }
@@ -2810,13 +2810,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setCheckedInputsLoad: function() { return /* binding */ setCheckedInputsLoad; }
 /* harmony export */ });
-/* harmony import */ var _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
+/* harmony import */ var _localStorageSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
 
 
 const setCheckedInputsLoad = () => {
-	const checkedItems = (0,_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.getStorageSettingsCheckedInputs)()
+	const checkedItems = (0,_localStorageSettings__WEBPACK_IMPORTED_MODULE_0__.getStorageSettingsCheckedInputs)()
 	if (checkedItems) {
-		checkedItems.map((e) => _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
+		checkedItems.map((e) => _localStorageSettings__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
 }
 
@@ -2831,11 +2831,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   hideCheckedBlocksLoad: function() { return /* binding */ hideCheckedBlocksLoad; }
 /* harmony export */ });
-/* harmony import */ var _localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
+/* harmony import */ var _localStorageSettings__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(46);
 
 
 const hideCheckedBlocksLoad = () => {
-	Array.from(_localStorageSettingsShow__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocksHideControl_hide'))
+	Array.from(_localStorageSettings__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocksHideControl_hide'))
 }
 
 /***/ }),
