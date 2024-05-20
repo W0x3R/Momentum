@@ -1460,10 +1460,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settingsInputsText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 
 
-const settingsBlocksHideControlTitles = document.querySelectorAll('.settings__blocksHideControl p')
+const settingsInputsTitles = document.querySelectorAll('.settings__blocksHideControl p')
 
 const setSettingsInputsText = (lang) => {
-	settingsBlocksHideControlTitles.forEach((e, i) => {
+	settingsInputsTitles.forEach((e, i) => {
 		e.textContent = _settingsInputsText__WEBPACK_IMPORTED_MODULE_0__.settingsInputsText[lang][i]
 	})
 }
