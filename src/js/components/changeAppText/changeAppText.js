@@ -5,7 +5,7 @@ import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
-import { setSettingsTitleText } from "../settings/setText/setSettingsTitleText";
+import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
 import { setSettingsInputsText } from "../settings/setText/setSettingsInputsText";
 import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
 

@@ -1140,7 +1140,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(30);
 /* harmony import */ var _query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
 /* harmony import */ var _slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(34);
-/* harmony import */ var _settings_setText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36);
+/* harmony import */ var _settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36);
 /* harmony import */ var _settings_setText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(39);
 /* harmony import */ var _greeting_setGreetingErorrPopupText__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(41);
 
@@ -1162,7 +1162,7 @@ const changeAppText = () => {
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('en')
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_6__.setSliderPopupText)('en')
-		;(0,_settings_setText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__.setSettingsTitleText)('en')
+		;(0,_settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__.setSettingsTitleText)('en')
 		;(0,_settings_setText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_8__.setSettingsInputsText)('en')
 		;(0,_greeting_setGreetingErorrPopupText__WEBPACK_IMPORTED_MODULE_9__.setGreetingErrorPopupText)('en')
 	}
@@ -1172,7 +1172,7 @@ const changeAppText = () => {
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('ru')
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_6__.setSliderPopupText)('ru')
-		;(0,_settings_setText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__.setSettingsTitleText)('ru')
+		;(0,_settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_7__.setSettingsTitleText)('ru')
 		;(0,_settings_setText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_8__.setSettingsInputsText)('ru')
 		;(0,_greeting_setGreetingErorrPopupText__WEBPACK_IMPORTED_MODULE_9__.setGreetingErrorPopupText)('ru')
 	}
@@ -1408,12 +1408,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setSettingsTitleText: function() { return /* binding */ setSettingsTitleText; }
 /* harmony export */ });
 /* harmony import */ var _setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(37);
-/* harmony import */ var _settingsText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
+/* harmony import */ var _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(38);
 
 
 
 const setSettingsTitleText = (lang) => {
-	_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
+	_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
 }
 
 /***/ }),
