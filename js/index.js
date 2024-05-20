@@ -2822,21 +2822,19 @@ const controlSliderPopupBtnHover = (value) => sliderPopupBtn.classList[value]('s
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setCheckedInputsLoad: function() { return /* binding */ setCheckedInputsLoad; }
+/* harmony export */   setSettingsCheckedInputsLoad: function() { return /* binding */ setSettingsCheckedInputsLoad; }
 /* harmony export */ });
 /* harmony import */ var _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(47);
 /* harmony import */ var _localStorageSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(46);
 
 
 
-const setCheckedInputsLoad = () => {
+const setSettingsCheckedInputsLoad = () => {
 	const checkedItems = (0,_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
 	if (checkedItems) {
 		checkedItems.map((e) => _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
 }
-
-
 
 /***/ }),
 /* 96 */
@@ -3050,7 +3048,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(93);
 /* harmony import */ var _components_slider_sliderPopup_controlSliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(94);
 /* harmony import */ var _components_slider_sliderPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(14);
-/* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(95);
+/* harmony import */ var _components_settings_setCheckedInputs_setSettingsCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(95);
 /* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(96);
 /* harmony import */ var _components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(97);
 /* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(99);
@@ -3116,7 +3114,7 @@ setInterval(() => {
 ;(0,_components_player_volume_setVolumeBtnValue_js__WEBPACK_IMPORTED_MODULE_22__.setVolumeBtnValue)()
 ;(0,_components_player_volume_setBtnStateOnVolumeValue_js__WEBPACK_IMPORTED_MODULE_23__.setBtnStateOnVolumeValue)()
 ;(0,_components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__.setQueryInputValue)()
-;(0,_components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__.setCheckedInputsLoad)()
+;(0,_components_settings_setCheckedInputs_setSettingsCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__.setSettingsCheckedInputsLoad)()
 ;(0,_components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_31__.hideCheckedBlocksLoad)()
 
 window.addEventListener('beforeunload', () => {

@@ -28,7 +28,7 @@ import { changePexelsImages } from './components/slider/changeImages/Pexels/chan
 import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQueryVariableValueLoad.js'
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/controlSliderPopupBtnHover.js'
 import { sliderPopup } from './components/slider/sliderPopup/showSliderPopup.js'
-import { setCheckedInputsLoad } from './components/settings/setCheckedInputs/setCheckedInputsLoad.js'
+import { setSettingsCheckedInputsLoad } from './components/settings/setCheckedInputs/setSettingsCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/keydownEvents.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
@@ -58,7 +58,7 @@ changePexelsImages()
 setVolumeBtnValue()
 setBtnStateOnVolumeValue()
 setQueryInputValue()
-setCheckedInputsLoad()
+setSettingsCheckedInputsLoad()
 hideCheckedBlocksLoad()
 
 window.addEventListener('beforeunload', () => {
