@@ -1116,7 +1116,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeAppText: function() { return /* binding */ changeAppText; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _greeting_setText_greetingName_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var _greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
 /* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(24);
 /* harmony import */ var _imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(26);
 /* harmony import */ var _language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(28);
@@ -1135,7 +1135,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeAppText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		(0,_greeting_setText_greetingName_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
+		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('en', 'en', 'en', 'ru', 'en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('en')
@@ -1143,7 +1143,7 @@ const changeAppText = () => {
 		;(0,_settings_setText_setSettingsText__WEBPACK_IMPORTED_MODULE_7__.setSettingsText)('en')
 	}
 	else if (currLang === 'ru') {
-		(0,_greeting_setText_greetingName_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
+		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
 		;(0,_language_setText_setLanguageText__WEBPACK_IMPORTED_MODULE_4__.setLanguageText)('ru', 'en', 'ru', 'ru', 'ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_5__.setQueryLabelText)('ru')
