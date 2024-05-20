@@ -6,7 +6,7 @@ import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
-import { setSettingsInputsText } from "../settings/setText/setSettingsInputsText";
+import { setSettingsInputsText } from "../settings/setText/inputsText/setSettingsInputsText";
 import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
 
 export const changeAppText = () => {
