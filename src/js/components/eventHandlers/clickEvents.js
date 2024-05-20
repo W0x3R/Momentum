@@ -1,6 +1,6 @@
 import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
 import { setStorageSettingsCheckedInputs } from "../settings/localStorageSettings"
-import { setSettingsCheckedInputsClick } from "../settings/setCheckedInputs/setSettingsCheckedInputsClick"
+import { setSettingsCheckedInputsClick } from "../settings/setSettingsCheckedInputs/setSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
 import { showSliderPopup } from "../slider/sliderPopup/showSliderPopup"
