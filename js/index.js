@@ -2763,7 +2763,7 @@ const createPlayList = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setQueryValueLoad: function() { return /* binding */ setQueryValueLoad; }
+/* harmony export */   setQueryVariableValueLoad: function() { return /* binding */ setQueryVariableValueLoad; }
 /* harmony export */ });
 /* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
@@ -2778,7 +2778,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const greetingText = (0,_greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
 
-const setQueryValueLoad = () => {
+const setQueryVariableValueLoad = () => {
 	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__.getStorageQueryInputValue)()
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
 	if (queryValue) {
@@ -3031,7 +3031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(76);
 /* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(66);
 /* harmony import */ var _components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(16);
-/* harmony import */ var _components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(92);
+/* harmony import */ var _components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(92);
 /* harmony import */ var _components_slider_sliderPopup_controlSliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(93);
 /* harmony import */ var _components_slider_sliderPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(14);
 /* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(94);
@@ -3094,7 +3094,7 @@ setInterval(() => {
 ;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
 ;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
 ;(0,_components_greeting_setText_setGreetingName_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingName)()
-;(0,_components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_27__.setQueryValueLoad)()
+;(0,_components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_27__.setQueryVariableValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_25__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_26__.changePexelsImages)()
 ;(0,_components_player_volume_setVolumeBtnValue_js__WEBPACK_IMPORTED_MODULE_22__.setVolumeBtnValue)()

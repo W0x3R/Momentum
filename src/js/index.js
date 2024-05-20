@@ -25,7 +25,7 @@ import { setBtnStateOnVolumeValue } from './components/player/volume/setBtnState
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeGithubImages } from './components/slider/changeImages/Github/changeGithubImages.js'
 import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
-import { setQueryValueLoad } from './components/query/setQueryValue/setQueryValueLoad.js'
+import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQueryVariableValueLoad.js'
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/controlSliderPopupBtnHover.js'
 import { sliderPopup } from './components/slider/sliderPopup/showSliderPopup.js'
 import { setCheckedInputsLoad } from './components/settings/setCheckedInputs/setCheckedInputsLoad.js'
@@ -52,7 +52,7 @@ checkSelectedImagesSrc()
 setWeatherInputValue()
 getWeather()
 setGreetingName()
-setQueryValueLoad()
+setQueryVariableValueLoad()
 changeGithubImages()
 changePexelsImages()
 setVolumeBtnValue()

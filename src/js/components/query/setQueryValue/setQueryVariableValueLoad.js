@@ -6,7 +6,7 @@ import { setQueryVariableValue } from "./setQueryVariableValue";
 
 const greetingText = showGreetingMessageText().split(' ')[1].slice(0, -1);
 
-export const setQueryValueLoad = () => {
+export const setQueryVariableValueLoad = () => {
 	const queryValue = getStorageQueryInputValue()
 	const currLang = getStorageLanguage()
 	if (queryValue) {
