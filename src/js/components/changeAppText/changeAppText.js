@@ -2,7 +2,8 @@ import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setGreetingNamePlaceholder } from "../greeting/setText/greetingNamePlaceholder/setGreetingNamePlaceholder";
 import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
-import { setLanguageText } from "../language/setText/setLanguageText";
+import { setLanguageSelectText } from "../language/setText/setLanguageSelectText";
+import { setLanguageDescriptionText } from "../language/setText/setLanguageDescriptionText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
@@ -14,7 +15,8 @@ export const changeAppText = () => {
 	if (currLang === 'en') {
 		setGreetingNamePlaceholder('en')
 		setImagesSrcText('en')
-		setLanguageText('en', 'en', 'en', 'ru', 'en')
+		setLanguageSelectText('en', 'en', 'en', 'ru')
+		setLanguageDescriptionText('en')
 		setQueryLabelText('en')
 		setSliderPopupText('en')
 		setSettingsTitleText('en')
@@ -24,7 +26,8 @@ export const changeAppText = () => {
 	else if (currLang === 'ru') {
 		setGreetingNamePlaceholder('ru')
 		setImagesSrcText('ru')
-		setLanguageText('ru', 'en', 'ru', 'ru', 'ru')
+		setLanguageSelectText('ru', 'en', 'ru', 'ru')
+		setLanguageDescriptionText('ru')
 		setQueryLabelText('ru')
 		setSliderPopupText('ru')
 		setSettingsTitleText('ru')
