@@ -1,4 +1,4 @@
-import { controlErrorPopupClass } from "../slider/errorPopup/controlErrorPopupClass";
+import { showSliderPopup } from "../slider/errorPopup/showSliderPopup";
 import { setStorageNumPicturePexels } from '../slider/localStorageSlider'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
 import { setQueryValue } from "./setQueryValue/setQueryValue";
@@ -11,7 +11,7 @@ export const changePexelsImgOnQueryInputChange = () => {
 	const queryInputValue = String(queryInput.value.trim())
 	const checkIncludeForbiddenSymbols = Array.from(queryInputValue).some(e => forbiddenSymbols.includes(e))
 	if (queryInputValue === '' || checkIncludeForbiddenSymbols) {
-		controlErrorPopupClass('add')
+		showSliderPopup('add')
 		return
 	}
 	setQueryValue(queryInputValue)

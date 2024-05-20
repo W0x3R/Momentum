@@ -1,4 +1,4 @@
-import { popupShadow } from "../slider/errorPopup/controlErrorPopupClass"
+import { popupShadow } from "../slider/errorPopup/showSliderPopup"
 
 const settingsWrapper = document.querySelector('.settings__wrapper')
 

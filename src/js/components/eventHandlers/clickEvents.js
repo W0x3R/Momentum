@@ -3,7 +3,7 @@ import { setStorageCheckedItems } from "../settings/localStorageSettingsShow"
 import { setCheckedInputsClick } from "../settings/setCheckedInputs/setCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
-import { controlErrorPopupClass } from "../slider/errorPopup/controlErrorPopupClass"
+import { showSliderPopup } from "../slider/errorPopup/showSliderPopup"
 import { playbackControl } from "../player/playbackControl/playbackControl"
 import { playClickedSong } from "../player/switchSong/playClickedSong"
 import { nextSong } from "../player/switchSong/nextSong"
@@ -33,11 +33,11 @@ export const clickEvents = {
 	'.player__list': (e) => playClickedSong(e),
 	'.player__volume-mute': checkIsMute,
 	'.popup__close-button': () => {
-		controlErrorPopupClass('remove')
+		showSliderPopup('remove')
 	},
 	'.greeting__popup-close-button': () => showGreetingPopup('remove'),
 	'.popup__shadow-slider_show': () => {
-		controlErrorPopupClass('remove')
+		showSliderPopup('remove')
 	},
 	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
 	'.settings__header': () => {

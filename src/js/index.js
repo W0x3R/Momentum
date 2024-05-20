@@ -27,7 +27,7 @@ import { changeGithubImages } from './components/slider/changeImages/Github/chan
 import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
 import { setQueryValueLoad } from './components/query/setQueryValue/setQueryValueLoad.js'
 import { controlErrorPopupBtnHover } from './components/slider/errorPopup/controlErrorPopupBtnHover.js'
-import { popup } from './components/slider/errorPopup/controlErrorPopupClass.js'
+import { sliderPopup } from './components/slider/errorPopup/showSliderPopup.js'
 import { setCheckedInputsLoad } from './components/settings/setCheckedInputs/setCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/keydownEvents.js'
@@ -80,7 +80,7 @@ audio.addEventListener('ended', nextSong)
 window.addEventListener('input', (e) => callEvents(e, inputEvents))
 window.addEventListener('change', (e) => callEvents(e, changeEvents))
 window.addEventListener('keydown', (e) => callKeydownEvent(e))
-popup.addEventListener('mouseleave', () => controlErrorPopupBtnHover('add'))
-popup.addEventListener('mouseenter', () => controlErrorPopupBtnHover('remove'))
+sliderPopup.addEventListener('mouseleave', () => controlErrorPopupBtnHover('add'))
+sliderPopup.addEventListener('mouseenter', () => controlErrorPopupBtnHover('remove'))
 greetingPopup.addEventListener('mouseleave', () => controlGreetingPopupBtnHover('add'))
 greetingPopup.addEventListener('mouseenter', () => controlGreetingPopupBtnHover('remove'))

@@ -1,5 +1,5 @@
 import { body } from "../slider/changeImages/loadImage"
-import { popupShadow } from "../slider/errorPopup/controlErrorPopupClass"
+import { popupShadow } from "../slider/errorPopup/showSliderPopup"
 
 export const greetingPopup = document.querySelector('.greeting__popup')
 

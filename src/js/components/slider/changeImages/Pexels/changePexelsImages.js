@@ -1,7 +1,7 @@
 import { createClient } from 'pexels';
 import { query } from '../../../query/setQueryValue/setQueryValue';
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange"
-import { controlErrorPopupClass } from '../../errorPopup/controlErrorPopupClass';
+import { showSliderPopup } from '../../errorPopup/showSliderPopup';
 import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../localStorageSlider';
 import { loadImage } from '../loadImage';
@@ -25,7 +25,7 @@ export const changePexelsImages = () => {
 					pexelsNumb >= 0 ? loadImage(e.photos[pexelsNumb].src.landscape) : loadImage(e.photos[MAX_PEXELS_IMAGES + pexelsNumb].src.landscape)
 				}
 			} else {
-				controlErrorPopupClass('add')
+				showSliderPopup('add')
 			}
 		});
 	}
