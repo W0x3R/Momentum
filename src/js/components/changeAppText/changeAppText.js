@@ -3,7 +3,7 @@ import { setGreetingNamePlaceholder } from "../greeting/setText/greetingNamePlac
 import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageSelectText } from "../language/setText/setLanguageSelectText";
-import { setLanguageDescriptionText } from "../language/setText/setLanguageDescriptionText";
+import { setLanguageDescriptionText } from "../language/setText/descriptionText/setLanguageDescriptionText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
