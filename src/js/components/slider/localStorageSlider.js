@@ -2,7 +2,7 @@ import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 
 export const getStorageQueryInputValue = () => localStorage.getItem('queryInputValue')
 
-export const setStorageQueryInputValueUnload = () => {
+export const setStorageQueryInputValue = () => {
 	const queryInputValue = String(queryInput.value).trim()
 	localStorage.setItem('queryInputValue', queryInputValue)
 }
