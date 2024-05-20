@@ -31,6 +31,8 @@ import { setCheckedInputsLoad } from './components/settings/setCheckedInputs/set
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/keydownEvents.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
+import { greetingPopup } from './components/greeting/showGreetingPopup.js'
+import { controlGreetingPopupBtnHover } from './components/greeting/controlGreetingPopupBtnHover.js'
 
 setInterval(() => {
 	showTime()
@@ -79,3 +81,5 @@ window.addEventListener('change', (e) => callEvents(e, changeEvents))
 window.addEventListener('keydown', (e) => callKeydownEvent(e))
 popup.addEventListener('mouseleave', () => controlErrorPopupBtnHover('add'))
 popup.addEventListener('mouseenter', () => controlErrorPopupBtnHover('remove'))
+greetingPopup.addEventListener('mouseleave', () => controlGreetingPopupBtnHover('add'))
+greetingPopup.addEventListener('mouseenter', () => controlGreetingPopupBtnHover('remove'))

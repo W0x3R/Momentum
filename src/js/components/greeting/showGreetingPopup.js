@@ -1,7 +1,7 @@
 import { body } from "../slider/changeImages/loadImage"
 import { popupShadow } from "../slider/errorPopup/controlErrorPopupClass"
 
-const greetingPopup = document.querySelector('.greeting__popup')
+export const greetingPopup = document.querySelector('.greeting__popup')
 
 export const showGreetingPopup = (value) => {
 	greetingPopup.classList[value]('greeting__popup_show')

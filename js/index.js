@@ -2400,6 +2400,7 @@ const showQuote = (data) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   greetingPopup: function() { return /* binding */ greetingPopup; },
 /* harmony export */   showGreetingPopup: function() { return /* binding */ showGreetingPopup; }
 /* harmony export */ });
 /* harmony import */ var _slider_changeImages_loadImage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
@@ -2873,6 +2874,21 @@ const checkClickOutGreetingName = (e) => {
 	}
 }
 
+/***/ }),
+/* 96 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   controlGreetingPopupBtnHover: function() { return /* binding */ controlGreetingPopupBtnHover; }
+/* harmony export */ });
+const popupGreetingBtn = document.querySelector('.greeting__popup-close-button')
+
+const controlGreetingPopupBtnHover = (value) => {
+	popupGreetingBtn.classList[value]('greeting__popup-close-button_hover')
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -2980,6 +2996,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(92);
 /* harmony import */ var _components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(93);
 /* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(95);
+/* harmony import */ var _components_greeting_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(77);
+/* harmony import */ var _components_greeting_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(96);
+
+
 
 
 
@@ -3061,6 +3081,8 @@ window.addEventListener('change', (e) => (0,_components_eventHandlers_callEvents
 window.addEventListener('keydown', (e) => (0,_components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_31__.callKeydownEvent)(e))
 _components_slider_errorPopup_controlErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_28__.popup.addEventListener('mouseleave', () => (0,_components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__.controlErrorPopupBtnHover)('add'))
 _components_slider_errorPopup_controlErrorPopupClass_js__WEBPACK_IMPORTED_MODULE_28__.popup.addEventListener('mouseenter', () => (0,_components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__.controlErrorPopupBtnHover)('remove'))
+_components_greeting_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__.greetingPopup.addEventListener('mouseleave', () => (0,_components_greeting_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__.controlGreetingPopupBtnHover)('add'))
+_components_greeting_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__.greetingPopup.addEventListener('mouseenter', () => (0,_components_greeting_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__.controlGreetingPopupBtnHover)('remove'))
 }();
 /******/ })()
 ;
