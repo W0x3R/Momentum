@@ -2,7 +2,8 @@ import { setGreetingName } from './components/greeting/setText/setGreetingName.j
 import { setStorageCity } from './components/weather/localStorageWeather.js'
 import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
 import { getWeather } from './components/weather/getWeather.js'
-import { setStorageQueryInputValueUnload, getStorageQueryInputValueLoad } from './components/slider/localStorageSlider.js'
+import { setStorageQueryInputValueUnload } from './components/slider/localStorageSlider.js'
+import { setQueryInputValue } from './components/slider/setQueryInputValue.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
 import { showDate } from './components/date/date'
@@ -56,7 +57,7 @@ changeGithubImages()
 changePexelsImages()
 setVolumeBtnValue()
 setBtnStateOnVolumeValue()
-getStorageQueryInputValueLoad()
+setQueryInputValue()
 setCheckedInputsLoad()
 hideCheckedBlocksLoad()
 
