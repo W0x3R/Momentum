@@ -1,4 +1,4 @@
-const greetingErrorPopupText = {
-	en: 'Maximum number of characters entered',
-	ru: 'Введено максимальное количество символов'
+export const greetingErrorPopupText = {
+	en: 'Character limit exceeded.',
+	ru: 'Превышен лимит символов.'
 }
