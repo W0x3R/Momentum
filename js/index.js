@@ -2858,9 +2858,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setSettingsCheckedInputsLoad = () => {
-	const checkedItems = (0,_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
-	if (checkedItems) {
-		checkedItems.map((e) => _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
+	const settingsCheckedInputs = (0,_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
+	if (settingsCheckedInputs) {
+		settingsCheckedInputs.map((e) => _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
 }
 

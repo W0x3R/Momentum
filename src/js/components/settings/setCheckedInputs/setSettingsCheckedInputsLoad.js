@@ -2,8 +2,8 @@ import { settingsShowInputs } from "../findCheckedSettingsInputs";
 import { getStorageSettingsCheckedInputs } from "../localStorageSettings";
 
 export const setSettingsCheckedInputsLoad = () => {
-	const checkedItems = getStorageSettingsCheckedInputs()
-	if (checkedItems) {
-		checkedItems.map((e) => settingsShowInputs[e].checked = true)
+	const settingsCheckedInputs = getStorageSettingsCheckedInputs()
+	if (settingsCheckedInputs) {
+		settingsCheckedInputs.map((e) => settingsShowInputs[e].checked = true)
 	}
 }
