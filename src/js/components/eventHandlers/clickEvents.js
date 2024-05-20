@@ -15,6 +15,7 @@ import { checkIsMute } from "../player/volume/checkIsMute"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { displaySettings } from "../settings/displaySettings"
 import { changeQuote } from "../quotes/changeQuote"
+import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
 export const clickEvents = {
 	'.main__button_prev': () => {
@@ -34,9 +35,11 @@ export const clickEvents = {
 	'.popup__close-button': () => {
 		controlErrorPopupClass('remove')
 	},
+	'.greeting__popup-close-button': () => showGreetingPopup('remove'),
 	'.popup__shadow-slider_show': () => {
 		controlErrorPopupClass('remove')
 	},
+	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
 	'.settings__header': () => {
 		setSettingsActiveStyles('toggle'),
 			displaySettings('toggle')
