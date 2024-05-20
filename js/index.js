@@ -1293,7 +1293,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setLanguageText: function() { return /* binding */ setLanguageText; }
 /* harmony export */ });
 /* harmony import */ var _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
-/* harmony import */ var _languageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
+/* harmony import */ var _languageSelectText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(31);
 /* harmony import */ var _languageDescriptionText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32);
 
 
@@ -1302,8 +1302,8 @@ __webpack_require__.r(__webpack_exports__);
 const languageDescription = document.querySelector('.language__description')
 
 const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
-	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[0].label = _languageText__WEBPACK_IMPORTED_MODULE_1__.languageText[valOne][valTwo]
-	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[1].label = _languageText__WEBPACK_IMPORTED_MODULE_1__.languageText[valThree][valFour]
+	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[0].label = _languageSelectText__WEBPACK_IMPORTED_MODULE_1__.languageSelectText[valOne][valTwo]
+	_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.selectLanguageChildrenArr[1].label = _languageSelectText__WEBPACK_IMPORTED_MODULE_1__.languageSelectText[valThree][valFour]
 	languageDescription.textContent = _languageDescriptionText__WEBPACK_IMPORTED_MODULE_2__.languageDescriptionText[lang]
 }
 
@@ -1314,9 +1314,9 @@ const setLanguageText = (valOne, valTwo, valThree, valFour, lang) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   languageText: function() { return /* binding */ languageText; }
+/* harmony export */   languageSelectText: function() { return /* binding */ languageSelectText; }
 /* harmony export */ });
-const languageText = {
+const languageSelectText = {
 	en: {
 		en: 'English',
 		ru: 'Russian'

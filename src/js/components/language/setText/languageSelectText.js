@@ -1,4 +1,4 @@
-export const languageText = {
+export const languageSelectText = {
 	en: {
 		en: 'English',
 		ru: 'Russian'
