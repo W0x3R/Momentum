@@ -2895,6 +2895,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(78);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37);
 /* harmony import */ var _greeting_setText_trimGreetingName__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(100);
+/* harmony import */ var _greeting_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83);
+
 
 
 
@@ -2912,6 +2914,7 @@ const keydownEvents = {
 	'Escape': () => {
 		(0,_settings_showSettings__WEBPACK_IMPORTED_MODULE_3__.showSettings)('remove')
 		;(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__.setSettingsActiveStyles)('remove')
+		;(0,_greeting_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__.showGreetingPopup)('remove')
 	}
 }
 

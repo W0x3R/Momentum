@@ -4,6 +4,7 @@ import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 import { showSettings } from "../settings/showSettings"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { trimGreetingName } from "../greeting/setText/trimGreetingName"
+import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
 const keydownEvents = {
 	'Enter': () => {
@@ -15,6 +16,7 @@ const keydownEvents = {
 	'Escape': () => {
 		showSettings('remove')
 		setSettingsActiveStyles('remove')
+		showGreetingPopup('remove')
 	}
 }
 
