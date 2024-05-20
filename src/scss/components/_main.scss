@@ -13,17 +13,15 @@
 	@include smallestMobile {
 		bottom: 20px;
 	}
+}
 
+.slider {
 	&__button {
 		position: absolute;
 		top: calc(50% - 16px);
 		@include sizes(32px, 32px);
 		background-color: transparent;
 		cursor: pointer;
-
-		@include smallestMobile {
-			top: 83%;
-		}
 
 		&_prev {
 			left: 4%;
@@ -41,7 +39,40 @@
 			}
 		}
 	}
+
+	&__popup {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: none;
+		@include sizes(60%, 60%);
+		border: solid 1px rgb(138, 138, 138);
+		border-radius: 8px;
+		background: rgb(54, 54, 54);
+		transform: translate(-50%, -50%);
+		cursor: auto;
+
+		&_show {
+			@include flex($justify: center, $alignItems: center);
+		}
+
+		&-inner {
+			font-size: 21px;
+			letter-spacing: 1.5px;
+			color: var(--white);
+		}
+
+		&-close-button {
+			@include closeButton(-40px, -40px, 40px, 40px, 20px);
+
+			&_hover {
+				color: var(--orange);
+			}
+		}
+	}
 }
+
 .data {
 	@include flex($direction: column, $alignItems: center);
 	user-select: none;
@@ -183,60 +214,28 @@
 	}
 }
 
-.popup {
+.popup__shadow {
 	position: fixed;
-	top: 50%;
-	left: 50%;
-	z-index: 3;
 	display: none;
-	@include sizes(75%, 75%);
-	border: solid 1px rgb(138, 138, 138);
-	border-radius: 8px;
-	background: rgb(54, 54, 54);
-	transform: translate(-50%, -50%);
-	cursor: auto;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 1;
+	min-height: 100%;
+	background: rgba(0, 0, 0, 0.8);
 
-	&_show {
-		@include flex($justify: center, $alignItems: center);
+	&-slider_show {
+		display: block;
+		z-index: 2;
 	}
 
-	&__inner {
-		font-size: 21px;
-		letter-spacing: 1.5px;
-		color: var(--white);
+	&-settings_show {
+		display: block;
 	}
 
-	&__close-button {
-		@include closeButton(-40px, -40px, 40px, 40px, 20px);
-
-		&_hover {
-			color: var(--orange);
-		}
-	}
-
-	&__shadow {
-		position: fixed;
-		display: none;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 1;
-		min-height: 100%;
-		background: rgba(0, 0, 0, 0.8);
-
-		&-slider_show {
-			display: block;
-			z-index: 2;
-		}
-
-		&-settings_show {
-			display: block;
-		}
-
-		&-greeting_show {
-			display: block;
-			z-index: 2;
-		}
+	&-greeting_show {
+		display: block;
+		z-index: 2;
 	}
 }

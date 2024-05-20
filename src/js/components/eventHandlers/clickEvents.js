@@ -18,11 +18,11 @@ import { changeQuote } from "../quotes/changeQuote"
 import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
 export const clickEvents = {
-	'.main__button_prev': () => {
+	'.slider__button_prev': () => {
 		changeGithubImagesClick('prev')
 		changePexelsImagesClick('prev')
 	},
-	'.main__button_next': () => {
+	'.slider__button_next': () => {
 		changeGithubImagesClick('next')
 		changePexelsImagesClick('next')
 	},
@@ -32,7 +32,7 @@ export const clickEvents = {
 	'.player__playback-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
 	'.player__volume-mute': checkIsMute,
-	'.popup__close-button': () => {
+	'.slider__popup-close-button': () => {
 		showSliderPopup('remove')
 	},
 	'.greeting__popup-close-button': () => showGreetingPopup('remove'),
