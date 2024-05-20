@@ -105,9 +105,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const getStorageLanguage = () => localStorage.getItem('language') || 'en'
 
-const setStorageLanguage = () => {
-	localStorage.setItem('language', _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
-}
+const setStorageLanguage = () => localStorage.setItem('language', _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_0__.languageSelect.value)
 
 /***/ }),
 /* 6 */
@@ -1088,9 +1086,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 let query;
 
-const setQueryVariableValue = (value) => {
-	query = value
-}
+const setQueryVariableValue = (value) => query = value
 
 /***/ }),
 /* 21 */
@@ -1349,9 +1345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const queryLabel = document.querySelector('.query__label')
 
-const setQueryLabelText = (lang) => {
-	queryLabel.textContent = _queryLabelText__WEBPACK_IMPORTED_MODULE_0__.queryLabelText[lang]
-}
+const setQueryLabelText = (lang) => queryLabel.textContent = _queryLabelText__WEBPACK_IMPORTED_MODULE_0__.queryLabelText[lang]
 
 /***/ }),
 /* 33 */
@@ -1412,9 +1406,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const setSettingsTitleText = (lang) => {
-	_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
-}
+const setSettingsTitleText = (lang) => _setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
 
 /***/ }),
 /* 37 */
@@ -1786,9 +1778,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const playbackControl = () => {
-	_setIsPlay__WEBPACK_IMPORTED_MODULE_2__.isPlay ? (0,_pauseSong__WEBPACK_IMPORTED_MODULE_1__.pauseSong)() : (0,_playSong__WEBPACK_IMPORTED_MODULE_0__.playSong)()
-}
+const playbackControl = () => _setIsPlay__WEBPACK_IMPORTED_MODULE_2__.isPlay ? (0,_pauseSong__WEBPACK_IMPORTED_MODULE_1__.pauseSong)() : (0,_playSong__WEBPACK_IMPORTED_MODULE_0__.playSong)()
 
 /***/ }),
 /* 54 */
@@ -1851,9 +1841,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 let isPlay = false;
 
-const setIsPlay = (value) => {
-	isPlay = value
-}
+const setIsPlay = (value) => isPlay = value
 
 /***/ }),
 /* 57 */
@@ -1866,7 +1854,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(54);
 /* harmony import */ var _setIsPlay__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56);
-
 
 
 
@@ -2284,10 +2271,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74);
 
 
-const setStorageVolumeValue = () => {
-	localStorage.setItem('volumeValue', _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value)
-}
-
+const setStorageVolumeValue = () => localStorage.setItem('volumeValue', _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value)
 const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume_setVolumeBtnValue__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value
 
 /***/ }),
@@ -2349,9 +2333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const volumeMuteBtnIcon = document.querySelector(`.player__volume-mute svg use`)
 
-const setMuteBtnHref = (iconName) => {
-	volumeMuteBtnIcon.setAttribute('href', `./images/svg/${iconName}`)
-}
+const setMuteBtnHref = (iconName) => volumeMuteBtnIcon.setAttribute('href', `./images/svg/${iconName}`)
 
 /***/ }),
 /* 77 */
@@ -2616,9 +2598,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 const selectLanguageInner = document.querySelector('.language__inner')
 
-const closeSettingsIcon = (el) => {
-	el.blur()
-}
+const closeSettingsIcon = (el) => el.blur()
 
 /***/ }),
 /* 88 */

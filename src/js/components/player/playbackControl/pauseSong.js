@@ -1,6 +1,5 @@
-import { audio } from "./playSong"
+import { audio, playBtn, playBtnIcon } from "./playSong"
 import { setIsPlay } from "./setIsPlay"
-import { playBtn, playBtnIcon } from "./playSong"
 
 export const pauseSong = () => {
 	audio.pause()
