@@ -150,6 +150,37 @@
 			box-shadow: 0px 1px 0px 0px var(--white);
 		}
 	}
+
+	&__popup {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: none;
+		@include sizes(43%, 43%);
+		border: solid 1px rgb(138, 138, 138);
+		border-radius: 8px;
+		background: rgb(54, 54, 54);
+		transform: translate(-50%, -50%);
+		cursor: auto;
+
+		&_show {
+			@include flex($justify: center, $alignItems: center);
+		}
+		&-inner {
+			font-size: 21px;
+			letter-spacing: 1.5px;
+			color: var(--white);
+		}
+
+		&-closeBtn {
+			@include closeButton(-40px, -40px, 40px, 40px, 20px);
+
+			&_hover {
+				color: var(--orange);
+			}
+		}
+	}
 }
 
 .popup {
