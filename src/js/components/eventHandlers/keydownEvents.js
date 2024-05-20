@@ -1,7 +1,7 @@
 import { greetingName } from "../greeting/localStorageGreeting"
 import { weatherInput } from "../weather/getWeather"
 import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
-import { displaySettings } from "../settings/displaySettings"
+import { showSettings } from "../settings/showSettings"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { trimGreetingName } from "../greeting/setText/trimGreetingName"
 
@@ -13,7 +13,7 @@ const keydownEvents = {
 		trimGreetingName()
 	},
 	'Escape': () => {
-		displaySettings('remove')
+		showSettings('remove')
 		setSettingsActiveStyles('remove')
 	}
 }

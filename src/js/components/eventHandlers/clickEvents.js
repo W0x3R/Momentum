@@ -13,7 +13,7 @@ import { changePexelsImagesClick } from "../slider/changeImages/Pexels/changePex
 import { changeGithubImagesClick } from "../slider/changeImages/Github/changeGithubImagesClick"
 import { checkIsMute } from "../player/volume/checkIsMute"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
-import { displaySettings } from "../settings/displaySettings"
+import { showSettings } from "../settings/showSettings"
 import { changeQuote } from "../quotes/changeQuote"
 import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
@@ -42,10 +42,10 @@ export const clickEvents = {
 	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
 	'.settings__header': () => {
 		setSettingsActiveStyles('toggle'),
-			displaySettings('toggle')
+			showSettings('toggle')
 	},
 	'.settings__close-button': () => {
-		displaySettings('remove'),
+		showSettings('remove'),
 			setSettingsActiveStyles('remove')
 	},
 	'.quotes__change-btn': () => {
