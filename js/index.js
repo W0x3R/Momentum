@@ -281,7 +281,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_sliderPopup_showSliderPopup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
 /* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
-/* harmony import */ var _setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
+/* harmony import */ var _setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(20);
 
 
 
@@ -298,7 +298,7 @@ const changePexelsImgOnQueryInputChange = () => {
 		(0,_slider_sliderPopup_showSliderPopup__WEBPACK_IMPORTED_MODULE_0__.showSliderPopup)('add')
 		return
 	}
-	(0,_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_3__.setQueryValue)(queryInputValue)
+	(0,_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_3__.setQueryVariableValue)(queryInputValue)
 	queryInput.value = queryInputValue
 	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__.setStorageNumPicturePexels)(0)
 	;(0,_slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
@@ -356,7 +356,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changePexelsImages: function() { return /* binding */ changePexelsImages; }
 /* harmony export */ });
 /* harmony import */ var pexels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(17);
-/* harmony import */ var _query_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
+/* harmony import */ var _query_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(20);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _sliderPopup_showSliderPopup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21);
@@ -378,7 +378,7 @@ const changePexelsImages = () => {
 	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
-		client.photos.search({ query: _query_setQueryValue_setQueryValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
+		client.photos.search({ query: _query_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
@@ -1084,11 +1084,11 @@ if (!g.fetch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   query: function() { return /* binding */ query; },
-/* harmony export */   setQueryValue: function() { return /* binding */ setQueryValue; }
+/* harmony export */   setQueryVariableValue: function() { return /* binding */ setQueryVariableValue; }
 /* harmony export */ });
 let query;
 
-const setQueryValue = (value) => {
+const setQueryVariableValue = (value) => {
 	query = value
 }
 
@@ -2769,7 +2769,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
-/* harmony import */ var _setQueryValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
+/* harmony import */ var _setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
 
 
 
@@ -2782,9 +2782,9 @@ const setQueryValueLoad = () => {
 	const queryValue = (0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__.getStorageQueryInputValue)()
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
 	if (queryValue) {
-		(0,_setQueryValue__WEBPACK_IMPORTED_MODULE_4__.setQueryValue)(queryValue)
+		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(queryValue)
 	} else {
-		(0,_setQueryValue__WEBPACK_IMPORTED_MODULE_4__.setQueryValue)(currLang === 'ru' ? (0,_slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText) : greetingText)
+		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(currLang === 'ru' ? (0,_slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText) : greetingText)
 	}
 }
 

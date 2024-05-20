@@ -2,7 +2,7 @@ import { showGreetingMessageText } from "../../greeting/setText/greetingMessage/
 import { getStorageLanguage } from "../../language/localStorageLanguage";
 import { translateGreeting } from "../../slider/translateGreeting"
 import { getStorageQueryInputValue } from "../../slider/localStorageSlider";
-import { setQueryValue } from "./setQueryValue";
+import { setQueryVariableValue } from "./setQueryVariableValue";
 
 const greetingText = showGreetingMessageText().split(' ')[1].slice(0, -1);
 
@@ -10,8 +10,8 @@ export const setQueryValueLoad = () => {
 	const queryValue = getStorageQueryInputValue()
 	const currLang = getStorageLanguage()
 	if (queryValue) {
-		setQueryValue(queryValue)
+		setQueryVariableValue(queryValue)
 	} else {
-		setQueryValue(currLang === 'ru' ? translateGreeting(greetingText) : greetingText)
+		setQueryVariableValue(currLang === 'ru' ? translateGreeting(greetingText) : greetingText)
 	}
 }

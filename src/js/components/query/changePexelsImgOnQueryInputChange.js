@@ -1,7 +1,7 @@
 import { showSliderPopup } from "../slider/sliderPopup/showSliderPopup";
 import { setStorageNumPicturePexels } from '../slider/localStorageSlider'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
-import { setQueryValue } from "./setQueryValue/setQueryValue";
+import { setQueryVariableValue } from "./setQueryValue/setQueryVariableValue";
 
 export const queryWrapper = document.querySelector('.query')
 export const queryInput = document.querySelector('.query__input')
@@ -14,7 +14,7 @@ export const changePexelsImgOnQueryInputChange = () => {
 		showSliderPopup('add')
 		return
 	}
-	setQueryValue(queryInputValue)
+	setQueryVariableValue(queryInputValue)
 	queryInput.value = queryInputValue
 	setStorageNumPicturePexels(0)
 	changePexelsImages()
