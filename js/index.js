@@ -1460,7 +1460,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settingsInputsText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 
 
-const settingsInputsTitles = document.querySelectorAll('.settings__blocksHideControl p')
+const settingsInputsTitles = document.querySelectorAll('.settings__blocks-hide p')
 
 const setSettingsInputsText = (lang) => {
 	settingsInputsTitles.forEach((e, i) => {
@@ -1655,7 +1655,7 @@ const clickEvents = {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__.changeQuote)()
 		;(0,_quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
 	},
-	'.settings__blocksHideControl': (e) => {
+	'.settings__blocks-hide': (e) => {
 		(0,_settings_setCheckedInputs_setCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
 		;(0,_settings_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
@@ -1711,7 +1711,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   findCheckedSettingsInputs: function() { return /* binding */ findCheckedSettingsInputs; },
 /* harmony export */   settingsShowInputs: function() { return /* binding */ settingsShowInputs; }
 /* harmony export */ });
-const settingsShowInputs = document.querySelectorAll('.settings__blocksHideControl input')
+const settingsShowInputs = document.querySelectorAll('.settings__blocks-hide input')
 
 const findCheckedSettingsInputs = () => Array.from(settingsShowInputs).map((e, i) => e.checked ? i : null).filter(e => e !== null)
 
@@ -1725,8 +1725,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCheckedInputsClick: function() { return /* binding */ setCheckedInputsClick; }
 /* harmony export */ });
 const setCheckedInputsClick = (e) => {
-	if (e.target.closest('.settings__blocksHideControl-inner') && e.target.tagName !== 'INPUT') {
-		const closestInput = e.target.closest('.settings__blocksHideControl-inner').querySelector('input')
+	if (e.target.closest('.settings__blocks-hide-inner') && e.target.tagName !== 'INPUT') {
+		const closestInput = e.target.closest('.settings__blocks-hide-inner').querySelector('input')
 		closestInput.checked = closestInput.checked ? false : true
 	}
 }
@@ -1740,12 +1740,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   hideCheckedBlocksClick: function() { return /* binding */ hideCheckedBlocksClick; }
 /* harmony export */ });
-const forbiddenClasses = ['settings__blocksHideControl-title', 'settings__blocksHideControl']
+const forbiddenClasses = ['settings__blocks-hide-title', 'settings__blocks-hide']
 
 const hideCheckedBlocksClick = (e) => {
 	if (!forbiddenClasses.includes(e.target.className)) {
 		const dataShow = e.target.closest('[data-blockshide]').dataset.blockshide
-		document.querySelector(`.${dataShow}`).classList.toggle('settings__blocksHideControl_hide')
+		document.querySelector(`.${dataShow}`).classList.toggle('settings__blocks-hide_hide')
 	}
 }
 
@@ -2877,7 +2877,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const hideCheckedBlocksLoad = () => {
-	Array.from(_findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocksHideControl_hide'))
+	Array.from(_findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocks-hide_hide'))
 }
 
 /***/ }),

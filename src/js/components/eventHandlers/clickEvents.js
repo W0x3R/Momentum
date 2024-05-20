@@ -52,7 +52,7 @@ export const clickEvents = {
 		changeQuote()
 		rotateQuotesChangeBtn()
 	},
-	'.settings__blocksHideControl': (e) => {
+	'.settings__blocks-hide': (e) => {
 		setCheckedInputsClick(e)
 		hideCheckedBlocksClick(e)
 		setStorageSettingsCheckedInputs()
