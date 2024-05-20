@@ -5,7 +5,8 @@ import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
-import { setSettingsText } from "../settings/setText/setSettingsText";
+import { setSettingsTitleText } from "../settings/setText/setSettingsTitleText";
+import { setSettingsInputsText } from "../settings/setText/setSettingsInputsText";
 import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
 
 export const changeAppText = () => {
@@ -16,7 +17,8 @@ export const changeAppText = () => {
 		setLanguageText('en', 'en', 'en', 'ru', 'en')
 		setQueryLabelText('en')
 		setSliderPopupText('en')
-		setSettingsText('en')
+		setSettingsTitleText('en')
+		setSettingsInputsText('en')
 		setGreetingErrorPopupText('en')
 	}
 	else if (currLang === 'ru') {
@@ -25,7 +27,8 @@ export const changeAppText = () => {
 		setLanguageText('ru', 'en', 'ru', 'ru', 'ru')
 		setQueryLabelText('ru')
 		setSliderPopupText('ru')
-		setSettingsText('ru')
+		setSettingsTitleText('ru')
+		setSettingsInputsText('ru')
 		setGreetingErrorPopupText('ru')
 	}
 	showGreetingMessageText()
