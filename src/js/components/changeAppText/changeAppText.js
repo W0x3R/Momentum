@@ -2,7 +2,7 @@ import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setGreetingNamePlaceholder } from "../greeting/setText/greetingNamePlaceholder/setGreetingNamePlaceholder";
 import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
-import { setLanguageSelectText } from "../language/setText/setLanguageSelectText";
+import { setLanguageSelectText } from "../language/setText/selectText/setLanguageSelectText";
 import { setLanguageDescriptionText } from "../language/setText/descriptionText/setLanguageDescriptionText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";

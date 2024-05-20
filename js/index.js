@@ -1133,7 +1133,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
 /* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26);
 /* harmony import */ var _imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28);
-/* harmony import */ var _language_setText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(30);
+/* harmony import */ var _language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(30);
 /* harmony import */ var _language_setText_descriptionText_setLanguageDescriptionText__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(32);
 /* harmony import */ var _query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(34);
 /* harmony import */ var _slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36);
@@ -1157,7 +1157,7 @@ const changeAppText = () => {
 	if (currLang === 'en') {
 		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
-		;(0,_language_setText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('en', 'en', 'en', 'ru')
+		;(0,_language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('en', 'en', 'en', 'ru')
 		;(0,_language_setText_descriptionText_setLanguageDescriptionText__WEBPACK_IMPORTED_MODULE_5__.setLanguageDescriptionText)('en')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_6__.setQueryLabelText)('en')
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__.setSliderPopupText)('en')
@@ -1168,7 +1168,7 @@ const changeAppText = () => {
 	else if (currLang === 'ru') {
 		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
-		;(0,_language_setText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('ru', 'en', 'ru', 'ru')
+		;(0,_language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('ru', 'en', 'ru', 'ru')
 		;(0,_language_setText_descriptionText_setLanguageDescriptionText__WEBPACK_IMPORTED_MODULE_5__.setLanguageDescriptionText)('ru')
 		;(0,_query_setText_setQueryLabelText__WEBPACK_IMPORTED_MODULE_6__.setQueryLabelText)('ru')
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__.setSliderPopupText)('ru')
