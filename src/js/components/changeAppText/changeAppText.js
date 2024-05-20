@@ -1,5 +1,5 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
-import { setGreetingNameText } from "../greeting/setText/greetingName/setGreetingNameText";
+import { setGreetingNamePlaceholder } from "../greeting/setText/greetingName/setGreetingNamePlaceholder";
 import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
@@ -10,7 +10,7 @@ import { setSettingsText } from "../settings/setText/setSettingsText";
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()
 	if (currLang === 'en') {
-		setGreetingNameText('en')
+		setGreetingNamePlaceholder('en')
 		setImagesSrcText('en')
 		setLanguageText('en', 'en', 'en', 'ru', 'en')
 		setQueryLabelText('en')
@@ -18,7 +18,7 @@ export const changeAppText = () => {
 		setSettingsText('en')
 	}
 	else if (currLang === 'ru') {
-		setGreetingNameText('ru')
+		setGreetingNamePlaceholder('ru')
 		setImagesSrcText('ru')
 		setLanguageText('ru', 'en', 'ru', 'ru', 'ru')
 		setQueryLabelText('ru')
