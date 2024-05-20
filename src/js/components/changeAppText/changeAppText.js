@@ -1,5 +1,5 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
-import { setGreetingNameText } from "../greeting/setText/greetingName/setGreetingName";
+import { setGreetingNameText } from "../greeting/setText/greetingName/setGreetingNameText";
 import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
