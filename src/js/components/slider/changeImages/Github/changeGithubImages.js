@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../../../language/localStorageLanguage";
 import { showGreetingMessageText } from "../../../greeting/setText/greetingMessage/showGreetingMessageText";
-import { translateGreeting } from "../../translateGreeting";
+import { translateGreeting } from "../../../greeting/translateGreeting";
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange";
 import { loadImage } from "../loadImage";

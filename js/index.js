@@ -2149,7 +2149,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26);
-/* harmony import */ var _translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67);
+/* harmony import */ var _greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
 /* harmony import */ var _loadImage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
@@ -2168,7 +2168,7 @@ const changeGithubImages = () => {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.showGreetingMessageText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
-		let value = currLang === 'en' ? greetingText : (0,_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
+		let value = currLang === 'en' ? greetingText : (0,_greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
 		let randomNum = _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__.randomNumGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
 		;(0,_loadImage__WEBPACK_IMPORTED_MODULE_5__.loadImage)(url)
@@ -2767,7 +2767,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _greeting_setText_greetingMessage_showGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
-/* harmony import */ var _slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67);
+/* harmony import */ var _greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(67);
 /* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
 /* harmony import */ var _setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(20);
 
@@ -2784,7 +2784,7 @@ const setQueryVariableValueLoad = () => {
 	if (queryValue) {
 		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(queryValue)
 	} else {
-		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(currLang === 'ru' ? (0,_slider_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText) : greetingText)
+		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(currLang === 'ru' ? (0,_greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText) : greetingText)
 	}
 }
 

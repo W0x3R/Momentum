@@ -1,6 +1,6 @@
 import { showGreetingMessageText } from "../../greeting/setText/greetingMessage/showGreetingMessageText";
 import { getStorageLanguage } from "../../language/localStorageLanguage";
-import { translateGreeting } from "../../slider/translateGreeting"
+import { translateGreeting } from "../../greeting/translateGreeting"
 import { getStorageQueryInputValue } from "../../slider/localStorageSlider";
 import { setQueryVariableValue } from "./setQueryVariableValue";
 
