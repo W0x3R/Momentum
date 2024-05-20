@@ -1372,11 +1372,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setSliderPopupText: function() { return /* binding */ setSliderPopupText; }
 /* harmony export */ });
-/* harmony import */ var _errorPopupText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(35);
+/* harmony import */ var _sliderPopupText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(35);
 
 
 const sliderPopupMessage = document.querySelector('.slider__popup-message')
-const setSliderPopupText = (value) => sliderPopupMessage.textContent = _errorPopupText__WEBPACK_IMPORTED_MODULE_0__.popupErrorText[value]
+const setSliderPopupText = (value) => sliderPopupMessage.textContent = _sliderPopupText__WEBPACK_IMPORTED_MODULE_0__.sliderPopupText[value]
 
 
 
@@ -1387,13 +1387,12 @@ const setSliderPopupText = (value) => sliderPopupMessage.textContent = _errorPop
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   popupErrorText: function() { return /* binding */ popupErrorText; }
+/* harmony export */   sliderPopupText: function() { return /* binding */ sliderPopupText; }
 /* harmony export */ });
-const popupErrorText = {
+const sliderPopupText = {
 	en: ['Nothing was found for this query. Try again.'],
 	ru: ['По заданному запросу ничего не найдено. Попробуйте еще раз.']
 }
-
 
 /***/ }),
 /* 36 */
