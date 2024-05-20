@@ -1,7 +1,7 @@
 import { createClient } from 'pexels';
 import { query } from '../../../query/setQueryValue/setQueryValue';
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange"
-import { showSliderPopup } from '../../errorPopup/showSliderPopup';
+import { showSliderPopup } from '../../sliderPopup/showSliderPopup';
 import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../localStorageSlider';
 import { loadImage } from '../loadImage';

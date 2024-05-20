@@ -4,7 +4,7 @@ import { showGreetingMessageText } from "../greeting/setText/greetingMessage/sho
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
-import { setSliderPopupText } from "../slider/errorPopup/setText/setSliderPopupText";
+import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsText } from "../settings/setText/setSettingsText";
 import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
 
