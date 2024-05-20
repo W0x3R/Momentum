@@ -4,7 +4,7 @@ import { showGreetingMessageText } from "../greeting/setText/greetingMessage/sho
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageText } from "../language/setText/setLanguageText";
 import { setQueryLabelText } from "../query/setText/setQueryLabelText";
-import { setErrorPopupText } from "../slider/errorPopup/setText/setErrorPopupText";
+import { setSliderPopupText } from "../slider/errorPopup/setText/setSliderPopupText";
 import { setSettingsText } from "../settings/setText/setSettingsText";
 import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
 
@@ -15,7 +15,7 @@ export const changeAppText = () => {
 		setImagesSrcText('en')
 		setLanguageText('en', 'en', 'en', 'ru', 'en')
 		setQueryLabelText('en')
-		setErrorPopupText('en')
+		setSliderPopupText('en')
 		setSettingsText('en')
 		setGreetingErrorPopupText('en')
 	}
@@ -24,7 +24,7 @@ export const changeAppText = () => {
 		setImagesSrcText('ru')
 		setLanguageText('ru', 'en', 'ru', 'ru', 'ru')
 		setQueryLabelText('ru')
-		setErrorPopupText('ru')
+		setSliderPopupText('ru')
 		setSettingsText('ru')
 		setGreetingErrorPopupText('ru')
 	}
