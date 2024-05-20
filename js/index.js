@@ -2794,11 +2794,11 @@ const setQueryValueLoad = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   controlErrorPopupBtnHover: function() { return /* binding */ controlErrorPopupBtnHover; }
+/* harmony export */   controlSliderPopupBtnHover: function() { return /* binding */ controlSliderPopupBtnHover; }
 /* harmony export */ });
-const popupBtn = document.querySelector('.slider__popup-close-button')
+const sliderPopupBtn = document.querySelector('.slider__popup-close-button')
 
-const controlErrorPopupBtnHover = (value) => popupBtn.classList[value]('slider__popup-close-button_hover')
+const controlSliderPopupBtnHover = (value) => sliderPopupBtn.classList[value]('slider__popup-close-button_hover')
 
 /***/ }),
 /* 94 */
@@ -3031,7 +3031,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(66);
 /* harmony import */ var _components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(16);
 /* harmony import */ var _components_query_setQueryValue_setQueryValueLoad_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(92);
-/* harmony import */ var _components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(93);
+/* harmony import */ var _components_slider_errorPopup_controlSliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(93);
 /* harmony import */ var _components_slider_errorPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(14);
 /* harmony import */ var _components_settings_setCheckedInputs_setCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(94);
 /* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(95);
@@ -3121,8 +3121,8 @@ _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_19__.aud
 window.addEventListener('input', (e) => (0,_components_eventHandlers_callEvents_js__WEBPACK_IMPORTED_MODULE_9__.callEvents)(e, _components_eventHandlers_inputEvents_js__WEBPACK_IMPORTED_MODULE_12__.inputEvents))
 window.addEventListener('change', (e) => (0,_components_eventHandlers_callEvents_js__WEBPACK_IMPORTED_MODULE_9__.callEvents)(e, _components_eventHandlers_changeEvents_js__WEBPACK_IMPORTED_MODULE_11__.changeEvents))
 window.addEventListener('keydown', (e) => (0,_components_eventHandlers_keydownEvents_js__WEBPACK_IMPORTED_MODULE_32__.callKeydownEvent)(e))
-_components_slider_errorPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__.sliderPopup.addEventListener('mouseleave', () => (0,_components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__.controlErrorPopupBtnHover)('add'))
-_components_slider_errorPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__.sliderPopup.addEventListener('mouseenter', () => (0,_components_slider_errorPopup_controlErrorPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__.controlErrorPopupBtnHover)('remove'))
+_components_slider_errorPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__.sliderPopup.addEventListener('mouseleave', () => (0,_components_slider_errorPopup_controlSliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__.controlSliderPopupBtnHover)('add'))
+_components_slider_errorPopup_showSliderPopup_js__WEBPACK_IMPORTED_MODULE_29__.sliderPopup.addEventListener('mouseenter', () => (0,_components_slider_errorPopup_controlSliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_28__.controlSliderPopupBtnHover)('remove'))
 _components_greeting_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_34__.greetingPopup.addEventListener('mouseleave', () => (0,_components_greeting_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_35__.controlGreetingPopupBtnHover)('add'))
 _components_greeting_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_34__.greetingPopup.addEventListener('mouseenter', () => (0,_components_greeting_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_35__.controlGreetingPopupBtnHover)('remove'))
 }();
