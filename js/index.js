@@ -2907,7 +2907,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(39);
-/* harmony import */ var _greeting_setText_trimGreetingName__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(103);
+/* harmony import */ var _greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(103);
 /* harmony import */ var _greeting_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85);
 
 
@@ -2922,7 +2922,7 @@ const keydownEvents = {
 		_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
 		_weather_getWeather__WEBPACK_IMPORTED_MODULE_1__.weatherInput.blur()
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryInput.blur()
-		;(0,_greeting_setText_trimGreetingName__WEBPACK_IMPORTED_MODULE_5__.trimGreetingName)()
+		;(0,_greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__.setGreetingNameTrim)()
 	},
 	'Escape': () => {
 		(0,_settings_showSettings__WEBPACK_IMPORTED_MODULE_3__.showSettings)('remove')
@@ -2938,12 +2938,12 @@ const keydownEvents = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   trimGreetingName: function() { return /* binding */ trimGreetingName; }
+/* harmony export */   setGreetingNameTrim: function() { return /* binding */ setGreetingNameTrim; }
 /* harmony export */ });
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-const trimGreetingName = () => _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent).trim()
+const setGreetingNameTrim = () => _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent).trim()
 
 /***/ }),
 /* 104 */
@@ -2955,14 +2955,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   checkClickOutGreetingName: function() { return /* binding */ checkClickOutGreetingName; }
 /* harmony export */ });
 /* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _setText_trimGreetingName__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(103);
+/* harmony import */ var _setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(103);
 
 
 
 const checkClickOutGreetingName = (e) => {
 	if (!e.target.classList.contains('greeting__name')) {
 		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
-		;(0,_setText_trimGreetingName__WEBPACK_IMPORTED_MODULE_1__.trimGreetingName)()
+		;(0,_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameTrim)()
 	}
 }
 

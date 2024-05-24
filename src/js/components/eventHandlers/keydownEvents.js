@@ -3,7 +3,7 @@ import { weatherInput } from "../weather/getWeather"
 import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 import { showSettings } from "../settings/showSettings"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
-import { trimGreetingName } from "../greeting/setText/trimGreetingName"
+import { setGreetingNameTrim } from "../greeting/setText/greetingName/setGreetingNameTrim"
 import { showGreetingPopup } from "../greeting/showGreetingPopup"
 
 export const keydownEvents = {
@@ -11,7 +11,7 @@ export const keydownEvents = {
 		greetingName.blur()
 		weatherInput.blur()
 		queryInput.blur()
-		trimGreetingName()
+		setGreetingNameTrim()
 	},
 	'Escape': () => {
 		showSettings('remove')
