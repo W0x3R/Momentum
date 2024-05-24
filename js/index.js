@@ -2643,8 +2643,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _player_volume_setBtnStateOnVolumeValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92);
-/* harmony import */ var _greeting_setText_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93);
-
+/* harmony import */ var _greeting_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93);
 
 
 
@@ -2652,7 +2651,7 @@ const inputEvents = {
 	'.player__volume-input': _player_volume_setBtnStateOnVolumeValue__WEBPACK_IMPORTED_MODULE_1__.setBtnStateOnVolumeValue,
 	'.greeting__name': () => {
 		(0,_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
-		;(0,_greeting_setText_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__.checkGreetingNameLength)()
+		;(0,_greeting_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__.checkGreetingNameLength)()
 	}
 }
 
