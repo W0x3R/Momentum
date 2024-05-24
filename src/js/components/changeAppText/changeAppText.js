@@ -8,7 +8,7 @@ import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
 import { setSettingsInputsText } from "../settings/setText/inputsText/setSettingsInputsText";
-import { setGreetingErrorPopupText } from "../greeting/setGreetingErorrPopupText";
+import { setGreetingPopupText } from "../greeting/setGreetingPopupText";
 
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()
@@ -21,7 +21,7 @@ export const changeAppText = () => {
 		setSliderPopupText('en')
 		setSettingsTitleText('en')
 		setSettingsInputsText('en')
-		setGreetingErrorPopupText('en')
+		setGreetingPopupText('en')
 	}
 	else if (currLang === 'ru') {
 		setGreetingNamePlaceholder('ru')
@@ -32,7 +32,7 @@ export const changeAppText = () => {
 		setSliderPopupText('ru')
 		setSettingsTitleText('ru')
 		setSettingsInputsText('ru')
-		setGreetingErrorPopupText('ru')
+		setGreetingPopupText('ru')
 	}
 	setGreetingMessageText()
 }
