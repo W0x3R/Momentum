@@ -1504,13 +1504,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setGreetingPopupText: function() { return /* binding */ setGreetingPopupText; }
 /* harmony export */ });
-/* harmony import */ var _greetingErrorPopupText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
+/* harmony import */ var _greetingPopupText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(44);
 
 
 const greetingPopupMessage = document.querySelector('.greeting__popup-message')
 
 const setGreetingPopupText = (lang) => {
-	greetingPopupMessage.textContent = _greetingErrorPopupText__WEBPACK_IMPORTED_MODULE_0__.greetingErrorPopupText[lang]
+	greetingPopupMessage.textContent = _greetingPopupText__WEBPACK_IMPORTED_MODULE_0__.greetingPopupText[lang]
 }
 
 /***/ }),
@@ -1520,9 +1520,9 @@ const setGreetingPopupText = (lang) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   greetingErrorPopupText: function() { return /* binding */ greetingErrorPopupText; }
+/* harmony export */   greetingPopupText: function() { return /* binding */ greetingPopupText; }
 /* harmony export */ });
-const greetingErrorPopupText = {
+const greetingPopupText = {
 	en: 'Character limit exceeded.',
 	ru: 'Превышен лимит символов.'
 }
