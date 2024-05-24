@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../language/localStorageLanguage";
 import { setGreetingNamePlaceholder } from "../greeting/setText/greetingNamePlaceholder/setGreetingNamePlaceholder";
-import { showGreetingMessageText } from "../greeting/setText/greetingMessage/showGreetingMessageText";
+import { setGreetingMessageText } from "../greeting/setText/greetingMessage/setGreetingMessageText";
 import { setImagesSrcText } from "../imagesSrc/setText/setImagesSrcText";
 import { setLanguageSelectText } from "../language/setText/selectText/setLanguageSelectText";
 import { setLanguageDescriptionText } from "../language/setText/descriptionText/setLanguageDescriptionText";
@@ -34,5 +34,5 @@ export const changeAppText = () => {
 		setSettingsInputsText('ru')
 		setGreetingErrorPopupText('ru')
 	}
-	showGreetingMessageText()
+	setGreetingMessageText()
 }
