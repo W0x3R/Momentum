@@ -1,4 +1,4 @@
-import { setGreetingName } from './components/greeting/setText/greetingName/setGreetingName.js'
+import { setGreetingNameLoad } from './components/greeting/setText/greetingName/setGreetingNameLoad.js'
 import { setStorageCity } from './components/weather/localStorageWeather.js'
 import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
 import { getWeather } from './components/weather/getWeather.js'
@@ -51,7 +51,7 @@ changeLanguageIcon()
 checkSelectedImagesSrc()
 setWeatherInputValue()
 getWeather()
-setGreetingName()
+setGreetingNameLoad()
 setQueryVariableValueLoad()
 changeGithubImages()
 changePexelsImages()
