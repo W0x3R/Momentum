@@ -1137,7 +1137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(36);
 /* harmony import */ var _settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(38);
 /* harmony import */ var _settings_setText_inputsText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(41);
-/* harmony import */ var _greeting_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(43);
+/* harmony import */ var _greeting_setText_greetingPopup_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(43);
 
 
 
@@ -1161,7 +1161,7 @@ const changeAppText = () => {
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__.setSliderPopupText)('en')
 		;(0,_settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_8__.setSettingsTitleText)('en')
 		;(0,_settings_setText_inputsText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_9__.setSettingsInputsText)('en')
-		;(0,_greeting_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__.setGreetingPopupText)('en')
+		;(0,_greeting_setText_greetingPopup_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__.setGreetingPopupText)('en')
 	}
 	else if (currLang === 'ru') {
 		(0,_greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
@@ -1172,7 +1172,7 @@ const changeAppText = () => {
 		;(0,_slider_sliderPopup_setText_setSliderPopupText__WEBPACK_IMPORTED_MODULE_7__.setSliderPopupText)('ru')
 		;(0,_settings_setText_titleText_setSettingsTitleText__WEBPACK_IMPORTED_MODULE_8__.setSettingsTitleText)('ru')
 		;(0,_settings_setText_inputsText_setSettingsInputsText__WEBPACK_IMPORTED_MODULE_9__.setSettingsInputsText)('ru')
-		;(0,_greeting_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__.setGreetingPopupText)('ru')
+		;(0,_greeting_setText_greetingPopup_setGreetingPopupText__WEBPACK_IMPORTED_MODULE_10__.setGreetingPopupText)('ru')
 	}
 	(0,_greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__.setGreetingMessageText)()
 }

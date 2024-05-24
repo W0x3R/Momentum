@@ -8,7 +8,7 @@ import { setQueryLabelText } from "../query/setText/setQueryLabelText";
 import { setSliderPopupText } from "../slider/sliderPopup/setText/setSliderPopupText";
 import { setSettingsTitleText } from "../settings/setText/titleText/setSettingsTitleText";
 import { setSettingsInputsText } from "../settings/setText/inputsText/setSettingsInputsText";
-import { setGreetingPopupText } from "../greeting/setGreetingPopupText";
+import { setGreetingPopupText } from "../greeting/setText/greetingPopup/setGreetingPopupText";
 
 export const changeAppText = () => {
 	const currLang = getStorageLanguage()
