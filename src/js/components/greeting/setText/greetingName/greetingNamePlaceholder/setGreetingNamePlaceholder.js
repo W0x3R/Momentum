@@ -1,4 +1,4 @@
-import { greetingName, setStorageGreetingName } from "../../localStorageGreeting"
+import { greetingName, setStorageGreetingName } from "../../../localStorageGreeting"
 import { greetingNamePlaceholderText } from "./greetingNamePlaceholderText"
 
 export const setGreetingNamePlaceholder = (lang) => {

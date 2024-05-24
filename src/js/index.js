@@ -1,4 +1,4 @@
-import { setGreetingName } from './components/greeting/setText/setGreetingName.js'
+import { setGreetingName } from './components/greeting/setText/greetingName/setGreetingName.js'
 import { setStorageCity } from './components/weather/localStorageWeather.js'
 import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
 import { getWeather } from './components/weather/getWeather.js'

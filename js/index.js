@@ -1128,7 +1128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeAppText: function() { return /* binding */ changeAppText; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
+/* harmony import */ var _greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(24);
 /* harmony import */ var _greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(26);
 /* harmony import */ var _imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(28);
 /* harmony import */ var _language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(30);
@@ -1153,7 +1153,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeAppText = () => {
 	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
+		(0,_greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
 		;(0,_language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('en', 'en', 'en', 'ru')
 		;(0,_language_setText_descriptionText_setLanguageDescriptionText__WEBPACK_IMPORTED_MODULE_5__.setLanguageDescriptionText)('en')
@@ -1164,7 +1164,7 @@ const changeAppText = () => {
 		;(0,_greeting_setGreetingErorrPopupText__WEBPACK_IMPORTED_MODULE_10__.setGreetingErrorPopupText)('en')
 	}
 	else if (currLang === 'ru') {
-		(0,_greeting_setText_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
+		(0,_greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('ru')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('ru')
 		;(0,_language_setText_selectText_setLanguageSelectText__WEBPACK_IMPORTED_MODULE_4__.setLanguageSelectText)('ru', 'en', 'ru', 'ru')
 		;(0,_language_setText_descriptionText_setLanguageDescriptionText__WEBPACK_IMPORTED_MODULE_5__.setLanguageDescriptionText)('ru')
@@ -3055,7 +3055,7 @@ var __webpack_exports__ = {};
 !function() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_greeting_setText_setGreetingName_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _components_greeting_setText_greetingName_setGreetingName_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
 /* harmony import */ var _components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
@@ -3144,7 +3144,7 @@ setInterval(() => {
 ;(0,_components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_13__.checkSelectedImagesSrc)()
 ;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
 ;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
-;(0,_components_greeting_setText_setGreetingName_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingName)()
+;(0,_components_greeting_setText_greetingName_setGreetingName_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingName)()
 ;(0,_components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_27__.setQueryVariableValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_25__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_changePexelsImages_js__WEBPACK_IMPORTED_MODULE_26__.changePexelsImages)()
