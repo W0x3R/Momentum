@@ -15,7 +15,7 @@ import { checkIsMute } from "../player/volume/checkIsMute"
 import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
 import { showSettings } from "../settings/showSettings"
 import { changeQuote } from "../quotes/changeQuote"
-import { showGreetingPopup } from "../greeting/showGreetingPopup"
+import { showGreetingPopup } from "../greeting/greetingPopup/showGreetingPopup"
 
 export const clickEvents = {
 	'.slider__button_prev': () => {

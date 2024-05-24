@@ -32,8 +32,8 @@ import { setSettingsCheckedInputsLoad } from './components/settings/setSettingsC
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/callEvents/callKeydownEvent.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
-import { greetingPopup } from './components/greeting/showGreetingPopup.js'
-import { controlGreetingPopupBtnHover } from './components/greeting/controlGreetingPopupBtnHover.js'
+import { greetingPopup } from './components/greeting/greetingPopup/showGreetingPopup.js'
+import { controlGreetingPopupBtnHover } from './components/greeting/greetingPopup/controlGreetingPopupBtnHover.js'
 
 setInterval(() => {
 	showTime()
