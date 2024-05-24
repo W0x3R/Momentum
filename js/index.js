@@ -2706,12 +2706,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const maxLength = 17;
+const maxLength = 19;
 
 const checkGreetingNameLength = () => {
 	if (_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.length >= maxLength) {
 		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.slice(0, maxLength)
+		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.slice(0, maxLength - 1)
 		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 		;(0,_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_1__.showGreetingPopup)('add')
 	}
