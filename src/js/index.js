@@ -21,7 +21,6 @@ import { audio } from './components/player/playbackControl/playSong.js'
 import { nextSong } from './components/player/switchSong/nextSong.js'
 import { updateProgressBar } from './components/player/progressBar/updateProgressBar.js'
 import { setVolumeBtnValue } from './components/player/volume/setVolumeBtnValue.js'
-import { setBtnStateOnVolumeValue } from './components/player/volume/setBtnStateOnVolumeValue.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeGithubImages } from './components/slider/changeImages/Github/changeGithubImages.js'
 import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
@@ -56,7 +55,6 @@ setQueryVariableValueLoad()
 changeGithubImages()
 changePexelsImages()
 setVolumeBtnValue()
-setBtnStateOnVolumeValue()
 setQueryInputValue()
 setSettingsCheckedInputsLoad()
 hideCheckedBlocksLoad()
