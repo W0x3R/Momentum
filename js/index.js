@@ -2282,14 +2282,21 @@ const checkIsMute = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getStorageIsMuteValue: function() { return /* binding */ getStorageIsMuteValue; },
 /* harmony export */   getStorageVolumeValue: function() { return /* binding */ getStorageVolumeValue; },
+/* harmony export */   setStorageIsMuteValue: function() { return /* binding */ setStorageIsMuteValue; },
 /* harmony export */   setStorageVolumeValue: function() { return /* binding */ setStorageVolumeValue; }
 /* harmony export */ });
 /* harmony import */ var _volume_setVolumeValueLoad__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(76);
+/* harmony import */ var _volume_setMute__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
+
 
 
 const setStorageVolumeValue = () => localStorage.setItem('volumeValue', _volume_setVolumeValueLoad__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value)
 const getStorageVolumeValue = () => localStorage.getItem('volumeValue') || _volume_setVolumeValueLoad__WEBPACK_IMPORTED_MODULE_0__.volumeInput.value
+
+const setStorageIsMuteValue = () => localStorage.setItem('isMute', _volume_setMute__WEBPACK_IMPORTED_MODULE_1__.isMute)
+const getStorageIsMuteValue = () => localStorage.getItem('isMute')
 
 /***/ }),
 /* 76 */
