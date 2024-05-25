@@ -6,7 +6,7 @@ import { volumeMuteBtn } from "./setBtnStateOnVolumeValue";
 
 export const volumeInput = document.querySelector('.player__volume-input')
 
-export const setVolumeBtnValue = () => {
+export const setVolumeValueLoad = () => {
 	const volumeValue = getStorageVolumeValue()
 	audio.volume = volumeValue
 	volumeInput.value = volumeValue
