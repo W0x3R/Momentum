@@ -2265,14 +2265,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _localStoragePlayer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75);
 /* harmony import */ var _setMute__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(77);
-/* harmony import */ var _setVolumeBtnIcon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80);
+/* harmony import */ var _setVolumeValueClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80);
 
 
 
 
 const checkIsMute = () => {
 	const volumeValue = (0,_localStoragePlayer__WEBPACK_IMPORTED_MODULE_0__.getStorageVolumeValue)()
-	_setMute__WEBPACK_IMPORTED_MODULE_1__.isMute ? (0,_setVolumeBtnIcon__WEBPACK_IMPORTED_MODULE_2__.setVolumeBtnIcon)(volumeValue, 'muteSongBtn.svg#muteSong', false) : (0,_setVolumeBtnIcon__WEBPACK_IMPORTED_MODULE_2__.setVolumeBtnIcon)(0, 'unMuteSongBtn.svg#unMuteSong', true)
+	_setMute__WEBPACK_IMPORTED_MODULE_1__.isMute ? (0,_setVolumeValueClick__WEBPACK_IMPORTED_MODULE_2__.setVolumeValueClick)(volumeValue, 'muteSongBtn.svg#muteSong', false) : (0,_setVolumeValueClick__WEBPACK_IMPORTED_MODULE_2__.setVolumeValueClick)(0, 'unMuteSongBtn.svg#unMuteSong', true)
 }
 
 /***/ }),
@@ -2401,7 +2401,7 @@ const setBtnStateOnVolumeValue = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setVolumeBtnIcon: function() { return /* binding */ setVolumeBtnIcon; }
+/* harmony export */   setVolumeValueClick: function() { return /* binding */ setVolumeValueClick; }
 /* harmony export */ });
 /* harmony import */ var _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(56);
 /* harmony import */ var _setMuteBtnHref__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78);
@@ -2410,7 +2410,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const setVolumeBtnIcon = (volumeValue, iconName, isMuteValue) => {
+const setVolumeValueClick = (volumeValue, iconName, isMuteValue) => {
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.volume = volumeValue
 	;(0,_setMuteBtnHref__WEBPACK_IMPORTED_MODULE_1__.setMuteBtnHref)(iconName)
 	;(0,_setMute__WEBPACK_IMPORTED_MODULE_2__.setIsMute)(isMuteValue)
