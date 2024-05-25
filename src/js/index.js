@@ -33,6 +33,7 @@ import { callKeydownEvent } from './components/eventHandlers/callEvents/callKeyd
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
 import { greetingPopup } from './components/greeting/greetingPopup/showGreetingPopup.js'
 import { controlGreetingPopupBtnHover } from './components/greeting/greetingPopup/controlGreetingPopupBtnHover.js'
+import { checkIsMuteValueLoad } from './components/player/volume/checkIsMuteValueLoad.js'
 
 setInterval(() => {
 	showTime()
@@ -58,6 +59,7 @@ setVolumeValueLoad()
 setQueryInputValue()
 setSettingsCheckedInputsLoad()
 hideCheckedBlocksLoad()
+checkIsMuteValueLoad()
 
 window.addEventListener('beforeunload', () => {
 	setStorageCity()

@@ -1,6 +1,5 @@
 import { audio } from "../playbackControl/playSong";
 import { setStorageVolumeValue, getStorageVolumeValue } from "../localStoragePlayer";
-import { setIsMute } from "./setMute";
 import { setMuteBtnHref } from "./setMuteBtnHref";
 import { volumeMuteBtn } from "./setVolumeValueChange";
 
@@ -13,11 +12,9 @@ export const setVolumeValueLoad = () => {
 	if (audio.volume === 0) {
 		setMuteBtnHref('unMuteSongBtn.svg#unMuteSong')
 		volumeMuteBtn.setAttribute('disabled', true)
-		setIsMute(true)
 	} else {
 		setMuteBtnHref('muteSongBtn.svg#muteSong')
 		volumeMuteBtn.removeAttribute('disabled')
-		setIsMute(false)
 		setStorageVolumeValue()
 	}
 }
