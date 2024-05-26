@@ -1,5 +1,5 @@
 import { greetingName } from "../greeting/greetingStorage"
-import { weatherInput } from "../weather/weatherAPI"
+import { weatherInput } from "../weather/fetchWeatherData "
 import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 import { showSettings } from "../settings/settingsVisibility"
 import { updateSettingsActiveStyles } from "../settings/settingsStyler"

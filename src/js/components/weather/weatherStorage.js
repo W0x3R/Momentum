@@ -1,4 +1,4 @@
-import { weatherInput } from "./weatherAPI"
+import { weatherInput } from "./fetchWeatherData "
 
 export const setStorageCity = () => localStorage.setItem('city', weatherInput.value)
 
