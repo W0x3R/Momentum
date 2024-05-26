@@ -3,7 +3,7 @@ import { query } from '../../../query/setQueryValue/setQueryVariableValue';
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange"
 import { showSliderPopup } from '../../sliderPopup/showSliderPopup';
 import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
-import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../localStorageSlider';
+import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../sliderStorage';
 import { loadImage } from '../loadImage';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');

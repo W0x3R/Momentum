@@ -264,7 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   queryWrapper: function() { return /* binding */ queryWrapper; }
 /* harmony export */ });
 /* harmony import */ var _slider_sliderPopup_showSliderPopup__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
-/* harmony import */ var _slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
+/* harmony import */ var _slider_sliderStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(16);
 /* harmony import */ var _slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 /* harmony import */ var _setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21);
 
@@ -285,7 +285,7 @@ const changePexelsImgOnQueryInputChange = () => {
 	}
 	(0,_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_3__.setQueryVariableValue)(queryInputValue)
 	queryInput.value = queryInputValue
-	;(0,_slider_localStorageSlider__WEBPACK_IMPORTED_MODULE_1__.setStorageNumPicturePexels)(0)
+	;(0,_slider_sliderStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageNumPicturePexels)(0)
 	;(0,_slider_changeImages_Pexels_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
 }
 
@@ -359,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _sliderPopup_showSliderPopup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
-/* harmony import */ var _localStorageSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
+/* harmony import */ var _sliderStorage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
 /* harmony import */ var _loadImage__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
 
 
@@ -374,14 +374,14 @@ let MAX_PEXELS_IMAGES;
 
 const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
-	const pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
+	const pexelsNumb = (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
 		client.photos.search({ query: _query_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
-					(0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_5__.setStorageNumPicturePexels)(0)
+					(0,_sliderStorage__WEBPACK_IMPORTED_MODULE_5__.setStorageNumPicturePexels)(0)
 					;(0,_loadImage__WEBPACK_IMPORTED_MODULE_6__.loadImage)(e.photos[pexelsNumb].src.landscape)
 				}
 				else {
@@ -2127,7 +2127,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changePexelsImagesClick: function() { return /* binding */ changePexelsImagesClick; }
 /* harmony export */ });
-/* harmony import */ var _localStorageSlider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
+/* harmony import */ var _sliderStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
 /* harmony import */ var _changePexelsImages__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 
@@ -2137,11 +2137,11 @@ __webpack_require__.r(__webpack_exports__);
 let isAnimate = true
 
 const changePexelsImagesClick = (direction) => {
-	let pexelsNumb = (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_0__.getStorageNumPicturePexels)()
+	let pexelsNumb = (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageNumPicturePexels)()
 	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_1__.getStorageImagesSrc)()
 	if (imagesSrc === 'pexels' && isAnimate) {
 		isAnimate = false
-		direction === 'prev' ? pexelsNumb <= 0 ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(--pexelsNumb) : pexelsNumb >= _changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES ? (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(0) : (0,_localStorageSlider__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(++pexelsNumb)
+		direction === 'prev' ? pexelsNumb <= 0 ? (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES) : (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(--pexelsNumb) : pexelsNumb >= _changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES ? (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(0) : (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(++pexelsNumb)
 		;(0,_changePexelsImages__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
 		setTimeout(() => {
 			isAnimate = true

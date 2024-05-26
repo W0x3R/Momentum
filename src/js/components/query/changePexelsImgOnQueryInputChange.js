@@ -1,5 +1,5 @@
 import { showSliderPopup } from "../slider/sliderPopup/showSliderPopup";
-import { setStorageNumPicturePexels } from '../slider/localStorageSlider'
+import { setStorageNumPicturePexels } from '../slider/sliderStorage'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
 import { setQueryVariableValue } from "./setQueryValue/setQueryVariableValue";
 
