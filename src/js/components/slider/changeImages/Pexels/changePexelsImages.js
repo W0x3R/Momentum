@@ -4,7 +4,7 @@ import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange"
 import { showSliderPopup } from '../../sliderPopup/sliderPopupVisibility';
 import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../sliderStorage';
-import { loadImage } from '../loadImage';
+import { loadImageFromUrl } from '../imageLoader';
 
 const client = createClient('5hopODRoIFw4TPxHIxDAQJItNDcFirsqca011wJt3lfNH9ZGBPaCHKtj');
 export let MAX_PEXELS_IMAGES;
@@ -19,10 +19,10 @@ export const changePexelsImages = () => {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
 				if (!pexelsNumb) {
 					setStorageNumPicturePexels(0)
-					loadImage(e.photos[pexelsNumb].src.landscape)
+					loadImageFromUrl(e.photos[pexelsNumb].src.landscape)
 				}
 				else {
-					pexelsNumb >= 0 ? loadImage(e.photos[pexelsNumb].src.landscape) : loadImage(e.photos[MAX_PEXELS_IMAGES + pexelsNumb].src.landscape)
+					pexelsNumb >= 0 ? loadImageFromUrl(e.photos[pexelsNumb].src.landscape) : loadImageFromUrl(e.photos[MAX_PEXELS_IMAGES + pexelsNumb].src.landscape)
 				}
 			} else {
 				showSliderPopup('add')

@@ -1,4 +1,4 @@
-import { body } from "../changeImages/loadImage"
+import { body } from "../changeImages/imageLoader"
 
 export const sliderPopup = document.querySelector('.slider__popup')
 export const popupShadow = document.querySelector('.popup__shadow')

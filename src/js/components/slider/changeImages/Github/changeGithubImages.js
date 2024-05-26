@@ -3,7 +3,7 @@ import { setGreetingMessageText } from "../../../greeting/setText/greetingMessag
 import { translateGreeting } from "../../../greeting/translateGreeting";
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange";
-import { loadImage } from "../loadImage";
+import { loadImageFromUrl } from "../imageLoader";
 import { randomNumGithub } from "./changeGithubImagesClick";
 
 export const changeGithubImages = () => {
@@ -15,6 +15,6 @@ export const changeGithubImages = () => {
 		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)
 		let randomNum = randomNumGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
-		loadImage(url)
+		loadImageFromUrl(url)
 	}
 }
