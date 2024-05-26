@@ -1,4 +1,4 @@
-import { popupShadow } from "../slider/sliderPopup/showSliderPopup"
+import { popupShadow } from "../slider/sliderPopup/sliderPopupVisibility"
 
 const settingsWrapper = document.querySelector('.settings__wrapper')
 

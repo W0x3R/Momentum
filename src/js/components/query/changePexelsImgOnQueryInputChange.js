@@ -1,4 +1,4 @@
-import { showSliderPopup } from "../slider/sliderPopup/showSliderPopup";
+import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility";
 import { setStorageNumPicturePexels } from '../slider/sliderStorage'
 import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
 import { setQueryVariableValue } from "./setQueryValue/setQueryVariableValue";

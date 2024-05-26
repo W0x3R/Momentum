@@ -26,7 +26,7 @@ import { changeGithubImages } from './components/slider/changeImages/Github/chan
 import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
 import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQueryVariableValueLoad.js'
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/controlSliderPopupBtnHover.js'
-import { sliderPopup } from './components/slider/sliderPopup/showSliderPopup.js'
+import { sliderPopup } from './components/slider/sliderPopup/sliderPopupVisibility.js'
 import { setSettingsCheckedInputsLoad } from './components/settings/setSettingsCheckedInputs/setSettingsCheckedInputsLoad.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/callEvents/callKeydownEvent.js'

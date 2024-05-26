@@ -3,7 +3,7 @@ import { setStorageSettingsCheckedInputs } from "../settings/localStorageSetting
 import { setSettingsCheckedInputsClick } from "../settings/setSettingsCheckedInputs/setSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
-import { showSliderPopup } from "../slider/sliderPopup/showSliderPopup"
+import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility"
 import { playbackControl } from "../player/playbackControl/playbackControl"
 import { playClickedSong } from "../player/switchSong/playClickedSong"
 import { nextSong } from "../player/switchSong/nextSong"
