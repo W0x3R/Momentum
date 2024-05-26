@@ -44,13 +44,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _getWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
-const setStorageCity = () => {
-	if (_getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value) {
-		localStorage.setItem('city', String(_getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value).trim())
-	}
-}
-
-const getStorageCity = () => localStorage.getItem('city')
+const setStorageCity = () => localStorage.setItem('city', _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value)
+const getStorageCity = () => localStorage.getItem('city') || 'Гомель'
 
 /***/ }),
 /* 4 */
@@ -76,7 +71,7 @@ const weatherInput = document.querySelector('.weather__input')
 const getWeather = async () => {
 	try {
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
-		const weatherCityValue = String(weatherInput.value).trim()
+		const weatherCityValue = (weatherInput.value).trim()
 		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityValue}&lang=${currLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
 		weatherInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
@@ -237,10 +232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const setWeatherInputValue = () => {
-	const getCity = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
-	_getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = getCity ? getCity : 'Гомель'
-}
+const setWeatherInputValue = () => _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
 
 /***/ }),
 /* 12 */
