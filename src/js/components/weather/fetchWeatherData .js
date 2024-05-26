@@ -1,7 +1,7 @@
 import { getStorageLanguage } from "../language/languageStorage"
 import { setWeatherText, setWeatherErrorText } from "./setText/setWeatherText"
 import { updateWeatherIconStyle } from "./updateWeatherIconStyle"
-import { showWeatherError } from "./weatherErrorHandling"
+import { showWeatherError } from "./showWeatherError"
 
 export const weatherInput = document.querySelector('.weather__input')
 
