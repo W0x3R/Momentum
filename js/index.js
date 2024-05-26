@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
-/* harmony import */ var _weatherIconStyler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _updateWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
 /* harmony import */ var _weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
@@ -78,7 +78,7 @@ const fetchAndDisplayWeather = async () => {
 		weatherInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
-		;(0,_weatherIconStyler__WEBPACK_IMPORTED_MODULE_2__.updateWeatherIconStyle)(data)
+		;(0,_updateWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__.updateWeatherIconStyle)(data)
 		;(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
 		;(0,_weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('remove')
 	} catch (error) {
