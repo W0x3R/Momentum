@@ -12,8 +12,8 @@ import { rewindSong } from "../player/progressBar/rewindSong"
 import { changePexelsImagesClick } from "../slider/changeImages/Pexels/pexelsImageClickChanger "
 import { changeGithubImagesClick } from "../slider/changeImages/Github/githubImageClickChanger "
 import { checkIsMute } from "../player/volume/checkIsMute"
-import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
-import { showSettings } from "../settings/showSettings"
+import { updateSettingsActiveStyles } from "../settings/settingsStyler"
+import { showSettings } from "../settings/settingsVisibility"
 import { changeQuote } from "../quotes/changeQuote"
 import { showGreetingPopup } from "../greeting/greetingPopup/showGreetingPopup"
 
@@ -37,12 +37,12 @@ export const clickEvents = {
 	'.popup__shadow-slider_show': () => showSliderPopup('remove'),
 	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
 	'.settings__header': () => {
-		setSettingsActiveStyles('toggle'),
+		updateSettingsActiveStyles('toggle'),
 			showSettings('toggle')
 	},
 	'.settings__close-button': () => {
 		showSettings('remove'),
-			setSettingsActiveStyles('remove')
+			updateSettingsActiveStyles('remove')
 	},
 	'.quotes__change-btn': () => {
 		changeQuote()

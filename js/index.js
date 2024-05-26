@@ -1422,12 +1422,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setSettingsTitleText: function() { return /* binding */ setSettingsTitleText; }
 /* harmony export */ });
-/* harmony import */ var _setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
+/* harmony import */ var _settingsStyler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(40);
 /* harmony import */ var _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(41);
 
 
 
-const setSettingsTitleText = (lang) => _setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
+const setSettingsTitleText = (lang) => _settingsStyler__WEBPACK_IMPORTED_MODULE_0__.settingTitle.textContent = _settingsTitleText__WEBPACK_IMPORTED_MODULE_1__.settingsTitleText[lang]
 
 /***/ }),
 /* 40 */
@@ -1436,13 +1436,13 @@ const setSettingsTitleText = (lang) => _setSettingsActiveStyles__WEBPACK_IMPORTE
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setSettingsActiveStyles: function() { return /* binding */ setSettingsActiveStyles; },
-/* harmony export */   settingTitle: function() { return /* binding */ settingTitle; }
+/* harmony export */   settingTitle: function() { return /* binding */ settingTitle; },
+/* harmony export */   updateSettingsActiveStyles: function() { return /* binding */ updateSettingsActiveStyles; }
 /* harmony export */ });
 const settingsButton = document.querySelector('.settings__header-button')
 const settingTitle = document.querySelector('.settings__header-title')
 
-const setSettingsActiveStyles = (value) => {
+const updateSettingsActiveStyles = (value) => {
 	settingTitle.classList[value]('settings__header-title_active')
 	settingsButton.classList[value]('settings__header-button_active')
 }
@@ -1610,8 +1610,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _slider_changeImages_Pexels_pexelsImageClickChanger___WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(70);
 /* harmony import */ var _slider_changeImages_Github_githubImageClickChanger___WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(71);
 /* harmony import */ var _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(75);
-/* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(40);
-/* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80);
+/* harmony import */ var _settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(40);
+/* harmony import */ var _settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80);
 /* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(81);
 /* harmony import */ var _greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(85);
 
@@ -1653,12 +1653,12 @@ const clickEvents = {
 	'.popup__shadow-slider_show': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
 	'.popup__shadow-greeting_show': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),
 	'.settings__header': () => {
-		(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__.setSettingsActiveStyles)('toggle'),
-			(0,_settings_showSettings__WEBPACK_IMPORTED_MODULE_15__.showSettings)('toggle')
+		(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__.updateSettingsActiveStyles)('toggle'),
+			(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__.showSettings)('toggle')
 	},
 	'.settings__close-button': () => {
-		(0,_settings_showSettings__WEBPACK_IMPORTED_MODULE_15__.showSettings)('remove'),
-			(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__.setSettingsActiveStyles)('remove')
+		(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__.showSettings)('remove'),
+			(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__.updateSettingsActiveStyles)('remove')
 	},
 	'.quotes__change-btn': () => {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__.changeQuote)()
@@ -2880,8 +2880,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _weather_weatherAPI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80);
-/* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(40);
+/* harmony import */ var _settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80);
+/* harmony import */ var _settings_settingsStyler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(40);
 /* harmony import */ var _greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(102);
 /* harmony import */ var _greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85);
 
@@ -2900,8 +2900,8 @@ const keydownEvents = {
 		;(0,_greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__.setGreetingNameTrim)()
 	},
 	'Escape': () => {
-		(0,_settings_showSettings__WEBPACK_IMPORTED_MODULE_3__.showSettings)('remove')
-		;(0,_settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__.setSettingsActiveStyles)('remove')
+		(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_3__.showSettings)('remove')
+		;(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_4__.updateSettingsActiveStyles)('remove')
 		;(0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__.showGreetingPopup)('remove')
 	}
 }

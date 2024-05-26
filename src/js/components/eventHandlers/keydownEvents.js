@@ -1,8 +1,8 @@
 import { greetingName } from "../greeting/localStorageGreeting"
 import { weatherInput } from "../weather/weatherAPI"
 import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
-import { showSettings } from "../settings/showSettings"
-import { setSettingsActiveStyles } from "../settings/setSettingsActiveStyles"
+import { showSettings } from "../settings/settingsVisibility"
+import { updateSettingsActiveStyles } from "../settings/settingsStyler"
 import { setGreetingNameTrim } from "../greeting/setText/greetingName/setGreetingNameTrim"
 import { showGreetingPopup } from "../greeting/greetingPopup/showGreetingPopup"
 
@@ -15,7 +15,7 @@ export const keydownEvents = {
 	},
 	'Escape': () => {
 		showSettings('remove')
-		setSettingsActiveStyles('remove')
+		updateSettingsActiveStyles('remove')
 		showGreetingPopup('remove')
 	}
 }
