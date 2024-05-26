@@ -1,6 +1,6 @@
 import { getStorageLanguage } from "../language/localStorageLanguage"
 import { setWeatherText, setWeatherErrorText } from "./setText/setWeatherText"
-import { setWeatherIconStyle } from "./setWeatherIconStyle"
+import { updateWeatherIconStyle } from "./weatherIconStyler"
 import { showWeatherError } from "./weatherErrorHandling"
 
 export const weatherInput = document.querySelector('.weather__input')
@@ -13,7 +13,7 @@ export const fetchAndDisplayWeather = async () => {
 		weatherInput.value = weatherCityValue
 		const fetchURL = await fetch(url)
 		const data = await fetchURL.json()
-		setWeatherIconStyle(data)
+		updateWeatherIconStyle(data)
 		setWeatherText(data, currLang)
 		showWeatherError('remove')
 	} catch (error) {
