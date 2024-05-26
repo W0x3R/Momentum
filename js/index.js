@@ -42,10 +42,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getStorageCity: function() { return /* binding */ getStorageCity; },
 /* harmony export */   setStorageCity: function() { return /* binding */ setStorageCity; }
 /* harmony export */ });
-/* harmony import */ var _getWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _weatherAPI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 
 
-const setStorageCity = () => localStorage.setItem('city', _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value)
+const setStorageCity = () => localStorage.setItem('city', _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value)
 
 const getStorageCity = () => localStorage.getItem('city') || 'Гомель'
 
@@ -56,7 +56,7 @@ const getStorageCity = () => localStorage.getItem('city') || 'Гомель'
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getWeather: function() { return /* binding */ getWeather; },
+/* harmony export */   fetchAndDisplayWeather: function() { return /* binding */ fetchAndDisplayWeather; },
 /* harmony export */   weatherInput: function() { return /* binding */ weatherInput; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
@@ -70,7 +70,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const weatherInput = document.querySelector('.weather__input')
 
-const getWeather = async () => {
+const fetchAndDisplayWeather = async () => {
 	try {
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 		const weatherCityValue = (weatherInput.value).trim()
@@ -229,12 +229,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setWeatherInputValue: function() { return /* binding */ setWeatherInputValue; }
 /* harmony export */ });
-/* harmony import */ var _getWeather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _weatherAPI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var _localStorageWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
-const setWeatherInputValue = () => _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
+const setWeatherInputValue = () => _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
 
 /***/ }),
 /* 12 */
@@ -2528,7 +2528,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(87);
 /* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81);
 /* harmony import */ var _language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(88);
-/* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
+/* harmony import */ var _weather_weatherAPI__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(13);
 /* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(89);
 /* harmony import */ var _language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6);
@@ -2553,14 +2553,14 @@ const changeEvents = {
 	},
 	'.language__select': () => {
 		(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setStorageLanguage)()
-		;(0,_weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather)()
+		;(0,_weather_weatherAPI__WEBPACK_IMPORTED_MODULE_6__.fetchAndDisplayWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 		;(0,_changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_0__.changeAppText)()
 		;(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__.changeQuote)()
 		;(0,_language_changeLanguageIcon__WEBPACK_IMPORTED_MODULE_5__.changeLanguageIcon)()
 		;(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_language_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_9__.languageSelect)
 	},
-	'.weather__input': _weather_getWeather__WEBPACK_IMPORTED_MODULE_6__.getWeather
+	'.weather__input': _weather_weatherAPI__WEBPACK_IMPORTED_MODULE_6__.fetchAndDisplayWeather
 }
 
 /***/ }),
@@ -2878,7 +2878,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   keydownEvents: function() { return /* binding */ keydownEvents; }
 /* harmony export */ });
 /* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
-/* harmony import */ var _weather_getWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
+/* harmony import */ var _weather_weatherAPI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(40);
@@ -2895,7 +2895,7 @@ __webpack_require__.r(__webpack_exports__);
 const keydownEvents = {
 	'Enter': () => {
 		_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
-		_weather_getWeather__WEBPACK_IMPORTED_MODULE_1__.weatherInput.blur()
+		_weather_weatherAPI__WEBPACK_IMPORTED_MODULE_1__.weatherInput.blur()
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryInput.blur()
 		;(0,_greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__.setGreetingNameTrim)()
 	},
@@ -3064,7 +3064,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
-/* harmony import */ var _components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _components_query_localStorageQuery_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 /* harmony import */ var _components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(23);
 /* harmony import */ var _components_changeAppText_changeAppText_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(24);
@@ -3149,7 +3149,7 @@ setInterval(() => {
 ;(0,_components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_15__.changeLanguageIcon)()
 ;(0,_components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_13__.checkSelectedImagesSrc)()
 ;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
-;(0,_components_weather_getWeather_js__WEBPACK_IMPORTED_MODULE_3__.getWeather)()
+;(0,_components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__.fetchAndDisplayWeather)()
 ;(0,_components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingNameLoad)()
 ;(0,_components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_26__.setQueryVariableValueLoad)()
 ;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_24__.changeGithubImages)()

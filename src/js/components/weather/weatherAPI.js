@@ -5,7 +5,7 @@ import { showWeatherError } from "./showWeatherError"
 
 export const weatherInput = document.querySelector('.weather__input')
 
-export const getWeather = async () => {
+export const fetchAndDisplayWeather = async () => {
 	try {
 		const currLang = getStorageLanguage()
 		const weatherCityValue = (weatherInput.value).trim()

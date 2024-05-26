@@ -4,7 +4,7 @@ import { showDate } from "../date/date"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { changeQuote } from "../quotes/changeQuote"
 import { changeLanguageIcon } from "../language/changeLanguageIcon"
-import { getWeather } from "../weather/getWeather"
+import { fetchAndDisplayWeather } from "../weather/weatherAPI"
 import { changePexelsImgOnQueryInputChange } from "../query/changePexelsImgOnQueryInputChange"
 import { closeSettingsIcon } from "../settings/closeSettingsIcon"
 import { languageSelect } from "../language/setSelectedLanguageValue"
@@ -18,12 +18,12 @@ export const changeEvents = {
 	},
 	'.language__select': () => {
 		setStorageLanguage()
-		getWeather()
+		fetchAndDisplayWeather()
 		showDate()
 		changeAppText()
 		changeQuote()
 		changeLanguageIcon()
 		closeSettingsIcon(languageSelect)
 	},
-	'.weather__input': getWeather
+	'.weather__input': fetchAndDisplayWeather
 }
