@@ -227,14 +227,14 @@ const setWeatherIconStyle = (data) => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setWeatherInputValue: function() { return /* binding */ setWeatherInputValue; }
+/* harmony export */   setWeatherInputFromStorage: function() { return /* binding */ setWeatherInputFromStorage; }
 /* harmony export */ });
 /* harmony import */ var _weatherAPI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
 /* harmony import */ var _localStorageWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
-const setWeatherInputValue = () => _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
+const setWeatherInputFromStorage = () => _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
 
 /***/ }),
 /* 12 */
@@ -3063,7 +3063,7 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
-/* harmony import */ var _components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
+/* harmony import */ var _components_weather_weatherInputValueSetter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
 /* harmony import */ var _components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _components_query_localStorageQuery_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
 /* harmony import */ var _components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(23);
@@ -3148,7 +3148,7 @@ setInterval(() => {
 ;(0,_components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_14__.changeSelectedLanguageValue)()
 ;(0,_components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_15__.changeLanguageIcon)()
 ;(0,_components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_13__.checkSelectedImagesSrc)()
-;(0,_components_weather_setWeatherInputValue_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputValue)()
+;(0,_components_weather_weatherInputValueSetter_js__WEBPACK_IMPORTED_MODULE_2__.setWeatherInputFromStorage)()
 ;(0,_components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__.fetchAndDisplayWeather)()
 ;(0,_components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingNameLoad)()
 ;(0,_components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_26__.setQueryVariableValueLoad)()

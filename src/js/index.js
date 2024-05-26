@@ -1,6 +1,6 @@
 import { setGreetingNameLoad } from './components/greeting/setText/greetingName/setGreetingNameLoad.js'
 import { setStorageCity } from './components/weather/localStorageWeather.js'
-import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
+import { setWeatherInputFromStorage } from './components/weather/weatherInputValueSetter.js'
 import { fetchAndDisplayWeather } from './components/weather/weatherAPI.js'
 import { setStorageQueryInputValue } from './components/query/localStorageQuery.js'
 import { setQueryInputValue } from './components/query/setQueryValue/setQueryInputValue.js'
@@ -49,7 +49,7 @@ loadSong()
 changeSelectedLanguageValue()
 changeLanguageIcon()
 checkSelectedImagesSrc()
-setWeatherInputValue()
+setWeatherInputFromStorage()
 fetchAndDisplayWeather()
 setGreetingNameLoad()
 setQueryVariableValueLoad()
