@@ -1598,7 +1598,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50);
 /* harmony import */ var _settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
-/* harmony import */ var _settings_setSettingsCheckedInputs_setSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
+/* harmony import */ var _settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
 /* harmony import */ var _settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(55);
 /* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
@@ -1665,7 +1665,7 @@ const clickEvents = {
 		;(0,_quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
 	},
 	'.settings__blocks-hide': (e) => {
-		(0,_settings_setSettingsCheckedInputs_setSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setSettingsCheckedInputsClick)(e)
+		(0,_settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.loadSettingsCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
 		;(0,_settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
 	},
@@ -1730,9 +1730,9 @@ const findCheckedSettingsInputs = () => Array.from(settingsShowInputs).map((e, i
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setSettingsCheckedInputsClick: function() { return /* binding */ setSettingsCheckedInputsClick; }
+/* harmony export */   loadSettingsCheckedInputsClick: function() { return /* binding */ loadSettingsCheckedInputsClick; }
 /* harmony export */ });
-const setSettingsCheckedInputsClick = (e) => {
+const loadSettingsCheckedInputsClick = (e) => {
 	if (e.target.closest('.settings__blocks-hide-inner') && e.target.tagName !== 'INPUT') {
 		const closestInput = e.target.closest('.settings__blocks-hide-inner').querySelector('input')
 		closestInput.checked = closestInput.checked ? false : true
@@ -2819,14 +2819,14 @@ const controlSliderPopupBtnHover = (value) => sliderPopupBtn.classList[value]('s
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   setSettingsCheckedInputsLoad: function() { return /* binding */ setSettingsCheckedInputsLoad; }
+/* harmony export */   loadSettingsCheckedInputs: function() { return /* binding */ loadSettingsCheckedInputs; }
 /* harmony export */ });
 /* harmony import */ var _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
 /* harmony import */ var _settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 
 
 
-const setSettingsCheckedInputsLoad = () => {
+const loadSettingsCheckedInputs = () => {
 	const settingsCheckedInputs = (0,_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
 	if (settingsCheckedInputs) {
 		settingsCheckedInputs.map((e) => _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
@@ -3090,7 +3090,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(96);
 /* harmony import */ var _components_slider_sliderPopup_sliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(97);
 /* harmony import */ var _components_slider_sliderPopup_sliderPopupVisibility_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(14);
-/* harmony import */ var _components_settings_setSettingsCheckedInputs_setSettingsCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(98);
+/* harmony import */ var _components_settings_settingsCheckedInputs_loadSettingsCheckedInputs_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(98);
 /* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(99);
 /* harmony import */ var _components_eventHandlers_callEvents_callKeydownEvent_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(100);
 /* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(103);
@@ -3156,7 +3156,7 @@ setInterval(() => {
 ;(0,_components_slider_changeImages_Pexels_pexelsImageChanger_js__WEBPACK_IMPORTED_MODULE_25__.changePexelsImages)()
 ;(0,_components_player_volume_setVolumeValueLoad_js__WEBPACK_IMPORTED_MODULE_22__.setVolumeValueLoad)()
 ;(0,_components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__.setQueryInputValue)()
-;(0,_components_settings_setSettingsCheckedInputs_setSettingsCheckedInputsLoad_js__WEBPACK_IMPORTED_MODULE_29__.setSettingsCheckedInputsLoad)()
+;(0,_components_settings_settingsCheckedInputs_loadSettingsCheckedInputs_js__WEBPACK_IMPORTED_MODULE_29__.loadSettingsCheckedInputs)()
 ;(0,_components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_30__.hideCheckedBlocksLoad)()
 ;(0,_components_player_volume_checkIsMuteValueLoad_js__WEBPACK_IMPORTED_MODULE_35__.checkIsMuteValueLoad)()
 

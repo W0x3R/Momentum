@@ -1,6 +1,6 @@
 import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
 import { setStorageSettingsCheckedInputs } from "../settings/settingsStorage"
-import { setSettingsCheckedInputsClick } from "../settings/setSettingsCheckedInputs/setSettingsCheckedInputsClick"
+import { loadSettingsCheckedInputsClick } from "../settings/settingsCheckedInputs/loadSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
 import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility"
@@ -49,7 +49,7 @@ export const clickEvents = {
 		rotateQuotesChangeBtn()
 	},
 	'.settings__blocks-hide': (e) => {
-		setSettingsCheckedInputsClick(e)
+		loadSettingsCheckedInputsClick(e)
 		hideCheckedBlocksClick(e)
 		setStorageSettingsCheckedInputs()
 	},

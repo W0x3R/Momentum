@@ -27,7 +27,7 @@ import { changePexelsImages } from './components/slider/changeImages/Pexels/pexe
 import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQueryVariableValueLoad.js'
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/sliderPopupBtnHover.js'
 import { sliderPopup } from './components/slider/sliderPopup/sliderPopupVisibility.js'
-import { setSettingsCheckedInputsLoad } from './components/settings/setSettingsCheckedInputs/setSettingsCheckedInputsLoad.js'
+import { loadSettingsCheckedInputs } from './components/settings/settingsCheckedInputs/loadSettingsCheckedInputs.js'
 import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
 import { callKeydownEvent } from './components/eventHandlers/callEvents/callKeydownEvent.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
@@ -57,7 +57,7 @@ changeGithubImages()
 changePexelsImages()
 setVolumeValueLoad()
 setQueryInputValue()
-setSettingsCheckedInputsLoad()
+loadSettingsCheckedInputs()
 hideCheckedBlocksLoad()
 checkIsMuteValueLoad()
 
