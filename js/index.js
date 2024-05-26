@@ -62,7 +62,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var _setWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
-/* harmony import */ var _showWeatherError__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
+/* harmony import */ var _weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
 
 
 
@@ -80,10 +80,10 @@ const fetchAndDisplayWeather = async () => {
 		const data = await fetchURL.json()
 		;(0,_setWeatherIconStyle__WEBPACK_IMPORTED_MODULE_2__.setWeatherIconStyle)(data)
 		;(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherText)(data, currLang)
-		;(0,_showWeatherError__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('remove')
+		;(0,_weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('remove')
 	} catch (error) {
 		(0,_setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__.setWeatherErrorText)()
-		;(0,_showWeatherError__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('add')
+		;(0,_weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__.showWeatherError)('add')
 	}
 }
 
@@ -138,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setWeatherText: function() { return /* binding */ setWeatherText; }
 /* harmony export */ });
 /* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
-/* harmony import */ var _showWeatherError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _weatherErrorHandling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 /* harmony import */ var _weatherText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
 
 
@@ -154,7 +154,7 @@ const setWeatherText = (data, currLang) => {
 	weatherTemperatureDescription.textContent = data.weather[0].description.slice(0, 1).toUpperCase() + data.weather[0].description.slice(1);
 	weatherWind.textContent = `${_weatherText__WEBPACK_IMPORTED_MODULE_2__.weatherText[currLang].wind} ${Math.round(data.wind.speed)} ${_weatherText__WEBPACK_IMPORTED_MODULE_2__.weatherText[currLang].units}`;
 	weatherHumidity.textContent = `${_weatherText__WEBPACK_IMPORTED_MODULE_2__.weatherText[currLang].humidity} ${Math.round(data.main.humidity)}%`;
-	_showWeatherError__WEBPACK_IMPORTED_MODULE_1__.weatherError.textContent = '';
+	_weatherErrorHandling__WEBPACK_IMPORTED_MODULE_1__.weatherError.textContent = '';
 }
 
 const setWeatherErrorText = () => {
@@ -163,7 +163,7 @@ const setWeatherErrorText = () => {
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
 	weatherHumidity.textContent = '';
-	_showWeatherError__WEBPACK_IMPORTED_MODULE_1__.weatherError.textContent = `${_weatherText__WEBPACK_IMPORTED_MODULE_2__.weatherText[currLang].error}`;
+	_weatherErrorHandling__WEBPACK_IMPORTED_MODULE_1__.weatherError.textContent = `${_weatherText__WEBPACK_IMPORTED_MODULE_2__.weatherText[currLang].error}`;
 }
 
 /***/ }),
