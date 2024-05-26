@@ -1,5 +1,5 @@
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc"
-import { changeGithubImages } from "./changeGithubImages";
+import { changeGithubImages } from "./githubImageChanger";
 import { generateRandomNum } from "../../randomNum";
 
 const MAX_GITHUB_IMAGES = 20;

@@ -1608,7 +1608,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _player_switchSong_prevSong__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(67);
 /* harmony import */ var _player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(68);
 /* harmony import */ var _slider_changeImages_Pexels_pexelsImageClickChanger___WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(70);
-/* harmony import */ var _slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(71);
+/* harmony import */ var _slider_changeImages_Github_githubImageClickChanger___WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(71);
 /* harmony import */ var _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(75);
 /* harmony import */ var _settings_setSettingsActiveStyles__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(40);
 /* harmony import */ var _settings_showSettings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(80);
@@ -1635,11 +1635,11 @@ __webpack_require__.r(__webpack_exports__);
 
 const clickEvents = {
 	'.slider__button_prev': () => {
-		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('prev')
+		(0,_slider_changeImages_Github_githubImageClickChanger___WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('prev')
 		;(0,_slider_changeImages_Pexels_pexelsImageClickChanger___WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('prev')
 	},
 	'.slider__button_next': () => {
-		(0,_slider_changeImages_Github_changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
+		(0,_slider_changeImages_Github_githubImageClickChanger___WEBPACK_IMPORTED_MODULE_12__.changeGithubImagesClick)('next')
 		;(0,_slider_changeImages_Pexels_pexelsImageClickChanger___WEBPACK_IMPORTED_MODULE_11__.changePexelsImagesClick)('next')
 	},
 	'.player__playback-play': _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__.playbackControl,
@@ -2160,7 +2160,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   randomNumGithub: function() { return /* binding */ randomNumGithub; }
 /* harmony export */ });
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
-/* harmony import */ var _changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
+/* harmony import */ var _githubImageChanger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
 /* harmony import */ var _randomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74);
 
 
@@ -2177,7 +2177,7 @@ const changeGithubImagesClick = (direction) => {
 		randomNumGithub = (direction === 'prev') ?
 			((randomNumGithub === 1) ? MAX_GITHUB_IMAGES : randomNumGithub - 1) :
 			((randomNumGithub === MAX_GITHUB_IMAGES) ? 1 : randomNumGithub + 1);
-		(0,_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
+		(0,_githubImageChanger__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
 		setTimeout(() => {
 			isAnimate = true
 		}, 1000);
@@ -2199,7 +2199,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
 /* harmony import */ var _imageLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
-/* harmony import */ var _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(71);
+/* harmony import */ var _githubImageClickChanger___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(71);
 
 
 
@@ -2215,7 +2215,7 @@ const changeGithubImages = () => {
 		const greetingText = (0,_greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.setGreetingMessageText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
-		let randomNum = _changeGithubImagesClick__WEBPACK_IMPORTED_MODULE_6__.randomNumGithub.toString().padStart(2, '0')
+		let randomNum = _githubImageClickChanger___WEBPACK_IMPORTED_MODULE_6__.randomNumGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
 		;(0,_imageLoader__WEBPACK_IMPORTED_MODULE_5__.loadImageFromUrl)(url)
 	}
@@ -2573,7 +2573,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeImagesSrc: function() { return /* binding */ changeImagesSrc; }
 /* harmony export */ });
 /* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
-/* harmony import */ var _slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
+/* harmony import */ var _slider_changeImages_Github_githubImageChanger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
 /* harmony import */ var _slider_changeImages_Pexels_pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 
 
@@ -2583,7 +2583,7 @@ const changeImagesSrc = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('github')
-		;(0,_slider_changeImages_Github_changeGithubImages__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
+		;(0,_slider_changeImages_Github_githubImageChanger__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
 	} else {
 		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
 		;(0,_slider_changeImages_Pexels_pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
@@ -3085,7 +3085,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(69);
 /* harmony import */ var _components_player_volume_setVolumeValueLoad_js__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(77);
 /* harmony import */ var _components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(81);
-/* harmony import */ var _components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(72);
+/* harmony import */ var _components_slider_changeImages_Github_githubImageChanger_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(72);
 /* harmony import */ var _components_slider_changeImages_Pexels_pexelsImageChanger_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(17);
 /* harmony import */ var _components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(96);
 /* harmony import */ var _components_slider_sliderPopup_sliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(97);
@@ -3152,7 +3152,7 @@ setInterval(() => {
 ;(0,_components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__.fetchAndDisplayWeather)()
 ;(0,_components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__.setGreetingNameLoad)()
 ;(0,_components_query_setQueryValue_setQueryVariableValueLoad_js__WEBPACK_IMPORTED_MODULE_26__.setQueryVariableValueLoad)()
-;(0,_components_slider_changeImages_Github_changeGithubImages_js__WEBPACK_IMPORTED_MODULE_24__.changeGithubImages)()
+;(0,_components_slider_changeImages_Github_githubImageChanger_js__WEBPACK_IMPORTED_MODULE_24__.changeGithubImages)()
 ;(0,_components_slider_changeImages_Pexels_pexelsImageChanger_js__WEBPACK_IMPORTED_MODULE_25__.changePexelsImages)()
 ;(0,_components_player_volume_setVolumeValueLoad_js__WEBPACK_IMPORTED_MODULE_22__.setVolumeValueLoad)()
 ;(0,_components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__.setQueryInputValue)()

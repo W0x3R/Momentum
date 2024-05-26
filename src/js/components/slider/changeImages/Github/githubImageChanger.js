@@ -4,7 +4,7 @@ import { translateGreeting } from "../../../greeting/translateGreeting";
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange";
 import { loadImageFromUrl } from "../imageLoader";
-import { randomNumGithub } from "./changeGithubImagesClick";
+import { randomNumGithub } from "./githubImageClickChanger ";
 
 export const changeGithubImages = () => {
 	const imagesSrc = getStorageImagesSrc()
