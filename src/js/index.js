@@ -2,7 +2,7 @@ import { setGreetingNameLoad } from './components/greeting/setText/greetingName/
 import { setStorageCity } from './components/weather/localStorageWeather.js'
 import { setWeatherInputValue } from './components/weather/setWeatherInputValue.js'
 import { getWeather } from './components/weather/getWeather.js'
-import { setStorageQueryInputValue } from './components/slider/localStorageSlider.js'
+import { setStorageQueryInputValue } from './components/query/localStorageQuery.js'
 import { setQueryInputValue } from './components/query/setQueryValue/setQueryInputValue.js'
 import { changeAppText } from './components/changeAppText/changeAppText.js'
 import { showTime } from './components/date/time'
