@@ -1,7 +1,7 @@
 import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
 import { setStorageSettingsCheckedInputs } from "../settings/settingsStorage"
 import { loadSettingsCheckedInputsClick } from "../settings/settingsCheckedInputs/loadSettingsCheckedInputsClick"
-import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
+import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/checkedBlocksLoaderClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"
 import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility"
 import { playbackControl } from "../player/playbackControl/playbackControl"

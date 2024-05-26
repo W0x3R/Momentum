@@ -1599,7 +1599,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50);
 /* harmony import */ var _settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 /* harmony import */ var _settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
-/* harmony import */ var _settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
+/* harmony import */ var _settings_hideCheckedBlocks_checkedBlocksLoaderClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(55);
 /* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(14);
 /* harmony import */ var _player_playbackControl_playbackControl__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56);
@@ -1666,7 +1666,7 @@ const clickEvents = {
 	},
 	'.settings__blocks-hide': (e) => {
 		(0,_settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.loadSettingsCheckedInputsClick)(e)
-		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
+		;(0,_settings_hideCheckedBlocks_checkedBlocksLoaderClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
 		;(0,_settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
 	},
 	'.greeting__name': _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__.clearGreetingsName
