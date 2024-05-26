@@ -180,6 +180,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   weatherError: function() { return /* binding */ weatherError; }
 /* harmony export */ });
 const weatherError = document.querySelector('.weather_error')
+
 const showWeatherError = (value) => weatherError.classList[value]('weather_error-show')
 
 /***/ }),
@@ -216,6 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setWeatherIconStyle: function() { return /* binding */ setWeatherIconStyle; }
 /* harmony export */ });
 const weatherIcon = document.querySelector('.weather__icon')
+
 const setWeatherIconStyle = (data) => {
 	weatherIcon.className = "weather__icon owf";
 	weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -1395,9 +1397,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sliderPopupMessage = document.querySelector('.slider__popup-message')
+
 const setSliderPopupText = (lang) => sliderPopupMessage.textContent = _sliderPopupText__WEBPACK_IMPORTED_MODULE_0__.sliderPopupText[lang]
-
-
 
 /***/ }),
 /* 37 */
