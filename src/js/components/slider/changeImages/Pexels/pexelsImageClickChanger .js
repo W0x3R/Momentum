@@ -1,6 +1,6 @@
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from "../../sliderStorage"
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc"
-import { MAX_PEXELS_IMAGES, changePexelsImages } from "./changePexelsImages"
+import { MAX_PEXELS_IMAGES, changePexelsImages } from "./pexelsImageChanger"
 
 let isAnimate = true
 

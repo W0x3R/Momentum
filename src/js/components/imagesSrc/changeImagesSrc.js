@@ -1,6 +1,6 @@
 import { setStorageImagesSrc } from "./localStorageImagesSrc";
 import { changeGithubImages } from "../slider/changeImages/Github/changeGithubImages";
-import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
+import { changePexelsImages } from "../slider/changeImages/Pexels/pexelsImageChanger";
 
 export const changeImagesSrc = (e) => {
 	const target = e.target;

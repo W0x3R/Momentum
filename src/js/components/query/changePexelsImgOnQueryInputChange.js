@@ -1,6 +1,6 @@
 import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility";
 import { setStorageNumPicturePexels } from '../slider/sliderStorage'
-import { changePexelsImages } from "../slider/changeImages/Pexels/changePexelsImages";
+import { changePexelsImages } from "../slider/changeImages/Pexels/pexelsImageChanger";
 import { setQueryVariableValue } from "./setQueryValue/setQueryVariableValue";
 
 export const queryWrapper = document.querySelector('.query')

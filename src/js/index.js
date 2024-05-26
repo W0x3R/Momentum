@@ -23,7 +23,7 @@ import { updateProgressBar } from './components/player/progressBar/updateProgres
 import { setVolumeValueLoad } from './components/player/volume/setVolumeValueLoad.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeGithubImages } from './components/slider/changeImages/Github/changeGithubImages.js'
-import { changePexelsImages } from './components/slider/changeImages/Pexels/changePexelsImages.js'
+import { changePexelsImages } from './components/slider/changeImages/Pexels/pexelsImageChanger.js'
 import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQueryVariableValueLoad.js'
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/sliderPopupBtnHover.js'
 import { sliderPopup } from './components/slider/sliderPopup/sliderPopupVisibility.js'
