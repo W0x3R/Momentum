@@ -3091,7 +3091,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_slider_sliderPopup_sliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(97);
 /* harmony import */ var _components_slider_sliderPopup_sliderPopupVisibility_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(14);
 /* harmony import */ var _components_settings_settingsCheckedInputs_loadSettingsCheckedInputs_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(98);
-/* harmony import */ var _components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(99);
+/* harmony import */ var _components_settings_hideCheckedBlocks_checkedBlocksLoader_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(99);
 /* harmony import */ var _components_eventHandlers_callEvents_callKeydownEvent_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(100);
 /* harmony import */ var _components_greeting_checkClickOutGreeting_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(103);
 /* harmony import */ var _components_greeting_greetingPopup_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(85);
@@ -3157,7 +3157,7 @@ setInterval(() => {
 ;(0,_components_player_volume_setVolumeValueLoad_js__WEBPACK_IMPORTED_MODULE_22__.setVolumeValueLoad)()
 ;(0,_components_query_setQueryValue_setQueryInputValue_js__WEBPACK_IMPORTED_MODULE_5__.setQueryInputValue)()
 ;(0,_components_settings_settingsCheckedInputs_loadSettingsCheckedInputs_js__WEBPACK_IMPORTED_MODULE_29__.loadSettingsCheckedInputs)()
-;(0,_components_settings_hideCheckedBlocks_hideCheckedBlocksLoad_js__WEBPACK_IMPORTED_MODULE_30__.hideCheckedBlocksLoad)()
+;(0,_components_settings_hideCheckedBlocks_checkedBlocksLoader_js__WEBPACK_IMPORTED_MODULE_30__.hideCheckedBlocksLoad)()
 ;(0,_components_player_volume_checkIsMuteValueLoad_js__WEBPACK_IMPORTED_MODULE_35__.checkIsMuteValueLoad)()
 
 window.addEventListener('beforeunload', () => {

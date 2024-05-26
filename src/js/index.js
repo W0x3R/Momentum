@@ -28,7 +28,7 @@ import { setQueryVariableValueLoad } from './components/query/setQueryValue/setQ
 import { controlSliderPopupBtnHover } from './components/slider/sliderPopup/sliderPopupBtnHover.js'
 import { sliderPopup } from './components/slider/sliderPopup/sliderPopupVisibility.js'
 import { loadSettingsCheckedInputs } from './components/settings/settingsCheckedInputs/loadSettingsCheckedInputs.js'
-import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/hideCheckedBlocksLoad.js'
+import { hideCheckedBlocksLoad } from './components/settings/hideCheckedBlocks/checkedBlocksLoader.js'
 import { callKeydownEvent } from './components/eventHandlers/callEvents/callKeydownEvent.js'
 import { checkClickOutGreetingName } from './components/greeting/checkClickOutGreeting.js'
 import { greetingPopup } from './components/greeting/greetingPopup/showGreetingPopup.js'
