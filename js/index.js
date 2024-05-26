@@ -29,6 +29,7 @@ __webpack_require__.r(__webpack_exports__);
 const greetingName = document.querySelector('.greeting__name')
 
 const setStorageGreetingName = () => localStorage.setItem('name', (greetingName.textContent).trim())
+
 const getStorageGreetingName = () => localStorage.getItem('name')
 
 /***/ }),
@@ -45,6 +46,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const setStorageCity = () => localStorage.setItem('city', _getWeather__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value)
+
 const getStorageCity = () => localStorage.getItem('city') || 'Гомель'
 
 /***/ }),
@@ -339,6 +341,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setStorageNumPicturePexels: function() { return /* binding */ setStorageNumPicturePexels; }
 /* harmony export */ });
 const getStorageNumPicturePexels = () => +localStorage.getItem('pexelsNum')
+
 const setStorageNumPicturePexels = (value) => localStorage.setItem('pexelsNum', value)
 
 /***/ }),
@@ -1686,7 +1689,6 @@ const rotateQuotesChangeBtn = () => {
 	quotesChangeBtn.style.transform = `rotate(${rotate}deg)`
 }
 
-
 /***/ }),
 /* 51 */
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -1839,6 +1841,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setCount: function() { return /* binding */ setCount; }
 /* harmony export */ });
 let count = 0;
+
 const setCount = (value) => count = value
 const incrementCount = () => count++
 const decrementCount = () => count--
