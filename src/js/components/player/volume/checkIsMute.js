@@ -1,4 +1,4 @@
-import { getStorageVolumeValue, setStorageIsMuteValue, getStorageIsMuteValue } from "../localStoragePlayer"
+import { getStorageVolumeValue, setStorageIsMuteValue, getStorageIsMuteValue } from "../playerStorage"
 import { audio } from "../playbackControl/playSong"
 import { setMuteBtnHref } from "./setMuteBtnHref"
 

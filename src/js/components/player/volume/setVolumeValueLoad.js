@@ -1,5 +1,5 @@
 import { audio } from "../playbackControl/playSong";
-import { setStorageVolumeValue, getStorageVolumeValue } from "../localStoragePlayer";
+import { setStorageVolumeValue, getStorageVolumeValue } from "../playerStorage";
 import { setMuteBtnHref } from "./setMuteBtnHref";
 import { volumeMuteBtn } from "./setVolumeValueChange";
 

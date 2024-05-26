@@ -1,7 +1,7 @@
-import { getStorageIsMuteValue } from "../localStoragePlayer"
+import { getStorageIsMuteValue } from "../playerStorage"
 import { setMuteBtnHref } from "./setMuteBtnHref"
 import { audio } from "../playbackControl/playSong"
-import { getStorageVolumeValue } from "../localStoragePlayer"
+import { getStorageVolumeValue } from "../playerStorage"
 
 export const checkIsMuteValueLoad = () => {
 	const volumeValue = getStorageVolumeValue()
