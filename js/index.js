@@ -1596,7 +1596,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   clickEvents: function() { return /* binding */ clickEvents; }
 /* harmony export */ });
-/* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50);
+/* harmony import */ var _quotes_quoteBtnRotator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50);
 /* harmony import */ var _settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 /* harmony import */ var _settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
 /* harmony import */ var _settings_hideCheckedBlocks_checkedBlocksLoaderClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
@@ -1662,7 +1662,7 @@ const clickEvents = {
 	},
 	'.quotes__change-btn': () => {
 		(0,_quotes_changeQuote__WEBPACK_IMPORTED_MODULE_16__.changeQuote)()
-		;(0,_quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
+		;(0,_quotes_quoteBtnRotator__WEBPACK_IMPORTED_MODULE_0__.rotateQuotesChangeBtn)()
 	},
 	'.settings__blocks-hide': (e) => {
 		(0,_settings_settingsCheckedInputs_loadSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.loadSettingsCheckedInputsClick)(e)
@@ -2426,7 +2426,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeQuote = async () => {
 	try {
 		const data = await (0,_getQuotesData__WEBPACK_IMPORTED_MODULE_0__.getQuotesData)()
-		;(0,_quoteDisplayer__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data)
+		;(0,_quoteDisplayer__WEBPACK_IMPORTED_MODULE_1__.displayRandomQuote)(data)
 	}
 	catch {
 		console.error('Error fetching quotes:', error);
@@ -2476,7 +2476,7 @@ const getQuotesLanguage = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   showQuote: function() { return /* binding */ showQuote; }
+/* harmony export */   displayRandomQuote: function() { return /* binding */ displayRandomQuote; }
 /* harmony export */ });
 /* harmony import */ var _slider_randomNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74);
 
@@ -2484,7 +2484,7 @@ __webpack_require__.r(__webpack_exports__);
 const quote = document.querySelector('.quotes__text')
 const author = document.querySelector('.quotes__author')
 
-const showQuote = (data) => {
+const displayRandomQuote = (data) => {
 	const randomNum = (0,_slider_randomNum__WEBPACK_IMPORTED_MODULE_0__.generateRandomNum)(0, data.length - 1)
 	quote.textContent = data[randomNum].quote
 	author.textContent = data[randomNum].author

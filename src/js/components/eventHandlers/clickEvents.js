@@ -1,4 +1,4 @@
-import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
+import { rotateQuotesChangeBtn } from "../quotes/quoteBtnRotator"
 import { setStorageSettingsCheckedInputs } from "../settings/settingsStorage"
 import { loadSettingsCheckedInputsClick } from "../settings/settingsCheckedInputs/loadSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/checkedBlocksLoaderClick"
