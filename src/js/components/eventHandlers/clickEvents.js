@@ -1,5 +1,5 @@
 import { rotateQuotesChangeBtn } from "../quotes/rotateQuotesChangeBtn"
-import { setStorageSettingsCheckedInputs } from "../settings/localStorageSettings"
+import { setStorageSettingsCheckedInputs } from "../settings/settingsStorage"
 import { setSettingsCheckedInputsClick } from "../settings/setSettingsCheckedInputs/setSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/hideCheckedBlocksClick"
 import { clearGreetingsName } from "../greeting/clearGreetingsName"

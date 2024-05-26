@@ -1597,7 +1597,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   clickEvents: function() { return /* binding */ clickEvents; }
 /* harmony export */ });
 /* harmony import */ var _quotes_rotateQuotesChangeBtn__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(50);
-/* harmony import */ var _settings_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var _settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 /* harmony import */ var _settings_setSettingsCheckedInputs_setSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(53);
 /* harmony import */ var _settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(54);
 /* harmony import */ var _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(55);
@@ -1667,7 +1667,7 @@ const clickEvents = {
 	'.settings__blocks-hide': (e) => {
 		(0,_settings_setSettingsCheckedInputs_setSettingsCheckedInputsClick__WEBPACK_IMPORTED_MODULE_2__.setSettingsCheckedInputsClick)(e)
 		;(0,_settings_hideCheckedBlocks_hideCheckedBlocksClick__WEBPACK_IMPORTED_MODULE_3__.hideCheckedBlocksClick)(e)
-		;(0,_settings_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
+		;(0,_settings_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageSettingsCheckedInputs)()
 	},
 	'.greeting__name': _greeting_clearGreetingsName__WEBPACK_IMPORTED_MODULE_4__.clearGreetingsName
 }
@@ -2822,12 +2822,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setSettingsCheckedInputsLoad: function() { return /* binding */ setSettingsCheckedInputsLoad; }
 /* harmony export */ });
 /* harmony import */ var _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
-/* harmony import */ var _localStorageSettings__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
+/* harmony import */ var _settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 
 
 
 const setSettingsCheckedInputsLoad = () => {
-	const settingsCheckedInputs = (0,_localStorageSettings__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
+	const settingsCheckedInputs = (0,_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
 	if (settingsCheckedInputs) {
 		settingsCheckedInputs.map((e) => _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
