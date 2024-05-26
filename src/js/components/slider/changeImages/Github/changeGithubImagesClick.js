@@ -1,9 +1,9 @@
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc"
 import { changeGithubImages } from "./changeGithubImages";
-import { getRandomNum } from "../../getRandomNum";
+import { generateRandomNum } from "../../randomNum";
 
 const MAX_GITHUB_IMAGES = 20;
-export let randomNumGithub = getRandomNum(1, MAX_GITHUB_IMAGES)
+export let randomNumGithub = generateRandomNum(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
 
 export const changeGithubImagesClick = (direction) => {

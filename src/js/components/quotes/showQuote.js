@@ -1,10 +1,10 @@
-import { getRandomNum } from "../slider/getRandomNum"
+import { generateRandomNum } from "../slider/randomNum"
 
 const quote = document.querySelector('.quotes__text')
 const author = document.querySelector('.quotes__author')
 
 export const showQuote = (data) => {
-	const randomNum = getRandomNum(0, data.length - 1)
+	const randomNum = generateRandomNum(0, data.length - 1)
 	quote.textContent = data[randomNum].quote
 	author.textContent = data[randomNum].author
 }

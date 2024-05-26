@@ -2161,13 +2161,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
 /* harmony import */ var _changeGithubImages__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
-/* harmony import */ var _getRandomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74);
+/* harmony import */ var _randomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74);
 
 
 
 
 const MAX_GITHUB_IMAGES = 20;
-let randomNumGithub = (0,_getRandomNum__WEBPACK_IMPORTED_MODULE_2__.getRandomNum)(1, MAX_GITHUB_IMAGES)
+let randomNumGithub = (0,_randomNum__WEBPACK_IMPORTED_MODULE_2__.generateRandomNum)(1, MAX_GITHUB_IMAGES)
 let isAnimate = true
 
 const changeGithubImagesClick = (direction) => {
@@ -2246,9 +2246,9 @@ const translateGreeting = (greetingText) => greetingTranslations[greetingText];
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   getRandomNum: function() { return /* binding */ getRandomNum; }
+/* harmony export */   generateRandomNum: function() { return /* binding */ generateRandomNum; }
 /* harmony export */ });
-const getRandomNum = (min, max) => {
+const generateRandomNum = (min, max) => {
 	min = Math.ceil(min);
 	max = Math.floor(max);
 	return Math.floor(Math.random() * (max - min + 1) + min);
@@ -2478,14 +2478,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showQuote: function() { return /* binding */ showQuote; }
 /* harmony export */ });
-/* harmony import */ var _slider_getRandomNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74);
+/* harmony import */ var _slider_randomNum__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74);
 
 
 const quote = document.querySelector('.quotes__text')
 const author = document.querySelector('.quotes__author')
 
 const showQuote = (data) => {
-	const randomNum = (0,_slider_getRandomNum__WEBPACK_IMPORTED_MODULE_0__.getRandomNum)(0, data.length - 1)
+	const randomNum = (0,_slider_randomNum__WEBPACK_IMPORTED_MODULE_0__.generateRandomNum)(0, data.length - 1)
 	quote.textContent = data[randomNum].quote
 	author.textContent = data[randomNum].author
 }
