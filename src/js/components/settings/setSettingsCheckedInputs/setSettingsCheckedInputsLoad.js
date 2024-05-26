@@ -1,4 +1,4 @@
-import { settingsShowInputs } from "../findCheckedSettingsInputs";
+import { settingsShowInputs } from "../checkedSettingsInputsFinder";
 import { getStorageSettingsCheckedInputs } from "../settingsStorage";
 
 export const setSettingsCheckedInputsLoad = () => {

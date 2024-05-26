@@ -1,4 +1,4 @@
-import { findCheckedSettingsInputs } from "./findCheckedSettingsInputs"
+import { findCheckedSettingsInputs } from "./checkedSettingsInputsFinder"
 
 export const setStorageSettingsCheckedInputs = () => {
 	const indexOfCheckedInputs = findCheckedSettingsInputs()

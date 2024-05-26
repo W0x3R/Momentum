@@ -1699,11 +1699,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   getStorageSettingsCheckedInputs: function() { return /* binding */ getStorageSettingsCheckedInputs; },
 /* harmony export */   setStorageSettingsCheckedInputs: function() { return /* binding */ setStorageSettingsCheckedInputs; }
 /* harmony export */ });
-/* harmony import */ var _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
+/* harmony import */ var _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
 
 
 const setStorageSettingsCheckedInputs = () => {
-	const indexOfCheckedInputs = (0,_findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.findCheckedSettingsInputs)()
+	const indexOfCheckedInputs = (0,_checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__.findCheckedSettingsInputs)()
 	localStorage.setItem('indexOfCheckedInputs', JSON.stringify(indexOfCheckedInputs))
 }
 
@@ -2821,7 +2821,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setSettingsCheckedInputsLoad: function() { return /* binding */ setSettingsCheckedInputsLoad; }
 /* harmony export */ });
-/* harmony import */ var _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
+/* harmony import */ var _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
 /* harmony import */ var _settingsStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(51);
 
 
@@ -2829,7 +2829,7 @@ __webpack_require__.r(__webpack_exports__);
 const setSettingsCheckedInputsLoad = () => {
 	const settingsCheckedInputs = (0,_settingsStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageSettingsCheckedInputs)()
 	if (settingsCheckedInputs) {
-		settingsCheckedInputs.map((e) => _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
+		settingsCheckedInputs.map((e) => _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs[e].checked = true)
 	}
 }
 
@@ -2842,11 +2842,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   hideCheckedBlocksLoad: function() { return /* binding */ hideCheckedBlocksLoad; }
 /* harmony export */ });
-/* harmony import */ var _findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
+/* harmony import */ var _checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52);
 
 
 const hideCheckedBlocksLoad = () => {
-	Array.from(_findCheckedSettingsInputs__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocks-hide_hide'))
+	Array.from(_checkedSettingsInputsFinder__WEBPACK_IMPORTED_MODULE_0__.settingsShowInputs).filter(e => e.checked).map(e => document.querySelector(`.${e.getAttribute('name')}`).classList.add('settings__blocks-hide_hide'))
 }
 
 /***/ }),
