@@ -1,5 +1,5 @@
 import { setGreetingNameLoad } from './components/greeting/setText/greetingName/setGreetingNameLoad.js'
-import { setStorageCity } from './components/weather/localStorageWeather.js'
+import { setStorageCity } from './components/weather/weatherStorage.js'
 import { setWeatherInputFromStorage } from './components/weather/weatherInputValueSetter.js'
 import { fetchAndDisplayWeather } from './components/weather/weatherAPI.js'
 import { setStorageQueryInputValue } from './components/query/localStorageQuery.js'

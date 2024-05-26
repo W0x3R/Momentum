@@ -230,11 +230,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setWeatherInputFromStorage: function() { return /* binding */ setWeatherInputFromStorage; }
 /* harmony export */ });
 /* harmony import */ var _weatherAPI__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
-/* harmony import */ var _localStorageWeather__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _weatherStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 
 
 
-const setWeatherInputFromStorage = () => _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_localStorageWeather__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
+const setWeatherInputFromStorage = () => _weatherAPI__WEBPACK_IMPORTED_MODULE_0__.weatherInput.value = (0,_weatherStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageCity)()
 
 /***/ }),
 /* 12 */
@@ -3062,7 +3062,7 @@ var __webpack_exports__ = {};
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_setText_greetingName_setGreetingNameLoad_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-/* harmony import */ var _components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _components_weather_weatherStorage_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _components_weather_weatherInputValueSetter_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(11);
 /* harmony import */ var _components_weather_weatherAPI_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
 /* harmony import */ var _components_query_localStorageQuery_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12);
@@ -3161,7 +3161,7 @@ setInterval(() => {
 ;(0,_components_player_volume_checkIsMuteValueLoad_js__WEBPACK_IMPORTED_MODULE_35__.checkIsMuteValueLoad)()
 
 window.addEventListener('beforeunload', () => {
-	;(0,_components_weather_localStorageWeather_js__WEBPACK_IMPORTED_MODULE_1__.setStorageCity)()
+	;(0,_components_weather_weatherStorage_js__WEBPACK_IMPORTED_MODULE_1__.setStorageCity)()
 	;(0,_components_query_localStorageQuery_js__WEBPACK_IMPORTED_MODULE_4__.setStorageQueryInputValue)()
 })
 

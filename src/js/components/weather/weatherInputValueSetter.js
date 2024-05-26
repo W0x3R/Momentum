@@ -1,4 +1,4 @@
 import { weatherInput } from "./weatherAPI"
-import { getStorageCity } from "./localStorageWeather"
+import { getStorageCity } from "./weatherStorage"
 
 export const setWeatherInputFromStorage = () => weatherInput.value = getStorageCity()
