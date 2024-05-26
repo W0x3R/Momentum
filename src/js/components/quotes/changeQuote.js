@@ -1,5 +1,5 @@
 import { getQuotesData } from "./getQuotesData";
-import { showQuote } from "./showQuote"
+import { showQuote } from "./quoteDisplayer"
 
 export const changeQuote = async () => {
 	try {

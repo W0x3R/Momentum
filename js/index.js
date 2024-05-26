@@ -2419,14 +2419,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeQuote: function() { return /* binding */ changeQuote; }
 /* harmony export */ });
 /* harmony import */ var _getQuotesData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(82);
-/* harmony import */ var _showQuote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(84);
+/* harmony import */ var _quoteDisplayer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(84);
 
 
 
 const changeQuote = async () => {
 	try {
 		const data = await (0,_getQuotesData__WEBPACK_IMPORTED_MODULE_0__.getQuotesData)()
-		;(0,_showQuote__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data)
+		;(0,_quoteDisplayer__WEBPACK_IMPORTED_MODULE_1__.showQuote)(data)
 	}
 	catch {
 		console.error('Error fetching quotes:', error);
