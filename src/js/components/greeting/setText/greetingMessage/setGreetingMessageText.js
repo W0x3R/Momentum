@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../../../language/localStorageLanguage"
+import { getStorageLanguage } from "../../../language/languageStorage"
 import { greetingMessageText } from "./greetingMessageText"
 
 const greetingText = document.querySelector('.greeting__text')

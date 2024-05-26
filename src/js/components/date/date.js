@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/languageStorage"
 
 const date = document.querySelector('.data__date')
 const dateOptions = {

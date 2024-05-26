@@ -59,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   fetchAndDisplayWeather: function() { return /* binding */ fetchAndDisplayWeather; },
 /* harmony export */   weatherInput: function() { return /* binding */ weatherInput; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _setText_setWeatherText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
 /* harmony import */ var _weatherIconStyler__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
 /* harmony import */ var _weatherErrorHandling__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(8);
@@ -72,7 +72,7 @@ const weatherInput = document.querySelector('.weather__input')
 
 const fetchAndDisplayWeather = async () => {
 	try {
-		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+		const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 		const weatherCityValue = (weatherInput.value).trim()
 		const url = `https://api.openweathermap.org/data/2.5/weather?q=${weatherCityValue}&lang=${currLang}&appid=707403e9cd5fd98433ce849d45e3e0f2&units=metric`;
 		weatherInput.value = weatherCityValue
@@ -137,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setWeatherErrorText: function() { return /* binding */ setWeatherErrorText; },
 /* harmony export */   setWeatherText: function() { return /* binding */ setWeatherText; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _weatherErrorHandling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
 /* harmony import */ var _weatherText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9);
 
@@ -158,7 +158,7 @@ const setWeatherText = (data, currLang) => {
 }
 
 const setWeatherErrorText = () => {
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
 	weatherWind.textContent = '';
@@ -1128,7 +1128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeAppText: function() { return /* binding */ changeAppText; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25);
 /* harmony import */ var _greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(27);
 /* harmony import */ var _imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29);
@@ -1152,7 +1152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeAppText = () => {
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
 		(0,_greeting_setText_greetingName_greetingNamePlaceholder_setGreetingNamePlaceholder__WEBPACK_IMPORTED_MODULE_1__.setGreetingNamePlaceholder)('en')
 		;(0,_imagesSrc_setText_setImagesSrcText__WEBPACK_IMPORTED_MODULE_3__.setImagesSrcText)('en')
@@ -1225,7 +1225,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setGreetingMessageText: function() { return /* binding */ setGreetingMessageText; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _greetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(28);
 
 
@@ -1233,7 +1233,7 @@ __webpack_require__.r(__webpack_exports__);
 const greetingText = document.querySelector('.greeting__text')
 
 const setGreetingMessageText = () => {
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	const currHour = new Date().getHours();
 	const greeting = _greetingMessageText__WEBPACK_IMPORTED_MODULE_1__.greetingMessageText[currLang][Math.floor(currHour / 6)]
 	greetingText.textContent = greeting
@@ -1552,7 +1552,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showDate: function() { return /* binding */ showDate; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 const date = document.querySelector('.data__date')
@@ -1563,7 +1563,7 @@ const dateOptions = {
 }
 
 const showDate = () => {
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	const currDate = new Date().toLocaleDateString(currLang, dateOptions)
 	date.textContent = currDate
 }
@@ -2193,7 +2193,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeGithubImages: function() { return /* binding */ changeGithubImages; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
 /* harmony import */ var _greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73);
 /* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
@@ -2213,7 +2213,7 @@ const changeGithubImages = () => {
 	if (imagesSrc === 'github') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.setGreetingMessageText)().split(' ')[1].slice(0, -1);
-		const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
+		const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
 		let randomNum = _githubImageClickChanger___WEBPACK_IMPORTED_MODULE_6__.randomNumGithub.toString().padStart(2, '0')
 		let url = `https://raw.githubusercontent.com/W0x3R/momentum-images/Main/${value}/${randomNum}.webp`
@@ -2461,11 +2461,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   getQuotesLanguage: function() { return /* binding */ getQuotesLanguage; }
 /* harmony export */ });
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
 const getQuotesLanguage = () => {
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	return currLang === 'en' ? 'quotes-en.json' : 'quotes-ru.json'
 }
 
@@ -2523,7 +2523,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeEvents: function() { return /* binding */ changeEvents; }
 /* harmony export */ });
 /* harmony import */ var _changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(24);
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony import */ var _date_date__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(47);
 /* harmony import */ var _imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(87);
 /* harmony import */ var _quotes_changeQuote__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81);
@@ -2552,7 +2552,7 @@ const changeEvents = {
 			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
 	},
 	'.language__select': () => {
-		(0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.setStorageLanguage)()
+		(0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageLanguage)()
 		;(0,_weather_weatherAPI__WEBPACK_IMPORTED_MODULE_6__.fetchAndDisplayWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
 		;(0,_changeAppText_changeAppText__WEBPACK_IMPORTED_MODULE_0__.changeAppText)()
@@ -2599,13 +2599,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeLanguageIcon: function() { return /* binding */ changeLanguageIcon; }
 /* harmony export */ });
-/* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(89);
 
 
 
 const changeLanguageIcon = () => {
-	const currLang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
 		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_ru')
 		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_en')
@@ -2727,13 +2727,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeSelectedLanguageValue: function() { return /* binding */ changeSelectedLanguageValue; }
 /* harmony export */ });
-/* harmony import */ var _localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6);
 
 
 
 const changeSelectedLanguageValue = () => {
-	const currLang = (0,_localStorageLanguage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
+	const currLang = (0,_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
 		(0,_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_1__.setSelectedLanguageValue)('ru', false)
 		;(0,_setSelectedLanguageValue__WEBPACK_IMPORTED_MODULE_1__.setSelectedLanguageValue)('en', true)
@@ -2777,7 +2777,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   setQueryVariableValueLoad: function() { return /* binding */ setQueryVariableValueLoad; }
 /* harmony export */ });
 /* harmony import */ var _greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(27);
-/* harmony import */ var _language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
 /* harmony import */ var _greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73);
 /* harmony import */ var _storageQuery__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12);
 /* harmony import */ var _setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21);
@@ -2791,7 +2791,7 @@ const greetingText = (0,_greeting_setText_greetingMessage_setGreetingMessageText
 
 const setQueryVariableValueLoad = () => {
 	const queryValue = (0,_storageQuery__WEBPACK_IMPORTED_MODULE_3__.getStorageQueryInputValue)()
-	const currLang = (0,_language_localStorageLanguage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
+	const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageLanguage)()
 	if (queryValue) {
 		(0,_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_4__.setQueryVariableValue)(queryValue)
 	} else {

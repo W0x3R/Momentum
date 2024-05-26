@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../../language/localStorageLanguage"
+import { getStorageLanguage } from "../../language/languageStorage"
 import { weatherError } from "../weatherErrorHandling"
 import { weatherText } from "./weatherText"
 

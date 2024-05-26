@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../../../language/localStorageLanguage";
+import { getStorageLanguage } from "../../../language/languageStorage";
 import { setGreetingMessageText } from "../../../greeting/setText/greetingMessage/setGreetingMessageText";
 import { translateGreeting } from "../../../greeting/translateGreeting";
 import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";

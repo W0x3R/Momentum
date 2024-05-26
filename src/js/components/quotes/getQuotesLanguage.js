@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/languageStorage"
 
 export const getQuotesLanguage = () => {
 	const currLang = getStorageLanguage()

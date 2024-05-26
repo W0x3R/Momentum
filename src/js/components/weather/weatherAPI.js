@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "../language/localStorageLanguage"
+import { getStorageLanguage } from "../language/languageStorage"
 import { setWeatherText, setWeatherErrorText } from "./setText/setWeatherText"
 import { updateWeatherIconStyle } from "./weatherIconStyler"
 import { showWeatherError } from "./weatherErrorHandling"

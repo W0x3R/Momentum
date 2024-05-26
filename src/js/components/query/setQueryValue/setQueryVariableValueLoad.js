@@ -1,5 +1,5 @@
 import { setGreetingMessageText } from "../../greeting/setText/greetingMessage/setGreetingMessageText";
-import { getStorageLanguage } from "../../language/localStorageLanguage";
+import { getStorageLanguage } from "../../language/languageStorage";
 import { translateGreeting } from "../../greeting/translateGreeting"
 import { getStorageQueryInputValue } from "../storageQuery";
 import { setQueryVariableValue } from "./setQueryVariableValue";

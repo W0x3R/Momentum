@@ -1,4 +1,4 @@
-import { getStorageLanguage } from "./localStorageLanguage";
+import { getStorageLanguage } from "./languageStorage";
 import { setSelectedLanguageValue } from "./setSelectedLanguageValue";
 
 export const changeSelectedLanguageValue = () => {

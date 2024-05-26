@@ -1,5 +1,5 @@
 import { changeAppText } from "../changeAppText/changeAppText"
-import { setStorageLanguage } from "../language/localStorageLanguage"
+import { setStorageLanguage } from "../language/languageStorage"
 import { showDate } from "../date/date"
 import { changeImagesSrc } from "../imagesSrc/changeImagesSrc"
 import { changeQuote } from "../quotes/changeQuote"
