@@ -1,7 +1,7 @@
 import { getStorageLanguage } from "../../../language/languageStorage";
 import { setGreetingMessageText } from "../../../greeting/setText/greetingMessage/setGreetingMessageText";
 import { translateGreeting } from "../../../greeting/translateGreeting";
-import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc";
+import { getStorageImagesSrc } from "../../../imagesSrc/imagesSrcStorage";
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange";
 import { loadImageFromUrl } from "../imageLoader";
 import { randomNumGithub } from "./githubImageClickChanger ";

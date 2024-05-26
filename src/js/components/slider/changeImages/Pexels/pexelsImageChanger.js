@@ -2,7 +2,7 @@ import { createClient } from 'pexels';
 import { query } from '../../../query/setQueryValue/setQueryVariableValue';
 import { queryWrapper } from "../../../query/changePexelsImgOnQueryInputChange"
 import { showSliderPopup } from '../../sliderPopup/sliderPopupVisibility';
-import { getStorageImagesSrc } from '../../../imagesSrc/localStorageImagesSrc';
+import { getStorageImagesSrc } from '../../../imagesSrc/imagesSrcStorage';
 import { getStorageNumPicturePexels, setStorageNumPicturePexels } from '../../sliderStorage';
 import { loadImageFromUrl } from '../imageLoader';
 

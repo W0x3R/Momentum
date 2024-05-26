@@ -1,4 +1,4 @@
-import { setStorageImagesSrc } from "./localStorageImagesSrc";
+import { setStorageImagesSrc } from "./imagesSrcStorage";
 import { changeGithubImages } from "../slider/changeImages/Github/githubImageChanger";
 import { changePexelsImages } from "../slider/changeImages/Pexels/pexelsImageChanger";
 

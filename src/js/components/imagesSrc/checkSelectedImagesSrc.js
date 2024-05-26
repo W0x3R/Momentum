@@ -1,4 +1,4 @@
-import { getStorageImagesSrc } from "./localStorageImagesSrc";
+import { getStorageImagesSrc } from "./imagesSrcStorage";
 import { setSelectedImagesSrc } from "./setSelectedImagesSrc";
 
 export const checkSelectedImagesSrc = () => {

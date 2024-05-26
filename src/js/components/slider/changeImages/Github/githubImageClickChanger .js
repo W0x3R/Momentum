@@ -1,4 +1,4 @@
-import { getStorageImagesSrc } from "../../../imagesSrc/localStorageImagesSrc"
+import { getStorageImagesSrc } from "../../../imagesSrc/imagesSrcStorage"
 import { changeGithubImages } from "./githubImageChanger";
 import { generateRandomNum } from "../../randomNum";
 

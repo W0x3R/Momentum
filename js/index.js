@@ -358,7 +358,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _query_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(14);
-/* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(22);
 /* harmony import */ var _sliderStorage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(16);
 /* harmony import */ var _imageLoader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(15);
 
@@ -373,7 +373,7 @@ const client = (0,pexels__WEBPACK_IMPORTED_MODULE_0__.createClient)('5hopODRoIFw
 let MAX_PEXELS_IMAGES;
 
 const changePexelsImages = () => {
-	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
+	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
 	const pexelsNumb = (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
@@ -2128,7 +2128,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changePexelsImagesClick: function() { return /* binding */ changePexelsImagesClick; }
 /* harmony export */ });
 /* harmony import */ var _sliderStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(16);
-/* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(22);
 /* harmony import */ var _pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 
 
@@ -2138,7 +2138,7 @@ let isAnimate = true
 
 const changePexelsImagesClick = (direction) => {
 	let pexelsNumb = (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageNumPicturePexels)()
-	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_1__.getStorageImagesSrc)()
+	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_1__.getStorageImagesSrc)()
 	if (imagesSrc === 'pexels' && isAnimate) {
 		isAnimate = false
 		direction === 'prev' ? pexelsNumb <= 0 ? (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(_pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES) : (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(--pexelsNumb) : pexelsNumb >= _pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__.MAX_PEXELS_IMAGES ? (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(0) : (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageNumPicturePexels)(++pexelsNumb)
@@ -2159,7 +2159,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   changeGithubImagesClick: function() { return /* binding */ changeGithubImagesClick; },
 /* harmony export */   randomNumGithub: function() { return /* binding */ randomNumGithub; }
 /* harmony export */ });
-/* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
 /* harmony import */ var _githubImageChanger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
 /* harmony import */ var _randomNum__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(74);
 
@@ -2171,7 +2171,7 @@ let randomNumGithub = (0,_randomNum__WEBPACK_IMPORTED_MODULE_2__.generateRandomN
 let isAnimate = true
 
 const changeGithubImagesClick = (direction) => {
-	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.getStorageImagesSrc)()
+	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageImagesSrc)()
 	if (imagesSrc === 'github' && isAnimate) {
 		isAnimate = false
 		randomNumGithub = (direction === 'prev') ?
@@ -2196,7 +2196,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 /* harmony import */ var _greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(27);
 /* harmony import */ var _greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(73);
-/* harmony import */ var _imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(22);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13);
 /* harmony import */ var _imageLoader__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(15);
 /* harmony import */ var _githubImageClickChanger___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(71);
@@ -2209,7 +2209,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeGithubImages = () => {
-	const imagesSrc = (0,_imagesSrc_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_3__.getStorageImagesSrc)()
+	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_3__.getStorageImagesSrc)()
 	if (imagesSrc === 'github') {
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
 		const greetingText = (0,_greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.setGreetingMessageText)().split(' ')[1].slice(0, -1);
@@ -2572,7 +2572,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   changeImagesSrc: function() { return /* binding */ changeImagesSrc; }
 /* harmony export */ });
-/* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
 /* harmony import */ var _slider_changeImages_Github_githubImageChanger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(72);
 /* harmony import */ var _slider_changeImages_Pexels_pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(17);
 
@@ -2582,10 +2582,10 @@ __webpack_require__.r(__webpack_exports__);
 const changeImagesSrc = (e) => {
 	const target = e.target;
 	if (target.value === 'github') {
-		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('github')
+		(0,_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('github')
 		;(0,_slider_changeImages_Github_githubImageChanger__WEBPACK_IMPORTED_MODULE_1__.changeGithubImages)()
 	} else {
-		(0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
+		(0,_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageImagesSrc)('pexels')
 		;(0,_slider_changeImages_Pexels_pexelsImageChanger__WEBPACK_IMPORTED_MODULE_2__.changePexelsImages)()
 	}
 }
@@ -2702,13 +2702,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkSelectedImagesSrc: function() { return /* binding */ checkSelectedImagesSrc; }
 /* harmony export */ });
-/* harmony import */ var _localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
+/* harmony import */ var _imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(22);
 /* harmony import */ var _setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90);
 
 
 
 const checkSelectedImagesSrc = () => {
-	const getSrc = (0,_localStorageImagesSrc__WEBPACK_IMPORTED_MODULE_0__.getStorageImagesSrc)()
+	const getSrc = (0,_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageImagesSrc)()
 	if (getSrc === 'github') {
 		(0,_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__.setSelectedImagesSrc)(1, false)
 		;(0,_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_1__.setSelectedImagesSrc)(0, true)
