@@ -1,4 +1,4 @@
-import { setStorageGreetingName } from "../greeting/localStorageGreeting"
+import { setStorageGreetingName } from "../greeting/greetingStorage"
 import { setVolumeValueChange } from "../player/volume/setVolumeValueChange"
 import { checkGreetingNameLength } from "../greeting/checkGreetingNameLength"
 export const inputEvents = {

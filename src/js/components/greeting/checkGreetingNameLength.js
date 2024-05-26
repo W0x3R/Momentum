@@ -1,5 +1,5 @@
-import { greetingName } from "./localStorageGreeting";
-import { setStorageGreetingName } from "./localStorageGreeting";
+import { greetingName } from "./greetingStorage";
+import { setStorageGreetingName } from "./greetingStorage";
 import { showGreetingPopup } from "./greetingPopup/showGreetingPopup";
 const maxLength = 19;
 

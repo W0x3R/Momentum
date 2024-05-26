@@ -1,4 +1,4 @@
-import { greetingName } from "./localStorageGreeting";
+import { greetingName } from "./greetingStorage";
 import { setGreetingNameTrim } from "./setText/greetingName/setGreetingNameTrim";
 
 export const checkClickOutGreetingName = (e) => {

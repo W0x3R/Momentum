@@ -9,11 +9,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setGreetingNameLoad: function() { return /* binding */ setGreetingNameLoad; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
 
-const setGreetingNameLoad = () => _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
+const setGreetingNameLoad = () => _greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (0,_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageGreetingName)()
 
 /***/ }),
 /* 2 */
@@ -1187,7 +1187,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setGreetingNamePlaceholder: function() { return /* binding */ setGreetingNamePlaceholder; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(26);
 
 
@@ -1196,8 +1196,8 @@ const setGreetingNamePlaceholder = (lang) => {
 	const name = localStorage.getItem('name')
 	if (!name
 		|| _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText.en === name || _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText.ru === name) {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText[lang]
-		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
+		_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingNamePlaceholderText__WEBPACK_IMPORTED_MODULE_1__.greetingNamePlaceholderText[lang]
+		;(0,_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 	}
 }
 
@@ -1766,15 +1766,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   clearGreetingsName: function() { return /* binding */ clearGreetingsName; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
 const forbiddenNames = ['[Enter name]', '[Введите имя]']
 
 const clearGreetingsName = () => {
-	if (forbiddenNames.includes((_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent))) {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = ''
-		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
+	if (forbiddenNames.includes((_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent))) {
+		_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = ''
+		;(0,_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 	}
 }
 
@@ -2654,7 +2654,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   inputEvents: function() { return /* binding */ inputEvents; }
 /* harmony export */ });
-/* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greeting_greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _player_volume_setVolumeValueChange__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(79);
 /* harmony import */ var _greeting_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(92);
 
@@ -2663,7 +2663,7 @@ __webpack_require__.r(__webpack_exports__);
 const inputEvents = {
 	'.player__volume-input': _player_volume_setVolumeValueChange__WEBPACK_IMPORTED_MODULE_1__.setVolumeValueChange,
 	'.greeting__name': () => {
-		(0,_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
+		(0,_greeting_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 		;(0,_greeting_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__.checkGreetingNameLength)()
 	}
 }
@@ -2677,7 +2677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkGreetingNameLength: function() { return /* binding */ checkGreetingNameLength; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(85);
 
 
@@ -2685,10 +2685,10 @@ __webpack_require__.r(__webpack_exports__);
 const maxLength = 19;
 
 const checkGreetingNameLength = () => {
-	if (_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.length >= maxLength) {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.slice(0, maxLength - 1)
-		;(0,_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
+	if (_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.length >= maxLength) {
+		_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
+		_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = _greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent.slice(0, maxLength - 1)
+		;(0,_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 		;(0,_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_1__.showGreetingPopup)('add')
 	}
 }
@@ -2877,7 +2877,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   keydownEvents: function() { return /* binding */ keydownEvents; }
 /* harmony export */ });
-/* harmony import */ var _greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greeting_greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _weather_weatherAPI__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4);
 /* harmony import */ var _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
 /* harmony import */ var _settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(80);
@@ -2894,7 +2894,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const keydownEvents = {
 	'Enter': () => {
-		_greeting_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
+		_greeting_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
 		_weather_weatherAPI__WEBPACK_IMPORTED_MODULE_1__.weatherInput.blur()
 		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryInput.blur()
 		;(0,_greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__.setGreetingNameTrim)()
@@ -2915,10 +2915,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   setGreetingNameTrim: function() { return /* binding */ setGreetingNameTrim; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 
 
-const setGreetingNameTrim = () => _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent).trim()
+const setGreetingNameTrim = () => _greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent = (_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.textContent).trim()
 
 /***/ }),
 /* 103 */
@@ -2929,14 +2929,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   checkClickOutGreetingName: function() { return /* binding */ checkClickOutGreetingName; }
 /* harmony export */ });
-/* harmony import */ var _localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _greetingStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var _setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(102);
 
 
 
 const checkClickOutGreetingName = (e) => {
 	if (!e.target.classList.contains('greeting__name')) {
-		_localStorageGreeting__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
+		_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.greetingName.blur()
 		;(0,_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_1__.setGreetingNameTrim)()
 	}
 }

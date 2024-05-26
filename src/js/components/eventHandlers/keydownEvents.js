@@ -1,4 +1,4 @@
-import { greetingName } from "../greeting/localStorageGreeting"
+import { greetingName } from "../greeting/greetingStorage"
 import { weatherInput } from "../weather/weatherAPI"
 import { queryInput } from "../query/changePexelsImgOnQueryInputChange"
 import { showSettings } from "../settings/settingsVisibility"
