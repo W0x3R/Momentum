@@ -24,10 +24,6 @@
 	font-weight: bold;
 	transition: 0.3s ease;
 	color: var(--black);
-
-	@include hoverOrActive {
-		color: var(--orange);
-	}
 }
 
 @mixin volumeThumb {

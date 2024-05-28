@@ -84,7 +84,6 @@
 		margin-bottom: 12px;
 		width: 100%;
 		font-size: 12px;
-		letter-spacing: 1px;
 
 		@include desktop {
 			font-size: 10px;
@@ -259,7 +258,9 @@
 	}
 
 	&__list {
-		@include flex($direction: column, $gap: 12px 0);
+		display: flex;
+		flex-direction: column;
+		gap: 12px 0;
 
 		@include desktop {
 			gap: 11px 0;
@@ -442,6 +443,10 @@
 		@include smallMobile {
 			@include closeButton(-30px, -32px, 30px, 30px, 16px);
 		}
+
+		@include hoverOrActive {
+			color: var(--orange);
+		}
 	}
 
 	&__inner {
@@ -582,11 +587,6 @@
 	&__inner {
 		@extend %languageSelectWrapper;
 
-		&:focus-within::after {
-			transform: rotate(180deg);
-			color: var(--orange);
-		}
-
 		&_ru {
 			&::before {
 				@extend %languageSelectIcon;
@@ -608,11 +608,6 @@
 
 .source {
 	@extend %languageSelectWrapper;
-
-	&:focus-within::after {
-		transform: rotate(180deg);
-		color: var(--orange);
-	}
 
 	&__description {
 		@extend %settingsDescriptionFont;
