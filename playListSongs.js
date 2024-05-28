@@ -1,10 +1,5 @@
 const playList = [
 	{
-		title: "Княzz - Адель",
-		src: "sounds/Княzz - Адель.mp3",
-		duration: "04:29",
-	},
-	{
 		title: "ДДТ - Дождь",
 		src: "sounds/ДДТ - Дождь.mp3",
 		duration: "05:04",
