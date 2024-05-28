@@ -12,7 +12,7 @@
 .player {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center);
 	z-index: 1;
-	padding: 10px 15px;
+	padding: 6px 10px;
 	max-width: 280px;
 	min-width: 260px;
 	height: fit-content;
