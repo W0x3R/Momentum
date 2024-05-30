@@ -307,11 +307,30 @@
 .settings {
 	z-index: 2;
 	&__header {
+		position: absolute;
+		left: calc(50% - 81px);
 		@include flex($alignItems: center, $gap: 0 10px);
 		cursor: pointer;
 
+		@include desktop {
+			left: calc(50% - 77.25px);
+		}
+
 		@include tablet {
+			left: calc(50% - 71.18px);
 			gap: 0 5px;
+		}
+
+		@include mobile {
+			left: calc(50% - 12.5px);
+		}
+
+		@include smallMobile {
+			position: relative;
+		}
+
+		@include smallestMobile {
+			left: 0;
 		}
 
 		@include hoverOrActive {
@@ -328,15 +347,15 @@
 			border-bottom: 3px solid var(--white);
 			transition: all 0.5s linear;
 			opacity: 0.8;
-			font-size: 18px;
+			font-size: 17px;
 
 			@include desktop {
 				padding-bottom: 2px;
-				font-size: 17px;
+				font-size: 16px;
 			}
 
 			@include tablet {
-				font-size: 16px;
+				font-size: 15px;
 			}
 
 			@include mobile {
@@ -345,7 +364,7 @@
 
 			@include smallestMobile {
 				display: block;
-				font-size: 18px;
+				font-size: 17px;
 			}
 
 			&_active {
@@ -355,18 +374,22 @@
 		}
 
 		&-button {
-			@include sizes(29px, 29px);
+			@include sizes(28px, 28px);
 			transition:
 				opacity 0.5s linear,
 				transform 0.4s linear;
 			opacity: 0.8;
 
 			@include desktop {
-				@include sizes(27px, 27px);
+				@include sizes(26px, 26px);
 			}
 
 			@include tablet {
-				@include sizes(28px, 28px);
+				@include sizes(25px, 25px);
+			}
+
+			@include smallestMobile {
+				@include sizes(27px, 27px);
 			}
 
 			&_active {
@@ -379,12 +402,12 @@
 	&__wrapper {
 		position: absolute;
 		left: calc(50% - 250px);
-		top: calc(50% - 224px);
+		top: calc(50% - 209px);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
 		gap: 20px 0;
-		padding-top: 10px;
+		padding-top: 8px;
 		width: 500px;
 		opacity: 0;
 		border: solid 1px rgb(138, 138, 138);
@@ -395,29 +418,28 @@
 
 		@include tablet {
 			left: calc(50% - 227.5px);
-			top: calc(50% - 202px);
+			top: calc(50% - 197px);
 			gap: 18px 0;
-			padding: 7px 7px 0;
 			width: 455px;
 		}
 
 		@include mobile {
-			left: calc(50% - 180px);
-			top: calc(50% - 250px);
-			width: 360px;
-			padding: 4px 6px 0;
+			left: calc(50% - 175px);
+			top: calc(50% - 235.5px);
+			width: 350px;
+			padding-top: 7px;
 		}
 
 		@include smallMobile {
 			left: calc(50% - 150px);
-			top: calc(50% - 248px);
+			top: calc(50% - 233px);
 			width: 300px;
 		}
 
 		@include smallestMobile {
 			width: 250px;
 			left: calc(50% - 125px);
-			top: calc(50% - 227px);
+			top: calc(50% - 214.5px);
 		}
 
 		&_show {
@@ -463,15 +485,14 @@
 
 	&__blocks-hide {
 		&-title {
-			margin-bottom: 13px;
-			font-size: 19px;
+			margin-bottom: 10px;
+			font-size: 18px;
 			color: var(--white);
 			text-align: center;
 			pointer-events: none;
 
 			@include tablet {
-				margin-bottom: 10px;
-				font-size: 16px;
+				font-size: 17px;
 			}
 
 			@include mobile {
@@ -490,8 +511,8 @@
 			border-top: 1px solid var(--white);
 			cursor: pointer;
 
-			@include tablet {
-				padding-block: 9px;
+			@include mobile {
+				padding: 7px;
 			}
 
 			&:first-of-type {
@@ -575,7 +596,7 @@
 	&__description {
 		@extend %settingsDescriptionFont;
 		@include mobile {
-			margin-bottom: 8px;
+			margin-bottom: 6px;
 		}
 	}
 	&__inner {
@@ -606,7 +627,7 @@
 	&__description {
 		@extend %settingsDescriptionFont;
 		@include mobile {
-			margin-bottom: 8px;
+			margin-bottom: 6px;
 		}
 	}
 
@@ -623,7 +644,7 @@
 	&__label {
 		@extend %settingsDescriptionFont;
 		@include mobile {
-			margin-bottom: 8px;
+			margin-bottom: 6px;
 		}
 	}
 
@@ -687,7 +708,7 @@
 
 	&__input {
 		padding-bottom: 3px;
-		max-width: 245px;
+		max-width: 235px;
 		color: var(--white);
 		background-color: transparent;
 		font-size: 23px;
@@ -695,22 +716,22 @@
 		text-align: center;
 
 		@include desktop {
-			max-width: 232px;
+			max-width: 220px;
 			font-size: 21px;
 		}
 
 		@include tablet {
-			max-width: 224px;
+			max-width: 208px;
 			font-size: 18px;
 		}
 
 		@include mobile {
-			max-width: 199px;
+			max-width: 180px;
 			font-size: 16px;
 		}
 
 		@include smallMobile {
-			max-width: 158px;
+			max-width: 146px;
 		}
 
 		@include smallestMobile {
