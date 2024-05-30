@@ -328,15 +328,15 @@
 			border-bottom: 3px solid var(--white);
 			transition: all 0.5s linear;
 			opacity: 0.8;
-			font-size: 20px;
+			font-size: 18px;
 
 			@include desktop {
 				padding-bottom: 2px;
-				font-size: 18px;
+				font-size: 17px;
 			}
 
 			@include tablet {
-				font-size: 17px;
+				font-size: 16px;
 			}
 
 			@include mobile {
@@ -345,7 +345,7 @@
 
 			@include smallestMobile {
 				display: block;
-				font-size: 19px;
+				font-size: 18px;
 			}
 
 			&_active {
@@ -355,21 +355,17 @@
 		}
 
 		&-button {
-			@include sizes(32px, 32px);
+			@include sizes(29px, 29px);
 			transition:
 				opacity 0.5s linear,
 				transform 0.4s linear;
 			opacity: 0.8;
 
 			@include desktop {
-				@include sizes(30px, 30px);
+				@include sizes(27px, 27px);
 			}
 
 			@include tablet {
-				@include sizes(26px, 26px);
-			}
-
-			@include smallestMobile {
 				@include sizes(28px, 28px);
 			}
 
@@ -399,7 +395,7 @@
 
 		@include tablet {
 			left: calc(50% - 227.5px);
-			top: calc(50% - 200.9px);
+			top: calc(50% - 202px);
 			gap: 18px 0;
 			padding: 7px 7px 0;
 			width: 455px;
@@ -639,27 +635,24 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
-	max-width: 282px;
 	height: fit-content;
 	border-radius: 21px;
 	background: var(--black-background);
 	color: var(--white);
-	font-size: 16px;
+	font-size: 15px;
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		font-size: 15px;
+		font-size: 14px;
 	}
 
 	@include tablet {
 		gap: 8px 0;
-		max-width: 224px;
 		font-size: 13px;
 	}
 
 	@include mobile {
-		max-width: 199px;
 		font-size: 12px;
 		letter-spacing: 0.6px;
 	}
@@ -667,15 +660,13 @@
 	@include smallMobile {
 		padding: 3px;
 		gap: 6px 0;
-		max-width: 158px;
 		font-size: 10px;
 		letter-spacing: 0.3px;
 	}
 
 	@include smallestMobile {
-		font-size: 16px;
+		font-size: 15px;
 		letter-spacing: 1px;
-		max-width: 280px;
 		gap: 5px 0;
 	}
 
@@ -695,35 +686,35 @@
 
 	&__input {
 		padding-bottom: 3px;
-		max-width: 250px;
+		max-width: 245px;
 		color: var(--white);
 		background-color: transparent;
-		font-size: 24px;
+		font-size: 23px;
 		letter-spacing: 1.6px;
 		text-align: center;
 
 		@include desktop {
-			max-width: 240px;
-			font-size: 22px;
+			max-width: 232px;
+			font-size: 21px;
 		}
 
 		@include tablet {
-			max-width: 200px;
+			max-width: 224px;
 			font-size: 18px;
 		}
 
 		@include mobile {
-			max-width: 180px;
+			max-width: 199px;
 			font-size: 16px;
 		}
 
 		@include smallMobile {
-			max-width: 148px;
+			max-width: 158px;
 		}
 
 		@include smallestMobile {
-			max-width: 275px;
-			font-size: 24px;
+			max-width: 245px;
+			font-size: 23px;
 		}
 
 		&:focus + .weather__hr {
@@ -738,13 +729,13 @@
 	}
 
 	&__icon {
-		font-size: 39px;
-		height: 32px;
+		height: 30px;
+		font-size: 36px;
 		color: var(--white);
 
 		@include desktop {
-			height: 28px;
-			font-size: 35px;
+			height: 24px;
+			font-size: 34px;
 		}
 
 		@include tablet {
