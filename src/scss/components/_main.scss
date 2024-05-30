@@ -1,18 +1,9 @@
 .main {
 	position: relative;
-	bottom: 60px;
 	@extend %flexCenter;
 	flex-direction: column;
 	flex: 1;
 	user-select: none;
-
-	@include desktop {
-		bottom: 10px;
-	}
-
-	@include smallestMobile {
-		bottom: 20px;
-	}
 }
 
 .slider {
@@ -81,22 +72,22 @@
 		padding: 6px;
 		margin-bottom: 4px;
 		border-radius: 15px;
-		font-size: 100px;
+		font-size: 92px;
 		color: var(--white);
 		background: var(--black-background);
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			font-size: 88px;
+			font-size: 82px;
 		}
 
 		@include tablet {
-			font-size: 82px;
+			font-size: 74px;
 		}
 
 		@include mobile {
 			margin-bottom: 2px;
-			font-size: 74px;
+			font-size: 72px;
 		}
 
 		@include smallMobile {
@@ -104,32 +95,33 @@
 		}
 
 		@include smallestMobile {
-			font-size: 66px;
+			font-size: 58px;
 		}
 	}
 
 	&__date {
-		margin-bottom: 12px;
-		font-size: 26px;
+		margin-bottom: 8px;
+		font-size: 22px;
 		color: var(--white);
 		transition: opacity 0.5s ease;
 
 		@include desktop {
-			margin-bottom: 8px;
-			font-size: 21px;
+			margin-bottom: 6px;
+			font-size: 17px;
 		}
 
 		@include tablet {
-			font-size: 20px;
+			font-size: 16px;
 		}
 
 		@include mobile {
 			margin-bottom: 6px;
-			font-size: 16px;
+			font-size: 15px;
 		}
 
 		@include smallestMobile {
-			font-size: 17px;
+			margin-bottom: 4px;
+			font-size: 14px;
 		}
 
 		&::first-letter {
@@ -141,28 +133,29 @@
 	display: flex;
 	justify-content: center;
 	gap: 0 10px;
-	font-size: 38px;
+	width: 100%;
+	font-size: 34px;
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		font-size: 33px;
+		font-size: 30px;
 	}
 
 	@include tablet {
-		font-size: 28px;
+		font-size: 26px;
 	}
 
 	@include mobile {
-		font-size: 24px;
+		font-size: 23px;
 	}
 
 	@include smallMobile {
-		font-size: 22px;
+		font-size: 21px;
 	}
 
 	@include smallestMobile {
 		letter-spacing: 0;
-		font-size: 19.9px;
+		font-size: 19.5px;
 	}
 
 	&__text {
