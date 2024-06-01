@@ -37,7 +37,7 @@
 		left: 50%;
 		z-index: 3;
 		display: none;
-		@include sizes(60%, 60%);
+		@include sizes(60%, 34%);
 		border: solid 1px rgb(138, 138, 138);
 		border-radius: 8px;
 		background: rgb(54, 54, 54);
@@ -48,9 +48,10 @@
 			@include flex($justify: center, $alignItems: center);
 		}
 
-		&-inner {
+		&-message {
 			font-size: 21px;
 			letter-spacing: 1.5px;
+			text-align: center;
 			color: var(--white);
 		}
 
