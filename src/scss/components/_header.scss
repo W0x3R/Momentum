@@ -402,7 +402,7 @@
 	&__wrapper {
 		position: absolute;
 		left: calc(50% - 250px);
-		top: calc(50% - 209px);
+		top: calc(50% - 206.3px);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
@@ -425,21 +425,21 @@
 
 		@include mobile {
 			left: calc(50% - 175px);
-			top: calc(50% - 235.5px);
+			top: calc(50% - 229.5px);
 			width: 350px;
 			padding-top: 7px;
 		}
 
 		@include smallMobile {
 			left: calc(50% - 150px);
-			top: calc(50% - 233px);
+			top: calc(50% - 227.15px);
 			width: 300px;
 		}
 
 		@include smallestMobile {
 			width: 250px;
 			left: calc(50% - 125px);
-			top: calc(50% - 214.5px);
+			top: calc(50% - 207.15px);
 		}
 
 		&_show {
