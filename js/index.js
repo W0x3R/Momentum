@@ -2883,6 +2883,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _settings_settingsStyler__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(40);
 /* harmony import */ var _greeting_setText_greetingName_setGreetingNameTrim__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(102);
 /* harmony import */ var _greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(85);
+/* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(14);
+
 
 
 
@@ -2902,6 +2904,7 @@ const keydownEvents = {
 		(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_3__.showSettings)('remove')
 		;(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_4__.updateSettingsActiveStyles)('remove')
 		;(0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_6__.showGreetingPopup)('remove')
+		;(0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_7__.showSliderPopup)('remove')
 	}
 }
 

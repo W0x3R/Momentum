@@ -5,6 +5,7 @@ import { showSettings } from "../settings/settingsVisibility"
 import { updateSettingsActiveStyles } from "../settings/settingsStyler"
 import { setGreetingNameTrim } from "../greeting/setText/greetingName/setGreetingNameTrim"
 import { showGreetingPopup } from "../greeting/greetingPopup/showGreetingPopup"
+import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility"
 
 export const keydownEvents = {
 	'Enter': () => {
@@ -17,5 +18,6 @@ export const keydownEvents = {
 		showSettings('remove')
 		updateSettingsActiveStyles('remove')
 		showGreetingPopup('remove')
+		showSliderPopup('remove')
 	}
 }
