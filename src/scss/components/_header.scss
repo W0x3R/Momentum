@@ -657,6 +657,7 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
+	max-width: 248px;
 	height: fit-content;
 	border-radius: 21px;
 	background: var(--black-background);
@@ -666,15 +667,18 @@
 	transition: opacity 0.5s ease;
 
 	@include desktop {
+		max-width: 234px;
 		font-size: 14px;
 	}
 
 	@include tablet {
 		gap: 8px 0;
+		max-width: 218px;
 		font-size: 13px;
 	}
 
 	@include mobile {
+		max-width: 195px;
 		font-size: 12px;
 		letter-spacing: 0.6px;
 	}
@@ -682,14 +686,16 @@
 	@include smallMobile {
 		padding: 3px;
 		gap: 6px 0;
+		max-width: 156px;
 		font-size: 10px;
 		letter-spacing: 0.3px;
 	}
 
 	@include smallestMobile {
+		gap: 5px 0;
+		max-width: 246px;
 		font-size: 15px;
 		letter-spacing: 1px;
-		gap: 5px 0;
 	}
 
 	&:focus-within .weather__icon {
