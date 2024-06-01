@@ -77,37 +77,37 @@
 	padding-left: 8px;
 	color: var(--white);
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 17px;
 	border-radius: 8px;
 
 	@include tablet {
 		@include sizes(170px, 26px);
-		font-size: 15px;
+		font-size: 16px;
 	}
 
 	@include mobile {
 		@include sizes(230px, 28px);
-		font-size: 16px;
+		font-size: 17px;
 	}
 
-	@include smallMobile {
+	@include smallestMobile {
 		font-size: 15px;
 	}
 }
 
 %settingsDescriptionFont {
-	font-size: 16px;
+	font-size: 17px;
 	letter-spacing: 0.3px;
 
 	@include tablet {
-		font-size: 15px;
-	}
-
-	@include mobile {
 		font-size: 16px;
 	}
 
-	@include smallMobile {
+	@include mobile {
+		font-size: 17px;
+	}
+
+	@include smallestMobile {
 		font-size: 15px;
 	}
 }

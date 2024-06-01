@@ -500,7 +500,7 @@
 				font-size: 18px;
 			}
 
-			@include smallMobile {
+			@include smallestMobile {
 				font-size: 17px;
 			}
 		}
@@ -511,10 +511,6 @@
 			border-top: 1px solid var(--white);
 			cursor: pointer;
 
-			@include mobile {
-				padding: 7px;
-			}
-
 			&:first-of-type {
 				@include smallestMobile {
 					display: none;
@@ -523,7 +519,7 @@
 
 			& > input[type='checkbox'] {
 				position: relative;
-				@include sizes(53px, 21px);
+				@include sizes(51px, 21px);
 				appearance: none;
 				background-color: var(--grey);
 				border-radius: 20px;
@@ -532,7 +528,11 @@
 				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 
 				@include tablet {
-					@include sizes(48px, 20px);
+					@include sizes(49px, 20px);
+				}
+
+				@include mobile {
+					@include sizes(50px, 21px);
 				}
 
 				@include smallestMobile {
@@ -544,7 +544,7 @@
 			}
 
 			& > input:checked[type='checkbox']::before {
-				left: 32px;
+				left: 30px;
 
 				@include tablet {
 					left: 27px;
@@ -568,6 +568,10 @@
 
 				@include tablet {
 					@include sizes(20px, 20px);
+				}
+
+				@include mobile {
+					@include sizes(21px, 21px);
 				}
 
 				@include smallestMobile {
