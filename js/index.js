@@ -1649,6 +1649,10 @@ const clickEvents = {
 	'.player__list': (e) => (0,_player_switchSong_playClickedSong__WEBPACK_IMPORTED_MODULE_7__.playClickedSong)(e),
 	'.player__volume-mute': _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__.checkIsMute,
 	'.slider__popup-close-button': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
+	'.popup__shadow-settings_show': () => {
+		(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__.showSettings)('remove')
+		;(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__.updateSettingsActiveStyles)('remove')
+	},
 	'.greeting__popup-close-button': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),
 	'.popup__shadow-slider_show': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
 	'.popup__shadow-greeting_show': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),

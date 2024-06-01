@@ -33,6 +33,10 @@ export const clickEvents = {
 	'.player__list': (e) => playClickedSong(e),
 	'.player__volume-mute': checkIsMute,
 	'.slider__popup-close-button': () => showSliderPopup('remove'),
+	'.popup__shadow-settings_show': () => {
+		showSettings('remove')
+		updateSettingsActiveStyles('remove')
+	},
 	'.greeting__popup-close-button': () => showGreetingPopup('remove'),
 	'.popup__shadow-slider_show': () => showSliderPopup('remove'),
 	'.popup__shadow-greeting_show': () => showGreetingPopup('remove'),
