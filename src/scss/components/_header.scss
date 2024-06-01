@@ -523,7 +523,7 @@
 
 			& > input[type='checkbox'] {
 				position: relative;
-				@include sizes(56px, 22px);
+				@include sizes(53px, 21px);
 				appearance: none;
 				background-color: var(--grey);
 				border-radius: 20px;
@@ -535,8 +535,8 @@
 					@include sizes(48px, 20px);
 				}
 
-				@include mobile {
-					@include sizes(50px, 22px);
+				@include smallestMobile {
+					@include sizes(46px, 19px);
 				}
 			}
 			& > input:checked[type='checkbox'] {
@@ -560,7 +560,7 @@
 				position: absolute;
 				left: 0;
 				top: 0;
-				@include sizes(22px, 22px);
+				@include sizes(21px, 21px);
 				border-radius: 20px;
 				background-color: var(--white);
 				transform: scale(1.2);
@@ -570,8 +570,8 @@
 					@include sizes(20px, 20px);
 				}
 
-				@include mobile {
-					@include sizes(22px, 22px);
+				@include smallestMobile {
+					@include sizes(19px, 19px);
 				}
 			}
 
