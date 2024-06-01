@@ -448,14 +448,14 @@
 	}
 
 	&__close-button {
-		@include closeButton(-38px, -38px, 34px, 34px, 20px);
+		@include closeButton(-38px, -38px, 34px, 34px, 22px);
 
 		@include tablet {
-			@include closeButton(-36px, -36px, 32px, 32px, 17px);
+			@include closeButton(-36px, -36px, 32px, 32px, 20px);
 		}
 
-		@include smallMobile {
-			@include closeButton(-32px, -32px, 30px, 30px, 14px);
+		@include smallestMobile {
+			@include closeButton(-32px, -32px, 30px, 30px, 17px);
 		}
 
 		@include hoverOrActive {
