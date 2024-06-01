@@ -1397,7 +1397,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const sliderPopupMessage = document.querySelector('.slider__popup-message')
 
-const setSliderPopupText = (lang) => sliderPopupMessage.textContent = _sliderPopupText__WEBPACK_IMPORTED_MODULE_0__.sliderPopupText[lang]
+const setSliderPopupText = (lang) => sliderPopupMessage.innerHTML = _sliderPopupText__WEBPACK_IMPORTED_MODULE_0__.sliderPopupText[lang]
 
 /***/ }),
 /* 38 */
@@ -1409,8 +1409,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   sliderPopupText: function() { return /* binding */ sliderPopupText; }
 /* harmony export */ });
 const sliderPopupText = {
-	en: ['Nothing was found for this query. Try again.'],
-	ru: ['По заданному запросу ничего не найдено. Попробуйте еще раз.']
+	en: ['Nothing was found for this query. <br> Try again.'],
+	ru: ['По заданному запросу ничего не найдено. <br> Попробуйте еще раз.']
 }
 
 /***/ }),
