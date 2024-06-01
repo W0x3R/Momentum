@@ -466,7 +466,7 @@
 
 	&__inner {
 		@include flex($justify: space-between, $alignItems: center);
-		padding-inline: 8px;
+		padding-inline: 5px;
 
 		@include mobile {
 			flex-direction: column;
@@ -507,7 +507,7 @@
 
 		&-inner {
 			@include flex($alignItems: center, $justify: space-between);
-			padding: 8px;
+			padding: 8px 5px;
 			border-top: 1px solid var(--white);
 			cursor: pointer;
 
