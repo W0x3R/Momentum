@@ -425,21 +425,20 @@
 
 		@include mobile {
 			left: calc(50% - 175px);
-			top: calc(50% - 229.5px);
+			top: calc(50% - 240px);
 			width: 350px;
 			padding-top: 7px;
 		}
 
 		@include smallMobile {
 			left: calc(50% - 150px);
-			top: calc(50% - 227.15px);
 			width: 300px;
 		}
 
 		@include smallestMobile {
 			width: 250px;
 			left: calc(50% - 125px);
-			top: calc(50% - 207.15px);
+			top: calc(50% - 212px);
 		}
 
 		&_show {
