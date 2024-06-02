@@ -271,7 +271,6 @@
 			position: relative;
 			@extend %playerOpacity;
 			cursor: pointer;
-			letter-spacing: 1.2px;
 			font-size: 14.5px;
 
 			@include desktop {
