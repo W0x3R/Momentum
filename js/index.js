@@ -2399,14 +2399,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   settingsWrapper: function() { return /* binding */ settingsWrapper; },
 /* harmony export */   showSettings: function() { return /* binding */ showSettings; }
 /* harmony export */ });
-/* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
+/* harmony import */ var _slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
+/* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
+
 
 
 const settingsWrapper = document.querySelector('.settings__wrapper')
 
 const showSettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
-	_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_0__.popupShadow.classList[value]('popup__shadow-settings_show')
+	_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__.popupShadow.classList[value]('popup__shadow-settings_show')
+	_slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
 /***/ }),
