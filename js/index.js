@@ -2396,6 +2396,7 @@ const setVolumeValueChange = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   settingsWrapper: function() { return /* binding */ settingsWrapper; },
 /* harmony export */   showSettings: function() { return /* binding */ showSettings; }
 /* harmony export */ });
 /* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(14);
@@ -2989,6 +2990,21 @@ const checkIsMuteValueLoad = () => {
 	}
 }
 
+/***/ }),
+/* 106 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   controlSettingsBtnHover: function() { return /* binding */ controlSettingsBtnHover; }
+/* harmony export */ });
+const settingsCloseBtn = document.querySelector('.settings__close-button')
+
+const controlSettingsBtnHover = (value) => {
+	settingsCloseBtn.classList[value]('settings__close-button_hover')
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -3099,6 +3115,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_greeting_greetingPopup_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(85);
 /* harmony import */ var _components_greeting_greetingPopup_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(104);
 /* harmony import */ var _components_player_volume_checkIsMuteValueLoad_js__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(105);
+/* harmony import */ var _components_settings_settingsVisibility_js__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(80);
+/* harmony import */ var _components_settings_controlSettingsBtnHover_js__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(106);
+
+
 
 
 
@@ -3185,6 +3205,8 @@ _components_slider_sliderPopup_sliderPopupVisibility_js__WEBPACK_IMPORTED_MODULE
 _components_slider_sliderPopup_sliderPopupVisibility_js__WEBPACK_IMPORTED_MODULE_28__.sliderPopup.addEventListener('mouseenter', () => (0,_components_slider_sliderPopup_sliderPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_27__.controlSliderPopupBtnHover)('remove'))
 _components_greeting_greetingPopup_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__.greetingPopup.addEventListener('mouseleave', () => (0,_components_greeting_greetingPopup_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__.controlGreetingPopupBtnHover)('add'))
 _components_greeting_greetingPopup_showGreetingPopup_js__WEBPACK_IMPORTED_MODULE_33__.greetingPopup.addEventListener('mouseenter', () => (0,_components_greeting_greetingPopup_controlGreetingPopupBtnHover_js__WEBPACK_IMPORTED_MODULE_34__.controlGreetingPopupBtnHover)('remove'))
+_components_settings_settingsVisibility_js__WEBPACK_IMPORTED_MODULE_36__.settingsWrapper.addEventListener('mouseleave', () => (0,_components_settings_controlSettingsBtnHover_js__WEBPACK_IMPORTED_MODULE_37__.controlSettingsBtnHover)('add'))
+_components_settings_settingsVisibility_js__WEBPACK_IMPORTED_MODULE_36__.settingsWrapper.addEventListener('mouseenter', () => (0,_components_settings_controlSettingsBtnHover_js__WEBPACK_IMPORTED_MODULE_37__.controlSettingsBtnHover)('remove'))
 }();
 /******/ })()
 ;

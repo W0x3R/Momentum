@@ -1,6 +1,6 @@
 import { popupShadow } from "../slider/sliderPopup/sliderPopupVisibility"
 
-const settingsWrapper = document.querySelector('.settings__wrapper')
+export const settingsWrapper = document.querySelector('.settings__wrapper')
 
 export const showSettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
