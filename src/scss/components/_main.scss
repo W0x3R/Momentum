@@ -296,22 +296,26 @@
 
 		&-close-button {
 			@include closeButtonStyles;
-			@include closeButtonSizes(-40px, -40px, 38px, 38px, 20px);
+			@include closeButtonSizes(-38px, -38px, 36px, 36px, 20px);
 
 			@include hoverOrActive {
 				color: var(--orange);
 			}
 
 			@include tablet {
-				@include closeButtonSizes(-38px, -38px, 36px, 36px, 18px);
+				@include closeButtonSizes(-37px, -37px, 35px, 35px, 18px);
 			}
 
 			@include mobile {
-				@include closeButtonSizes(-36px, -36px, 34px, 34px, 16px);
+				@include closeButtonSizes(-35px, -35px, 33px, 33px, 16px);
 			}
 
 			@include smallMobile {
-				@include closeButtonSizes(-33px, -33px, 32px, 32px, 15px);
+				@include closeButtonSizes(-32px, -32px, 32px, 32px, 15px);
+			}
+
+			@include smallestMobile {
+				@include closeButtonSizes(-28px, -28px, 28px, 28px, 15px);
 			}
 
 			&_hover {
