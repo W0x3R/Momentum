@@ -55,17 +55,17 @@
 		}
 
 		@include mobile {
-			min-width: 350px;
+			min-width: 355px;
 			min-height: 125px;
 		}
 
 		@include smallMobile {
-			min-width: 314px;
+			min-width: 312px;
 			min-height: 110px;
 		}
 
 		@include smallestMobile {
-			min-width: 262px;
+			min-width: 252px;
 			min-height: 100px;
 		}
 
@@ -75,7 +75,7 @@
 
 		&-message {
 			font-size: 20px;
-			letter-spacing: 1.5px;
+			letter-spacing: 1.2px;
 			text-align: center;
 			color: var(--white);
 
@@ -88,36 +88,38 @@
 			}
 
 			@include mobile {
-				font-size: 15px;
+				font-size: 15.4px;
 			}
 
 			@include smallMobile {
-				font-size: 13.3px;
+				font-size: 14.5px;
+				letter-spacing: 0.5px;
 			}
 
 			@include smallestMobile {
-				font-size: 11px;
+				font-size: 12px;
+				letter-spacing: 0.4px;
 			}
 		}
 
 		&-close-button {
 			@include closeButtonStyles;
-			@include closeButtonSizes(-40px, -40px, 38px, 38px, 20px);
+			@include closeButtonSizes(-38px, -38px, 36px, 36px, 20px);
 
 			@include hoverOrActive {
 				color: var(--orange);
 			}
 
 			@include tablet {
-				@include closeButtonSizes(-38px, -38px, 36px, 36px, 18px);
+				@include closeButtonSizes(-37px, -37px, 35px, 35px, 18px);
 			}
 
 			@include mobile {
-				@include closeButtonSizes(-36px, -36px, 34px, 34px, 16px);
+				@include closeButtonSizes(-35px, -35px, 33px, 33px, 16px);
 			}
 
 			@include smallMobile {
-				@include closeButtonSizes(-30px, -30px, 30px, 30px, 15px);
+				@include closeButtonSizes(-32px, -32px, 32px, 32px, 15px);
 			}
 
 			@include smallestMobile {
