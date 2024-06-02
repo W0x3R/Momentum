@@ -765,7 +765,7 @@
 	}
 
 	&__icon {
-		height: 30px;
+		height: 28px;
 		font-size: 36px;
 		color: var(--white);
 
@@ -776,7 +776,6 @@
 
 		@include tablet {
 			font-size: 32px;
-			height: 24px;
 		}
 
 		@include mobile {
@@ -785,7 +784,8 @@
 		}
 
 		@include smallMobile {
-			font-size: 28px;
+			font-size: 26px;
+			height: 20px;
 		}
 
 		@include smallestMobile {
