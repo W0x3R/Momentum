@@ -55,7 +55,7 @@
 		}
 
 		@include mobile {
-			min-width: 355px;
+			min-width: 362px;
 			min-height: 125px;
 		}
 
@@ -65,7 +65,7 @@
 		}
 
 		@include smallestMobile {
-			min-width: 252px;
+			min-width: 258px;
 			min-height: 100px;
 		}
 
@@ -88,17 +88,17 @@
 			}
 
 			@include mobile {
-				font-size: 15.4px;
+				font-size: 15px;
+				letter-spacing: 0.6px;
 			}
 
 			@include smallMobile {
-				font-size: 14.5px;
-				letter-spacing: 0.5px;
+				font-size: 13.8px;
+				letter-spacing: 0px;
 			}
 
 			@include smallestMobile {
-				font-size: 12px;
-				letter-spacing: 0.4px;
+				font-size: 11.5px;
 			}
 		}
 
