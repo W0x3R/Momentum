@@ -665,7 +665,7 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
-	max-width: 248px;
+	max-width: 255px;
 	height: fit-content;
 	border-radius: 21px;
 	background: var(--black-background);
@@ -675,18 +675,18 @@
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		max-width: 234px;
+		max-width: 242px;
 		font-size: 14px;
 	}
 
 	@include tablet {
 		gap: 8px 0;
-		max-width: 218px;
+		max-width: 226px;
 		font-size: 13px;
 	}
 
 	@include mobile {
-		max-width: 195px;
+		max-width: 202px;
 		font-size: 12px;
 		letter-spacing: 0.6px;
 	}
@@ -722,7 +722,7 @@
 
 	&__input {
 		padding-bottom: 3px;
-		max-width: 235px;
+		max-width: 250px;
 		color: var(--white);
 		background-color: transparent;
 		font-size: 23px;
@@ -730,17 +730,17 @@
 		text-align: center;
 
 		@include desktop {
-			max-width: 220px;
+			max-width: 240px;
 			font-size: 21px;
 		}
 
 		@include tablet {
-			max-width: 208px;
+			max-width: 215px;
 			font-size: 18px;
 		}
 
 		@include mobile {
-			max-width: 180px;
+			max-width: 193px;
 			font-size: 16px;
 		}
 
