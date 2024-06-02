@@ -462,6 +462,10 @@
 		@include hoverOrActive {
 			color: var(--orange);
 		}
+
+		&_hover {
+			color: var(--orange);
+		}
 	}
 
 	&__inner {
