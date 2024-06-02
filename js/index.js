@@ -1409,8 +1409,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   sliderPopupText: function() { return /* binding */ sliderPopupText; }
 /* harmony export */ });
 const sliderPopupText = {
-	en: ['Nothing was found for this query. <br> Try again.'],
-	ru: ['По вашему запросу ничего не нашлось. <br> Попробуйте еще раз.']
+	en: ['No images were found for your query. <br> Enter another query.'],
+	ru: ['По вашему запросу изображения не найдены. <br> Введите другой запрос.']
 }
 
 /***/ }),
@@ -2411,6 +2411,7 @@ const showSettings = (value) => {
 	_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__.popupShadow.classList[value]('popup__shadow-settings_show')
 	_slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
+
 
 /***/ }),
 /* 81 */

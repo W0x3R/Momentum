@@ -1,4 +1,4 @@
 export const sliderPopupText = {
-	en: ['Nothing was found for this query. <br> Try again.'],
-	ru: ['По вашему запросу ничего не нашлось. <br> Попробуйте еще раз.']
+	en: ['No images were found for your query. <br> Enter another query.'],
+	ru: ['По вашему запросу изображения не найдены. <br> Введите другой запрос.']
 }
