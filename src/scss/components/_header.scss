@@ -701,9 +701,9 @@
 
 	@include smallestMobile {
 		gap: 5px 0;
-		max-width: 246px;
-		font-size: 15px;
-		letter-spacing: 1px;
+		max-width: 240px;
+		font-size: 14px;
+		letter-spacing: 0.5px;
 	}
 
 	&:focus-within .weather__icon {
@@ -749,8 +749,8 @@
 		}
 
 		@include smallestMobile {
-			max-width: 245px;
-			font-size: 23px;
+			max-width: 230px;
+			font-size: 22px;
 		}
 
 		&:focus + .weather__hr {
@@ -789,8 +789,8 @@
 		}
 
 		@include smallestMobile {
-			font-size: 34px;
-			height: 31px;
+			height: 24px;
+			font-size: 31px;
 		}
 	}
 
