@@ -12,17 +12,20 @@
 	height: $height;
 }
 
-@mixin closeButton($top, $right, $width, $height, $fs) {
+@mixin closeButtonStyles {
 	position: absolute;
-	top: $top;
-	right: $right;
-	@include sizes($width, $height);
 	background: var(--white);
 	border-radius: 25%;
 	cursor: pointer;
-	font-size: $fs;
 	transition: 0.3s ease;
 	color: var(--black);
+}
+
+@mixin closeButtonSizes($top, $right, $width, $height, $fs) {
+	top: $top;
+	right: $right;
+	@include sizes($width, $height);
+	font-size: $fs;
 }
 
 @mixin volumeThumb {

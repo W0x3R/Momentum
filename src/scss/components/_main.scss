@@ -101,22 +101,23 @@
 		}
 
 		&-close-button {
-			@include closeButton(-40px, -40px, 38px, 38px, 20px);
+			@include closeButtonStyles;
+			@include closeButtonSizes(-40px, -40px, 38px, 38px, 20px);
 
 			@include tablet {
-				@include closeButton(-38px, -38px, 36px, 36px, 18px);
+				@include closeButtonSizes(-38px, -38px, 36px, 36px, 18px);
 			}
 
 			@include mobile {
-				@include closeButton(-36px, -36px, 34px, 34px, 16px);
+				@include closeButtonSizes(-36px, -36px, 34px, 34px, 16px);
 			}
 
 			@include smallMobile {
-				@include closeButton(-30px, -30px, 30px, 30px, 15px);
+				@include closeButtonSizes(-30px, -30px, 30px, 30px, 15px);
 			}
 
 			@include smallestMobile {
-				@include closeButton(-28px, -28px, 28px, 28px, 15px);
+				@include closeButtonSizes(-28px, -28px, 28px, 28px, 15px);
 			}
 
 			&_hover {
@@ -288,18 +289,19 @@
 		}
 
 		&-close-button {
-			@include closeButton(-40px, -40px, 38px, 38px, 20px);
+			@include closeButtonStyles;
+			@include closeButtonSizes(-40px, -40px, 38px, 38px, 20px);
 
 			@include tablet {
-				@include closeButton(-38px, -38px, 36px, 36px, 18px);
+				@include closeButtonSizes(-38px, -38px, 36px, 36px, 18px);
 			}
 
 			@include mobile {
-				@include closeButton(-36px, -36px, 34px, 34px, 16px);
+				@include closeButtonSizes(-36px, -36px, 34px, 34px, 16px);
 			}
 
 			@include smallMobile {
-				@include closeButton(-33px, -33px, 32px, 32px, 15px);
+				@include closeButtonSizes(-33px, -33px, 32px, 32px, 15px);
 			}
 
 			&_hover {
