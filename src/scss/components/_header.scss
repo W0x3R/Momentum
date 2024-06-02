@@ -287,10 +287,6 @@
 				letter-spacing: 0.6px;
 			}
 
-			@include smallMobile {
-				letter-spacing: 0.4px;
-			}
-
 			&_active {
 				opacity: 1;
 				color: var(--orange);
@@ -723,7 +719,6 @@
 		padding-bottom: 3px;
 		max-width: 250px;
 		color: var(--white);
-		background-color: transparent;
 		font-size: 23px;
 		letter-spacing: 1.2px;
 		text-align: center;
