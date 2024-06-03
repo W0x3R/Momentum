@@ -21,7 +21,7 @@
 
 	&__change-btn {
 		position: absolute;
-		bottom: 43%;
+		bottom: 40%;
 		@include sizes(32px, 32px);
 		background: transparent;
 		opacity: 0.8;
@@ -33,8 +33,8 @@
 			@include sizes(30px, 30px);
 		}
 
-		@include tablet {
-			bottom: 54%;
+		@media only screen and (max-width: 714px) {
+			bottom: 52%;
 		}
 
 		@include mobile {
@@ -42,8 +42,8 @@
 			bottom: 48%;
 		}
 
-		@include smallestMobile {
-			bottom: 62%;
+		@media only screen and (max-width: 339px) {
+			bottom: 57%;
 		}
 
 		@include hoverOrActive {
