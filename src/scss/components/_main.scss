@@ -16,8 +16,6 @@
 		position: absolute;
 		top: calc(50% - 16px);
 		@include sizes(32px, 32px);
-		background-color: transparent;
-		cursor: pointer;
 
 		@include smallestMobile {
 			top: calc(50% - 14px);
@@ -53,7 +51,6 @@
 		border-radius: 8px;
 		background: rgb(54, 54, 54);
 		transform: translate(-50%, -50%);
-		cursor: auto;
 
 		@include desktop {
 			min-width: 500px;
@@ -145,7 +142,6 @@
 
 .data {
 	@include flex($direction: column, $alignItems: center);
-	user-select: none;
 
 	&__time {
 		padding: 6px;
@@ -239,7 +235,6 @@
 
 	&__text {
 		color: var(--white);
-		user-select: none;
 		letter-spacing: 0.6px;
 
 		@include smallMobile {
@@ -377,7 +372,6 @@
 	right: 0;
 	top: 0;
 	bottom: 0;
-	z-index: 1;
 	min-height: 100%;
 	background: rgba(0, 0, 0, 0.8);
 	cursor: pointer;
