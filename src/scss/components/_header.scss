@@ -593,6 +593,15 @@
 			pointer-events: none;
 		}
 	}
+
+	&__shadow {
+		@include shadow;
+		z-index: -1;
+
+		&_show {
+			display: block;
+		}
+	}
 }
 
 .language {

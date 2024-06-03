@@ -296,7 +296,6 @@ const changePexelsImgOnQueryInputChange = () => {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   popupShadow: function() { return /* binding */ popupShadow; },
 /* harmony export */   showSliderPopup: function() { return /* binding */ showSliderPopup; },
 /* harmony export */   sliderPopup: function() { return /* binding */ sliderPopup; }
 /* harmony export */ });
@@ -304,11 +303,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const sliderPopup = document.querySelector('.slider__popup')
-const popupShadow = document.querySelector('.popup__shadow')
+const sliderShadow = document.querySelector('.slider__shadow')
 
 const showSliderPopup = (value) => {
 	sliderPopup.classList[value]('slider__popup_show')
-	popupShadow.classList[value]('popup__shadow-slider_show')
+	sliderShadow.classList[value]('slider__shadow_show')
 	_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
@@ -1649,13 +1648,13 @@ const clickEvents = {
 	'.player__list': (e) => (0,_player_switchSong_playClickedSong__WEBPACK_IMPORTED_MODULE_7__.playClickedSong)(e),
 	'.player__volume-mute': _player_volume_checkIsMute__WEBPACK_IMPORTED_MODULE_13__.checkIsMute,
 	'.slider__popup-close-button': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
-	'.popup__shadow-settings_show': () => {
+	'.settings__shadow_show': () => {
 		(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__.showSettings)('remove')
 		;(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__.updateSettingsActiveStyles)('remove')
 	},
 	'.greeting__popup-close-button': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),
-	'.popup__shadow-slider_show': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
-	'.popup__shadow-greeting_show': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),
+	'.slider__shadow_show': () => (0,_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_5__.showSliderPopup)('remove'),
+	'.greeting__shadow_show': () => (0,_greeting_greetingPopup_showGreetingPopup__WEBPACK_IMPORTED_MODULE_17__.showGreetingPopup)('remove'),
 	'.settings__header': () => {
 		(0,_settings_settingsStyler__WEBPACK_IMPORTED_MODULE_14__.updateSettingsActiveStyles)('toggle'),
 			(0,_settings_settingsVisibility__WEBPACK_IMPORTED_MODULE_15__.showSettings)('toggle')
@@ -2400,15 +2399,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   showSettings: function() { return /* binding */ showSettings; }
 /* harmony export */ });
 /* harmony import */ var _slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-/* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
 
 
+const settingsShadow = document.querySelector('.settings__shadow')
 
 const settingsWrapper = document.querySelector('.settings__wrapper')
 
 const showSettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
-	_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__.popupShadow.classList[value]('popup__shadow-settings_show')
+	settingsShadow.classList[value]('settings__shadow_show')
 	_slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 
@@ -2505,15 +2504,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   showGreetingPopup: function() { return /* binding */ showGreetingPopup; }
 /* harmony export */ });
 /* harmony import */ var _slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15);
-/* harmony import */ var _slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(14);
 
 
-
+const greetingShadow = document.querySelector('.greeting__shadow')
 const greetingPopup = document.querySelector('.greeting__popup')
 
 const showGreetingPopup = (value) => {
 	greetingPopup.classList[value]('greeting__popup_show')
-	_slider_sliderPopup_sliderPopupVisibility__WEBPACK_IMPORTED_MODULE_1__.popupShadow.classList[value]('popup__shadow-greeting_show')
+	greetingShadow.classList[value]('greeting__shadow_show')
 	_slider_changeImages_imageLoader__WEBPACK_IMPORTED_MODULE_0__.body.classList[value]('body_fixed')
 }
 

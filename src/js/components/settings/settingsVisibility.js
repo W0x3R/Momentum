@@ -1,10 +1,11 @@
 import { body } from "../slider/changeImages/imageLoader"
-import { popupShadow } from "../slider/sliderPopup/sliderPopupVisibility"
+
+const settingsShadow = document.querySelector('.settings__shadow')
 
 export const settingsWrapper = document.querySelector('.settings__wrapper')
 
 export const showSettings = (value) => {
 	settingsWrapper.classList[value]('settings__wrapper_show')
-	popupShadow.classList[value]('popup__shadow-settings_show')
+	settingsShadow.classList[value]('settings__shadow_show')
 	body.classList[value]('body_fixed')
 }

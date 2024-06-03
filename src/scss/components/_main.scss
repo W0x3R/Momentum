@@ -138,6 +138,15 @@
 			}
 		}
 	}
+
+	&__shadow {
+		@include shadow;
+		z-index: 2;
+
+		&_show {
+			display: block;
+		}
+	}
 }
 
 .data {
@@ -361,6 +370,15 @@
 			&_hover {
 				color: var(--orange);
 			}
+		}
+	}
+
+	&__shadow {
+		@include shadow;
+
+		&_show {
+			display: block;
+			z-index: 2;
 		}
 	}
 }
