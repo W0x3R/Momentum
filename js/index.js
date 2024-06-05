@@ -1535,7 +1535,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   showTime: function() { return /* binding */ showTime; }
 /* harmony export */ });
-const time = document.querySelector('.data__time')
+const time = document.querySelector('.date__time')
 
 const showTime = () => {
 	const currTime = new Date().toLocaleTimeString()
@@ -1554,7 +1554,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _language_languageStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
 
 
-const date = document.querySelector('.data__date')
+const date = document.querySelector('.date__date')
 const dateOptions = {
 	weekday: "long",
 	month: "long",

@@ -149,7 +149,7 @@
 	}
 }
 
-.data {
+.date {
 	@include flex($direction: column, $alignItems: center);
 
 	&__time {
