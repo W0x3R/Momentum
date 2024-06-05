@@ -175,7 +175,7 @@
 		}
 
 		@include smallMobile {
-			font-size: 62px;
+			font-size: 64px;
 		}
 
 		@include smallestMobile {
@@ -201,7 +201,11 @@
 
 		@include mobile {
 			margin-bottom: 4px;
-			font-size: 15.4px;
+			font-size: 16px;
+		}
+
+		@include smallestMobile {
+			font-size: 15.5px;
 		}
 
 		@include smallestMobile {
@@ -231,7 +235,7 @@
 	}
 
 	@include mobile {
-		font-size: 23px;
+		font-size: 23.5px;
 	}
 
 	@include smallMobile {
