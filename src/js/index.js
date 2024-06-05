@@ -34,7 +34,7 @@ import { checkClickOutGreetingName } from './components/greeting/checkClickOutGr
 import { greetingPopup } from './components/greeting/greetingPopup/showGreetingPopup.js'
 import { controlGreetingPopupBtnHover } from './components/greeting/greetingPopup/controlGreetingPopupBtnHover.js'
 import { checkIsMuteValueLoad } from './components/player/volume/checkIsMuteValueLoad.js'
-import { settingsWrapper } from './components/settings/settingsVisibility.js'
+import { settingsMenu } from './components/settings/settingsVisibility.js'
 import { controlSettingsBtnHover } from './components/settings/controlSettingsBtnHover.js'
 
 setInterval(() => {
@@ -86,5 +86,5 @@ sliderPopup.addEventListener('mouseleave', () => controlSliderPopupBtnHover('add
 sliderPopup.addEventListener('mouseenter', () => controlSliderPopupBtnHover('remove'))
 greetingPopup.addEventListener('mouseleave', () => controlGreetingPopupBtnHover('add'))
 greetingPopup.addEventListener('mouseenter', () => controlGreetingPopupBtnHover('remove'))
-settingsWrapper.addEventListener('mouseleave', () => controlSettingsBtnHover('add'))
-settingsWrapper.addEventListener('mouseenter', () => controlSettingsBtnHover('remove'))
+settingsMenu.addEventListener('mouseleave', () => controlSettingsBtnHover('add'))
+settingsMenu.addEventListener('mouseenter', () => controlSettingsBtnHover('remove'))
