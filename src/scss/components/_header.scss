@@ -14,7 +14,7 @@
 	z-index: 1;
 	padding: 6px 10px;
 	max-width: 280px;
-	min-width: 235px;
+	min-width: 232px;
 	height: fit-content;
 	border-radius: 20px;
 	background: var(--black-background);
@@ -25,22 +25,22 @@
 	@include desktop {
 		padding: 5px 10px;
 		max-width: 260px;
-		min-width: 220px;
+		min-width: 215px;
 	}
 
 	@include tablet {
 		max-width: 210px;
-		min-width: 190px;
+		min-width: 196px;
 	}
 
 	@include mobile {
 		padding: 4px 8px;
-		max-width: 185px;
-		min-width: 175px;
+		max-width: 192px;
+		min-width: 190px;
 	}
 
 	@include smallMobile {
-		max-width: 170px;
+		max-width: 177px;
 		min-width: 169px;
 	}
 
@@ -52,11 +52,11 @@
 		margin-bottom: 3px;
 		opacity: 0.8;
 		user-select: none;
-		font-size: 16.5px;
-		letter-spacing: 0.8px;
+		font-size: 15.5px;
+		letter-spacing: 0.6px;
 
 		@include desktop {
-			font-size: 15.5px;
+			font-size: 14.5px;
 			letter-spacing: 0.4px;
 		}
 
@@ -65,11 +65,11 @@
 		}
 
 		@include mobile {
-			font-size: 11.6px;
+			font-size: 12.5px;
 		}
 
 		@include smallMobile {
-			font-size: 11.2px;
+			font-size: 11.7px;
 			letter-spacing: 0.2px;
 		}
 
@@ -175,7 +175,7 @@
 			}
 
 			@include mobile {
-				@include sizes(38px, 38px);
+				@include sizes(39px, 39px);
 			}
 
 			@include hoverOrActive {
@@ -271,20 +271,28 @@
 			position: relative;
 			@extend %playerOpacity;
 			cursor: pointer;
-			font-size: 14.5px;
+			font-size: 15px;
+			letter-spacing: 0.8px;
 
 			@include desktop {
-				font-size: 13.5px;
+				font-size: 14px;
 			}
 
 			@include tablet {
-				font-size: 12px;
-				letter-spacing: 0.8px;
+				font-size: 13px;
+				letter-spacing: 0.6px;
 			}
 
 			@include mobile {
-				font-size: 11px;
-				letter-spacing: 0.6px;
+				letter-spacing: 0.3px;
+			}
+
+			@include smallMobile {
+				font-size: 12px;
+			}
+
+			@include smallestMobile {
+				font-size: 12px;
 			}
 
 			&_active {
@@ -690,7 +698,7 @@
 	}
 
 	@include mobile {
-		max-width: 202px;
+		max-width: 192px;
 		font-size: 12px;
 		letter-spacing: 0.6px;
 	}
@@ -698,9 +706,9 @@
 	@include smallMobile {
 		padding: 3px;
 		gap: 6px 0;
-		max-width: 156px;
-		font-size: 10px;
-		letter-spacing: 0.3px;
+		max-width: 158px;
+		font-size: 10.5px;
+		letter-spacing: 0.1px;
 	}
 
 	@include smallestMobile {
@@ -748,7 +756,7 @@
 		}
 
 		@include smallMobile {
-			max-width: 146px;
+			max-width: 150px;
 		}
 
 		@include smallestMobile {
