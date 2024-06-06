@@ -27,7 +27,7 @@
 					<audio class="player__audio"></audio>
 					<div class="player__progress-wrapper">
 						<p class="player__current-time"></p>
-						<progress class="player__progress" value="0"></progress>
+						<input class="player__progress player__input" type="range" value="0"></ш>
 						<p class="player__duration-time"></p>
 					</div>
 					<div class="player__playback">
@@ -53,7 +53,8 @@
 								<use></use>
 							</svg>
 						</button>
-						<input class="player__volume-input" type="range" name="volume" min="0" max="1" step="0.1" value="0.7">
+						<input class="player__volume-input player__input" type="range" name="volume" min="0" max="1" step="0.1"
+							value="0.7">
 					</div>
 					<ul class="player__list"></ul>
 				</div>
