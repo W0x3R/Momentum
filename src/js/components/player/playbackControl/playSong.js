@@ -1,5 +1,6 @@
 import { count } from "../switchSong/setCount";
 import { setIsPlay } from "./setIsPlay";
+import { removeProgressInputDisabled } from "../progressBar/removeProgressInputDisabled";
 
 export const trackName = document.querySelector('.player__track-name')
 export const audio = document.querySelector('.player__audio')
@@ -13,4 +14,5 @@ export const playSong = () => {
 	playBtnIcon.setAttribute('href', './images/svg/pauseSongBtn.svg#pauseSong')
 	playBtn.classList.add('player__playback-play_active')
 	setIsPlay(true)
+	removeProgressInputDisabled()
 }
