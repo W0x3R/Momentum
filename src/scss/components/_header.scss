@@ -49,7 +49,7 @@
 	}
 
 	&__track-name {
-		margin-bottom: 3px;
+		margin-bottom: 2px;
 		opacity: 0.8;
 		font-size: 15.5px;
 		letter-spacing: 0.6px;
@@ -61,7 +61,7 @@
 
 		@include tablet {
 			font-size: 13px;
-			margin-bottom: 5px;
+			margin-bottom: 0px;
 		}
 
 		@include mobile {
@@ -81,21 +81,21 @@
 
 	&__progress {
 		position: relative;
-		margin-bottom: 12px;
+		display: flex;
+		margin-bottom: 6px;
 		width: 100%;
-		font-size: 11.4px;
+		font-size: 11px;
 
 		@include desktop {
-			font-size: 10px;
+			font-size: 9.5px;
 		}
 
 		@include tablet {
-			margin-bottom: 8px;
-			font-size: 9px;
+			font-size: 8.5px;
 		}
 
 		@include smallMobile {
-			font-size: 7px;
+			font-size: 7.5px;
 		}
 	}
 
@@ -114,6 +114,10 @@
 
 		&_pointer {
 			cursor: pointer;
+
+			@include hoverOrActive {
+				opacity: 1;
+			}
 		}
 	}
 
@@ -141,7 +145,7 @@
 		}
 
 		@include mobile {
-			@include sizes(28px, 28px);
+			@include sizes(30px, 30px);
 		}
 
 		@include hoverOrActive {
@@ -162,7 +166,7 @@
 		}
 
 		@include mobile {
-			@include sizes(39px, 39px);
+			@include sizes(40px, 40px);
 		}
 
 		@include hoverOrActive {
@@ -198,10 +202,6 @@
 			@include sizes(18px, 18px);
 		}
 
-		@include mobile {
-			@include sizes(18px, 18сpx);
-		}
-
 		@include hoverOrActive {
 			opacity: 1;
 		}
@@ -209,15 +209,15 @@
 
 	&__input {
 		@include playerInputs;
-
-		@include hoverOrActive {
-			opacity: 1;
-		}
 	}
 
 	&__volume-input {
 		@include sizes(80%, 18px);
 		cursor: pointer;
+
+		@include hoverOrActive {
+			opacity: 1;
+		}
 	}
 
 	&__list {
@@ -255,10 +255,6 @@
 		}
 
 		@include smallMobile {
-			font-size: 12px;
-		}
-
-		@include smallestMobile {
 			font-size: 12px;
 		}
 
