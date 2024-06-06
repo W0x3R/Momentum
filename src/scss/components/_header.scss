@@ -433,7 +433,7 @@
 		}
 	}
 
-	&__inner,
+	&__query,
 	&__source,
 	&__language {
 		@include flex($justify: space-between, $alignItems: center);
@@ -618,21 +618,19 @@
 	&__source-select {
 		@extend %languageSelect;
 	}
-}
 
-.query {
-	&_hide {
+	&__query_hide {
 		display: none;
 	}
 
-	&__label {
+	&__query-label {
 		@extend %settingsDescriptionFont;
 		@include mobile {
 			margin-bottom: 6px;
 		}
 	}
 
-	&__input {
+	&__query-input {
 		@extend %languageSelect;
 		cursor: auto;
 	}

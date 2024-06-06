@@ -272,8 +272,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const queryWrapper = document.querySelector('.query')
-const queryInput = document.querySelector('.query__input')
+const queryWrapper = document.querySelector('.settings__query')
+const queryInput = document.querySelector('.settings__query-input')
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 const changePexelsImgOnQueryInputChange = () => {
@@ -375,7 +375,7 @@ const changePexelsImages = () => {
 	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_4__.getStorageImagesSrc)()
 	const pexelsNumb = (0,_sliderStorage__WEBPACK_IMPORTED_MODULE_5__.getStorageNumPicturePexels)()
 	if (imagesSrc === 'pexels') {
-		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('query_hide')
+		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_2__.queryWrapper.classList.remove('settings__query_hide')
 		client.photos.search({ query: _query_setQueryValue_setQueryVariableValue__WEBPACK_IMPORTED_MODULE_1__.query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
@@ -1364,7 +1364,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _queryLabelText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(36);
 
 
-const queryLabel = document.querySelector('.query__label')
+const queryLabel = document.querySelector('.settings__query-label')
 
 const setQueryLabelText = (lang) => queryLabel.textContent = _queryLabelText__WEBPACK_IMPORTED_MODULE_0__.queryLabelText[lang]
 
@@ -2206,7 +2206,7 @@ __webpack_require__.r(__webpack_exports__);
 const changeGithubImages = () => {
 	const imagesSrc = (0,_imagesSrc_imagesSrcStorage__WEBPACK_IMPORTED_MODULE_3__.getStorageImagesSrc)()
 	if (imagesSrc === 'github') {
-		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('query_hide')
+		_query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_4__.queryWrapper.classList.add('settings__query_hide')
 		const greetingText = (0,_greeting_setText_greetingMessage_setGreetingMessageText__WEBPACK_IMPORTED_MODULE_1__.setGreetingMessageText)().split(' ')[1].slice(0, -1);
 		const currLang = (0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)();
 		let value = currLang === 'en' ? greetingText : (0,_greeting_translateGreeting__WEBPACK_IMPORTED_MODULE_2__.translateGreeting)(greetingText)
@@ -2544,7 +2544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const changeEvents = {
-	'.query__input': _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__.changePexelsImgOnQueryInputChange,
+	'.settings__query-input': _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__.changePexelsImgOnQueryInputChange,
 	'.settings__source-select': (e) => {
 		(0,_imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__.changeImagesSrc)(e),
 			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)

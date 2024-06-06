@@ -11,7 +11,7 @@ import { languageSelect } from "../language/setSelectedLanguageValue"
 import { imagesSrcSelect } from "../imagesSrc/setSelectedImagesSrc"
 
 export const changeEvents = {
-	'.query__input': changePexelsImgOnQueryInputChange,
+	'.settings__query-input': changePexelsImgOnQueryInputChange,
 	'.settings__source-select': (e) => {
 		changeImagesSrc(e),
 			closeSettingsIcon(imagesSrcSelect)

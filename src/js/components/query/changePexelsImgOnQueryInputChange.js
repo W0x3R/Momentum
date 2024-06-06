@@ -3,8 +3,8 @@ import { setStorageNumPicturePexels } from '../slider/sliderStorage'
 import { changePexelsImages } from "../slider/changeImages/Pexels/pexelsImageChanger";
 import { setQueryVariableValue } from "./setQueryValue/setQueryVariableValue";
 
-export const queryWrapper = document.querySelector('.query')
-export const queryInput = document.querySelector('.query__input')
+export const queryWrapper = document.querySelector('.settings__query')
+export const queryInput = document.querySelector('.settings__query-input')
 const forbiddenSymbols = ['#', '%', '&', '+', ';']
 
 export const changePexelsImgOnQueryInputChange = () => {

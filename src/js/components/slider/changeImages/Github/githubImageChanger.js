@@ -9,7 +9,7 @@ import { randomNumGithub } from "./githubImageClickChanger ";
 export const changeGithubImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	if (imagesSrc === 'github') {
-		queryWrapper.classList.add('query_hide')
+		queryWrapper.classList.add('settings__query_hide')
 		const greetingText = setGreetingMessageText().split(' ')[1].slice(0, -1);
 		const currLang = getStorageLanguage();
 		let value = currLang === 'en' ? greetingText : translateGreeting(greetingText)

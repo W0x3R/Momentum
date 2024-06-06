@@ -13,7 +13,7 @@ export const changePexelsImages = () => {
 	const imagesSrc = getStorageImagesSrc()
 	const pexelsNumb = getStorageNumPicturePexels()
 	if (imagesSrc === 'pexels') {
-		queryWrapper.classList.remove('query_hide')
+		queryWrapper.classList.remove('settings__query_hide')
 		client.photos.search({ query, locale: 'ru-RU', per_page: 80 }).then(e => {
 			if (e && e.photos && e.photos.length > 1) {
 				MAX_PEXELS_IMAGES = e.photos.length - 1
