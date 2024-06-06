@@ -1875,7 +1875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _updateProgressBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(61);
 
 
-const removeProgressInputDisabled = () => _updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressBar.removeAttribute('disabled')
+const removeProgressInputDisabled = () => _updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressInput.removeAttribute('disabled')
 
 /***/ }),
 /* 61 */
@@ -1884,16 +1884,16 @@ const removeProgressInputDisabled = () => _updateProgressBar__WEBPACK_IMPORTED_M
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   progressBar: function() { return /* binding */ progressBar; },
-/* harmony export */   updateProgressBar: function() { return /* binding */ updateProgressBar; }
+/* harmony export */   progressInput: function() { return /* binding */ progressInput; },
+/* harmony export */   updateProgressInput: function() { return /* binding */ updateProgressInput; }
 /* harmony export */ });
-const progressBar = document.querySelector('.player__progress')
+const progressInput = document.querySelector('.player__progress-input')
 
-const updateProgressBar = (e) => {
+const updateProgressInput = (e) => {
 	const { duration, currentTime } = e.srcElement
 	if (duration) {
-		progressBar.max = duration;
-		progressBar.value = currentTime
+		progressInput.max = duration;
+		progressInput.value = currentTime
 	}
 }
 
@@ -2663,7 +2663,7 @@ const inputEvents = {
 		(0,_greeting_greetingStorage__WEBPACK_IMPORTED_MODULE_0__.setStorageGreetingName)()
 		;(0,_greeting_checkGreetingNameLength__WEBPACK_IMPORTED_MODULE_2__.checkGreetingNameLength)()
 	},
-	'.player__progress': _player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_3__.rewindSong
+	'.player__progress-input': _player_progressBar_rewindSong__WEBPACK_IMPORTED_MODULE_3__.rewindSong
 }
 
 /***/ }),
@@ -2706,8 +2706,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const rewindSong = () => {
-	const value = _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.value;
-	const max = _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressBar.max;
+	const value = _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressInput.value;
+	const max = _updateProgressBar__WEBPACK_IMPORTED_MODULE_1__.progressInput.max;
 	_playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.currentTime = (value / max) * _playbackControl_playSong__WEBPACK_IMPORTED_MODULE_0__.audio.duration;
 }
 
@@ -3208,7 +3208,7 @@ window.addEventListener('beforeunload', () => {
 
 _components_player_playbackControl_playSong_js__WEBPACK_IMPORTED_MODULE_19__.audio.addEventListener('timeupdate', function (e) {
 	;(0,_components_player_songTime_updateSongTime_js__WEBPACK_IMPORTED_MODULE_18__.updateSongTime)()
-	;(0,_components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_21__.updateProgressBar)(e)
+	;(0,_components_player_progressBar_updateProgressBar_js__WEBPACK_IMPORTED_MODULE_21__.updateProgressInput)(e)
 })
 
 window.addEventListener('click', function (e) {

@@ -1,3 +1,3 @@
-import { progressBar } from "./updateProgressBar";
+import { progressInput } from "./updateProgressBar";
 
-export const removeProgressInputDisabled = () => progressBar.removeAttribute('disabled')
+export const removeProgressInputDisabled = () => progressInput.removeAttribute('disabled')

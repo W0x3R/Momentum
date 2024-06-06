@@ -19,7 +19,7 @@ import { loadSong } from './components/player/loadSong.js'
 import { updateSongTime } from './components/player/songTime/updateSongTime.js'
 import { audio } from './components/player/playbackControl/playSong.js'
 import { nextSong } from './components/player/switchSong/nextSong.js'
-import { updateProgressBar } from './components/player/progressBar/updateProgressBar.js'
+import { updateProgressInput } from './components/player/progressBar/updateProgressBar.js'
 import { setVolumeValueLoad } from './components/player/volume/setVolumeValueLoad.js'
 import { changeQuote } from './components/quotes/changeQuote.js'
 import { changeGithubImages } from './components/slider/changeImages/Github/githubImageChanger.js'
@@ -70,7 +70,7 @@ window.addEventListener('beforeunload', () => {
 
 audio.addEventListener('timeupdate', function (e) {
 	updateSongTime()
-	updateProgressBar(e)
+	updateProgressInput(e)
 })
 
 window.addEventListener('click', function (e) {

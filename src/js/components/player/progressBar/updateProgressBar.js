@@ -1,9 +1,9 @@
-export const progressBar = document.querySelector('.player__progress')
+export const progressInput = document.querySelector('.player__progress-input')
 
-export const updateProgressBar = (e) => {
+export const updateProgressInput = (e) => {
 	const { duration, currentTime } = e.srcElement
 	if (duration) {
-		progressBar.max = duration;
-		progressBar.value = currentTime
+		progressInput.max = duration;
+		progressInput.value = currentTime
 	}
 }

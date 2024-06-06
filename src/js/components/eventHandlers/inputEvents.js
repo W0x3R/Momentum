@@ -8,5 +8,5 @@ export const inputEvents = {
 		setStorageGreetingName()
 		checkGreetingNameLength()
 	},
-	'.player__progress': rewindSong
+	'.player__progress-input': rewindSong
 }
