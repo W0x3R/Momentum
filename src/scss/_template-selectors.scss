@@ -5,19 +5,7 @@
 
 %trackTime {
 	position: absolute;
-	top: 15px;
-
-	@include desktop {
-		top: 14px;
-	}
-
-	@include tablet {
-		top: 11px;
-	}
-
-	@include mobile {
-		top: 9px;
-	}
+	top: 17px;
 }
 
 %flexCenter {
