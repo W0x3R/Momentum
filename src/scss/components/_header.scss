@@ -61,6 +61,7 @@
 
 		@include tablet {
 			font-size: 13px;
+			margin-bottom: 5px;
 		}
 
 		@include mobile {
@@ -90,7 +91,7 @@
 
 		@include tablet {
 			margin-bottom: 8px;
-			font-size: 8px;
+			font-size: 9px;
 		}
 
 		@include smallMobile {
@@ -109,20 +110,8 @@
 	}
 
 	&__progress {
-		@include sizes(100%, 6px);
-		background-color: var(--progress-bg);
-
-		@include tablet {
-			height: 5px;
-		}
-
-		&::-webkit-progress-bar {
-			background-color: var(--progress-bg);
-		}
-
-		&::-webkit-progress-value {
-			background-color: var(--orange);
-		}
+		@include sizes(100%, 18px);
+		cursor: pointer;
 	}
 
 	&__playback {
@@ -215,37 +204,16 @@
 		}
 	}
 
-	&__volume-input {
-		@include sizes(80%, 18px);
-		@extend %playerOpacity;
-		border-radius: 4px;
-		appearance: none;
-		overflow: hidden;
-		cursor: pointer;
-
-		@include tablet {
-			height: 14px;
-		}
-
-		&::-webkit-slider-thumb {
-			@include volumeThumb;
-		}
-
-		&::-moz-range-thumb {
-			@include volumeThumb;
-		}
-
-		&::-webkit-slider-runnable-track {
-			@include volumeTrack;
-		}
-
-		&::-moz-range-track {
-			@include volumeTrack;
-		}
+	&__input {
+		@include playerInputs;
 
 		@include hoverOrActive {
 			opacity: 1;
 		}
+	}
+
+	&__volume-input {
+		@include sizes(80%, 18px);
 	}
 
 	&__list {
