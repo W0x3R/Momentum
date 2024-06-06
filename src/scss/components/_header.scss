@@ -446,6 +446,7 @@
 		& span {
 			color: var(--white);
 			pointer-events: none;
+			user-select: none;
 		}
 
 		& label {
@@ -454,116 +455,114 @@
 		}
 	}
 
-	&__blocks-hide {
-		&-title {
-			margin-bottom: 10px;
+	&__blocks-hide-title {
+		margin-bottom: 10px;
+		font-size: 18px;
+		color: var(--white);
+		text-align: center;
+		pointer-events: none;
+
+		@include tablet {
+			font-size: 17px;
+		}
+
+		@include mobile {
+			margin-bottom: 8px;
 			font-size: 18px;
-			color: var(--white);
-			text-align: center;
-			pointer-events: none;
+		}
+
+		@include smallestMobile {
+			font-size: 17px;
+		}
+	}
+
+	&__blocks-hide-inner {
+		@include flex($alignItems: center, $justify: space-between);
+		padding: 8px 5px;
+		border-top: 1px solid var(--white);
+		cursor: pointer;
+
+		&:first-of-type {
+			@include smallestMobile {
+				display: none;
+			}
+		}
+
+		& > input[type='checkbox'] {
+			position: relative;
+			@include sizes(51px, 21px);
+			appearance: none;
+			background-color: var(--grey);
+			border-radius: 20px;
+			transition: 0.5s;
+			cursor: pointer;
+			box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 
 			@include tablet {
-				font-size: 17px;
+				@include sizes(49px, 20px);
 			}
 
 			@include mobile {
-				margin-bottom: 8px;
-				font-size: 18px;
+				@include sizes(50px, 21px);
 			}
 
 			@include smallestMobile {
-				font-size: 17px;
+				@include sizes(46px, 19px);
+			}
+		}
+		& > input:checked[type='checkbox'] {
+			background-color: var(--orange);
+		}
+
+		& > input:checked[type='checkbox']::before {
+			left: 30px;
+
+			@include tablet {
+				left: 27px;
+			}
+
+			@include mobile {
+				left: 28px;
 			}
 		}
 
-		&-inner {
-			@include flex($alignItems: center, $justify: space-between);
-			padding: 8px 5px;
-			border-top: 1px solid var(--white);
-			cursor: pointer;
+		& > input[type='checkbox']:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			@include sizes(21px, 21px);
+			border-radius: 20px;
+			background-color: var(--white);
+			transform: scale(1.2);
+			transition: 0.5s;
 
-			&:first-of-type {
-				@include smallestMobile {
-					display: none;
-				}
+			@include tablet {
+				@include sizes(20px, 20px);
 			}
 
-			& > input[type='checkbox'] {
-				position: relative;
-				@include sizes(51px, 21px);
-				appearance: none;
-				background-color: var(--grey);
-				border-radius: 20px;
-				transition: 0.5s;
-				cursor: pointer;
-				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-
-				@include tablet {
-					@include sizes(49px, 20px);
-				}
-
-				@include mobile {
-					@include sizes(50px, 21px);
-				}
-
-				@include smallestMobile {
-					@include sizes(46px, 19px);
-				}
-			}
-			& > input:checked[type='checkbox'] {
-				background-color: var(--orange);
-			}
-
-			& > input:checked[type='checkbox']::before {
-				left: 30px;
-
-				@include tablet {
-					left: 27px;
-				}
-
-				@include mobile {
-					left: 28px;
-				}
-			}
-
-			& > input[type='checkbox']:before {
-				content: '';
-				position: absolute;
-				left: 0;
-				top: 0;
+			@include mobile {
 				@include sizes(21px, 21px);
-				border-radius: 20px;
-				background-color: var(--white);
-				transform: scale(1.2);
-				transition: 0.5s;
-
-				@include tablet {
-					@include sizes(20px, 20px);
-				}
-
-				@include mobile {
-					@include sizes(21px, 21px);
-				}
-
-				@include smallestMobile {
-					@include sizes(19px, 19px);
-				}
 			}
 
-			@include hoverOrActive {
-				opacity: 0.7;
+			@include smallestMobile {
+				@include sizes(19px, 19px);
 			}
 		}
 
-		&-label {
-			@extend %settingsDescriptionFont;
-			color: var(--white);
+		@include hoverOrActive {
+			opacity: 0.7;
 		}
+	}
 
-		&_hide {
-			opacity: 0;
-			pointer-events: none;
-		}
+	&__blocks-hide-label {
+		@extend %settingsDescriptionFont;
+		color: var(--white);
+	}
+
+	&__blocks-hide_hide {
+		opacity: 0;
+		pointer-events: none;
 	}
 
 	&__shadow {
