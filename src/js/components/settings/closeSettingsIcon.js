@@ -1,3 +1,3 @@
-export const selectLanguageInner = document.querySelector('.language__inner')
+export const settingsLanguageInner = document.querySelector('.settings__language-inner')
 
 export const closeSettingsIcon = (el) => el.blur()

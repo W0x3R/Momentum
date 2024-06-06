@@ -433,7 +433,8 @@
 		}
 	}
 
-	&__inner {
+	&__inner,
+	&__language {
 		@include flex($justify: space-between, $alignItems: center);
 		padding-inline: 5px;
 
@@ -572,16 +573,15 @@
 			display: block;
 		}
 	}
-}
 
-.language {
-	&__description {
+	&__language-description {
 		@extend %settingsDescriptionFont;
 		@include mobile {
 			margin-bottom: 6px;
 		}
 	}
-	&__inner {
+
+	&__language-inner {
 		@extend %languageSelectWrapper;
 
 		&_ru {
@@ -598,7 +598,8 @@
 			}
 		}
 	}
-	&__select {
+
+	&__language-select {
 		@extend %languageSelect;
 	}
 }

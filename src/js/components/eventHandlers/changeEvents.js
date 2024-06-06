@@ -16,7 +16,7 @@ export const changeEvents = {
 		changeImagesSrc(e),
 			closeSettingsIcon(imagesSrcSelect)
 	},
-	'.language__select': () => {
+	'.settings__language-select': () => {
 		setStorageLanguage()
 		fetchAndDisplayWeather()
 		showDate()

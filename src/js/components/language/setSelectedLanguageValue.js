@@ -1,4 +1,4 @@
-export const languageSelect = document.querySelector('.language__select')
+export const languageSelect = document.querySelector('.settings__language-select')
 export const selectLanguageChildrenArr = Array.from(languageSelect.children)
 
 export const setSelectedLanguageValue = (lang, value) => {

@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   selectLanguageChildrenArr: function() { return /* binding */ selectLanguageChildrenArr; },
 /* harmony export */   setSelectedLanguageValue: function() { return /* binding */ setSelectedLanguageValue; }
 /* harmony export */ });
-const languageSelect = document.querySelector('.language__select')
+const languageSelect = document.querySelector('.settings__language-select')
 const selectLanguageChildrenArr = Array.from(languageSelect.children)
 
 const setSelectedLanguageValue = (lang, value) => {
@@ -1334,7 +1334,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _languageDescriptionText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(34);
 
 
-const languageDescription = document.querySelector('.language__description')
+const languageDescription = document.querySelector('.settings__language-description')
 
 const setLanguageDescriptionText = (lang) => languageDescription.textContent = _languageDescriptionText__WEBPACK_IMPORTED_MODULE_0__.languageDescriptionText[lang]
 
@@ -2549,7 +2549,7 @@ const changeEvents = {
 		(0,_imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__.changeImagesSrc)(e),
 			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
 	},
-	'.language__select': () => {
+	'.settings__language-select': () => {
 		(0,_language_languageStorage__WEBPACK_IMPORTED_MODULE_1__.setStorageLanguage)()
 		;(0,_weather_fetchWeatherData___WEBPACK_IMPORTED_MODULE_6__.fetchAndDisplayWeather)()
 		;(0,_date_date__WEBPACK_IMPORTED_MODULE_2__.showDate)()
@@ -2605,12 +2605,12 @@ __webpack_require__.r(__webpack_exports__);
 const changeLanguageIcon = () => {
 	const currLang = (0,_languageStorage__WEBPACK_IMPORTED_MODULE_0__.getStorageLanguage)()
 	if (currLang === 'en') {
-		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_ru')
-		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_en')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.settingsLanguageInner.classList.remove('settings__language-inner_ru')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.settingsLanguageInner.classList.add('settings__language-inner_en')
 	}
 	else if (currLang === 'ru') {
-		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.remove('language__inner_en')
-		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.selectLanguageInner.classList.add('language__inner_ru')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.settingsLanguageInner.classList.remove('settings__language-inner_en')
+		_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_1__.settingsLanguageInner.classList.add('settings__language-inner_ru')
 	}
 }
 
@@ -2622,9 +2622,9 @@ const changeLanguageIcon = () => {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   closeSettingsIcon: function() { return /* binding */ closeSettingsIcon; },
-/* harmony export */   selectLanguageInner: function() { return /* binding */ selectLanguageInner; }
+/* harmony export */   settingsLanguageInner: function() { return /* binding */ settingsLanguageInner; }
 /* harmony export */ });
-const selectLanguageInner = document.querySelector('.language__inner')
+const settingsLanguageInner = document.querySelector('.settings__language-inner')
 
 const closeSettingsIcon = (el) => el.blur()
 
