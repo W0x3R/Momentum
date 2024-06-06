@@ -1,14 +1,20 @@
+%playerOpacity {
+	opacity: 0.8;
+	transition: all 0.5s ease;
+}
+
 %trackTime {
 	position: absolute;
 	top: 15px;
-	user-select: none;
 
 	@include desktop {
 		top: 14px;
 	}
+
 	@include tablet {
 		top: 11px;
 	}
+
 	@include mobile {
 		top: 9px;
 	}
@@ -110,9 +116,4 @@
 	@include smallestMobile {
 		font-size: 15px;
 	}
-}
-
-%playerOpacity {
-	opacity: 0.8;
-	transition: all 0.5s ease;
 }

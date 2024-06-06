@@ -21,9 +21,9 @@
 	color: var(--white);
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
+	user-select: none;
 
 	@include desktop {
-		padding: 5px 10px;
 		max-width: 260px;
 		min-width: 215px;
 	}
@@ -51,7 +51,6 @@
 	&__track-name {
 		margin-bottom: 3px;
 		opacity: 0.8;
-		user-select: none;
 		font-size: 15.5px;
 		letter-spacing: 0.6px;
 
@@ -129,63 +128,58 @@
 	&__playback {
 		@include flex($alignItems: center, $gap: 0 10px);
 		margin-bottom: 6px;
-		pointer-events: inherit;
 
 		@include tablet {
 			gap: 0 8px;
 			margin-bottom: 4px;
 		}
+	}
 
-		& svg {
-			pointer-events: inherit;
+	&__playback-prev,
+	&__playback-next {
+		@extend %playerOpacity;
+		@include sizes(38px, 38px);
+
+		@include desktop {
+			@include sizes(36px, 36px);
 		}
 
-		&-prev,
-		&-next {
-			@extend %playerOpacity;
-			@include sizes(38px, 38px);
-
-			@include desktop {
-				@include sizes(36px, 36px);
-			}
-
-			@include tablet {
-				@include sizes(32px, 32px);
-			}
-
-			@include mobile {
-				@include sizes(28px, 28px);
-			}
-
-			@include hoverOrActive {
-				opacity: 1;
-			}
+		@include tablet {
+			@include sizes(32px, 32px);
 		}
 
-		&-play {
-			@include sizes(48px, 48px);
-			@extend %playerOpacity;
+		@include mobile {
+			@include sizes(28px, 28px);
+		}
 
-			@include desktop {
-				@include sizes(46px, 46px);
-			}
+		@include hoverOrActive {
+			opacity: 1;
+		}
+	}
 
-			@include tablet {
-				@include sizes(42px, 42px);
-			}
+	&__playback-play {
+		@include sizes(48px, 48px);
+		@extend %playerOpacity;
 
-			@include mobile {
-				@include sizes(39px, 39px);
-			}
+		@include desktop {
+			@include sizes(46px, 46px);
+		}
 
-			@include hoverOrActive {
-				opacity: 1;
-			}
+		@include tablet {
+			@include sizes(42px, 42px);
+		}
 
-			&_active {
-				animation: turnAround 2s linear 0s infinite;
-				opacity: 1;
-			}
+		@include mobile {
+			@include sizes(39px, 39px);
+		}
+
+		@include hoverOrActive {
+			opacity: 1;
+		}
+
+		&_active {
+			animation: turnAround 2s linear 0s infinite;
+			opacity: 1;
 		}
 	}
 
@@ -198,59 +192,59 @@
 		@include desktop {
 			margin-bottom: 10px;
 		}
+	}
 
-		&-mute {
-			@include sizes(24px, 24px);
-			@extend %playerOpacity;
+	&__volume-mute {
+		@include sizes(24px, 24px);
+		@extend %playerOpacity;
 
-			@include desktop {
-				@include sizes(22px, 22px);
-			}
-
-			@include tablet {
-				@include sizes(18px, 18px);
-			}
-
-			@include mobile {
-				@include sizes(18px, 18сpx);
-			}
-
-			@include hoverOrActive {
-				opacity: 1;
-			}
+		@include desktop {
+			@include sizes(22px, 22px);
 		}
 
-		&-input {
-			@include sizes(80%, 18px);
-			@extend %playerOpacity;
-			border-radius: 4px;
-			appearance: none;
-			overflow: hidden;
-			cursor: pointer;
+		@include tablet {
+			@include sizes(18px, 18px);
+		}
 
-			@include tablet {
-				height: 14px;
-			}
+		@include mobile {
+			@include sizes(18px, 18сpx);
+		}
 
-			&::-webkit-slider-thumb {
-				@include volumeThumb;
-			}
+		@include hoverOrActive {
+			opacity: 1;
+		}
+	}
 
-			&::-moz-range-thumb {
-				@include volumeThumb;
-			}
+	&__volume-input {
+		@include sizes(80%, 18px);
+		@extend %playerOpacity;
+		border-radius: 4px;
+		appearance: none;
+		overflow: hidden;
+		cursor: pointer;
 
-			&::-webkit-slider-runnable-track {
-				@include volumeTrack;
-			}
+		@include tablet {
+			height: 14px;
+		}
 
-			&::-moz-range-track {
-				@include volumeTrack;
-			}
+		&::-webkit-slider-thumb {
+			@include volumeThumb;
+		}
 
-			@include hoverOrActive {
-				opacity: 1;
-			}
+		&::-moz-range-thumb {
+			@include volumeThumb;
+		}
+
+		&::-webkit-slider-runnable-track {
+			@include volumeTrack;
+		}
+
+		&::-moz-range-track {
+			@include volumeTrack;
+		}
+
+		@include hoverOrActive {
+			opacity: 1;
 		}
 	}
 
@@ -266,43 +260,43 @@
 		@include tablet {
 			gap: 9px 0;
 		}
+	}
 
-		&-item {
-			position: relative;
-			@extend %playerOpacity;
-			cursor: pointer;
-			font-size: 15px;
-			letter-spacing: 0.8px;
+	&__list-item {
+		position: relative;
+		@extend %playerOpacity;
+		cursor: pointer;
+		font-size: 15px;
+		letter-spacing: 0.8px;
 
-			@include desktop {
-				font-size: 14px;
-			}
+		@include desktop {
+			font-size: 14px;
+		}
 
-			@include tablet {
-				font-size: 13px;
-				letter-spacing: 0.6px;
-			}
+		@include tablet {
+			font-size: 13px;
+			letter-spacing: 0.6px;
+		}
 
-			@include mobile {
-				letter-spacing: 0.3px;
-			}
+		@include mobile {
+			letter-spacing: 0.3px;
+		}
 
-			@include smallMobile {
-				font-size: 12px;
-			}
+		@include smallMobile {
+			font-size: 12px;
+		}
 
-			@include smallestMobile {
-				font-size: 12px;
-			}
+		@include smallestMobile {
+			font-size: 12px;
+		}
 
-			&_active {
-				opacity: 1;
-				color: var(--orange);
-			}
+		&_active {
+			opacity: 1;
+			color: var(--orange);
+		}
 
-			@include hoverOrActive {
-				opacity: 0.8;
-			}
+		@include hoverOrActive {
+			opacity: 0.8;
 		}
 	}
 }
