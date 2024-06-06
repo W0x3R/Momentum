@@ -1875,7 +1875,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _updateProgressBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(61);
 
 
-const removeProgressInputDisabled = () => _updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressInput.removeAttribute('disabled')
+const removeProgressInputDisabled = () => {
+	_updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressInput.removeAttribute('disabled')
+	_updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressInput.classList.add('player__progress-input_pointer')
+} 
 
 /***/ }),
 /* 61 */
