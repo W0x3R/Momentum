@@ -1265,7 +1265,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _imagesSrcText__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(30);
 
 
-const srcDescription = document.querySelector('.source__description')
+const srcDescription = document.querySelector('.settings__source-description')
 
 const setImagesSrcText = (lang) => srcDescription.textContent = _imagesSrcText__WEBPACK_IMPORTED_MODULE_0__.srcDescriptionText[lang]
 
@@ -2545,7 +2545,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const changeEvents = {
 	'.query__input': _query_changePexelsImgOnQueryInputChange__WEBPACK_IMPORTED_MODULE_7__.changePexelsImgOnQueryInputChange,
-	'.source__select': (e) => {
+	'.settings__source-select': (e) => {
 		(0,_imagesSrc_changeImagesSrc__WEBPACK_IMPORTED_MODULE_3__.changeImagesSrc)(e),
 			(0,_settings_closeSettingsIcon__WEBPACK_IMPORTED_MODULE_8__.closeSettingsIcon)(_imagesSrc_setSelectedImagesSrc__WEBPACK_IMPORTED_MODULE_10__.imagesSrcSelect)
 	},
@@ -2638,7 +2638,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   imagesSrcSelect: function() { return /* binding */ imagesSrcSelect; },
 /* harmony export */   setSelectedImagesSrc: function() { return /* binding */ setSelectedImagesSrc; }
 /* harmony export */ });
-const imagesSrcSelect = document.querySelector('.source__select')
+const imagesSrcSelect = document.querySelector('.settings__source-select')
 const imagesSrcSelectArr = Array.from(imagesSrcSelect.children)
 
 const setSelectedImagesSrc = (num, value) => imagesSrcSelectArr[num].selected = value

@@ -12,7 +12,7 @@ import { imagesSrcSelect } from "../imagesSrc/setSelectedImagesSrc"
 
 export const changeEvents = {
 	'.query__input': changePexelsImgOnQueryInputChange,
-	'.source__select': (e) => {
+	'.settings__source-select': (e) => {
 		changeImagesSrc(e),
 			closeSettingsIcon(imagesSrcSelect)
 	},

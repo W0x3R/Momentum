@@ -434,6 +434,7 @@
 	}
 
 	&__inner,
+	&__source,
 	&__language {
 		@include flex($justify: space-between, $alignItems: center);
 		padding-inline: 5px;
@@ -602,19 +603,19 @@
 	&__language-select {
 		@extend %languageSelect;
 	}
-}
 
-.source {
-	@extend %languageSelectWrapper;
+	&__source {
+		@extend %languageSelectWrapper;
+	}
 
-	&__description {
+	&__source-description {
 		@extend %settingsDescriptionFont;
 		@include mobile {
 			margin-bottom: 6px;
 		}
 	}
 
-	&__select {
+	&__source-select {
 		@extend %languageSelect;
 	}
 }
