@@ -1438,12 +1438,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   settingTitle: function() { return /* binding */ settingTitle; },
 /* harmony export */   updateSettingsActiveStyles: function() { return /* binding */ updateSettingsActiveStyles; }
 /* harmony export */ });
-const settingsButton = document.querySelector('.settings__header-button')
-const settingTitle = document.querySelector('.settings__header-title')
+const settingsButton = document.querySelector('.settings__button')
+const settingTitle = document.querySelector('.settings__title')
 
 const updateSettingsActiveStyles = (value) => {
-	settingTitle.classList[value]('settings__header-title_active')
-	settingsButton.classList[value]('settings__header-button_active')
+	settingTitle.classList[value]('settings__title_active')
+	settingsButton.classList[value]('settings__button_active')
 }
 
 /***/ }),

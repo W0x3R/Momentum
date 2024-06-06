@@ -304,63 +304,63 @@
 				opacity: 1;
 			}
 		}
+	}
 
-		&-title {
-			padding-bottom: 4px;
-			color: var(--white);
-			letter-spacing: 2.3px;
-			border-bottom: 3px solid var(--white);
-			transition: all 0.5s linear;
-			opacity: 0.8;
-			font-size: 17px;
+	&__title {
+		padding-bottom: 4px;
+		color: var(--white);
+		letter-spacing: 2.3px;
+		border-bottom: 3px solid var(--white);
+		transition: all 0.5s linear;
+		opacity: 0.8;
+		font-size: 17px;
 
-			@include desktop {
-				padding-bottom: 2px;
-				font-size: 16px;
-			}
-
-			@include tablet {
-				font-size: 15px;
-			}
-
-			@include mobile {
-				display: none;
-			}
-
-			@include smallestMobile {
-				display: block;
-				font-size: 17px;
-			}
-
-			&_active {
-				opacity: 1;
-				border-bottom-color: var(--orange);
-			}
+		@include desktop {
+			padding-bottom: 2px;
+			font-size: 16px;
 		}
 
-		&-button {
-			@include sizes(28px, 28px);
-			transition:
-				opacity 0.5s linear,
-				transform 0.4s linear;
-			opacity: 0.8;
+		@include tablet {
+			font-size: 15px;
+		}
 
-			@include desktop {
-				@include sizes(26px, 26px);
-			}
+		@include mobile {
+			display: none;
+		}
 
-			@include tablet {
-				@include sizes(25px, 25px);
-			}
+		@include smallestMobile {
+			display: block;
+			font-size: 17px;
+		}
 
-			@include smallestMobile {
-				@include sizes(27px, 27px);
-			}
+		&_active {
+			opacity: 1;
+			border-bottom-color: var(--orange);
+		}
+	}
 
-			&_active {
-				transform: rotate(180deg);
-				opacity: 1;
-			}
+	&__button {
+		@include sizes(28px, 28px);
+		transition:
+			opacity 0.5s linear,
+			transform 0.4s linear;
+		opacity: 0.8;
+
+		@include desktop {
+			@include sizes(26px, 26px);
+		}
+
+		@include tablet {
+			@include sizes(25px, 25px);
+		}
+
+		@include smallestMobile {
+			@include sizes(27px, 27px);
+		}
+
+		&_active {
+			transform: rotate(180deg);
+			opacity: 1;
 		}
 	}
 

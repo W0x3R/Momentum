@@ -1,7 +1,7 @@
-const settingsButton = document.querySelector('.settings__header-button')
-export const settingTitle = document.querySelector('.settings__header-title')
+const settingsButton = document.querySelector('.settings__button')
+export const settingTitle = document.querySelector('.settings__title')
 
 export const updateSettingsActiveStyles = (value) => {
-	settingTitle.classList[value]('settings__header-title_active')
-	settingsButton.classList[value]('settings__header-button_active')
+	settingTitle.classList[value]('settings__title_active')
+	settingsButton.classList[value]('settings__button_active')
 }
