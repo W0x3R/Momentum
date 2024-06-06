@@ -8,7 +8,6 @@ import { playbackControl } from "../player/playbackControl/playbackControl"
 import { playClickedSong } from "../player/switchSong/playClickedSong"
 import { nextSong } from "../player/switchSong/nextSong"
 import { prevSong } from "../player/switchSong/prevSong"
-import { rewindSong } from "../player/progressBar/rewindSong"
 import { changePexelsImagesClick } from "../slider/changeImages/Pexels/pexelsImageClickChanger "
 import { changeGithubImagesClick } from "../slider/changeImages/Github/githubImageClickChanger "
 import { checkIsMute } from "../player/volume/checkIsMute"
@@ -27,7 +26,6 @@ export const clickEvents = {
 		changePexelsImagesClick('next')
 	},
 	'.player__playback-play': playbackControl,
-	'.player__progress': (e) => rewindSong(e),
 	'.player__playback-prev': prevSong,
 	'.player__playback-next': nextSong,
 	'.player__list': (e) => playClickedSong(e),
