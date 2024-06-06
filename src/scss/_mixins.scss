@@ -55,6 +55,34 @@
 	background: var(--white_215);
 }
 
+@mixin playerInputs {
+	@extend %playerOpacity;
+	border-radius: 4px;
+	appearance: none;
+	overflow: hidden;
+	cursor: pointer;
+
+	@include tablet {
+		height: 14px;
+	}
+
+	&::-webkit-slider-thumb {
+		@include volumeThumb;
+	}
+
+	&::-moz-range-thumb {
+		@include volumeThumb;
+	}
+
+	&::-webkit-slider-runnable-track {
+		@include volumeTrack;
+	}
+
+	&::-moz-range-track {
+		@include volumeTrack;
+	}
+}
+
 @mixin shadow {
 	position: fixed;
 	display: none;
