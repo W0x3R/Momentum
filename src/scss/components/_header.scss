@@ -273,16 +273,16 @@
 	z-index: 2;
 	&__header {
 		position: absolute;
-		left: calc(50% - 81px);
+		left: calc(50% - 70.5px);
 		@include flex($alignItems: center, $gap: 0 10px);
 		cursor: pointer;
 
 		@include desktop {
-			left: calc(50% - 77.25px);
+			left: calc(50% - 67.2px);
 		}
 
 		@include tablet {
-			left: calc(50% - 71.18px);
+			left: calc(50% - 61.7px);
 			gap: 0 5px;
 		}
 
