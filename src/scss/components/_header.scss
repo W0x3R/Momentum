@@ -660,7 +660,7 @@
 
 	@include mobile {
 		font-size: 13px;
-		letter-spacing: 0.6px;
+		letter-spacing: 0.8px;
 	}
 
 	@include smallMobile {
@@ -668,14 +668,13 @@
 		gap: 6px 0;
 		max-width: 150px;
 		font-size: 11px;
-		letter-spacing: 0.1px;
+		letter-spacing: 0.5px;
 	}
 
 	@include smallestMobile {
 		gap: 5px 0;
 		max-width: 240px;
 		font-size: 14px;
-		letter-spacing: 0.5px;
 	}
 
 	&:focus-within .weather__icon {
