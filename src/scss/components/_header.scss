@@ -367,7 +367,7 @@
 	&__menu {
 		position: absolute;
 		left: calc(50% - 250px);
-		top: calc(50% - 206.3px);
+		top: calc(50% - 205.6px);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
@@ -383,14 +383,14 @@
 
 		@include tablet {
 			left: calc(50% - 227.5px);
-			top: calc(50% - 197px);
+			top: calc(50% - 195.9px);
 			gap: 18px 0;
 			width: 455px;
 		}
 
 		@include mobile {
 			left: calc(50% - 175px);
-			top: calc(50% - 240px);
+			top: calc(50% - 239.3px);
 			width: 350px;
 			padding-top: 7px;
 		}
