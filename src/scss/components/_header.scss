@@ -638,7 +638,7 @@
 .weather {
 	@include flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
 	padding: 5px;
-	max-width: 255px;
+	max-width: 224px;
 	height: fit-content;
 	border-radius: 21px;
 	background: var(--black-background);
@@ -648,27 +648,26 @@
 	transition: opacity 0.5s ease;
 
 	@include desktop {
-		max-width: 242px;
-		font-size: 14px;
+		max-width: 205px;
+		font-size: 14.5px;
 	}
 
 	@include tablet {
 		gap: 8px 0;
-		max-width: 226px;
-		font-size: 13px;
+		max-width: 196px;
+		font-size: 13.5px;
 	}
 
 	@include mobile {
-		max-width: 192px;
-		font-size: 12px;
+		font-size: 13px;
 		letter-spacing: 0.6px;
 	}
 
 	@include smallMobile {
 		padding: 3px;
 		gap: 6px 0;
-		max-width: 158px;
-		font-size: 10.5px;
+		max-width: 150px;
+		font-size: 11px;
 		letter-spacing: 0.1px;
 	}
 
@@ -695,33 +694,25 @@
 
 	&__input {
 		padding-bottom: 3px;
-		max-width: 250px;
+		width: 100%;
 		color: var(--white);
 		font-size: 23px;
 		letter-spacing: 1.2px;
 		text-align: center;
 
 		@include desktop {
-			max-width: 240px;
 			font-size: 21px;
 		}
 
 		@include tablet {
-			max-width: 215px;
 			font-size: 18px;
 		}
 
 		@include mobile {
-			max-width: 193px;
 			font-size: 16px;
 		}
 
-		@include smallMobile {
-			max-width: 150px;
-		}
-
 		@include smallestMobile {
-			max-width: 230px;
 			font-size: 22px;
 		}
 
@@ -764,6 +755,10 @@
 			height: 24px;
 			font-size: 31px;
 		}
+	}
+
+	&__description {
+		text-align: center;
 	}
 
 	&__temperature,
