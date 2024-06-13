@@ -13,7 +13,7 @@
 	@include flex($direction: column, $justify: flex-start, $alignItems: center);
 	z-index: 1;
 	padding: 6px 10px;
-	max-width: 280px;
+	max-width: 245px;
 	min-width: 232px;
 	height: fit-content;
 	border-radius: 20px;
@@ -24,12 +24,12 @@
 	user-select: none;
 
 	@include desktop {
-		max-width: 260px;
+		max-width: 235px;
 		min-width: 215px;
 	}
 
 	@include tablet {
-		max-width: 210px;
+		max-width: 205px;
 		min-width: 196px;
 	}
 
