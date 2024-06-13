@@ -366,8 +366,9 @@
 
 	&__menu {
 		position: absolute;
-		left: calc(50% - 250px);
-		top: calc(50% - 206.34px);
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		z-index: 1;
 		display: flex;
 		flex-direction: column;
@@ -382,28 +383,21 @@
 		transition: opacity 0.5s ease;
 
 		@include tablet {
-			left: calc(50% - 227.5px);
-			top: calc(50% - 196.77px);
 			gap: 18px 0;
 			width: 455px;
 		}
 
 		@include mobile {
-			left: calc(50% - 175px);
-			top: calc(50% - 240px);
 			width: 350px;
 			padding-top: 7px;
 		}
 
 		@include smallMobile {
-			left: calc(50% - 150px);
 			width: 300px;
 		}
 
 		@include smallestMobile {
 			width: 250px;
-			left: calc(50% - 125px);
-			top: calc(50% - 212px);
 		}
 
 		&_show {
