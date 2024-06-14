@@ -2,7 +2,7 @@ import { rotateQuotesChangeBtn } from "../quotes/quoteBtnRotator"
 import { setStorageSettingsCheckedInputs } from "../settings/settingsStorage"
 import { loadSettingsCheckedInputsClick } from "../settings/settingsCheckedInputs/loadSettingsCheckedInputsClick"
 import { hideCheckedBlocksClick } from "../settings/hideCheckedBlocks/checkedBlocksLoaderClick"
-import { clearGreetingsName } from "../greeting/clearGreetingsName"
+import { clearGreetingName } from "../greeting/clearGreetingName"
 import { showSliderPopup } from "../slider/sliderPopup/sliderPopupVisibility"
 import { playbackControl } from "../player/playbackControl/playbackControl"
 import { playClickedSong } from "../player/switchSong/playClickedSong"
@@ -55,5 +55,5 @@ export const clickEvents = {
 		hideCheckedBlocksClick(e)
 		setStorageSettingsCheckedInputs()
 	},
-	'.greeting__name': clearGreetingsName
+	'.greeting__name': clearGreetingName
 }
