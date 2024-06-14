@@ -60,8 +60,8 @@
 		}
 
 		@include tablet {
-			font-size: 13px;
 			margin-bottom: 0px;
+			font-size: 13px;
 		}
 
 		@include mobile {
@@ -237,9 +237,9 @@
 	&__list-item {
 		position: relative;
 		@extend %playerOpacity;
-		cursor: pointer;
 		font-size: 15px;
 		letter-spacing: 0.8px;
+		cursor: pointer;
 
 		@include desktop {
 			font-size: 14px;
@@ -296,12 +296,12 @@
 
 	&__title {
 		padding-bottom: 4px;
-		color: var(--white);
-		letter-spacing: 2.3px;
-		border-bottom: 3px solid var(--white);
-		transition: all 0.5s linear;
 		opacity: 0.8;
 		font-size: 17px;
+		letter-spacing: 2.3px;
+		transition: all 0.5s linear;
+		border-bottom: 3px solid var(--white);
+		color: var(--white);
 
 		@include desktop {
 			padding-bottom: 2px;
@@ -371,8 +371,8 @@
 		}
 
 		@include mobile {
-			width: 350px;
 			padding-top: 7px;
+			width: 350px;
 		}
 
 		@include smallMobile {
@@ -472,8 +472,8 @@
 			background-color: var(--grey);
 			border-radius: 20px;
 			transition: 0.5s;
-			cursor: pointer;
 			box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+			cursor: pointer;
 
 			@include tablet {
 				@include sizes(49px, 20px);
@@ -617,10 +617,10 @@
 	padding: 5px;
 	max-width: 224px;
 	height: fit-content;
+	font-size: 15px;
 	border-radius: 21px;
 	background: var(--black-background);
 	color: var(--white);
-	font-size: 15px;
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
@@ -659,8 +659,8 @@
 	}
 
 	&_error {
-		margin: auto;
 		display: none;
+		margin: auto;
 		user-select: none;
 
 		&-show {
@@ -671,10 +671,10 @@
 	&__input {
 		padding-bottom: 3px;
 		width: 100%;
-		color: var(--white);
 		font-size: 23px;
 		letter-spacing: 1.2px;
 		text-align: center;
+		color: var(--white);
 
 		@include desktop {
 			font-size: 21px;
