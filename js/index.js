@@ -3060,6 +3060,20 @@ const controlSettingsBtnHover = (value) => {
 	settingsCloseBtn.classList[value]('settings__close-button_hover')
 }
 
+/***/ }),
+/* 110 */
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   setProgressDisabledLoad: function() { return /* binding */ setProgressDisabledLoad; }
+/* harmony export */ });
+/* harmony import */ var _progressBar_updateProgressBar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(62);
+
+
+const setProgressDisabledLoad = () => _progressBar_updateProgressBar__WEBPACK_IMPORTED_MODULE_0__.progressInput.setAttribute('disabled', true)
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -3172,6 +3186,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_player_volume_checkIsMuteValueLoad_js__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(108);
 /* harmony import */ var _components_settings_settingsVisibility_js__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(82);
 /* harmony import */ var _components_settings_controlSettingsBtnHover_js__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(109);
+/* harmony import */ var _components_player_setProgressDisabledLoad_js__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(110);
+
 
 
 
@@ -3222,6 +3238,7 @@ setInterval(() => {
 ;(0,_components_quotes_changeQuote_js__WEBPACK_IMPORTED_MODULE_23__.changeQuote)()
 ;(0,_components_player_createPlayList__WEBPACK_IMPORTED_MODULE_16__.createPlayList)()
 ;(0,_components_player_loadSong_js__WEBPACK_IMPORTED_MODULE_17__.loadSong)()
+;(0,_components_player_setProgressDisabledLoad_js__WEBPACK_IMPORTED_MODULE_38__.setProgressDisabledLoad)()
 ;(0,_components_language_changeSelectedLanguageValue_js__WEBPACK_IMPORTED_MODULE_14__.changeSelectedLanguageValue)()
 ;(0,_components_language_changeLanguageIcon_js__WEBPACK_IMPORTED_MODULE_15__.changeLanguageIcon)()
 ;(0,_components_imagesSrc_checkSelectedImagesSrc_js__WEBPACK_IMPORTED_MODULE_13__.checkSelectedImagesSrc)()

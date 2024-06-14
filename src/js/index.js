@@ -36,6 +36,7 @@ import { controlGreetingPopupBtnHover } from './components/greeting/greetingPopu
 import { checkIsMuteValueLoad } from './components/player/volume/checkIsMuteValueLoad.js'
 import { settingsMenu } from './components/settings/settingsVisibility.js'
 import { controlSettingsBtnHover } from './components/settings/controlSettingsBtnHover.js'
+import { setProgressDisabledLoad } from './components/player/setProgressDisabledLoad.js'
 
 setInterval(() => {
 	showTime()
@@ -48,6 +49,7 @@ changeAppText()
 changeQuote()
 createPlayList()
 loadSong()
+setProgressDisabledLoad()
 changeSelectedLanguageValue()
 changeLanguageIcon()
 checkSelectedImagesSrc()
