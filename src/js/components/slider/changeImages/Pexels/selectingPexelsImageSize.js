@@ -1,0 +1,1 @@
+export const selectingPexelsImageSize = () => window.innerWidth <= 768 ? 'large2x' : 'landscape'
