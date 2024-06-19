@@ -1,4 +1,4 @@
-import playListSongs from "../../../../../playListSongs.js"
+import playListSongs from "../playListSongs"
 import { count, setCount, decrementCount } from "./setCount.js"
 import { loadSong } from "../loadSong.js"
 import { playSong } from "../playbackControl/playSong.js"

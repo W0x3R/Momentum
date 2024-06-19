@@ -564,14 +564,14 @@
 		&_ru {
 			&::before {
 				@extend %languageSelectIcon;
-				content: url('../../../images/svg/russianLanguageIcon.svg');
+				content: url('images/svg/russianLanguageIcon.svg');
 			}
 		}
 
 		&_en {
 			&::before {
 				@extend %languageSelectIcon;
-				content: url('../../../images/svg/englishLanguageIcon.svg');
+				content: url('images/svg/englishLanguageIcon.svg');
 			}
 		}
 	}

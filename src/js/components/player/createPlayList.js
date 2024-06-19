@@ -1,4 +1,4 @@
-import playListSongs from "../../../../playListSongs"
+import playListSongs from "./playListSongs"
 import { sliceSongTitleLength } from "./sliceSongTitleLength"
 
 const playList = document.querySelector('.player__list')

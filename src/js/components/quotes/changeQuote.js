@@ -6,7 +6,7 @@ export const changeQuote = async () => {
 		const data = await getQuotesData()
 		displayRandomQuote(data)
 	}
-	catch {
+	catch (error) {
 		console.error('Error fetching quotes:', error);
 	}
 }

@@ -1,4 +1,4 @@
-import playListSongs from "../../../../../playListSongs"
+import playListSongs from "../playListSongs"
 import { getSongTimeCode } from "./getSongTimeCode"
 import { count } from "../switchSong/setCount"
 import { audio } from "../playbackControl/playSong"
