@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 let mode = 'development'
 if (process.env.NODE_ENV === 'production') {
@@ -19,11 +20,11 @@ module.exports = {
 	performance: {
 		hints: false, // отключить предупреждения о производительности
 	},
-	devtool: 'source-map',
+	devtool: mode === 'development' ? 'source-map' : false,
 	plugins:
 		[
 			new HtmlWebpackPlugin({
-				template: "./src/index.html"
+				template: "./src/index.html",
 			}),
 			new MiniCssExtractPlugin({
 				filename: '[name].[contenthash].css'
@@ -95,5 +96,20 @@ module.exports = {
 				}
 			},
 		]
-	}
+	},
+	optimization: {
+		minimize: mode === 'production' ? true : false,
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					compress: {
+						drop_console: true,
+					},
+					format: {
+						comments: false,
+					},
+				},
+			}),
+		],
+	},
 }

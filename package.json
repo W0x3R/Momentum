@@ -22,7 +22,8 @@
 		"sass": "^1.77.5",
 		"sass-loader": "^14.2.1",
 		"style-loader": "^4.0.0",
-		"webpack": "^5.92.0",
+		"terser-webpack-plugin": "^5.3.10",
+		"webpack": "^5.92.1",
 		"webpack-cli": "^5.1.4",
 		"webpack-dev-server": "^5.0.4"
 	},
@@ -35,9 +36,10 @@
 	"browserslist": [
 		"last 2 versions",
 		"> 1%",
-		"IE 10"
+		"IE 10",
+		"not dead"
 	],
 	"keywords": [],
-	"author": "",
+	"author": "Stanislau Vyrski",
 	"license": "ISC"
 }
