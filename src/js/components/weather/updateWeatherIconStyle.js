@@ -1,4 +1,4 @@
-const weatherIcon = document.querySelector('.weather__icon')
+export const weatherIcon = document.querySelector('.weather__icon')
 
 export const updateWeatherIconStyle = (data) => {
 	weatherIcon.className = "weather__icon owf";

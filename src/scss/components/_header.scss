@@ -624,6 +624,10 @@
 	box-shadow: var(--blocks-box-shadow);
 	transition: opacity 0.5s ease;
 
+	&__items_hide {
+	display: none;
+	}
+
 	@include desktop {
 		max-width: 205px;
 		font-size: 14.5px;
@@ -662,9 +666,11 @@
 		display: none;
 		margin: auto;
 		user-select: none;
+		text-align: center;
 
 		&-show {
 			display: block;
+			margin: 20px;
 		}
 	}
 

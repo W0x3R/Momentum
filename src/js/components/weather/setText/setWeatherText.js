@@ -1,13 +1,15 @@
 import { getStorageLanguage } from "../../language/languageStorage"
+import { displayWeatherItems } from "../displayWeatherItems"
 import { weatherError } from "../showWeatherError"
 import { weatherText } from "./weatherText"
 
-const weatherTemperature = document.querySelector('.weather__temperature')
-const weatherTemperatureDescription = document.querySelector('.weather__description')
-const weatherWind = document.querySelector('.weather__wind')
-const weatherHumidity = document.querySelector('.weather__humidity')
+export const weatherTemperature = document.querySelector('.weather__temperature')
+export const weatherTemperatureDescription = document.querySelector('.weather__description')
+export const weatherWind = document.querySelector('.weather__wind')
+export const weatherHumidity = document.querySelector('.weather__humidity')
 
 export const setWeatherText = (data, currLang) => {
+	displayWeatherItems('remove')
 	weatherTemperature.textContent = Math.round(data.main.temp) + "°C";
 	weatherTemperatureDescription.textContent = data.weather[0].description.slice(0, 1).toUpperCase() + data.weather[0].description.slice(1);
 	weatherWind.textContent = `${weatherText[currLang].wind} ${Math.round(data.wind.speed)} ${weatherText[currLang].units}`;
@@ -16,6 +18,7 @@ export const setWeatherText = (data, currLang) => {
 }
 
 export const setWeatherErrorText = () => {
+	displayWeatherItems('add')
 	const currLang = getStorageLanguage()
 	weatherTemperature.textContent = '';
 	weatherTemperatureDescription.textContent = '';
