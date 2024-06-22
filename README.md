@@ -5,7 +5,7 @@ The app has a clock, image slider, weather widgets, audio player, quote of the d
 
 ![readmePhoto](/assets/images/readmePhoto.png)
 
-📋 Task: [Rolling Scopes School](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/plants/plants.md)
+📋 Task: [Rolling Scopes School](https://github.com/rolling-scopes-school/tasks/blob/master/tasks/momentum/momentum-stage1.md)
 
 💻 Deploy: [Link](https://w0x3r.github.io/Momentum/)
 
