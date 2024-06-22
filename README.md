@@ -12,8 +12,11 @@ The app has a clock, image slider, weather widgets, audio player, quote of the d
 ## Technology stack
 
 ➖ HTML (SEO)
+
 ➖ SCSS (BEM)
+
 ➖ JavaScript (ES6)
+
 ➖ Webpack 5
 
 ## Features
