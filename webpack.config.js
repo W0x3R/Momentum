@@ -34,7 +34,8 @@ module.exports = {
 					{ from: './src/images/fav-icons', to: 'assets/images/fav-icons' },
 					{ from: './src/site.webmanifest', to: 'site.webmanifest' },
 					{ from: './src/browserconfig.xml', to: 'browserconfig.xml' },
-					{ from: './src/images/readmePhoto.png', to: 'assets/images/readmePhoto.png' }
+					{ from: './src/images/readmePhoto.png', to: 'assets/images/readmePhoto.png' },
+					{ from: './src/images/lightHouse.png', to: 'assets/images/lightHouse.png' }
 				],
 			}),
 		],
