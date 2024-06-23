@@ -127,7 +127,6 @@
 
 		@include tablet {
 			gap: 0 8px;
-			margin-bottom: 4px;
 		}
 	}
 
@@ -187,6 +186,10 @@
 
 		@include desktop {
 			margin-bottom: 10px;
+		}
+
+		@include tablet {
+			display: none
 		}
 	}
 
