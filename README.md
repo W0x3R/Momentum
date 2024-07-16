@@ -98,9 +98,9 @@ To start working on the project on your local machine, please, make sure that yo
 
 ### Steps to start:
 - Clone [repository](https://github.com/W0x3R/Momentum).
+- Open the project locally.
 - Switch to the dev-page branch.
 - Run `npm install` or `npm i` - to install all packages needed.
-- Run `set NODE_ENV=development&&webpack serve` - to starts a local dev-server (The tab will open automatically in the browser).
-- Run `set NODE_ENV=development&&webpack` - build the project for development.
-- Run `set NODE_ENV=production&&webpack` - build the project for production.
-
+- Run `npm run start` - to starts a local dev-server (The tab will open automatically in the browser).
+- Run `npm run dev` - build the project for development.
+- Run `npm run prod` - build the project for production.
