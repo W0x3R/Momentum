@@ -1,0 +1,18 @@
+@use '../../media';
+@use '../../template-selectors';
+@use './greeting';
+@use './date';
+@use './slider';
+
+.main {
+	position: relative;
+	bottom: 20px;
+	@extend %flexCenter;
+	flex-direction: column;
+	flex: 1;
+	user-select: none;
+
+	@include media.desktop {
+		bottom: 0;
+	}
+}

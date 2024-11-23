@@ -1,0 +1,72 @@
+@use '../../media';
+@use '../../mixins';
+
+.date {
+	@include mixins.flex($direction: column, $alignItems: center);
+
+	&__time {
+		padding: 6px;
+		margin-bottom: 4px;
+		border-radius: 15px;
+		font-size: 92px;
+		transition: opacity 0.5s ease;
+		color: var(--white);
+		background: var(--black-background);
+
+		@include media.desktop {
+			font-size: 82px;
+		}
+
+		@include media.tablet {
+			font-size: 74px;
+		}
+
+		@include media.mobile {
+			margin-bottom: 2px;
+			font-size: 72px;
+		}
+
+		@include media.smallMobile {
+			font-size: 68px;
+		}
+
+		@include media.smallestMobile {
+			font-size: 58px;
+		}
+	}
+
+	&__date {
+		margin-bottom: 8px;
+		font-size: 22px;
+		letter-spacing: 0.8px;
+		transition: opacity 0.5s ease;
+		color: var(--white);
+
+		@include media.desktop {
+			margin-bottom: 6px;
+			font-size: 18px;
+		}
+
+		@include media.tablet {
+			font-size: 17px;
+		}
+
+		@include media.mobile {
+			margin-bottom: 4px;
+			font-size: 16px;
+		}
+
+		@include media.smallestMobile {
+			font-size: 15.5px;
+		}
+
+		@include media.smallestMobile {
+			margin-bottom: 4px;
+			font-size: 14px;
+		}
+
+		&::first-letter {
+			text-transform: uppercase;
+		}
+	}
+}

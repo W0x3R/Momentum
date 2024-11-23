@@ -1,0 +1,140 @@
+@use '../../media';
+@use '../../mixins';
+
+.slider {
+	&__button {
+		position: absolute;
+		top: calc(50% - 16px);
+		@include mixins.sizes(32px, 32px);
+
+		@include media.smallestMobile {
+			top: calc(50% - 14px);
+			@include mixins.sizes(28px, 28px);
+		}
+
+		&_prev {
+			left: 4%;
+
+			@include media.smallMobile {
+				left: 1%;
+			}
+		}
+
+		&_next {
+			right: 4%;
+
+			@include media.smallMobile {
+				right: 1%;
+			}
+		}
+	}
+
+	&__popup {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: none;
+		min-width: 560px;
+		min-height: 180px;
+		transform: translate(-50%, -50%);
+		border: solid 1px rgb(138, 138, 138);
+		border-radius: 8px;
+		background: rgb(54, 54, 54);
+
+		@include media.desktop {
+			min-width: 500px;
+			min-height: 160px;
+		}
+
+		@include media.tablet {
+			min-width: 470px;
+		}
+
+		@include media.mobile {
+			min-width: 362px;
+			min-height: 125px;
+		}
+
+		@include media.smallMobile {
+			min-width: 312px;
+			min-height: 110px;
+		}
+
+		@include media.smallestMobile {
+			min-width: 258px;
+			min-height: 100px;
+		}
+
+		&_show {
+			@include mixins.flex($justify: center, $alignItems: center);
+		}
+	}
+
+	&__popup-message {
+		font-size: 20px;
+		letter-spacing: 1.2px;
+		text-align: center;
+		color: var(--white);
+
+		@include media.desktop {
+			font-size: 19px;
+		}
+
+		@include media.tablet {
+			font-size: 18px;
+		}
+
+		@include media.mobile {
+			font-size: 15px;
+			letter-spacing: 0.6px;
+		}
+
+		@include media.smallMobile {
+			font-size: 13.8px;
+			letter-spacing: 0px;
+		}
+
+		@include media.smallestMobile {
+			font-size: 11.5px;
+		}
+	}
+
+	&__popup-close-button {
+		@include mixins.closeButtonStyles;
+		@include mixins.closeButtonSizes(-38px, -38px, 36px, 36px, 20px);
+
+		@include media.hoverOrActive {
+			color: var(--orange);
+		}
+
+		@include media.tablet {
+			@include mixins.closeButtonSizes(-37px, -37px, 35px, 35px, 18px);
+		}
+
+		@include media.mobile {
+			@include mixins.closeButtonSizes(-35px, -35px, 33px, 33px, 16px);
+		}
+
+		@include media.smallMobile {
+			@include mixins.closeButtonSizes(-32px, -32px, 32px, 32px, 15px);
+		}
+
+		@include media.smallestMobile {
+			@include mixins.closeButtonSizes(-28px, -28px, 28px, 28px, 15px);
+		}
+
+		&_hover {
+			color: var(--orange);
+		}
+	}
+
+	&__shadow {
+		@include mixins.shadow;
+		z-index: 2;
+
+		&_show {
+			display: block;
+		}
+	}
+}

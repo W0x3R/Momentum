@@ -1,0 +1,196 @@
+@use '../../media';
+@use '../../mixins';
+
+.greeting {
+	display: flex;
+	justify-content: center;
+	gap: 0 10px;
+	width: 100%;
+	font-size: 34px;
+	transition: opacity 0.5s ease;
+
+	@include media.desktop {
+		font-size: 30px;
+	}
+
+	@include media.tablet {
+		font-size: 26px;
+	}
+
+	@include media.mobile {
+		font-size: 23.5px;
+	}
+
+	@include media.smallMobile {
+		font-size: 20.6px;
+	}
+
+	@include media.smallestMobile {
+		font-size: 18.1px;
+	}
+
+	&__text {
+		letter-spacing: 0.6px;
+		color: var(--white);
+
+		@include media.smallMobile {
+			letter-spacing: -0.2px;
+		}
+
+		@include media.smallestMobile {
+			letter-spacing: -0.6px;
+		}
+	}
+
+	&__name {
+		min-width: 10%;
+		letter-spacing: 0.6px;
+		background: transparent;
+		color: var(--white);
+
+		@include media.smallMobile {
+			letter-spacing: -0.2px;
+		}
+
+		@include media.smallestMobile {
+			letter-spacing: -0.6px;
+		}
+
+		&:focus {
+			box-shadow: 0px 1px 0px 0px var(--white);
+		}
+	}
+
+	&__popup {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		z-index: 3;
+		display: none;
+		min-width: 540px;
+		min-height: 160px;
+		transform: translate(-50%, -50%);
+		border: solid 1px rgb(138, 138, 138);
+		border-radius: 8px;
+		cursor: auto;
+		background: rgb(54, 54, 54);
+
+		@include media.desktop {
+			min-width: 500px;
+			min-height: 140px;
+		}
+
+		@include media.tablet {
+			min-width: 460px;
+		}
+
+		@include media.mobile {
+			min-width: 350px;
+			min-height: 110px;
+		}
+
+		@include media.smallMobile {
+			min-width: 300px;
+			min-height: 100px;
+		}
+
+		@include media.smallestMobile {
+			min-width: 258px;
+		}
+
+		&_show {
+			@include mixins.flex($justify: center, $alignItems: center);
+		}
+	}
+
+	&__shadow {
+		@include mixins.shadow;
+
+		&_show {
+			display: block;
+			z-index: 2;
+		}
+	}
+
+	&__popup-message {
+		font-size: 20px;
+		color: var(--white);
+
+		@include media.desktop {
+			font-size: 19px;
+		}
+
+		@include media.tablet {
+			font-size: 18px;
+		}
+
+		@include media.mobile {
+			font-size: 16px;
+			letter-spacing: 0.6px;
+		}
+
+		@include media.smallMobile {
+			font-size: 15px;
+			letter-spacing: 0px;
+		}
+
+		@include media.smallestMobile {
+			font-size: 14px;
+		}
+	}
+
+	&__popup-close-button {
+		@include mixins.closeButtonStyles;
+		@include mixins.closeButtonSizes(-38px, -38px, 36px, 36px, 20px);
+
+		@include media.hoverOrActive {
+			color: var(--orange);
+		}
+
+		@include media.tablet {
+			@include mixins.closeButtonSizes(-37px, -37px, 35px, 35px, 18px);
+		}
+
+		@include media.mobile {
+			@include mixins.closeButtonSizes(-35px, -35px, 33px, 33px, 16px);
+		}
+
+		@include media.smallMobile {
+			@include mixins.closeButtonSizes(-32px, -32px, 32px, 32px, 15px);
+		}
+
+		@include media.smallestMobile {
+			@include mixins.closeButtonSizes(-28px, -28px, 28px, 28px, 15px);
+		}
+
+		&_hover {
+			color: var(--orange);
+		}
+	}
+}
+
+.popup__shadow {
+	position: fixed;
+	display: none;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	min-height: 100%;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.8);
+
+	&-slider_show {
+		display: block;
+		z-index: 2;
+	}
+
+	&-settings_show {
+		display: block;
+	}
+
+	&-greeting_show {
+		display: block;
+		z-index: 2;
+	}
+}
