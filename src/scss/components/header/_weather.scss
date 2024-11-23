@@ -1,0 +1,142 @@
+@use '../../media';
+@use '../../mixins';
+@use '../../template-selectors';
+
+.weather {
+	@include mixins.flex($direction: column, $justify: flex-start, $alignItems: center, $gap: 9px 0);
+	padding: 5px;
+	max-width: 224px;
+	height: fit-content;
+	font-size: 15px;
+	border-radius: 21px;
+	background: var(--black-background);
+	color: var(--white);
+	box-shadow: var(--blocks-box-shadow);
+	transition: opacity 0.5s ease;
+
+	&__items_hide {
+		display: none;
+	}
+
+	@include media.desktop {
+		max-width: 205px;
+		font-size: 14.5px;
+	}
+
+	@include media.tablet {
+		gap: 8px 0;
+		max-width: 196px;
+		font-size: 13.5px;
+	}
+
+	@include media.mobile {
+		font-size: 13px;
+		letter-spacing: 0.8px;
+	}
+
+	@include media.smallMobile {
+		padding: 3px;
+		gap: 6px 0;
+		max-width: 150px;
+		font-size: 11px;
+		letter-spacing: 0.5px;
+	}
+
+	@include media.smallestMobile {
+		gap: 5px 0;
+		max-width: 240px;
+		font-size: 14px;
+	}
+
+	&:focus-within .weather__icon {
+		animation: shake 2s infinite;
+	}
+
+	&_error {
+		display: none;
+		margin: auto;
+		user-select: none;
+		text-align: center;
+
+		&-show {
+			display: block;
+			margin: 20px;
+		}
+	}
+
+	&__input {
+		padding-bottom: 3px;
+		width: 100%;
+		font-size: 23px;
+		letter-spacing: 1.2px;
+		text-align: center;
+		color: var(--white);
+
+		@include media.desktop {
+			font-size: 21px;
+		}
+
+		@include media.tablet {
+			font-size: 18px;
+		}
+
+		@include media.mobile {
+			font-size: 16px;
+		}
+
+		@include media.smallestMobile {
+			font-size: 22px;
+		}
+
+		&:focus+.weather__hr {
+			border-color: var(--orange);
+		}
+	}
+
+	&__hr {
+		margin: 0;
+		margin-top: -7px;
+		width: 100%;
+	}
+
+	&__icon {
+		height: 28px;
+		font-size: 36px;
+		color: var(--white);
+
+		@include media.desktop {
+			height: 24px;
+			font-size: 34px;
+		}
+
+		@include media.tablet {
+			font-size: 32px;
+		}
+
+		@include media.mobile {
+			font-size: 30px;
+			height: 22px;
+		}
+
+		@include media.smallMobile {
+			font-size: 26px;
+			height: 20px;
+		}
+
+		@include media.smallestMobile {
+			height: 24px;
+			font-size: 31px;
+		}
+	}
+
+	&__description {
+		text-align: center;
+	}
+
+	&__temperature,
+	&__description,
+	&__wind,
+	&__humidity {
+		user-select: none;
+	}
+}

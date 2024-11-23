@@ -1,0 +1,15 @@
+@use './player';
+@use './settings';
+@use './weather';
+@use '../../media';
+
+.header {
+	display: flex;
+	justify-content: space-between;
+
+	@include media.smallestMobile {
+		flex-direction: column;
+		align-items: center;
+		gap: 20px 0;
+	}
+}

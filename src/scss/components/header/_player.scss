@@ -1,0 +1,266 @@
+@use '../../media';
+@use '../../mixins';
+@use '../../template-selectors';
+
+.player {
+	@include mixins.flex($direction: column, $justify: flex-start, $alignItems: center);
+	z-index: 1;
+	padding: 6px 10px;
+	max-width: 245px;
+	min-width: 232px;
+	height: fit-content;
+	border-radius: 20px;
+	background: var(--black-background);
+	color: var(--white);
+	box-shadow: var(--blocks-box-shadow);
+	transition: opacity 0.5s ease;
+	user-select: none;
+
+	@include media.desktop {
+		max-width: 235px;
+		min-width: 215px;
+	}
+
+	@include media.tablet {
+		max-width: 205px;
+		min-width: 196px;
+	}
+
+	@include media.mobile {
+		padding: 4px 8px;
+		max-width: 192px;
+		min-width: 190px;
+	}
+
+	@include media.smallMobile {
+		max-width: 177px;
+		min-width: 169px;
+	}
+
+	@include media.smallestMobile {
+		display: none;
+	}
+
+	&__track-name {
+		margin-bottom: 2px;
+		opacity: 0.8;
+		font-size: 15.5px;
+		letter-spacing: 0.6px;
+
+		@include media.desktop {
+			font-size: 14.5px;
+			letter-spacing: 0.4px;
+		}
+
+		@include media.tablet {
+			margin-bottom: 0px;
+			font-size: 13px;
+		}
+
+		@include media.mobile {
+			font-size: 12.5px;
+		}
+
+		@include media.smallMobile {
+			font-size: 11.7px;
+			letter-spacing: 0.2px;
+		}
+
+		&_active {
+			opacity: 1;
+			animation: changeColor 2s infinite;
+		}
+	}
+
+	&__progress {
+		position: relative;
+		display: flex;
+		margin-bottom: 4px;
+		width: 100%;
+		font-size: 11px;
+
+		@include media.desktop {
+			font-size: 9.5px;
+		}
+
+		@include media.tablet {
+			font-size: 8.5px;
+		}
+
+		@include media.smallMobile {
+			font-size: 7.5px;
+		}
+	}
+
+	&__current-time {
+		@extend %trackTime;
+		left: 0;
+	}
+
+	&__duration-time {
+		@extend %trackTime;
+		right: 0;
+	}
+
+	&__progress-input {
+		@include mixins.sizes(100%, 18px);
+
+		&_pointer {
+			cursor: pointer;
+
+			@include media.hoverOrActive {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__playback {
+		@include mixins.flex($alignItems: center, $gap: 0 10px);
+		margin-bottom: 6px;
+
+		@include media.tablet {
+			gap: 0 8px;
+		}
+	}
+
+	&__playback-prev,
+	&__playback-next {
+		@extend %playerOpacity;
+		@include mixins.sizes(38px, 38px);
+
+		@include media.desktop {
+			@include mixins.sizes(36px, 36px);
+		}
+
+		@include media.tablet {
+			@include mixins.sizes(32px, 32px);
+		}
+
+		@include media.mobile {
+			@include mixins.sizes(30px, 30px);
+		}
+
+		@include media.hoverOrActive {
+			opacity: 1;
+		}
+	}
+
+	&__playback-play {
+		@include mixins.sizes(48px, 48px);
+		@extend %playerOpacity;
+
+		@include media.desktop {
+			@include mixins.sizes(46px, 46px);
+		}
+
+		@include media.tablet {
+			@include mixins.sizes(42px, 42px);
+		}
+
+		@include media.mobile {
+			@include mixins.sizes(40px, 40px);
+		}
+
+		@include media.hoverOrActive {
+			opacity: 1;
+		}
+
+		&_active {
+			animation: turnAround 2s linear 0s infinite;
+			opacity: 1;
+		}
+	}
+
+	&__volume {
+		@extend %flexCenter;
+		gap: 0 10px;
+		margin-bottom: 13px;
+		width: 100%;
+
+		@include media.desktop {
+			margin-bottom: 10px;
+		}
+
+		@include media.tablet {
+			display: none
+		}
+	}
+
+	&__volume-mute {
+		@include mixins.sizes(24px, 24px);
+		@extend %playerOpacity;
+
+		@include media.desktop {
+			@include mixins.sizes(22px, 22px);
+		}
+
+		@include media.tablet {
+			@include mixins.sizes(18px, 18px);
+		}
+
+		@include media.hoverOrActive {
+			opacity: 1;
+		}
+	}
+
+	&__input {
+		@include mixins.playerInputs;
+	}
+
+	&__volume-input {
+		@include mixins.sizes(80%, 18px);
+		cursor: pointer;
+
+		@include media.hoverOrActive {
+			opacity: 1;
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px 0;
+
+		@include media.desktop {
+			gap: 11px 0;
+		}
+
+		@include media.tablet {
+			gap: 9px 0;
+		}
+	}
+
+	&__list-item {
+		position: relative;
+		@extend %playerOpacity;
+		font-size: 15px;
+		letter-spacing: 0.8px;
+		cursor: pointer;
+
+		@include media.desktop {
+			font-size: 14px;
+		}
+
+		@include media.tablet {
+			font-size: 13px;
+			letter-spacing: 0.6px;
+		}
+
+		@include media.mobile {
+			letter-spacing: 0.3px;
+		}
+
+		@include media.smallMobile {
+			font-size: 12px;
+		}
+
+		&_active {
+			opacity: 1;
+			color: var(--orange);
+		}
+
+		@include media.hoverOrActive {
+			opacity: 0.8;
+		}
+	}
+}
